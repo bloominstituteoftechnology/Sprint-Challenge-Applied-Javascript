@@ -13,8 +13,9 @@
     display: flex;
     align-items: center;
     .title {
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 1px;
+      font-weight: bold;
     }
     .tab {
       margin: 0 5px;
@@ -30,6 +31,11 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+    .active-tab {
+      background-color: white;
+      color: #333;
+      border: 2px solid #333;
     }
   }
 }

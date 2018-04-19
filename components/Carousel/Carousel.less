@@ -1,0 +1,44 @@
+.carousel {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media(min-width: 1200px){
+    width: 1200px;
+  }
+  .left-button, .right-button {
+    font-size: 40px;
+    color: white;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      color: #333;
+      background-color: white;
+      border: 2px solid #333;
+    }
+  }
+  .left-button {
+    top: 50%; 
+    left: 25px;
+    transform: translate(0, -50%);
+  }
+  .right-button {
+    top: 50%; 
+    right: 25px;
+    transform: translate(0, -50%);
+  }
+  img {
+    width: 100%;
+    display: none;
+  }
+}
