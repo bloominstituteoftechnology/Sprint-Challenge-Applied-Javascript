@@ -1,40 +1,12 @@
 class Carousel {
-  constructor(element){
-    this.element = $(element);
-    this.leftButton = this.element.find('.left-button');
-    this.rightButton = this.element.find('.right-button');
-    this.images = this.element.find('img');
-    this.activeImage = $(this.images[0]);
-    this.place = 0;
-    this.rightButton.click(() => { this.clickRight() })
-    this.leftButton.click(() => { this.clickLeft() });
-    this.intit();
-  }
-  intit(){
-    this.activeImage.show();
-  }
 
-  clickRight(){
-    if(this.place + 1 === this.images.length){
-      return;
-    }
-    this.place = this.place + 1;
-    this.activeImage.hide();
-    this.activeImage = $(this.images[this.place]);
-    this.activeImage.show();
-  }
-
-  clickLeft(){
-    if (this.place === 0) {
-      return;
-    }
-    this.place = this.place - 1;
-    this.activeImage.hide();
-    this.activeImage = $(this.images[this.place]);
-    this.activeImage.show();
-  }
 }
 
-let carousel = $('.carousel');
+let carousel = $();
 
-carousel = new Carousel(carousel);
+/* If You've gotten this far, you're on your own! Although we will give you some hints:
+    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
+    2. Those buttons are gonna need some click handlers.
+    3. Think of how you would animate this compoennt using jQuery. We would like to see as much done as possible using jQuery
+    4. Have fun!
+*/
