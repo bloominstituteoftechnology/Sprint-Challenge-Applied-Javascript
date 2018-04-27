@@ -1,15 +1,15 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $(element);
+    this.element = element;
   }
   selectCard(){
     // show the card
-      this.element.style.display = "flex";
+    this.element.style.display = "flex";
   }
   deselectCard(){
     // hide the card
-    this.element.style.display = "none";
+    this.element.style.display = "none"
   }
 }
 
@@ -25,9 +25,8 @@ class TabLink {
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
     this.cards = this.cards.map(function(index, element) {
-                  return new TabCard(this);
-                });
-    
+                      return new TabCard(this);
+                   });
     //console.log(`here elements - ${this.cards}`);            
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click( () => {
@@ -42,8 +41,8 @@ class TabLink {
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     this.cards.each(function(){
-      this.cards.selectCard()
-    });
+       this.selectCard()
+     });
   }
 
   deselectTab(){
@@ -51,7 +50,7 @@ class TabLink {
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
     this.cards.each(function(){
-      this.cards.deselectCard()
+      this.deselectCard()
     });
   }
 }
@@ -88,15 +87,12 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned.
-    if(data === "all"){
-      return this.element.find(`.card`);
+    if (data === 'all') {
+      return $(".card")
     }
     else{
-      return this.element.find(`.card[data-tab="${data}"]`)
-      //console.log(this.element.find(`.card[data-tab="${data}"]`));
-
+      return $(".card").filter(`[data-tab="${data}"]`)
     }
-    
   }
 }
 
