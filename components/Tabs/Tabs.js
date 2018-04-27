@@ -5,29 +5,31 @@ class TabCard {
   }
   selectCard(){
     // show the card
-    this.element;
+    this.element.fadeToggle();
   }
   deselectCard(){
     // hide the card
-    this.element;
+    this.element.hide();
   }
 }
 
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
-    this.parent;
+    this.parent = parent;
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards;
+    this.cards = $('.card').map(function(index, item) {
+      new TabCard(this.cards); // or new TabCard($(this.cards));
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element;
+    this.element.click( () => {
+      this.selectTab();
   }
 
   selectTab(){
