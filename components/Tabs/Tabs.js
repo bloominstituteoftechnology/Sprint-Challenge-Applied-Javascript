@@ -20,7 +20,7 @@ class TabLink {
   }
 
   selectTab(){
-    this.parent.updateActive(this.element); // use parent to call updateActive and pass it current tab
+    this.parent.updateActive(this); // use parent to call updateActive and pass it current tab
     this.element.addClass('active-tab'); // add a class to this.element named "active-tab"
     this.cards.each((index, card) => card.selectCard()); // call selectCard for each appropriate card
   }
@@ -55,7 +55,7 @@ class Tabs {
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
-// tabs = new Tabs(tabs)
+let tabs = $('.tabs');
+tabs = new Tabs(tabs);
 
 
