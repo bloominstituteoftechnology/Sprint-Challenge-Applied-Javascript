@@ -82,7 +82,7 @@ class Tabs {
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
-// tabs = new Tabs(tabs)
+let tabs = $(".tabs");
+tabs = new Tabs(tabs);
 
 
