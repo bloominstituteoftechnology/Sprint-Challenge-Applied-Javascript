@@ -19,4 +19,4 @@ jQuery is a JavaScript library built to make DOM manipulation easier and to work
 
 5. What is a component? 
 
-A component in jQuery is a blovk of self contained code that can be with ease to implement part of a web project. 
+A component in jQuery is a block of self contained code that can be reused with ease to implement part of a web project. 
