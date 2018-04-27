@@ -57,21 +57,20 @@ class Tabs {
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab;
-
+    this.activeTab = this.tab[0];
     this.init();
   }
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab;
+    this.activeTab.deselectTab;
     // assign activeTab to tabElement
-    this.activeTab;
+    this.activeTab = $(tabElement);
   }
 
   getCards(data){
