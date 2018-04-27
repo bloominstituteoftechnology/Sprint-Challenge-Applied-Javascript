@@ -21,7 +21,7 @@ We are going to create a Lambda Newspaper. The styling is modeled after the [LA 
 * Once you get your `Tabs` component working properly add a couple more articles yourself and check out how it works.
 
 ![Working Sprint Challenge Gif](./Sprint-Challenge.gif "Example of working project")
-
+.
 
 ## Stretch Challenge
 Your stretch challenge is to write the functionality of a `Carousel` component. You have the HTML and CSS already in place, simply uncomment the HTML in the `index.html` file. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. You may reference the `Tabs` component for assistance.
