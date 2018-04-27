@@ -1,8 +1,7 @@
 // ==== S-T-R-E-T-C-HHH ==== //
 class CarouselImage {
-    constructor(element, parent) {
+    constructor(element) {
         this.element = $(element);
-        this.parent = parent;
     }
     showImage() {
         this.element.show();
@@ -17,14 +16,15 @@ class Carousel {
         this.element = $(element);
         this.image = this.element.find("img");
         this.image = this.image.map((index, image) =>
-            new CarouselImage(image, this)
+            new CarouselImage(image)
         );
         this.leftButton = this.element.find(".left-button");
         this.rightButton = this.element.find(".right-button");
         this.activeImg = this.image[0];
         this.init();
         this.leftButton.click(() => {
-            this.imageLeft();
+            this.activeImg.hideImage();
+            this.activeImg =
         });
         this.rightButton.click(() => {
             this.imageRight();
@@ -33,17 +33,7 @@ class Carousel {
     init() {
         this.activeImg.showImage();
     }
-    imageLeft() {
-        this.activeImg.hideImage(); //hide current active
-        this.activeImg = this.image[() => {
-            let i = this.image
-            if (i === 0) {
-                return this.image.length;
-            }
-            return i = -1;
-        }]; //iterate over image array by adding +1 to the index (needs if statement) & set it equal to the activeImg
-        this.activeImg.showImage(); //show the active image - which should be the image with the new index
-    }
+
     imageRight() {
         this.activeImg.hideImage();
         if (this.index === this.image.length - 1) {

@@ -24,12 +24,8 @@ class TabLink {
     this.element = $(element);
     this.parent = parent;
     this.cards = this.parent.getCards(this.element.data("tab"));
-    this.cards = this.cards.map((index, card) =>
-      new TabCard(card)
-    );
-    this.element.click(() =>
-      this.selectTab()
-    );
+    this.cards = this.cards.map((index, card) => new TabCard(card));
+    this.element.click(() => this.selectTab());
   }
 
   // ==== TabLink Methods ==== //
@@ -37,15 +33,11 @@ class TabLink {
   selectTab() {
     this.parent.updateActive(this);
     this.element.addClass("active-tab");
-    this.cards.each(function (i) {
-      this.selectCard()
-    });
+    this.cards.each((i, card) => card.selectCard());
   }
   deselectTab() {
     this.element.removeClass("active-tab");
-    this.cards.each(function (i) {
-      this.deselectCard()
-    });
+    this.cards.each((i, card) => card.deselectCard());
   }
 }
 
@@ -71,12 +63,12 @@ class Tabs {
     this.activeTab = tabElement;
   }
   getCards(data) {
-    let cardsContainer = $(".cards-container");
-    let cards = $(".card");
+    // let cardsContainer = $(".cards-container");
+    // let cards = $(".card");
     if (data === "all") {
-      return cards;
+      return $(".card");
     } else {
-      return cardsContainer.find(`.card[data-tab="${data}"]`);
+      return $(`.card[data-tab="${data}"]`);
     }
   }
 }
