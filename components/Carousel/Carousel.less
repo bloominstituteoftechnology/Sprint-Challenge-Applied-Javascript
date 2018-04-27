@@ -8,6 +8,9 @@
   @media(min-width: 1200px){
     width: 1200px;
   }
+  .button {
+    z-index: 100;
+  }
   .left-button, .right-button {
     .flex(center);
     color: @lambda-times-color-white;
@@ -35,7 +38,11 @@
     transform: translate(0, -50%);
   }
   img {
-    .width-100();
+    // .width-100();
+    width: 1%;
     display: none;
+  }
+  .showImg {
+    display: block;
   }
 }

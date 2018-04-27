@@ -221,6 +221,7 @@ body {
   justify-content: space-between;
   align-items: none;
   flex-direction: column;
+  display: none;
   background-color: #fff;
   width: 380px;
   margin-bottom: 16px;
@@ -251,6 +252,9 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
+.cards-container .showCard {
+  display: block;
+}
 .carousel {
   width: 100%;
   display: flex;
@@ -266,6 +270,9 @@ body {
   .carousel {
     width: 1200px;
   }
+}
+.carousel .button {
+  z-index: 100;
 }
 .carousel .left-button,
 .carousel .right-button {
@@ -299,6 +306,9 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
-  width: 100%;
+  width: 1%;
   display: none;
+}
+.carousel .showImg {
+  display: block;
 }
