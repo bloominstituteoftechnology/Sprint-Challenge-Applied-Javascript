@@ -18,7 +18,7 @@ class TabLink {
     // Use a jQuery selector to assign this.element to the DOM reference
     this.element = $(element);
     // assign this.parent to the parent parameter
-    this.parent = $(parent);
+    this.parent = parent;
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab')); // .data is naitive to jQuery js equivilent is .dataset
@@ -30,7 +30,7 @@ class TabLink {
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => {
-      parent.selectTab(this);
+      this.selectTab();
     })
   }
 
