@@ -1,89 +1,70 @@
 class TabCard {
-  constructor(element){
-    // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $(element)
+  constructor(element){ // TabCard is being passed the value of Tabs.getCards('value of current '.tab' data attribute), so the cards that have the same data attribute as the current tab
+    this.element = $(element) // The element property is equal to the cards matched up to their '.tab' class
   }
   selectCard(){
-    // show the card
-    this.element.show();
+    this.element.show(); // '.card' show
   }
   deselectCard(){
-    // hide the card
-    this.element.hide();
+    this.element.hide(); // '.card' hide
   }
 }
-    // Use a jQuery selector to assign this.element to the DOM reference  
-    // assign this.parent to the parent parameter    
-    // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
-class TabLink {
-  constructor(element, parent){
-    this.element = $(element);
-    this.parent = parent;
-    this.cards = this.parent.getCards(this.element.data('tab'));
-    // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = this.cards.map((index, cards) => new TabCard($(cards))
-  )
 
-    // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element.click(() => {
+class TabLink {
+  constructor(element, parent){ // Therefore, the parameters for TabsLink are the value of the 'tab' class and the value of the Tabs constructor
+    this.element = $(element); // the proeprty element is equal to the value of the 'tab' class
+    this.parent = parent; // the parent proeprty is equal to the value of the Tabs constructor
+    this.cards = this.parent.getCards(this.element.data('tab')); // the cards property of the TabLink is assigned the value of Tabs.getCards('value of current '.tab' data attribute)
+    this.cards = this.cards.map((index, cards) => new TabCard($(cards))) // the cards property of the TabLink is assigned the value of every new instance of TabCard, passing the argument of the value of the Tabs.getCards('value of current '.tab' data attribute)
+    this.element.click(() => { // Click handler that invokes selectTab on itself.... so '.tab'.click() => ( '.tab'.selectTab)
       this.selectTab()
     })
   }
 
   selectTab(){
-    // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent.updateActive(this);
-    // using a jQuery method, add a class to this.element named "active-tab"
-    this.element.addClass('active-tab');
-    // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each((i, card) => {
+    this.parent.updateActive(this); // Tabs.updateActive('.tab')
+    this.element.addClass('active-tab'); // '.tab'.addClass('ative-tab')
+    this.cards.each((i, card) => { // Looks for the cards created in the cosntructor and invokes selectCard after selectTab is invoked
       card.selectCard()
   })
   }
 
   deselectTab(){
-    // use a jQuery method to remove the class "active-tab" from this.element
-    this.element.removeClass('active-tab');
-    // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each((i, card) => {
+    this.element.removeClass('active-tab'); // '.tab'.removeClass('active-tab')
+    this.cards.each((i, card) => { // Looks for cards created in the constructor and invokes deselectCard after deselectTab has been invoked
       card.deselectCard()
     })
   }
 }
-    // Using jQuery, find all of the tabs on this element.   
-     // Set the initial active tab to the first tab in the list.
-    // use activeTab to call the selectTab() method    
-    // use activeTab to call the deselectTab() method    
-    // assign activeTab to tabElement
-    // This method is meant to get all the cards from the HTML page.  
-    // If the data supplied is 'all' then all of the cards should be returned. 
-    // Otherwise, only cards matching the data attribute should be returned. 
-    // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
+
 class Tabs {
-  constructor(element){
-    this.element = $(element); 
-    this.tabs = this.element.find('.tab');
-    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) ); // Question - Why didn't we return this line when we've returned this in a similar example?  When I tried to return it, it gave e a jQuery reference error.
-    this.activeTab = this.tabs[0];
-    this.init();
+  constructor(tabs){ // The element is therefore the value of the class 'tabs'
+    this.tabs = $('.tabs'); // Equivalent to this.tabs = $('.tabs')? - apparently so (was element as parameter and used throughout)
+    this.tabs = this.tabs.find('.tab'); // the property of tabs on Tabs is assigned the value of all instances of the class 'tab'
+    this.tabs = this.tabs.map( (i, tab) => { // the property of tabs on Tabs is assigned to new instances of Tablink, passing the value of the class 'tab' and itself as arguments.
+      return new TabLink(tab, this)
+     } ); // - Apparently, return is implicit, but you *can* return the function and have it still work.
+    this.activeTab = this.tabs[0]; // The activeTab on Tabs is given the value of the first '.tab' element
+    this.init(); // initialize Tabs
   }
   init(){
-    this.activeTab.selectTab();
+    this.activeTab.selectTab(); // Method where the activeTab property on Tabs invokes selectTab
   }
   updateActive(tabElement){
-    this.activeTab.deselectTab();
-    this.activeTab = tabElement;
+    this.activeTab.deselectTab(); // Method where activeTab property on Tabs invokes deselectTab
+    this.activeTab = tabElement; // Method where the activeTab property is assigned the value of the TabLink that invoked it
   }
-  getCards(data){
-    if (data === 'all') {
-      return $(`.card`);
-      }  else {
-          return $(`.card[data-tab=${data}]`)
+  getCards(data){ // getCards takes the value of current '.tab' data attribute as an argument
+    if (data === 'all') { // if the value of the data attribute is 'all'
+      return $(`.card`); // return all instances of the 'card' class
+      }  else { // if the value of the data attribute is not 'all'
+          return $(`.card[data-tab=${data}]`) // return the cards that match the value of the data attribute of the tab invoking it
       }
-    }
+  }
 }
-let tabs = $('.tabs');
-tabs = new Tabs(tabs);// Question two: Why didn't we have to map this time when we had to map yesterday?  Again, it threw a jQuery reference error when I tried mapping here.
+let tabs = $('.tabs');  // let the variable tabs be assigned the value of the class 'tabs' 
+tabs = new Tabs(tabs);// Let that variable tabs now be assigned the value of a new instance of Tabs, passing the value of tabs, which is the 'tabs' class, as an argument
+
  
 
 
