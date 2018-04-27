@@ -52,12 +52,12 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs;
+    this.tabs = $(this.element).find('.tab');
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab;
+    this.activeTab = this.tabs[0];
 
     this.init();
   }
