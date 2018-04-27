@@ -38,14 +38,14 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each((i, card) => card.deselectCard());
+    this.cards.each((i, card) => card.selectCard());
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
+    this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.cards.each((i, card) => card.deselectCard());
   }
 }
 
