@@ -16,7 +16,8 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
+    console.log(this.element);
     // assign this.parent to the parent parameter
     this.parent = $(parent);
 
@@ -24,10 +25,14 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards;
+    this.cards.map(function(index, item) {
+        // create new TabCard(card);
+    });
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element;
+    this.element.click(() =>{
+      this.selectTab();
+    });
   }
 
   selectTab(){
@@ -36,14 +41,18 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element = addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards;
+    this.cards.each(() =>{
+      selectCard();
+    });
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.cards.forEach(() => {
+      deselectCard();
+    });
   }
 }
 
