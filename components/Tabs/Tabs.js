@@ -71,7 +71,7 @@ class Tabs {
     // use activeTab to call the deselectTab() method
     this.activeTab.deselectTab(); //+
     // assign activeTab to tabElement
-    this.activeTab = tabElement; //~
+    this.activeTab = tabElement; //+
   }
 
   getCards(data){
@@ -79,9 +79,9 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
     if (data === 'all') { //~ Might need to make less explicit
-      return this.tabs; //~
+      return this.element.find('.card'); //~
     } else {
-      return this.element.find(`tab[data-tab="${data}"]`); //+
+      return this.element.find(`.card[data-tab="${data}"]`); //+
     }
   }
 }
