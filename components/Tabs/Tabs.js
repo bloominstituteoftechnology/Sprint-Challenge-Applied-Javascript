@@ -5,11 +5,11 @@ class TabCard {
   }
   selectCard(){
     // show the card
-    this.element.addClass('active-tab');
+    this.element.show();
   }
   deselectCard(){
     // hide the card
-    this.element.removeClass('active-tab')
+    this.element.hide();
   }
 }
 
@@ -24,13 +24,13 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = this.cards.map((index, cards) => {
-      return new TabCard($(cards), this);
+    this.cards.map((index, cards) => {
+      return new TabCard($(cards))
     })
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => {
-      this.tabs.selectTab()
+      this.selectTab()
     })
   }
 
@@ -40,17 +40,17 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each(function() {
-      selectCard();
-    })
+    $('.card').each(() => {
+      selectCard()
+  })
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each(function() {
-      deselectCard();
+    this.cards.each(() => {
+      deselectCard()
     })
   }
 }
@@ -60,9 +60,9 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = this.element.find('.tabs');
+    this.tabs = this.element.find('.tab');
 
-    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
+    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) ); // Question - Why didn't we return this line when we've returned this in a similar example?  When I tried to return it, it gave e a jQuery reference error.
     
     // Set the initial active tab to the first tab in the list.
     this.activeTab = this.tabs[0];
@@ -83,12 +83,13 @@ class Tabs {
   }
 
   getCards(data){
-      if ($('.tabs').data('tab') == 'all') {
-        return this.element.find(`.card[data-tab"]`);
+    if ($('.active-tab').data('tab') == 'all') {
+      return this.element.find('.card')
       } else {
         return this.element.find(`.card[data-tab="${data}"]`)
       }
     }
+ 
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
@@ -97,8 +98,8 @@ class Tabs {
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
 let tabs = $('.tabs');
-tabs = tabs.map(function (index, element) {
-  new Tabs(tabs);
-});
+tabs = new Tabs(tabs);
+ // Question two: Why didn't we have to map this time when we had to map yesterday?  Again, it threw a jQuery reference error when I tried mapping here.
+
 
 
