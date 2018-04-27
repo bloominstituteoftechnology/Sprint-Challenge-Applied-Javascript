@@ -23,14 +23,14 @@ class Carousel {
         this.index = this.index === 0 ? this.images.length-1 : this.index-1;
         this.currentImage.hide();
         this.currentImage = $(this.images[this.index]);
-        this.currentImage.show();
+        this.currentImage.fadeIn();
     }
     
     forward() {
         this.index = this.index === this.images.length-1 ? 0 : this.index+1;
         this.currentImage.hide();
         this.currentImage = $(this.images[this.index]);
-        this.currentImage.show();
+        this.currentImage.fadeIn();
     }
 }
 
