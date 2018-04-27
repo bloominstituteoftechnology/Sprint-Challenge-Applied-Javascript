@@ -1,15 +1,16 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
-    this.element.addClass("active-tab");
+    this.element.show()
   }
   deselectCard(){
     // hide the card
-    this.element.removeClass("active-tab");
+    console.log("hihihihi");
+    this.element.hide();
   }
 }
 
@@ -28,7 +29,7 @@ class TabLink {
     this.cards = this.cards.map( (index, card) => new TabCard(card) );
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element.click(this.selectTab());
+    this.element.click( () => this.selectTab());
   }
 
   selectTab(){
@@ -38,15 +39,20 @@ class TabLink {
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery.
     //  call the selectCard() method in your callback function
-    this.cards;
+    jQuery.each(this.cards, function (index, card) {
+      card.selectCard();
+    });
+
+
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
-  }
+    jQuery.each(this.cards, function (index, card) {
+      card.deselectCard();
+    });  }
 }
 
 class Tabs {
@@ -57,7 +63,7 @@ class Tabs {
     this.tabs = this.element.find(".tab");
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     // Set the initial active tab to the first tab in the list.
-    this.activeTab = this.tabs[0];
+    this.activeTab = this.tabs[2];
 
     this.init();
   }
