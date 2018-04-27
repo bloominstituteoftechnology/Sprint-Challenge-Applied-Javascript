@@ -38,9 +38,7 @@ class TabLink {
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery.
     //  call the selectCard() method in your callback function
-    jQuery.each(this.cards, function (index, card) {
-      card.selectCard();
-    });
+    jQuery.each(this.cards, (index, card)=> card.selectCard() );
 
 
   }
