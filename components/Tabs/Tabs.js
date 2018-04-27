@@ -16,9 +16,9 @@ class TabCard {
 class TabLink {
   constructor(element, parent) {
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element
+    this.element = $(element)
     // assign this.parent to the parent parameter
-    this.parent
+    this.parent = parent
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'))
@@ -52,12 +52,12 @@ class Tabs {
     this.element = $(element)
 
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = $('tabs')
-    console.log(this.tabs)
+    this.tabs = $('.tabs')
+
     this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this))
 
     // Set the initial active tab to the first tab in the list.
-    this.activeTab
+    this.activeTab = this.tabs[0]
 
     this.init()
   }
