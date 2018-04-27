@@ -1,7 +1,7 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
@@ -16,7 +16,7 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
     this.parent = parent;
 
@@ -26,7 +26,7 @@ class TabLink {
 
     // Using jQuery, map over the array of cards.  In your callback function, 
     //create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = this.cards.map((index, card) => new TabCard(card));
+    this.cards = this.cards.map((index, card) => new TabCard(card, this));
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => this.selectTab());
@@ -36,7 +36,7 @@ class TabLink {
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
     this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element,addClass('active-tab');
+    this.element.addClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call 
     //the selectCard() method in your callback function
     this.cards.each((index, card) => card.selectCard());
@@ -81,11 +81,16 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
+    if(data === 'all') {
+      return $('.card');
+    }else {
+      return $(`.card[data-tab="${data}"]`)
+    }
   }
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $(.tabs);
+let tabs = $('.tabs');
 tabs = new Tabs(tabs);
 // tabs = tabs.map((index, tab) => new Tabs($(tab)));
 
