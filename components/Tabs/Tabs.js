@@ -1,15 +1,15 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $element;
   }
   selectCard(){
     // show the card
-    this.element;
+    this.element.fadeToggle();
   }
   deselectCard(){
     // hide the card
-    this.element;
+    this.element.hide();
   }
 }
 
@@ -25,20 +25,24 @@ class TabLink {
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
     this.cards = this.cards.map((index, card) => {
-      return new TabCard($(tab), this);
+      return new TabCard($(card), this);
     });
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element.click(() => );
+    this.element.click(() => {
+      this.selectTab();
+    });
   }
 
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent;
+    this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element;
+    this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards;
+    this.cards.each(function(index, selectCard()){
+
+    });
   }
 
   deselectTab(){
@@ -54,7 +58,7 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = $(".topics");
+    this.tabs = $(".tabs");
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
@@ -66,12 +70,12 @@ class Tabs {
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab.select();
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab.deselect();
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement
     this.activeTab = tabElement;
   }
