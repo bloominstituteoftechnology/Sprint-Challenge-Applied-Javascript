@@ -1,24 +1,24 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $element;
   }
   selectCard(){
     // show the card
-    this.element;
+    this.element.fadeToggle();
   }
   deselectCard(){
     // hide the card
-    this.element;
+    this.element.hide();
   }
 }
 
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $element;
     // assign this.parent to the parent parameter
-    this.parent;
+    this.parent = $parent;
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
