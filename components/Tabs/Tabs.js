@@ -5,12 +5,12 @@ class TabCard {
   }
   selectCard(){
     // show the card
-    this.element.css('display') == 'flex';
+    this.element.addClass("test");
     console.log("tabcard is trying to select");
   }
   deselectCard(){
     // hide the card
-    this.element.css('display') == 'none';
+    this.element.removeClass("test");
     console.log("tabcard is trying to deselect");
 
   }
@@ -20,10 +20,12 @@ class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
     this.element = $(element);
+    console.log(this.element);
     // assign this.parent to the parent parameter
     this.parent = parent;
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
+    console.log(this.element.data('tab'));
     this.cards = this.parent.getCards(this.element.data('tab'));
     // Using jQuery, map over the array of cards.P  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
     this.cards = this.cards.map((i, e) => {
@@ -84,7 +86,7 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned.
     // Otherwise, only cards matching the data attribute should be returned.
     if (data === "all") return $(".card");
-    else return $(`.tabs-item[data-tab="${data}"]`);
+    else return $(`.card[data-tab="${data}"]`);
   }
 }
 
