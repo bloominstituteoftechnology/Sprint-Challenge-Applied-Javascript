@@ -22,7 +22,7 @@ class Carousel {
             this.imgIndex = 0;
         }
         this.setActiveImg(this.imgIndex);
-        this.activeImg.show();
+        this.activeImg.fadeIn(1000);
     }
     previousImg() {
         this.activeImg.hide();
@@ -32,7 +32,7 @@ class Carousel {
             this.imgIndex = this.imgs.length - 1;
         }
         this.setActiveImg(this.imgIndex);
-        this.activeImg.show();
+        this.activeImg.fadeIn(1000);
     }
 }
 
