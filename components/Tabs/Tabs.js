@@ -31,7 +31,7 @@ class TabLink {
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click( () => {
-      this.parent.selectTab();
+      this.selectTab();
     });
   }
 
@@ -80,7 +80,7 @@ class Tabs {
     // use activeTab to call the deselectTab() method
     this.activeTab.deselectTab();
     // assign activeTab to tabElement
-    this.activeTab = tabElement.selectTab();
+    this.activeTab = tabElement;
   }
 
   getCards(data){
