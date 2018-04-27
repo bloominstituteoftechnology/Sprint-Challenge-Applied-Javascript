@@ -42,7 +42,7 @@ class TabLink {
         val.selectCard();
       }
       else if (val.element[ind].dataset.tab === this.element[0].dataset.tab) {
-        val.element[ind].style.display = 'block';
+        val.element[ind].style.display = 'initial';
       }
     });
   }
