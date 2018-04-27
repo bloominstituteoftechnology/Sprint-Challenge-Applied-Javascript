@@ -5,11 +5,11 @@ class TabCard {
   }
   selectCard(){
     // show the card
-    this.element.show();
+    this.element.fadeIn(250);
   }
   deselectCard(){
     // hide the card
-    this.element.hide();
+    this.element.fadeOut(100);
   }
 }
 
