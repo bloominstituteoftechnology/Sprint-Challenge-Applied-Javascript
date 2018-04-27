@@ -32,18 +32,18 @@ class TabLink {
 
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent.updateActive(this); //~ Might need this.something
+    this.parent.updateActive(this); //+ Might need this.something
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element.addClass("active-tab"); //+
+    this.element.addClass("active-tab"); //=
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each( (_, card) => card.selectCard() ); //+
+    this.cards.each( (_, card) => card.selectCard() ); //! Might need this.cards = ...
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element.removeClass("active-tab"); //+
+    this.element.removeClass("active-tab"); //=
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each( (_, card) => card.deselectCard() ); //+
+    this.cards.each( (_, card) => card.deselectCard() ); //! Might need this.cards = ...
   }
 }
 
@@ -52,26 +52,25 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = $('.tab'); //~ Could be .tabs
-
+    this.tabs = $('.tab'); //=
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab = this.tabs[0]; //+
+    this.activeTab = this.tabs[0]; //=
 
     this.init();
   }
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab.selectTab(); //+
+    this.activeTab.selectTab(); //=
   }
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab.deselectTab(); //+
+    this.activeTab.deselectTab(); //=
     // assign activeTab to tabElement
-    this.activeTab = tabElement; //+
+    this.activeTab = tabElement; //=
   }
 
   getCards(data){
@@ -79,9 +78,9 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
     if (data === 'all') { //~ Might need to make less explicit
-      return this.element.find('.card'); //~
+      return $('.card'); //~
     } else {
-      return this.element.find(`.card[data-tab="${data}"]`); //+
+      return $(`.card[data-tab="${data}"]`); //~
     }
   }
 }
