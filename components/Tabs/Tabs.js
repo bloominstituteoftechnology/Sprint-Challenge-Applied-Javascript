@@ -50,34 +50,24 @@ class TabLink {
 class Tabs {
   constructor(element){
     this.element = $(element);
-    
-    // Using jQuery, find all of the tabs on this element.
-    this.tabs;
-
-    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
-    
-    // Set the initial active tab to the first tab in the list.
-    this.activeTab;
-
+    this.tabs = this.element.find('.tab'); // find all of the tabs on this element.
+    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) ); // creating TabLink instance for each tab
+    this.activeTab = this.tabs[0]; // Set the initial active tab to the first tab in the list.
     this.init();
   }
 
   init(){
-    // use activeTab to call the selectTab() method
-    this.activeTab;
+    this.activeTab.selectTab(); // use activeTab to call the selectTab() method
   }
 
   updateActive(tabElement){
-    // use activeTab to call the deselectTab() method
-    this.activeTab;
-    // assign activeTab to tabElement
-    this.activeTab;
+    this.activeTab.deselectTab(); // use activeTab to call the deselectTab() method
+    this.activeTab = tabElement; // assign activeTab to tabElement
+    this.activeTab.selectTab();
   }
 
   getCards(data){
-    // This method is meant to get all the cards from the HTML page.  
-    // If the data supplied is 'all' then all of the cards should be returned. 
-    // Otherwise, only cards matching the data attribute should be returned. 
+    return (data === 'all') ? $('.card') : $(`.card[data-tab="${data}"]`); // return appropriate card selectors based on data
   }
 }
 
