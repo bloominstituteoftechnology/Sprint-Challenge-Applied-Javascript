@@ -1,7 +1,7 @@
 class TabCard {
   constructor(element) {
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $(element)
+    this.element = element
   }
   selectCard() {
     // show the card
@@ -54,7 +54,7 @@ class Tabs {
     // Using jQuery, find all of the tabs on this element.
     this.tabs = this.element.find('.tabs')
 
-    this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this))
+    this.tabs = this.tabs.map((index, tab) => new TabLink(tab, this))
 
     // Set the initial active tab to the first tab in the list.
     this.activeTab = this.tabs[0]
@@ -80,9 +80,8 @@ class Tabs {
     // Otherwise, only cards matching the data attribute should be returned.
     if (data === 'all') {
       return $('.cards')
-    } else {
-      return $('.cards').filter((index, card) => $(card).data('tab') === data)
     }
+    return $('.cards').filter((index, card) => $(card).data('tab') === data)
   }
 }
 
