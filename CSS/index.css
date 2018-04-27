@@ -221,6 +221,7 @@ body {
   justify-content: space-between;
   align-items: none;
   flex-direction: column;
+  display: none;
   background-color: #fff;
   width: 380px;
   margin-bottom: 16px;
@@ -250,6 +251,9 @@ body {
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
+}
+.cards-container .showCard {
+  display: block;
 }
 .carousel {
   width: 100%;
