@@ -89,9 +89,8 @@ class Tabs {
     //return this.tabs.find(`.card[data-tab="${data}"]`);
     if (data === 'all') {
       return $('.card');
-    } else {
-      return $('.card').data('tab') === data;
     }
+    return $(`.card[data-tab=${data}]`);
   }
 }
 
