@@ -25,8 +25,7 @@ class TabLink {
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
     this.cards = $('.card').map(function(index, item) {
-      new TabCard(this.cards); 
-      // or new TabCard($(this.cards));
+      new TabCard(item); 
     });
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click( () => {
@@ -88,10 +87,10 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
     this.cards = $('.card');
-    if(this.cards.dataset  === 'all'){
+    if(data  === 'all'){
       return this.cards;
     }else{
-      return $(`.card[data-tab='${this.dataset.tab}']`);
+      return $(`.card[data-tab='${data}']`);
     }
   }
 }
