@@ -5,11 +5,11 @@ class TabCard {
   }
   selectCard(){
     // show the card
-    this.element.fadeToggle();
+      this.element.style.display = "flex";
   }
   deselectCard(){
     // hide the card
-    this.element.hide();
+    this.element.style.display = "none";
   }
 }
 
@@ -17,7 +17,6 @@ class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
     this.element = $(element);
-    console.log(`here elements - ${this.element}`);
     // assign this.parent to the parent parameter
     this.parent = parent;
 
@@ -29,7 +28,7 @@ class TabLink {
                   return new TabCard(this);
                 });
     
-
+    //console.log(`here elements - ${this.cards}`);            
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click( () => {
       this.selectTab();
@@ -63,13 +62,13 @@ class Tabs {
     
     // Using jQuery, find all of the tabs on this element.
     this.tabs = this.element.find(".tab");
-    console.log(this.tabs);
+    //console.log(this.tabs);
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
     this.activeTab = this.tabs[0];
-    console.log(this.activeTab);
+    //console.log(this.activeTab);
     this.init();
   }
 
@@ -93,7 +92,9 @@ class Tabs {
       return this.element.find(`.card`);
     }
     else{
-      return this.element.find(`.card[data-tab="${data}"]`);
+      return this.element.find(`.card[data-tab="${data}"]`)
+      //console.log(this.element.find(`.card[data-tab="${data}"]`));
+
     }
     
   }
