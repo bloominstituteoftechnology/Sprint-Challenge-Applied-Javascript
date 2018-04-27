@@ -50,7 +50,6 @@ class Tabs {
   updateActive(tabElement){
     this.activeTab.deselectTab(); // use activeTab to call the deselectTab() method
     this.activeTab = tabElement; // assign activeTab to tabElement
-    this.activeTab.selectTab();
   }
 
   getCards(data){
