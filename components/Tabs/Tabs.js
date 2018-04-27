@@ -64,7 +64,7 @@ class Tabs {
 
   init() {
     // use activeTab to call the selectTab() method
-    this.activeTab
+    this.activeTab.selectTab()
   }
 
   updateActive(tabElement) {
