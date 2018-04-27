@@ -1,7 +1,7 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
@@ -16,9 +16,9 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
-    this.parent = $parent;
+    this.parent = $(parent);
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
@@ -32,7 +32,9 @@ class TabLink {
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => {
-      this.activeTab;
+      this.cards.activeTab(this);
+      this.selectTab();
+
     });   
   };
 
@@ -84,10 +86,10 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned.
-    if(data === "all"){
+    if(data === 'all'){
       return this.element.find(".card");
     } else {
-    return this.element.find(`.card[data-tab="${data}]"`)
+    return this.element.find(`.card[data-tab="data"]`);
     }
   }
 }
