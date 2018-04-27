@@ -28,10 +28,11 @@ class TabLink {
     this.cards = this.cards.map( (i, card) => new TabCard(card) );
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element;
+    this.element.on('click', this.selectTab.bind(this) )  ;
   }
 
   selectTab(){
+    console.log('Hallo from selectTab()');
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
     this.parent;
     // using a jQuery method, add a class to this.element named "active-tab"
