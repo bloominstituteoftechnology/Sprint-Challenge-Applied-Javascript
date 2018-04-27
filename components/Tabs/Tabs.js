@@ -1,7 +1,7 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
@@ -52,7 +52,7 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs;
+    this.tabs = $(this.element).find('.tab');
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
@@ -82,7 +82,9 @@ class Tabs {
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
-// tabs = new Tabs(tabs)
+let tabs = $(".tabs");
+tabs = new Tabs(tabs);
+
+
 
 
