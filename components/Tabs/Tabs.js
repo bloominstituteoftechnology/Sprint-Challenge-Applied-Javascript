@@ -18,7 +18,7 @@ class TabLink {
     // Use a jQuery selector to assign this.element to the DOM reference
     this.element;
     // assign this.parent to the parent parameter
-    this.parent;
+    this.parent = $(parent);
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
@@ -32,16 +32,16 @@ class TabLink {
 
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent;
+    this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element;
+    this.element = addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     this.cards;
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
+    this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
     this.cards;
   }
@@ -68,7 +68,7 @@ class Tabs {
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab.deselectTab;
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement
     this.activeTab = $(tabElement);
   }
