@@ -52,37 +52,45 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs;
+    this.tabs = $(".tabs");
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab;
+    this.activeTab = this.tab[0];
 
     this.init();
   }
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab;
+    this.activeTab.deselect();
     // assign activeTab to tabElement
-    this.activeTab;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
-    // Otherwise, only cards matching the data attribute should be returned. 
+    // Otherwise, only cards matching the data attribute should be returned.
+    if(data === "all"){
+      return this.element.find(".card");
+    } else {
+    return this.element.find(`.card[data-tab="${data}]"`)
+    }
   }
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
+let tabs = $(".tabs");
 // tabs = new Tabs(tabs)
+tabs = tabs.map((index, tab) =>
+  new Tabs($(tab))
+);
 
 
