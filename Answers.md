@@ -12,6 +12,8 @@ A block of code that looks for user interaction and responds accordingly.
 
 4. What is jQuery?
 
-jQuery is a javascript library that makes writing dynamic code a bit easier. bnbc
+jQuery is a javascript library that makes writing dynamic code a bit easier. 
+
+5. What is a component? 
 
 a construct that allows for a set of features to be encapsulated by some sort of code.
