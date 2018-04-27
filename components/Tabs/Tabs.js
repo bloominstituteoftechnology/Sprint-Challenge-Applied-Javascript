@@ -5,11 +5,11 @@ class TabCard {
   }
   selectCard() {
     // show the card
-    this.element.addClass('topics');
+    this.element.style.display = 'block';
   }
   deselectCard() {
     // hide the card
-    this.element.removeClass('topics');
+    this.element.style.display = 'none';
   }
 }
 
@@ -24,7 +24,7 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = this.cards.map((index, item) => new TabCard(card));
+    this.cards = this.cards.map((index, card) => new TabCard(card));
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => this.selectTab());
@@ -36,7 +36,7 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each((index, item) => card.selectCard());
+    this.cards.each((index, card) => card.selectCard());
   }
 
   deselectTab() {
