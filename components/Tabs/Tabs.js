@@ -40,7 +40,7 @@ class TabLink {
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     this.cards.each((index, card) => {
-      this.selectCard();
+      card.selectCard();
     });
 
   deselectTab(){
@@ -48,45 +48,48 @@ class TabLink {
     this.element.remove("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
       this.cards.each((index, card) => {
-        this.deselectCard();
+        card.deselectCard();
       });
 }
 
-class Tabs {
-  constructor(element){
-    this.element = $(element);
+    class Tabs {
+      constructor(element) {
+        this.element = $(element);
     
-    // Using jQuery, find all of the tabs on this element.
-    this.tabs = $(".active-tab");
+        // Using jQuery, find all of the tabs on this element.
+        this.tabs = $(".active-tab");
 
-    this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
+        this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this));
     
-    // Set the initial active tab to the first tab in the list.
-    this.activeTab = this.tabs[0];
+        // Set the initial active tab to the first tab in the list.
+        this.activeTab = this.tabs[0];
 
-    this.init();
-  }
+        this.init();
+      }
 
-  init(){
-    // use activeTab to call the selectTab() method
-    this.activeTab.selectTab();
-  }
+      init() {
+        // use activeTab to call the selectTab() method
+        this.activeTab.selectTab();
+      }
 
-  updateActive(tabElement){
-    // use activeTab to call the deselectTab() method
-    this.activeTab.deselectCard();
-    // assign activeTab to tabElement
-    this.activeTab = tabElement;
-  }
+      updateActive(tabElement) {
+        // use activeTab to call the deselectTab() method
+        this.activeTab.deselectCard();
+        // assign activeTab to tabElement
+        this.activeTab = tabElement;
+      }
 
-  getCards(data){
-    // This method is meant to get all the cards from the HTML page.  
-    // If the data supplied is 'all' then all of the cards should be returned. 
-    // Otherwise, only cards matching the data attribute should be returned. 
-
-    return this.element.find(`.tabs-item[data-tab="${data}"]`);
-  }
-}
+      getCards(data) {
+        // This method is meant to get all the cards from the HTML page.  
+        // If the data supplied is 'all' then all of the cards should be returned. 
+        // Otherwise, only cards matching the data attribute should be returned. 
+        if (data === 'all') {
+          return $('.card');
+        } else {
+          return $(`.card[data-tab="${data}"]`);
+        }
+      }
+      
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
 let tabs = $('.tabs');
