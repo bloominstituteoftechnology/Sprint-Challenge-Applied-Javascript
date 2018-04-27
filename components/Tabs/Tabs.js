@@ -32,18 +32,18 @@ class TabLink {
 
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent;
+    this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element;
+    this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards;
+    this.cards.each((i,e) => e.selectCard());
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
+    this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.cards.each((i,e) => e.deselectCard());
   }
 }
 
