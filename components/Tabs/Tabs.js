@@ -1,11 +1,14 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
-  }
+    this.element = $(element); //DOM reference
+  } 
+    //this.element is this INSTANCE of element. the jQuery syntax SELECTS  the element in question. 
+
   selectCard(){
     // show the card
-    this.element;
+
+    this.element = 
   }
   deselectCard(){
     // hide the card
@@ -16,7 +19,8 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element); //DOM reference
+  
     // assign this.parent to the parent parameter
     this.parent;
 
