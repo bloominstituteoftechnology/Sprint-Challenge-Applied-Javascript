@@ -22,7 +22,6 @@ class Carousel {
         this.leftButton = this.element.find(".left-button");
         this.rightButton = this.element.find(".right-button");
         this.activeImg = this.image[0];
-        this.index = this.image.index(this.activeImg);
         this.init();
         this.leftButton.click(() => {
             this.imageLeft();
@@ -35,14 +34,21 @@ class Carousel {
         this.activeImg.showImage();
     }
     imageLeft() {
-        this.activeImg.hideImage();
-        if (this.index === -1) this.index = 0;
-        this.activeImg = this.image[(this.index - 1 === 0)];
-        this.activeImg.showImage();
+        this.activeImg.hideImage(); //hide current active
+        this.activeImg = this.image[() => {
+            let i = this.image
+            if (i === 0) {
+                return this.image.length;
+            }
+            return i = -1;
+        }]; //iterate over image array by adding +1 to the index (needs if statement) & set it equal to the activeImg
+        this.activeImg.showImage(); //show the active image - which should be the image with the new index
     }
     imageRight() {
         this.activeImg.hideImage();
-        if (this.index === -1) this.index = 0;
+        if (this.index === this.image.length - 1) {
+            this.index = 0
+        };
         this.activeImg = this.image[this.index + 1];
         this.activeImg.showImage();
     }
