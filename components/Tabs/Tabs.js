@@ -87,25 +87,3 @@ let tabs = $(".tabs");
 tabs = tabs.map((index, tab) =>
   new Tabs(tab)
 );
-
-
-
-
-
-// ==== S-T-R-E-T-C-HHH ==== //
-
-class Carousel {
-  constructor(element) {
-    this.element = $(element);
-
-  }
-}
-
-
-// ==== Map it ==== //
-
-
-let carousel = $(".carousel");
-carousel = carousel.map((index, item) =>
-  new Carousel(item)
-);
