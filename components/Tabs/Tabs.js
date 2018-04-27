@@ -66,7 +66,7 @@ class Tabs {
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab = this.links[0];
+    this.activeTab = this.tabs[0];
 
     this.init();
   }
@@ -88,6 +88,9 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
+    if (`data` === ${card})
+    return this.card;
+
     return $(`.cards[data-tab="${data}"`);
   }
 }
