@@ -24,7 +24,7 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards.map((index, card) => {
+    this.cards = this.cards.map((index, card) => {
       return new TabCard(card);
     });
 
@@ -86,7 +86,12 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned.
-    return this.tabs.find(`.card[data-tab="${data}"]`);
+    //return this.tabs.find(`.card[data-tab="${data}"]`);
+    if (data === 'all') {
+      return $('.card');
+    } else {
+      return $('.card').data('tab') === data;
+    }
   }
 }
 
@@ -94,9 +99,6 @@ class Tabs {
 //let tabs = $();
 // tabs = new Tabs(tabs)
 let tabs = $('.tabs');
-tabs = tabs.map((index, tab) => {
-  console.log('new tab')
-  return new Tabs($(tab));
-});
+tabs = new Tabs(tabs);
 
 
