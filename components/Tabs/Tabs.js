@@ -52,8 +52,8 @@ class Tabs {
     this.element = $(element)
 
     // Using jQuery, find all of the tabs on this element.
-    this.tabs
-
+    this.tabs = $('tabs')
+    console.log(this.tabs)
     this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this))
 
     // Set the initial active tab to the first tab in the list.
