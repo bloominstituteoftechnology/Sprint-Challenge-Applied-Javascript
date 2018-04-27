@@ -81,7 +81,7 @@ class Tabs {
     if (data === "all") {
       return $(".card");
     } else {
-      return $(`.card[data-tab = ${data}]`);
+      return $(`.card[data-tab = "${data}"]`);
     }
   }
 }
