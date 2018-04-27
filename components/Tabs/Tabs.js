@@ -9,7 +9,6 @@ class TabCard {
   }
   deselectCard(){
     // hide the card
-    console.log("hihihihi");
     this.element.hide();
   }
 }
@@ -63,7 +62,7 @@ class Tabs {
     this.tabs = this.element.find(".tab");
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     // Set the initial active tab to the first tab in the list.
-    this.activeTab = this.tabs[2];
+    this.activeTab = this.tabs[0];
 
     this.init();
   }
