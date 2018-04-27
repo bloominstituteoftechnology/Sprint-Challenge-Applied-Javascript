@@ -1,15 +1,15 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
-    $(this.element).css('display', 'block');
+    this.element.css('display', 'block');
   }
   deselectCard(){
     // hide the card
-    $(this.element).css("display", "none");
+    this.element.css("display", "none");
   }
 }
 
