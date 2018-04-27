@@ -22,6 +22,7 @@ class TabLink {
        // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
 
+    console.log(this.cards);
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
     this.cards = this.cards.map((index, card) => new TabCard(card));
     
