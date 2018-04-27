@@ -16,26 +16,28 @@ class Carousel {
     constructor ($element) {
         console.log('Hello from Carousel constructor');
         this.element = $element;
-        console.log();
 
+        /** deailing with images */
         this.imgs = $element.find('img');
         this.imgs = this.imgs.map( (i, img) => $(img) );
         this.imgsLength = this.imgs.length;
-        console.log('this.imgsLength',this.imgsLength)
-        console.log(this.imgs);
+        // console.log('this.imgsLength',this.imgsLength)
+        // console.log(this.imgs);
+
+        /** Setting up the first image to fbe displayed */
         this.current = this.imgs[0];
         this.current.addClass('showImg');
-        console.log('this.current',this.current);
+        this.current.animate( {width: '100%'}, 500 );
+        // console.log('this.current',this.current);
 
+        /** Dealing with butons */
         this.buttons = $element.find('.button');
         this.buttons = this.buttons.map( (i, button) => new CarouselButton($(button), this) );
-        
-        console.log(this.current);
-        
+
     }
 
     /**
-     * @function changeImg
+     * @function changeImg.
      * @param moveTo -> 1 === moveRigth : -1 === moveLeft
      */
     changeImg( moveTo ){
@@ -44,11 +46,14 @@ class Carousel {
         const newIndex = (currentIndex === 0 && moveTo === -1) ? this.imgsLength -1 : ((currentIndex + moveTo) % this.imgsLength);
 
         /** Remove current image */
+        this.current.animate( {width: '1%'}, 500 );
         this.current.removeClass('showImg');
         
         /** Set new current image */
         this.current = this.imgs[newIndex];
         this.current.toggleClass('showImg');
+        /** Animate Image */
+        this.current.animate( {width: '100%'}, 500 );
 
         /** Display new current img */
         this.current.addClass('showImg');
