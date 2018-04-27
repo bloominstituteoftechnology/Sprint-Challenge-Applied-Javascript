@@ -47,16 +47,16 @@ class TabLink {
       this.selectCard() 
     });
   }
-
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each(function (i) {
-       this.selectCard() 
+      this.cards.each(function(i) {
+        this.deselectCard()
       });
-  }
 }
+}
+
 
 
 
@@ -92,11 +92,12 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
-    let cards = $(".cards-container .card");
+    let cardsContainer = $(".cards-container");
+    let cards = $(".card");
     if (data === "all") {
       return cards;
     } else {
-    return cards.find(`.card[data-tab="${data}"]`);
+    return cardsContainer.find(`.card[data-tab="${data}"]`);
     }
   }
 }
