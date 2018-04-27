@@ -89,10 +89,13 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
     let allCards = $('.card');
-    if (`data` === 'all')
+    if (`data` === 'all') {
     return allCards;
+    }
 
-    return $(`.cards-container .card[data-tab="${data}"`);
+    return allCards.filter(function(i, card) {
+      $(`.cards-container .card[data-tab="${data}"`);
+    }); 
   }
 }
 
