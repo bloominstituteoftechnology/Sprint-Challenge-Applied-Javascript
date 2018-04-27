@@ -98,3 +98,8 @@ class Tabs {
 let tabs = $('.tabs');
 tabs = new Tabs(tabs);
 
+// tabs = tabs.map((index, element) => {
+//   new Tabs(element);
+//  });
+
+
