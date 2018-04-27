@@ -15,35 +15,22 @@ class TabCard {
 
 class TabLink {
   constructor(element, parent){
-    // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
-    // assign this.parent to the parent parameter
-    this.parent;
-
-    // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
-    this.cards = this.parent.getCards(this.element.data('tab'));
-
-    // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards;
-
-    // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element;
+    this.element = $(element); // Use a jQuery selector to assign this.element to the DOM reference
+    this.parent = parent; // assign this.parent to the parent parameter
+    this.cards = this.parent.getCards(this.element.data('tab')); // get correspoinding card selectors for tab link
+    this.cards = this.cards.map((index, card) => new TabCard(card)); // For each card selector, create an instance of TabCard
+    this.element.click(() => this.selectTab()); // Call selectTab on click
   }
 
   selectTab(){
-    // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent;
-    // using a jQuery method, add a class to this.element named "active-tab"
-    this.element;
-    // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards;
+    this.parent.updateActive(this.element); // use parent to call updateActive and pass it current tab
+    this.element.addClass('active-tab'); // add a class to this.element named "active-tab"
+    this.cards.each((index, card) => card.selectCard()); // call selectCard for each appropriate card
   }
 
   deselectTab(){
-    // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
-    // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.element.removeClass('active-tab'); // remove the class "active-tab" from this.element
+    this.cards.each((index, card) => card.deselectCard()); // call deselectCard for each appropriate card
   }
 }
 
