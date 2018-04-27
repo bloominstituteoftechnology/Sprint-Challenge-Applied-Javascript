@@ -1,24 +1,25 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
-    this.element;
+    this.element.addClass("active-tab");
   }
   deselectCard(){
     // hide the card
-    this.element;
+    this.element.removeClass("active-tab");
   }
 }
 
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
+
     // assign this.parent to the parent parameter
-    this.parent;
+    this.parent = $(parent);
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
@@ -33,8 +34,10 @@ class TabLink {
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
     this.parent;
+
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element;
+
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     this.cards;
   }
@@ -42,6 +45,7 @@ class TabLink {
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element;
+
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
     this.cards;
   }
@@ -70,6 +74,7 @@ class Tabs {
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
     this.activeTab;
+
     // assign activeTab to tabElement
     this.activeTab;
   }
@@ -82,7 +87,7 @@ class Tabs {
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
-// tabs = new Tabs(tabs)
-
-
+let tabs = $(".tabs");
+tabs = tabs.map(function(index, element) {
+  tabs = new Tabs(tabs)
+});
