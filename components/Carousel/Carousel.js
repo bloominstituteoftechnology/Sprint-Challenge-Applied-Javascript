@@ -15,27 +15,35 @@ class CarouselLink {
     this.element = $(element);
     this.parent = parent;
     this.direction = this.getLinkDirection();
-    this.element.click(() => getNewPosition());
+    this.element.click(() => this.getNewPosition());
   }
   getLinkDirection(){
     return this.element.hasClass('left-button') ? 'dsc' : 'asc';
   }
   getNewPosition(){
-
+    (this.direction === 'dsc') ? this.decrementPosition() : this.incrementPosition();
   }
-  goUp(){
-    let currentPosition = this.parent.getCurrentPosition(),
+  incrementPosition(){
+    let currentPosition = this.parent.getPosition(),
         lastPosition = this.parent.carouselLength - 1;
 
     if(currentPosition === lastPosition){
-      this.parent.setNewPosition(0);
+      this.parent.updateActiveImage(0);
     } else {
       currentPosition++;
-      this.parent.setNewPosition(currentPosition);
+      this.parent.updateActiveImage(currentPosition);
     }
   }
-  goDown(){
+  decrementPosition(){
+    let currentPosition = this.parent.getPosition(),
+        lastPosition = this.parent.carouselLength - 1;
 
+    if(currentPosition === 0){
+      this.parent.updateActiveImage(lastPosition);
+    } else {
+      currentPosition--;
+      this.parent.updateActiveImage(currentPosition);
+    }
   }
 }
 
@@ -60,11 +68,14 @@ class Carousel {
   init(){
     this.activeImage.showImage();
   }
-  getCurrentPosition(){
+  getPosition(){
     return this.activePosition;
   }
-  setNewPosition(position){
+  updateActiveImage(position){
+    this.activeImage.hideImage();
     this.activePosition = position;
+    this.activeImage = this.images[this.activePosition];
+    this.activeImage.showImage();
   }
 }
 
