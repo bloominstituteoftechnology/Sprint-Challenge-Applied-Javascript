@@ -24,26 +24,26 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'))
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards
+    this.cards = this.cards.map((index, card) => new TabCard(card))
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element
+    this.element.click(() => this.selectTab())
   }
 
   selectTab() {
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent
+    this.parent.updateActive(this)
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element
+    this.element.addClass('active-tab')
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards
+    this.cards.each((index, card) => card.selectCard())
   }
 
   deselectTab() {
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element
+    this.element.removeClass('active-tab')
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards
+    this.cards.each((index, card) => card.deselectCard())
   }
 }
 
@@ -52,7 +52,7 @@ class Tabs {
     this.element = $(element)
 
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = $('.tabs')
+    this.tabs = this.element.find('.tabs')
 
     this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this))
 
@@ -78,10 +78,10 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.
     // If the data supplied is 'all' then all of the cards should be returned.
     // Otherwise, only cards matching the data attribute should be returned.
-    if (data == 'all') {
+    if (data === 'all') {
       return $('.cards')
     } else {
-      return this.element.find(`.cards[data-tab='${data}'`)
+      return $('.cards').filter((index, card) => $(card).data('tab') === data)
     }
   }
 }
