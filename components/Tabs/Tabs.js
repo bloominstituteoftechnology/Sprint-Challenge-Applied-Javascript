@@ -40,16 +40,18 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each(function(index, selectCard()){
-
+    this.cards.each(function(index, card) {
+      TabCard.selectCard();
     });
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
+    this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.cards.each(function(index, card) {
+      TabCard.deselectCard();
+    });
   }
 }
 
@@ -86,7 +88,17 @@ class Tabs {
     // Otherwise, only cards matching the data attribute should be returned.
     if(data-tab="all") {
       return this.tab;
-    } else {
+    } else if (data-tab="javascript") {
+        return (data-tab="javascript");
+    } else if (data-tab="technology") {
+        return (data-tab="technology");
+    } else if (data-tab="node") {
+        return (data-tab="node");
+    } else if (data-tab="jquery") {
+        return (data-tab="jquery");
+    } else if (data-tab="bootstrap") {
+        return (data-tab="bootstrap");
+    }   else {
         return this.element.find(`.tab[data-tab="${data}"]`);      
     }
   }
