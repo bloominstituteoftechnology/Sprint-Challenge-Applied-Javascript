@@ -29,23 +29,24 @@ class TabLink {
     this.cards = this.cards.map((index, card) => new TabCard(card));
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
-    this.element.click(() => {this.});
+    this.element.click(() => this.selectTab());
   }
 
   selectTab(){
     // use this.parent to call the updateActive() method and pass the `this` keyword as a parameter
-    this.parent;
+    this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
-    this.element;
-    // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards;
+    this.element,addClass('active-tab');
+    // iterate over each card using the .each() method in jQuery. call 
+    //the selectCard() method in your callback function
+    this.cards.each((index, card) => card.selectCard());
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
-    this.element;
+    this.element.removeClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards;
+    this.cards.each((index, card) => card.deselectCard());
   }
 }
 
