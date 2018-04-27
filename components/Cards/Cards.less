@@ -1,7 +1,8 @@
+// main: ../../LESS/index.less
 .cards-container {
   .flex(space-evenly);
   .width-100();
-  margin-top: 16px;
+  margin-top: 24px;
   flex-wrap: wrap;
   @media(min-width: 1200px){
     width: 1200px;
@@ -9,10 +10,15 @@
   .card {
     .border-bottom-grey();
     .flex(space-between, none, column);
-    background-color: @lambda-times-color-white;
+    background-color: darken(@lambda-times-color-white, 10%);
     width: 380px;
     margin-bottom: 16px;
     padding: 24px;
+    transition: all .1s ease;
+    &:hover {
+      background-color: @lambda-times-color-white;
+      transform: scale(1.05);
+    }
     .headline {
       font-size: 25px;
       font-family: Didot, serif;

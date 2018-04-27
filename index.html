@@ -7,7 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 <body>
 
@@ -33,11 +33,13 @@
     <span class="temp">98°</span>
   </div>
 
+  
   <!-- TABS COMPONENT -->
   <div class="tabs">
     <div class="topics">
       <span class="title">TRENDING TOPICS:</span>
       <div data-tab="all" class="tab active-tab">ALL</div>
+      <div data-tab="josh" class="tab">JOSH KNELL</div>
       <div data-tab="javascript" class="tab">JAVASCRIPT</div>
       <div data-tab="technology" class="tab">TECHNOLOGY</div>
       <div data-tab="node" class="tab">NODE.JS</div>
@@ -45,17 +47,17 @@
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
     </div>
   </div>
-
+  
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+  <div class="carousel">
     <div class="left-button"><</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -203,6 +205,16 @@
 
     <div class="card" data-tab="bootstrap">
       <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="josh">
+      <div class="headline">10 Out of 10 CS10 Students Agree: Josh is a Perfect 10</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/max.jpg" />

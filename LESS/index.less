@@ -1,3 +1,4 @@
+// out: ../CSS/index.css
 @import './variables';
 @import './mixins';
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic,900');
@@ -8,7 +9,7 @@
 
 html, body {
   margin: 0; 
-  padding: 0;
+  padding: 0 0 36px 0;
 }
 
 body {
@@ -18,8 +19,8 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
-@import './components/Topbar/TopBar';
-@import './components/Header/Header';
-@import './components/Tabs/Tabs';
-@import './components/Cards/Cards';
-@import './components/Carousel/Carousel';
+@import '../components/Carousel/Carousel';
+@import '../components/Topbar/TopBar';
+@import '../components/Header/Header';
+@import '../components/Tabs/Tabs';
+@import '../components/Cards/Cards';
