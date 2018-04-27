@@ -12,4 +12,4 @@ An event listener is placed on a DOM object and executes its callback function w
 Jquery is a library that extended javascript to be able to interact with the DOM.  Now javascript has built in methods to accomplish the same thing, but jQuery is still used.  It has a nicer syntax but is heavy.
 
 5. What is a component?
-A component is a javascript class or set of classes that bundle together interface objects and logic to make... well, anything you might want, really. A good example is the tab navigator from yesterday's project.
+A component is set that bundles together interface objects and logic to make... well, anything you might want, really. A good example is the tab navigator from yesterday's project.
