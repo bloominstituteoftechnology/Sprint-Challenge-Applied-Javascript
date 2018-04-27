@@ -71,12 +71,17 @@ class Tabs {
     // use activeTab to call the deselectTab() method
     this.activeTab.deselectTab();
     // assign activeTab to tabElement
-    this.activeTab;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
+    if (data === 'all') {
+      return $('.card');
+    } else {
+      return $(`.card[data-tab="${data}]`);
+    }
     // Otherwise, only cards matching the data attribute should be returned. 
   }
 }
