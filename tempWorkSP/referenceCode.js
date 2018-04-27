@@ -96,3 +96,48 @@ let tabs = $(".tabs");
 tabs = tabs.map((index, tabs) => {
     return new Tabs($(tabs));
 });
+
+class Dropdown {
+    constructor(element) {
+        this.element = $(element); // 
+        // Select button and content from the element
+        this.button = this.element;
+        this.content = this.element;
+        // Add a click handler to the button
+        this.button.click(() => {
+            this.toggleContent();
+        });
+    }
+
+    toggleContent() {
+        // Add/remove class to/from content
+        let dropdownContent = $(".dropdown-content");
+        dropdownContent.toggleClass("dropdown-hidden");
+    }
+
+}
+
+let $dropdown = $('.dropdown');
+$dropdown = new Dropdown($dropdown);
+
+
+
+
+// class Dropdown {
+//   constructor($element) {
+//     this.element = $element;
+//     this.button = this.element.find(".dropdown-button");
+//     this.content = this.element.find(".dropdown-content");
+//     this.button.click( () => {
+//       this.toggleContent();
+//     });
+//   }
+
+//   toggleContent() {
+//     // this.content.toggleClass('dropdown-hidden')
+//     this.content.slideToggle(500)
+//   }
+// }
+
+// let $dropdown = $('.dropdown');
+// $dropdown = new Dropdown($dropdown);

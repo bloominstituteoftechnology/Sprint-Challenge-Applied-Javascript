@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Advanced Components</title>
+		<link rel="stylesheet" href="./CSS/index.css">
+		<script 
+			src="https://code.jquery.com/jquery-3.3.1.min.js" 
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<script defer="defer" src="./components/Dropdown/Dropdown.js"></script>
+		<script defer="defer" src="./components/Tabs/Tabs.js"></script>
+		
+		<div class="header-container">
+			<div class="dropdown">
+				<div class="dropdown-button" data-btn="letsGo">Dropdown</div>
+				<div class="dropdown-content dropdown-hidden">
+					<a class="dropdown-link" href="https://lambdaschool.com/" target="_blank">Lambda</a>
+					<a class="dropdown-link" href="https://www.google.com/" target="_blank">Google</a>
+					<a class="dropdown-link" href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>
+				</div>
+			</div>
+			<img src="./lambda_logo_light_small.png" class="header" />
+		</div>
+
+		<div class="section">
+			<div class="box">
+				<div class="box-title">Box Title 1</div>
+				<div class="box-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus nibh, gravida nec felis quis, facilisis facilisis lectus. Nulla ac orci pretium, condimentum orci quis, accumsan nisi. Aliquam erat volutpat. Curabitur cursus mattis libero, at viverra risus hendrerit quis. Fusce imperdiet tristique tortor non tincidunt. Mauris accumsan urna nec augue feugiat porta. Proin vitae magna in ex malesuada laoreet eget a nulla. Aliquam tristique et elit at consequat. In hac habitasse platea dictumst.</div>
+			</div>
+			<div class="box">
+				<div class="box-title">Box Title 2</div>
+				<div class="box-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus nibh, gravida nec felis quis, facilisis facilisis lectus. Nulla ac orci pretium, condimentum orci quis, accumsan nisi. Aliquam erat volutpat. Curabitur cursus mattis libero, at viverra risus hendrerit quis. Fusce imperdiet tristique tortor non tincidunt. Mauris accumsan urna nec augue feugiat porta. Proin vitae magna in ex malesuada laoreet eget a nulla. Aliquam tristique et elit at consequat. In hac habitasse platea dictumst.</div>
+			</div>
+		</div>
+
+		<div class="section">
+				<div class="tabs">
+					<div class="tabs-links">
+						<div class="tabs-link" data-tab="1">Tab 1</div>
+						<div class="tabs-link" data-tab="2">Tab 2</div>
+						<div class="tabs-link" data-tab="3">Tab 3</div>
+						<div class="tabs-link" data-tab="4">Tab 4</div>
+					</div>
+					<div class="tabs-items">
+						<div class="tabs-item" data-tab="1">
+							<div class="tabs-item-title">Quote 1</div>
+							<div class="tabs-item-description">
+								Don’t Panic.
+							</div>
+						</div>
+						<div class="tabs-item" data-tab="2">
+							<div class="tabs-item-title">Quote 2</div>
+							<div class="tabs-item-description">
+								Curiously enough, the only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again. Many
+								people have speculated that if we knew exactly why the bowl of petunias had thought that we would know a lot more about the
+								nature of the Universe than we do now.
+							</div>
+						</div>
+						<div class="tabs-item" data-tab="3">
+							<div class="tabs-item-title">Quote 3</div>
+							<div class="tabs-item-description">
+								It is known that there are an infinite number of worlds, simply because there is an infinite amount of space for them to
+								be in. However, not every one of them is inhabited. Therefore, there must be a finite number of inhabited worlds. Any finite
+								number divided by infinity is as near to nothing as makes no odds, so the average population of all the planets in the Universe
+								can be said to be zero. From this it follows that the population of the whole Universe is also zero, and that any people
+								you may meet from time to time are merely the products of a deranged imagination.
+							</div>
+						</div>
+						<div class="tabs-item" data-tab="4">
+							<div class="tabs-item-title">Quote 4</div>
+							<div class="tabs-item-description">
+								There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will
+								instantly disappear and be replaced by something even more bizarre and inexplicable. There is another theory which states
+								that this has already happened.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
