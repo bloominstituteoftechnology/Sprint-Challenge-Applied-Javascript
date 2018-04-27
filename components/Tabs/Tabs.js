@@ -60,14 +60,15 @@ class Tabs {
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab;
+    this.activeTab = this.tabs[0];
+    // console.log(this.tabs[0]); // This is a jQuery object
 
     this.init();
   }
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
