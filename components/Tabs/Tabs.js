@@ -1,11 +1,11 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
-    this.element.fadeToggle();
+    this.element.show();
   }
   deselectCard(){
     // hide the card
@@ -16,7 +16,7 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
     this.parent = parent;
 
@@ -24,9 +24,8 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = this.cards.map((index, card) => {
-      return new TabCard($(card), this);
-    });
+    this.cards = this.cards.map((index, card) => 
+      new TabCard(card));
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => {
@@ -40,18 +39,14 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each(function(index, card) {
-      TabCard.selectCard();
-    });
+    this.cards.each((index, card) => card.selectCard() );
   }
 
   deselectTab(){
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each(function(index, card) {
-      TabCard.deselectCard();
-    });
+    this.cards.each((index, card) => card.deselectCard() );
   }
 }
 
@@ -60,7 +55,7 @@ class Tabs {
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs = $(".tabs");
+    this.tabs = this.element.find(".tabs");
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
@@ -86,20 +81,10 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned.
-    if(data-tab="all") {
-      return this.tab;
-    } else if (data-tab="javascript") {
-        return (data-tab="javascript");
-    } else if (data-tab="technology") {
-        return (data-tab="technology");
-    } else if (data-tab="node") {
-        return (data-tab="node");
-    } else if (data-tab="jquery") {
-        return (data-tab="jquery");
-    } else if (data-tab="bootstrap") {
-        return (data-tab="bootstrap");
-    }   else {
-        return this.element.find(`.tab[data-tab="${data}"]`);      
+    if(data === "all") {
+      return $(".card");
+    } else {
+      return $(".card[data-tab=${data}]")
     }
   }
 }
