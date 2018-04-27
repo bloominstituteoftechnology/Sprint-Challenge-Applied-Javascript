@@ -24,7 +24,7 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards.map((i, e) => new TabCard($(e)) ;
+    this.cards.map((i, e) => new TabCard($(e))) ;
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => this.selectTab());
