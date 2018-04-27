@@ -42,7 +42,6 @@ class TabLink {
     this.element.toggleClass('active-tab');
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     if (this.cards.length === 0) {
-      
       this.parent.displayAllCards();
     } else {
       $.each( this.cards, function(i, card){ card.selectCard() })

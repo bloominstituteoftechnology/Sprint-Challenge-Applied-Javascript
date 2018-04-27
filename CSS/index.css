@@ -271,6 +271,9 @@ body {
     width: 1200px;
   }
 }
+.carousel .button {
+  z-index: 100;
+}
 .carousel .left-button,
 .carousel .right-button {
   display: flex;
@@ -305,4 +308,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .showImg {
+  display: block;
 }
