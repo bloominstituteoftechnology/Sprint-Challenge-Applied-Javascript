@@ -24,13 +24,13 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.data('tab'));
 
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.cards = cards.map(function(index, element) {
-      new TabCard(element);
+    this.cards = this.cards.map(function(index, element) {
+      new TabCard(card);
     });
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click( () => {
-      this.selectTab(this);
+      this.selectTab();
     });
   };
 
@@ -41,7 +41,7 @@ class TabLink {
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.addClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
-    this.cards.each(function(element){
+    this.cards.each(function(index, card){
       card.selectCard();
     });
   }
@@ -50,7 +50,7 @@ class TabLink {
     // use a jQuery method to remove the class "active-tab" from this.element
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
-    this.cards.each(function(element){
+    this.cards.each(function(index, card){
       card.deselectCard();
   });
 }
@@ -88,10 +88,11 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
-    if (`data` === ${card})
-    return this.card;
+    let allCards = $('.card');
+    if (`data` === 'all')
+    return allCards;
 
-    return $(`.cards[data-tab="${data}"`);
+    return $(`.cards-container .card[data-tab="${data}"`);
   }
 }
 
