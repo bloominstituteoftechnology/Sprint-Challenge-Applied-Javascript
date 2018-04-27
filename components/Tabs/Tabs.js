@@ -78,6 +78,11 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.
     // If the data supplied is 'all' then all of the cards should be returned.
     // Otherwise, only cards matching the data attribute should be returned.
+    if (data == 'all') {
+      return $('.cards')
+    } else {
+      return this.element.find(`.cards[data-tab='${data}'`)
+    }
   }
 }
 
