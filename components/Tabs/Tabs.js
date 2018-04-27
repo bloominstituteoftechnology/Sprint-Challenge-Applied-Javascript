@@ -1,15 +1,15 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
   }
   selectCard(){
     // show the card
-    this.element;
+    this.element.show(element);
   }
   deselectCard(){
     // hide the card
-    this.element;
+    this.element.hide(element);
   }
 }
 
@@ -18,7 +18,7 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
     this.parent;
 
@@ -82,6 +82,11 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
+    if(this.data === $('[data-tab="all"]')) {
+      return $('.cards-container .card'); 
+    } else {
+      return $('.card-container .card[this.data-tab = ${data}]');
+    }
   }
 }
 
