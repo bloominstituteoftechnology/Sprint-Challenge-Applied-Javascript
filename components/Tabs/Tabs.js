@@ -86,6 +86,24 @@ class Tabs {
     // This method is meant to get all the cards from the HTML page.  
     // If the data supplied is 'all' then all of the cards should be returned. 
     // Otherwise, only cards matching the data attribute should be returned. 
+    if ($(".data-tab") === "all") {
+      return $(".card").find(`[data-tab='${all}']`);
+    };
+    else ($(".data-tab") === "javascript") {
+      return $(".card").find(`[data-tab='${javascript}']`);
+    };
+    else ($(".data-tab") === "technology") {
+      return $(".card").find(`[data-tab='${technology}']`);
+    };
+    else ($(".data-tab") === "node") {
+      return $(".card").find(`[data-tab='${node}']`);
+    };
+    else ($(".data-tab") === "jquery") {
+      return $(".card").find(`[data-tab='${jquery}']`);
+    };
+    else ($(".data-tab") === "bootstrap") {
+      return $(".card").find(`[data-tab='${bootstrap}']`);
+    };
   }
 }
 
