@@ -8,7 +8,7 @@
     -An even listener is an API that handeles events.
 
 4. What is jQuery?
-    -jQuery is JavaScript Libary that makes it easy to manipulating the DOM easier.
+    -jQuery is a JavaScript Libary that makes it easy to manipulating the DOM easier.
 
 5. What is a component?
     -Components allow you to create reusable custom elements that can be used anywhere on the document.
