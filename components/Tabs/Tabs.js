@@ -21,10 +21,11 @@ class TabLink {
     this.parent = parent;
        // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
     this.cards = this.parent.getCards(this.element.data('tab'));
+
     // Using jQuery, map over the array of cards.  In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
-    this.card = this.cards.map((index, card) => new TabCard(card));
+    this.cards = this.cards.map((index, card) => new TabCard(card));
     
-    console.log(this.cards);
+    //console.log(this.cards);
     // You will need to create a click handler for the TabLink element that calls selectTab()
     this.element.click(() => {
     this.selectTab();
@@ -47,7 +48,7 @@ class TabLink {
     this.element.removeClass("active-tab");
     // iterate over each card using the .each() method in jQuery. call the deselectCard() method in your callback function
     this.cards.each((i, card) => {
-      card.deselectCard();
+      card.deselectCard()
       });
   }
 }
@@ -93,8 +94,7 @@ class Tabs {
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
 let tabs = $(".tabs");
-tabs = tabs.map((index, tabs) => {
-   new Tabs($(tabs))
-});
+tabs = new Tabs($(tabs))
+
 
 
