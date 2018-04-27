@@ -13,6 +13,8 @@ class TabCard {
   }
 }
 
+
+
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
@@ -47,31 +49,33 @@ class TabLink {
   }
 }
 
+
+
 class Tabs {
   constructor(element){
     this.element = $(element);
     
     // Using jQuery, find all of the tabs on this element.
-    this.tabs;
+    this.tabs = $('.tabs');
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
     
     // Set the initial active tab to the first tab in the list.
-    this.activeTab;
+    this.activeTab = this.tabs[0];
 
     this.init();
   }
 
   init(){
     // use activeTab to call the selectTab() method
-    this.activeTab;
+    this.activeTab = selectTab();
   }
 
   updateActive(tabElement){
     // use activeTab to call the deselectTab() method
-    this.activeTab;
+    this.activeTab = deselectTab();
     // assign activeTab to tabElement
-    this.activeTab;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
@@ -81,8 +85,10 @@ class Tabs {
   }
 }
 
+
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
-let tabs = $();
-// tabs = new Tabs(tabs)
+let tabs = $('.tabs');
+tabs = new Tabs(tabs)
+
 
 
