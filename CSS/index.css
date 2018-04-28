@@ -257,7 +257,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 500px;
+  height: 400px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
@@ -289,14 +289,10 @@ body {
   border: 2px solid #333;
 }
 .carousel .left-button {
-  top: 50%;
   left: 25px;
-  transform: translate(0, -50%);
 }
 .carousel .right-button {
-  top: 50%;
   right: 25px;
-  transform: translate(0, -50%);
 }
 .carousel img {
   width: 100%;
