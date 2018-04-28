@@ -40,6 +40,8 @@ class TabLink {
     this.parent.updateActive(this);
     // using a jQuery method, add a class to this.element named "active-tab"
     this.element.toggleClass('active-tab');
+    
+    /** This is a fuctionality added in an alternative manner to the Sprint challenges specifications */
     // iterate over each card using the .each() method in jQuery. call the selectCard() method in your callback function
     if (this.cards.length === 0) {
       this.parent.displayAllCards();
