@@ -5,8 +5,8 @@ class TabCard {
 
     this.element = $(element);
 
-    console.log("This is what is in this.element in the TabCard constructor:")
-    console.log(this.element);
+    // console.log("This is what is in this.element in the TabCard constructor:")
+    // console.log(this.element);
   }
 
   selectCard() {
@@ -31,29 +31,29 @@ class TabLink {
 
     this.element = $(element);
 
-    console.log("This is what is in this.element in the TabLink constructor:");
-    console.log(this.element);
+    // console.log("This is what is in this.element in the TabLink constructor:");
+    // console.log(this.element);
 
     // assign this.parent to the parent parameter
 
     this.parent = parent; // Should be an object not an array.
 
-    console.log("This is what is in this.parent in the TabLink constructor:");
-    console.log(this.parent);
+    // console.log("This is what is in this.parent in the TabLink constructor:");
+    // console.log(this.parent);
 
     // Note that we are calling getCards() on Tabs (The parent of TabLink) and passing the data attribute: data-tab, no need to update this line of code.
 
     this.cards = this.parent.getCards(this.element.data('tab'));
 
-    console.log("This is what is in this.cards after calling getCards() in the TabLink constructor:");
-    console.log(this.cards);
+    // console.log("This is what is in this.cards after calling getCards() in the TabLink constructor:");
+    // console.log(this.cards);
 
     // Using jQuery, map over the array of cards. In your callback function, create new instances of the TabCard class that contain a card reference. TabCard(card) as an example.
 
     this.cards = this.cards.map((i, item) => new TabCard(item));
 
-    console.log("This is what is in this.cards after mapping in TabLink constructor:");
-    console.log(this.cards);
+    // console.log("This is what is in this.cards after mapping in TabLink constructor:");
+    // console.log(this.cards);
 
     // You will need to create a click handler for the TabLink element that calls selectTab()
 
@@ -98,27 +98,27 @@ class Tabs {
 
     this.element = $(element); // goood
 
-    console.log("This is what is in this.element in the Tabs constructor:");
-    console.log(this.element);
+    // console.log("This is what is in this.element in the Tabs constructor:");
+    // console.log(this.element);
 
     // Using jQuery, find all of the tabs on this element.
 
     this.tabs = this.element.find('.tab');
 
-    console.log("This is what is in this.tabs in the Tabs constructor:");
-    console.log(this.tabs);
+    // console.log("This is what is in this.tabs in the Tabs constructor:");
+    // console.log(this.tabs);
 
     this.tabs = this.tabs.map((i, tab) => new TabLink(tab, this));
 
-    console.log("This is what is in this.tabs after mapping in the Tabs constructor:");
-    console.log(this.tabs);
+    // console.log("This is what is in this.tabs after mapping in the Tabs constructor:");
+    // console.log(this.tabs);
 
     // Set the initial active tab to the first tab in the list.
 
     this.activeTab = this.tabs[0];
 
-    console.log("This is the first item in this.activeTab in the Tabs constructor:");
-    console.log(this.activeTab);
+    // console.log("This is the first item in this.activeTab in the Tabs constructor:");
+    // console.log(this.activeTab);
 
     this.init();
   }
@@ -146,8 +146,9 @@ class Tabs {
     // If the data supplied is 'all' then all of the cards should be returned.
     // Otherwise, only cards matching the data attribute should be returned.
 
-    console.log("JQuery get the cards that are needed.");
-    console.log(data);
+    // console.log("JQuery get the cards that are needed.");
+    // console.log(data);
+
     if (data === 'all') {
         return $('.card');
     }
@@ -161,10 +162,10 @@ class Tabs {
 
 let tabs = $('.tabs');
 
-console.log("This is what is in tabs:");
-console.log(tabs);
+// console.log("This is what is in tabs:");
+// console.log(tabs);
 
 tabs = new Tabs(tabs)
 
-console.log("This is what is in tabs after Tabs class initialization:")
-console.log(tabs);
+// console.log("This is what is in tabs after Tabs class initialization:")
+// console.log(tabs);
