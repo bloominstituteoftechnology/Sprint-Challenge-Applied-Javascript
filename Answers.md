@@ -3,7 +3,7 @@
 Document OBject Model.
 
 2. What is an event?
-An event is something interactive happens on an HTML page due to Javascript.
+An event is something interactive that happens on an HTML page due to Javascript.
 
 3. What is an event listener?
 An event listener is the trigger-code for an Event. 
