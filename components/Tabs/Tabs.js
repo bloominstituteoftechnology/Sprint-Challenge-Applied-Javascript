@@ -6,10 +6,13 @@ class TabCard {
   selectCard(){
     // show the card
     this.element.show();
+    let yMax = Math.floor(Math.random() * 1000)  
+    TweenMax.from(this.element,0.5,{opacity:0,y:yMax,x:yMax})
   }
   deselectCard(){
     // hide the card
     this.element.hide();
+    
   }
 }
 
