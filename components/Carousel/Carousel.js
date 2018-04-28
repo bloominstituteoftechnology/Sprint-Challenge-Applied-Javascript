@@ -1,48 +1,42 @@
 // ==== S-T-R-E-T-C-HHH ==== //
-class CarouselImage {
-    constructor(element) {
-        this.element = $(element);
-    }
-    showImage() {
-        this.element.show();
-    }
-    hideImage() {
-        this.element.hide();
-    }
-}
-
 class Carousel {
     constructor(element) {
         this.element = $(element);
-        this.image = this.element.find("img");
-        this.image = this.image.map((index, image) =>
-            new CarouselImage(image)
-        );
         this.leftButton = this.element.find(".left-button");
         this.rightButton = this.element.find(".right-button");
-        this.activeImg = this.image[0];
-        this.init();
+        this.images = this.element.find("img");
+        this.activeImg = $(this.images[0]);
+        this.imgIndex = 0;
         this.leftButton.click(() => {
-            this.activeImg.hideImage();
-            this.activeImg =
+            this.imageLeft()
         });
         this.rightButton.click(() => {
-            this.imageRight();
+            this.imageRight()
         });
+        this.init();
     }
     init() {
-        this.activeImg.showImage();
+        this.activeImg.show();
     }
 
-    imageRight() {
-        this.activeImg.hideImage();
-        if (this.index === this.image.length - 1) {
-            this.index = 0
+    imageLeft() {
+        if (this.imgIndex === 0) {
+            this.imgIndex = this.images.length;
         };
-        this.activeImg = this.image[this.index + 1];
-        this.activeImg.showImage();
+        this.imgIndex = this.imgIndex - 1;
+        this.activeImg.hide();
+        this.activeImg = $(this.images[this.imgIndex]);
+        this.activeImg.show();
     }
-
+    imageRight() {
+        if (this.imgIndex === this.images.length - 1) {
+            this.imgIndex = -1;
+        };
+        this.imgIndex = this.imgIndex + 1;
+        this.activeImg.hide();
+        this.activeImg = $(this.images[this.imgIndex]);
+        this.activeImg.show();
+    }
 }
 
 
@@ -50,9 +44,7 @@ class Carousel {
 
 
 let carousel = $(".carousel");
-carousel = carousel.map((index, item) =>
-    new Carousel(item)
-);
+carouselOne = new Carousel(carousel);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
