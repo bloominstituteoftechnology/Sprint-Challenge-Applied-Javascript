@@ -8,10 +8,17 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 
 ### Questions:
 1. What is the DOM?
+
+stands for Document Object Model. It is a tree-like structure where HTML tags represent various nodes. The higher you get in the tree, the closer to the document tag you get. 
 2. What is an event?
+User Interaction
+
 3. What is an event listener?
-4. What is jQuery?
-5. What is a component? 
+a function that listens for and senses user interaction and then will trigger the function to begin once it happens.
+4. What is jQuery? a JavaScript library that helps us to create more dynamic web pages
+
+5. What is a component? something small that makes up a larger overall item. 
+
 
 ## Challenge
 We are going to create a Lambda Newspaper. The styling is modeled after the [LA Times Website](http://www.latimes.com). Open it up and you will notice all of the HTML and CSS has already been created and imported properly. Our job is going to be to add functionality to the tabs below the 'Lambda Times' logo. These tabs will act as filters for our articles, and when clicked on, should filter out all articles except those with that tag. 
