@@ -1,7 +1,7 @@
 class TabCard {
   constructor(element){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = $(element);
+    this.element = element;
   }
   selectCard(){
     // show the card
@@ -16,7 +16,7 @@ class TabCard {
 class TabLink {
   constructor(element, parent){
     // Use a jQuery selector to assign this.element to the DOM reference
-    this.element = element;
+    this.element = $(element);
     // assign this.parent to the parent parameter
     this.parent = parent
 
@@ -50,12 +50,12 @@ class TabLink {
 class Tabs {
   constructor(element){
     this.element = $(element);
-    
+
     // Using jQuery, find all of the tabs on this element.
     this.tabs = this.element.find('.tab');
 
     this.tabs = this.tabs.map( (i, tab) => new TabLink(tab, this) );
-    
+
     // Set the initial active tab to the first tab in the list.
     this.activeTab = this.tabs[0];
 
@@ -75,20 +75,21 @@ class Tabs {
   }
 
   getCards(data){
-    // This method is meant to get all the cards from the HTML page.  
-    // If the data supplied is 'all' then all of the cards should be returned. 
-    // Otherwise, only cards matching the data attribute should be returned. 
+    // This method is meant to get all the cards from the HTML page.
+    // If the data supplied is 'all' then all of the cards should be returned.
+    // Otherwise, only cards matching the data attribute should be returned.
     let allCards = $('.card')
     if (data === 'all') {
       return allCards
     }
-    return allCards.filter((index, card) => {$(card).data('tab') === data})
+    return allCards.filter((i, card) => {
+      return $(card).data('tab') === data})
   }
 }
 
 // Using jQuery, select the correct tabs component. Then initialize the Tabs class.
 let tabs = $('.tabs');
-tabs = new Tabs;
+tabs = new Tabs(tabs);
 // tabs = new Tabs(tabs)
 
 
