@@ -32,7 +32,7 @@ class Tabs {
     } else {
       // Return a reference to the data attributes of all the ".card" classes. 
       // Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card-item[data-tab="${data}"]`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
       
     }
   }
@@ -46,10 +46,13 @@ class TabLink {
     this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
-    // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card)); //check back make sure this correct
+    // Map over the cards array and convert each card reference 
+    //into a new TabCard object. Pass in the card object 
+    //to the TabCard class.
+    this.cards = Array.from(this.cards).map(card => {
+      return new TabCard(card, this);}) //check back make sure this correct
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', () => {this.cards.updateActive(this);
+    this.element.addEventListener('click', () => {this.parent.updateActive(this);
       this.selectTab();
     });
     
