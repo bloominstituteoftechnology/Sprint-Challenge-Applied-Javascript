@@ -2,13 +2,16 @@ class Carousels {
   constructor(element) {
     this.element = element;
     this.slides = this.element.querySelectorAll('.slides');
-    this.slides = Array.from(this.slides).map(slide => new Slides(slide, this));
-    this.activeSlide = this.slides[2];
+    console.log(this.slides);
+    this.slides = Array.from(this.slides)
+    this.activeSlide = this.slides[0];
     this.init();
+    let leftButton = this.element.querySelector('.left-button');
+    let rightButton = this.element.querySelector('.right-button');
   }
 
   init() {
-    this.activeSlide.selectSlide();
+    this.activeSlide.display = null;
   }
 
   updateActive(slideElement) {
@@ -21,21 +24,9 @@ class Carousels {
   }
 }
 
-class Slides {
-  constructor(element, parent) {
-    this.element = element;
-    this.parent = parent;
-    this.slideItem = this.parent.getSlide(this.element.dataset.slide);
-  }
-
-  selectSlide() {
-    this.element.style.display = 'block';
-    console.log('wtf');
-  }
-}
-
 let carousels = document.querySelectorAll('.carousel');
-carousels = Array.from(carousel).map(carousel => new Carousel(carousel))
+carousels = Array.from(carousel).map(carousel => new Carousel(carousel));
+console.log('anythig');
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
