@@ -20,31 +20,21 @@ class Tabs {
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
     // this.activeTab;
     this.activeTab.selectTab() ;
-
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
     // this.activeTab;
     this.activeTab.deselectTab() ;
-    //////////////////////////////////////////////
+
     // assign activeTab to tabElement to update it's apperance
     // this.activeTab;
     this.activeTab = tabElement ;
   }
 
-  
-  
-  
-  
-  ///////////////////////////////////////////
-  
-  
-  
-  
-  
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
+    ////////////////////////////////////
     if(data === 'all') {
       
       // Return a reference to all the ".card" classes
@@ -74,7 +64,6 @@ class TabLink {
    
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map( card => {
-      //////////////////////////////////////need this?
       return new TabCard (card) ;
     });
 
@@ -115,7 +104,6 @@ class TabCard {
   selectCard(){
     // Update the style of this.element to display = null
     // this.element;
-    ////////////////////////////need to get id or qurryALL????
     this.element.style.display = null ; 
 
   }
