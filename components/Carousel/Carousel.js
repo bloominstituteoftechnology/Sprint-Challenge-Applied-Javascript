@@ -21,8 +21,9 @@ class Carousel {
 
 }
 
-let carousel = $();
+let carousels = document.querySelectorAll('.carousel');
 
+carousels = Array.from(carousels).map(carousel => new Carousel(carousel));
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
     2. Those buttons are gonna need some click handlers.
