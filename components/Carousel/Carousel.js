@@ -1,4 +1,23 @@
 class Carousel {
+    constructor(carousel) {
+        this.carousel = carousel;
+        
+        this.leftBtn = this.carousel.querySelector('.left-button');
+
+        this.rightBtn = this.carousel.querySelector('.right-button');
+        
+        this.leftBtn = new CarouselBtn(this.leftBtn, this);
+        this.rightBtn = new CarouselBtn(this.rightBtn, this);
+        
+        this.images = document.querySelectorAll('.carousel-image');
+        this.images = Array.from(images).map(image => new Image());
+        this.activeImage = images[0];
+    }
+
+    init() {
+        this.activeImage;
+    }
+}
 
 }
 
