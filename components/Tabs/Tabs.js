@@ -25,12 +25,11 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    this.tabData = this.element.dataset.tabs
     if(data === "all") {
       console.log(data)
     
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll(".card") ;
+      return document.querySelectorAll(".card") ;
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return document.querySelectorAll(`.card[data-tab="${data}"]`);
