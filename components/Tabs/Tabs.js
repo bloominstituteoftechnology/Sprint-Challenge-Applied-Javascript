@@ -46,12 +46,14 @@ class TabLink {
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // console.log(this.cards);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card, this));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', () => {
-      this.parent.updateActive(this);
-      this.selectTab();
-    });
+    // console.log(this.parent);
+    this.element.addEventListener('click', () => {this.selectTab()});
+    // this.element.addEventListener('click', () => {
+    //   this.parent.updateActive(this);
+    //   this.selectTab();
+    // });
   }
 
   selectTab(){
@@ -78,11 +80,11 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.display = null;
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.display = "none";
+    this.element.style.display = "none";
   }
 }
 
