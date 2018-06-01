@@ -2,11 +2,11 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs;
+    this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
-    this.activeTab;
+    this.activeTab = this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
@@ -18,19 +18,20 @@ class Tabs {
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab;
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab;
+    this.activeTa = tabElement;
   }
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if(data) {
       // Return a reference to all the ".card" classes
-      return;
+      return this.element.querySelectorAll(".card");
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card`);
+      return this.element.dataset.tab
+      //return document.querySelectorAll(`.card`);
     }
   }
 }
@@ -38,9 +39,9 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element;
+    this.element = element;
     // assign this.parent to the parent reference
-    this.parent;
+    this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
@@ -69,15 +70,15 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element;
+    this.element.style.display = "none";
   }
 }
 
