@@ -9,7 +9,7 @@ class Tabs {
     this.activeTab;
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
-  }
+  } 
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
