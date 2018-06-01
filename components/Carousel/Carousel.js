@@ -16,12 +16,19 @@ class Carousel {
     if(direction === "left"){
       // Cycle through one item to the left, if we're at the first image, cycle through to last image in array
       this.imgIndex - 1 >= 0 ? this.imgIndex-- : this.imgIndex = this.images.length - 1;
-      
+      this.activeImg.deselectImg();
+      this.activeImg = this.images[this.imgIndex];
+      this.activeImg.selectImg();
     }
     else{
-
+      // If we are at the last image, cycle through to the first image
+      this.imgIndex + 1 < this.images.length ? this.imgIndex++ : this.imgIndex = 0;
+      this.activeImg.deselectImg();
+      this.activeImg = this.images[this.imgIndex];
+      this.activeImg.selectImg();
     }
   }
+
 }
 
 
