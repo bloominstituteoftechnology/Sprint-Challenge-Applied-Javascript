@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs = this.element.querySelectorAll('.tab');
+    this.tabs = document.querySelectorAll('.tab');
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -18,14 +18,14 @@ class Tabs {
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab.selectTab();
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
     this.activeTab = tabElement;
   }
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data === 'all') {
+    if (data === 'all') {
       // Return a reference to all the ".card" classes
       return document.querySelectorAll('.card');
     } else {
@@ -73,7 +73,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'null';
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
