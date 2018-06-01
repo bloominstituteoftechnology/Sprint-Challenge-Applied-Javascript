@@ -19,6 +19,18 @@ class Carousel {
     }
 }
 
+class CarouselBtn {
+    constructor(btn, parent) {
+        this.btn = btn;
+        this.parent = parent;
+       
+        if(this.btn.className.includes('left-button')) {
+            this.btn.addEventListener('click', selectLeftImage);
+        }
+        if (this.btn.className.includes('right-button')) {
+            this.btn.addEventListener('click', selectRightImage);
+        }
+    }
 }
 
 let carousels = document.querySelectorAll('.carousel');
