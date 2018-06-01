@@ -1,32 +1,44 @@
+var num = 0
+
 class Carousels {
   constructor(element) {
     this.element = element;
-    this.slides = this.element.querySelectorAll('.slides');
-    console.log(this.slides);
+    this.slides = document.querySelectorAll('.carousel img');
     this.slides = Array.from(this.slides)
-    this.activeSlide = this.slides[0];
-    this.init();
-    let leftButton = this.element.querySelector('.left-button');
-    let rightButton = this.element.querySelector('.right-button');
+    this.activeSlide = this.slides[num];
+    this.activeSlide.style.display = 'flex';
+    this.leftButton = this.element.querySelector('.left-button');
+    this.rightButton = this.element.querySelector('.right-button');
+    this.activateRightButton();
+    this.activateLeftButton();
   }
 
-  init() {
-    this.activeSlide.display = null;
-  }
+  activateRightButton() {this.rightButton.addEventListener('click', () => {
+    console.log(num);
+    if (num > 3) {
+      num = 0;
+    }
+    this.activeSlide.style.display = 'none';
+    this.activeSlide = this.slides[num++];
+    this.activeSlide.style.display = 'flex';
+  })
+}
 
-  updateActive(slideElement) {
-    this.activeSlide.deselectSlide();
-    this.activeSlide = slideElement;
+activateLeftButton() {this.leftButton.addEventListener('click', () => {
+  console.log(num);
+  if (num < 0) {
+    num = 3;
   }
+  this.activeSlide.style.display = 'none';
+  this.activeSlide = this.slides[num--];
+  this.activeSlide.style.display = 'flex';
+})
+}
 
-  getSlide(data) {
-    return this.element.querySelector(`.slide[data-slide='${data}']`);
-  }
 }
 
 let carousels = document.querySelectorAll('.carousel');
-carousels = Array.from(carousel).map(carousel => new Carousel(carousel));
-console.log('anythig');
+carousels = Array.from(carousels).map(carousel => new Carousels(carousel));
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
