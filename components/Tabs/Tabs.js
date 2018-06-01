@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs = document.querySelectorAll(".tab");
+    this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -47,7 +47,7 @@ class TabLink {
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
     this.element.addEventListener("click", () => {
-        this.selectTab(this);
+        this.selectTab();
     });
   }
 
