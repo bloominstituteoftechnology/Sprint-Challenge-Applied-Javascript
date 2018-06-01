@@ -22,14 +22,16 @@ class Carousel {
 
     next(){
         this.active.deselected();
-        this.startPos += 1;
+        this.startPos += (this.startPos === 3 ? -3 : 1);
+        console.log(this.startPos);
         this.active = this.imgs[this.startPos];
         this.active.selected();
     }
 
     previous(){
         this.active.deselected();
-        this.startPos -= 1;
+        this.startPos -= (this.startPos === 0 ? -3 : 1);
+        console.log(this.startPos);
         this.active = this.imgs[this.startPos];
         this.active.selected();
     }
