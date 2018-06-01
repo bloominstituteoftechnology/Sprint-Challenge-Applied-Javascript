@@ -40,9 +40,9 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element = element;
+    this.element = element; //DOM Object ".tabs"
     // assign this.parent to the parent reference
-    this.parent = parent;
+    this.parent = parent; // JS Object "Tabs"
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
@@ -77,12 +77,12 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.setAttribute("style", "display: null");
+    this.element.style.display = null;
     console.log("Card selected")
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.setAttribute("style", "display: none");
+    this.element.style.display = 'none';
     console.log("Card deselected")
   }
 }
