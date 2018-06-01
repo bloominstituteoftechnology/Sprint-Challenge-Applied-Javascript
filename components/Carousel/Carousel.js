@@ -1,39 +1,65 @@
 class Carousel {
-  constructor (carousel) {
-    this.carousel = carousel;
-   this.slides = carousel.getElementsByTagName('img');
-   this.slides = Array.from(this.slides).map(slide => new Slide(slide));
-  this.activeSlide = this.slides[0];
-  this.init();
-  }
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.slides = carousel.getElementsByTagName('img');
+        this.slides = Array.from(this.slides).map(slide => new Slide(slide));
+        this.activeSlide = this.slides[0];
+        this.init();
+        this.left = carousel.querySelector('.left-button');
+        this.left.addEventListener('click', () => this.leftButton());
+        this.right = carousel.querySelector('.right-button');
+        this.right.addEventListener('click', () => this.rightButton());
+
+    }
 
 
 
 
-init () {
-    this.activeSlide.displaySlide();
-}
-leftButton() {
+    init() {
+        this.activeSlide.displaySlide();
+    }
+    leftButton() {
+        if (this.activeSlide === this.slides[0]) {
+            this.activeSlide.hideSlide();
+            // let last = this.slides[this.slides.length-1];
+            this.activeSlide = this.slides[this.slides.length - 1];
+            this.activeSlide.displaySlide();
+        } else {
+            this.activeSlide.hideSlide();
+            let index = this.slides.indexOf(this.activeSlide); //?
+            this.activeSlide = this.slides[index - 1];
+            this.activeSlide.displaySlide();
+        }
+    }
+    rightButton() {
+        if (this.activeSlide === this.slides[this.slides.length - 1]) {
+            this.activeSlide.hideSlide();
+            // let last = this.slides[this.slides.length-1];
+            this.activeSlide = this.slides[0];
+            this.activeSlide.displaySlide();
+        } else {
+            this.activeSlide.hideSlide();
+            let index = this.slides.indexOf(this.activeSlide); //?
+            this.activeSlide = this.slides[index + 1];
+            this.activeSlide.displaySlide();
+        }
 
-}
-rightButton() {
+    }
 
-}
-    
 }
 
 
 class Slide {
-     constructor(slide) {
-         this.slide = slide;
-     }
+    constructor(slide) {
+        this.slide = slide;
+    }
 
-     displaySlide() {
-     this.slide.style.display = 'block';
-     }
-     hideSlide() {
-     this.slide.style.display = 'none';
-     }
+    displaySlide() {
+        this.slide.style.display = 'block';
+    }
+    hideSlide() {
+        this.slide.style.display = 'none';
+    }
 }
 
 let carousel = document.querySelector('.carousel');
