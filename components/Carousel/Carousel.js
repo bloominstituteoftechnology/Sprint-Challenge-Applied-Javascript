@@ -25,7 +25,6 @@ class Carousel {
 
     // LeftClick Method
     leftClick() {
-        console.log("click");
         if (this.currentImage === 0) return;
         this.images[this.currentImage].style.display = "none"
         this.currentImage = this.currentImage - 1;
