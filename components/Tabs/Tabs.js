@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs= this.element.querySelectorAll('.tab');
+    this.tabs= this.element.querySelectorAll(".tab");
 
     
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
@@ -28,10 +28,10 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data) {
-      (`.tabs[data-tab ="${'all'}"] === "${data}"`);
+    if(data=== `all`) {
+      
       // Return a reference to all the ".card" classes
-      return document.querySelector(".card");
+      return document.querySelector(`.card`);
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return document.querySelectorAll(`.card[data-tab="${data}" ]`)
@@ -63,14 +63,14 @@ class TabLink {
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add(".active-tab")
+    this.element.classList.add("active-tab")
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element.classList.remove('.active-tab')
+    this.element.classList.remove('active-tab')
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
