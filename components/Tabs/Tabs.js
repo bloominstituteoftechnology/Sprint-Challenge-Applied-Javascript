@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs.element.querySelectorAll(".tab");
+    this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -30,7 +30,7 @@ class Tabs {
       return this.element.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return this.element.querySelectorAll(`.card[data-tab="${this.dataset.tab}"]`);
+      return this.element.querySelectorAll(`.card[data-tab="${this.tabs}"]`);
     }
   }
 }
@@ -46,8 +46,11 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(element => new TabCard(this));
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", () => {selectTab()});
-  }
+    this.element.addEventListener("click", () => {
+      this.selectTab();
+      console.log('IT WORKS!');
+    });
+  };
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
