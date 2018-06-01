@@ -13,14 +13,14 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab = selectTab();
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab;
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
