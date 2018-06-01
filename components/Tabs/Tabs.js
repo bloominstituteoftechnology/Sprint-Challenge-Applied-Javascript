@@ -1,7 +1,7 @@
 class Tabs {
   constructor(element){
     this.element = element;
-    // create a reference to all the ".tab" classes
+    //  create a reference to all the ".tab" classes
     this.tabs;
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
