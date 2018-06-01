@@ -1,10 +1,10 @@
 class Carousel {
   constructor(element) {
     this.element = element;
-    this.buttons = this.element.querySelectorAll(".left-button, .right-button");
+    this.buttons = Array.from(this.element.querySelectorAll(".left-button, .right-button")).map(button => new CarouselButton(button, this));
     this.images = Array.from(this.element.querySelectorAll(".images img")).map(image => new Image(image));
     this.activeImg = this.images[0];
-    console.log(this.activeImg);
+    this.imgIndex = 0;
     this.init();
   }
 
@@ -14,7 +14,9 @@ class Carousel {
   scroll(direction){
     // Deselect the current img and select the current img using whatever animation you deem fit
     if(direction === "left"){
-      this.
+      // Cycle through one item to the left, if we're at the first image, cycle through to last image in array
+      this.imgIndex - 1 >= 0 ? this.imgIndex-- : this.imgIndex = this.images.length - 1;
+      
     }
     else{
 
@@ -52,7 +54,7 @@ class Image {
     this.element.style.display = "flex";
   }
 
-  desectImg(){
+  deselectImg(){
     this.element.style.display = "none";
   }
 }
