@@ -7,23 +7,25 @@ class Tabs {
     // console.log(this.tabs);
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
-    // console.log(tabs);
+    console.log(this.tabs);
     // Assign activeTab to the first item in the tabs array
-    this.activeTab;
+    this.activeTab = this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
+    // console.log(this);
     this.init();
   }
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
+    console.log(this); // TODO Has no activeTab
     this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab = tabElement;
+    this.activeTab = this.tabElement;
   }
 
   getCards(data){
@@ -45,22 +47,25 @@ class TabLink {
     // console.log(element);
     // assign this.parent to the parent reference
     this.parent = parent;
-    // console.log(this.element.dataset.tab)
+    // console.log(this.parent)
+    // console.log(this.element.dataset.tab);
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     // console.log(this.cards)
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
-    // console.log(this.cards);
+    // console.log(this.element);
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", this.selectTab);
+    this.element.addEventListener("click", this.selectTab());
   }
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     // console.log(this);
+    // console.log(this.parent)
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
+    // console.log(this.element);
     this.element.classList.add("active-tab");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
