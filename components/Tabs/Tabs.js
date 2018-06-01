@@ -56,7 +56,7 @@ class TabLink {
     this.element.classList.add('active-tab');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
 
-    // !note that forEach is actually changing the each card
+    // !note that forEach is actually changing each card
     // map would not change it, it would return a new array
     this.cards.forEach(card => card.selectCard());
   }
