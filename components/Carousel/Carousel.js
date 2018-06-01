@@ -56,8 +56,11 @@ class Slide {
 
     displaySlide() {
         this.slide.style.display = 'block';
+       
+   
     }
     hideSlide() {
+  
         this.slide.style.display = 'none';
     }
 }

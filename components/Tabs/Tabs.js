@@ -88,3 +88,35 @@ class TabCard {
 let tabs = document.querySelectorAll('.tabs'); //?
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+let doc = document.getElementsByTagName('body');
+let cardBounce = document.querySelectorAll('.card');
+let tabBounce = document.querySelectorAll('.tab');
+let carouselBounce = document.querySelector('.carousel');
+window.addEventListener('load', () => {
+  var animation = new TimelineLite()
+  animation.staggerTo(tabBounce, 1, {
+    y: 30,
+    ease: Bounce.easeOut,
+  }, .1)
+  .staggerTo(tabBounce, 1, {
+    y: -0,
+    ease: Power4.easeOut,
+  
+  }, .1)
+  .to(carouselBounce, 1, {
+    y: 1000,
+    ease: Power4.easeOut,
+
+  }, .1)
+  .staggerTo(cardBounce, 2, {
+    y: -100,
+    ease: Power4.easeOut,
+  }, .1)
+    .to(doc, 1, {
+      backgroundColor: "rgba(26,26,26,1)",
+
+    })
+
+});
+
