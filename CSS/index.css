@@ -300,5 +300,10 @@ body {
 }
 .carousel img {
   width: 100%;
+}
+.carousel .slide {
   display: none;
+}
+.carousel .slide.active-slide {
+  display: flex;
 }
