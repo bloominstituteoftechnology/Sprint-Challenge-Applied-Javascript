@@ -25,7 +25,7 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data ==="all") {
+    if(data === "all") {
       // Return a reference to all the ".card" classes
       return document.querySelectorAll(".card");
     } else {
@@ -46,7 +46,8 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", this.selectTab(this));
+    this.element.addEventListener("click", () => {this.selectTab(this);
+  });
   }
 
   selectTab(){
