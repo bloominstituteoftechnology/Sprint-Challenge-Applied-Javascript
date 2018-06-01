@@ -1,21 +1,53 @@
 class Carousel {
     constructor (element) {
         this.element = element;
-        this.left = document.querySelector('.left-button');
-    }
-}
 
-class LeftBtn {
-    constructor (element, parent) {
-        this.element = element;
-        this.parent = parent;
-        this.element.addEventListener('click', () => {
-            console.log('Left Button is clicked');
+        this.left = this.element.querySelector('.left-button');
+        this.left.addEventListener('click', () => {
+            this.previous();
         });
+
+        this.right = this.element.querySelector('.right-button');
+        this.right.addEventListener('click', () => {
+            this.next();
+        });
+
+        this.imgs = this.element.querySelectorAll('img');
+        this.imgs = Array.from(this.imgs).map(img => new Image(img));
+        this.startPos = 0
+        this.active = this.imgs[this.startPos]
+        this.active.selected();
+
+    }
+
+    next(){
+        this.active.deselected();
+        this.startPos += 1;
+        this.active = this.imgs[this.startPos];
+        this.active.selected();
+    }
+
+    previous(){
+        this.active.deselected();
+        this.startPos -= 1;
+        this.active = this.imgs[this.startPos];
+        this.active.selected();
     }
 }
 
+class Image {
+    constructor (element) {
+        this.element = element;
+    }
 
+    selected (){
+        this.element.style.display = 'block';
+    }
+
+    deselected() {
+        this.element.style.display = 'none';
+    }
+}
 
 let carousels = document.querySelectorAll('.carousel');
 carousels = Array.from(carousels).map(carousel => new Carousel(carousel))
