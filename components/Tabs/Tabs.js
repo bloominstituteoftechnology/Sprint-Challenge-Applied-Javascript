@@ -26,12 +26,12 @@ class Tabs {
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     console.log(data);
-    if(data === 'all') {
+    if(data[0] === 'all') {
       // Return a reference to all the ".card" classes
       return document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card[data-tab="all"]`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
@@ -50,7 +50,7 @@ class TabLink {
     });
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', () => {
-      this.selectTab(this);
+      this.selectTab(this.element);
       console.log(`${this.cards} selected.`);
     });
   }
