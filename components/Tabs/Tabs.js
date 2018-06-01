@@ -90,11 +90,19 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.setAttribute('style','display:null')
+    
+    // Method #1
+    // this.element.setAttribute('style','display:null')
+    
+    // Method #2
+    this.element.style.display = null
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.setAttribute('style','display:none')
+    // this.element.setAttribute('style','display:none')
+
+    // Method #2
+    this.element.style.display= "none"
   }
 }
 
