@@ -51,9 +51,6 @@ class Carousel {
 
 }
 
-
-
-
 // START HERE: create a reference 
 
 let carousel = document.querySelectorAll('.carousel');
