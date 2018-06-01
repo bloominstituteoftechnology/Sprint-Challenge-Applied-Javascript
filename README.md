@@ -8,10 +8,15 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 
 ### Questions:
 1. What is the DOM?
+The document object model - its a tree listing of all the elements on a given website.
 2. What is an event?
+an event is some kind of functionality that occurs on a webpage after it is loaded; could be the result of a user taking an action. (clicking, etc.) 
 3. What is an event listener?
+an event listener is a function attached to an element on a website that is (usually) waiting for a user action, that results in initiating some other function call.
 4. Why would we convert a NodeList into an Array?
-5. What is a component? 
+because Nodelist is only Array-like, so we don't have access to all of the array methods unless we convert it into a full array
+5. What is a component?
+a modular piece of code that has the ability to be replicated through a javascript class.
 
 ## Challenge
 We are going to create a Lambda Newspaper. The styling is modeled after the [LA Times Website](http://www.latimes.com). Open it up and you will notice all of the HTML and CSS has already been created and imported properly. Our job is going to be to add functionality to the tabs below the 'Lambda Times' logo. These tabs will act as filters for our articles, and when clicked on, should filter out all articles except those with that tag. 
