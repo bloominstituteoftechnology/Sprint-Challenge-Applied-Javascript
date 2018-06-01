@@ -1,8 +1,28 @@
 class Carousel {
+    constructor(element) {
+        this.element = element;
 
+        this.rightButton = element.find(".right-button");
+        this.rightButton.click(() => {this.right()});
+
+        this.leftButton = element.find(".left-button");
+        this.leftButton.click(() => {this.left()});
+
+
+        this.images = element.find("img");
+        this.currentImage = $(this.images[0]);
+        this.index = 0;
+
+        this.init();
+    }
+
+    init() {
+        this.currentImage.show();
+    }
 }
 
-let carousel = $();
+let carousel = $(".carousel")
+carousel = new Carousel(carousel);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
