@@ -2,9 +2,10 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs;
+    this.tabs = this.element.querySelector('.tab');
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
+    // console.log(tabs);
     // Assign activeTab to the first item in the tabs array
     this.activeTab;
     // init is simply calling a custom method named init(), nothing to do here
@@ -38,11 +39,12 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element;
+    this.element = element;
     // assign this.parent to the parent reference
-    this.parent;
+    this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
+    console.log(cards);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map();
     // Add a click event that invokes selectTab
@@ -82,6 +84,6 @@ class TabCard {
 }
 
 // Create a reference to ".tabs"
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tabs');
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map()
+tabs = Array.from(tabs).map( tab => new Tabs(tab));
