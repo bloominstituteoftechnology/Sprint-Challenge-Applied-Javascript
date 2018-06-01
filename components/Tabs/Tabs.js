@@ -23,14 +23,15 @@ class Tabs {
     this.activeTab = tabElement;
   }
 
+
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data) {
+    if(data === "all") {
       // Return a reference to all the ".card" classes
-      return;
+      return this.element.querySelectorAll(".card")  //this.element.querySelector(`.card[data-tab="${data}"]`);
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
@@ -38,9 +39,9 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element;
+    this.element = element;
     // assign this.parent to the parent reference
-    this.parent;
+    this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
@@ -69,7 +70,7 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element = this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
