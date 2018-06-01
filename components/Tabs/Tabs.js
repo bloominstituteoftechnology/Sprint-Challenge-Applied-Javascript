@@ -13,7 +13,7 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab.selectTab();
+    this.activeTab.selectTab(); //this throws an error but why? gives me an error of "selectTab undefined"
   }
 
   updateActive(tabElement){
@@ -49,7 +49,7 @@ class TabLink {
     });
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', () => {
-      this.tabs.updateActive(this);
+      this.tab.updateActive(this);
       this.selectTab()});
   }
 
