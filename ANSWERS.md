@@ -9,7 +9,12 @@
 
 3. What is an event listener?
 
-* an espasfic event that waits for it to happen so it can invoke a call back when  it happen 
+* an specific event that waits for it to happen so it can invoke a call back when  it happen 
 
 4. Why would we convert a NodeList into an Array?
+
+* So we can use array like methods & can manipulate the NodeList like an array
+
 5. What is a component? 
+
+* HTML + CSS + JS = component ; Has to be a reuseable code 
