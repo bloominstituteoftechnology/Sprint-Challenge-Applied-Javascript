@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs = document.querySelectorAll(".tabs");
+    this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     
@@ -31,7 +31,7 @@ class Tabs {
       return document.querySelectorAll(".card");
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card.dataset.tab`);
+      return document.querySelectorAll(`.card[data-tab='${data}']`);
     }
   }
 }
@@ -45,9 +45,9 @@ class TabLink {
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card, this));
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", selectTab());
+    this.element.addEventListener("click", () => this.selectTab());
   }
 
   selectTab(){
@@ -74,12 +74,12 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.display = "null";
+    this.element.style.display = "null";
   
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.display = "none";
+    this.element.style.display = "none";
   }
 }
 
