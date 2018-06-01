@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -28,14 +29,67 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   img {
     .width-100();
     display: none;
+    opacity: 0;
+    transition: all .3s linear;
+    transition-delay: .1s;
+    z-index: 0;
+
+    &.is-showing {
+      display: block;
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      animation-delay: .05s;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+
+      &.is-showing--left {
+        transform-origin: left;
+        animation-name: slideFromRight;
+      }
+      &.is-showing--right {
+        transform-origin: right;
+        animation-name: slideFromLeft;
+      }
+    }
+  }
+
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: scaleX(1.1) translateX(-30px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) translateX(0);
   }
 }
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: scaleX(1.1) translateX(30px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) translateX(0);
+  }
+}
+

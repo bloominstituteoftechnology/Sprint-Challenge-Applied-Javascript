@@ -292,60 +292,16 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
-  z-index: 1;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
-  z-index: 1;
 }
 .carousel img {
   width: 100%;
   display: none;
-  opacity: 0;
-  transition: all .3s linear;
-  transition-delay: .1s;
-  z-index: 0;
 }
 .carousel img.is-showing {
   display: block;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation-delay: .05s;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-.carousel img.is-showing.is-showing--left {
-  transform-origin: left;
-  animation-name: slideFromRight;
-}
-.carousel img.is-showing.is-showing--right {
-  transform-origin: right;
-  animation-name: slideFromLeft;
-}
-@keyframes slideFromLeft {
-  0% {
-    opacity: 0;
-    transform: scaleX(1.1) translateX(-30px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: scaleX(1) translateX(0);
-  }
-}
-@keyframes slideFromRight {
-  0% {
-    opacity: 0;
-    transform: scaleX(1.1) translateX(30px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: scaleX(1) translateX(0);
-  }
 }
