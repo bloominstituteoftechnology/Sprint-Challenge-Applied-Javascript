@@ -20,20 +20,19 @@ class Tabs {
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
     this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTa = tabElement;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data) {
+    if(data = all) {
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll(".card");
+      return this.element.querySelector(".card");
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return this.element.dataset.tab
-      //return document.querySelectorAll(`.card`);
+      return document.querySelectorAll(`.card[data-tab="${this.element.dataset.tab}"]`);
     }
-  }
+}
 }
 
 class TabLink {
@@ -47,8 +46,8 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(cards => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", () =>{
-        selectTab()
+    this.element.addEventListener("click", () => {
+        this.selectTab();
     });
   }
 
