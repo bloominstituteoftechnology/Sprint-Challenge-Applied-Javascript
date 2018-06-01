@@ -2,25 +2,25 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs;
+    this.tabs = this.element.querySelectorAll('.tabs');;
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
-    this.activeTab;
+    this.activeTab = this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab;
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
@@ -38,15 +38,18 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element;
+    this.element = element;
     // assign this.parent to the parent reference
-    this.parent;
+    this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map( card => new TabCard(card, this) );
     // Add a click event that invokes selectTab
-    this.element.addEventListener();
+    // NOT SURE ABOUT THIS ONE
+    this.element.addEventListener('click', () => {
+      this.cards.selectTab();
+    });
   }
 
   selectTab(){
