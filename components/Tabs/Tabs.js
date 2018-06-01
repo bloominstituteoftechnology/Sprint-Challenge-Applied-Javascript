@@ -3,7 +3,7 @@ class Tabs {
     this.element = element;
     // create a reference to all the ".tab" classes
     // this.tabs= this.element.querySelectorAll(".tabs");
-    this.tabs = document.querySelectorAll(".tabs");
+    this.tabs = document.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -19,7 +19,7 @@ class Tabs {
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab.deselect();
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
     this.activeTab = tabElement;
   }
@@ -46,11 +46,11 @@ class TabLink {
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabLink(card, this));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
     this.element.addEventListener("click", () => {
-      this.parent.selectTab(this);
-      // this.select();
+      // this.parent.selectTab(this);
+      this.selectTab();
     });
   }
 
@@ -67,7 +67,7 @@ class TabLink {
     // Remove the class ".active-tab" from this.element
     this.element.classList.remove("active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
-    this.cards.forEach( card => card.deselectCard());
+    this.cards.forEach(card => card.deselectCard());
   }
 }
 
@@ -78,12 +78,10 @@ class TabCard {
   } 
   selectCard(){
     // Update the style of this.element to display = null
-    // this.element.style.display = null;
     this.element.classList.add("active-card");
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    // this.element.style.display = none;
     this.element.classList.remove("active-card");
   }
 }
