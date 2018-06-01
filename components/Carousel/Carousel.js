@@ -3,13 +3,14 @@ class Carousel {
     this.slides = document.querySelectorAll('.carousel img');
     this.slides = Array.from(this.slides);
     this.totalSlides = this.slides.length;
-    this.currentSlide = [this.slides[0], 0];
+    this.count = 0;
+    this.currentSlide = this.slides[this.count];
     this.right = document.querySelector('.right-button');
     this.right.addEventListener('click', this.moveRight.bind(this));
     this.left = document.querySelector('.left-button');
     this.left.addEventListener('click', this.moveLeft.bind(this));
     this.slides.forEach(element => this.hideImage(element));
-    this.showImage(this.currentSlide[0]);
+    this.showImage(this.currentSlide);
   }
   showImage(element) {
     element.style = 'display: visible';
@@ -18,18 +19,25 @@ class Carousel {
     element.style = 'display: none';
   }
   moveRight() {
-    console.log('move right');
-    this.slideNumber = this.currentSlide[1];
-    if (this.slideNumber == this.totalSlides) {
-      this.currentSlide = [this.slides[0], 0];
+    this.hideImage(this.currentSlide);
+    this.count++;
+    if (this.count == this.totalSlides) {
+      this.count = 0;
+      this.currentSlide = this.slides[this.count];
     }
-    this.currentSlide = [
-      this.currentSlide[this.slideNumber++],
-      this.slideNumber++,
-    ];
-    this.showImage(this.currentSlide[0]);
+    this.currentSlide = this.slides[this.count];
+    this.showImage(this.currentSlide);
   }
-  moveLeft() {}
+  moveLeft() {
+    this.hideImage(this.currentSlide);
+    this.count--;
+    if (this.count == -1) {
+      this.count = 3;
+      this.currentSlide = this.slides[this.count];
+    }
+    this.currentSlide = this.slides[this.count];
+    this.showImage(this.currentSlide);
+  }
 }
 
 let carousel = new Carousel();
