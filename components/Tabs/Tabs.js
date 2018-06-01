@@ -55,6 +55,9 @@ class TabLink {
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
+
+    // !note that forEach is actually changing the each card
+    // map would not change it, it would return a new array
     this.cards.forEach(card => card.selectCard());
   }
 
@@ -74,10 +77,15 @@ class TabCard {
   selectCard() {
     // Update the style of this.element to display = null
     this.element.style = 'display: null';
+
+    // null clears out the value - so no quotes
+    // this.element.style.display = null;
   }
   deselectCard() {
     // Update the style of this.element to display = "none"
     this.element.style = 'display: none';
+
+    //this.element.style.display = 'none';
   }
 }
 

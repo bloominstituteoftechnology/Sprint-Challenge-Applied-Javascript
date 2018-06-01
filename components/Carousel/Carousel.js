@@ -41,8 +41,8 @@ class Carousel {
 }
 
 let carousel = new Carousel();
+// doesn't seem to be necessary, but just in case
 document.addEventListener('DOMContentLoaded', () => carousel);
-// $(document).ready(() => carousel);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
