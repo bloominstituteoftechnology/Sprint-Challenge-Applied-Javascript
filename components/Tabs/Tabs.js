@@ -13,7 +13,7 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
@@ -49,11 +49,8 @@ class TabLink {
     this.cards = Array.from(this.cards).map(card => new TabCard(card, this));
   
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", () => {
-      this.element.selectTab();
-    });
-     //double check this line
-  };
+    this.element.addEventListener('click', () => this.selectTab());
+  }
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
@@ -80,7 +77,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = "null";
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
