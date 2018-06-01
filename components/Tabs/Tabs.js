@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs = this.element.querySelectorAll('.tabs');;
+    this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -25,7 +25,7 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data === (this.element.dataset.card)) {
+    if(data === 'all') { // I initially overthought this 
       // Return a reference to all the ".card" classes
       return document.querySelectorAll(".card");
     } else {
@@ -44,14 +44,17 @@ class TabLink {
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map( card => new TabCard(card, this) );
+    // LINES 48, 51, 52 to be debugged
+    this.cards = Array.from(this.cards).map( card => new TabCard(card) ); // removed this
     // Add a click event that invokes selectTab
-    // NOT SURE ABOUT THIS ONE
+    // GOT IT!!!
     this.element.addEventListener('click', () => {
-      this.cards.selectTab();
+      this.selectTab();
     });
   }
 
+  // this.element.addEventListener('click', this.selectTab.bind(this));
+  
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
@@ -76,7 +79,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = "null";
+    this.element.style.display = null; // removed " " around null
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
@@ -87,5 +90,5 @@ class TabCard {
 // Create a reference to ".tabs"
 let tabs = document.querySelectorAll(".tabs");
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map( tab => new Tabs (tab, this))
+tabs = Array.from(tabs).map( tab => new Tabs (tab)) // removed this
  
