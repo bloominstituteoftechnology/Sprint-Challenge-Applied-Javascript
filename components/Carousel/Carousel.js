@@ -2,19 +2,34 @@ class Carousel {
   constructor() {
     this.slides = document.querySelectorAll('.carousel img');
     this.slides = Array.from(this.slides);
-    console.log(this.slides[0]);
-    this.slides.forEach(element => this.showImage(element));
-    // this.showImage(this.slides[0]);
+    this.totalSlides = this.slides.length;
+    this.currentSlide = [this.slides[0], 0];
+    this.right = document.querySelector('.right-button');
+    this.right.addEventListener('click', this.moveRight.bind(this));
+    this.left = document.querySelector('.left-button');
+    this.left.addEventListener('click', this.moveLeft.bind(this));
+    this.slides.forEach(element => this.hideImage(element));
+    this.showImage(this.currentSlide[0]);
   }
   showImage(element) {
-    // Update the style of this.element to display = null
-    element.style.display = 'show';
-    console.log(element.style.display);
+    element.style = 'display: visible';
   }
-  hideImage() {
-    // Update the style of this.element to display = "none"
-    element.style.display = 'none';
+  hideImage(element) {
+    element.style = 'display: none';
   }
+  moveRight() {
+    console.log('move right');
+    this.slideNumber = this.currentSlide[1];
+    if (this.slideNumber == this.totalSlides) {
+      this.currentSlide = [this.slides[0], 0];
+    }
+    this.currentSlide = [
+      this.currentSlide[this.slideNumber++],
+      this.slideNumber++,
+    ];
+    this.showImage(this.currentSlide[0]);
+  }
+  moveLeft() {}
 }
 
 let carousel = new Carousel();
