@@ -19,6 +19,7 @@ class Carousel {
       this.activeImg.deselectImg();
       this.activeImg = this.images[this.imgIndex];
       this.activeImg.selectImg();
+
     }
     else{
       // If we are at the last image, cycle through to the first image
@@ -54,15 +55,18 @@ class CarouselButton {
 class Image {
   constructor(element){
     this.element = element;
-    this.element.style.display = "none";
+    // this.element.style.display = "none";
+    this.element.classList.add("fade-out");
   }
 
   selectImg(){
-    this.element.style.display = "flex";
+    // this.element.style.display = "flex";
+    this.element.classList.remove("fade-out");
   }
 
   deselectImg(){
-    this.element.style.display = "none";
+    // this.element.style.display = "none";
+    this.element.classList.add("fade-out");
   }
 }
 
