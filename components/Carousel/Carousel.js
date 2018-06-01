@@ -5,14 +5,14 @@ class Carousel {
         this.leftBtn = this.element.querySelector('.left-button');
         this.imgs = this.element.querySelectorAll('img');
         this.imgs = Array.from(this.imgs).map(img => (new Image(img, this)))
-        this.activeImg = imgs[0];
+        this.activeImg = this.imgs[0];
         console.log(this.activeImg);
         this.init();
 
-        this.rightBtn.addEventListner('click', ()=>{
+        this.rightBtn.addEventListener('click', ()=>{
 
         });
-        this.leftBtn.addEventListner('click', ()=>{
+        this.leftBtn.addEventListener('click', ()=>{
 
         });
     }
