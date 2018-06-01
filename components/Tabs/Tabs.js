@@ -25,7 +25,7 @@ class Tabs {
     console.log(this); // TODO Has no activeTab
     this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab = this.tabElement;
+    this.activeTab = tabElement;
   }
 
   getCards(data){
