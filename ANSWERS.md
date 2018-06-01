@@ -1,3 +1,5 @@
+    //START
+    
 ### Questions:
 1. What is the DOM?
 2. What is an event?
