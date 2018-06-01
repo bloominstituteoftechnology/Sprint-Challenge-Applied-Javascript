@@ -1,6 +1,6 @@
 # Sprint-Challenge Applied Javascript
 
-We've covered a lot this week. We've learned how to plug Javascript up to our HTML/CSS static pages and create dynamic content.  We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on, them. And finally, we learned about component architecture and how to build compoennts that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above. 
+We've covered a lot this week. We've learned how to plug Javascript up to our HTML/CSS static pages and create dynamic content.  We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on, them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above. 
 
 ## Assessing your Applied Javascript Fu
 * Answers to your written questions will be recorded in *ANSWERS.md* 
@@ -10,6 +10,7 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 1. What is the DOM?
 2. What is an event?
 3. What is an event listener?
+4. Why would we convert a NodeList into an Array?
 5. What is a component? 
 
 ## Challenge
