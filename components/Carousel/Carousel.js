@@ -1,5 +1,8 @@
 class Carousel {
-
+    constructor(element) {
+        this.element = element;
+        this.carousel = this.element.querySelectorAll('.carousel');
+        this.init();
 }
 
 let carousel = $();
