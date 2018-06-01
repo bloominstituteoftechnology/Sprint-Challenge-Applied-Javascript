@@ -1,7 +1,6 @@
 class Tabs {
   constructor(element){
     this.element = element;
-    console.log(this.element);
     // create a reference to all the ".tab" classes
     this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
