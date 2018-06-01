@@ -55,7 +55,7 @@ class TabLink {
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add(".active-tab");
+    this.element.classList.add("active-tab");
     console.log("class added")
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
@@ -63,7 +63,7 @@ class TabLink {
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element.classList.remove(".active-tab");
+    this.element.classList.remove("active-tab");
     console.log("class removed")
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
