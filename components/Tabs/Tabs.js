@@ -27,10 +27,10 @@ class Tabs {
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if(data === 'all') {
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll('.card');
+      return document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return this.element.querySelectorAll(`.card[data-tab="${data}"]`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
@@ -46,7 +46,7 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map( cards => new TabCard(cards, this));
     // Add a click event that invokes selectTab
-    this.element.addEventListener("click", () => {this.selectTab()});
+    this.element.addEventListener("click", () => this.selectTab());
   }
 
   selectTab(){
@@ -73,11 +73,11 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.setAttribute("style", "display: null;");
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.setAttribute("style", "display: none;");
+    this.element.style.display = 'none';
   }
 }
 
