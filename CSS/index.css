@@ -299,5 +299,9 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
+  width: 0;
+  transition: width 0.4s ease;
+}
+.carousel img.selected {
   width: 100%;
 }

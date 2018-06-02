@@ -14,7 +14,7 @@ class Carousel {
         this.links = document.querySelectorAll('.crsl-button');
         this.links = Array.from(this.links).map( (link) => new Link(link, this) );
 
-        this.activeImage = this.images[0];
+        this.activeImage = this.images[1];
     }
     updateActive(newCrslImg) {
         this.activeImage.deselect();
@@ -24,19 +24,19 @@ class Carousel {
 
     processLinkClick(link) {
         let buttonType = link.element.dataset.direction;
-        let imageTotal = this.images.length
-        let newIndex;
-        let activeIndex = this.images.indexOf(this.activeImage);
 
         if (buttonType === "left") {
-            newIndex = activeIndex - 1;
-            if (newIndex < 0) {
-                newIndex = imageTotal + newIndex;
-            }
-        } else {
-            newIndex = (activeIndex + 1) % imageTotal;
+            this.images.unshift(this.images[this.images.length - 1]);
+            this.images[1].element.before(this.images[0].element);
+            this.images.pop();
+
+            } else {
+            this.images.push(this.images[0]);
+            this.images[this.images.length-2].element.after(this.images[this.images.length-1].element);
+            this.images.shift();
         }
-        this.updateActive(this.images[newIndex]);
+        
+        this.updateActive(this.images[1]);
     }
 
     init() {
@@ -56,11 +56,11 @@ class CrslImg {
     }
 
     select() {
-        this.element.style.display = null;
+        this.element.classList.add("selected");
     }
 
     deselect() {
-        this.element.style.display = "none";
+        this.element.classList.remove("selected");
     }
 }
 
