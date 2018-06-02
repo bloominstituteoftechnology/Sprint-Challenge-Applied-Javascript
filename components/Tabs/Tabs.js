@@ -76,7 +76,7 @@ class TabCard {
   }
   selectCard() {
     // Update the style of this.element to display = null
-    this.element.style.display = "null";
+    this.element.style.display = null;
   }
   deselectCard() {
     // Update the style of this.element to display = "none"
@@ -88,3 +88,6 @@ class TabCard {
 let tabs = document.querySelectorAll(".tabs");
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+// Extra notes
+// In TabLink > element === ".tab", parent = "Tabs class"
