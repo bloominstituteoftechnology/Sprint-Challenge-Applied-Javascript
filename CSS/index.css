@@ -279,3 +279,6 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .active-img {
+  display: block;
+}
