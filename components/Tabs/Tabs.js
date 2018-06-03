@@ -77,9 +77,11 @@ class TabCard {
   selectCard(){
     // Update the style of this.element to display = null
     this.element.style.display = null;
+    TweenLite.to(this.element, 1, {opacity: 1, rotation: 360});
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
+  TweenLite.to(this.element, 1, {opacity: 0, rotation: -360});
     this.element.style.display = 'none';
   }
 }
