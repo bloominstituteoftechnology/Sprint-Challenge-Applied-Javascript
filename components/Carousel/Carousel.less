@@ -24,7 +24,8 @@
       border: 2px solid @lambda-times-color-primary;
     }
   }
-  .left-button {
+  
+ .left-button{
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
@@ -34,8 +35,14 @@
     right: 25px;
     transform: translate(0, -50%);
   }
+
   img {
-    .width-100();
-    display: none;
+    width: 0;
+    transition: width 0.4s ease;
+    // display: none;
+
+    &.selected {
+      width: 100%;
+    }
   }
 }
