@@ -3,4 +3,4 @@
 - [] Answers propt
 - [x] Tabs class component
 - [x] TabLink class component
-- [] TabCard Class component
+- [x] TabCard Class component
