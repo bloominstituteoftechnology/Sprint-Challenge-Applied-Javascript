@@ -1,6 +1,6 @@
 ### APPLIED JAVASCRIPT SPRINT
 
 - [] Answers propt
-- [] Tabs class component
-- [] TabLink class component
+- [x] Tabs class component
+- [x] TabLink class component
 - [] TabCard Class component
