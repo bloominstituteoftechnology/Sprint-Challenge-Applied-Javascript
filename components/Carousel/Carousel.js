@@ -43,7 +43,7 @@ class Carousel {
       currentSlide.classList.remove('right', 'active');
       previousSlide.classList.remove('right', 'prev');
       previousSlide.classList.add('active');
-    }, 275);
+    }, 300);
 
     this.currentImage = previous;
   }
