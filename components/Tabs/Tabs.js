@@ -1,8 +1,8 @@
 class Tabs {
   constructor(element){
-    this.element = element;
+    this.element = element; //====> .tabs
     // create a reference to all the ".tab" classes
-    this.tabs=document.querySelectorAll(".tabs");
+    this.tabs=this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -13,7 +13,7 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
@@ -25,10 +25,10 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data) {
+    if(data === 'all'){
       // Return a reference to all the ".card" classes
 
-      return;
+      return  document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return document.querySelectorAll(`.card[data-tab="${data}"]`);
@@ -43,7 +43,7 @@ class TabLink {
     // assign this.parent to the parent reference
     this.parent=parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
-    this.cards = this.parent.getCards(this.element.dataset.tab);
+    this.cards = this.parent.getCards(this.element.dataset.tab);// getting data strng or data attributes
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
@@ -68,7 +68,7 @@ class TabLink {
   }
 }
 
-class TabCard {
+class TabCard {   //selects/update style and deselects/update style the card
   constructor(element){
     // Assign this.element to the passed in element.
     this.element=element;
