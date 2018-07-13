@@ -22,9 +22,9 @@ class Carousel {
         } else {
             this.number=3;
         }
-        document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='none';
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Power4.easeIn});
         this.activeImg=this.images[this.number].element.dataset.number;
-        document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='block';
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'block'}, ease: Power4.easeOut});
     }
     moveRight(){
         if (this.number<3) {
@@ -32,9 +32,9 @@ class Carousel {
         } else {
             this.number=0;
         }
-        document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='none';
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Power4.easeIn});
         this.activeImg=this.images[this.number].element.dataset.number;
-        document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='block';
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), .1, {css:{display:'block'}, ease: Power4.easeOut});
     }
 }
 class ImageSlide {
