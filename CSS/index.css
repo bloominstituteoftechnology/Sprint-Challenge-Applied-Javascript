@@ -297,7 +297,6 @@ body {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
-  z-index: 10;
 }
 .carousel img {
   width: 100%;
@@ -308,4 +307,9 @@ body {
 }
 .carousel .right-button {
   z-index: 10;
+}
+@media (max-width: 500px) {
+  .cards-container {
+    justify-content: center;
+  }
 }
