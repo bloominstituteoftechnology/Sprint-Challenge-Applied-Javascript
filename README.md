@@ -1,4 +1,4 @@
-# Sprint-Challenge Applied Javascript
+<!-- # Sprint-Challenge Applied Javascript
 
 We've covered a lot this week. We've learned how to plug Javascript up to our HTML/CSS static pages and create dynamic content.  We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on, them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.
 
@@ -11,7 +11,7 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
-5. What is a component?
+5. What is a component? -->
 
 ## Challenge
 We are going to create a Lambda Newspaper. The styling is modeled after the [LA Times Website](http://www.latimes.com). Open it up and you will notice all of the HTML and CSS has already been created and imported properly. Our job is going to be to add functionality to the tabs below the 'Lambda Times' logo. These tabs will act as filters for our articles, and when clicked on, should filter out all articles except those with that tag.
