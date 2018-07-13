@@ -2,7 +2,6 @@ class Carousel {
   constructor(element){
     //carousel element
     this.element = element;
-    console.log(this.element);
     //prev-next buttons
     this.prev = element.querySelector('.left-button');
     this.nex = element.querySelector('.right-button');
@@ -10,15 +9,21 @@ class Carousel {
     //set up the slides
     this.slides = element.querySelectorAll('.slide-item');
     this.slides = Array.from(this.slides).map( slide => new Slide(slide, this));
-    console.log(this.slides);
 
     //setup first activeSlide and select it
     this.activeSlide = 0;
     this.init();
 
-    //click listeners
-    this.prev.addEventListener('click', this.previous.bind(this));
-    this.nex.addEventListener('click', this.next.bind(this));
+    //playing with continous
+    this.autoSlide;
+
+    //event listeners
+    // this.prev.addEventListener('click', this.previous.bind(this));
+    // this.nex.addEventListener('click', this.next.bind(this)); //no longer need click with current autoSlider
+    this.prev.addEventListener('mousedown', ()=> this.startAuto('prev'));
+    this.nex.addEventListener('mousedown', ()=> this.startAuto('next'));
+    this.prev.addEventListener('mouseup', ()=>clearInterval(this.autoSlide));
+    this.nex.addEventListener('mouseup', ()=>clearInterval(this.autoSlide));
   }
 
   init(){
@@ -31,17 +36,25 @@ class Carousel {
   }
 
   previous(){
-    console.log('prev');
-    let newPos = (this.activeSlide - 1) == -1 ? this.slides.length - 1 : this.activeSlide - 1;
-    this.updateActive(newPos);
-    this.slides[newPos].select();
+      let newPos = (this.activeSlide - 1) == -1 ? this.slides.length - 1 : this.activeSlide - 1;
+      this.updateActive(newPos);
+      this.slides[newPos].select();
   }
 
   next(){
-    console.log('next');
-    let newPos = (this.activeSlide + 1) == this.slides.length ? 0 : this.activeSlide + 1;
-    this.updateActive(newPos);
-    this.slides[newPos].select();
+      let newPos = (this.activeSlide + 1) == this.slides.length ? 0 : this.activeSlide + 1;
+      this.updateActive(newPos);
+      this.slides[newPos].select();
+  }
+
+  startAuto(direction){
+    if(direction == 'next'){
+      this.next();
+      this.autoSlide = setInterval(this.next.bind(this), 750);
+    }else{
+      this.previous();
+      this.autoSlide = setInterval(this.previous.bind(this), 750);
+    }
   }
 }
 
