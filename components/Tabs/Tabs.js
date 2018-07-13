@@ -2,7 +2,7 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs=document.querySelectorAll('.tabs');
+    this.tabs=document.querySelectorAll('.tab');
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
@@ -13,14 +13,14 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab = ()=>{This.selectTab()};
+    this.activeTab = ()=>{this.selectTab()};
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab= ()=>{this.deselectTab()};
+    this.activeTab = () => {this.deselectTab()};
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab= tabElement;
+    this.activeTab= this.tabElement;
   }
 
   getCards(data){
@@ -56,14 +56,14 @@ class TabLink {
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add(".active-tab");
+    this.element.classList.add("active-tab");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element.classList.remove(".activeTab");
+    this.element.classList.remove("active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
