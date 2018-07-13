@@ -5,26 +5,11 @@ class Carousel {
 		this.pictures = Array.from(this.pictures).map( picture => {
 		  return new Picture(picture);
 		});
-		console.log(this.pictures);
 		this.state = 0;
 		this.leftPointer = this.element.querySelector('.left-pointer');
-		this.leftPointer.addEventListener('click', () => {
-			if (this.state < 1){
-				this.state += this.pictures.length-1;
-			} else {
-				this.state -= 1;
-			}
-			this.updateActive(this.pictures[this.state]);
-		});
+		this.leftPointer.addEventListener('click', () => { this.goLeft() });
 		this.rightPointer = this.element.querySelector('.right-pointer');
-		this.rightPointer.addEventListener('click', () => {
-			if (this.state >= this.pictures.length - 1){
-				this.state = 0
-			} else {
-				this.state += 1;
-			}
-			this.updateActive(this.pictures[this.state]);
-		});
+		this.rightPointer.addEventListener('click', () => { this.goRight() });
 		this.activePicture = this.pictures[this.state];
 		this.init();
 	}
@@ -37,6 +22,24 @@ class Carousel {
 	 	this.activePicture.makeHidden();
 	 	this.activePicture = newActive;
 	 	this.activePicture.makeVisible();
+	}
+
+	goLeft(){
+		if (this.state < 1){
+			this.state += this.pictures.length-1;
+		} else {
+			this.state -= 1;
+		}
+		this.updateActive(this.pictures[this.state]);
+	}
+
+	goRight(){
+		if (this.state >= this.pictures.length - 1){
+			this.state = 0
+		} else {
+			this.state += 1;
+		}
+		this.updateActive(this.pictures[this.state]);
 	}
 }
 
@@ -52,7 +55,6 @@ class Picture {
 		this.picture.classList.remove('active-picture');
 	}
 }
-
 
 let carousel = document.querySelectorAll('.carousel');
 
