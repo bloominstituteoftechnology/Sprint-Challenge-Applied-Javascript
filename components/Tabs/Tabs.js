@@ -2,11 +2,14 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
-    this.tabs;
+    this.tabs = document.querySelectorAll('.tab');
+    console.log(this.tabs);
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
-    this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
+    // this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
+    // console.log(this.tabs);
     // Assign activeTab to the first item in the tabs array
-    this.activeTab;
+    this.activeTab = document.querySelector('.active-tab');
+    // console.log(this.activeTab);
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
@@ -82,10 +85,11 @@ class TabCard {
 }
 
 // Create a reference to ".tabs"
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tabs');
+console.log(tabs);
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map()
-
+tabs = Array.from(tabs).map( tab => new Tabs(tab));
+console.log(tabs);
 
 
 
