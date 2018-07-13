@@ -1,5 +1,12 @@
 class Carousel {
+constructor(element){
+    this.element = element;
+    this.carousel = this.element.querySelector(".carousel");
+}
 
+init(){
+    this.activeButton.selectButton();
+}
 }
 
 let carousel = $();
