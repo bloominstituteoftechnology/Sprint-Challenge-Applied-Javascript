@@ -22,9 +22,7 @@ class Carousel {
         } else {
             this.number=this.images.length-1;
         }
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Elastic.easeIn});
-        this.activeImg=this.images[this.number].element.dataset.number;
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.4, {css:{display:'block'}, ease: Elastic.easeOut});
+        this.updateImage();
     }
     moveRight(){
         if (this.number<this.images.length-1) {
@@ -32,6 +30,9 @@ class Carousel {
         } else {
             this.number=0;
         }
+        this.updateImage();
+    }
+    updateImage(){
         TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Elastic.easeIn});
         this.activeImg=this.images[this.number].element.dataset.number;
         TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), .4, {css:{display:'block'}, ease: Elastic.easeOut});
