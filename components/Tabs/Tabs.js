@@ -46,14 +46,14 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener();
+    this.element.addEventListener('click', () => { this.selectTab() });
   }
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element;
+    this.element.classList.add('active-tab');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
