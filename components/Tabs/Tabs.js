@@ -60,7 +60,7 @@ class TabLink {
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element;
+    this.element.classList.remove('active-tab') ;
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
@@ -69,15 +69,15 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element ;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null ;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element;
+    this.element.style.display = 'none' ;
   }
 }
 
