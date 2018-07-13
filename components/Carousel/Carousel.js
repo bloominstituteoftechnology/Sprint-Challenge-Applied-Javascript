@@ -7,9 +7,9 @@ class Carousel {
 		});
 		this.state = 0;
 		this.leftPointer = this.element.querySelector('.left-pointer');
-		this.leftPointer.addEventListener('click', () => { this.goLeft() });
+		this.leftPointer.addEventListener('click', () => this.goLeft());
 		this.rightPointer = this.element.querySelector('.right-pointer');
-		this.rightPointer.addEventListener('click', () => { this.goRight() });
+		this.rightPointer.addEventListener('click', () => this.goRight());
 		this.activePicture = this.pictures[this.state];
 		this.init();
 	}
@@ -25,21 +25,31 @@ class Carousel {
 	}
 
 	goLeft(){
-		if (this.state < 1){
-			this.state += this.pictures.length-1;
-		} else {
-			this.state -= 1;
-		}
-		this.updateActive(this.pictures[this.state]);
+		// Include first and last line for automatic slideshow
+		// Remove for regular functional carousel
+		setInterval(()=>{
+			if (this.state < 1){
+				this.state += this.pictures.length-1;
+			} else {
+				this.state -= 1;
+			}
+			this.updateActive(this.pictures[this.state]);
+		// Last line
+		}, 2000);
 	}
 
 	goRight(){
-		if (this.state >= this.pictures.length - 1){
-			this.state = 0
-		} else {
-			this.state += 1;
-		}
-		this.updateActive(this.pictures[this.state]);
+		// Include first and last line for automatic slideshow
+		// Remove for regular functional carousel
+		setInterval(()=>{
+			if (this.state >= this.pictures.length - 1){
+				this.state = 0
+			} else {
+				this.state += 1;
+			}
+			this.updateActive(this.pictures[this.state]);
+		// Last line
+		}, 2000);
 	}
 }
 
