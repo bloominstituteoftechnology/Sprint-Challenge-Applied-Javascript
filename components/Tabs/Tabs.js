@@ -27,7 +27,7 @@ class Tabs {
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if(data) {
       // Return a reference to all the ".card" classes
-      
+
       return;
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
@@ -45,16 +45,17 @@ class TabLink {
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener();
+    this.element.addEventListener("click", () => {this.selectTab()});
   }
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
+    console.log("got here")
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add(".active-tab";
+    this.element.classList.add(".active-tab");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
