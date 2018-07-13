@@ -2,7 +2,7 @@ class Carousel {
 
 }
 
-let carousel = $();
+let carousel = document.querySelectorAll(".carousel");
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
