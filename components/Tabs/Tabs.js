@@ -5,7 +5,7 @@ class Tabs {
     this.tabs = this.element.querySelectorAll('.tab');
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => {
-      return new TabLink(tab, this)
+      return new TabLink(tab, this);
     });
     // Assign activeTab to the first item in the tabs array
     this.activeTab = this.tabs[0];
@@ -75,7 +75,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'null';
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
