@@ -1,12 +1,50 @@
-class Carousel {
+const carousel = {
+	container: document.querySelector(".carousel")
+};
+carousel.items = Array.from(
+	carousel.container.querySelectorAll(".carousel-item")
+);
 
+let current = 2;
+carousel.items[current].style.display = "block";
+
+function moveRight() {
+	const previous = current - 1 < 0 ? carousel.items.length - 1 : current - 1;
+	console.log(previous, current);
+	const previousSlide = carousel.items[previous];
+	const currentSlide = carousel.items[current];
+	previousSlide.style.display = "block";
+	previousSlide.style.visibility = "hidden";
+	previousSlide.style.transform = "translateX(-100%)";
+	previousSlide.style.visibility = "visible";
+	currentSlide.style.transform = "translateX(100%)";
+	previousSlide.style.transform = "translateX(0)";
+
+	setTimeout(() => {
+		currentSlide.style.display = "none";
+	}, 275);
+
+	current = previous;
 }
 
-let carousel = $();
+function moveLeft() {
+	const next = (current + 1) % carousel.items.length;
+	console.log(next, current);
+	const nextSlide = carousel.items[next];
+	const currentSlide = carousel.items[current];
+	nextSlide.style.display = "block";
+	nextSlide.style.visibility = "hidden";
+	nextSlide.style.transform = "translateX(100%)";
+	nextSlide.style.visibility = "visible";
+	currentSlide.style.transform = "translateX(-100%)";
+	nextSlide.style.transform = "translateX(0)";
 
-/* If You've gotten this far, you're on your own! Although we will give you some hints:
-    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
-    2. Those buttons are gonna need some click handlers.
-    3. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
-    4. Have fun!
-*/
+	setTimeout(() => {
+		currentSlide.style.display = "none";
+	}, 275);
+
+	current = next;
+}
+
+document.querySelector("#rightBtn").addEventListener("click", moveRight);
+document.querySelector("#leftBtn").addEventListener("click", moveLeft);
