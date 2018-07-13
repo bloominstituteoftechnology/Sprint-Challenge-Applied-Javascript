@@ -298,7 +298,13 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
-  width: 100%;
+.carousel .slide-item {
   display: none;
+  width: 100%;
+}
+.carousel .slide-item img {
+  width: 100%;
+}
+.carousel .slide-active {
+  display: block;
 }
