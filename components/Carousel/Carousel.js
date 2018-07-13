@@ -1,6 +1,6 @@
 class Carousel {
-    constructor() {
-        this.carousel = document.querySelector(".carousel");
+    constructor(element) {
+        this.carousel = element;
         this.images = document.querySelectorAll(".carousel img");
         // console.log(this.images);
         this.images = Array.from(this.images);
@@ -14,40 +14,53 @@ class Carousel {
         this.activeImg.style.display = "block";
 
         this.prevImg = this.images[this.images.length - 1];
-        this.nextImg = this.images[1];        
+        this.nextImg = this.images[1];
 
         this.prevButton.addEventListener("click", () => {
             this.prevImg.style.display = "block";
-            this.goToPrevious(this.activeImg, this.prevImg);
+            this.goToPrevious();
         });
         this.nextButton.addEventListener("click", () => {
             this.nextImg.style.display = "block";
-            this.goToNext(this.activeImg, this.prevImg, this.nextImg);
+            this.goToNext();
         });
     }
 
     goToPrevious() {
         console.log(this);
-        TweenMax.fromTo(this.prevImg, 2, {x:-1800}, {x:-600});
-        TweenMax.fromTo(this.activeImg, 2, {x:600}, {x:1800});
+        let toDisappear = this.activeImg;
+        toDisappear.style.position = "absolute";
+
+        TweenMax.fromTo(this.prevImg, 2, {xPercent:-100}, {xPercent:0});
+        TweenMax.fromTo(this.activeImg, 2, {xPercent:0}, {xPercent:100, onComplete: () => {
+            toDisappear.style.display = "none";
+            toDisappear.style.position = "relative";
+        }});
         
-        if ((this.activeImg.dataset.img) === 0) {
+        if ((parseInt(this.activeImg.dataset.img)) === 0) {
             this.activeImg = this.images[this.images.length - 1];
         } else {
-            this.activeImg = this.images[this.activeImg.dataset.img - 1];
+            this.activeImg = this.images[parseInt(this.activeImg.dataset.img) - 1];
         }
         // console.log(this.activeImg);
-        this.setPrevNext(this.activeImg, this.prevImg, this.nextImg);
+        this.setPrevNext();
     }
 
     goToNext() {
-        TweenMax.fromTo(this.activeImg, 2, {x:600}, {x:-600});
-        TweenMax.fromTo(this.nextImg, 2, {x:600}, {x:-600});
+        let toDisappear = this.activeImg;
+        toDisappear.style.position = "absolute";
 
-        if ((this.activeImg.dataset.img) === (this.images.length - 1)) {
+        TweenMax.fromTo(this.nextImg, 2, {xPercent:100}, {xPercent: 0});
+        TweenMax.fromTo(this.activeImg, 2, {xPercent:0}, {xPercent:-100, onComplete: () => {
+            toDisappear.style.display = "none";
+            toDisappear.style.position = "relative";
+        }});
+        
+
+        if ((parseInt(this.activeImg.dataset.img)) === (this.images.length - 1)) {
             this.activeImg = this.images[0];
         } else {
-            this.activeImg = this.images[this.activeImg.dataset.img + 1];
+            this.activeImg = this.images[parseInt(this.activeImg.dataset.img) + 1];
         }
         // console.log(this.activeImg, this.prevImg);
         this.setPrevNext();
@@ -55,15 +68,15 @@ class Carousel {
     
     setPrevNext() {
         // console.log(this);
-        if (this.activeImg.dataset.img === 0) {
+        if (parseInt(this.activeImg.dataset.img) === 0) {
             this.prevImg = this.images[this.images.length - 1];
         } else {
-            this.prevImg = this.images[this.activeImg.dataset.img - 1];
+            this.prevImg = this.images[parseInt(this.activeImg.dataset.img) - 1];
         }
-        if ((this.activeImg.dataset.img) === (this.images.length - 1)) {
+        if ((parseInt(this.activeImg.dataset.img)) === (this.images.length - 1)) {
             this.nextImg = this.images[0];
         } else {
-            this.nextImg = this.images[this.activeImg.dataset.img + 1];
+            this.nextImg = this.images[parseInt(this.activeImg.dataset.img) + 1];
         }
         // console.log(img2);
         // console.log(this.prevImg);
