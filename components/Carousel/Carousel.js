@@ -47,6 +47,7 @@ class Image {
     }
 
     activate() {
+        TweenMax.fromTo(this.img, 2, {opacity: .5, ease: Power4.easeIn}, {opacity: 1});
         this.img.style.display = 'flex';
     }
 
