@@ -25,29 +25,29 @@ class Tabs {
 
   getCards(data) {
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if (data === document) {
+    if (data === "all") {
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll(".card");
+      return document.querySelectorAll(".card");
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return this.element.querySelectorAll(`.card[data-tab="${data}"]`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
 
 class TabLink {
-  constructor(element, parent) {
+  constructor(link, parent) {
     // assign this.element to the element reference
-    this.element = element;
+    this.link = link;
     // assign this.parent to the parent reference
     this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
-    this.cards = parent.getCards(this.element.dataset.tab);
+    this.cards = this.parent.getCards(this.link.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', () => {
-      this.cards.selectTab(this);
+    this.link.addEventListener('click', () => {
+      this.selectTab();
     });
   }
 
@@ -55,14 +55,14 @@ class TabLink {
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add(".active-tab");
+    this.link.classList.add("active-tab");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
 
   deselectTab() {
     // Remove the class ".active-tab" from this.element
-    this.element.classList.remove(".active-tab");
+    this.link.classList.remove("active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.deselectCard());
   }
@@ -79,7 +79,7 @@ class TabCard {
   }
   deselectCard() {
     // Update the style of this.element to display = "none"
-    this.element.innerHTML = "none";
+    this.element.style.display = "none";
   }
 }
 
