@@ -301,7 +301,29 @@ body {
 .carousel img {
   width: 100%;
   display: none;
-  transition: transform 0.275s linear;
+  position: relative;
+  backface-visibility: hidden;
+}
+.carousel img.active,
+.carousel img.next,
+.carousel img.prev {
+  display: block;
+  transition: transform 0.275s ease-out;
+}
+.carousel img.next,
+.carousel img.prev {
+  position: absolute;
   top: 0;
-  bottom: 0;
+}
+.carousel img.next.left,
+.carousel img.prev.right {
+  transform: translateX(0);
+}
+.carousel img.next,
+.carousel img.active.right {
+  transform: translateX(100%);
+}
+.carousel img.prev,
+.carousel img.active.left {
+  transform: translate(-100%);
 }

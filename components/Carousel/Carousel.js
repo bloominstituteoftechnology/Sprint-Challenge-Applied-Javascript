@@ -15,7 +15,9 @@ class Carousel {
 
     this.displayActive();
 
-    this.autoTimer(4000);
+    if (Number(this.container.dataset.timer) > 0) {
+      this.autoTimer(Number(this.container.dataset.timer));
+    }
   }
 
   autoTimer(duration) {
@@ -23,9 +25,7 @@ class Carousel {
   }
 
   displayActive() {
-    $(this.images[this.currentImage]).css({
-      display: 'block'
-    });
+    this.images[this.currentImage].classList.add('active');
   }
 
   moveRight() {
@@ -35,15 +35,14 @@ class Carousel {
         : this.currentImage - 1;
     const previousSlide = this.images[previous];
     const currentSlide = this.images[this.currentImage];
-    previousSlide.style.display = 'block';
-    previousSlide.style.position = 'absolute';
-    previousSlide.style.transform = 'translateX(-100%)';
-    currentSlide.style.transform = 'translateX(100%)';
-    setTimeout(() => (previousSlide.style.transform = 'translateX(0)'), 0);
+    previousSlide.classList.add('prev');
+    currentSlide.classList.add('right');
+    setTimeout(() => previousSlide.classList.add('right'), 0);
 
     setTimeout(() => {
-      currentSlide.style.display = 'none';
-      previousSlide.style.position = 'relative';
+      currentSlide.classList.remove('right', 'active');
+      previousSlide.classList.remove('right', 'prev');
+      previousSlide.classList.add('active');
     }, 275);
 
     this.currentImage = previous;
@@ -53,15 +52,14 @@ class Carousel {
     const next = (this.currentImage + 1) % this.images.length;
     const nextSlide = this.images[next];
     const currentSlide = this.images[this.currentImage];
-    nextSlide.style.display = 'block';
-    nextSlide.style.position = 'absolute';
-    nextSlide.style.transform = 'translateX(100%)';
-    currentSlide.style.transform = 'translateX(-100%)';
-    setTimeout(() => (nextSlide.style.transform = 'translateX(0)'), 0);
+    nextSlide.classList.add('next');
+    currentSlide.classList.add('left');
+    setTimeout(() => nextSlide.classList.add('left'), 0);
 
     setTimeout(() => {
-      currentSlide.style.display = 'none';
-      nextSlide.style.position = 'relative';
+      currentSlide.classList.remove('left', 'active');
+      nextSlide.classList.remove('left', 'next');
+      nextSlide.classList.add('active');
     }, 275);
 
     this.currentImage = next;

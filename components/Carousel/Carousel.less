@@ -38,8 +38,53 @@
   img {
     .width-100();
     display: none;
-    transition: transform 0.275s linear;
-    top: 0;
-    bottom: 0;
+    position: relative;
+    backface-visibility: hidden;
+
+    &.active,
+    &.next,
+    &.prev {
+      display: block;
+      transition: transform 0.275s ease-out;
+    }
+
+    &.next,
+    &.prev {
+      position: absolute;
+      top: 0;
+    }
+
+    &.next.left,
+    &.prev.right {
+      transform: translateX(0);
+    }
+
+    &.next,
+    &.active.right {
+      transform: translateX(100%);
+    }
+
+    &.prev,
+    &.active.left {
+      transform: translate(-100%);
+    }
+
+    // &.move-right-prev,
+    // &.move-left {
+    // }
+
+    // &.move-right-current {
+    //   transform: translateX(100%);
+    // }
+    // &.move-to-current {
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   display: block;
+    //   transform: translateX(0);
+    // }
+    // &.move-right-prev {
+    //   transform: translateX(-100%);
+    // }
   }
 }
