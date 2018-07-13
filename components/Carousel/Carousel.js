@@ -9,11 +9,11 @@ class Carousel {
         this.init();
 
         this.rightButton = document.querySelector(".right-button").addEventListener("click", () => {
-
+            this.nextImage(this.activeImg.element.dataset.image);
         });
        
         this.leftButton = document.querySelector(".left-button").addEventListener("click", () => {
-            
+            this.previousImage(this.activeImg.element.dataset.image);
         });
     }
 
