@@ -33,7 +33,7 @@ class Tabs {
       return document.querySelectorAll(`.card`);
     }
   }
-}
+}//Tabs
 
 class TabLink {
   constructor(element, parent){
@@ -64,7 +64,7 @@ class TabLink {
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
-}
+}//TabLink
 
 class TabCard {
   constructor(element){
@@ -79,9 +79,10 @@ class TabCard {
     // Update the style of this.element to display = "none"
     this.element;
   }
-}
+}//TabCard
 
 // Create a reference to ".tabs"
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tabs');
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map()
+tabs = Array.from(tabs).map( tab => new Tabs(tab));
+console.log(tabs);
