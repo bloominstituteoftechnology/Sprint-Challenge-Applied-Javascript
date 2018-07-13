@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 1;
 }
 .top-bar .container {
   width: 100%;
@@ -290,15 +291,44 @@ body {
 }
 .carousel .left-button {
   top: 50%;
-  left: 25px;
+  left: 5%;
   transform: translate(0, -50%);
 }
 .carousel .right-button {
   top: 50%;
-  right: 25px;
+  right: 5%;
   transform: translate(0, -50%);
+}
+.carousel .img-container {
+  position: relative;
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
 }
 .carousel img {
   width: 100%;
   display: none;
+  position: relative;
+  backface-visibility: hidden;
+}
+.carousel img.active,
+.carousel img.next,
+.carousel img.prev {
+  display: block;
+  transition: transform 0.275s ease-out;
+}
+.carousel img.next,
+.carousel img.prev {
+  position: absolute;
+  top: 0;
+}
+.carousel img.next.left,
+.carousel img.prev.right {
+  transform: translateX(0);
+}
+.carousel img.next,
+.carousel img.active.right {
+  transform: translateX(100%);
+}
+.carousel img.prev,
+.carousel img.active.left {
+  transform: translate(-100%);
 }
