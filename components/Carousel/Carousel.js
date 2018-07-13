@@ -41,7 +41,7 @@ class Carousel {
         if (newIndex > this.imageList.length - 1) {
             newIndex = 0;
         }
-        
+        // console.log(this.currentImage);
         // update the parent component
         this.currentIndex = newIndex;
         this.currentImage = this.imageList[newIndex];
