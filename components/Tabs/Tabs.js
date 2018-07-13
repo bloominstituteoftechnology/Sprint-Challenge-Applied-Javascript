@@ -83,8 +83,57 @@ class TabCard {
     this.element.style.display = 'none';
   }
 }
+//add articles 
+
+function createArticle(articleData) {
+	const newArticleDiv = document.createElement('div');
+    newArticleDiv.classList.add('card');
+    newArticleDiv.setAttribute('data-tab', articleData.subject);
+	
+	const headline = document.createElement('div');
+	headline.classList.add('headline');
+	headline.textContent = articleData.headline;
+	newArticleDiv.appendChild(headline);
+	
+	const author = document.createElement('div');
+  author.classList.add('author');
+  newArticleDiv.appendChild(author);
+
+  const photo = document.createElement('div');
+  photo.classList.add('img-container');
+  author.appendChild(photo);
+
+  const headshot = document.createElement('img');
+  headshot.setAttribute('src', articleData.headshot);
+  photo.appendChild(headshot);
+	
+	const span = document.createElement('span');
+	span.textContent = articleData.by;
+	author.appendChild(span);
+	
+	document.querySelector('.cards-container').appendChild(newArticleDiv);
+	new TabCard(newArticleDiv);
+}
+createArticle({
+    subject: "technology",
+    headline: "IoT for where I pee",
+    // author: "Bone Mami Jones",
+    headshot: "assets/mami.jpg",
+    by: "By Bone Mami Jones"
+});
+createArticle({
+    subject: "javascript",
+    headline: "Woofing in Howler.js",
+    // author: "Rex M. Boneyard",
+    headshot: "assets/rex.jpg",
+    by: "By Rex M. Boneyard"
+});
 
 // Create a reference to ".tabs"
 let tabs = document.querySelectorAll(".tabs");
+// test to see what is getting passed to the array then class constructor
+console.log(tabs);
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
