@@ -4,7 +4,7 @@ class Tabs {
     // create a reference to all the ".tab" classes
     this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
-    this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
+    this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this));
     // Assign activeTab to the first item in the tabs array
     this.activeTab = this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
@@ -42,7 +42,6 @@ class TabLink {
     this.element = element;
     // assign this.parent to the parent reference
     this.parent = parent;
-    console.log(this.element.dataset.tab);
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
@@ -119,20 +118,18 @@ createArticle({
     headline: "IoT for where I pee",
     // author: "Bone Mami Jones",
     headshot: "assets/mami.jpg",
-    by: "By Bone Mami Jones"
+    by: "By BONE MAMI JONES"
 });
 createArticle({
     subject: "javascript",
     headline: "Woofing in Howler.js",
     // author: "Rex M. Boneyard",
     headshot: "assets/rex.jpg",
-    by: "By Rex M. Boneyard"
+    by: "By REX M. BONEYARD"
 });
 
 // Create a reference to ".tabs"
 let tabs = document.querySelectorAll(".tabs");
-// test to see what is getting passed to the array then class constructor
-console.log(tabs);
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
