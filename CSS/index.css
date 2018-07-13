@@ -199,7 +199,7 @@ body {
   text-decoration: underline;
 }
 .tabs .topics .active-tab {
-  background-color: blue;
+  background-color: skyblue;
   color: #333;
   border: 2px solid #333;
 }
