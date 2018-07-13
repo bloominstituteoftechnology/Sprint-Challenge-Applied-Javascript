@@ -30,7 +30,7 @@ class Tabs {
       return document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return data.querySelector('.card[data-tab = ${this.element.dataset.tab}]');
+      return document.querySelectorAll(`.card[data-tab = "${data}"]`);
     }
   }
 }
