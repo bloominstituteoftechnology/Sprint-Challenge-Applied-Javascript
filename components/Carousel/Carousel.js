@@ -25,7 +25,7 @@ class Carousel {
         if (index == 1) this.activeImg = this.images[length - 1];
         else this.activeImg = this.images[index - 2];
 
-        this.activeImg.activate();
+        this.activeImg.activateLeft();
     }
     shiftRight() {
         this.activeImg.deactivate();
@@ -48,6 +48,10 @@ class Image {
 
     activate() {
         TweenMax.fromTo(this.img, 1, {x: 1500, autoAlpha: .2}, {x: 0, autoAlpha: 1, ease: Power4.ease});
+        this.img.style.display = 'flex';
+    }
+    activateLeft() {
+        TweenMax.fromTo(this.img, 1, {x: -1500, autoAlpha: .2}, {x: 0, autoAlpha: 1, ease: Power4.ease});
         this.img.style.display = 'flex';
     }
 
