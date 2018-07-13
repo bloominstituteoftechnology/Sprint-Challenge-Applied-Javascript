@@ -1,4 +1,10 @@
 class Carousel {
+    constructor(slide) {
+        this.slide=slide;
+        this.slide=document.querySelectorAll('.slide');
+        
+
+    }
 
 }
 
