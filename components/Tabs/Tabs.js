@@ -24,7 +24,7 @@ class Tabs {
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if(data ===  'all') {
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll(`.card`);
+      return document.querySelectorAll(`.card`);
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return document.querySelectorAll(`.card[data-tab='${data}']`);
@@ -64,15 +64,15 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element;
+    this.element.style.display = 'none';
   }
 }
 
