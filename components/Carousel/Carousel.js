@@ -8,24 +8,56 @@ class Carousel {
         this.activeImg = this.images[0];
         this.init();
 
-        this.rightButton = this.element.querySelector(".right-button");
-        this.leftButton = this.element.querySelector(".left-button");
+        this.rightButton = document.querySelector(".right-button").addEventListener("click", () => {
+
+        });
+       
+        this.leftButton = document.querySelector(".left-button").addEventListener("click", () => {
+            
+        });
     }
 
     init() { 
         this.activeImg.select();
       }
-
-    updateActive(newActive) {
-        this.activeImg.deselect();
-        this.activeImg = newActive;
-      }
-
-    getImg(data) {
-        return this.element.querySelector(`.slide-image[data-tab="${data}"]`);
-      }
-      
     
+    previousImage(data) {      
+        this.activeImg.deselect();
+
+        let lastIndex = this.images.length - 1;
+            if(data < 0) {
+            data = lastIndex;
+            }
+
+            this.activeImg = this.images[data];
+            if(this.images[data] === undefined) {
+                    
+            this.activeImg = this.images[lastIndex];
+                    
+            this.activeImg.select();
+                   
+        return data;
+    }
+                
+        this.activeImg.select();
+        return data -= 1;
+    }
+
+    nextImage(data) {
+        this.activeImg.select();
+        this.activeImg = this.images[data];
+
+            if(this.images[data] === undefined) {
+                this.activeImg = this.images[0];
+                data = 1;
+                this.activeImg.select();
+
+                return data;
+            }
+
+        this.activeImg.select();
+        return data += 1;
+    }
 }
 
     class SlideImage {
