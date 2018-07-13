@@ -22,9 +22,9 @@ class Carousel {
         } else {
             this.number=3;
         }
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Power4.easeIn});
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Elastic.easeIn});
         this.activeImg=this.images[this.number].element.dataset.number;
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'block'}, ease: Power4.easeOut});
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.4, {css:{display:'block'}, ease: Elastic.easeOut});
     }
     moveRight(){
         if (this.number<3) {
@@ -32,9 +32,9 @@ class Carousel {
         } else {
             this.number=0;
         }
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Power4.easeIn});
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Elastic.easeIn});
         this.activeImg=this.images[this.number].element.dataset.number;
-        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), .1, {css:{display:'block'}, ease: Power4.easeOut});
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), .4, {css:{display:'block'}, ease: Elastic.easeOut});
     }
 }
 class ImageSlide {
