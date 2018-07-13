@@ -5,7 +5,6 @@ class Tabs {
     this.tabs=this.element.querySelectorAll('.tab');
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
-    
     // Assign activeTab to the first item in the tabs array
     this.activeTab=this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
