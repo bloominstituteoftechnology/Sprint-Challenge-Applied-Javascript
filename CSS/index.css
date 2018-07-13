@@ -298,7 +298,7 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .image {
   width: 100%;
   display: none;
 }
