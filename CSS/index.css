@@ -315,3 +315,7 @@ body {
   width: 100%;
   display: none;
 }
+
+.stop-button {
+  padding-top: 15px; 
+}
