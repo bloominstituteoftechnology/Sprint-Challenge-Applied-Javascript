@@ -2,15 +2,17 @@
 
 We've covered a lot this week. We've learned how to plug Javascript up to our HTML/CSS static pages and create dynamic content.  We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on, them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above. 
 
-## Assessing your Applied Javascript Fu
+#### Assessing your Applied Javascript Fu
 * Answers to your written questions will be recorded in *ANSWERS.md* 
 * This is to be worked on alone but you can use outside resources. You can *reference* any old code you may have, and documentation, however, please refrain from copying and pasting any of your answers. Try and understand the question and put your responses in your own words.
 
 ### Questions:
 1. What is the DOM?
+The DOM stands for Document Object Model. It is a
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
+In order to gain access to Array methods
 5. What is a component? 
 
 ## Challenge
