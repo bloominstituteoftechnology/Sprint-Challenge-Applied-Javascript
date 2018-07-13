@@ -26,10 +26,8 @@ class Tabs {
   }
 
   getCards(data){
-    // console.log(data);
-    
-    if(data == "all") {
-       return this.element.querySelectorAll(`.card`);
+    if(data === "all") {
+       return document.querySelectorAll(`.card`);
     } else {
       return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
@@ -49,13 +47,14 @@ class TabLink {
       
       return new TabCard(card);
     });
-
+  
     this.element.addEventListener('click', ()=>{
       this.selectTab()
     });
   }
 
   selectTab(){    
+    console.log("selecttab this", this);
     
     this.parent.updateActive(this);
     console.log("sel cards",this.cards);
@@ -86,8 +85,8 @@ class TabCard {
     
   }
   selectCard(){
-    
-    this.element.style.display = "flex";
+    console.log("this elem in selCard", this.element);
+    this.element.style.display = null;
   }
   deselectCard(){
     console.log("deslected card",this.element);
