@@ -10,19 +10,16 @@ class Tabs {
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
-
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
     this.activeTab;
   }
-
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
     this.activeTab;
     // assign activeTab to tabElement to update it's apperance
     this.activeTab;
   }
-
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if(data) {
@@ -48,7 +45,6 @@ class TabLink {
     // Add a click event that invokes selectTab
     this.element.addEventListener();
   }
-
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
@@ -57,7 +53,6 @@ class TabLink {
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
-
   deselectTab(){
     // Remove the class ".active-tab" from this.element
     this.element;
