@@ -6,8 +6,7 @@ class Tabs {
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
-    this.activeTab = this.tabs[0];
-    console.log("activeTab", this.activeTab); 
+    this.activeTab = this.tabs[0]; 
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
@@ -31,7 +30,7 @@ class Tabs {
       return document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
@@ -39,29 +38,31 @@ class Tabs {
 class TabLink {
   constructor(element, parent){
     // assign this.element to the element reference
-    this.element;
+    this.element = element;
     // assign this.parent to the parent reference
-    this.parent;
+    this.parent = parent;
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map(tcard => new TabCard(tcard));
     // Add a click event that invokes selectTab
-    this.element.addEventListener();
+    this.element.addEventListener('click', () => {
+      this.selectTab(); 
+    });
   }
 
   selectTab(){
     // Notice we are invoking updateActive on the parent class of TabLink, nothing to update here
     this.parent.updateActive(this);
     // Add a class of ".active-tab" to this.element
-    this.element;
+    this.element.classList.add("active-tab");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element;
+    this.element.classList.remove("active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
@@ -70,15 +71,15 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element;
+    this.element.style.display = "none";
   }
 }
 
