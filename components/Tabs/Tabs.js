@@ -18,7 +18,7 @@ class Tabs {
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab. deselectTab();
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
     this.activeTab = tabElement;
   }
