@@ -18,7 +18,7 @@ class Carousel {
 
         this.prevButton.addEventListener("click", () => {
             this.prevImg.style.display = "block";
-            this.goToPrevious(this.activeImg, this.prevImg, this.nextImg);
+            this.goToPrevious(this.activeImg, this.prevImg);
         });
         this.nextButton.addEventListener("click", () => {
             this.nextImg.style.display = "block";
@@ -26,51 +26,53 @@ class Carousel {
         });
     }
 
-    goToPrevious(img0, img1, img2) {
+    goToPrevious() {
         console.log(this);
-        TweenMax.fromTo([img1], 2, {x:-600}, {x:600});
-        TweenMax.fromTo([img0], 2, {x:-600}, {x:600});
+        TweenMax.fromTo(this.prevImg, 2, {x:-1800}, {x:-600});
+        TweenMax.fromTo(this.activeImg, 2, {x:600}, {x:1800});
         
-        if ((img0.dataset.img) === 0) {
-            img0 = this.images[this.images.length - 1];
+        if ((this.activeImg.dataset.img) === 0) {
+            this.activeImg = this.images[this.images.length - 1];
         } else {
-            img0 = this.images[img.dataset.img - 1];
-        }
-        console.log(this.activeImg);
-        this.setPrevNext(img0, img1, img2);
-    }
-
-    goToNext(img0, img1, img2) {
-        TweenMax.fromTo([img0], 2, {x:600}, {x:-600});
-        TweenMax.fromTo([img2], 2, {x:600}, {x:-600});
-
-        if ((img0.dataset.img) === (this.images.length - 1)) {
-            img0 = this.images[0];
-        } else {
-            img0 = this.images[img0.dataset.img + 1];
+            this.activeImg = this.images[this.activeImg.dataset.img - 1];
         }
         // console.log(this.activeImg);
-        this.setPrevNext(img0, img1, img2);
+        this.setPrevNext(this.activeImg, this.prevImg, this.nextImg);
+    }
+
+    goToNext() {
+        TweenMax.fromTo(this.activeImg, 2, {x:600}, {x:-600});
+        TweenMax.fromTo(this.nextImg, 2, {x:600}, {x:-600});
+
+        if ((this.activeImg.dataset.img) === (this.images.length - 1)) {
+            this.activeImg = this.images[0];
+        } else {
+            this.activeImg = this.images[this.activeImg.dataset.img + 1];
+        }
+        // console.log(this.activeImg, this.prevImg);
+        this.setPrevNext();
     }
     
-    setPrevNext(img0, img1, img2) {
-        console.log(this);
-        if ((this.activeImg.dataset.img) === 0) {
-            img1 = this.images[this.images.length - 1];
+    setPrevNext() {
+        // console.log(this);
+        if (this.activeImg.dataset.img === 0) {
+            this.prevImg = this.images[this.images.length - 1];
         } else {
-            img1 = this.images[this.activeImg.dataset.img - 1];
+            this.prevImg = this.images[this.activeImg.dataset.img - 1];
         }
         if ((this.activeImg.dataset.img) === (this.images.length - 1)) {
-            img2 = this.images[0];
+            this.nextImg = this.images[0];
         } else {
-            img2 = this.images[this.activeImg.dataset.img + 1];
+            this.nextImg = this.images[this.activeImg.dataset.img + 1];
         }
+        // console.log(img2);
         // console.log(this.prevImg);
     }
 }
 
-// let carousel = $();
-let carousel = new Carousel;
+let carousel = $(".carousel");
+carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
+// let carousel = new Carousel;
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
