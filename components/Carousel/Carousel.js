@@ -1,6 +1,7 @@
 class Carousel {
 	constructor(container) {
 		this.container = container;
+		console.log(this.container);
 		this.images = Array.from(this.container.querySelectorAll("img"));
 		this.currentImage = 0;
 
@@ -18,9 +19,9 @@ class Carousel {
 		this.autoTimer(4000);
 	}
 
-	autoTimer(duration) {
-		setInterval(this.moveRight, duration);
-	}
+	// autoTimer(duration) {
+	// 	setInterval(this.moveRight, duration);
+	// }
 
 	displayActive() {
 		$(this.images[this.currentImage]).css({

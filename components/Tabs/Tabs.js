@@ -13,7 +13,7 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab.selectTab();
+    this.activeTab.selectTab(); //there's a hidden `this` here.
   }
 
   updateActive(tabElement){
@@ -84,6 +84,7 @@ class TabCard {
 }
 
 // Create a reference to ".tabs"
-let tabs = document.querySelectorAll('.tabs');
+let tabsArray = document.querySelectorAll('.tabs');
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map( item => new Tabs( item ));
+tabsArray = Array.from(tabsArray).map( item => new Tabs( item ));
+
