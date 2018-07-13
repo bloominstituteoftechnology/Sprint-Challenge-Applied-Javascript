@@ -12,9 +12,8 @@ class Carousel {
     init() {
         document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='block';
     }
-    
     getSlides(data) {
-        return document.querySelectorAll(`.carousel img`); 
+        return data; 
     }
     moveLeft(){
         if (this.number>0) {
@@ -42,8 +41,7 @@ class ImageSlide {
      constructor(element,parent) {
         this.element=element;
         this.parent=parent;
-        this.slide= this.parent.getSlides(this.element.dataset.number);
-        this.slide= Array.from(this.slide).map(image=>new Image(image));
+        this.slide=this.parent.getSlides(this.element.dataset.number);
     } 
 }
 
