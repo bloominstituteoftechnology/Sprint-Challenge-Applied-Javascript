@@ -25,7 +25,7 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data === document.querySelectorAll(`.card[data-tab="${data}"]`)) {
+    if(data === 'all') {
       // Return a reference to all the ".card" classes
       return document.querySelectorAll(".card");
     } else {
