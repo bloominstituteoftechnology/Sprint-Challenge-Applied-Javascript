@@ -61,7 +61,7 @@ class TabLink {
 
   deselectTab(){
     // Remove the class ".active-tab" from this.element
-    this.element.classList.remove("activate-tab");
+    this.element.classList.remove("active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
   }
