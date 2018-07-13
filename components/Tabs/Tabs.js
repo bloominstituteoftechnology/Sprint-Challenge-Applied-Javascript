@@ -46,7 +46,9 @@ class TabLink {
     // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
     this.cards = this.parent.getCards(this.element.dataset.tab);
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    this.cards = Array.from(this.cards).map(card =>{
+      return new TabCard(card, this)
+    });
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', ()=>{
       this.parent.updateActive(this); 
