@@ -289,11 +289,13 @@ body {
   border: 2px solid #333;
 }
 .carousel .left-button {
+  z-index: 5;
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
 }
 .carousel .right-button {
+  z-index: 5;
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
