@@ -27,7 +27,8 @@ class Carousel {
 	goLeft(){
 		// Include first and last line for automatic slideshow
 		// Remove for regular functional carousel
-		setInterval(()=>{
+		// First line 
+		// setInterval(()=>{
 			if (this.state < 1){
 				this.state += this.pictures.length-1;
 			} else {
@@ -35,13 +36,14 @@ class Carousel {
 			}
 			this.updateActive(this.pictures[this.state]);
 		// Last line
-		}, 2000);
+		// }, 2000);
 	}
 
 	goRight(){
 		// Include first and last line for automatic slideshow
 		// Remove for regular functional carousel
-		setInterval(()=>{
+		// First line
+		// setInterval(()=>{
 			if (this.state >= this.pictures.length - 1){
 				this.state = 0
 			} else {
@@ -49,7 +51,7 @@ class Carousel {
 			}
 			this.updateActive(this.pictures[this.state]);
 		// Last line
-		}, 2000);
+		// }, 2000);
 	}
 }
 
