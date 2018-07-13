@@ -298,7 +298,13 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .carousel-img {
   width: 100%;
   display: none;
+  z-index: -1;
+}
+
+.carousel .active-img {
+  width: 100%;
+  display: block;
 }
