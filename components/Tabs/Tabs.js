@@ -7,6 +7,7 @@ class Tabs {
     this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
     // Assign activeTab to the first item in the tabs array
     this.activeTab = this.tabs[0];
+    console.log(activeTab)
     // init is simply calling a custom method named init(), nothing to do here
     this.init();
   }
@@ -25,9 +26,9 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data==='all') {
+    if(data === `all`) {
       // Return a reference to all the ".card" classes
-      return this.element.querySelectorAll(".card");
+      return this.element.querySelectorAll(`.card`);
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return this.element.querySelectorAll(`.card[data-tab="${data}"]`);
@@ -75,11 +76,11 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.classList.add("card");
+    this.element.style.display = null;
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element.classList.remove("card");
+    this.element.style.display = "none";
   }
 }
 
