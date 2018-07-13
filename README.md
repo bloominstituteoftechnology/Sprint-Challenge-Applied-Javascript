@@ -8,12 +8,15 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 
 ### Questions:
 1. What is the DOM?
-The DOM stands for Document Object Model. It is a
+The DOM stands for Document Object Model. It is an object representation of html elments. Every element on a web page can be accessed using the DOM and a programming languange such as Javascript. 
 2. What is an event?
+An event is basically something that is happening or has happened within the DOM, such as a user clicking a button. 
 3. What is an event listener?
+We can add event listeners to DOM elements to "listen" for event changes and when the event listener fires, we can specify something to happen. 
 4. Why would we convert a NodeList into an Array?
 In order to gain access to Array methods
 5. What is a component? 
+Componets are essentially reusable, modular (depending on the dev) pieces of code that allow you to easily pass along styles and functionality, such as to other element intances. 
 
 ## Challenge
 We are going to create a Lambda Newspaper. The styling is modeled after the [LA Times Website](http://www.latimes.com). Open it up and you will notice all of the HTML and CSS has already been created and imported properly. Our job is going to be to add functionality to the tabs below the 'Lambda Times' logo. These tabs will act as filters for our articles, and when clicked on, should filter out all articles except those with that tag. 
