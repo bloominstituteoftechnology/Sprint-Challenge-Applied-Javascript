@@ -13,24 +13,24 @@ class Tabs {
 
   init(){
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
-    this.activeTab;
+    this.activeTab.selectTab();
   }
 
   updateActive(tabElement){
     // Invoke the deselectTab() on activeTab to clear the styling on the tab
-    this.activeTab;
+    this.activeTab.deselectTab();
     // assign activeTab to tabElement to update it's apperance
-    this.activeTab;
+    this.activeTab=tabElement;
   }
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data) {
+    if(data === 'all') {
       // Return a reference to all the ".card" classes
-      return;
+      return document.querySelectorAll('.card');
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-      return document.querySelectorAll(`.card`);
+      return document.querySelectorAll(`.card[data-tab="${data}"]`);
     }
   }
 }
@@ -69,19 +69,19 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element=element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style="display:null";
   }
   deselectCard(){
     // Update the style of this.element to display = "none"
-    this.element;
+    this.element.style="display:none";
   }
 }
 
 // Create a reference to ".tabs"
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tabs');
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map()
+tabs = Array.from(tabs).map(tab => new Tabs(tab));
