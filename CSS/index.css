@@ -260,7 +260,7 @@ body {
   height: 500px;
   position: relative;
   overflow: hidden;
-  margin-top: 16px;
+  /* margin-top: 16px; */
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -317,5 +317,5 @@ body {
 }
 
 .stop-button {
-  padding-top: 15px; 
+  margin-top: 16px; 
 }
