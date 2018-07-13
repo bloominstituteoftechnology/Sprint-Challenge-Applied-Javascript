@@ -8,7 +8,7 @@
   @media(min-width: 1200px){
     width: 1200px;
   }
-  .left-button, .right-button {
+  .left-pointer, .right-pointer {
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
@@ -24,18 +24,28 @@
       border: 2px solid @lambda-times-color-primary;
     }
   }
-  .left-button {
+  .left-pointer {
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
   }
-  .right-button {
+  .right-pointer {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
   }
-  img {
+  .picture {
     .width-100();
     display: none;
+    animation-name: fade;
+    animation-duration: 1s;
   }
+  .active-picture {
+    display: block;
+  }
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }

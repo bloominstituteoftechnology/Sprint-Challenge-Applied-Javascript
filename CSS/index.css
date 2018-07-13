@@ -267,8 +267,8 @@ body {
     width: 1200px;
   }
 }
-.carousel .left-button,
-.carousel .right-button {
+.carousel .left-pointer,
+.carousel .right-pointer {
   display: flex;
   justify-content: center;
   align-items: none;
@@ -282,23 +282,36 @@ body {
   height: 50px;
   cursor: pointer;
 }
-.carousel .left-button:hover,
-.carousel .right-button:hover {
+.carousel .left-pointer:hover,
+.carousel .right-pointer:hover {
   color: #333;
   background-color: #fff;
   border: 2px solid #333;
 }
-.carousel .left-button {
+.carousel .left-pointer {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
 }
-.carousel .right-button {
+.carousel .right-pointer {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .picture {
   width: 100%;
   display: none;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+.carousel .active-picture {
+  display: block;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
