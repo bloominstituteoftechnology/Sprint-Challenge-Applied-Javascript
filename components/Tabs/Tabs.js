@@ -2,9 +2,12 @@ class Tabs {
   constructor(element){
     this.element = element;
     // create a reference to all the ".tab" classes
+    console.log(this.element); 
+
     this.tabs = this.element.querySelectorAll(".tab");
     // Notice that we are passing a new tab AND a reference to Tabs by using "this"
-    this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this) );
+    this.tabs = Array.from(this.tabs).map( tab => new TabLink(tab, this));
+    console.log(this.tabs)
     // Assign activeTab to the first item in the tabs array
     this.activeTab = this.tabs[0];
     // init is simply calling a custom method named init(), nothing to do here
@@ -24,11 +27,12 @@ class Tabs {
     this.activeTab = tabElement;
   }
 
+
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
     if('all' === data) {  
       // Return a reference to all the ".card" classes
-      return document.querySelectorAll(".cards") ;
+      return document.querySelectorAll(".card") ;
     } else {
       // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
       return document.querySelectorAll(`.card[data-tab="${data}"`);
@@ -48,12 +52,14 @@ class TabLink {
     // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card =>{
       return new TabCard(card, this)
+      console.log(this.cards); 
     });
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', ()=>{
       this.parent.updateActive(this); 
       this.selectTab(); 
     });
+    console.log(this.element);
   }
 
   selectTab(){
@@ -70,6 +76,7 @@ class TabLink {
     this.element.classList.remove(".active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
+  
   }
 }
 
