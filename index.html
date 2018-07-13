@@ -4,6 +4,7 @@
   <title>Lambda Times</title>
   <link rel="stortcut icon" href="./favicon.ico">
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
@@ -50,12 +51,13 @@
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
   <div class="carousel" id= "images">
-    <div onclick ="carouselImages.previous(2000);" class="left-button"><</div>
+    <div onclick ="carouselImages.previous(2000);"><i class="fa fa-step-backward" aria-hidden="true"></i></div>
     <img class="carousel" src="./assets/carousel/mountains.jpeg" />
     <img class="carousel" src="./assets/carousel/computer.jpeg" />
     <img class="carousel" src="./assets/carousel/trees.jpeg" />
     <img class="carousel" src="./assets/carousel/turntable.jpeg" />
-    <div onclick = "carouselImages.next(2000);" class="right-button">></div>
+    <div onclick = "carouselImages.next(2000);" class="right-button"><i class="fa fa-step-forward" aria-hidden="true"></i></div>
+    
   </div>
 
   <!-- CARDS COMPONENT -->
