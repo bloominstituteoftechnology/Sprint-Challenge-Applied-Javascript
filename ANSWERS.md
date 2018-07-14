@@ -19,4 +19,4 @@ It takes in two parameters, the event and a callback.
 
 5. What is a component? 
 -writing classes to reuse the same functionality 
-again in HTML.
+that can used anywhere.
