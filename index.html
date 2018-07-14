@@ -7,7 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 
   <!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 32, 2018</span>
+    <span class="date">SMARCH 32, 2018.  Wait, "Smarch?"</span>
     <h1>Lambda Times</h1>
     <span class="temp">98°</span>
   </div>
@@ -44,18 +44,21 @@
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
     </div>
-  </div>
+  </div> 
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
-    <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button">></div>
-  </div> -->
+  <div class="carousel">
+    <div style="position: relative">
+      <img src="./assets/carousel/mountains.jpeg" />
+      <img src="./assets/carousel/computer.jpeg" />
+      <img src="./assets/carousel/trees.jpeg" />
+      <img src="./assets/carousel/turntable.jpeg" />
+    </div>
+    <div class="left-button">
+      <</div>
+        <div class="right-button">></div>
+    </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -208,6 +211,16 @@
           <img src="./assets/max.jpg" />
         </div>
         <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="jquery">
+      <div class="headline">Jquerry Stars and Celebrities: What do they know? Do they Know things?  Let's find out.</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/mr-peanutbutter-bojack-horseman-72.4.jpg" />
+        </div>
+        <span>By MR PEANUTBUTTER</span>
       </div>
     </div>
 
