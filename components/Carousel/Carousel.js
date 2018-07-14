@@ -1,9 +1,53 @@
 class Carousel {
-
+    constructor(element) {
+        this.element=element;
+        this.images=this.element.querySelectorAll('img');
+        this.images=Array.from(this.images).map(img=>new ImageSlide(img,this));
+        this.leftButton=this.element.querySelector('.left-button').addEventListener('click', this.moveLeft.bind(this));
+        this.rightButton=this.element.querySelector('.right-button').addEventListener('click', this.moveRight.bind(this));
+        this.activeImg=this.images[0].element.dataset.number;
+        this.number=0;
+        this.init();
+    }
+    init() {
+        document.querySelector(`.carousel img[data-number="${this.activeImg}"]`).style.display='block';
+    }
+    getSlides(data) {
+        return data; 
+    }
+    moveLeft(){
+        if (this.number>0) {
+            this.number-=1;
+        } else {
+            this.number=this.images.length-1;
+        }
+        this.updateImage();
+    }
+    moveRight(){
+        if (this.number<this.images.length-1) {
+            this.number+=1;
+        } else {
+            this.number=0;
+        }
+        this.updateImage();
+    }
+    updateImage(){
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), 0.1, {css:{display:'none'}, ease: Elastic.easeIn});
+        this.activeImg=this.images[this.number].element.dataset.number;
+        TweenLite.to(document.querySelector(`.carousel img[data-number="${this.activeImg}"]`), .4, {css:{display:'block'}, ease: Elastic.easeOut});
+    }
+}
+class ImageSlide {
+     constructor(element,parent) {
+        this.element=element;
+        this.parent=parent;
+        this.slide=this.parent.getSlides(this.element.dataset.number);
+    } 
 }
 
-let carousel = $();
+let carousel = document.querySelectorAll('.carousel');
 
+carousel=Array.from(carousel).map(carousel=>new Carousel(carousel));
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. Those buttons are gonna need some click handlers.
