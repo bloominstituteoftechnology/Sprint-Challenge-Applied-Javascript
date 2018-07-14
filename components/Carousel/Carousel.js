@@ -2,55 +2,43 @@ class Carousel {
     constructor(element){
         this.element = element;
         this.slides = document.querySelectorAll('.carousel-img');
-        this.slides = Array.from(this.slides).map(img => {return new CarouselImg(img)});
+        this.slides = Array.from(this.slides);
         this.position = 0;
         this.right = document.querySelector('.right-button');
         this.right.addEventListener('click', () => {
+            this.unselectImg();
             if(this.position >= this.slides.length-1){
                 this.position = 0;
             }
             else{
-                this.position ++;
+                this.position+=1;
             }
-            this.updateActive(this.slides[this.position]);
+            this.selectImg();
         })
         this.left = document.querySelector('.left-button');
         this.left.addEventListener('click', () => {
+            this.unselectImg();
             if(this.position < 1){
                 this.position += this.slides.length-1;
             }
             else{
-                this.position--;
+                this.position-=1;
             }
-            this.updateActive(this.slides[this.position]);
+            this.selectImg();
         })
-        this.activeImg = this.slides[this.position];
-        this.init();
-    }
-    init(){
-        this.slides.selectImg();
-    }
-    updateActive(imgElement){
-        this.activeImg.deselectImg();
-        this.activeImg = imgElement;
-        this.activeImg.selectImg();
-    }
-}
-
-class CarouselImg {
-    constructor(element){
-        this.element = elememt;
+        this.selectImg();
     }
     selectImg(){
-        this.slides.classList.add('active-img');
+        this.slides[this.position].classList.add('active-img');
     }
-    deselectImg(){
-        this.slides.classList.remove('active-img');
+    unselectImg(){
+        this.slides[this.position].classList.remove('active-img');
     }
 }
 
-let carousel = document.querySelector('.carousel');
+let carousel = document.querySelectorAll('.carousel');
 carousel = Array.from(carousel).map(element => new Carousel(element));
+
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
