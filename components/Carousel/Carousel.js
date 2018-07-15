@@ -25,7 +25,6 @@ class Carousel {
         this.rightCounter += 1;
         this.activeImg = this.imgsArray[this.rightCounter];
         this.imgsArray.forEach( img => img = img.style.display = "none");
-        this.activeImg = this.imgsArray[this.rightCounter];
         this.activeImg.style.display = "block";
         if (this.rightCounter === this.imgsArray.length-1) {
             this.rightCounter = -1;
@@ -33,10 +32,9 @@ class Carousel {
     }
     updateImageLeft() {
         this.leftCounter -= 1;
-        console.log('Left click working')
-        console.log(this.leftCounter)
-        this.activeImg.classList.toggle("img");
-        this.imgsArray.forEach( img => img.element.style.display);
+        this.activeImg = this.imgsArray[this.leftCounter];
+        this.imgsArray.forEach( img => img.style.display = "none");
+        this.activeImg.style.display = "block";
         if (this.leftCounter === 0) {
             this.leftCounter = this.imgsArray.length;
         }
