@@ -4,10 +4,14 @@ class Carousel {
         this.leftButton = document.querySelector(".left-button");
         this.rightButton = document.querySelector(".right-button");
         this.imgsArray = this.item.querySelectorAll("img");
+        this.rightCounter = 0;
+        this.leftCounter = this.imgsArray.length;
+        this.activeImg = this.imgsArray[this.leftCounter];
+        console.log(this.leftCounter)
         
         this.imgsArray = Array.from(this.imgsArray);
-        this.leftButton.addEventListener("click", () => { this.updateImage() });
-        this.rightButton.addEventListener("click", () => { this.updateImage() });
+        this.leftButton.addEventListener("click", () => { this.updateImageLeft() });
+        this.rightButton.addEventListener("click", () => { this.updateImageRight() });
         this.init();
     };
 
@@ -17,10 +21,29 @@ class Carousel {
         this.activeImg.style.display = "block";
     }
 
-    updateImage() {
-        this.activeImg = this.imgsArray[0+1];
-        if (this.imgsArray)
+    updateImageRight() {
+        this.rightCounter += 1;
+        this.activeImg = this.imgsArray[this.rightCounter];
+        this.imgsArray.forEach( img => img = img.style.display = "none");
+        this.activeImg = this.imgsArray[this.rightCounter];
+        this.activeImg.style.display = "block";
+        if (this.rightCounter === this.imgsArray.length-1) {
+            this.rightCounter = -1;
+        }
     }
+    updateImageLeft() {
+        this.leftCounter -= 1;
+        console.log('Left click working')
+        console.log(this.leftCounter)
+        this.activeImg.classList.toggle("img");
+        this.imgsArray.forEach( img => img.element.style.display);
+        if (this.leftCounter === 0) {
+            this.leftCounter = this.imgsArray.length;
+        }
+
+    }
+
+
     // updateActive(tabElement){
     // // Invoke the deselectTab() on activeTab to clear the styling on the tab
     // this.activeImg.deselectImage();
