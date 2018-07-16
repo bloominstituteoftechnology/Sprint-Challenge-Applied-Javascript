@@ -313,3 +313,6 @@ body {
     justify-content: center;
   }
 }
+.top-bar {
+  z-index: 20;
+}
