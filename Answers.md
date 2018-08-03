@@ -18,3 +18,7 @@
 5. What is a component?
 
     Components are self contained reusable chunks of code that are used to build elements that share functionality.
+  
+6. Why would we convert a NodeList into an Array?
+
+    Converting a NodeList into an array would grant you access to the built in JS array methods.
