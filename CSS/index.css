@@ -170,11 +170,6 @@ body {
   height: 47px;
   background-color: #fff;
 }
-@media (min-width: 1280px) {
-  .tabs {
-    width: 1280px;
-  }
-}
 .tabs .topics {
   display: flex;
   justify-content: none;
