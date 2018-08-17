@@ -6,17 +6,31 @@ class Carousel {
     this.rightArrow = this.element.querySelector('.right-button')
     this.images = this.element.querySelectorAll('img')
 
+    this.indexArr = [0,1,2,3]
     this.index = 0
 
-    this.rightArrow.addEventListener('click', () => this.scroll())
-    this.leftArrow.addEventListener('click', () => this.scroll())
+    this.rightArrow.addEventListener('click', () => this.scrollRight())
+    this.leftArrow.addEventListener('click', () => this.scrollLeft())
 
   }
 
-  scroll() {
+  scrollRight() {
+    this.images.forEach( item  => item.classList.remove('carousel-inactive-right') )
+    this.images[this.indexArr[this.index]].classList.remove('carousel-active-right')
+    this.index++
+    this.index %= 4;
+    this.index == 0 ?
+    this.images[3].classList.toggle('carousel-inactive-right')
+    :
+    this.images[this.index-1].classList.toggle('carousel-inactive-right')
+    this.images[this.index].classList.add('carousel-active-right')
+    console.log('ind:', this.index);
+  }
+
+  scrollLeft() {
     this.images[this.index].classList.remove('carousel-active')
-    event.target == this.rightArrow ? this.index++ : this.index--
-    this.index < 0 ? this.index = 3 : this.index %= 4
+    this.index--
+    this.index < 0 ? this.index = 3 : this.index %= 4;
     this.images[this.index].classList.add('carousel-active')
   }
 
@@ -34,3 +48,10 @@ carousel = new Carousel(carousel)
     5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
+
+// scroll() {
+//     this.images[this.index].classList.remove('carousel-active')
+//     event.target == this.rightArrow ? this.index++ : this.index--
+//     this.index < 0 ? this.index = 3 : this.index %= 4
+//     this.images[this.index].classList.add('carousel-active')
+//   }

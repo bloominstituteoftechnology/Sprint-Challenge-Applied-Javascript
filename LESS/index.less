@@ -19,11 +19,55 @@ body {
   font-family: 'PT Sans', sans-serif;
 
   .carousel {
-    .carousel-active{
+    .left-button,
+    .right-button {
+      z-index: 1;
+    }
+    .carousel-active-right{
       display: block;
+      position: relative;
+      animation-name: slideInRight;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-direction: alternate;
+      // left: 1500px;
+      animation-fill-mode: forwards;
+    }
+    .carousel-inactive-right{
+      display: block;
+      position: relative;
+      animation-name: slideOut;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-direction: alternate;
+      // left: -1000px;
+      animation-fill-mode: forwards;
     }
   }
 }
+
+@keyframes slideInRight {
+  from {
+    left: 100%;
+    display: none;
+  }
+
+  to {
+    left: -50%;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: -100%;
+    display: none;
+  }
+}
+
 
 @import './components/Topbar/TopBar';
 @import './components/Header/Header';

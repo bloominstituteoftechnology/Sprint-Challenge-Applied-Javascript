@@ -46,8 +46,45 @@ body {
   color: #333;
   font-family: 'PT Sans', sans-serif;
 }
-body .carousel .carousel-active {
+body .carousel .left-button,
+body .carousel .right-button {
+  z-index: 1;
+}
+body .carousel .carousel-active-right {
   display: block;
+  position: relative;
+  animation-name: slideInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+body .carousel .carousel-inactive-right {
+  display: block;
+  position: relative;
+  animation-name: slideOut;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes slideInRight {
+  from {
+    left: 100%;
+    display: none;
+  }
+  to {
+    left: -50%;
+  }
+}
+@keyframes slideOut {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+    display: none;
+  }
 }
 .top-bar {
   width: 100%;
