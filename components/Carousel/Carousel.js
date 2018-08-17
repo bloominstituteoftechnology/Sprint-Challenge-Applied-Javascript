@@ -8,7 +8,6 @@ class Carousel {
             this.carousel = document.querySelectorAll(`.carousel[img-tab="${this.carouselData}"`);
           }
     }
-
 }
 
 let carousel = document.querySelector('.carousel');
