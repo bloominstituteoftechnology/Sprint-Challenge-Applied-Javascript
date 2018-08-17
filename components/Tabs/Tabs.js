@@ -16,26 +16,57 @@ class TabLink {
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(tabCards => new TabCard(tabCards));
+
+    //this.cards = Array.from(this.cards).map(tabCards => new TabCard(tabCards));
+
     // Add a click event that invokes selectTab
     //this.element.addEventListener();
-    this.element.addEventListener('click', () => { this.selectTab() });
+
+    //this.element.addEventListener('click', () => { this.selectTab() });
   }
 
   selectTab(){
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
+   
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach()
+
+    //Use for Nodelist
+    //tabs.forEach((e) => { e.classList.remove('.active-tab');
+
+    // });
+
+    //Use if convert to array before removing the .active class from each element
+    Array.from(tabs).forEach((e) => { e.classList.remove('active-tab');
+
+     });
     // Add a class of ".active-tab" to this.element
-    this.element;
+    // this.element;
+    this.element.classList.add('active-tab');
 
 
     // Select all of the elements with the .card class on them
     // const cards = ;
+    const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach()
+    //cards.forEach()
+
+     //Use for Nodelist
+    // cards.forEach((e) => { e.style.flex = none;
+
+    // });
+    cards.forEach(
+      functiion(e) {
+        cards.style.flex = none;
+      }
+    );
+
+    //Use if convert to array before setting the display style each one to 'none'
+  //   Array.from(cards).forEach(functiion(e) {
+  //     cards.style.flex = none;
+  //   }
+  // );
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
