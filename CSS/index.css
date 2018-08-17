@@ -35,6 +35,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: red;
 }
 body {
   display: flex;
@@ -44,6 +45,73 @@ body {
   background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
+}
+body .carousel .left-button,
+body .carousel .right-button {
+  z-index: 1;
+}
+body .carousel .carousel-active-right {
+  display: block;
+  position: absolute;
+  animation-name: slideInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+body .carousel .carousel-inactive-right {
+  display: block;
+  position: relative;
+  animation-name: slideOutRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+body .carousel .carousel-active-left {
+  display: block;
+  position: absolute;
+  animation-name: slideInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+body .carousel .carousel-inactive-left {
+  display: block;
+  animation-name: slideOutLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+@keyframes slideInRight {
+  from {
+    left: 100%;
+    display: none;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes slideOutRight {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+    display: none;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    left: -100%;
+    display: none;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+    display: none;
+  }
 }
 .top-bar {
   width: 100%;

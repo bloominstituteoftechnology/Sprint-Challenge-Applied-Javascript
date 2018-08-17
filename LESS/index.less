@@ -7,8 +7,9 @@
 }
 
 html, body {
-  margin: 0; 
+  margin: 0;
   padding: 0;
+  color: red;
 }
 
 body {
@@ -16,9 +17,94 @@ body {
   background-color: @lambda-times-color-background;
   color: @lambda-times-color-primary;
   font-family: 'PT Sans', sans-serif;
+
+  .carousel {
+    .left-button,
+    .right-button {
+      z-index: 1;
+    }
+    .carousel-active-right{
+      display: block;
+      position: absolute;
+      animation-name: slideInRight;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+
+    }
+    .carousel-inactive-right{
+      display: block;
+      position: relative;
+      animation-name: slideOutRight;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+    }
+    .carousel-active-left{
+      display: block;
+      position: absolute;
+      animation-name: slideInLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+
+    }
+    .carousel-inactive-left{
+      display: block;
+      // position: relative;
+      animation-name: slideOutLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+    }
+  }
 }
 
-@import './components/Topbar/TopBar';
+@keyframes slideInRight {
+  from {
+    left: 100%;
+    display: none;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+//
+@keyframes slideOutRight {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: -100%;
+    display: none;
+  }
+
+
+
+
+}
+
+@keyframes slideInLeft {
+  from {
+    left: -100%;
+    display: none;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+//
+@keyframes slideOutLeft {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: 100%;
+    display: none;
+  }
+}
+
+@import './components/Topbar/Topbar';
 @import './components/Header/Header';
 @import './components/Tabs/Tabs';
 @import './components/Cards/Cards';
