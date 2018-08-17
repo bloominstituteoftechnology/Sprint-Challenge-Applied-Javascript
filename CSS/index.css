@@ -119,6 +119,7 @@ body {
   align-items: center;
   flex-direction: row;
   background-color: #fff;
+  border-bottom: 1px solid lightgrey;
   width: 100%;
   height: 120px;
   margin-top: 44px;
@@ -153,6 +154,7 @@ body {
   flex: 1;
 }
 .tabs {
+  border-bottom: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
