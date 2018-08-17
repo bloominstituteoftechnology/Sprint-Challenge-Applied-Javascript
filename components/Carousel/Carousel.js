@@ -8,20 +8,69 @@ class Carousel {
 
 		this.pics = this.carl.querySelectorAll('.car-pic');
 		let picAr = Array.from(this.pics);
-		console.log(picAr.length);
 		picAr[0].classList.add('img-show');
-
 	}
 	goLeft() {
 		this.pics = this.carl.querySelectorAll('.car-pic');
 		let picAr = Array.from(this.pics);
 
-		picAr.forEach(function(pic){
-			pic.classList.remove('img-show')
-		})
+		let imgIndex;
+
+		for(let i = 0; i < 4; i++){
+			if(picAr[i].classList.value.indexOf('img-show') !== -1){
+				imgIndex = picAr.indexOf(picAr[i]);
+			}
+		}
+		
+		switch (imgIndex){
+			case 0:
+				picAr[0].classList.remove('img-show');
+				picAr[3].classList.add('img-show');
+			break;
+			case 1:
+				picAr[1].classList.remove('img-show');
+				picAr[0].classList.add('img-show');
+			break;
+			case 2:
+				picAr[2].classList.remove('img-show');
+				picAr[1].classList.add('img-show');
+			break;
+			case 3:
+				picAr[3].classList.remove('img-show');
+				picAr[2].classList.add('img-show');
+			break;
+		}
 	};
 	goRight(){
-		alert('right!')
+		this.pics = this.carl.querySelectorAll('.car-pic');
+		let picAr = Array.from(this.pics);
+
+		let imgIndex;
+
+		for(let i = 0; i < 4; i++){
+			if(picAr[i].classList.value.indexOf('img-show') !== -1){
+				imgIndex = picAr.indexOf(picAr[i]);
+			}
+		}
+		
+		switch (imgIndex){
+			case 0:
+				picAr[0].classList.remove('img-show');
+				picAr[1].classList.add('img-show');
+			break;
+			case 1:
+				picAr[1].classList.remove('img-show');
+				picAr[2].classList.add('img-show');
+			break;
+			case 2:
+				picAr[2].classList.remove('img-show');
+				picAr[3].classList.add('img-show');
+			break;
+			case 3:
+				picAr[3].classList.remove('img-show');
+				picAr[0].classList.add('img-show');
+			break;
+		}
 	};
 }
 
