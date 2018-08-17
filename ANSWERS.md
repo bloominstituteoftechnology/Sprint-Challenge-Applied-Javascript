@@ -1,6 +1,6 @@
 ### Questions:
 1. What is the DOM?
-The DOM is made from a webpage's HTML, but it also allows us to manipulate it with javascript.
+The DOM is made from a webpage's HTML by the browser, but it also allows us to manipulate it locally with javascript.
 
 2. What is an event?
 An event occurs whenever an user scrolls, clicks or otherwise does something on a website. The browser tracks these events, and can respond to them through javascript and the DOM.
