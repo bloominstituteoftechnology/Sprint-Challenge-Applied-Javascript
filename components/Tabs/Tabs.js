@@ -56,17 +56,16 @@ class TabLink {
     // cards.forEach((e) => { e.style.flex = none;
 
     // });
-    cards.forEach(
-      functiion(e) {
-        cards.style.flex = none;
-      }
-    );
+    // cards.forEach(
+    //   functiion(e) {
+    //     cards.style.flex = none;
+    //   }
+    // );
 
     //Use if convert to array before setting the display style each one to 'none'
-  //   Array.from(cards).forEach(functiion(e) {
-  //     cards.style.flex = none;
-  //   }
-  // );
+    Array.from(cards).forEach(functiion(e) {
+      cards.style.flex = none;
+    });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
