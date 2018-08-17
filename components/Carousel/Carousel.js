@@ -1,5 +1,5 @@
 class Carousel {
-    constructor(element){
+    constructor(element) {
         this.element = element;
         // Get left and right buttons from carousel element
         this.leftButton = element.querySelector('.left-button');
@@ -10,44 +10,51 @@ class Carousel {
         this.currentIndex = 0;
         // Show first image by default
         this.images[this.currentIndex].style.display = 'block';
-        
+
         this.leftButton.addEventListener('click', () => {
             this.lastImage();
         })
 
         this.rightButton.addEventListener('click', () => {
-            this.nextImage();
+                this.nextImage();
         })
     }
+    
 
-    lastImage(){
+    lastImage() {
         // Shift index -1 on left click, wraparound if index < 0
-        if((this.currentIndex - 1) < 0){
+        if ((this.currentIndex - 1) < 0) {
             this.currentIndex = this.images.length - 1;
         } else {
             this.currentIndex -= 1;
         }
         // hide all images
-        this.images.forEach(function(each){
+        this.images.forEach(function (each) {
             each.style.display = 'none';
         })
         // display image of current index
         this.images[this.currentIndex].style.display = 'block';
+        let currentImg = this.images[this.currentIndex];
+        TweenMax.fromTo(currentImg, 0.5, { ease: Back.easeOut, x: 1200 }, { ease: Back.easeOut, x: 0 });
     }
 
-    nextImage(){
+
+    nextImage() {
         // Shift index +1 on right click, wraparound if index > images.length - 1
-        if((this.currentIndex + 1) > this.images.length - 1){
-            this.currentIndex = 0;
-        } else {
-            this.currentIndex += 1;
-        }
+            if ((this.currentIndex + 1) > this.images.length - 1) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex += 1;
+            }
+        
         // hide all images
-        this.images.forEach(function(each){
+        this.images.forEach(function (each) {
             each.style.display = 'none';
         })
         // display image of current index
         this.images[this.currentIndex].style.display = 'block';
+        let currentImg = this.images[this.currentIndex];
+        TweenMax.fromTo(currentImg, 0.5, { ease: Back.easeOut, x: -1200 }, { ease: Back.easeOut, x: 0 });
     }
 }
 
