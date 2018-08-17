@@ -32,7 +32,7 @@ class TabLink {
     const tabs = document.querySelectorAll(".tab");
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(function(tabs){
-      tabs.classList.remove(".active-tab");
+      tabs.classList.remove("active-tab");
     });
     // Add a class of ".active-tab" to this.element
     this.element.classList.add("active-tab");
