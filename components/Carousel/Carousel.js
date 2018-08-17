@@ -19,8 +19,8 @@ class Carousel {
         this.images.forEach(image => {
             image.classList.toggle("display");
         })
-        console.log(this.images);
-        //this.images.classList.add("display");      
+        
+        
     }
 
 }
