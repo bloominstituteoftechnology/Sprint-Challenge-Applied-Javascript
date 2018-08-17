@@ -7,10 +7,10 @@ class TabLink {
     console.log(this.linkData); 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
-    if(this.cards){
-      this.cards = this.tabData.querySelector('.card');
+    if(this.tabData === 'all'){
+      this.cards = document.querySelector('.card');
     } else {
-      this.cards = this.element.querySelectorAll('.card');;
+      this.cards = document.querySelectorAll('.card');;
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
@@ -37,9 +37,7 @@ class TabLink {
     // Select all of the elements with the .card class on them
     let cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach.call(cards, function(card){
-      cards.classList.toggle('dropdown-hidden');
-  });
+    cards.forEach(card => card.style.display = "none");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
