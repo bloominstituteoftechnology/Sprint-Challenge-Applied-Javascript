@@ -52,7 +52,6 @@ class Carousel {
 				imgIndex = picAr.indexOf(picAr[i]);
 			}
 		}
-		
 		switch (imgIndex){
 			case 0:
 				picAr[0].classList.remove('img-show');
