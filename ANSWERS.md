@@ -17,4 +17,4 @@
 
 5. What is a component? 
 
-  A component is a reusable peice of code that encapsulates a set of behaviors, logic, style, or functionality.
+  A component is a reusable piece of code that encapsulates a set of behaviors, logic, style, or functionality.
