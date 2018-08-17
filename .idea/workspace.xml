@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da0dfeed-3277-4747-a302-64dd49e4c30f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ANSWERS.md" beforeDir="false" afterPath="$PROJECT_DIR$/ANSWERS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LESS/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/LESS/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Tabs/Tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Tabs/Tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Tabs/Tabs.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/Tabs/Tabs.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +26,8 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="1" />
-          <entry key="js" value="1" />
-          <entry key="less" value="3" />
+          <entry key="js" value="2" />
+          <entry key="less" value="4" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
@@ -37,21 +35,23 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="1" />
-          <entry key="Less" value="3" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Less" value="4" />
           <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1571" />
+          <entry key="html" value="16" />
+          <entry key="js" value="2456" />
           <entry key="less" value="10" />
           <entry key="md" value="1532" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1571" />
+          <entry key="HTML" value="16" />
+          <entry key="JavaScript" value="2456" />
           <entry key="Less" value="10" />
           <entry key="Markdown" value="1532" />
         </counts>
@@ -64,25 +64,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="36" />
+            <state relative-caret-position="-1010">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/Tabs/Tabs.js">
+        <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="312">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-413" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Tabs/Tabs.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
+            <state relative-caret-position="784">
               <caret line="34" column="20" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="20" />
             </state>
           </provider>
@@ -107,6 +114,8 @@
         <option value="$PROJECT_DIR$/LESS/index.less" />
         <option value="$PROJECT_DIR$/components/Tabs/Tabs.less" />
         <option value="$PROJECT_DIR$/components/Tabs/Tabs.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/Carousel/Carousel.js" />
       </list>
     </option>
   </component>
@@ -145,7 +154,7 @@
               <item name="Sprint-Challenge-Applied-Javascript" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sprint-Challenge-Applied-Javascript" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Tabs" type="462c0819:PsiDirectoryNode" />
+              <item name="Carousel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sprint-Challenge-Applied-Javascript" type="b2602c69:ProjectViewProjectNode" />
@@ -185,12 +194,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534519286862</updated>
-      <workItem from="1534519288350" duration="7061000" />
+      <workItem from="1534519288350" duration="8594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7061000" />
+    <option name="totallyTimeSpent" value="8594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1360" extended-state="0" />
@@ -243,24 +252,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/components/Tabs/Tabs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="36" />
+        <state relative-caret-position="494">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Tabs/Tabs.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
+        <state relative-caret-position="784">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Tabs/Tabs.js">
+    <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="-413" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1010">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
         </state>
       </provider>
     </entry>
