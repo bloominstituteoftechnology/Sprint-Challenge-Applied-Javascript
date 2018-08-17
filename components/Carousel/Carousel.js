@@ -14,9 +14,23 @@ class Carousel {
         this.position = 0;
 
         this.showing = this.imgs[this.position].classList.add('show');
+
+        
     } 
 
     selectLeft() {
+
+        //attempt at animation
+        // play();
+
+        // function play() {
+        //     TweenLite.to(this.imgs[0], 2, {
+        //         xPercent: 100,
+        //         ease: Power1.easeInOut
+        //     })
+        // }
+
+
         this.imgs.forEach(function(img) {
             img.classList.remove('show');
         })
