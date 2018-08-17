@@ -292,15 +292,18 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 5;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 5;
 }
 .carousel img {
   width: 100%;
   display: none;
+  z-index: 0;
 }
 .carousel .display {
   display: block;

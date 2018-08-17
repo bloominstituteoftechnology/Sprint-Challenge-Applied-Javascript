@@ -28,9 +28,11 @@ class Carousel {
                 if (currentImage === this.images[3]) {
                     currentImage.classList.remove("display");
                     this.images[0].classList.add("display");
+                    TweenMax.fromTo(".carousel img", 2, {x:-300, opacity: 0 }, { x:0, opacity: 1 });
                 } else if(currentImage === this.images[i]) {
                     currentImage.classList.remove("display");
                     this.images[i+1].classList.add("display");
+                    TweenMax.fromTo(".carousel img", 2, {x:-300, opacity: 0 }, { x:0, opacity: 1 });
                 }
             }
         } else {
@@ -38,10 +40,11 @@ class Carousel {
                 if (currentImage === this.images[0]) {
                     currentImage.classList.remove("display");
                     this.images[3].classList.add("display");
+                    TweenMax.fromTo(".carousel img", 2, {x:300, opacity: 0 }, { x: 0, opacity: 1 });
                 } else if(currentImage === this.images[i]) {
                     currentImage.classList.remove("display");
-               
                     this.images[i-1].classList.add("display");
+                    TweenMax.fromTo(".carousel img", 2, {x:300, opacity: 0 }, { x: 0, opacity: 1 });
                 }
             }
         }
