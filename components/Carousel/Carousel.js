@@ -14,8 +14,8 @@ class Carousel {
             if(index < 3){
                 this.imgs[index].style.display = "none";
                 index += 1;
-                TweenMax.from(this.imgs[index], 2, {opacity: 0});
-                TweenMax.to(this.imgs[index], 2, {opacity: 1});
+                TweenMax.from(this.imgs[index], 1, {y: "100%", zIndex: 0});
+                TweenMax.to(this.imgs[index], 1, {y: "0", zIndex: -1});
                 this.imgs[index].style.display = "block";
                 console.log(this.imgs[index]);
             }
@@ -24,8 +24,8 @@ class Carousel {
             if(index > 0 && index <= 3){
                 this.imgs[index].style.display = "none";
                 index -= 1;
-                TweenMax.from(this.imgs[index], 2, {opacity: 0});
-                TweenMax.to(this.imgs[index], 2, {opacity: 1});
+                TweenMax.from(this.imgs[index], 1, {y: "100%", zIndex: 0});
+                TweenMax.to(this.imgs[index], 1, {y: "0%", zIndex: -1});
                 this.imgs[index].style.display = "block";
                 console.log(this.imgs[index]);
             }

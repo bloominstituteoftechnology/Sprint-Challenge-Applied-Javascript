@@ -28,15 +28,19 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   img {
     .width-100();
     display: none;
     transition: all 300ms ease-in-out;
+    position: relative;
+    z-index: -1;
   }
 }
