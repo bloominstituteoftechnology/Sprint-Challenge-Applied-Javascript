@@ -9,4 +9,4 @@ The DOM functionally is an API that facilitates the ability to execute what it c
 4. Why would we convert a NodeList into an Array?
 ---A NodeList is 'array like.' This means that while it shares some aspects of an array it is not technically an array. Because it is not technically an array we do not have access array methods. Array methods allow us to manipulate data in a muc more nuanced way. Thus we want to convert a NodeList to an array.
 5. What is a component? 
--- A component is a modular section of code that, achieves a particular task. If desinged well, we should be able to port this component to other projects that nees that same task executed.
+-- A component is a modular section of code that, achieves a particular task. If desinged well, we should be able to port this component to other projects that need that same task executed.
