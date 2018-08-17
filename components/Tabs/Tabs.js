@@ -8,13 +8,11 @@ class TabLink {
     this.cards = document.querySelectorAll(`.card[data-tab="${this.element}"]`)
     // If the data is 'all' then select all cards regardless of their data attribute
     
-    // !!!DEV NOTE!!! What does this if statement do? There is only one statement? Why would you need two?
-    
-    // if(this.element.dataset.all){
-    //   this.cards = document.querySelectorAll('.card');
-    // } else {
-    //   this.cards = ;
-    // }
+    if(this.tabData === 'all'){
+      this.cards = document.querySelectorAll('.card');
+    } else {
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+    }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
@@ -34,7 +32,7 @@ class TabLink {
 
 
     // Select all of the elements with the .card class on them
-    const cards = document.querySelectorAll('card');
+    const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
 
     // !!!DEV NOTE!!! Even though I get no erros, I'm not able to apply the style to each card.
@@ -55,7 +53,8 @@ class TabCard {
 
     // !!!DEV NOTE!!! This never worked for me. Not sure why.
 
-    this.element.style.display('null');
+    this.element.style.display = null;
+    console.log(this.element);
   }
 
 }
@@ -66,4 +65,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new TabLink(tab))
 
 //Once you are complete, call the .select method on the first tab
-tabs[0].select();
+tabs[0].selectTab();
