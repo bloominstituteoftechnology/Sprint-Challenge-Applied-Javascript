@@ -3,7 +3,9 @@ class Carousel {
     this.element = element;
     this.leftBtn = leftBtn;
     this.rightBtn = rightBtn;
-    this.images = document.querySelectorAll()
+    this.imageData = this.element.dataset.images;
+
+    
   }
 
 
@@ -15,7 +17,15 @@ let leftBtn = carousel.querySelector(".left-button");
 let rightBtn = carousel.querySelector(".right-button");
 let currentIndex = 0;
 
+leftBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    this.images = this.images[currentIndex - 1];
+  }
+});
 
+rightBtn.addEventListener('click', () => {
+  if (currentIndex )
+})
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
