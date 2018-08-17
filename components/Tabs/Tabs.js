@@ -4,16 +4,14 @@ class TabLink {
     this.element;
     // Get the tab data attribute and save the value here
     this.tabData = ; 
-    // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    // If the data is 'all' then select all cards regardless of their data attribute
+    // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     if(){
       this.cards = ;
     } else {
       this.cards = ;
     }
 
-    // Map over the cards array and convert each card element into a new instance of the TabCard class. 
-    // Pass in the card object to the TabCard class.
+    // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map();
     // Add a click event that invokes selectTab
     this.element.addEventListener();
