@@ -4,7 +4,6 @@
     <list default="true" id="da0dfeed-3277-4747-a302-64dd49e4c30f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Carousel/Carousel.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/Carousel/Carousel.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,7 +43,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="33" />
-          <entry key="js" value="3186" />
+          <entry key="js" value="3587" />
           <entry key="less" value="160" />
           <entry key="md" value="1532" />
         </counts>
@@ -52,7 +51,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="33" />
-          <entry key="JavaScript" value="3186" />
+          <entry key="JavaScript" value="3587" />
           <entry key="Less" value="160" />
           <entry key="Markdown" value="1532" />
         </counts>
@@ -74,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+            <state relative-caret-position="523">
+              <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -198,12 +197,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534519286862</updated>
-      <workItem from="1534519288350" duration="11282000" />
+      <workItem from="1534519288350" duration="12769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11282000" />
+    <option name="totallyTimeSpent" value="12769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1360" extended-state="0" />
@@ -286,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Carousel/Carousel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+        <state relative-caret-position="523">
+          <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
         </state>
       </provider>
     </entry>
