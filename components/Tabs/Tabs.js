@@ -27,7 +27,7 @@ class TabLink {
     // Iterate through the NodeList removing the .active-tab class from each element
     Array.from(tabs).forEach(tab => tab.classList.remove('active-tab'))
     // Add a class of ".active-tab" to this.element
-    this.element;
+    this.element.classList.addEventListener('active-tab');
 
 
     // Select all of the elements with the .card class on them
