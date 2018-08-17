@@ -10,15 +10,41 @@ class Carousel {
         //Images
         this.images = this.element.querySelectorAll(".carousel img");    
 
+
         this.leftButton.addEventListener("click", () => { this.buttonClick() });
 
         this.rightButton.addEventListener("click", () => { this.buttonClick() });
     }
 
     buttonClick() {
-        this.images.forEach(image => {
-            image.classList.toggle("display");
-        })
+        let currentImage;
+        for(let i = 0; i < this.images.length; i++) {
+            if(this.images[i].className === "display") {
+                currentImage = this.images[i];
+            }
+        }
+        if(event.currentTarget.className === "right-button") {
+            for(let i = 0; i < this.images.length; i++) {
+                if (currentImage === this.images[3]) {
+                    currentImage.classList.remove("display");
+                    this.images[0].classList.add("display");
+                } else if(currentImage === this.images[i]) {
+                    currentImage.classList.remove("display");
+                    this.images[i+1].classList.add("display");
+                }
+            }
+        } else {
+            for(let i = 0; i < this.images.length; i++) {
+                if (currentImage === this.images[0]) {
+                    currentImage.classList.remove("display");
+                    this.images[3].classList.add("display");
+                } else if(currentImage === this.images[i]) {
+                    currentImage.classList.remove("display");
+               
+                    this.images[i-1].classList.add("display");
+                }
+            }
+        }
         
         
     }
