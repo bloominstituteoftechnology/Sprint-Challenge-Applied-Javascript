@@ -5,22 +5,24 @@ class Carousel {
         this.rightBtn = document.querySelector('.right-button');
         this.imgs = Array.from(document.querySelectorAll('.c-img'));
         let index = 0;
+        this.imgs[0].style.display = "block";
         console.log(carousel);
         console.log(this.rightBtn);
         console.log(this.leftBtn);
         console.log(this.imgs);
         this.rightBtn.addEventListener('click', () => {
-            if(index >= 0 && index <= 3){
-                this.imgs.map(img => img.style.display = "none");
+            if(index < 3){
+                this.imgs[index].style.display = "none";
+                index += 1;
                 this.imgs[index].style.display = "block";
                 console.log(this.imgs[index]);
-                index += 1;
             }
         });
         this.leftBtn.addEventListener('click', () => {
-            if(index > 0 && index <= 4){
+            if(index > 0 && index <= 3){
+
+                this.imgs[index].style.display = "none";
                 index -= 1;
-                this.imgs.map(img => img.style.display = "none");
                 this.imgs[index].style.display = "block";
                 console.log(this.imgs[index]);
             }
