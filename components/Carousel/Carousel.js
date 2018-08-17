@@ -19,16 +19,18 @@ class Carousel {
     }
 
     goLeft() {
-        console.log("Going left.");
+        console.log(`Going left to ${}.`);
+        // move carouselImgs array back one index
 
     }
 
     goRight() {
-        console.log("Going right.");
+        console.log(`Going right to ${}.`);
+        // move carouselImgs array forward one index
 
     }
   
-    selectTab(){
+    /*selectTab(){
       console.log(`Selecting tab ${this.element.dataset.tab}`);
       // Select all elements with the .tab class on them
       const tabs = document.querySelectorAll('.tab');
@@ -47,7 +49,7 @@ class Carousel {
       });
       // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
       this.cards.forEach(card => card.selectCard());
-    }
+    }*/
   }
   
   class CarouselImgs {
