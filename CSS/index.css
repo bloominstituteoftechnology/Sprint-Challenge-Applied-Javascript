@@ -302,7 +302,7 @@ body {
   width: 100%;
   display: none;
   left: -1000px;
-  opacity: 1;
+  opacity: 0;
   position: relative;
   z-index: -1;
 }
