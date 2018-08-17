@@ -78,7 +78,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
 
 }
@@ -90,3 +90,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tabLinks => new TabLink(tabLinks));
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].selectTab();
