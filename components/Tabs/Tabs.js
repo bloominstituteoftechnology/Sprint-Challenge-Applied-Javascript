@@ -4,7 +4,7 @@ class TabLink {
     this.element;
     // Get the tab data attribute and save the value here
     this.tabData = ; 
-    // Find all element with the .card class in the app that correspond to the tab data attribute
+    // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
     if(){
       this.cards = ;
@@ -32,7 +32,7 @@ class TabLink {
     // Select all of the elements with the .card class on them
     const cards = ;
     // Iterate through the NodeList setting the display style each one to 'none'
-
+    cards.forEach()
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
