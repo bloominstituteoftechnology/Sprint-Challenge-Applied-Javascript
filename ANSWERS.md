@@ -3,7 +3,7 @@
 Answer: The Document Object Model, or DOM, refers to the object representation of html elements that compose a webpage. It allows us to interact and manipulate these elements so that we may change document styling, structure, and content.
 
 2. What is an event?
-A: An event is simply every interaction a user has with a site. Whether it's filling out a contact form, a mouse click, scrolling of the page, etc, all od these count as events.
+A: An event is simply every interaction a user has with a site. Whether it's filling out a contact form, a mouse click, scrolling of the page, etc, all of these count as events.
 
 3. What is an event listener?
 A: Event Listeners are no more than specific elements that have been programmed by us to fire a callback function when specific events have occured.
