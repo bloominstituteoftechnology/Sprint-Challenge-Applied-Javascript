@@ -20,6 +20,8 @@ class TabLink {
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', () => {
       this.selectTab();
+      console.log(this.cards);
+      console.log(this.element);
     });
     // ?????? function syntax ???????
   }
@@ -42,7 +44,7 @@ class TabLink {
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(card => {
       card.style.display = 'none';
-    })
+    });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -55,7 +57,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'none';
+    this.element.style.display = null;
   }
 
 }
@@ -66,4 +68,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 //Once you are complete, call the .select method on the first tab
-tabs[0].select();
+// tabs[0].selectTab();
