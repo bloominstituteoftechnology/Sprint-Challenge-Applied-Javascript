@@ -6,6 +6,7 @@ class TabLink {
     this.tabData = element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     this.cards = document.querySelectorAll(`.card[data-tab="${this.element}"]`)
+    
     // If the data is 'all' then select all cards regardless of their data attribute
     
     if(this.tabData === 'all'){
@@ -54,7 +55,6 @@ class TabCard {
     // !!!DEV NOTE!!! This never worked for me. Not sure why.
 
     this.element.style.display = null;
-    console.log(this.element);
   }
 
 }
