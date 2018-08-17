@@ -7,16 +7,12 @@ class TabLink {
     this.tabData = element.dataset.tab; 
     //console.log(this.tabData);
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    // If the data is 'all' then select all cards regardless of their data attribute//this feels like a fizzbuzz
-    if(){
+    // If the data is 'all' then select all cards regardless of their data attribute
+    if(this.tabData === 'all'){
+      this.cards = document.querySelectorAll(`.card`)
+     } else {
       this.cards = document.getElementsByClassName(`.card[data-tab="${this.tabData}"]`);
-      console.log(this.cards);
-      return this.cards;
-    } else {
-      this.cards = document.querySelectorAll('.card')
-      //console.log(this.cards);
-      return this.cards;
-    } //this whole section is screwing with my head
+    } 
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
@@ -51,14 +47,14 @@ class TabLink {
 }
 
 class TabCard {
-  constructor(card){
+  constructor(element){
     // Assign this.element to the passed in element.
-    this.card = card;
+    this.element = element;
    
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.card.style.display = 'block';
+    this.element.style.display = null;
   }
 
 }
