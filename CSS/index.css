@@ -52,12 +52,10 @@ body .carousel .right-button {
 }
 body .carousel .carousel-active-right {
   display: block;
-  position: relative;
+  position: absolute;
   animation-name: slideInRight;
   animation-duration: 2s;
   animation-timing-function: ease;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
 }
 body .carousel .carousel-inactive-right {
   display: block;
@@ -65,8 +63,6 @@ body .carousel .carousel-inactive-right {
   animation-name: slideOut;
   animation-duration: 2s;
   animation-timing-function: ease;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
 }
 @keyframes slideInRight {
   from {
@@ -74,7 +70,7 @@ body .carousel .carousel-inactive-right {
     display: none;
   }
   to {
-    left: -50%;
+    left: 0%;
   }
 }
 @keyframes slideOut {

@@ -25,13 +25,13 @@ body {
     }
     .carousel-active-right{
       display: block;
-      position: relative;
+      position: absolute;
       animation-name: slideInRight;
       animation-duration: 2s;
       animation-timing-function: ease;
-      animation-direction: alternate;
-      // left: 1500px;
-      animation-fill-mode: forwards;
+      // animation-direction: alternate;
+      // // left: 1500px;
+      // animation-fill-mode: forwards;
     }
     .carousel-inactive-right{
       display: block;
@@ -39,9 +39,9 @@ body {
       animation-name: slideOut;
       animation-duration: 2s;
       animation-timing-function: ease;
-      animation-direction: alternate;
-      // left: -1000px;
-      animation-fill-mode: forwards;
+      // animation-direction: alternate;
+      // // left: -1000px;
+      // animation-fill-mode: forwards;
     }
   }
 }
@@ -53,10 +53,10 @@ body {
   }
 
   to {
-    left: -50%;
+    left: 0%;
   }
 }
-
+//
 @keyframes slideOut {
   from {
     left: 0%;
