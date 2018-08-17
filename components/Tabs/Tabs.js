@@ -9,7 +9,7 @@ class TabLink {
     if(this.tabData === "all"){
       this.cards = document.querySelectorAll('.card');
     } else {
-      this.cards = document.querySelector(`.card[data-tab="${this.tabData}"]`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
@@ -32,7 +32,7 @@ class TabLink {
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => card.classList.style.display = 'none');
+    cards.forEach(card => card.style.display = 'none');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -45,7 +45,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = null;
+    this.element.style = null;
   }
 
 }
