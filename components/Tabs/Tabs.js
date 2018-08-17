@@ -36,7 +36,7 @@ class TabLink {
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(card=>{
-      card.style.display = 'none';
+      card.classList.remove('flex');
     });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
