@@ -216,7 +216,6 @@ body {
   }
 }
 .cards-container .card {
-  border-bottom: 1px solid lightgrey;
   display: flex;
   justify-content: space-between;
   align-items: none;
