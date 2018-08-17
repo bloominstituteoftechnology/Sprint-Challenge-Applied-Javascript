@@ -8,11 +8,20 @@ class TabLink {
     
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
-    // if(this.element){
-    //   this.cards = ;
-    // } else {
-    //   this.cards = ;
-    // }
+    // const card = document.querySelectorAll('.card');
+    this.allAttr = document.querySelector('.card[data-tag ="all"]');
+    this.javaAttr = document.querySelector('.card[data-tag ="javascript"]');
+    this.techAttr = document.querySelector('.card[data-tag ="technology"]');
+    this.nodeAttr = document.querySelector('.card[data-tag ="node"]');
+    this.jqueryAttr = document.querySelector('.card[data-tag ="jquery"]');
+    this.bootAttr = document.querySelector('.card[data-tag ="bootstrap"]');
+
+
+    if(this.javaAttr || this.techAttr || this.nodeAttr || this.jqueryAttr || this.bootAttr ){
+      this.cards = this.javaAttr || this.techAttr || this.nodeAttr || this.jqueryAttr || this.bootAttr ;
+    } else {
+      this.cards = this.allAttr;
+    }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
