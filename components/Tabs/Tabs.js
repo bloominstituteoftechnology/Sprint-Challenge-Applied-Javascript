@@ -48,8 +48,6 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    console.log('workin');
-    console.log(this.element);
     this.element.style = 'display: null;'
   }
 
@@ -60,8 +58,6 @@ let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.
  // Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new TabLink (tab))
-// tabs.forEach(x => console.log(x.cards[0].element));
-
 
 //Once you are complete, call the .select method on the first tab
 tabs[0].selectTab()

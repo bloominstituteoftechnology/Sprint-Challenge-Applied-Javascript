@@ -46,6 +46,9 @@ body {
   color: #333;
   font-family: 'PT Sans', sans-serif;
 }
+body .carousel .carousel-active {
+  display: block;
+}
 .top-bar {
   width: 100%;
   display: flex;
