@@ -11,14 +11,17 @@ class Carousel {
       } else {
         currentIndex--;
       }
+      TweenMax.from(".carousel img", 2, {opacity:0, x:100})
       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
-    } else {
+    } 
+    else if (this.element.classList.contains('right-button')) {
       if (currentIndex === carouselPics.length -1) {
         currentIndex = 0;
       } else {
         currentIndex++;
       }
       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
+      TweenMax.from(".carousel img", 2, {opacity:0, x:-100})
     }
   }
 }
