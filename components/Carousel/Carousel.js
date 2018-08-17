@@ -29,7 +29,7 @@ let carouselPics = document.querySelectorAll('.carousel img');
 let currentIndex = 0;
 
 buttons = Array.from(buttons).map(button => new Carousel(button));
-document.querySelectorAll('.carousel img')[0].classList.add('image-active');
+document.querySelectorAll('.carousel img')[Math.floor(Math.random() * 3)].classList.add('image-active');
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
