@@ -29,7 +29,7 @@ class TabLink {
 
     // Add a class of ".active-tab" to this.element
     this.element.classList.add("active-tab");
-}
+
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
