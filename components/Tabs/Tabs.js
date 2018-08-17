@@ -17,9 +17,24 @@ class TabLink {
     this.bootAttr = document.querySelector('.card[data-tag ="bootstrap"]');
 
 
-    if(this.javaAttr || this.techAttr || this.nodeAttr || this.jqueryAttr || this.bootAttr ){
-      this.cards = this.javaAttr || this.techAttr || this.nodeAttr || this.jqueryAttr || this.bootAttr ;
-    } else {
+    if(this.javaAttr){
+      this.cards = this.javaAttr;
+    } else if(this.techAttr) {
+     this.cards = techAttr;
+    }
+    else if(this.techAttr) {
+      this.cards = this.techAttr;
+    }
+    else if(this.nodeAttr) {
+      this.cards = this.nodeAttr;
+    }
+    else if(this.jqueryAttr) {
+      this.cards = this.jqueryAttr;
+    }
+    else if (this.bootAttr){
+      this.cards = this.bootAttr;
+    }
+    else {
       this.cards = this.allAttr;
     }
 
