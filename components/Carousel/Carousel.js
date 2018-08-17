@@ -4,8 +4,8 @@ class Carousel {
     this.element.addEventListener('click', () => this.rotate());
   }
   rotate() {
+    document.querySelectorAll('.carousel img').forEach(img => img.classList.remove('image-active'));
     if (this.element.classList.contains('left-button')) {
-      document.querySelectorAll('.carousel img')[currentIndex].classList.remove('image-active');
       if (currentIndex === 0) {
         currentIndex = carouselPics.length -1;
       } else {
@@ -13,7 +13,6 @@ class Carousel {
       }
       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
     } else {
-      document.querySelectorAll('.carousel img')[currentIndex].classList.remove('image-active');
       if (currentIndex === carouselPics.length -1) {
         currentIndex = 0;
       } else {
