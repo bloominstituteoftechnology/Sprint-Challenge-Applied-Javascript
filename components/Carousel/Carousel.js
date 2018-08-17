@@ -7,28 +7,40 @@ class Carousel {
         console.log(this.leftBtn);
         this.rightBtn = element.querySelector('.right-button')
         this.img = element.querySelectorAll('img')
+
+        console.log(this.img[0].style.display);
+       
         this.currenIndex = 0;
         this.rightBtn.addEventListener('click', ()=>{this.selectImg()})
+        this.leftBtn.addEventListener('click', ()=>{this.selectImg()})
     }
     selectImg() {
-        this.img.forEach(element => element.style.display= null);  
+        this.img.forEach(element => element.style.display= 'none'); 
+        if(event.target.classList.contains('right-button')){
+            this.currenIndex++ 
+        }
 
-        this.img.forEach(element => {            
-            console.log(element);
-        });
+        if(event.target.classList.contains('left-button')){
+            this.currenIndex-- 
+        }       
         
-        this.currenIndex++ 
-        console.log(this.currenIndex);
+        
         if (this.currenIndex >= this.img.length) {
-            this.currenIndex = 0
+            this.currenIndex = 0;
         }     
+        if (this.currenIndex < 0){
+            this.currenIndex = this.img.length - 1;
+        }
+
         this.img[this.currenIndex].style.display = 'block';
+        console.log(this.currenIndex);
     }
 }
-
 let carousel = document.querySelector(".carousel");
-
 carousel = new Carousel(carousel)
+document.querySelector('img').style.display = 'block'
+
+console.log(document.querySelector('img'));
 
 
 
