@@ -60,7 +60,21 @@ body .carousel .carousel-active-right {
 body .carousel .carousel-inactive-right {
   display: block;
   position: relative;
-  animation-name: slideOut;
+  animation-name: slideOutRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+body .carousel .carousel-active-left {
+  display: block;
+  position: absolute;
+  animation-name: slideInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+body .carousel .carousel-inactive-left {
+  display: block;
+  position: relative;
+  animation-name: slideOutLeft;
   animation-duration: 2s;
   animation-timing-function: ease;
 }
@@ -73,12 +87,30 @@ body .carousel .carousel-inactive-right {
     left: 0%;
   }
 }
-@keyframes slideOut {
+@keyframes slideOutRight {
   from {
     left: 0%;
   }
   to {
     left: -100%;
+    display: none;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    left: -100%;
+    display: none;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
     display: none;
   }
 }

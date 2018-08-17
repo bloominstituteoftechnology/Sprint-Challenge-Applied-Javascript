@@ -15,23 +15,38 @@ class Carousel {
   }
 
   scrollRight() {
-    this.images.forEach( item  => item.classList.remove('carousel-inactive-right') )
-    this.images[this.indexArr[this.index]].classList.remove('carousel-active-right')
+    this.images.forEach ( item => item.classList.remove('carousel-inactive-right') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-right') )
+    this.images.forEach( item  => item.classList.remove('carousel-inactive-left') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-left') )
+    // this.images[this.indexArr[this.index]].classList.remove('carousel-active-right')
     this.index++
     this.index %= 4;
+
     this.index == 0 ?
     this.images[3].classList.toggle('carousel-inactive-right')
     :
     this.images[this.index-1].classList.toggle('carousel-inactive-right')
+
     this.images[this.index].classList.add('carousel-active-right')
     console.log('ind:', this.index);
   }
 
   scrollLeft() {
-    this.images[this.index].classList.remove('carousel-active')
+    this.images.forEach ( item => item.classList.remove('carousel-inactive-right') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-right') )
+    this.images.forEach( item  => item.classList.remove('carousel-inactive-left') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-left') )
+    // this.images[this.indexArr[this.index]].classList.remove('carousel-active-left')
     this.index--
     this.index < 0 ? this.index = 3 : this.index %= 4;
-    this.images[this.index].classList.add('carousel-active')
+
+    this.index == 3 ?
+    this.images[0].classList.toggle('carousel-inactive-left')
+    :
+    this.images[this.index+1].classList.toggle('carousel-inactive-left')
+
+    this.images[this.index].classList.add('carousel-active-left')
   }
 
 }
