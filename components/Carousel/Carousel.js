@@ -5,9 +5,25 @@ class Carousel {
         this.element = element
         this.leftBtn = element.querySelector('.left-button')
         console.log(this.leftBtn);
+        this.rightBtn = element.querySelector('.right-button')
+        this.img = element.querySelectorAll('img')
+        this.currenIndex = 0;
+        this.rightBtn.addEventListener('click', ()=>{this.selectImg()})
     }
+    selectImg() {
+        this.img.forEach(element => element.style.display= null);  
 
-
+        this.img.forEach(element => {            
+            console.log(element);
+        });
+        
+        this.currenIndex++ 
+        console.log(this.currenIndex);
+        if (this.currenIndex >= this.img.length) {
+            this.currenIndex = 0
+        }     
+        this.img[this.currenIndex].style.display = 'block';
+    }
 }
 
 let carousel = document.querySelector(".carousel");
