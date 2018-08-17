@@ -2,7 +2,17 @@ class Carousel {
     constructor(element) {
         this.element = element;
         this.leftButton = document.querySelector('.left-button');
-        this.rightButton = document.querySelector('.left-button');
+        this.rightButton = document.querySelector('.right-button');
+        this.img = document.querySelectorAll('img');
+        this.currentIndex = 0;
+        this.leftButton.addEventListener('click', () => {this.toTheLeft()});
+        this.rightButton.addEventListener('click', () => {this.toTheRight()});
+    }
+    toTheLeft() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.display = 'block';
+        })
     }
 }
 
