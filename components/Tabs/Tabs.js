@@ -8,36 +8,13 @@ class TabLink {
     
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
-    // const card = document.querySelectorAll('.card');
-    this.allAttr = document.querySelector('.card[data-tag ="all"]');
-    this.javaAttr = document.querySelector('.card[data-tag ="javascript"]');
-    this.techAttr = document.querySelector('.card[data-tag ="technology"]');
-    this.nodeAttr = document.querySelector('.card[data-tag ="node"]');
-    this.jqueryAttr = document.querySelector('.card[data-tag ="jquery"]');
-    this.bootAttr = document.querySelector('.card[data-tag ="bootstrap"]');
 
-
-    if(this.javaAttr){
-      this.cards = this.javaAttr;
-    } else if(this.techAttr) {
-     this.cards = techAttr;
+    if(this.tabData ==='all') {
+      this.cards = document.querySelectorAll(`.card`);
+    } else {
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
-    else if(this.techAttr) {
-      this.cards = this.techAttr;
-    }
-    else if(this.nodeAttr) {
-      this.cards = this.nodeAttr;
-    }
-    else if(this.jqueryAttr) {
-      this.cards = this.jqueryAttr;
-    }
-    else if (this.bootAttr){
-      this.cards = this.bootAttr;
-    }
-    else {
-      this.cards = this.allAttr;
-    }
-
+   
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
 
@@ -57,14 +34,10 @@ class TabLink {
     // Iterate through the NodeList removing the .active-tab class from each element
 
     //Use for Nodelist
-    //tabs.forEach((e) => { e.classList.remove('.active-tab');
+    tabs.forEach((e) => { e.classList.remove('.active-tab');
 
-    // });
+    });
 
-    //Use if convert to array before removing the .active class from each element
-    Array.from(tabs).forEach((e) => { e.classList.remove('active-tab');
-
-     });
     // Add a class of ".active-tab" to this.element
     // this.element;
     this.element.classList.add('active-tab');
@@ -77,22 +50,13 @@ class TabLink {
     //cards.forEach()
 
      //Use for Nodelist
-    // cards.forEach((e) => { e.style.flex = none;
+    // cards.classList.forEach((e) => { e.style.flex = none;
 
-    // });
-    // cards.forEach(
-    //   functiion(e) {
-    //     cards.style.flex = none;
-    //   }
-    // );
+    //  });
+     cards.forEach((e) => { e.style.display = 'none';
 
-    //Use if convert to array before setting the display style each one to 'none'
-    // Array.from(cards).forEach((functiion (e))) {
-    //   cards.style.flex = none;
-    // });
-    Array.from(cards).classList.forEach((e) =>{
-      cards.style.flex = none;
-    });
+     });
+
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
