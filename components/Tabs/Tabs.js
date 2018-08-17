@@ -4,21 +4,17 @@ class TabLink {
     this.element = tab;
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
-    console.log(this.tabData);
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     if(this.tabData === "all") {
       this.cards = document.querySelectorAll('.card');
-      console.log("tabData = all " + this.element.dataset.tab);
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
-      console.log("discrete tab data " + this.element.dataset.tab);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map( cards => new TabCard(cards));
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', (e) => {
-      console.log(`Clicked ${this.element.dataset.tab}`);
       this.selectTab();
     });
   }
@@ -33,17 +29,14 @@ class TabLink {
     });
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
-    console.log(this.element.classList);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(function(card) {
       card.style.display = "none";
-      console.log(`Set style of ${card.dataset.tab} to none.`);
     });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    console.log(`Invoking selectCard() on ${this.element.dataset.tab}.`);
     this.cards.forEach(card => card.selectCard());
   }
 }
@@ -57,7 +50,6 @@ class TabCard {
   selectCard(){
     // Update the style of this.element to display = null
     this.element.style.display = null;
-    console.log(`Set style of ${this.element.dataset.tab} to null.`);
   }
 }
 
