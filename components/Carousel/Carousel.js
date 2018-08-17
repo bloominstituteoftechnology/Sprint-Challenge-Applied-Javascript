@@ -28,18 +28,22 @@ class Carousel {
         if (innerText === "<") {
             if (indexOfBlockImage === images.length - 1) {
                 images[0].image.style.display = "block";
-                //TweenMax.fromTo(images[0].image, 1, {x: 100, opacity: 0}, {x:0, opacity: 1});
+                TweenMax.fromTo(images[0].image, 1, {x: 100, opacity: 0}, {x:0, opacity: 1});
+                this.leftButton.style.zIndex = "1";
             } else {
                 images[indexOfBlockImage + 1].image.style.display = "block";
-                //TweenMax.fromTo(images[indexOfBlockImage + 1].image, 1, {x: 100, opacity: 0}, {x:0, opacity: 1});
+                TweenMax.fromTo(images[indexOfBlockImage + 1].image, 1, {x: 100, opacity: 0}, {x:0, opacity: 1});
+                this.leftButton.style.zIndex = "1";
             }
         } else {
             if (indexOfBlockImage === 0) {
                 images[images.length - 1].image.style.display = "block";
-                //TweenMax.fromTo(images[images.length - 1].image, 1, {x: -100, opacity: 0}, {x:0, opacity: 1});
+                TweenMax.fromTo(images[images.length - 1].image, 1, {x: -100, opacity: 0}, {x:0, opacity: 1});
+                this.leftButton.style.zIndex = "1";
             } else {
                 images[indexOfBlockImage - 1].image.style.display = "block";
-                //TweenMax.fromTo(images[indexOfBlockImage - 1].image, 1, {x: -100, opacity: 0}, {x:0, opacity: 1});
+                TweenMax.fromTo(images[indexOfBlockImage - 1].image, 1, {x: -100, opacity: 0}, {x:0, opacity: 1});
+                this.leftButton.style.zIndex = "1";
             }
         }
     }
@@ -51,4 +55,7 @@ images = Array.from(images).map(img => new CarouselImage(img));
 let carousel = document.querySelector(".carousel");
 carousel = new Carousel(carousel);
 
-carousel.images[0].style.display = "block";
+for (let i = 0; i < images.length; i++) {
+    images[i].image.style.display = "none";
+}
+images[0].image.style.display = "block";
