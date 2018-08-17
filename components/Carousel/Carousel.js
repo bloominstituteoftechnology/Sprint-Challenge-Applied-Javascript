@@ -20,6 +20,7 @@ class Carousel {
                 console.log(this.imgs[index]);
             }
         });
+
         this.leftBtn.addEventListener('click', () => {
             if(index > 0 && index <= 3){
                 this.imgs[index].style.display = "none";
@@ -28,6 +29,33 @@ class Carousel {
                 TweenMax.to(this.imgs[index], 1, {y: "0%", x: "0%", zIndex: -1, opacity: 1});
                 this.imgs[index].style.display = "block";
                 console.log(this.imgs[index]);
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            console.log(e.key);
+            switch(e.key) {
+                case "ArrowRight":
+                    console.log('right');
+                    if(index < 3){
+                        this.imgs[index].style.display = "none";
+                        index += 1;
+                        TweenMax.from(this.imgs[index], 2, {y: "100%", x: "-100%", zIndex: 0, opacity: 0});
+                        TweenMax.to(this.imgs[index], 2, {y: "0", x: "0%", zIndex: -1, opacity: 1});
+                        this.imgs[index].style.display = "block";
+                        console.log(this.imgs[index]);
+                    }
+                    break;
+                case "ArrowLeft":
+                    if(index > 0 && index <= 3){
+                        this.imgs[index].style.display = "none";
+                        index -= 1;
+                        TweenMax.from(this.imgs[index], 1, {y: "100%", x: "100%", zIndex: 0, opacity: 0});
+                        TweenMax.to(this.imgs[index], 1, {y: "0%", x: "0%", zIndex: -1, opacity: 1});
+                        this.imgs[index].style.display = "block";
+                        console.log(this.imgs[index]);
+                    }
+                    break;
             }
         });
     }
