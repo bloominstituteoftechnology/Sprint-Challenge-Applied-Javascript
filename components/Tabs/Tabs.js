@@ -28,15 +28,17 @@ class TabLink {
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll(".tab");
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach()
+    tabs.forEach(card => card.remove(".active-tab"));
     // Add a class of ".active-tab" to this.element
     this.element.classList.add("active-tab");
 
+    //  Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
+    // Array.from(links).forEach( item => item.classList.remove('tabs-link-selected'));
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach()
+    cards.forEach(card => card.display = "none");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
