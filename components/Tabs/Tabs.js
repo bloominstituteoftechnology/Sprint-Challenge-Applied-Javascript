@@ -27,11 +27,11 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach( elem => {
-      elem.classList.remove('.active-tab');
+      elem.classList.remove('active-tab');
     });
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add('.active-tab');
-
+    this.element.classList.add('active-tab');
+    // Realized after lunch that the active-tab in the two lines above where as .active-tab. Fixed this after the stretch-goal timelimite.
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
