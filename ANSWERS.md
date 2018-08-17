@@ -17,7 +17,7 @@ NodeLists are array-like structures, but do not have the same methods that array
 
 5. **What is a component?**
 
->"Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps."
+> "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps."
 -MDN Web Docs
 
 Components allow us to abstract away blocks of code that we may find ourselves using very often, in order to prevent redundancy in code, which gives better system efficiency by following the DRY (Don't Repeat Yourself) principle. This gives us a modular approach to HTML and web applications, allowing us to utilize only the components necessary to achieve the desired results. 
