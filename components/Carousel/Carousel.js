@@ -4,11 +4,9 @@ class Carousel {
    this.element = element;
    this.slideData = this.element.dataset.tab;
    
-
     this.lButton = this.element.querySelector('.left-button');
     this.rButton = this.element.querySelector('.right-button');
     
-    this.index = 0;
 
    if(this.slideData === '1'){
        this.slides = document.querySelectorAll('.slide');
@@ -18,19 +16,41 @@ class Carousel {
 
    this.slides = Array.from(this.slides).map( slide => new Slide(slide));
 
+   
+   this.index = 0;
+   this.current = this.slides[0];
+
+
    this.rButton.addEventListener('click', () => {
-       this.next()
-   }  );
+       this.nav(1)
+   });
+
+   this.lButton.addEventListener('click', () => {
+       this.nav(-1)
+   })
 
 }
 
-    next() {
+    nav(direction){
+        const slides = document.querySelectorAll('.slide');
 
+        slides.forEach(slide => slide.style.display = 'none');
+
+        // use index to call showSlide on next/previous slide
     }
 
 
 }
 
+class Slide {
+    constructor(element) {
+        this.element = element;
+    }
+
+    showSlide() {
+        this.element.display = "block";
+    }
+}
 
 
 let carousel = document.querySelector('.carousel');
