@@ -1,6 +1,6 @@
 .carousel {
   .width-100();
-  .flex(center, center);
+  .flex(flex-start, center);
   height: 500px;
   position: relative;
   overflow: hidden;
@@ -17,6 +17,7 @@
     position: absolute;
     width: 50px;
     height: 50px;
+    z-index: 20;
     cursor: pointer;
     &:hover {
       color: @lambda-times-color-primary;
@@ -34,8 +35,16 @@
     right: 25px;
     transform: translate(0, -50%);
   }
+  div {
+    .flex(flex-start, center);
+  }
+.slider-images {
+  position: relative;
+  left: -1200px;
   img {
     .width-100();
-    display: none;
+    position: relative;
+    display: block;
   }
+}
 }

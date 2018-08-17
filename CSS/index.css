@@ -254,7 +254,7 @@ body {
 .carousel {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   height: 500px;
@@ -280,6 +280,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
+  z-index: 20;
   cursor: pointer;
 }
 .carousel .left-button:hover,
@@ -298,7 +299,18 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.carousel .slider-images {
+  position: relative;
+  left: -1200px;
+}
+.carousel .slider-images img {
   width: 100%;
-  display: none;
+  position: relative;
+  display: block;
 }
