@@ -17,16 +17,16 @@ class TabLink {
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
-
+    console.log(this.cards);
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
     // let cards = document.querySelector('.card');
     
     this.cards = Array.from(this.cards).map( card => new TabCard(card)); 
-    
+    console.log(this.cards);
     // Add a click event that invokes selectTab
     
-    this.element.addEventListener('click', () => {this.selectTab()});
+    this.element.addEventListener('click', () => this.selectTab());
   }
 
   selectTab(){
@@ -34,7 +34,7 @@ class TabLink {
     // Select all elements with the .tab class on them
     const newEl = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
-    newEl.forEach(tab => tab.classList.remove('active-tab'));
+    newEl.forEach(tab => {tab.classList.remove('active-tab')});
     
     // Add a class of ".active-tab" to this.element
     
@@ -45,13 +45,15 @@ class TabLink {
     const newEl2 = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
     newEl2.forEach(card => card.style.display = 'none');
-    
+
+    ///I am introducing a display of none but do not handle the .card selector after that
+    //I think that I need to do something with that to intro a new display to remaining
     // this.element.style.display = 'flex';
+
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     
     this.cards.forEach(card => card.selectCard());
-    console.log(newEl2);
-    console.log(this.element);
+   console.log(this.cards);
   }
 }
 
@@ -68,7 +70,7 @@ class TabCard {
 }
 
 //Create a reference to all ".tab" classes
-let tabs = document.querySelectorAll('.tabs');
+let tabs = document.querySelectorAll('.tab');
 //Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new TabLink(tab))
 
