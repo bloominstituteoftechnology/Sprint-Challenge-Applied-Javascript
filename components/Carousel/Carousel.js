@@ -4,7 +4,7 @@ class Carousel {
         this.leftButton = element.querySelector('.left-button');
         this.rightButton = element.querySelector('.right-button');
         this.images = element.querySelectorAll('img');
-        this.currentIndex = 0;
+        this.index = 0;
         this.leftButton.addEventListener('click',
             () => {this.left()});
         this.rightButton.addEventListener('click',
@@ -12,16 +12,22 @@ class Carousel {
     }
 
     left() {
-        this.images[this.currentIndex].style.display = 'none';
-        this.currentIndex = (this.currentIndex === 0) ?
-            this.images.length -1 : this.currentIndex - 1;
-        this.images[this.currentIndex].style.display = 'block';
+        const previousImage = this.images[this.index];
+        this.index = (this.index === 0) ?
+            this.images.length -1 : this.index - 1;
+        this.images[this.index].style.display = 'block';
+        TweenMax.from(this.images[this.index], .5, {x: -1200});
+        TweenMax.from(previousImage, .5, {x: -1200});
+        previousImage.style.display = 'none';
     };
     right() {
-        this.images[this.currentIndex].style.display = 'none';
-        this.currentIndex = (this.currentIndex === this.images.length -1) ?
-            0 : this.currentIndex + 1;
-        this.images[this.currentIndex].style.display = 'block';
+        const previousImage  = this.images[this.index];
+        this.index = (this.index === this.images.length -1) ?
+            0 : this.index + 1;
+        this.images[this.index].style.display = 'block';
+        TweenMax.from(this.images[this.index], .5, {x: 1200});
+        TweenMax.from(previousImage, .5, {x: 1200});
+        previousImage.style.display = 'none';
     };
 }
 
@@ -38,3 +44,5 @@ carousel.images[0].style.display = 'block';
     5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
+
+// TweenMax.from(this.images[this.currentIndex], .5, {x: 1200});
