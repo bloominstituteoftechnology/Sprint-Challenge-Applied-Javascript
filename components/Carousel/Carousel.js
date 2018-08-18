@@ -1,16 +1,35 @@
 class Carousel {
     constructor(carouselComponents) {
         this.carouselComponents = carouselComponents;
-        this.carouselLeftButton = this.carouselComponents.querySelectorAll('.left-button')
-        this.carouselRightButton = this.carouselComponents.querySelectorAll('.right-button')
+        this.carouselLeftButton = this.carouselComponents.querySelector('.left-button')
+        this.carouselRightButton = this.carouselComponents.querySelector('.right-button')
         this.carouselImages = this.carouselComponents.querySelectorAll('img')
-        console.log(this.carouselImages)
+        // this.carouselImages[i].style.display = 'flex';
+        this.carouselRightButton.addEventListener('click', () => this.nextImage());
+        this.carouselLeftButton.addEventListener('click', () => this.lastImage());
+        // this.carouselImages = this.carouselComponents.querySelectorAll('img')
+    }
+    nextImage(){
+        i++;
+        if (i > 3) {i = 0};
+        Array.from(this.carouselImages).forEach(image => image.style.display = 'none')
+        this.carouselImages[i].style.display = 'flex'
+        console.log(`displaying image ${i}`)
+    }
+    lastImage(){
+        // debugger;
+        // i--;
+        (i === 0) ? i = 3 : i--;
+        Array.from(this.carouselImages).forEach(image => image.style.display = 'none')
+        this.carouselImages[i].style.display = 'flex'
+        console.log(`displaying image ${i}`)
     }
 }
-
-let mainCarousel = document.querySelectorAll('.carousel');
-
-mainCarousel = Array.from(mainCarousel).map( carouselComponents => new Carousel(carouselComponents))
+let i = 0;
+let mainCarousel = document.querySelector('.carousel');
+mainCarousel = new Carousel(mainCarousel);
+// mainCarousel = Array.from(mainCarousel).map( carouselComponents => new Carousel(carouselComponents))
+mainCarousel.carouselImages[i].style.display = 'flex';
 
 
 // buttons = Array.from(buttons).map( carouselButtons)
