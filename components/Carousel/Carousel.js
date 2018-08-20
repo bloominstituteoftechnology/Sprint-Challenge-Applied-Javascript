@@ -4,13 +4,10 @@ class Carousel {
         this.leftButton = this.carousel.querySelector('.left-button');
         this.rightButton = this.carousel.querySelector('.right-button');
         this.leftButton.addEventListener('click',()=>{
-
         });
         this.rightButton.addEventListener('click',()=>{
-            
         });
     }
-
 }
 
 let carousel = document.querySelector('.carousel');

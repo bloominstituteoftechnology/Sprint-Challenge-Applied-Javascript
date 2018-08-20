@@ -51,7 +51,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = null;
+    this.element.display = null;
   }
 
 }
