@@ -7,8 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -45,19 +46,22 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="transformers" class="tab">TRANSFORMERS</div>
     </div>
   </div>
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+  <div class="carousel">
     <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
+    <div class="slider-images">
+      <img src="./assets/carousel/mountains.jpeg" />
+      <img src="./assets/carousel/computer.jpeg" />
+      <img src="./assets/carousel/trees.jpeg" />
+      <img src="./assets/carousel/turntable.jpeg" />
+   </div>
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -83,6 +87,16 @@
       </div>
     </div>
 
+    <div class="card" data-tab="transformers">
+      <div class="headline">Optimus Prime missing after repelling Megatron from earth</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="https://static.seibertron.com/images/news/small/a5d1373adadf6a32976a3551cab65239.jpeg" />
+        </div>
+        <span>Spike Witwicky</span>
+      </div>
+    </div>
+
     <div class="card" data-tab="bootstrap">
       <div class="headline">Bootstrap 5: Get a Sneak Peak at all the New Features</div>
       <div class="author">
@@ -102,6 +116,17 @@
         <span>By MAX GOODBOYE</span>
       </div>
     </div>
+
+    <div class="card" data-tab="transformers">
+      <div class="headline">Megatron and Starscream attack New York City. Where is Optimus Prime?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="https://static.seibertron.com/images/news/small/a5d1373adadf6a32976a3551cab65239.jpeg" />
+        </div>
+        <span>Cade Yeager</span>
+      </div>
+    </div>
+
 
     <div class="card" data-tab="jquery">
       <div class="headline">History of Javascript Libraries: from jQuery to React</div>
