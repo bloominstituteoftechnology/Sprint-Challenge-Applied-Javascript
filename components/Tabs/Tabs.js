@@ -6,6 +6,7 @@ class TabLink {
     this.tabData = element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
+    // TODO: Finish this
     if(){
       this.cards = ;
     } else {
@@ -46,11 +47,11 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
 
 }
