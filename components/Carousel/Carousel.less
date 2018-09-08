@@ -38,5 +38,20 @@
   img {
     .width-100();
     display: none;
+    animation-name: slide;
+    animation-duration: 0.5s;
+  }
+}
+
+@keyframes slide {
+  from {
+    // width: 0px;
+    position: relative;
+    left: -1200px;
+  }
+  to {
+    width: 100%;
+    position: relative;
+    left: 0px;
   }
 }
