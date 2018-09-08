@@ -18,25 +18,37 @@ class Carousel {
     this.rightBtn.addEventListener('click', () => {
       this.moveRight();
     });
+
+    this.showImg();
   }
 
   moveLeft() {
-    console.log('left button clicked');
+    // console.log('left button clicked');
     if (this.currentIndex !== 0) {
       this.currentIndex -= 1;
+    } else {
+      this.currentIndex = this.images.length - 1;
     }
     console.log(this.currentIndex);
+    this.showImg();
   }
 
   moveRight() {
-    console.log('right button clicked');
+    // console.log('right button clicked');
     if (this.currentIndex !== this.images.length - 1) {
       this.currentIndex += 1;
+    } else {
+      this.currentIndex = 0;
     }
     console.log(this.currentIndex);
+    this.showImg();
   }
 
-  showImg() {}
+  showImg() {
+    // console.log('Inside showImg()');
+    this.images.forEach(image => (image.style.display = 'none'));
+    this.images[this.currentIndex].style.display = 'block';
+  }
 }
 
 let carousel = document.querySelector('.carousel');
