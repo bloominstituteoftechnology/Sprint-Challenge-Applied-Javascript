@@ -28,23 +28,6 @@
   font-weight: 700;
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: 'PT Sans', sans-serif;
-}
 .top-bar {
   width: 100%;
   display: flex;
@@ -301,4 +284,24 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .current-slide {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: 'PT Sans', sans-serif;
 }
