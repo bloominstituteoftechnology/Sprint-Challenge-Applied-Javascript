@@ -1,10 +1,10 @@
 class TabLink {
-  constructor(el){
+  constructor(element){
     // assign this.element to the element reference
-    this.el = el;
+    this.element = element;
     // Get the tab data attribute and save the value here
-    this.tabData = this.el.dataset.tab;
-    console.log(this.tabData)
+    this.tabData = this.element.dataset.tab;
+    
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
     if(this.tabData.dataset === "all"){
@@ -17,18 +17,22 @@ class TabLink {
     // Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.el.addEventListener('click', this.selectTab);
+    this.element.addEventListener('click', this.selectTab);
   }
 
   selectTab(){
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll('.tab');
+    let tabs = document.querySelectorAll('.tab');
     console.log(tabs)
+    for (let i=0; i<tabs.length; i++){
+      console.log(tabs[i])
+      tabs[i].classList.remove('active-tab')
+    };
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(function(){this.tabs.classList.remove("activate-tab")});
+      //tabs.forEach(tabs, function(){tabs.classList.remove("activate-tab")});
     // Add a class of ".active-tab" to this.element
-    this.el.classList.add("activate-tab");
+    this.element.classList.add("active-tab");
 
 
     // Select all of the elements with the .card class on them
@@ -41,19 +45,19 @@ class TabLink {
 }
 
 class TabCard {
-  constructor(el){
+  constructor(element){
     // Assign this.element to the passed in element.
-    this.el = el;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.el.style.display = 'null';
+    this.element.style.display = 'null';
   }
 
 }
 
 // Create a reference to all ".tab" classes
-let tabs = document.getElementsByClassName('tab');
+let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
