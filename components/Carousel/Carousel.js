@@ -11,22 +11,22 @@ class Carousel {
     }
 
     pictureLeft()   {
-        this.imgArray[this.currentIndex].style.display = "none";
+        TweenLite.to(this.imgArray[this.currentIndex], .5, {opacity: 0, display: "none"});
         if(this.currentIndex === 0) {
             this.currentIndex = 3;
         }   else {
             this.currentIndex -= 1;
         }
-        this.imgArray[this.currentIndex].style.display = "block"
+        TweenLite.to(this.imgArray[this.currentIndex], .5, {opacity: 1, display: "block", delay: .6});
     }
     pictureRight()   {
-        this.imgArray[this.currentIndex].style.display = "none";
+        TweenLite.to(this.imgArray[this.currentIndex], .5, {opacity: 0, display: "none"});
         if(this.currentIndex === 3) {
             this.currentIndex = 0;
         }   else {
             this.currentIndex += 1;
         }
-        this.imgArray[this.currentIndex].style.display = "block"
+        TweenLite.to(this.imgArray[this.currentIndex], .5, {opacity: 1, display: "block", delay: .6});
     }
 }
 
