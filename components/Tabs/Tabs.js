@@ -33,9 +33,11 @@ class TabLink {
 
 
     // Select all of the elements with the .card class on them
-    const cards = ;
+    const cards = document.querySelectorAll('.card') ;
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach()
+    cards.forEach(function(card){
+        return card.style.display = 'none';
+    })
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -44,11 +46,11 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = this;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = 'null';
   }
 
 }
