@@ -10,7 +10,7 @@ class TabLink {
     if (this.tabData === "all") {
       this.cards = document.querySelectorAll(".card");
     } else {
-      this.cards = document.querySelector(`.card[data-tab=${this.tabData}]`);
+      this.cards = document.querySelectorAll(`.card[data-tab=${this.tabData}]`);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class.
