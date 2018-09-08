@@ -300,5 +300,9 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  position: absolute;
+  top: 1000px;
+}
+.carousel img current {
+  top: 0px;
 }
