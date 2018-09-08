@@ -11,7 +11,7 @@ class Carousel {
     }
 
     nextImage() {
-        if (this.currentImage < 3) {
+        if (this.currentImage < Array.from(document.querySelectorAll('.carousel img')).length - 1) {
             this.currentImage++;
             let images = document.querySelectorAll('.carousel img');
             images.forEach(item => {item.style.display = 'none'});
