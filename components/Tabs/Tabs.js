@@ -6,10 +6,10 @@ class TabLink {
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
-    if(){
-      this.cards = ;
+    if(this.tabData === 'all'){
+      this.cards = document.querySelectorAll('.card');
     } else {
-      this.cards = ;
+      this.cards = document.querySelector(`.card[data-tab='${this.data}']`);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
@@ -55,8 +55,12 @@ class TabCard {
 }
 
 // Create a reference to all ".tab" classes
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map()
+tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 //Once you are complete, call the .select method on the first tab
+
+tabs[0].select();
+
+console.log(TabLink);
