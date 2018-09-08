@@ -22,36 +22,33 @@ class TabLink {
     // })
     if(this.tabData === 'all'){
       this.cards = document.querySelectorAll('.card');
-      let cards = this.cards;
-      // console.log(cards)
+      // console.log(this.cards)
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab=${this.tabData}]`)
-      let cards = this.cards;
-      // console.log(cards)
+      // console.log(this.cards)
     }
    
-    // console.log(this.element)
+    // console.log(this.cards)
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(function(element){
-      return new TabCard(element)
+    this.cards = Array.from(this.cards).map(function(card){
+      return new TabCard(card)
     });
+    // console.log(this.cards)
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', this.selectTab);
+    this.element.addEventListener('click', this.selectTab.bind(this)); //figuring out i forgot to bind TOOK ME OVER AND HOUR TO NOTICE!!!
   }
 
-  selectTab(){
-
+  selectTab(){//why do lines 48, 51, & 58 all work without needing line 40 binded but line 61 definately needed it???
     // Select all elements with the .tab class on them
-
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(function(element){
       element.classList.remove('active-tab')
     });
     // Add a class of ".active-tab" to this.element
-    this.classList.add('active-tab');
+    this.element.classList.add('active-tab');
 
 
     // Select all of the elements with the .card class on them
@@ -61,9 +58,9 @@ class TabLink {
       element.style.display = 'none';
     })
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    console.log(cards)
-    cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => card.selectCard());
   }
+  
 }
 
 class TabCard {
@@ -75,7 +72,7 @@ class TabCard {
   
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.color = 'red';
+    this.element.style.display = null;
   }
   
 }
@@ -83,10 +80,10 @@ class TabCard {
 // Create a reference to all ".tab" classes
 let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map(function(element){
-  return new TabLink(element)
+tabs = Array.from(tabs).map(function(tab){
+  return new TabLink(tab)
 });
 
-//Once you are complete, call the .select method on the first tab
-// tabs[0].select();
+// //Once you are complete, call the .select method on the first tab
+// // tabs[0].select();
 
