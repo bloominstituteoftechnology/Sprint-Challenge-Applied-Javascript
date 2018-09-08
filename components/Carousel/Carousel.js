@@ -14,7 +14,12 @@ class Carousel {
         this.images.forEach(image => {
             image.style.display = null;
         });
-        this.selectedImage.style.display='block';
+        this.selectedImage.style.display = 'block';
+        
+        /* Have to look a lot more into z-index issues
+        Running this animation causes the left button to be covered up by the image
+        */
+        // Note for PM Camila: The animation works but it covers up the left button with the image. TweenMax.from(this.selectedImage, 3, {y: 700});
     }
     selectImage(button) {
         // if the button is the left button we're going down the index
