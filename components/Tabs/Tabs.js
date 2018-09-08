@@ -26,10 +26,10 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach((element) => {
-      this.element.classList.remove("active-tab");
+      element.classList.remove("active-tab");
     })
     // Add a class of ".active-tab" to this.element
-    this.element.classList.toggle("active-tab");
+    this.element.classList.add("active-tab");
 
 
     // Select all of the elements with the .card class on them
@@ -61,3 +61,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(((tab) => new TabLink(tab)));
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].select;
