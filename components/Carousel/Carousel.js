@@ -3,13 +3,23 @@ constructor(el){
     this.el = el;
     this.left = document.querySelector('.left-button');
     this.right = document.querySelector('.right-button');
+    this.img = this.el.querySelectorAll('img');
     
+
+}
+clkRight(){
+    this.img[i =+ 1];
+}
 }
 
+class Imgs{
+    constructor(el){
+
+    }
 }
 
 let carousel = document.querySelector('.carousel')
-carousel = Array.from(carousel).map((carousel=> new Carousel(carousel)))
+carousel = new Carousel (carousel);
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
