@@ -63,3 +63,4 @@ tabs = Array.from(tabs).map((tabs)=> new TabLink (tabs));
 console.log(tabs)
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].select();
