@@ -31,8 +31,6 @@ class TabLink {
     tabs.forEach(tab => {tab.classList.remove("active-tab")});
     // Add a class of ".active-tab" to this.element
     this.element.classList.add("active-tab");
-    console.log(this.element);
-
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
@@ -40,7 +38,6 @@ class TabLink {
     cards.forEach(card => {card.style.display = "none"});
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
-    console.log(this.cards);
   }
 }
 
