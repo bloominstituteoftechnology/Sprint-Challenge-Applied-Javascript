@@ -1,32 +1,48 @@
+var selected = '';
+
 class Carousel {
     constructor(element){
         this.element = element;
-        console.log(`this.element is ${this.element}`)
+        // console.log(`this.element is ${this.element}`)
 
         this.right = document.querySelector('.right-button');
-        console.log(`this.right is ${this.right}`)
+        // console.log(`this.right is ${this.right}`)
         this.left = document.querySelector('.left-button');
-        console.log(`this.left is ${this.left}`)
+        // console.log(`this.left is ${this.left}`)
 
         this.images = this.element.querySelectorAll('img');
-        Array.from(this.images).forEach(function(item){
-            item.classList.add('width-100');
-        });
 
-        this.currentIndex = this.images[0]
+        selected = 0;
+        this.currentIndex = this.images[selected]
         this.currentIndex.style = 'display: block';
+        console.log(this.images.length-1)
 
-
-        this.right.addEventListener('click', ()=>{this.rightClick()});
-        this.left.addEventListener('click', ()=>{this.select()});
+        this.right.addEventListener('click', ()=>{this.rightClick();});
+        this.left.addEventListener('click', ()=>{this.leftClick();});
 
     }
 
     rightClick(){
-        this.currentIndex = this.images[1];
+        this.currentIndex.style = 'display: none';
+        if (selected === this.images.length-1) {
+            selected = 0;
+        } else {
+            selected = selected+=1;
+        }
+        this.currentIndex = this.images[selected]
+        this.currentIndex.style = 'display: block';
     }
 
-
+    leftClick(){
+        this.currentIndex.style = 'display: none';
+        if (selected === 0) {
+            selected = this.images.length-1;
+        } else {
+            selected = selected-1;
+        }
+        this.currentIndex = this.images[selected]
+        this.currentIndex.style = 'display: block';
+    }
 }
 
 let carousel = document.querySelector('.carousel');
