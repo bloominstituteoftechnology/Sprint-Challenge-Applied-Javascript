@@ -33,8 +33,9 @@ let carousel = document.querySelector(".carousel");
 carousel = new Carousel(carousel);
 //reference to all imgs in carousel
 let images = document.querySelectorAll(".carousel img");
-//displays first image when page is loaded
-images[0].style.display = "block";
+//displays image when page is loaded
+startImage = Math.floor(Math.random() * (images.length));
+images[startImage].style.display = "block";
 //creates new object for each img
 //images = Array.from(images).map(img => new Slide(img));
 
