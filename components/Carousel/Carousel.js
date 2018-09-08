@@ -1,41 +1,42 @@
 //Ignore this, I couldn't figure it out
 
+//Carousel object
 class Carousel {
     constructor(el){
         this.el = el;
 
+        //grab the left and right buttons
         this.leftButton = this.el.firstElementChild;
         this.rightButton = this.el.lastElementChild;
 
-        this.leftButton.addEventListener("click", () => {
-            this.advanceSlides();
-          });
-        this.rightButton.addEventListener("click", () => {
-        this.advanceSlides();
-        });
+        //event listeners for button clicks
+        this.leftButton.addEventListener("click", () => {this.advanceSlides()});
+        this.rightButton.addEventListener("click", () => {this.advanceSlides()});
     }
     advanceSlides(){
-        const images = document.querySelectorAll(".carousel img");
-        images.forEach( img => {img.style.display = "none"});
-    
-        this.el.classList.add(".active-img");
+        
     }
 }
-// class Slides {
+
+// class Slide {
 //     constructor(el){
 //       this.el = el;
 //     }
 //     advanceSlides(){
-//         const images = document.querySelectorAll(".carousel img");
-//         images.forEach( img => {img.style.display = "none"});
-    
-//         this.element.classList.add(".active-img");
+//         this.el.classList.add(".active-img");
 //     }
 //   }
 
+//grab the Casousel
 let carousel = document.querySelector(".carousel");
-
+//assign it to the carousel object since it's a single element
 carousel = new Carousel(carousel);
+//reference to all imgs in carousel
+let images = document.querySelectorAll(".carousel img");
+//displays first image when page is loaded
+images[0].style.display = "block";
+//creates new object for each img
+//images = Array.from(images).map(img => new Slide(img));
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
