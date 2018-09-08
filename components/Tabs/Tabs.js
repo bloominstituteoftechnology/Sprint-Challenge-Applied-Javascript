@@ -17,7 +17,7 @@ class TabLink {
     // Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card = new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', this.selectTab());
+    this.element.addEventListener('click', () => this.selectTab());
   }
 
   selectTab(){
