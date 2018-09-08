@@ -14,7 +14,7 @@ class TabLink {
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card=>new TabCard(cards));
+    this.cards = Array.from(this.cards).map(cards => new TabCard(cards));
     // Add a click event that invokes selectTab
     this.element.addEventListener('click',()=>{this.selectTab();
     });
@@ -50,7 +50,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display="null";
+    this.element.style.display=null;
   }
 
 }
