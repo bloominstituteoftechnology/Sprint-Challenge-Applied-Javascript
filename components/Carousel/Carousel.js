@@ -8,6 +8,7 @@ class Carousel {
         this.imgArray[0].style.display = "block";
         this.clicked = false;
         this.buttonLeft.addEventListener("click",   ()  =>  this.pictureLeft());
+        this.buttonLeft.addEventListener("click",   ()  =>  this.clicked = true);
         this.buttonRight.addEventListener("click",  ()  =>  this.pictureRight());
         this.buttonRight.addEventListener("click",  ()  =>  this.clicked = true);
     }
