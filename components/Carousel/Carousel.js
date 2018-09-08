@@ -24,9 +24,14 @@ class Carousel {
         }
     
     selectTab(){ //Method which changes what image is being displayed
-         Array.from(this.images).forEach(function(element){ // Iterate through the NodeList
+        // Array.from(this.images).forEach(function(element){
+        //     element.classList.remove(`bounceIn`);
+        //   });
+        Array.from(this.images).forEach(function(element){ // Iterate through the NodeList
            element.style.display = `none`; //Setting all of the images' styles to be none
         });
+        
+        // this.images[this.currentIndex].classList.add(`bounceIn`);
         this.images[this.currentIndex].style.display = `block`;// Make the current image that is selected visible by making it display block
     }
 
