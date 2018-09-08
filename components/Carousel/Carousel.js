@@ -1,8 +1,15 @@
 class Carousel {
 
 }
+ 
 
-let carousel = document.querySelector();
+// so tried 7 things here and it didnt work, 
+// now gotta come up with 7 more or go read stuff
+// off to read stuff :-) 
+
+
+let carousel = document.querySelector('.carousel');
+
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
