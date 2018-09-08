@@ -33,7 +33,7 @@ class TabLink {
    
     // Add a class of ".active-tab" to this.element
     this.tab.classList.toggle('active-tab');
-
+    console.log(this.tab);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
@@ -41,6 +41,7 @@ class TabLink {
     Array.from(cards).map(card => card.style = 'none');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
+  
   }
 }
 
@@ -48,10 +49,12 @@ class TabCard {
   constructor(card){
     // Assign this.element to the passed in element.
     this.card = card;
+   
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.card.stye = null;
+    this.card.style = null;
+  
   }
 
 }
@@ -63,4 +66,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map((tab) => new TabLink(tab));
 
 //Once you are complete, call the .select method on the first tab
-// tabs[0].select();
+tabs[0].selectTab();
