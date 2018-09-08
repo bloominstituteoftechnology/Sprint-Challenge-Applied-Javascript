@@ -254,7 +254,7 @@ body {
 .carousel {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   height: 500px;
@@ -300,5 +300,5 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
 }
+/*# sourceMappingURL=index.css.map */
