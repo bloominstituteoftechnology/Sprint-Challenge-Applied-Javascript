@@ -20,7 +20,6 @@ class TabLink {
     this.element.addEventListener("click", () => {
       this.selectTab();
     });
-    console.log(this.element);
   }
 
   selectTab(){
@@ -48,9 +47,8 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element = this.element.style.display = "";
+    this.element.style.display = "";
   }
-
 }
 
 // Create a reference to all ".tab" classes
