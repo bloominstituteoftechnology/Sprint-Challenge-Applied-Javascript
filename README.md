@@ -4,7 +4,7 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 
 ## Assessing your Applied Javascript Fu
 
-- Answers to your written questions will be recorded in _ANSWERS.md_
+- [x] Answers to your written questions will be recorded in _ANSWERS.md_
 - This is to be worked on alone but you can use outside resources. You can _reference_ any old code you may have, and documentation, however, please refrain from copying and pasting any of your answers. Try and understand the question and put your responses in your own words.
 
 ### Questions:
