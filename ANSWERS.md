@@ -6,7 +6,7 @@ The full name for the DOM is the Document Object Model. The DOM is created from 
 An event is an interaction we're having with an HTML element. Some types of events are 'click', 'mouseover', 'mouseenter', 'mouseup', 'wheel' etc. There is a full list of events that can be found on MDN and other sites. Events can notify of things such as basic user interactions or alerts of things happening. 
 
 3. What is an event listener?
-
+An event listener is a function that handles an a specified event. As the event is detected you can call a function to run a specified action as a result of the event detection.
 
 4. Why would we convert a NodeList into an Array?
 5. What is a component? 
