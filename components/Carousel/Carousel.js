@@ -2,7 +2,7 @@ class Carousel {
     constructor(element) {
         // Assign this.element to the element reference.
         this.element = element;
-        this.currIndex = 0;
+        let currIndex = 0;
 
         // 2. Grab a reference to all of the images.
         this.images = document.querySelectorAll('.carousel img');
@@ -10,30 +10,54 @@ class Carousel {
         console.log("images", this.images);
 
         // 3. Need the current index
+        let i = 0;
         this.images.forEach( function(element){
             if( element.style.display === "inline" )
-                this.currIndex = this.images.indexOf(element);
-            console.log("index", this.currIndex);
+                currIndex = i;
+            console.log("in foreach", currIndex);
         });
+        console.log("index", currIndex);
         // 1. Grab the left button & 4. add event listener
         this.left = document.querySelector('.carousel .left-button');
-        this.left.addEventListener( 'click', () => {this.leftClick()} );
+        this.left.addEventListener( 'click', () => {this.leftClick(currIndex)} );
 
         // 1. Grab the right button & 4. add event listener
         this.right = document.querySelector('.carousel .right-button');
-        this.right.addEventListener( 'click', () => {this.rightClick()} );
+        this.right.addEventListener( 'click', () => {this.rightClick(currIndex)} );
     };
 
-    leftClick(){
+    leftClick(currIndex){
+        let newImg = 0;
+        this.images = Array.from(document.querySelectorAll('.carousel img'));
+
         // Set current image visibility to none
-        
+        this.images[currIndex].style.display = "none";
+
+        // Get previous image index
+        if( currIndex === 0 )
+            newImg = this.images.length -1;
+        else
+            newImg = currIndex - 1;
+
         // Set previous image visible
+        this.images[newImg].style.display = "inline";
     };
 
-    rightClick(){
+    rightClick(currIndex){
+        let newImg = 0;
+        this.images = Array.from(document.querySelectorAll('.carousel img'));
+
         // Set current image visibility to none
+        this.images[currIndex].style.display = "none";
+
+        // Get next image index
+        if( currIndex === this.images.length -1 )
+            newImg = 0;
+        else
+            newImg = currIndex + 1;
 
         // Set next image visible
+        this.images[currIndex].style.display = "inline";
     };
 }
 
