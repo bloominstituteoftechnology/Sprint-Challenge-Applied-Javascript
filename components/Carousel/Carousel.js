@@ -1,4 +1,4 @@
-var selected = '';
+// var selected = '';
 
 class Carousel {
     constructor(element){
@@ -12,10 +12,9 @@ class Carousel {
 
         this.images = this.element.querySelectorAll('img');
 
-        selected = 0;
-        this.currentIndex = this.images[selected]
+        this.selected = 0;
+        this.currentIndex = this.images[this.selected]
         this.currentIndex.style = 'display: block';
-        console.log(this.images.length-1)
 
         this.right.addEventListener('click', ()=>{this.rightClick();});
         this.left.addEventListener('click', ()=>{this.leftClick();});
@@ -24,32 +23,30 @@ class Carousel {
 
     rightClick(){
         this.currentIndex.style = 'display: none';
-        if (selected === this.images.length-1) {
-            selected = 0;
+        if (this.selected === this.images.length-1) {
+            this.selected = 0;
         } else {
-            selected = selected+=1;
+            this.selected = this.selected+=1;
         }
-        this.currentIndex = this.images[selected]
+        this.currentIndex = this.images[this.selected]
         this.currentIndex.style = 'display: block';
     }
 
     leftClick(){
         this.currentIndex.style = 'display: none';
-        if (selected === 0) {
-            selected = this.images.length-1;
+        if (this.selected === 0) {
+            this.selected = this.images.length-1;
         } else {
-            selected = selected-1;
+            this.selected = this.selected-1;
         }
-        this.currentIndex = this.images[selected]
+        this.currentIndex = this.images[this.selected]
         this.currentIndex.style = 'display: block';
     }
 }
 
 let carousel = document.querySelector('.carousel');
-console.log(carousel);
 
 carousel = new Carousel(carousel);
-console.log(carousel)
 
 
 
