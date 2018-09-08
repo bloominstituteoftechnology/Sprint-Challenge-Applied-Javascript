@@ -9,7 +9,7 @@ class TabLink {
     if(this.element.dataset.tab === "all"){
       this.cards = document.querySelectorAll('.card')
     } else {
-      this.cards = document.querySelector(`.card[data-tab="${this.tabData}"]`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
@@ -45,7 +45,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element = element.style.display = 'null';
+    this.element.style.display = null;
   }
 
 }
@@ -56,4 +56,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 //Once you are complete, call the .select method on the first tab
-tabs[0].select();
+tabs[0].selectTab();
