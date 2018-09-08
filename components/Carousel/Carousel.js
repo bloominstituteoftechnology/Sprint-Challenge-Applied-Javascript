@@ -19,10 +19,10 @@ class Carousel {
 
   movePicLeft() {
     TweenMax.to(this.selectedPic, 1, {
-      opacity: 0
+    //   opacity: 0
     });
     this.selectedPic.style.display = "none";
-    this.selectedPic.style.opacity = "1";
+    // this.selectedPic.style.opacity = "1";
     if (current === 0) {
       current = this.picList.length - 1;
     } else current--;
@@ -30,7 +30,7 @@ class Carousel {
     console.log(current);
     this.selectedPic.style.display = "block";
     TweenMax.from(this.selectedPic, 1, {
-      opacity: 0,
+    //   opacity: 0,
       x: 1000
     });
     console.log(carousel.selectedPic);
@@ -38,7 +38,7 @@ class Carousel {
 
   movePicRight() {
     TweenMax.to(this.selectedPic, 1, {
-      opacity: 0
+    //   opacity: 0
     });
     this.selectedPic.style.display = "none";
     this.selectedPic.style.opacity = "";
@@ -48,7 +48,7 @@ class Carousel {
     this.selectedPic = this.picList[current];
     this.selectedPic.style.display = "block";
     TweenMax.from(this.selectedPic, 1, {
-      opacity: 0,
+    //   opacity: 0,
       x: -1000
     });
   }
