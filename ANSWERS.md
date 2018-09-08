@@ -14,7 +14,7 @@
 
 4. Why would we convert a NodeList into an Array?
 
-   While Nodelists are array-like, we cannot use many of the methods that we could use in arrays such as forEach(), map() and others. By converting the nodeList into an array we would be able to use those methods.
+   While Nodelists are array-like, we cannot use many of the methods that we could use in arrays such as reduce(), map() and others. By converting the nodeList into an array we would be able to use those methods.
 
 5. What is a component?
 
