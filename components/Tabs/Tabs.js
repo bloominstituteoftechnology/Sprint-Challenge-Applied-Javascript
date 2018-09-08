@@ -5,12 +5,12 @@ class TabLink {
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    this.cards = document.querySelectorAll(".card"); 
+    this.cards = document.querySelectorAll(`.card[data-tab ="${this.tabData}"]`); 
     // If the data is 'all' then select all cards regardless of their data attribute
-    if(){
-      this.cards = ;
+    if(this.tabData === "all"){
+      this.cards = document.querySelectorAll(".card");
     } else {
-      this.cards = ;
+      this.cards = document.querySelectorAll(`.card[data-tab ="${this.tabData}"]`); ;
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
@@ -44,11 +44,11 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = "null";
   }
 
 }
