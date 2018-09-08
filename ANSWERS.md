@@ -11,4 +11,4 @@
 4. Why would we convert a NodeList into an Array?
     * By converting a NodeList to an array we have access to the prototype functions like forEach, map and reduce that a NodeList doesn't have available. Some people get confused why NodeList doesn't have this functions and is because NodeList is like an array object but it's not an array.
 5. What is a component?
-    *
+    * A component is a reusable piece of code that share the samen functionality but there is a common ground to make integration easier. An example of this is a Date Picker or a slider.
