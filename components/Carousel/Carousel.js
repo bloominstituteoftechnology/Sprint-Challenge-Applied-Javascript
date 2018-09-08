@@ -8,22 +8,22 @@ class Carousel {
         this.left = document.querySelector('.left-button');
         console.log(`this.left is ${this.left}`)
 
-        // this.images = document.querySelectorAll('.carousel img');
-        // console.log(`this.images is ${this.images}`)
+        this.images = this.element.querySelectorAll('img');
+        Array.from(this.images).forEach(function(item){
+            item.classList.add('width-100');
+        });
 
-        // this.images.forEach(function(item){
-        //     item.classList.add('width-100');
-        //     item.style = 'display: block';
-        // })
+        this.currentIndex = this.images[0]
+        this.currentIndex.style = 'display: block';
+
+
+        this.right.addEventListener('click', ()=>{this.rightClick()});
+        this.left.addEventListener('click', ()=>{this.select()});
+
     }
 
-    select(){
-        const images = document.querySelectorAll('.carousel img');
-
-        images.forEach(function(item){
-            item.classList.add('widht-100');
-            item.style = 'display: block';
-        })
+    rightClick(){
+        this.currentIndex = this.images[1];
     }
 
 
@@ -34,6 +34,7 @@ console.log(carousel);
 
 carousel = new Carousel(carousel);
 console.log(carousel)
+
 
 
 
