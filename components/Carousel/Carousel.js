@@ -1,7 +1,6 @@
 class Carousel {
     constructor(element) {
         this.element = element;
-        console.log(this.element)
 
         // Get references to the classes we need
         this.photoBox = this.element.querySelector('.carousel');
@@ -13,7 +12,7 @@ class Carousel {
         this.counter = 0; // Keeps track of which picture is showing
         this.totalPhotos = this.photos.length;
         this.current = this.photos[0];
-        console.log(this.current)
+        console.log(this.totalPhotos)
 
         // Event listeners for next and previous buttons
         this.next.addEventListener('click', () => {
@@ -43,9 +42,10 @@ class Carousel {
           this.counter = 0; // If at the end of the carousel and next picture is clicked
         }
 
+        console.log(this.counter)
+
         // Set the picture to current
         this.current = this.photos[this.counter];
-        console.log(this.current)
 
         // Add the current class to the displayed picture
         this.current.classList.add('current');
@@ -55,7 +55,7 @@ class Carousel {
 let carousel = document.querySelector(".carousel");
 
 carousel = new Carousel(carousel)
-carousel.navigate(0);
+carousel.navigate(1);
 
 
 
