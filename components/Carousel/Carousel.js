@@ -50,7 +50,14 @@ class Carousel {
     this.images[this.currentIndex].style.display = 'block';
 
     this.images.forEach(image => (image.style.animationName = null));
+    this.images.forEach(image => (image.style.webkitAnimationName = null));
+    this.images.forEach(image => (image.style.mozAnimationName = null));
+    this.images.forEach(image => (image.style.oAnimationName = null));
+
     this.images[this.currentIndex].style.animationName = animation;
+    this.images[this.currentIndex].style.webkitAnimationName = animation;
+    this.images[this.currentIndex].style.mozAnimationName = animation;
+    this.images[this.currentIndex].style.oAnimationName = animation;
   }
 }
 
