@@ -7,8 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 
   <!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 28, 2018</span>
+    <span class="date">MARCH 28, 2018</span>
     <h1>Lambda Times</h1>
     <span class="temp">98°</span>
   </div>
@@ -50,14 +51,14 @@
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+  <div class="carousel">
     <div class="left-button"><</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -133,6 +134,16 @@
       </div>
     </div>
 
+    <div class="card" data-tab="technology">
+      <div class="headline">Goodbye OpenGL and Direct3D, the Next Big Thing in Graphics Programming</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
     <div class="card" data-tab="node">
       <div class="headline">MongoDB: NoSQL vs. SQL, the Debate Continues...</div>
       <div class="author">
@@ -150,6 +161,16 @@
           <img src="./assets/fido.jpg" />
         </div>
         <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">this Does a Lot, Examining the 'this' Keyword</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/puppers.jpg" />
+        </div>
+        <span>By PUPPER S. DOGGO</span>
       </div>
     </div>
 
