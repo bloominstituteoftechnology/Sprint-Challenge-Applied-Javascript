@@ -25,7 +25,7 @@ class Carousel {
             }
             else {
                 // Otherwise just reduce which index we're showing
-                this.imageIndex--;
+                this.currentIndex--;
             }
         }
         if (button === this.rightButton) {
