@@ -24,24 +24,28 @@
       border: 2px solid @lambda-times-color-primary;
     }
   }
+
   .left-button {
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
   }
+
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
   }
+  
   img {
     .width-100();
-    // display: none;
-    position: absolute;
-    top: 1000px;
+    visibility: hidden;
+    opacity: 0;
+  }
 
-    current {
-      top: 0px;
-    }
+  .current {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
   }
 }

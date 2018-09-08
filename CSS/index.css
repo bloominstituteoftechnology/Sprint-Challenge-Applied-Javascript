@@ -300,9 +300,11 @@ body {
 }
 .carousel img {
   width: 100%;
-  position: absolute;
-  top: 1000px;
+  visibility: hidden;
+  opacity: 0;
 }
-.carousel img current {
-  top: 0px;
+.carousel .current {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
 }
