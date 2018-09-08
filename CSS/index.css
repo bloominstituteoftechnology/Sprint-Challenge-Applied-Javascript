@@ -301,5 +301,5 @@ body {
 .carousel img {
   width: 100%;
   display: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }

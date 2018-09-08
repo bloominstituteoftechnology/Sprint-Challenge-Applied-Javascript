@@ -8,7 +8,7 @@ class Carousel {
         this.leftButton.addEventListener('click', () => this.leftClick());
     }
     start() {
-        const images = document.querySelectorAll('img');
+        const images = document.querySelectorAll('.carousel img');
         images.forEach((img) => {
             img.style.display = "none";
         })
