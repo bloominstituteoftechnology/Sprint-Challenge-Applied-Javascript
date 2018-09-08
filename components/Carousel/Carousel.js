@@ -1,9 +1,52 @@
 class Carousel {
-
+    constructor(element){
+        this.element = element;
+        this.leftButton = this.element.querySelector('.left-button');
+        this.rightButton = this.element.querySelector('.right-button');
+        this.images = this.element.querySelectorAll('img');
+        this.imageIndex = 0;
+        this.selectedImage = this.images[this.imageIndex];
+        console.log(this.images.length);
+        this.leftButton.addEventListener('click', () => {this.selectImage(this.leftButton)});
+        this.rightButton.addEventListener('click', () => {this.selectImage(this.rightButton)});
+        this.showImage();
+    }
+    showImage() {
+        this.images.forEach(image => {
+            image.style.display = null;
+        });
+        this.selectedImage.style.display='block';
+    }
+    selectImage(button) {
+        // if the button is the left button we're going down the index
+        if (button === this.leftButton) {
+            // if we've reached -1 we need to loop to the end of the images and display that one
+            if (this.imageIndex <= 0){
+                this.imageIndex = this.images.length - 1;
+            }
+            else {
+                // Otherwise just reduce which index we're showing
+                this.imageIndex--;
+            }
+        }
+        if (button === this.rightButton) {
+            // We're going up in the index so if we've reached the end of the images we need to loop to the beginning
+            if (this.imageIndex >= this.images.length-1) {
+                this.imageIndex = 0;
+            }
+            else {
+                // Otherwise just increment the index we're showing
+                this.imageIndex++;
+            }
+        }
+        this.selectedImage = this.images[this.imageIndex];
+        this.showImage();
+    }
 }
 
-let carousel = document.querySelector();
+let carousel = document.querySelector('.carousel');
 
+carousel = new Carousel(carousel);
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. You will need to grab a reference to all of the images
