@@ -1,7 +1,7 @@
 class TabLink {
-  constructor(element){
+  constructor(tab){
     // assign this.element to the element reference
-    this.element = element ;
+    this.element = tab ;
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
@@ -9,14 +9,14 @@ class TabLink {
     if(this.cards !== this.tabData){
       this.cards = this.cards ;
     } else {
-      // this.cards = this.cards.dataset.tab ;
+      this.cards = this.cards.dataset.tab ;
     }
 console.log(this.cards)
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', this.selectTab);
+    this.tabData.addEventListener('click', this.selectTab());
   }
 
   selectTab(){
@@ -25,7 +25,7 @@ console.log(this.cards)
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(function (){
-      tabs.classList.remove('active-tab');
+      this.element.classList.remove('active-tab');
     })
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
@@ -35,7 +35,7 @@ console.log(this.cards)
     const cards = document.querySelectorAll('.card') ;
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(function (){
-      this.card.style.display = 'none';
+      this.element.style.display = 'none';
     })
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
