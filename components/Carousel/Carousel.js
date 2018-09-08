@@ -30,7 +30,7 @@ class Carousel {
       this.currentIndex = this.images.length - 1;
     }
     console.log(this.currentIndex);
-    this.showImg();
+    this.showImg('slideleft');
   }
 
   moveRight() {
@@ -41,13 +41,16 @@ class Carousel {
       this.currentIndex = 0;
     }
     console.log(this.currentIndex);
-    this.showImg();
+    this.showImg('slideright');
   }
 
-  showImg() {
+  showImg(animation) {
     // console.log('Inside showImg()');
     this.images.forEach(image => (image.style.display = 'none'));
     this.images[this.currentIndex].style.display = 'block';
+
+    this.images.forEach(image => (image.style.animationName = null));
+    this.images[this.currentIndex].style.animationName = animation;
   }
 }
 

@@ -38,19 +38,28 @@
   img {
     .width-100();
     display: none;
-    animation-name: slide;
-    animation-duration: 0.5s;
+    // animation-name: ;
+    animation-duration: 0.15s;
   }
 }
 
-@keyframes slide {
+@keyframes slideright {
   from {
-    // width: 0px;
+    position: relative;
+    left: 2400px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+
+@keyframes slideleft {
+  from {
     position: relative;
     left: -1200px;
   }
   to {
-    width: 100%;
     position: relative;
     left: 0px;
   }
