@@ -6,21 +6,50 @@ class Carousel {
         this.leftButton = this.element.querySelector('.left-button');
         // create a reference to the '.right-button' class
         this.rightButton = this.element.querySelector('.right-button');
+        // create a reference to the img element
+        this.images = this.element.querySelectorAll('img');
+        //Set default index to 0
+        this.currentIndex = 0;
+        // Show first image
+        this.images[this.currentIndex].style.display = 'block';
         // Set a click handler on the leftButton reference, calling the clickLeft method
         this.leftButton.addEventListener('click', () => {
-            if (carouselImgs.style.display === 'none') {
-                this.carouselImgs.style.display = 'block';
-            } else {
-                this.carouselImgs.style.display = 'none';
-            }
+            this.clickLeft();
         })
         // Set a click handler on the rightButton reference, calling the clickRight method
-        this.element.addEventListener('click', this.clickRight);
-        // create a reference to the '.carousel img' class
-        this.carouselImgs = this.element.querySelector('.carousel img');
+        this.rightButton.addEventListener('click', () => {
+            this.clickRight();
+        })
+    }
+    clickLeft() {
+        // Shift index -1 on left click, wraparound if index < 0
+        if ((this.currentIndex - 1) < 0) {
+            this.currentIndex = this.images.length - 1;
+        } else {
+            this.currentIndex -= 1;
+        }
+        // hide all images
+        this.images.forEach(function (each) {
+            each.style.display = 'none';
+        })
+        // display image of current index
+        this.images[this.currentIndex].style.display = 'block';
+    }
+    clickRight() {
+        // Shift index +1 on right click, wraparound if index > images.length - 1
+        if ((this.currentIndex + 1) > this.images.length - 1) {
+            this.currentIndex = 0;
+        } else {
+            this.currentIndex += 1;
+        }
+        // hide all images
+        this.images.forEach(function (each) {
+            each.style.display = 'none';
+        })
+        // display image of current index
+        this.images[this.currentIndex].style.display = 'block';
     }
 }
-
 let carousel = document.querySelectorAll('.carousel');
 carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
 
