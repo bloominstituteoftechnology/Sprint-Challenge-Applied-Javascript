@@ -1,12 +1,46 @@
 class Carousel {
+    constructor(element){
+        this.element = element;
+        console.log(`this.element is ${this.element}`)
+
+        this.right = document.querySelector('.right-button');
+        console.log(`this.right is ${this.right}`)
+        this.left = document.querySelector('.left-button');
+        console.log(`this.left is ${this.left}`)
+
+        // this.images = document.querySelectorAll('.carousel img');
+        // console.log(`this.images is ${this.images}`)
+
+        // this.images.forEach(function(item){
+        //     item.classList.add('width-100');
+        //     item.style = 'display: block';
+        // })
+    }
+
+    select(){
+        const images = document.querySelectorAll('.carousel img');
+
+        images.forEach(function(item){
+            item.classList.add('widht-100');
+            item.style = 'display: block';
+        })
+    }
+
 
 }
 
-// let carousel = document.querySelector();
+let carousel = document.querySelector('.carousel');
+console.log(carousel);
 
-let carousel1 = document.querySelector('.carousel img');
-console.log(carousel1);
-carousel1.classList.add('width-100');
+carousel = new Carousel(carousel);
+console.log(carousel)
+
+
+
+// let carousel = document.querySelector('.carousel img');
+// console.log(carousel);
+// carousel.classList.add('width-100');
+// carousel.style = 'display: block';
 
 /* If You've gotten this far, you're on your own! Although 
 //we will give you some hints:
