@@ -69,7 +69,7 @@ let tabs = document.querySelectorAll('.tab');
 // console.log(tabs)
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
-// console.log(tabs);
+console.log(tabs);
 
 //Once you are complete, call the .select method on the first tab
 tabs[0].selectTab();
