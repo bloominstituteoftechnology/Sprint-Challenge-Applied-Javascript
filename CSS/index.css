@@ -303,6 +303,66 @@ body {
   display: none;
   animation-duration: 0.15s;
 }
+@-webkit-keyframes slideright {
+  from {
+    position: relative;
+    left: 2400px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+@-webkit-keyframes slideleft {
+  from {
+    position: relative;
+    left: -1200px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+@-moz-keyframes slideright {
+  from {
+    position: relative;
+    left: 2400px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+@-moz-keyframes slideleft {
+  from {
+    position: relative;
+    left: -1200px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+@-o-keyframes slideright {
+  from {
+    position: relative;
+    left: 2400px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
+@-o-keyframes slideleft {
+  from {
+    position: relative;
+    left: -1200px;
+  }
+  to {
+    position: relative;
+    left: 0px;
+  }
+}
 @keyframes slideright {
   from {
     position: relative;
