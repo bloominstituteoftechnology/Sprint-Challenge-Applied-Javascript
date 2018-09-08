@@ -7,17 +7,18 @@ class TabLink {
     console.log("tabData:" + this.tabData);
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     // If the data is 'all' then select all cards regardless of their data attribute
-    if(this.tabData = "all"){
+    if(this.tabData === "all"){
       this.cards = document.querySelectorAll(".card");
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+
     }
-    console.log("this.cards: " + this.cards);
+    console.log("this.cards at begin: " + this.cards);
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(this.card));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     //Array.from(this.cards).map(card => new TabCard(this.card));
-    console.log("this card: " + this.card)
+    
    console.log("this.cards after array: " + this.cards);
     // Add a click event that invokes selectTab
     this.element.addEventListener("click",  () => {this.selectTab()});
@@ -34,14 +35,14 @@ class TabLink {
     })
     // Add a class of ".active-tab" to this.element
     this.element.classList.add("active-tab");
-    console.log("element in classList: " + this.element);
+    console.log("element in classList: " + this.element.classList);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
     console.log("cards: " + cards)
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(function(item) {
-      item.flex = "none"
+    cards.forEach(function(item)
+     {item.style.display = "none"
     });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
@@ -57,8 +58,8 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.flex = "null";
-    console.log("this element selectCard(): " + this.element);
+    this.element.style.display = "";
+    console.log("this element style selectCard(): " + this.element.style.display);
   }
 
 }
