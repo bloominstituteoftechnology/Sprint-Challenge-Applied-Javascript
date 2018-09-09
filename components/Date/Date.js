@@ -1,9 +1,7 @@
 class CurrentDate {
     constructor(element) {
         this.element = element;
-        console.log(this.element);
         this.date = new Date(Date.now());
-        console.log(this.date);
         this.months = [
             'JANUARY',
             'FEBRUARY',

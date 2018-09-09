@@ -9,7 +9,7 @@
     width: 1200px;
   }
   .left-button, .right-button {
-    .flex(center);
+    .flex(center, center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
     font-size: 40px;
@@ -27,11 +27,13 @@
   .left-button {
     top: 50%; 
     left: 25px;
+    padding-right: 3px;
     transform: translate(0, -50%);
   }
   .right-button {
     top: 50%; 
     right: 25px;
+    padding-left: 3px;
     transform: translate(0, -50%);
   }
   img {

@@ -272,7 +272,7 @@ body {
 .carousel .right-button {
   display: flex;
   justify-content: center;
-  align-items: none;
+  align-items: center;
   flex-direction: row;
   color: #fff;
   background-color: #333;
@@ -292,11 +292,13 @@ body {
 .carousel .left-button {
   top: 50%;
   left: 25px;
+  padding-right: 3px;
   transform: translate(0, -50%);
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
+  padding-left: 3px;
   transform: translate(0, -50%);
 }
 .carousel img {
