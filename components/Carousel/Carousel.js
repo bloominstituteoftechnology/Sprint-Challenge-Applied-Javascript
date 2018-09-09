@@ -3,28 +3,39 @@ class Carousel {
         this.e = e;
         this.directionData = this.e.dataset.direction;
         this.carouselImg = document.querySelectorAll('.carousel > img');
-        this.carouselImgDisplayNone = Array.from(this.carouselImg).forEach(img => img.style.display = 'none');
-        this.carouselImg[0].style.display = null;
-        this.newCarouselImg = Array.from(this.carouselImg).map(img => new this.carouselImg(img));
+
+        Array.from(this.carouselImg).forEach(img => img.style.display = 'none');
+        this.carouselImg[imageIndex].style.display = null;
         
+        this.e.addEventListener('click', () => this.currentImg());
     }
     currentImg() {
-        const img = document.querySelectorAll('.carousel > img');
-        Array.from(img).forEach(img => img.style.display = 'none');
-        this.img.forEach(img => img.showImage());
+    
+        if (this.directionData === 'left' && imageIndex === 0) {
+            this.carouselImg[imageIndex].style.display = 'none';
+            imageIndex = 3;
+            this.carouselImg[imageIndex].style.display = null;
+        } else if (this.directionData === 'right' && imageIndex === 3) {
+            this.carouselImg[imageIndex].style.display = 'none';
+            imageIndex = 0;
+            this.carouselImg[imageIndex].style.display = null;
+        } else if (this.directionData === 'left') {
+            this.carouselImg[imageIndex].style.display = 'none';
+            imageIndex -= 1;
+            this.carouselImg[imageIndex].style.display = null;
+        } else if (this.directionData === 'right') {
+            this.carouselImg[imageIndex].style.display = 'none';
+            imageIndex += 1;
+            this.carouselImg[imageIndex].style.display = null;
+        }
+        
     }
 }
 
-class CarouselImage {
-    constructor(e) {
-        this.e = e;
-    }
-    showImage() {
-        this.e.style.display = null;
-    }
-}
 
 let carousel = document.querySelectorAll('.carousel > div');
+
+let imageIndex = 0;
 
 carousel = Array.from(carousel).map(button => new Carousel(button));
 
