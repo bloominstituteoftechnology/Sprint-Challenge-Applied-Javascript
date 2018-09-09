@@ -9,39 +9,36 @@ class Carousel {
     }
     start() {
         const images = document.querySelectorAll('.carousel img');
-        images.forEach((img) => {
-            img.style.display = "none";
-        })
-        images[0].style.display = "block";
+        images[0].classList.add('show');
     }
     rightClick() {
         const images = document.querySelectorAll('.carousel img');
         images.forEach((img) => {
-            img.style.display = "none";
+            img.classList.remove('show');
         })
         if (this.count < images.length - 1) {
             this.count += 1;
-            images[this.count].style.display = "block";
+            images[this.count].classList.add('show');
         } else {
             this.count = 0;
-            images[this.count].style.display = "block";
+            images[this.count].classList.add('show');
         }
     }
     leftClick() {
         const images = document.querySelectorAll('.carousel img');
         images.forEach((img) => {
-            img.style.display = "none";
+            img.classList.remove('show');
         })
         if (this.count > 0) {
             this.count -= 1;
-            images[this.count].style.display = "block";
+            images[this.count].classList.add('show');
         } else {
             this.count = images.length - 1;
-            images[this.count].style.display = "block";
+            images[this.count].classList.add('show');
         }
     }
 }
 
 let carousel = document.querySelector('.carousel');
-carousel = new Carousel();
+carousel = new Carousel(carousel);
 carousel.start()
