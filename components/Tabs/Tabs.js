@@ -55,8 +55,8 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = "block";
-    console.log('yes working');
+    this.element.style.display = null;
+    // console.log('yes working');
   }
 
 }
