@@ -6,25 +6,25 @@ class Carousel {
         this.images = document.querySelectorAll('.carousel img');
         this.index = 0;
         this.rightButton.addEventListener('click', () => {
-            this.displayImageR();
+            this.displayImage('right');
         })
         this.leftButton.addEventListener('click', () => {
-            this.displayImageL();
+            this.displayImage('left');
         })
     }
-    displayImageR() {
+    displayImage(direction) {
         this.images.forEach(element => element.style.display = 'none');
-        this.index + 1 > this.images.length -1 ? this.images[0].style.display = 'inline-block' :
-        this.images[this.index + 1].style.display = 'inline-block';
-        this.index + 1 > this.images.length -1 ? this.index = 0 : this.index++ ;
-        
-    }
-    displayImageL() {
-        this.images.forEach(element => element.style.display = 'none');
-        this.index - 1 < 0 ? this.images[this.images.length -1].style.display = 'inline-block' :
-        this.images[this.index - 1].style.display = 'inline-block';
-        this.index - 1 < 0 ? this.index = this.images.length -1 : this.index--;
-    }
+        if(direction === 'right') {        
+            this.index + 1 > this.images.length -1 ? this.images[0].style.display = 'inline-block' :
+            this.images[this.index + 1].style.display = 'inline-block';
+            this.index + 1 > this.images.length -1 ? this.index = 0 : this.index++;
+        }
+        else {
+            this.index - 1 < 0 ? this.images[this.images.length -1].style.display = 'inline-block' :
+            this.images[this.index - 1].style.display = 'inline-block';
+            this.index - 1 < 0 ? this.index = this.images.length -1 : this.index--;
+        }
+    }     
 }
 
 let carousel = document.querySelectorAll('.carousel');
