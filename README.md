@@ -4,8 +4,8 @@ We've covered a lot this week. We've learned how to plug Javascript up to our HT
 
 ## Assessing your Applied Javascript Fu
 
-- Answers to your written questions will be recorded in _ANSWERS.md_
-- This is to be worked on alone but you can use outside resources. You can _reference_ any old code you may have, and documentation, however, please refrain from copying and pasting any of your answers. Try and understand the question and put your responses in your own words.
+X Answers to your written questions will be recorded in _ANSWERS.md_
+X This is to be worked on alone but you can use outside resources. You can _reference_ any old code you may have, and documentation, however, please refrain from copying and pasting any of your answers. Try and understand the question and put your responses in your own words.
 
 ### Questions:
 
@@ -29,7 +29,7 @@ We are going to create a Lambda Newspaper. The styling is modeled after the [LA 
 
 Your stretch challenge is to write the functionality of a `Carousel` component. You have the HTML and CSS already in place, simply uncomment the HTML in the `index.html` file. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. You may reference the `Tabs.js` file for assistance.
 
-- Complete the carousel functionality in `Carousel.js`
+X Complete the carousel functionality in `Carousel.js`
 - If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
-- Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over iteself.
+X Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over iteself.
 - If you have finished the above, play around with the styling on all the components, and understand how each is built.
