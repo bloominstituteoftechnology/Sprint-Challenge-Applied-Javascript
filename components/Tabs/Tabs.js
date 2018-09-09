@@ -5,7 +5,7 @@ class TabLink {
 		// Get the tab data attribute and save the value here
 		this.tabData = this.element.dataset.tab;
 
-		console.log(this.tabData);
+	
 
 		// Find all elements with the .card class in index.html that correspond to the tab data attribute
 		// If the data is 'all' then select all cards regardless of their data attribute
@@ -68,7 +68,7 @@ tabs = Array.from(tabs).map(element => {
 	return new TabLink(element);
 });
 
-console.log(tabs);
+
 
 //Once you are complete, call the .select method on the first tab
 
