@@ -36,6 +36,16 @@
   }
   img {
     .width-100();
-    display: none;
+    display: block;
   }
+  .hidden {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+  }
+  .show {
+    opacity: 1;
+    z-index: 2;
+  }
+
 }

@@ -300,5 +300,14 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  display: block;
+}
+.carousel .hidden {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel .show {
+  opacity: 1;
+  z-index: 2;
 }

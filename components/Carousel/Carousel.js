@@ -1,11 +1,14 @@
 class Carousel {
     constructor(link){
-        this.element = link;
+       
+       this.element = link;
        this.leftButton = this.element.querySelector(".left-button");
        this.rightButton = this.element.querySelector(".right-button");
        this.images = this.element.querySelectorAll(".img");
+         
+       this.images[0].classList.add('show');
+         
 
-       console.log(this.images)
 
        this.leftButton.addEventListener('click', () => {
            this.toggleLeft();
@@ -17,10 +20,18 @@ class Carousel {
 
     }
     toggleLeft(){
-        this.images.classList.toggle ='.left-button';
+     this.images = document.querySelectorAll('.img');
+     this.images = Array.from(this.images.map((img) => {
+         img.classList.remove('show')}));
+       
     }
     toggleRight() {
-        this.images.classList.toggle='.right-button';
+        this.images = document.querySelectorAll('.img');
+        this.images = Array.from(this.images.map((img) => {
+            img.classList.remove('show')}));
+   
+   
+   
     }
 
 
@@ -29,8 +40,8 @@ class Carousel {
 
 let carousel = document.querySelectorAll('.carousel');
 carousel = Array.from(carousel).map((link) => new Carousel(link));
-console.log(carousel)
-carousel[0].style.display = null;
+
+// carousel[0].style.display = null;
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. You will need to grab a reference to all of the images
