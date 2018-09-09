@@ -16,12 +16,12 @@ class Carousel {
 
         // Event listeners for next and previous buttons
         this.next.addEventListener('click', () => {
-            console.log("Clicked!")
+            console.log("Clicked next!")
             this.navigate(1);
           });
           
         this.prev.addEventListener('click', () => {
-            console.log("Clicked!")
+            console.log("Clicked previous!")
             this.navigate(-1);
           });
     }
