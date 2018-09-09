@@ -7,24 +7,38 @@ class Carousel {
         this.imgs = this.el.querySelectorAll('img');
         // this.image = new Pictures(this.imgs);
         this.imgs[this.index].style.display = 'block';
-        console.log(this.image);
+        
         this.right.addEventListener('click', () => {this.rightClick()});
         this.left.addEventListener('click', () => {this.leftClick()});
-        
         this.length = this.imgs.length;
-        console.log(this.length);
+        
        
    }
    
    rightClick() {
+   	   this.imgs.forEach(function(element){
+   	   	    element.style.display = 'none';
+   	   })
    	   this.index++;
    	   if(this.index>=this.length) {
    	   	  this.index = 0;
    	   }
    	   this.imgs[this.index].style.display = 'block';
-   	   console.log(this.index);
+   	   // this.imgs[this.index].style.opacity = '0.5';
+   	     	   
+   	   
    }
-   leftClcik() {
+   leftClick() {
+   	this.imgs.forEach(function(element){
+   	   	    element.style.display = 'none';
+   	   })
+   	   this.index--;
+   	   if(this.index<= 0) {
+   	   	  this.index = this.length-1;
+   	   }
+   	  this.imgs[this.index].style.display = 'block';
+   	 
+   	  
    	 
    }
 }
