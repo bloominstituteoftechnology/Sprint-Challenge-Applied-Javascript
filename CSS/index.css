@@ -292,13 +292,22 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 1;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 1;
 }
 .carousel img {
   width: 100%;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.carousel .current {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
 }
