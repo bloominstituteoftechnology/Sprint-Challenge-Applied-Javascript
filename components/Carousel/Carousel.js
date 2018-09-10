@@ -2,13 +2,16 @@ class Carousel {
     constructor(link){
        
        this.element = link;
-       this.leftButton = this.element.querySelector(".left-button");
-       this.rightButton = this.element.querySelector(".right-button");
-       this.images = this.element.querySelectorAll(".img");
-         
-       this.images[0].classList.add('show');
-         
+       this.leftButton = this.element.querySelector('.left-button');
+       this.rightButton = this.element.querySelector('.right-button');
+       this.images = this.element.querySelectorAll('.carousel img');
+        
+       this.index = 0 ;
+    
 
+       this.images[this.index].style.display = 'inline-block';
+
+       console.log(this.images[this.index]);
 
        this.leftButton.addEventListener('click', () => {
            this.toggleLeft();
@@ -20,16 +23,26 @@ class Carousel {
 
     }
     toggleLeft(){
-     this.images = document.querySelectorAll('.img');
-     this.images = Array.from(this.images.map((img) => {
-         img.classList.remove('show')}));
-       
+    this.images[this.index].style.display = 'none';
+    this.index--;
+    if(this.index < 0){
+        this.index = this.images.length - 1;
+
+    }
+    else{
+        this.images[this.index].style.display ='block';
+    }
     }
     toggleRight() {
-        this.images = document.querySelectorAll('.img');
-        this.images = Array.from(this.images.map((img) => {
-            img.classList.remove('show')}));
-   
+        this.images[this.index].style.display = 'none';
+        this.index++;
+
+        if(this.index >= this.images.length){
+            this.index = 0;
+        }
+        else {
+            this.images[this.index].style.display ='block';
+        }
    
    
     }
