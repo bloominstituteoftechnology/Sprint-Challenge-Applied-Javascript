@@ -2,12 +2,12 @@ class Carousel {
     constructor(el) {
         this.el = el;
         this.left = document.querySelector('.left-button');
+        this.left.addEventListener('click', () => {
+            this.clkLeft();
+        })
         this.right = document.querySelector('.right-button');
         this.right.addEventListener('click', () => {
             this.clkRight();
-        })
-        this.left.addEventListener('click', () => {
-            this.clkLeft();
         })
         this.img = this.el.querySelectorAll('img');
         this.index = 0;
@@ -29,10 +29,11 @@ class Carousel {
 
     }
     clkLeft() {
-        this.img.forEach((item => item.style.display = "none"))
-        if (this.index = 0) {
+        this.img.forEach((item => item.style.display = "none"));
+        if (this.index === 0) {
             this.index = this.img.length - 1;
             this.currentIndex = this.img[this.index];
+            console.log(this.index)
         } else {
             this.index--;
             this.currentIndex = this.img[this.index];
