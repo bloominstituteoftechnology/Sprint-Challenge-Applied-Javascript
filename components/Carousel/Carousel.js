@@ -7,29 +7,44 @@ class Carousel {
     this.rightButton = element.querySelector('.right-button');
     //reference to grab all images
     this.img = element.querySelectorAll('.carousel img');
-    //create an array of the images to loop through them
-    this.arrImgs = Array.from(this.img);
-    // console.log(this.arrImgs)
+    // console.log(this.img)
+    //Counter to be able through go through images
+    this.counter = 0;
     //add click events for both buttons
     this.leftButton.addEventListener('click', () => {this.goLeft()});
     this.rightButton.addEventListener('click', () => {this.goRight()});
    }
 
    goLeft() {
-      for(let i = 0; i < this.arrImgslength; i++){
-       
-          
-      }
+       this.img[this.counter].style.display = 'none'
+       if(this.counter > 0) {
+           this.counter -= 1;
+           this.img[this.counter].style.display = 'block';
+       } else {
+           this.counter = this.img.length - 1;
+           this.img[this.counter].style.display = 'block';
+       }
+   
       console.log("Go Left")
    }
 
    goRight() {
+    this.img[this.counter].style.display = 'none'
+    if(this.counter < this.img.length - 1){
+        this.counter += 1;
+        this.img[this.counter].style.display = 'block'
+    } else {
+        this.counter = 0;
+        this.img[this.counter].style.display = 'block'
+    }
        console.log("Go Right")
    }
 }
 
-let carousel = document.querySelectorAll('.carousel');
-carousel = Array.from(carousel).map(items => new Carousel(items));
+let carousel = document.querySelector('.carousel');
+carousel =  new Carousel(carousel);
+carousel.img[0].style.display = 'block';
+
 // console.log(carousel)
 
 
