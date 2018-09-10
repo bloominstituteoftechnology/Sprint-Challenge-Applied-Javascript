@@ -11,7 +11,7 @@ class Carousel {
 
        this.images[this.index].style.display = 'inline-block';
 
-       console.log(this.images[this.index]);
+       console.log(this.images.length - 1);
 
        this.leftButton.addEventListener('click', () => {
            this.toggleLeft();
@@ -24,23 +24,26 @@ class Carousel {
     }
     toggleLeft(){
     this.images[this.index].style.display = 'none';
-    this.index--;
-    if(this.index < 0){
+   
+    if(this.index  === 0){
         this.index = this.images.length - 1;
-
+        this.images[this.index].style.display = 'block';
     }
     else{
+        this.index = this.index -= 1;
         this.images[this.index].style.display ='block';
     }
     }
     toggleRight() {
         this.images[this.index].style.display = 'none';
-        this.index++;
+     
 
-        if(this.index >= this.images.length){
+        if(this.index === this.images.length - 1){
             this.index = 0;
+            this.images[this.index].style.display = 'block';
         }
         else {
+           this.index = this.index += 1;
             this.images[this.index].style.display ='block';
         }
    
