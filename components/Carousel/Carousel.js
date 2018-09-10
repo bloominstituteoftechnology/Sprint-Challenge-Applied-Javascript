@@ -1,14 +1,16 @@
 class Carousel {
   constructor(element){
-    this.element = element;
+    // this = Carousel{element}
+
+    this.element = element;   // = div.carousel
 
     // create a reference to left & right button classes
-    this.left = element.querySelector('.left-button');
-    this.right = element.querySelector('.right-button');
+    this.left = element.querySelector('.left-button');  // = div.left-button
+    this.right = element.querySelector('.right-button'); // = div.right-button
 
     // create a reference to all img
-    this.images = this.element.querySelectorAll('img');
-
+    this.images = this.element.querySelectorAll('img');  // nodeList(4)
+                                     //  0 = img, 1 = img, 2 = img, 3 = img
     // define defaults for carousel
     this.current = 0;
     this.currentIndex = this.images[this.current];
@@ -34,13 +36,14 @@ class Carousel {
     this.currentIndex.style = 'display: none';
 
     if(this.current === this.images.length - 1) {this.current = 0}
-    else {this.current = this.current += 1}
+    else {this.current = this.current + 1}
 
     this.showDatImage();
   }
 
   showDatImage() {
     this.currentIndex = this.images[this.current];
+    this.currentIndex.style.transition
     this.currentIndex.style = 'display: block';
   }
 }
