@@ -3,14 +3,15 @@ class TabLink {
     // assign this.element to the element reference
     this.element = element;
     // Get the tab data attribute and save the value here
-    this.tabData = document.querySelectorAll(`.tab[data-tab='${this.dataset}']`);
+    this.tabData = this.element.dataset.tab;
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    this.cards = document.querySelectorAll('.card');
+    this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
+    console.log(this.tabData);
     // If the data is 'all' then select all cards regardless of their data attribute
-    if(this.tabData.dataset === '.tab[data-tab="all"]'){
-      this.cards = document.querySelectorAll('.card'); // TODO: change this to select the cards
+    if(this.tabData === 'all'){
+      this.cards = document.querySelectorAll('.card');
     } else {
-      this.cards = document.querySelectorAll(`.card[data-tab='${this.dataset}']`);
+      this.cards;
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class.
