@@ -2,26 +2,24 @@ class TabLink {
   constructor(element){
     // assign this.element to the element reference
     this.element = element;
-    this.info = this.element.dataset.info;
+    this.info = this.element.dataset.tab;
 
     // Get the tab data attribute and save the value here
-    this.tabData = `data-set=${this.info}` ; 
+    this.tabData = `data-tab=${this.info}`;
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
 
-    this.cardElement = this.element.querySelector(`.card[data-set=${this.info}`)
     // If the data is 'all' then select all cards regardless of their data attribute
-    if('all'){
-      this.cards = this.element.querySelectorAll('.card');
+    if(this.element.dataset.tab === 'all'){
+      this.cards = document.querySelectorAll('.card');
     } else {
-      this.cards = this.element.querySelector(`.card[data-set=${this.info}`);
+      this.cards = document.querySelectorAll(`.card[${this.tabData}`);
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-   console.log(this.cards);
     this.cards = Array.from(this.cards).map(singleCard => new TabCard(singleCard));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click',selectTab());
+    this.element.addEventListener('click', () => {this.selectTab()});
   }
 
   selectTab(){
@@ -29,7 +27,7 @@ class TabLink {
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(function (tab) {tab.classList.remove()})
+    tabs.forEach(function (tab) {tab.classList.remove('active-tab')})
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
 
@@ -50,7 +48,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'null';
+    this.element.style.display = null;
   }
 
 }
