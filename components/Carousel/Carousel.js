@@ -4,14 +4,10 @@ class Carousel {
         this.pics = document.querySelectorAll('.cImg');
 
         this.left = this.element.firstElementChild;
-        this.left.addEventListener('click', () => {
-            this.goLeft(); console.log('left');
-        });
+        this.left.addEventListener('click', () => {this.goLeft()});
 
         this.right = this.element.lastElementChild;
-        this.right.addEventListener('click', () => {
-            this.goRight(); console.log('right');
-        })
+        this.right.addEventListener('click', () => {this.goRight()})
         this.i = 0;
     }
 
@@ -23,9 +19,13 @@ class Carousel {
             this.i--;
         }
         this.pics.forEach(img => {
-            img.style.display = 'none';
+            img.style.visibility = 'hidden';
+            img.style.right = '-2000px'
+            img.style.left = '0px'
         });
-        this.pics[this.i].style.display = 'block';
+        this.pics[this.i].style.visibility = 'visible';
+        this.pics[this.i].style.right = '0px';
+        this.pics[this.i].style.transition = 'right 1s';
     };
 
     goRight(){
@@ -36,15 +36,22 @@ class Carousel {
             this.i++;
         }
         this.pics.forEach(img => {
-            img.style.display = 'none';
+            img.style.visibility = 'hidden';
+            img.style.left = '-2000px'
+            img.style.right = '0px'
         });
-        this.pics[this.i].style.display = 'block';
+        this.pics[this.i].style.visibility = 'visible';
+        this.pics[this.i].style.left = '0px';
+        this.pics[this.i].style.transition = 'left 1s';
     };
 }
 
 let carousel = document.querySelector('.carousel');
 let imgCarousel = new Carousel(carousel);
-imgCarousel.pics[imgCarousel.i].style.display = 'block';
+imgCarousel.pics[0].style.visibility = 'visible';
+imgCarousel.pics[1].style.visibility = 'hidden';
+imgCarousel.pics[2].style.visibility = 'hidden';
+imgCarousel.pics[3].style.visibility = 'hidden';
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
