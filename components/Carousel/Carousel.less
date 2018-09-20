@@ -12,11 +12,12 @@
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
-    font-size: 40px;
+    font-size: 35px;
     border-radius: 50%;
     position: absolute;
     width: 50px;
     height: 50px;
+    border: 2px solid transparent;
     cursor: pointer;
     &:hover {
       color: @lambda-times-color-primary;
@@ -28,14 +29,17 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   img {
     .width-100();
-    display: none;
+    position: absolute;
+    visibility: hidden;
   }
 }
