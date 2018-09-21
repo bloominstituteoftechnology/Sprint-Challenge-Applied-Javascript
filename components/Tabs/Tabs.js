@@ -40,9 +40,9 @@ class TabLink {
     this.element.classList.add("active-tab");
 
     // Select all of the elements with the .card class on them
-    const cards = "";
+    const cards = document.querySelectorAll(".card");
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach()
+    cards.forEach(card => {card.style.display = "none"});
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -68,3 +68,4 @@ tabs = Array.from(tabs).map(tab => {
 })
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].select();
