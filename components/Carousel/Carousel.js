@@ -1,49 +1,51 @@
 class Carousel {
     constructor(element) {
         this.element = element;
-
         this.leftButton = element.querySelector('.left-button');
         this.rightButton = element.querySelector('.right-button');
-
         this.images = this.element.querySelectorAll('img');
         this.currentIndex = 0;
         this.images[this.currentIndex].style.display = 'block';
 
         this.leftButton.addEventListener('click', () => {
-            this.lastImage();
+            this.lastImg();
         })
 
         this.rightButton.addEventListener('click', () => {
-            this.nextImage();
+                this.nextImg();
         })
     }
+    
 
-    lastImage() {
+    lastImg() {
         if ((this.currentIndex - 1) < 0) {
             this.currentIndex = this.images.length - 1;
         } else {
-            this.currentIndex -=1;
+            this.currentIndex -= 1;
         }
-        thisimages.forEach(function(e) {
+        this.images.forEach(function (each) {
             each.style.display = 'none';
         })
         this.images[this.currentIndex].style.display = 'block';
     }
 
-    lastImage() {
-        if ((this.currentIndex + 1) < 0) {
-            this.currentIndex = this.images.length - 1;
-        } else {
-            this.currentIndex +=1;
-        }
-        thisimages.forEach(function(e) {
+
+    nextImg() {
+            if ((this.currentIndex + 1) > this.images.length - 1) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex += 1;
+            }
+        this.images.forEach(function (each) {
             each.style.display = 'none';
         })
         this.images[this.currentIndex].style.display = 'block';
     }
 }
 
+
 let carousel = document.querySelectorAll('.carousel');
+
 carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
