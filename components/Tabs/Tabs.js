@@ -18,11 +18,24 @@ class TabLink {
       else{
         this.otherCards.push(x);
       }
-    })
+    });
+
+    this.element.addEventListener('click', () => this.selectTab())
   }
 
   selectTab(){
-
+    this.element.classList.toggle('active-tab');
+    tabs.forEach(x =>{
+      if (x.element !== this.element){
+        x.element.classList.remove('active-tab')
+      }
+    })
+    this.otherCards.forEach(x => {
+      if (!(x.element.classList.contains('card-unselected'))){
+        x.element.classList.toggle('card-unselected')
+    }
+    this.corespondingCards.forEach(x => x.element.classList.remove('card-unselected'))
+    })
   }
 }
 
