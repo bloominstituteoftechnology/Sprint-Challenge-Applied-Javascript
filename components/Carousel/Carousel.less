@@ -25,17 +25,26 @@
     }
   }
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
     transform: translate(0, -50%);
   }
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
     transform: translate(0, -50%);
   }
   img {
-    .width-100();
+    // .width-100();
+    width: 0%;
+    height: 100%;
     display: none;
+    transition: all 1s cubic-bezier(0, 1, 0.5, 1) 1s;
+  }
+
+  .active {
+    display: block;
+    width: 100%;
+    transition: all 1s cubic-bezier(0, 1, 0.5, 1) 1s;
   }
 }
