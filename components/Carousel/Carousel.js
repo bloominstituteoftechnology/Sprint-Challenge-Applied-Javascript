@@ -7,10 +7,12 @@ constructor(caroElements) {
     this.left = document.querySelector('.left-button');
     this.images = document.querySelectorAll('.carousel img');
     console.log(this.images)
-    Array.from(this.images).map(caroimage => new CaroImages(caroimage));
+    this.index = 0;
+    this.images[this.index].style.display = "block"
     
     this.right.addEventListener('click', ()=>{
         this.clickRight();
+
      })
 
      this.left.addEventListener('click', ()=>{
@@ -20,64 +22,27 @@ constructor(caroElements) {
     }
 
     clickRight() {
-        console.log("does right work?");
-        let picArray = this.images;
-
-        const caroh = () => {
-         let i = 0;
-
-            function slide (){
-                +i;
-                if(i>=picArray.length){
-                picArray[i].style.display = "flex"
-                }
-                picArray[i].style.display = "flex"
-            }
-           return slide();
-            
-
+        if(this.index === 3){
+            this.index = -1;
         }
-        
-        return caroh();
+        ++this.index;
+        this.images.forEach(image => image.style.display = "none");
+        this.images[this.index].style.display = "block";
         
     }
 
     clickLeft() {
-        console.log("does left work?");
-        let picArray = this.images;
-
-        const caroh = () => {
-         let i = 0;
-
-            function slide (){
-                ++i;
-                if(i>=picArray.length){
-                picArray[i].style.display = "flex"
-                }
-                picArray[i].style.display = "flex"
-            }
-           return slide();
-            
-
+        if (this.index === 0){
+            this.index = 4;
         }
-        
-        return caroh();
+        --this.index;
+        this.images.forEach(image => image.style.display = "none");
+        this.images[this.index].style.display = "block";
     }
 
 }
 
-class CaroImages {
-    constructor(caroElements) {
-        this.caroElements = caroElements;
-    }
-    selectImageRight(){
-        this.element.style.display = "block"
-    }
 
-    selectImageLeft(){
-        this.element.style.display = "block"
-    }
-}
 
 let carousel = document.querySelectorAll('.carousel');
 carousel = Array.from(carousel).map(caroElements => new Carousel(caroElements));
