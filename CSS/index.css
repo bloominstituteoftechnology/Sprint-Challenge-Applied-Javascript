@@ -302,3 +302,7 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .show-img {
+  display: block;
+  z-index: -2;
+}
