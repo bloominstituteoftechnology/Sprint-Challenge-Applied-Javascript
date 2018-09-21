@@ -51,6 +51,7 @@ body {
   justify-content: center;
   align-items: none;
   flex-direction: row;
+  z-index: 10;
   position: fixed;
   height: 44px;
   background-color: #333;
@@ -301,7 +302,9 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
-  width: 100%;
+.carousel .carouselIMG {
   display: none;
+}
+.carousel .current-img {
+  display: block;
 }
