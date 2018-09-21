@@ -65,3 +65,4 @@ tabs = Array.from(tabs).map(element=>{
 });
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].selectTab();
