@@ -1,11 +1,11 @@
 class TabLink {
-  constructor(element){
+  constructor(element) {
     // assign this.element to the element reference
     this.element = element;
     // Get the tab data attribute and save the value here
-    this.tabData = this.element.dataset.tab; 
+    this.tabData = this.element.dataset.tab;
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
-    if(this.tabData === 'all'){
+    if (this.tabData === 'all') {
       this.cards = document.querySelectorAll('.card');
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
@@ -17,7 +17,7 @@ class TabLink {
     this.element.addEventListener('click', () => this.selectTab());
   }
 
-  selectTab(){
+  selectTab() {
 
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
@@ -25,8 +25,7 @@ class TabLink {
     tabs.forEach(cb => cb.classList.remove('active-tab'))
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
-
-
+    
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
@@ -37,11 +36,11 @@ class TabLink {
 }
 
 class TabCard {
-  constructor(element){
+  constructor(element) {
     // Assign this.element to the passed in element.
     this.element = element;
   }
-  selectCard(){
+  selectCard() {
     // Update the style of this.element to display = null
     this.element.style.display = null;
   }
