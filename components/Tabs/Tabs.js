@@ -2,15 +2,17 @@ class TabLink {
   constructor(element){
     // assign this.element to the element reference
     this.element = element;
+    console.log(this.element);
+
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
     console.log(this.tabData);
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     if(this.tabData === "all") {
-      this.cards = document.querySelector(`.card`);
+      this.cards = document.querySelectorAll(`.card`);
       console.log(this.cards);
     } else {
-      this.cards = this.cards = document.querySelector(`.card[data-tab="${this.tabData}"]`);
+      this.cards = this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
       console.log(this.cards);
     }
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
@@ -25,25 +27,29 @@ class TabLink {
 
   }
 
-  selectTab(){
+  selectTab(event){
 
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
     console.log(tabs);
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(tab => {
-      tab.classList.remove('active-tab')
+    tabs.forEach(link => {
+      link.classList.remove('active-tab')
     });  
     console.log(tabs);
 
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
+    console.log(this.element);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     console.log(cards);
     // Iterate through the NodeList setting the display style each one to 'none'
-    this.cards.forEach(card => card.style.display = 'none');
+    cards.forEach(card => {
+      card.style.display = 'none';
+    });
+    console.log(cards);
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -56,7 +62,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'none';
+    this.element.style.display = null;
   }
 
 }
@@ -65,8 +71,9 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 console.log(tabs);
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map( tab => new TabLink(tab));
+tabs = Array.from(tabs).map( link => new TabLink(link));
 console.log(tabs);
 
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].selectTab();
