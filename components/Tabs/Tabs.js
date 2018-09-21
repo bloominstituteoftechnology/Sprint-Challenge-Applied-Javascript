@@ -5,10 +5,9 @@ class TabLink {
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}]"`)
-    //console.log(this.cardElement)
+
     // If the data is 'all' then select all cards regardless of their data attribute
-    if( this.tabData == "all"){
+    if( this.tabData === "all"){
       this.cards = document.querySelectorAll(".card");
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}]"`);
@@ -16,8 +15,8 @@ class TabLink {
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class.
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map( element => {
-      return new TabCard(element)
+    this.cards = Array.from(this.cards).map( x => {
+      return new TabCard(x)
     });
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', () => {
@@ -43,7 +42,7 @@ class TabLink {
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(function(card){
-      //card.style.display = "none"
+      card.style.display = "none"
     })
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
@@ -55,13 +54,14 @@ class TabCard {
     // Assign this.element to the passed in element.
     this.element = element;
   }
-  selectCard(){
-    const cards = document.querySelectorAll(`.card[data-tab="${this.tabData}]"`);
-    cards.forEach(function(card){
-      cards.style.display = "null";
-    })
-  }
 
+  selectCard(){
+    this.element.style.display = "inline";
+  //   const cards = document.querySelectorAll(`.card`);   
+  //   cards.forEach(function(card){
+  //       card.style.display = "null";
+  //   })
+  }
 }
 
 // Create a reference to all ".tab" classes
