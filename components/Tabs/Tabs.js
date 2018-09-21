@@ -41,7 +41,7 @@
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
-}
+} //end TabLink
 
 class TabCard {
   constructor(element){
@@ -52,8 +52,7 @@ class TabCard {
     // Update the style of this.element to display = null
     this.element.style = 'display: null';
   }
-
-}
+} //end TabCard
 
 // Create a reference to all ".tab" classes
 let tabs = document.querySelectorAll('.tab');
