@@ -30,7 +30,7 @@ class TabLink {
     tabs.forEach( tab => tab.classList.remove('active-tab'));
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
-
+    
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
@@ -49,6 +49,10 @@ class TabCard {
   selectCard(){
     // Update the style of this.element to display = null
     this.element.style.display = 'block';
+    this.element.style.opacity = '0';
+    TweenMax.staggerTo('.card', 0.1, {
+      opacity:1,
+    },0.2)
   }
 
 }
