@@ -262,6 +262,7 @@ body {
   position: relative;
   overflow: hidden;
   margin: 16px 0;
+  background-color: #333;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -301,7 +302,8 @@ body {
 }
 .carousel img {
   width: 0%;
-  transition: all 1s cubic-bezier(0, 1, 0.5, 1);
+  height: 100%;
+  transition: all 2s cubic-bezier(0.5, 1, 0.5, 1);
 }
 .carousel .active {
   display: block;

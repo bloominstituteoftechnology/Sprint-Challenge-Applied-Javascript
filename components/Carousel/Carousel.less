@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   margin: 16px 0;
+  background-color: @lambda-times-color-primary;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -36,16 +37,14 @@
   }
   img {
     // .width-100();
-    width: 0%;
-    // height: 100%;
     // display: none;
-    transition: all 1s cubic-bezier(0, 1, 0.5, 1);
-    // transition: all 1s ease-out;
+    width: 0%;
+    height: 100%;
+    transition: all 2s cubic-bezier(0.5, 1, 0.5, 1);
   }
 
   .active {
     display: block;
     width: 100%;
-    // transition: all 1s cubic-bezier(0, 1, 0.5, 1);
   }
 }
