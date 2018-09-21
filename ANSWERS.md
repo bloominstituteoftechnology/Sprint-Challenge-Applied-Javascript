@@ -15,7 +15,7 @@ it is a method that we can attach to an element. So it will "listen" for what we
 
 4. Why would we convert a NodeList into an Array?
 
-converting a nodelist into an array gives us access to all the methods we would have for arrays. 
+converting a nodelist into an array gives us access to all the methods we would have for arrays. Nodelists do have some methods but we are really limited until it is converted to an array. 
 
 
 5. What is a component? 
