@@ -47,7 +47,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = 'flex';
+    this.element.style.display = 'initial';
   }
 
 }
@@ -61,3 +61,62 @@ tabs = Array.from(tabs).map( item => new TabLink(item));
 //Once you are complete, call the .select method on the first tab
 
 tabs[0].selectTab();
+
+let carousel = document.querySelector('.carousel');
+
+
+class Carousel {
+  constructor(props){
+    this.props = props;
+    this.leftBtn = this.props.querySelector('.left-button');
+    this.rightBtn = this.props.querySelector('.right-button');
+    this.imgs = this.props.querySelectorAll('img');
+    this.imgs = Array.from(this.imgs).map( item => new CarouselImage(item));
+    this.currentPlace = 0;
+    /* this.imgs[this.currentPlace].showImg() */;
+
+
+    this.leftBtn.addEventListener('click', () => {
+      this.rotateLeft
+    });
+
+    this.rightBtn.addEventListener('click', () => {
+      this.rotateRight()
+    })
+
+  }
+
+  rotateLeft(){
+     if(this.currentPlace !== 0){
+        this.imgs[this.currentPlace].hideImg();
+        this.currentPlace -= 1;
+      }
+  }
+
+  rotateRight(){
+    if(this.currentPlace <= this.imgs.length) {
+      this.imgs[this.currentPlace].hideImg();
+      this.currentPlace += 1;
+    }
+  }
+}
+
+
+
+class CarouselImage {
+  constructor(image){
+    this.image = image;
+    this.order = this.image.dataset.order;
+    this.image.style.display = "initial";
+    }
+
+  showImg(){
+    this.image.style.display = "initial";
+   
+  }
+  hideImg(){
+    this.image.style.display = "none";
+  }
+}
+
+carousel = new Carousel(carousel);
