@@ -29,7 +29,7 @@ class TabCard {
     this.element = element;
   }
   selectCard(){
-    console.log(this.element);
+    // console.log(this.element);
     // Update the style of this.element to display = null
     this.element.style.display = null;
   }

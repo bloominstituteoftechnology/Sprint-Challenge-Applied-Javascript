@@ -300,5 +300,7 @@ body {
 }
 .carousel img {
   width: 100%;
+}
+.carousel .hide-img {
   display: none;
 }
