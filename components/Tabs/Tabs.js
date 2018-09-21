@@ -7,13 +7,13 @@ class TabLink {
     // console.log(this.tabData)
     // Find all elements with the .card class in index.html that correspond to the tab data attribute
     this.cards = document.querySelectorAll(`.card[data-tab = '${this.tabData}']`);
-    console.log(this.cards)
+    // console.log(this.cards)
     // If the data is 'all' then select all cards regardless of their data attribute
-    if (`${this.tabData}` === 'javascript') {
+    if (this.tabData === 'all') {
       this.cards = document.querySelectorAll('.card');
-      console.log(this.cards)
+      // console.log(this.cards)
     } else {
-      this.cards = document.querySelectorAll(`${this.tabData}`);
+      this.cards = document.querySelectorAll(`.card[data-tab = '${this.tabData}']`);
       console.log(this.cards)
     }
 
@@ -29,30 +29,35 @@ class TabLink {
   selectTab() {
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach()
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
     // Add a class of ".active-tab" to this.element
-    this.element;
+    this.element.classList.add('active-tab');
+    console.log(this.element)
 
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.cards');
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach()
+    cards.forEach(tab => tab.style.display = 'none')
+    // console.log(this.cards)
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => card.selectCard(event));
+    // console.log(this.cards)
+
   }
 }
 
 class TabCard {
   constructor(element) {
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
+    // console.log(this.element)
   }
   selectCard() {
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = 'null';
   }
 
 }
@@ -63,3 +68,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(element => new TabLink(element))
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].selectTab()
