@@ -1,11 +1,3 @@
-const q = (selector) => {
-  let elements = document.querySelectorAll(selector);
-  if (elements.length == 1) {
-    return elements[0];
-  } else {
-     return elements;
-   }
-}
 
 class Carousel {
   constructor(element) {
@@ -23,15 +15,13 @@ class Carousel {
     this.onlyDisplay(this.images[this.currentImgPos]);
   }
   left() {
-    this.currentImgPos--;
-    if (this.currentImgPos <= 0) {
+    if (--this.currentImgPos < 0) {
       this.currentImgPos = this.images.length-1;
     }
     this.onlyDisplay(this.images[this.currentImgPos]);
   }
   right() {
-    this.currentImgPos++;
-    if (this.currentImgPos >= this.images.length) {
+    if (++this.currentImgPos >= this.images.length) {
       this.currentImgPos = 0
     }
     this.onlyDisplay(this.images[this.currentImgPos]);
