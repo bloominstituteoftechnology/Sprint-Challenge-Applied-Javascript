@@ -59,10 +59,13 @@ tabs[0].selectTab();
 
 
 
-TweenMax.to('.headerh1', 2, {
-  rotation: 360,
+TweenMax.to('.headerh1', 3, {
+  rotationY: 360,
 })
 TweenMax.to('.temp, .date', 2, {
   y: -80,
-  rotation: 360
+  rotationX: 360,
+})
+TweenMax.from('.topics', 3, {
+  x: 1400
 })
