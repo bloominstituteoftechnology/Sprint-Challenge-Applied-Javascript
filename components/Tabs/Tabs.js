@@ -55,7 +55,6 @@ class TabCard {
 // Create a reference to all ".tab" classes
 let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map(item => new TabLink(item));
-
+// tabs = Array.from(tabs).map(item => new TabLink(item));
+tabs.forEach(item => new TabLink(item));
 //Once you are complete, call the .select method on the first tab
-tabs[0].selectTab();

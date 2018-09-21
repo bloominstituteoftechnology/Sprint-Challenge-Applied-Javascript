@@ -1,55 +1,46 @@
 class Carousel {
     constructor(element) {
-
-        this.element = element; // div.class=carousel
-                //console.log(this.element);
-
-        this.buttonLeft = this.element.querySelector('.left-button'); // div.class=left-button
-                //console.log(this.buttonLeft);
-
-        this.buttonRight = this.element.querySelector('.right-button');// div.class=right-button
-                //console.log(this.buttonRight);
-
-        this.images = this.element.querySelectorAll('.carousel img');// Node list of images
-                console.log(this.images);
-        this.images = Array.from(this.images); // Turns image node list to array
-                console.log(this.images);
-                // this.image1 = this.images[0];
-                // this.image2 = this.images[1];
-                // this.image3 = this.images[2];
-                // this.image4 = this.images[3];
-        this.buttonLeft.addEventListener('click', () => {
-                    //console.log('Left Button was clicked');
-            this.showImage();
+        this.element = element;
+                // console.log(this.element);
+        this.leftButton = this.element.querySelector('.left-button');
+                // console.log(this.leftButton);
+        this.rightButton = this.element.querySelector('.right-button');
+                // console.log('this.rightButton', this.rightButton);
+        this.image = this.element.querySelectorAll('.carousel img');
+                // console.log('this.image', this.image);
+        this.image = Array.from(this.image);
+        this.image[0].style.display = 'block';
+                // console.log('this.image', this.image);
+        this.rightButton.addEventListener('click', () => {
+                this.showImage();
         });
-
-        this.buttonRight.addEventListener('click', () => {
-                    //console.log('Right Button was clicked');
-            this.showImage();
-        });
+        this.leftButton.addEventListener('click', () => this.prevImage());
+        this.index = 0;
     }
 
     showImage() {
-        if(i < this.images.length - 1) {
-            i++;
-        }   else {
-            i = 0;
+        if(this.index === 3) {
+                this.index = -1;
         }
 
-        setTimeout('showImage()', time);
-    }
+        this.index++;
+        this.image.forEach(item => item.style.display = 'none');
+        this.image[this.index].style.display = 'block';
+   }
+   prevImage() {
+        if(this.index === 0) {
+                this.index = 4;
+        }
+
+        this.index--;
+        this.image.forEach(item => item.style.display = 'none');
+        this.image[this.index].style.display = 'block';
+   }
 }
-var i = 0;
-var time = 3000;
 let carousel = document.querySelector('.carousel');
-        // console.log(carousel);
+               // console.log(carousel);
 carousel = new Carousel(carousel);
-        // console.log(carousel);
-
-window.onload = 
-
-
-
+                // console.log(carousel);
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. You will need to grab a reference to all of the images
