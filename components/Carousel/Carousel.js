@@ -21,7 +21,24 @@ constructor(caroElements) {
 
     clickRight() {
         console.log("does right work?");
+        let picArray = this.images;
+
+        const caroh = () => {
+         let i = 0;
+
+            function slide (){
+                +i;
+                if(i>=picArray.length){
+                picArray[i].style.display = "flex"
+                }
+                picArray[i].style.display = "flex"
+            }
+           return slide();
+            
+
+        }
         
+        return caroh();
         
     }
 
