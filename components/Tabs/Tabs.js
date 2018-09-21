@@ -43,10 +43,12 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
-  }
+    this.element.style.display = null;
 
+  }
+  
 }
+
 
 // Create a reference to all ".tab" classes
 let tabs = document.querySelectorAll('.tab');
