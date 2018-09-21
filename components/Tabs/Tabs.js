@@ -42,8 +42,6 @@ class TabLink {
     this.cards.forEach(card => card.selectCard());
   }
 }
-
-
 // Separate Object
 class TabCard {
   constructor(element){
@@ -52,7 +50,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = "null";
+    this.element.style.display = null; // I did "null" wtf lol
   }
 
 }
