@@ -50,7 +50,6 @@ class TabCard {
     // Update the style of this.element to display = null
     this.element.style.display = '';
   }
-
 }
 
 // Create a reference to all ".tab" classes
