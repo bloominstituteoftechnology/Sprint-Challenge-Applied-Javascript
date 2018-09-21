@@ -41,11 +41,11 @@ class TabLink {
 class TabCard {
   constructor(element) {
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard() {
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style = 'display: null';
   }
 
 }
@@ -56,3 +56,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new TabLink(tab))
 
 //Once you are complete, call the .select method on the first tab
+tabs[0].selectTab()
