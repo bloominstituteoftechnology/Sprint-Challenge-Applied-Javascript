@@ -56,3 +56,13 @@ tabs = Array.from(tabs).map(link => new TabLink(link));
 
 //Once you are complete, call the .select method on the first tab
 tabs[0].selectTab();
+
+
+
+TweenMax.to('.headerh1', 2, {
+  rotation: 360,
+})
+TweenMax.to('.temp, .date', 2, {
+  y: -80,
+  rotation: 360
+})
