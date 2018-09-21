@@ -2,16 +2,28 @@ class Carousel {
 
 }
 
+// slideLeft() {
+
+// }
+
+// slideRight() {
+
+// }
+
+class CarouselImage {
+
+}
+
 const carousel = document.querySelector('.carousel');
 const leftBtn = document.querySelector('left-button');
 const rightBtn = document.querySelector('right-button');
 
-carousel.display.style.border = '10pxSolidRed'
+// leftBtn.addEventListener('click', slideLeft());
+// rightBtn.addEventListener('click', slideRight());
 
-leftBtn.addEventListener('click', slideLeft());
-rightBtn.addEventListener('click', slideRight());
-
-const images =  
+let images = document.querySelectorAll('.carousel-img');
+images = Array.from(images).map(image => new CarouselImage(image));
+const imagesIndex = images.length;  
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
