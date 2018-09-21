@@ -42,7 +42,7 @@ class TabCard {
     // Assign this.element to the passed in element.
     this.element = element;
   }
-  selectCard(){
+  selectCard() {
     // Update the style of this.element to display = null
     console.log(this.element);
     this.element.style.display = "block";
