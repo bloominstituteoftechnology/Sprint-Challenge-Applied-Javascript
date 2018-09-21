@@ -61,3 +61,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(element => {new TabLink(element)});
 
 //Once you are complete, call the .select method on the first tab
+
