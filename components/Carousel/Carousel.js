@@ -7,36 +7,50 @@ class Carousel {
     );
     this.currentImage = this.carouselImages[0];
 
-    console.log(this.currentImage);
-
     // Buttons
     this.rightButton = document.querySelector('.right-button');
     this.leftButton = document.querySelector('.left-button');
 
     // Button Event Listeners
-    this.rightButton.addEventListener('click', () => {
-      let nextImg;
-      this.carouselImages.forEach((img, i) => {
-        if (img.classList.contains('current-img')) {
-          img.classList.remove('current-img');
-          nextImg = this.carouselImages[i + 1];
-          console.log(nextImg);
-        }
-      });
-
-      nextImg.classList.add('current-img');
-    });
-  }
-
-  getCurrentImage() {
-    this.carouselImages.filter(img => img.classList.contains('current-img'));
+    this.rightButton.addEventListener('click', () => this.nextImage());
+    this.leftButton.addEventListener('click', () => this.previousImage());
   }
 
   nextImage() {
-    //
+    let nextImg;
+    this.carouselImages.forEach((img, i) => {
+      if (img.classList.contains('current-img')) {
+        img.classList.remove('current-img');
+        // if at last img go to first img
+        if (this.carouselImages.length - 1 === i) {
+          nextImg = this.carouselImages[0];
+          // else go to next img
+        } else {
+          nextImg = this.carouselImages[i + 1];
+        }
+      }
+    });
+
+    nextImg.classList.add('current-img');
   }
 
-  previousImage() {}
+  previousImage() {
+    let previousImg;
+    this.carouselImages.forEach((img, i) => {
+      if (img.classList.contains('current-img')) {
+        img.classList.remove('current-img');
+        // if at first img go to last img
+        if (i === 0) {
+          previousImg = this.carouselImages[this.carouselImages.length - 1];
+          // else go to previous img
+        } else {
+          previousImg = this.carouselImages[i - 1];
+        }
+      }
+    });
+
+    previousImg.classList.add('current-img');
+  }
 }
 
 //If You've gotten this far, you're on your own! Although we will give you some hints:
