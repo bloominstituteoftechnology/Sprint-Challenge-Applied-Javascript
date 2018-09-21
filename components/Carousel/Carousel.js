@@ -44,7 +44,7 @@ class Carousel {
 }
 
 let carousel = document.querySelector('.carousel'); 
-
+carousel = new Carousel(carousel);
 
 
 
