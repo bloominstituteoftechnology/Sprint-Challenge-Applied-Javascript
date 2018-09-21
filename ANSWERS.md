@@ -1,5 +1,5 @@
 ### Questions:
-What is the DOM? With the DOM, we can manipulate, interact with, change structures, content, styling of web pages all without having to change the html thru languages like JS. 
+What is the DOM? With the DOM, we can manipulate, interact with, change structures, content, styling of web pages all without having to change the html thru languages like JS & Jquery. 
 
 What is an event? Every interaction a user has with a site.
 
