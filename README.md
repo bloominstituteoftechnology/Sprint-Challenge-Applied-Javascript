@@ -22,7 +22,7 @@ An event listener is what picks up on the specified behaviors to trigger said ev
 Node lists are array-like but lack a lot of the common array methods, such as using `.map()` or `filter()`. 
 
 5. What is a component?
-6. A componenet is a stang-alone, reusable part of our program which can be instantiated whenever we need one. An example of a component would be dropdown menu on a navigation menu.
+A componenet is a stang-alone, reusable part of our program which can be instantiated whenever we need one. An example of a component would be dropdown menu on a navigation menu.
 
 ## Challenge
 
