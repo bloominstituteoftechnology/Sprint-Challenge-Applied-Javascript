@@ -42,13 +42,13 @@ class TabLink {
 }
 
 class TabCard {
-  constructor(element){
+  constructor(element) {
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
-  selectCard(){
+  selectCard() {
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = '';
   }
 
 }
