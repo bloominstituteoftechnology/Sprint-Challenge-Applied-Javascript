@@ -22,7 +22,7 @@ An event listener is what picks up on the specified behaviors to trigger said ev
 Node lists are array-like but lack a lot of the common array methods, such as using `.map()` or `filter()`. 
 
 5. What is a component?
-A componenet is a stang-alone, reusable part of our program which can be instantiated whenever we need one. An example of a component would be dropdown menu on a navigation menu.
+A component is a stang-alone, reusable part of our program which can be instantiated whenever we have a need for one. An example of a component would be dropdown menu on a navigation menu.
 
 ## Challenge
 
@@ -37,7 +37,7 @@ We are going to create a Lambda Newspaper. The styling is modeled after the [LA 
 ## Stretch Challenge
 
 Your stretch challenge is to write the functionality of a `Carousel` component. You have the HTML and CSS already in place, simply uncomment the HTML in the `index.html` file. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. You may reference the `Tabs.js` file for assistance.
-
+zx
 - Complete the carousel functionality in `Carousel.js`
 - If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
 - Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over iteself.
