@@ -299,9 +299,11 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
-  width: 100%;
-  display: none;
+  width: 0%;
+  height: 500px;
+  transition: all 0.5s;
 }
 .carousel .img-active {
-  display: block;
+  width: 100%;
+  transition: all 0.5s;
 }
