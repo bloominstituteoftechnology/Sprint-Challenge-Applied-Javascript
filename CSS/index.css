@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 100;
 }
 .top-bar .container {
   width: 100%;
@@ -300,11 +301,9 @@ body {
 }
 .carousel img {
   width: 0%;
-  height: 100%;
   transition: all 1s cubic-bezier(0, 1, 0.5, 1);
 }
 .carousel .active {
   display: block;
   width: 100%;
-  transition: all 1s cubic-bezier(0, 1, 0.5, 1);
 }
