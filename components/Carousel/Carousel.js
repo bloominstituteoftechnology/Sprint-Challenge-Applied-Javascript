@@ -2,18 +2,26 @@ class Carousel {
   constructor(element) {
     this.element = element;
     this.images = this.element.querySelectorAll('img');
-    console.log(this.images);
-    this.currentImage = this.images[0];
-    this.showImage(this.currentImage);
+    this.currentImage = 0;
+    this.showImage(this.images[this.currentImage]);
     this.leftButton = this.element.querySelector('.left-button');
     this.rightButton = this.element.querySelector('.right-button');
-    this.leftButton.addEventListener('click', event => this.nextImage(event));
-    this.rightButton.addEventListener('click', event => this.prevImage(event));
+    this.leftButton.addEventListener('click', event => this.prevImage(event));
+    this.rightButton.addEventListener('click', event => this.nextImage(event));
   }
 
   nextImage() {
       const len = this.images.length;
+      this.currentImage++;
+      this.currentImage = this.currentImage % len;
+      this.showImage(this.images[this.currentImage]);
+  }
 
+  prevImage() {
+      const len = this.images.length;
+      this.currentImage--;
+      this.currentImage = this.currentImage % len;
+      this.showImage(this.images[this.currentImage]);
   }
 
   showImage(image) {
