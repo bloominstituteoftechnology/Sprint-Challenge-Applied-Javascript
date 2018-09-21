@@ -10,8 +10,9 @@ class TabLink {
     if( this.tabData === "all"){
       this.cards = document.querySelectorAll(".card");
     } else {
-      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}]"`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
+
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class.
     // Pass in the card object to the TabCard class.
@@ -56,11 +57,7 @@ class TabCard {
   }
 
   selectCard(){
-    this.element.style.display = "inline";
-  //   const cards = document.querySelectorAll(`.card`);   
-  //   cards.forEach(function(card){
-  //       card.style.display = "null";
-  //   })
+    this.element.style.display = "";
   }
 }
 
@@ -72,3 +69,4 @@ tabs = Array.from(tabs).map( element => {
 });
 //console.log(links)
 //Once you are complete, call the .select method on the first tab
+tabs[0].select();
