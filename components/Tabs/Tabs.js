@@ -5,11 +5,12 @@ class TabLink {
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
-    if(this.tab.tabData === 'all'){
-      // this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
-      this.cards = document.querySelectorAll(`.card`)//[data-tab='${this.tabData}']`);
+    if(this.tabData === 'all'){
+
+      this.cards = document.querySelectorAll(`.card`)
+      
     } else {
-      this.cards = document.querySelector(`.card[data-tab='${this.tabData}']`);
+      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
     }
 
     //
