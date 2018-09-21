@@ -3,9 +3,7 @@ class Carousel {
         this.element = element;
         this.leftButton = this.element.querySelector('.left-button');
         this.rightButton = this.element.querySelector('.right-button');
-
         this.images = this.element.querySelectorAll('img');
-        // this.images = Array.from(this.images).map(n => new CarouselImage(n));
 
         this.hideAll();
         this.images[0].style.display = null;
@@ -21,47 +19,36 @@ class Carousel {
         this.imageIndex -= 1;
         if (this.imageIndex < 0) { this.imageIndex = this.images.length - 1}
 
-        const preImg = this.images[preIndex];
-        const img = this.images[this.imageIndex];
-        const transition = 'all 600ms ease-in-out';
-
-        preImg.style.transition = transition;
-        preImg.style.transform = 'translateX(100%)';
-        
-        img.style.transform = 'translateX(-100%)';
-        img.style.transition = transition;
-        img.style.display = null;
-
-        setTimeout(() => {
-            img.style.transform = 'translateX(0%)';
-            img.style.zIndex = -1;
-        },0)
-
-        setTimeout(() => {
-            this.hideAll();
-            img.style.display = null;
-            // img.style.transform = 'translateX(0px)';
-        }, 600);
-
-        
+        this.animate(preIndex, this.imageIndex, 'left');
     }
 
     shiftRight() {
         const preIndex = this.imageIndex;
         this.imageIndex += 1;
         if (this.imageIndex >= this.images.length) { this.imageIndex = 0 }
-        // this.hideAll();
-        // const image = this.images[this.imageIndex];
-        // image.style.display = null;
 
+        this.animate(preIndex, this.imageIndex, 'right');
+    }
+
+    animate(preIndex, index, direction) {
         const preImg = this.images[preIndex];
-        const img = this.images[this.imageIndex];
+        const img = this.images[index];
         const transition = 'all 600ms ease-in-out';
+        let from = '';
+        let to = ''
+
+        if (direction === 'left') {
+            from = 'translateX(100%)';
+            to = 'translateX(-100%)'
+        } else if (direction === 'right') {
+            from = 'translateX(-100%)';
+            to = 'translateX(100%)'
+        }
 
         preImg.style.transition = transition;
-        preImg.style.transform = 'translateX(-100%)';
+        preImg.style.transform = from;
         
-        img.style.transform = 'translateX(100%)';
+        img.style.transform = to;
         img.style.transition = transition;
         img.style.display = null;
 
@@ -73,7 +60,6 @@ class Carousel {
         setTimeout(() => {
             this.hideAll();
             img.style.display = null;
-            // img.style.transform = 'translateX(0px)';
         }, 600);
     }
 
