@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 7;
 }
 .top-bar .container {
   width: 100%;
@@ -250,6 +251,7 @@ body {
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
+
 }
 .carousel {
   width: 100%;
@@ -265,6 +267,7 @@ body {
 @media (min-width: 1200px) {
   .carousel {
     width: 1200px;
+    /* z-index: -1; */
   }
 }
 .carousel .left-button,
