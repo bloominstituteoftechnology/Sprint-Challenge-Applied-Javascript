@@ -5,10 +5,10 @@ class Carousel {
         this.rightButton = this.element.querySelector('.right-button');
 
         this.images = this.element.querySelectorAll('img');
-        this.images = Array.from(this.images).map(n => new CarouselImage(n));
+        // this.images = Array.from(this.images).map(n => new CarouselImage(n));
 
         this.hideAll();
-        this.images[0].show();
+        this.images[0].style.display = null;
         this.imageIndex = 0;
 
         this.leftButton.addEventListener('click', e => this.shiftLeft(e));
@@ -17,35 +17,75 @@ class Carousel {
     }
 
     shiftLeft() {
+        const preIndex = this.imageIndex;
         this.imageIndex -= 1;
         if (this.imageIndex < 0) { this.imageIndex = this.images.length - 1}
-        this.hideAll();
-        this.images[this.imageIndex].show();
+
+        const preImg = this.images[preIndex];
+        const img = this.images[this.imageIndex];
+        const transition = 'all 600ms ease-in-out';
+
+        preImg.style.transition = transition;
+        preImg.style.transform = 'translateX(100%)';
+        
+        img.style.transform = 'translateX(-100%)';
+        img.style.transition = transition;
+        img.style.display = null;
+
+        setTimeout(() => {
+            img.style.transform = 'translateX(0%)';
+            img.style.zIndex = -1;
+        },0)
+
+        setTimeout(() => {
+            this.hideAll();
+            img.style.display = null;
+            // img.style.transform = 'translateX(0px)';
+        }, 600);
+
+        
     }
 
     shiftRight() {
+        const preIndex = this.imageIndex;
         this.imageIndex += 1;
         if (this.imageIndex >= this.images.length) { this.imageIndex = 0 }
-        this.hideAll();
-        this.images[this.imageIndex].show();
+        // this.hideAll();
+        // const image = this.images[this.imageIndex];
+        // image.style.display = null;
+
+        const preImg = this.images[preIndex];
+        const img = this.images[this.imageIndex];
+        const transition = 'all 600ms ease-in-out';
+
+        preImg.style.transition = transition;
+        preImg.style.transform = 'translateX(-100%)';
+        
+        img.style.transform = 'translateX(100%)';
+        img.style.transition = transition;
+        img.style.display = null;
+
+        setTimeout(() => {
+            img.style.transform = 'translateX(0%)';
+            img.style.zIndex = -1;
+        },0)
+
+        setTimeout(() => {
+            this.hideAll();
+            img.style.display = null;
+            // img.style.transform = 'translateX(0px)';
+        }, 600);
     }
 
     hideAll() {
-        this.images.forEach(n => n.hide());
+        this.images.forEach(n => {
+            n.style.display = 'none';
+            n.style.transform = 'translateX(0%)';
+            n.style.zIndex = -1;
+            n.style.transition = 'none';
+        });
     }
 
-}
-
-class CarouselImage {
-    constructor(element) {
-        this.element = element;
-    }
-    show(){
-        this.element.style.display = null;
-    }
-    hide(){
-        this.element.style.display = 'none';
-    }
 }
 
 let carousel = document.querySelector('.carousel');

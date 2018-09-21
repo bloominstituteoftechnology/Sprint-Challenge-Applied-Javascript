@@ -300,6 +300,7 @@ body {
 }
 .carousel img {
   width: 100%;
+  position: absolute;
 }
 .carousel .hide-img {
   display: none;
