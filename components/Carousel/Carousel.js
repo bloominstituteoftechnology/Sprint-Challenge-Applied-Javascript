@@ -1,10 +1,43 @@
 
+
+
+class CircularList {
+  constructor(array) {
+    // if (typeof array !== 'array') return 'err';
+    this.list = array;
+    this.length = this.list.length;
+    this.currentImgPos = 0;
+    Object.assign(this, array)
+  }
+  next() {
+    if (++this.currentImgPos >= this.length) {
+      this.currentImgPos = 0
+    }
+    return this.getCurrent();
+  }
+  getNext() {
+    return (this.currentImgPos + 1) >= this.length ? this.list[0] : this.list[this.currentImgPos+1]; 
+  }
+  prev() {
+    if (--this.currentImgPos < 0) {
+      this.currentImgPos = this.length-1
+    }
+    return this.getCurrent();
+  }
+  getPrev() {
+    return (this.currentImgPos - 1) < 0 ? this.list[this.length-1] : this.list[this.currentImgPos-1];
+  }
+  getCurrent() {
+    return this.list[this.currentImgPos];
+  }
+}
+
+
 class Carousel {
   constructor(element) {
     this.element = element;
 
-    this.images = Array.from(this.element.querySelectorAll('img'));
-    this.currentImgPos = 0;
+    this.circle = new CircularList(Array.from(this.element.querySelectorAll('img')));
 
     this.leftButton = this.element.querySelector('.left-button');
     this.rightButton = this.element.querySelector('.right-button');
@@ -12,58 +45,24 @@ class Carousel {
     this.leftButton.addEventListener('click', () => this.left());
     this.rightButton.addEventListener('click', () => this.right());
 
-    this.onlyDisplay(this.images[this.currentImgPos]);
+    this.onlyDisplay(this.circle.getCurrent());
   }
   left() {
-    if (--this.currentImgPos < 0) {
-      this.currentImgPos = this.images.length-1;
-    }
-    this.onlyDisplay(this.images[this.currentImgPos]);
+    this.onlyDisplay(this.circle.prev());
   }
   right() {
-    if (++this.currentImgPos >= this.images.length) {
-      this.currentImgPos = 0
-    }
-    this.onlyDisplay(this.images[this.currentImgPos]);
+    this.onlyDisplay(this.circle.next());
   }
   onlyDisplay(thisOne) {
-    this.images.forEach( tag => tag.style.display = 'none' );
+    for (let i = 0; i < this.circle.length; i++) 
+      this.circle[i].style.display = 'none';
+    // }
+    // this.circle.list.forEach( tag => tag.style.display = 'none' );
     thisOne.style.display = 'flex';
   }
 }
 
-// class CircularList {
-//   constructor(array) {
-//     if (typeof array !== 'array') return 'err';
-//     this.list = array;
-//     this.currentImgPos = 0;
-//   }
-//   next() {
-//     if (this.currentImgPos >= this.list.length) {
-//       this.currentImgPos = 0
-//     } else {
-//       this.currentImgPos++;
-//     }
-//     return this.list[this.currentImgPos];
-//   }
-//   prev() {
-//     if (this.currentImgPos <= 0) {
-//       this.currentImgPos = this.list.length
-//     } else {
-//       this.currentImgPos--;
-//     }
-//     return this.list[this.currentImgPos];
-//   }
-//   access() {
-//     return this.list[this.currentImgPos];
-//   }
-// }
-
-
-
 let carousel = new Carousel(document.querySelector('.carousel'));
-
-
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
