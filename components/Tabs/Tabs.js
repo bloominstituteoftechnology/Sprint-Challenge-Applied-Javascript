@@ -33,7 +33,7 @@ class TabLink {
     this.element.classList.add('active-tab');
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
-console.log(cards);
+// console.log(cards);
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(item => {
       item.style.display = 'none';
