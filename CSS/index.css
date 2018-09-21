@@ -277,5 +277,6 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  /* commenting out to see how it works selecting one at a time to display */
+  /* display: none; */
 }
