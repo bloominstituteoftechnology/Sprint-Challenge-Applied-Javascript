@@ -18,7 +18,7 @@ class TabLink {
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', (event) => this.selectTab(event));
+    this.element.addEventListener('click', () => this.selectTab());
   }
 
   selectTab(){
@@ -33,8 +33,9 @@ class TabLink {
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
+    console.log(cards)
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => card.display = 'none');
+    cards.forEach(card => card.style.display = 'none');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
   }
@@ -47,7 +48,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.display = 'null';
+    this.element.style.display = null;
   }
 
 }
@@ -59,3 +60,61 @@ tabs = Array.from(tabs).map(link => new TabLink(link));
 
 //Once you are complete, call the .select method on the first tab
 tabs[0].selectTab()
+
+/*class TabLink {
+  constructor(element){
+
+    this.element = element;
+
+    this.tabData = this.element.dataset.tab; 
+
+    if(this.tabData === 'all'){
+
+      this.cards = document.querySelectorAll(".card")
+      
+    } else {
+      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
+    }
+
+
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+
+    this.element.addEventListener('click', (event) => this.selectTab(event));
+  }
+
+  selectTab(){
+
+    const tabs = document.querySelectorAll(".tab");
+
+    tabs.forEach(tab => tab.classList.remove('active-tab'))
+
+    this.element.classList.add('active-tab');
+
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => card.display = 'none');
+
+    this.cards.forEach(card => card.selectCard());
+  }
+}
+
+class TabCard {
+  constructor(element){
+
+    this.element = element;
+  }
+  selectCard(){
+
+    this.element.display = 'null';
+  }
+
+}
+
+
+let tabs = document.querySelectorAll(".tab");
+
+tabs = Array.from(tabs).map(link => new TabLink(link));
+
+
+tabs[0].selectTab()*/
