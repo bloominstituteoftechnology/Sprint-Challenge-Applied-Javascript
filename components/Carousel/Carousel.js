@@ -12,13 +12,15 @@ class Carousel {
 
     }
     currentImage(){
-        this.images.classList.add('.current-image');
+        this.images[0].style.display.block;
     }
     right(){
-
+        this.current++;
+        this.images[this.current].classList.add('current-image');
     }
-    left(){
-
+    left(){ 
+        this.current--;
+        this.imagesp[this.current].classlist.add('current-image')
     }
 }
 
