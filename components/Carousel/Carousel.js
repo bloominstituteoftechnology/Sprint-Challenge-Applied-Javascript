@@ -10,11 +10,11 @@ class Carousel {
         this.element.addEventListener('click', () => this.arrowLeft());
         this.element.addEventListener('click', () => this.arrowRight())
 
+        this.imgs[0].classList.add('active');
        
     }
-
     arrowLeft(){
-    
+   
     }
     arrowRight(){
  
