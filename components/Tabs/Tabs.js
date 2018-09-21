@@ -1,3 +1,5 @@
+//Corey Gumbs 9/21/2018
+
 class TabLink {
   constructor(element){
     // assign this.element to the element reference
