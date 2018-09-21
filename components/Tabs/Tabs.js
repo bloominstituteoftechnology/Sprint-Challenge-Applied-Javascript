@@ -32,7 +32,6 @@ class TabLink {
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(card => card.style.display = "none");
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    console.log("Event fired");
     this.cards.forEach(card => card.selectCard());
   }
 }
@@ -44,7 +43,6 @@ class TabCard {
   }
   selectCard() {
     // Update the style of this.element to display = null
-    console.log(this.element);
     this.element.style.display = "block";
   }
 
