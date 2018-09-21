@@ -7,25 +7,25 @@ class Carousel {
         this.pics = this.element.querySelectorAll("img");
         this.pics = Array.from(this.pics).map( pic => new CarouselPic(pic));
         this.currentIdx = 0;
-        this.pics[this.currentIdx].show();
+        this.pics[this.currentIdx].show(true);
         this.leftButton.addEventListener("click", event => this.leftShift(event));
         this.rightButton.addEventListener("click", event => this.rightShift(event));
     }
     leftShift(e) {
-        this.pics[this.currentIdx].hide();
+        this.pics[this.currentIdx].slideHide(true);
         this.currentIdx--;
         if (this.currentIdx < 0) {
             this.currentIdx = this.pics.length - 1;
         }
-        this.pics[this.currentIdx].show();
+        this.pics[this.currentIdx].show(false);
     }
     rightShift(e) {
-        this.pics[this.currentIdx].hide();
+        this.pics[this.currentIdx].slideHide(false);
         this.currentIdx++;
         if (this.currentIdx >= this.pics.length) {
             this.currentIdx = 0;
         }
-        this.pics[this.currentIdx].show();
+        this.pics[this.currentIdx].show(false);
     }
 }
 
@@ -33,8 +33,18 @@ class CarouselPic {
     constructor(element) {
         this.element = element;
     }
-    show() {
+    show(pageLoad) {
         this.element.classList.add("current");
+        if (!pageLoad) {
+            TweenLite.to(this.element, 0.7, {x: 0});
+        }
+    }
+    slideHide(toRight) {
+        if(toRight) {
+            TweenLite.to(this.element, 0.7, {x: -800, onComplete: this.hide()});
+        } else {
+            TweenLite.to(this.element, 0.7, {x: 800, onComplete: this.hide()});
+        }
     }
     hide() {
         this.element.classList.remove("current");
