@@ -8,6 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
+  <script src="./components/Carousel/Carousel.js" async></script>
   <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
 </head>
 
@@ -45,19 +46,20 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="FSW14" class="tab">FSW14</div>
     </div>
   </div>
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
-    <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
+  <div class="carousel">
+    <div class="left-button"></div>
+    <img class="carousel-img" src="./assets/carousel/mountains.jpeg" />
+    <img class="carousel-img" src="./assets/carousel/computer.jpeg" />
+    <img class="carousel-img" src="./assets/carousel/trees.jpeg" />
+    <img class="carousel-img" src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -202,6 +204,27 @@
         <span>By FIDO WALKSALOT</span>
       </div>
     </div>
+
+    <div class="card" data-tab="FSW14">
+      <div class="headline">FSW14 is the Best Cohort, Wanna Fight About It?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By DOGE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="FSW14">
+      <div class="headline">FSW14 is the Best Cohort. Change my Mind.</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By BARKSPAWN</span>
+      </div>
+    </div>
+
 
     <div class="card" data-tab="bootstrap">
       <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
