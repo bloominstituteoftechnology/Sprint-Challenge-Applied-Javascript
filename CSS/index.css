@@ -159,7 +159,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   height: 47px;
   background-color: #fff;
 }
@@ -260,7 +260,7 @@ body {
   height: 500px;
   position: relative;
   overflow: hidden;
-  margin-top: 16px;
+  margin: 16px 0;
 }
 @media (min-width: 1200px) {
   .carousel {
