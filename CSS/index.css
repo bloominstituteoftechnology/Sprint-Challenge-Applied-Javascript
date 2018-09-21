@@ -270,8 +270,8 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  color: #fff;
-  background-color: #333;
+  color: #333;
+  background-color: #fff;
   font-size: 40px;
   border-radius: 50%;
   width: 50px;
@@ -279,8 +279,8 @@ button {
   cursor: pointer;
 }
 button:hover {
-  color: #333;
-  background-color: #fff;
+  color: #fff;
+  background-color: #333;
   border: 2px solid #333;
 }
 

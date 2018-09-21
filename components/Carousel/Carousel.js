@@ -4,8 +4,8 @@ $(document).ready(() => {
         fade: true,
         speed: 1000,
         dots: true,
-        nextArrow: '<button><i class="fa fa-arrow-right"></i></button>',
-        prevArrow: '<button><i class="fa fa-arrow-left"></i></button>',
+        nextArrow: '<button><i class="fas fa-chevron-circle-right"></i></button>',
+        prevArrow: '<button><i class="fas fa-chevron-circle-left"></i></button>',
     })
 });
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
