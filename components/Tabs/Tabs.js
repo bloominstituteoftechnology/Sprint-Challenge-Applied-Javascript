@@ -12,7 +12,6 @@ class TabLink {
   } else {
       this.cards = document.querySelectorAll(`.card[data-tab = '${this.tabData}']`);
     }
-
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
     this.cards = Array.from(this.cards).map(element => new TabCard(element));
