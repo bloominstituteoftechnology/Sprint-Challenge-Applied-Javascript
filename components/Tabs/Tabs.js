@@ -6,6 +6,7 @@ class TabLink {
     this.tabData = this.element.dataset.tab; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     if(this.tabData === 'all'){
+      // console.log(this.cards);
       this.cards = document.querySelectorAll('.card');
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
@@ -27,8 +28,7 @@ class TabLink {
     tabs.forEach(tab => tab.classList.remove('active-tab'));
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
-
-
+    // console.log(this);
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
