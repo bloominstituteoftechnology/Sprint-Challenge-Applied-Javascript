@@ -1,14 +1,18 @@
 class TabLink {
   constructor(element) {
     this.element = element;
+    // get tab data set values
     this.tabData = this.element.dataset.tab;
 
     if (this.tabData === "all") {
+      // if all tabs is selected, grab all cards with .card class
       this.cards = document.querySelectorAll('.card');
     } else {
+      // if any other card is selected, grab individual dataset
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
 
+    // map an array from cards to make a TabCard class
     this.cards = Array.from(this.cards).map(cards => new TabCard(cards));
     this.element.addEventListener('click', () => {
       this.selectTab();

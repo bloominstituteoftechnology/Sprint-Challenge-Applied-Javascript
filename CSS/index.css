@@ -302,3 +302,7 @@ body {
   width: 100%;
   display: none;
 }
+.carousel img .current {
+  background-size: cover;
+  display: block;
+}

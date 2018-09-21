@@ -1,9 +1,39 @@
 class Carousel {
+    constructor(element) {
+        this.element = element;
+        this.buttonLeft = document.querySelector('.left-button');
+        this.buttonRight = document.querySelector('.right-button');
+        this.images = document.querySelectorAll('.carousel img');
+        this.imgData = this.element.dataset.img;
 
+        this.leftButton.addEventListener('click', () => {
+            this.slideLeft();
+        })
+        this.rightButton.addEventListener('click', () => {
+            this.slideRight();
+        })
+    }
+
+    slideLeft() {
+
+    }
+    slideRight() {
+
+    }
 }
+// class MainImage {
+//     constructor(element) {
+//         this.element = element;
+//     }
+//     slideLeft() {
+//         this.element.style.display = null;
+//     }
+// }
 
-let carousel = document.querySelector();
 
+let carousel = document.querySelector('.carousel');
+// console.log(carousel);
+carousel = Array.from(carousel).map(tab => new Carousel(tab));
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. You will need to grab a reference to all of the images
@@ -12,3 +42,4 @@ let carousel = document.querySelector();
     5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
+
