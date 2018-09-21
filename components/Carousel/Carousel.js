@@ -13,17 +13,17 @@ class Carousel {
   nextImage(event) {
     const len = this.images.length;
     this.currentImage++;
-    console.log(this.currentImage);
     this.currentImage = this.currentImage % len;
+    console.log(this.currentImage);
     this.showImage(this.images[this.currentImage]);
   }
 
   prevImage(event) {
     const len = this.images.length;
     this.currentImage--;
-    console.log(this.currentImage);
-    this.currentImage = Math.abs(this.currentImage % len);
-    console.log(this.currentImage);
+    if (this.currentImage < 0) {
+      this.currentImage = len + this.currentImage;
+    }
     this.showImage(this.images[this.currentImage]);
   }
 
