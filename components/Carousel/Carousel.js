@@ -15,6 +15,7 @@ class Carousel {
     }
     SetInitialPic(){
         this.images[0].classList.toggle('imgShow');
+        this.images[0].setAttribute('data-aos','fade-right')
     }
     ClickRight(){
         //this should increment the counter and set the image appropriately 
@@ -27,6 +28,8 @@ class Carousel {
             this.currentIndex = 0;
         }
         this.images[this.currentIndex].classList.add('imgShow');
+        
+
 
     };
     ClickLeft(){
