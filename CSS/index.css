@@ -304,4 +304,5 @@ body {
 }
 .carousel .current-img {
   display: block;
+  transition: all 300ms;
 }

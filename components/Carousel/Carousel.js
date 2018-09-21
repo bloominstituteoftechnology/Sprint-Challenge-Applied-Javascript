@@ -20,13 +20,21 @@ class Carousel {
     let nextImg;
     this.carouselImages.forEach((img, i) => {
       if (img.classList.contains('current-img')) {
+        // TweenMax.to(img, 0.5, {
+        //   left: 1200
+        // });
+        // setTimeout(() => img.classList.remove('current-img'), 500);
         img.classList.remove('current-img');
+
         // if at last img go to first img
         if (this.carouselImages.length - 1 === i) {
           nextImg = this.carouselImages[0];
           // else go to next img
         } else {
           nextImg = this.carouselImages[i + 1];
+          //   TweenMax.to(nextImg, 0.5, {
+          //     right: 1200
+          //   });
         }
       }
     });
