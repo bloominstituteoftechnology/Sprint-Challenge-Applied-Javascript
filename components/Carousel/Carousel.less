@@ -18,6 +18,7 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    transition: background-color 0.5s;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
@@ -25,17 +26,29 @@
     }
   }
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
     transform: translate(0, -50%);
   }
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
     transform: translate(0, -50%);
   }
   img {
     .width-100();
     display: none;
+
   }
+
+  .show-img {
+    display: block;
+    z-index: -2;
+    animation: fadeIn 1s;
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
