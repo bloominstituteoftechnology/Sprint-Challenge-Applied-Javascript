@@ -30,8 +30,10 @@ class TabLink {
     tabs.forEach( tab => tab.classList.remove('active-tab'));
     // Add a class of ".active-tab" to this.element
     this.element.classList.add('active-tab');
-    
-
+    this.element.style.opacity = "0";
+    TweenMax.to(this.element , 0.5, {
+      opacity:1
+    })
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
@@ -61,6 +63,7 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map( (tab) => new TabLink(tab));
-
 //Once you are complete, call the .select method on the first tab
 tabs[0].selectTab();
+
+//added animations
