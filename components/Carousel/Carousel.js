@@ -11,4 +11,29 @@ let carousel = document.querySelector();
     4. Those buttons are gonna need some click handlers.
     5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
+
+  <div class="carousel">
+    <div class="left-button"><</div>
+    <img src="./assets/carousel/mountains.jpeg" />
+    <img src="./assets/carousel/computer.jpeg" />
+    <img src="./assets/carousel/trees.jpeg" />
+    <img src="./assets/carousel/turntable.jpeg" />
+    <div class="right-button">></div>
+  </div>
+
 */
+// class CarouselPic {
+//     constructor(element) {
+//         this.element = element;
+//     }
+// }
+
+
+// let carouselPics = document.querySelectorAll(".carousel");
+// let carouselLeft = document.querySelectorAll(".left-button");
+// let carouselRight = document.querySelectorAll(".right-button");
+
+
+// carouselPics = Array.from(carouselPics).map(pic => new CarouselPic(pic));
+
+//carouselPics[0].selectPic()
