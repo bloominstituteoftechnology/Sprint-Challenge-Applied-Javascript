@@ -10,27 +10,34 @@ class TabLink {
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     this.cardData = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
    
-    if(this.element){
-      this.cards = "";
+
+    if(this.tabData != 'all'){
+      this.cards = this.cardData;
     } else {
-      this.cards = "";
+      this.cards = this.cardData;
     }
 
+   
+
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
-    // this.cards = Array.from(this.cards).map(test => console.log('place holder'));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // Add a click event that invokes selectTab
     // this.element.addEventListener();
+    this.element.addEventListener("click", () => {
+      this.selectTab();
+    })
   }
 
   selectTab(){
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll(".tab");
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach()
+    tabs.forEach(tab => {
+      tab.classList.remove("active-tab");
+    })
     // Add a class of ".active-tab" to this.element
-    this.element;
-
+    this.element.classList.add("active-tab");
 
     // Select all of the elements with the .card class on them
     const cards = "";
@@ -44,11 +51,11 @@ class TabLink {
 class TabCard {
   constructor(element){
     // Assign this.element to the passed in element.
-    this.element;
+    this.element = element;
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element;
+    this.element.style.display = null;
   }
 
 }
