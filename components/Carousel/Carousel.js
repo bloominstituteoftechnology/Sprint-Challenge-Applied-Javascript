@@ -10,23 +10,37 @@ class Carousel {
     this.rightButton.addEventListener('click', event => this.nextImage(event));
   }
 
-  nextImage() {
-      const len = this.images.length;
-      this.currentImage++;
-      this.currentImage = this.currentImage % len;
-      this.showImage(this.images[this.currentImage]);
+  nextImage(event) {
+    const len = this.images.length;
+    this.currentImage++;
+    console.log(this.currentImage);
+    this.currentImage = this.currentImage % len;
+    this.showImage(this.images[this.currentImage]);
   }
 
-  prevImage() {
-      const len = this.images.length;
-      this.currentImage--;
-      this.currentImage = this.currentImage % len;
-      this.showImage(this.images[this.currentImage]);
+  prevImage(event) {
+    const len = this.images.length;
+    this.currentImage--;
+    console.log(this.currentImage);
+    this.currentImage = Math.abs(this.currentImage % len);
+    console.log(this.currentImage);
+    this.showImage(this.images[this.currentImage]);
   }
 
+  //   showImage(image) {
+  //       this.currentImage = image;
+  //       if (event.currentTarget === this.leftButton) {
+  //           this.currentImage--;
+  //       }
+  //       else {
+  //           this.currentImage++;
+  //       }
+  //       this.currentImage = this.currentImage % len;
+  //       this.currentImage.style.display = 'block';
+  //   }
   showImage(image) {
-      this.images.forEach(img => img.style.display = 'none');
-      image.style.display = 'block';
+    this.images.forEach(img => (img.style.display = 'none'));
+    image.style.display = 'block';
   }
 }
 
