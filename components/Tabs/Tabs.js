@@ -7,7 +7,7 @@ class TabLink {
     // console.log(this.tabData)
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     this.cardData = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
-    // console.log(this.cardData)
+    console.log(this.cardData)
 
     if(this.tabData === 'all'){
       this.cards = document.querySelectorAll('.card');
