@@ -20,7 +20,7 @@ leftButton.addEventListener('click', () => {
 
 rightButton.addEventListener('click', () => {
     if (index === cImages.length -1) {
-        index = 0;
+        index = -1;
      }
      cImages.forEach( (item) => {
          item.style.display = 'none'
