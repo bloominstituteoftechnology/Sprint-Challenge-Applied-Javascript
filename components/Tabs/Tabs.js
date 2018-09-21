@@ -4,7 +4,6 @@ class TabLink {
     this.element = element;
 
     this.tabData = this.element.dataset.tab; 
-    console.log(this.tabData)
     this.corespondingCards = [];
     this.otherCards =[];
     
@@ -24,6 +23,10 @@ class TabLink {
   }
 
   selectTab(){
+    if (this.element.classList.contains('active-tab')){
+      tabs[0].selectTab();
+      return;
+    }
     this.element.classList.toggle('active-tab');
     tabs.forEach(x =>{
       if (x.element !== this.element){
