@@ -4,15 +4,15 @@ class Carousel {
         console.log(this.element)
         this.left = document.querySelector('.carousel .left-button');
         this.right = document.querySelector(".carousel .right-button");
+        this.imgs = document.querySelectorAll(".carousel img");
 
 
         this.element.addEventListener('click', () => this.arrowLeft());
         this.element.addEventListener('click', () => this.arrowRight())
 
-        //this.imgs = document.querySelectorAll(".carousel img");
-        //this.imgs = Array.from(this.imgs);
-
+       
     }
+
     arrowLeft(){
     
     }
@@ -23,9 +23,10 @@ class Carousel {
     }
 }
 
-let carousel = document.querySelector('.carousel');
-let imgs = document.querySelectorAll('.carousel img')
-imgs = Array.from(imgs).map(img => new Carousel(img));
+let carousel = document.querySelectorAll('.carousel');
+carousel = Array.from(carousel).map(item => new Carousel(item))
+
+
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
