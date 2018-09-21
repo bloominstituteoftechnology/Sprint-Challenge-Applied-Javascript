@@ -11,7 +11,7 @@ class TabLink {
     // If the data is 'all' then select all cards regardless of their data attribute
     if (this.tabData === 'all') {
       this.cards = document.querySelectorAll('.card');
-      // console.log(this.cards)
+      console.log(this.cards)
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab = '${this.tabData}']`);
       console.log(this.cards)
@@ -19,7 +19,7 @@ class TabLink {
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. 
     // Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(element => new TabCard(element));
+    this.cards = Array.from(this.cards).map(word => new TabCard(word));
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', event => {
       this.selectTab(event);
@@ -38,7 +38,7 @@ class TabLink {
 
 
     // Select all of the elements with the .card class on them
-    const cards = document.querySelectorAll('.cards');
+    const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(tab => tab.style.display = 'none')
     // console.log(this.cards)
@@ -57,7 +57,7 @@ class TabCard {
   }
   selectCard() {
     // Update the style of this.element to display = null
-    this.element.style.display = 'null';
+    this.element.style.display = 'block';
   }
 
 }
@@ -68,4 +68,5 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(element => new TabLink(element))
 
 //Once you are complete, call the .select method on the first tab
+
 tabs[0].selectTab()
