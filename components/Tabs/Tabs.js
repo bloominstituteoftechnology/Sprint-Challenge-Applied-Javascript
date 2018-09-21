@@ -54,7 +54,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.element to display = null
-    this.element.style.display = flex;
+    this.element.style.display = 'flex';
     console.log(this.element);
   }
 
