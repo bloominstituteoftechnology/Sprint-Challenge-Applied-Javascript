@@ -56,7 +56,3 @@ left = new Arrows(left);
 right = document.querySelector(".right-button");
 right = new Arrows(right);
 
-let carousel = document.querySelectorAll(".carouselIMG");
-carousel = Array.from(carousel).map(x => new CarouselIMG(x));
-
-
