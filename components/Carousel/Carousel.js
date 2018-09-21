@@ -8,6 +8,7 @@ class Carousel {
         console.log(rightArrow);
         this.images= element.querySelectorAll('img');
         console.log(images);
+        this.images.style.display
 
         this.imgages= Array.from(images).map(image => new Image(image));
 
@@ -16,9 +17,20 @@ class Carousel {
 
     }
 
+selectArrow(event){
 
-    
 }
+
+}
+
+class Image{
+    constructor(element){
+        this.element = element;   
+    }
+    const image
+
+}
+
 
 let carousel = document.querySelectorAll('.carousel');
 console.log(carousel);
