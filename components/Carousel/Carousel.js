@@ -10,10 +10,26 @@ class Carousel {
         this.rightBtn.addEventListener('click', (event) => this.next(event));
 
         this.activeImage();
+        this.previewCarousel();
     }
 
     activeImage() {
         this.images[0].classList.add('show-img');
+    }
+
+    previewCarousel() {
+        const self = this;
+
+        setInterval(function() {
+            if (self.index === self.images.length) {
+                clearInterval();
+                self.index = 0;
+                self.images[self.index].classList.add('show-img');
+            }
+            self.images.forEach(image => image.classList.remove('show-img'));
+            self.images[self.index].classList.add('show-img');
+            self.index += 1;
+        }, 3000);
     }
 
     previous() {
