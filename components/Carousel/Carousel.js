@@ -1,17 +1,37 @@
 class Carousel {
+    constructor(element){
+        this.element = element;
+        console.log(element);
+        this.leftArrow = element.querySelectorAll('.left-button');
+        console.log(leftArrow);
+        this.rightArrow = element.querySelectorAll('.right-button');
+        console.log(rightArrow);
+        this.images= element.querySelectorAll('img');
+        console.log(images);
 
+        this.imgages= Array.from(images).map(image => new Image(image));
+
+        this.element.addEventListener('click', (event) =>
+        this.selectArrow(event));
+
+    }
+
+
+    
 }
 
-let carousel = document.querySelector('.carousel');
+let carousel = document.querySelectorAll('.carousel');
 console.log(carousel);
 
 let images= document.querySelectorAll('.carousel img');
 console.log(images);
 
-carousel = Array.from(carousel).map(ride => new Carousel(ride));
-console.log(tabs);
+carousel = Array.from(carousel).map(carousels => {
+    return new Carousel(carousels);
+});
 
-images = Array.from(images).map(image => new Picture(image));
+
+// images = Array.from(images).map(image => new Picture(image));
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
