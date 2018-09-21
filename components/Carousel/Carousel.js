@@ -2,7 +2,7 @@ class Carousel {
 constructor(caroElements) {
     this.caroElements = caroElements;
     console.log(this.caroElements);
-    let i = 0;
+    
     this.right = document.querySelector('.right-button');
     this.left = document.querySelector('.left-button');
     this.images = document.querySelectorAll('.carousel img');
@@ -21,14 +21,30 @@ constructor(caroElements) {
 
     clickRight() {
         console.log("does right work?");
-
+        
         
     }
 
     clickLeft() {
         console.log("does left work?");
-        let i = 0;
-        this.images[i].style.display = "flex";
+        let picArray = this.images;
+
+        const caroh = () => {
+         let i = 0;
+
+            function slide (){
+                ++i;
+                if(i>=picArray.length){
+                picArray[i].style.display = "flex"
+                }
+                picArray[i].style.display = "flex"
+            }
+           return slide();
+            
+
+        }
+        
+        return caroh();
     }
 
 }
