@@ -36,7 +36,9 @@ class TabLink {
       item.style.display = 'none';
     });
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => {
+      card.selectCard();
+    });
   }
 }
 

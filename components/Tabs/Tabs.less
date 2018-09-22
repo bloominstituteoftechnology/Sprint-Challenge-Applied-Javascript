@@ -24,8 +24,12 @@
       letter-spacing: 2px;
       cursor: pointer;
       font-weight: bold;
+      transition: background-color .2s linear, color .2s linear, border .2s linear;
       &:hover {
         text-decoration: underline;
+        background-color: white;
+        color: black;
+        border: 2px solid @lambda-times-color-primary;
       }
     }
     .active-tab {

@@ -19,6 +19,7 @@ class Carousel {
     }
 
     showImage() {
+        TweenMax.to('.carousel img', .5, {});
         if(this.index === 3) {
                 this.index = -1;
         }
