@@ -12,10 +12,10 @@ class Carousel {
     this.leftButton = this.element.querySelector('.left-button');
     this.rightButton = this.element.querySelector('.right-button');
     this.leftButton.addEventListener('click', (event => {
-      this.leftSelected(event)
+      this.leftSelected(event);
     }));
     this.rightButton.addEventListener('click', (event => {
-      this.rightSelected(event)
+      this.rightSelected(event);
     }));
   }
 
@@ -51,6 +51,13 @@ class Carousel {
 
 let carousels = document.querySelectorAll('.carousel');
 carousels = Array.from(carousels).map(carousel => new Carousel(carousel));
+
+// this works for automated slideshow, but I think it should be included in the component
+window.setInterval(function () {
+    carousels[0].rightSelected(null);
+  },
+  3000);
+
 
 
 
