@@ -1,46 +1,52 @@
 class Carousel {
-    constructor(element){
-        // assign this.element to the element reference
-        this.element = element;
+  constructor(element) {
+    this.element = element;
+    this.images = this.element.getElementsByTagName('img');
 
-        // find all the images in this carousel
-        this.images = this.element.getElementsByTagName('img');
-        
-        // convert this.images into a real array
-        this.images = Array.from(this.images);
+    // convert this.images into a real array
+    this.images = Array.from(this.images);
 
-        let currentIndex = 0;
+    this.currentIndex = 0;
+    this.images[this.currentIndex].style.display = 'block';
 
-        this.leftButton = this.element.querySelectorAll('.left-button');
-        this.rightButton = this.element.querySelectorAll('.right-button');
-        Array.from(this.leftButton).map(button => addEventListener('click', (event => {this.leftSelected(event)})));
-        Array.from(this.rightButton).map(button => addEventListener('click', (event => {this.rightSelected(event)})));
+    this.leftButton = this.element.querySelector('.left-button');
+    this.rightButton = this.element.querySelector('.right-button');
+    this.leftButton.addEventListener('click', (event => {
+      this.leftSelected(event)
+    }));
+    this.rightButton.addEventListener('click', (event => {
+      this.rightSelected(event)
+    }));
+  }
+
+
+  leftSelected() {
+    // set display on all images to null
+    this.images.map(image => image.style.display = 'none');
+
+    this.currentIndex -= 1;
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.images.length - 1;
+    }
+    console.log(this.currentIndex)
+    //set current image to display
+    this.images[this.currentIndex].style.display = 'block';
+  }
+
+  rightSelected() {
+    // set display on all images to null
+    this.images.map(image => image.style.display = 'none');
+
+    this.currentIndex += 1;
+    if (this.currentIndex > this.images.length - 1) {
+      this.currentIndex = 0;
     }
 
+    //set current image to display
+    this.images[this.currentIndex].style.display = 'block';
+  }
 
-    leftSelected(){
-        currentIndex -= 1;
-        if(currentIndex < 0){
-            currentIndex = this.images.length - 1;
-        }
-        nextImage(currentIndex);
-    }
 
-    rightSelected(){
-        currentIndex += 1;
-        if(currentIndex > this.images.length - 1){
-            currentIndex = 0;
-        }
-        nextImage(currentIndex);
-    }
-
-    nextImage(index){
-        // set display on all images to null
-        this.images.map(image => image.style.display = '');
-
-        //set current image to display
-        this.images[index].style.display = 'block'; 
-    }
 }
 
 let carousels = document.querySelectorAll('.carousel');
