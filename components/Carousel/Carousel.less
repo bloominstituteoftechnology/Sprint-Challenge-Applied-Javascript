@@ -4,7 +4,8 @@
   height: 500px;
   position: relative;
   overflow: hidden;
-  margin-top: 16px;
+  margin: 16px 0;
+  background-color: @lambda-times-color-primary;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -25,17 +26,25 @@
     }
   }
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
     transform: translate(0, -50%);
   }
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
     transform: translate(0, -50%);
   }
   img {
-    .width-100();
-    display: none;
+    // .width-100();
+    // display: none;
+    width: 0%;
+    height: 100%;
+    transition: all 2s cubic-bezier(0.5, 1, 0.5, 1);
+  }
+
+  .active {
+    display: block;
+    width: 100%;
   }
 }

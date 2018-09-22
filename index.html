@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -35,6 +35,17 @@
     <span class="temp">98°</span>
   </div>
 
+  <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+  <!-- CAROUSEL COMPONENT -->
+  <div class="carousel">
+    <div class="left-button"><</div>
+    <img src="./assets/carousel/mountains.jpeg" />
+    <img src="./assets/carousel/computer.jpeg" />
+    <img src="./assets/carousel/trees.jpeg" />
+    <img src="./assets/carousel/turntable.jpeg" />
+    <div class="right-button">></div>
+  </div>
+
   <!-- TABS COMPONENT -->
   <div class="tabs">
     <div class="topics">
@@ -47,17 +58,6 @@
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
     </div>
   </div>
-
-  <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
-  <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
-    <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button">></div>
-  </div> -->
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -125,6 +125,36 @@
 
     <div class="card" data-tab="node">
       <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">Jake Archibald: In The Loop — JSConf.Asia 2018.</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>By BONES R. LIFE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">Machine Learning In Node.js With TensorFlow.js</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">Top 10 JavaScript errors from 1000+ projects (and how to avoid them)</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/sir.jpg" />

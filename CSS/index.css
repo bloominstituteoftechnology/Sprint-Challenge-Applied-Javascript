@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 100;
 }
 .top-bar .container {
   width: 100%;
@@ -260,7 +261,8 @@ body {
   height: 500px;
   position: relative;
   overflow: hidden;
-  margin-top: 16px;
+  margin: 16px 0;
+  background-color: #333;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -299,6 +301,11 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
+  width: 0%;
+  height: 100%;
+  transition: all 2s cubic-bezier(0.5, 1, 0.5, 1);
+}
+.carousel .active {
+  display: block;
   width: 100%;
-  display: none;
 }
