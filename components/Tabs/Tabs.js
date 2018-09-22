@@ -18,7 +18,9 @@ class TabLink {
     this.cards = Array.from(this.cards).map(word => new TabCard(word));
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', event => {
+      //put greensock here
       this.selectTab(event);
+
     });
   }
 
@@ -49,7 +51,7 @@ class TabCard {
   }
   selectCard() {
     // Update the style of this.element to display = null
-    this.element.style.display = 'block';
+    this.element.style.display = null;
   }
 
 }
