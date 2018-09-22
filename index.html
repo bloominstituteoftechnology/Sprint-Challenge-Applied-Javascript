@@ -9,6 +9,8 @@
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
   <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  
+
 </head>
 
 <body>
@@ -30,8 +32,8 @@
 
   <!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 28, 2018</span>
-    <h1>Lambda Times</h1>
+    <span class="date">MARCH 28, 2018</span>
+    <h1 class="headerh1">Lambda Times</h1>
     <span class="temp">98°</span>
   </div>
 
@@ -45,6 +47,7 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="cookies" class="tab">COOKIE TAB</div>
     </div>
   </div>
 
@@ -212,8 +215,18 @@
         <span>By MAX GOODBOYE</span>
       </div>
     </div>
+    <div class="card" data-tab="cookies">
+      <div class="headline">What's your favorite cookie?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR Cookie Monster</span>
+      </div>
+    </div>
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </body>
 
 </html>
