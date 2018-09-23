@@ -5,18 +5,24 @@ class Carousel {
         this.imgs = this.element.querySelectorAll('img');
         this.maxPicNum = this.imgs.length;
         this.imgs[this.currentPic].style.display = "block";
-
+      
+        this.init();
+     
         this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
         this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
     }
+
+    init(){
+           }
 
     rightClicked() {
         let newNum = this.currentPic + 1;
         if (newNum == this.maxPicNum )
             newNum = 0;
         this.display(newNum, this.currentPic);
-        this.currentPic = newNum;            
-    }
+        this.currentPic = newNum;      
+       
+      }
 
     leftClicked(){
         let newNum = this.currentPic - 1;
@@ -24,12 +30,13 @@ class Carousel {
             newNum = this.maxPicNum - 1;
         this.display(newNum, this.currentPic);
         this.currentPic = newNum;   
-    }
+
+      }
 
     display(newNum, currentNum){
     this.imgs[currentNum].style.display = 'none';
     this.imgs[newNum].style.display = "block";
-
+ 
     }
 
 }

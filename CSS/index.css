@@ -251,6 +251,7 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
+
 .carousel {
   width: 100%;
   display: flex;
@@ -292,6 +293,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index : 1;
 }
 .carousel .right-button {
   top: 50%;
@@ -300,5 +302,6 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  position: absolute;
+
 }
