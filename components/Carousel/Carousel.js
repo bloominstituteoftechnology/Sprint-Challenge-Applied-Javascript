@@ -1,47 +1,60 @@
 class Carousel {
     constructor(element){
         this.element = element;
-        console.log(element);
-        this.leftArrow = element.querySelectorAll('.left-button');
-        console.log(leftArrow);
-        this.rightArrow = element.querySelectorAll('.right-button');
-        console.log(rightArrow);
+        
+        this.leftArrow = element.querySelector('.left-button');
+        console.log(this.leftArrow);
+        this.rightArrow = element.querySelector('.right-button');
         this.images= element.querySelectorAll('img');
-        console.log(images);
-        this.images.style.display
-
-        this.imgages= Array.from(images).map(image => new Image(image));
-
-        this.element.addEventListener('click', (event) =>
-        this.selectArrow(event));
+        console.log(this.images);
+        
+        this.currentIndex= 0;
+        this.images[0].style.display ='block';
+        
+        this.rightArrow.addEventListener('click', (event) => this.rightArrowClick(event))
+        this.leftArrow.addEventListener('click', (event) => {this.leftArrowClick(event)})
 
     }
 
-selectArrow(event){
-
-}
-
-}
-
-class Image{
-    constructor(element){
-        this.element = element;   
+    rightArrowClick(){
+    this.images[this.currentIndex].style.display = 'none'
+        if (this.currentIndex === this.images.length - 1) {
+            this.currentIndex = 0
+        } else {
+            this.currentIndex = this.currentIndex + 1
+        }
+        this.images[this.currentIndex].style.display = 'block'
     }
-    const image
+
+    leftArrowClick(event){
+        this.images[this.currentIndex].style.display = 'none'
+        if(this.currentIndex === 0){
+            this.currentIndex = this.images.length - 1
+        } else {
+            this.currentIndex = this.currentIndex - 1
+        }
+        this.images[this.currentIndex].style.display = 'block'
+    }
+
+
+
 
 }
 
 
-let carousel = document.querySelectorAll('.carousel');
-console.log(carousel);
 
-let images= document.querySelectorAll('.carousel img');
-console.log(images);
+// let carousel = document.querySelectorAll('.carousel');
+// console.log(carousel);
 
-carousel = Array.from(carousel).map(carousels => {
-    return new Carousel(carousels);
-});
+// let images= document.querySelectorAll('.carousel img');
+// console.log(images);
 
+// carousel = Array.from(carousel).map(carousels => {
+//     return new Carousel(carousels);
+// });
+
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
 
 // images = Array.from(images).map(image => new Picture(image));
 
