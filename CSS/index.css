@@ -251,6 +251,9 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
+.cards-container .hidden {
+  display: none;
+}
 .carousel {
   width: 100%;
   display: flex;
@@ -301,4 +304,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .imgShow {
+  display: block;
 }
