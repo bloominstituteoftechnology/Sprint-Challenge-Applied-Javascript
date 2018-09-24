@@ -44,21 +44,18 @@ class Carousel {
     let nextImg, fromLast;
     this.carouselImages.forEach((img, i) => {
       if (img.classList.contains('current-img')) {
+        this.slider.prepend(
+          this.carouselImages[this.carouselImages.length - 1]
+        );
+        TweenMax.to(this.slider, 0, {
+          x: '-100%'
+        });
         TweenMax.to(this.slider, 0.5, {
-          x: '100%'
+          x: '0%'
         });
         setTimeout(() => {
-          TweenMax.to(this.slider, 0, {
-            x: '0%'
-          });
           fromLast = this.carouselImages.pop();
-
           this.carouselImages.unshift(fromLast);
-          console.log(this.carouselImages[0]);
-          this.slider.innerHTML = this.carouselImages;
-
-          // this.slider.prepend(this.carouselImages[this.carouselImages.length]);
-          console.log(this.carouselImages[this.carouselImages.length - 1]);
           img.classList.remove('current-img');
           nextImg = this.carouselImages[0];
           nextImg.classList.add('current-img');
