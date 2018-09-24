@@ -22,7 +22,7 @@ class TabLink {
 
   }
 
-  selectTab(event) {
+  selectTab() {
 
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');

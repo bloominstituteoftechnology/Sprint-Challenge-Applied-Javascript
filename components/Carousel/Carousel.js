@@ -2,58 +2,55 @@ class Carousel {
     constructor(element) {
         // assign this.element to the element reference
         this.element = element;
-        console.log(this.element);
         let leftbutton = document.querySelector('.left-button');
         this.leftbutton = leftbutton;
         let rightbutton = document.querySelector('.right-button');
         this.rightbutton = rightbutton;
         let carouselimages = document.querySelectorAll('.carousel img');
         this.carouselimages = carouselimages;
-        console.log(this.rightbutton);
-        console.log(this.leftbutton);
-        console.log(this.carouselimages);
+        let index = 0;
+        this.index = index;
         this.leftbutton.addEventListener('click', (event) => {
             // Call the select method you define below
-            this.CarouselClick(event);
+            this.CarouselClickLeft(event);
         });
         this.rightbutton.addEventListener('click', (event) => {
             // Call the select method you define below
-            this.CarouselClick(event);
+            this.CarouselClickRight(event);
         });
     }
-    CarouselClick(event) {
-        console.log('hello you clicked yay!')
+    CarouselClickLeft(event) {
+        if (this.index > 0) {
+            this.carouselimages[this.index].style.display = 'none';
+            this.index = this.index - 1;
+            this.carouselimages[this.index].style.display = 'flex';
+        }
+        else {
+            this.carouselimages[this.index].style.display = 'flex';
+        }
 
-        // // Select all elements with the .tab class on them
-        // const tabs = document.querySelectorAll('.tab');
-        // //console.log(tabs);
-        // // Iterate through the NodeList removing the .active-tab class from each element
-        // tabs.forEach(link => {
-        //   link.classList.remove('active-tab')
-        // });
-
-        // // Add a class of ".active-tab" to this.element
-        // this.element.classList.add('active-tab');
-        // //console.log(this.element);
-
-        // // Select all of the elements with the .card class on them
-        // const cards = document.querySelectorAll('.card');
-        // // Iterate through the NodeList setting the display style each one to 'none'
-        // cards.forEach(card => {
-        //   card.style.display = 'none';
-        // });
-        // // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-        // this.cards.forEach(card => card.selectCard());
+    }
+    CarouselClickRight(event) {
+        if (this.index < 3) {
+            this.carouselimages[this.index].style.display = 'none';
+            this.index = this.index + 1;
+            this.carouselimages[this.index].style.display = 'flex';
+        }
+        else {
+            this.carouselimages[this.index].style.display = 'flex';
+        }
     }
 }
 
 
 
 let carousel = document.querySelectorAll('.carousel');
-console.log(carousel);
 
 carousel = Array.from(carousel).map(link => new Carousel(link));
-console.log(carousel);
+
+carousel[0].CarouselClickLeft();
+
+
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
