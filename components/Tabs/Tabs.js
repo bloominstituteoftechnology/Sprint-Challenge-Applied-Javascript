@@ -35,7 +35,7 @@ class TabLink {
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach( card => {
-      this.card.style.display = "none";
+      card.style.display = "none";
     })
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
     this.cards.forEach(card => card.selectCard());
@@ -59,4 +59,4 @@ let tabs = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map( tab => new TabLink(tab));
 
-//Once you are complete, call the .select method on the first tab
+//Once you are complete, call the .select method on the first tab 
