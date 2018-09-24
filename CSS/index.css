@@ -292,13 +292,76 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel img {
   width: 100%;
-  display: none;
+  position: absolute;
+  z-index: 0;
+}
+.carousel .disappear {
+  left: -100%;
+  z-index: -1;
+}
+.carousel .slideRightIn {
+  animation: slideRightIn 2s;
+}
+.carousel .slideRightOut {
+  animation: slideRightOut 2s;
+  left: -100%;
+  z-index: -1;
+}
+.carousel .slideLeftIn {
+  animation: slideLeftIn 2s;
+}
+.carousel .slideLeftOut {
+  animation: slideLeftOut 2s;
+  left: 100%;
+  z-index: -1;
+}
+@keyframes slideRightIn {
+  0% {
+    left: 100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0;
+    z-index: 0;
+  }
+}
+@keyframes slideRightOut {
+  0% {
+    left: 0;
+    z-index: 0;
+  }
+  100% {
+    left: -100%;
+    z-index: -1;
+  }
+}
+@keyframes slideLeftIn {
+  0% {
+    left: -100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0;
+    z-index: 0;
+  }
+}
+@keyframes slideLeftOut {
+  0% {
+    left: 0;
+    z-index: 0;
+  }
+  100% {
+    left: 100%;
+    z-index: -1;
+  }
 }
