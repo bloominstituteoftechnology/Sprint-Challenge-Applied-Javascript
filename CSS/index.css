@@ -259,7 +259,7 @@ body {
   flex-direction: row;
   height: 500px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-top: 16px;
 }
 @media (min-width: 1200px) {
@@ -267,11 +267,16 @@ body {
     width: 1200px;
   }
 }
+.carousel .slider {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
 .carousel .left-button,
 .carousel .right-button {
   display: flex;
   justify-content: center;
-  align-items: none;
+  align-items: center;
   flex-direction: row;
   color: #fff;
   background-color: #333;
@@ -280,6 +285,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
+  z-index: 100;
   cursor: pointer;
 }
 .carousel .left-button:hover,
@@ -300,5 +306,5 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  flex: 0 0 auto;
 }
