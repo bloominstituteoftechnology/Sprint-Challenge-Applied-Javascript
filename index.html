@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Lambda Times</title>
-  <link rel="stortcut icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <link href="./favicon.ico"
+        rel="stortcut icon">
+  <link href="./CSS/index.css"
+        rel="stylesheet"
+        type="text/css">
+  <script crossorigin="anonymous"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script async
+        src="./components/Tabs/Tabs.js"></script><!-- <script src="./components/Carousel/Carousel.js" async></script> -->
 </head>
-
 <body>
-
   <!-- TOP BAR COMPONENT -->
   <div class="top-bar">
     <div class="container">
@@ -26,29 +27,40 @@
         <span>LOG IN</span>
       </div>
     </div>
-  </div>
-
-  <!-- HEADER COMPONENT -->
+  </div><!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 28, 2018</span>
-    <h1>Lambda Times</h1>
-    <span class="temp">98°</span>
-  </div>
-
-  <!-- TABS COMPONENT -->
+    <span class="date">MARCH 28, 2018</span>
+    <h1>Lambda Times</h1><span class="temp">98°</span>
+  </div><!-- TABS COMPONENT -->
   <div class="tabs">
     <div class="topics">
       <span class="title">TRENDING TOPICS:</span>
-      <div data-tab="all" class="tab active-tab">ALL</div>
-      <div data-tab="javascript" class="tab">JAVASCRIPT</div>
-      <div data-tab="technology" class="tab">TECHNOLOGY</div>
-      <div data-tab="node" class="tab">NODE.JS</div>
-      <div data-tab="jquery" class="tab">jQUERY</div>
-      <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div class="tab active-tab"
+           data-tab="all">
+        ALL
+      </div>
+      <div class="tab"
+           data-tab="javascript">
+        JAVASCRIPT
+      </div>
+      <div class="tab"
+           data-tab="technology">
+        TECHNOLOGY
+      </div>
+      <div class="tab"
+           data-tab="node">
+        NODE.JS
+      </div>
+      <div class="tab"
+           data-tab="jquery">
+        jQUERY
+      </div>
+      <div class="tab"
+           data-tab="bootstrap">
+        BOOTSTRAP
+      </div>
     </div>
-  </div>
-
-  <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+  </div><!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
   <!-- <div class="carousel">
     <div class="left-button"><</div>
@@ -58,162 +70,167 @@
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
   </div> -->
-
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
-
     <!-- CARD COMPONENTS -->
-    <div class="card" data-tab="javascript">
-      <div class="headline">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</div>
+    <div class="card"
+         data-tab="javascript">
+      <div class="headline">
+        <a href="https://medium.freecodecamp.org/es8-the-new-features-of-javascript-7506210a1a22">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/sir.jpg" />
-        </div>
-        <span>By SIR RUFF'N'STUFF</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/100/100/0*OGTwZYBc9dSGGR4d."></div><span><a href="https://medium.freecodecamp.org/@flaviohfreitas?source=post_header_lockup">By Flavio H Freitas</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="javascript">
-      <div class="headline">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences</div>
+    <div class="card"
+         data-tab="javascript">
+      <div class="headline">
+        <a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/bones.jpg" />
-        </div>
-        <span>By BONES R. LIFE</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*W6wuqntGDCUkLToOkq56ZQ.png"></div><span><a href="https://medium.freecodecamp.org/@alexeysamoshkin">By Alexey Samoshkin</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="bootstrap">
-      <div class="headline">Bootstrap 5: Get a Sneak Peak at all the New Features</div>
+    <div class="card"
+         data-tab="bootstrap">
+      <div class="headline">
+        <a href="https://twitter.com/getbootstrap">Bootstrap 5: Get a Sneak Peak at all the New Features</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/fido.jpg" />
-        </div>
-        <span>By FIDO WALKSALOT</span>
+        <div class="img-container"><img src="https://miro.medium.com/fit/c/240/240/0*nPCqNZG6Zq8Q_g2c."></div><span>By Angelo Deleon</span>
       </div>
     </div>
-
-    <div class="card" data-tab="technology">
-      <div class="headline">AI: What Are the Ethical Ramifications of the Future?</div>
+    <div class="card"
+         data-tab="technology">
+      <div class="headline">
+        <a href="https://www.weforum.org/agenda/2016/10/top-10-ethical-issues-in-artificial-intelligence/">AI: What Are the Ethical Ramifications of the Future?</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/max.jpg" />
-        </div>
-        <span>By MAX GOODBOYE</span>
+        <div class="img-container"><img src="https://assets.weforum.org/author/image/small_K-aOxOUccIo54iaZrH7A7Rws0Is9Nfwkfe2L4AseHJk.png"></div><span><a href="https://www.weforum.org/agenda/authors/julia-bossmann">By Julia Bossman</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="jquery">
-      <div class="headline">History of Javascript Libraries: from jQuery to React</div>
+    <div class="card"
+         data-tab="jquery">
+      <div class="headline">
+        <a href="https://dev.to/_adam_barker/the-super-brief-history-of-javascript-frameworks-for-those-somewhat-interested-3m82">History of Javascript Libraries: from jQuery to React</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/puppers.jpg" />
-        </div>
-        <span>By PUPPER S. DOGGO</span>
+        <div class="img-container"><img src=
+        "https://res.cloudinary.com/practicaldev/image/fetch/s--470BvrD8--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://thepracticaldev.s3.amazonaws.com/uploads/user/profile_image/54541/435c9971-729e-471b-9703-ae11d784646f.jpg"></div><span><a href="https://dev.to/_adam_barker">By
+        Adam Barker</a></span>
+      </div><a href="#"></a>
+    </div>
+    <div class="card"
+         data-tab="bootstrap">
+      <div class="headline">
+        <a href="https://www.keycdn.com/blog/front-end-frameworks/">UI Frameworks: A Comparison, Which Made Our List? (Hint: Bootstrap is on it)</a>
+      </div>
+      <div class="author">
+        <div class="img-container"><img src="https://pbs.twimg.com/profile_images/634334252536983552/XY92WOtS_400x400.jpg"></div><span><a href="https://twitter.com/CodyArsenault5">By CODY ARSENAULT</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="bootstrap">
-      <div class="headline">UI Frameworks: A Comparison, Which Made Our List? (Hint: Bootstrap is on it)</div>
+    <div class="card"
+         data-tab="node">
+      <div class="headline">
+        <a href="https://raygun.com/blog/hapi-vs-express/">Node.js in 2018: Which Framework? Express, Sails, Hapi?</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/max.jpg" />
-        </div>
-        <span>By MAX GOODBOYE</span>
+        <div class="img-container"><img src="https://media.licdn.com/dms/image/C4D03AQF5jNm4AOi3Ig/profile-displayphoto-shrink_800_800/0?e=1542844800&v=beta&t=7ThJgGb7bsdJMgYtJTt9Lp7ZaakxYmhAUJbdBYZ4Rxs"></div><span><a href=
+        "https://www.linkedin.com/in/kamry-bowman/">By Kamry Bowman AKA "Code God"</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="node">
-      <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
+    <div class="card"
+         data-tab="node">
+      <div class="headline">
+        <a href="https://insights.dice.com/2012/07/16/sql-vs-nosql-which-is-better/">MongoDB: NoSQL vs. SQL, the Debate Continues...</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/sir.jpg" />
-        </div>
-        <span>By SIR RUFF'N'STUFF</span>
+        <div class="img-container"><img src="https://miro.medium.com/fit/c/240/240/0*nB8DBaII1toKU5H5.jpeg"></div><span><a href="https://insights.dice.com/author/jeff-cogswell/">By Jeff Cogswell</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="node">
-      <div class="headline">MongoDB: NoSQL vs. SQL, the Debate Continues...</div>
+    <div class="card"
+         data-tab="jquery">
+      <div class="headline">
+        <a href="https://medium.com/s/story/what-if-reality-isnt-real-1161d7b12256">What If Reality Isn’t Real?</a>
+        <h5>The rise of the simulation theory tells us a lot about how we live now...</h5><!-- tried to see how it would look if I added a lil article snippet so people could know more info about article if the title wasnt enough. -->
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/bones.jpg" />
-        </div>
-        <span>By BONES R. LIFE</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/0*hlv0GW6ni_cK-NAD.jpg"></div><span><a href="https://medium.com/@NickyWoolf">By Nicky Woolf</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="jquery">
-      <div class="headline">jQuery Animations: When and Where to Use Them, and Not CSS</div>
+    <div class="card"
+         data-tab="technology">
+      <div class="headline">
+        <a href="https://medium.com/thrive-global/how-technology-hijacks-peoples-minds-from-a-magician-and-google-s-design-ethicist-56d62ef5edf3">How Technology is Hijacking Your Mind — from a Magician and Google Design Ethicist</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/fido.jpg" />
-        </div>
-        <span>By FIDO WALKSALOT</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*1N2PDIyPA1RkGKMC0j9bjQ.jpeg"></div><span><a href="https://medium.com/@tristanharris?source=post_header_lockup">By Tristan Harris</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="technology">
-      <div class="headline">AR or VR: How We Will See the World Through a Digital Lense</div>
+    <div class="card"
+         data-tab="javascript">
+      <div class="headline">
+        <a href="https://medium.freecodecamp.org/how-i-went-from-newbie-to-software-engineer-in-9-months-while-working-full-time-460bd8485847">How I went from newbie to Software Engineer in 9 months while working full time</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/max.jpg" />
-        </div>
-        <span>By MAX GOODBOYE</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*aTuK1Gn--qhwGZeEj2QXig.jpeg"></div><span><a href="https://medium.freecodecamp.org/@austintackaberry?source=post_header_lockup">By Austen Tackaberry</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="javascript">
-      <div class="headline">When to Rest, When to Spread: Why There Are Two Meanings Behind '...'</div>
+    <div class="card"
+         data-tab="javascript">
+      <div class="headline">
+        <a href="https://hackernoon.com/a-machine-and-humans-perception-of-the-world-in-augmented-reality-2342f4a6750">A machine and human’s perception of the world in Augmented Reality</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/puppers.jpg" />
-        </div>
-        <span>By PUPPER S. DOGGO</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*Aq0MmVxl1aKnzfP1aOXMFQ.jpeg"></div><span><a href="https://hackernoon.com/@akshaykore?source=post_header_lockup">By Kore</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="javascript">
-      <div class="headline">Typescript: Ten Things you Should Know Before Building Your Next Angular Application</div>
+    <div class="card"
+         data-tab="technology">
+      <div class="headline">
+        <a href="https://hackernoon.com/top-5-react-native-courses-for-mobile-application-developers-b82febdf8a46">Top 5 React-Native Courses for Mobile Application Developers</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/sir.jpg" />
-        </div>
-        <span>By SIR RUFF'N'STUFF</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/100/100/0*u9Ha3uTCjEmW_3gn.gif"></div><span><a href="https://hackernoon.com/@javinpaul">By JavinPaul</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="technology">
-      <div class="headline">Quantum Computing: Where we Are Now, and Where We Will Be Very Soon</div>
+    <div class="card"
+         data-tab="jquery">
+      <div class="headline">
+        <a href="https://medium.com/lambda-school-blog/why-we-started-lambda-school-cf21a8328bbd">Why We Started Lambda School...</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/max.jpg" />
-        </div>
-        <span>By MAX GOODBOYE</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*0-WKf4jOk0Iqmrv2V_IwdA.jpeg"></div><span><a href="#">By Austen Allred</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="jquery">
-      <div class="headline">Why I Use jQuery in Every Application I Create and Why You Should Too</div>
+    <div class="card"
+         data-tab="bootstrap">
+      <div class="headline">
+        <a href="https://medium.com/lambda-school-blog/lambda-ama-when-will-i-get-a-job-do-you-hire-your-own-students-whats-up-with-project-managers-4fca17777b68">Lambda AMA: When will I get a job? Do you hire your own students? What’s up with
+        project managers?</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/fido.jpg" />
-        </div>
-        <span>By FIDO WALKSALOT</span>
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*pgjpuLiEQ-EnLgzikNtg0w.jpeg"></div><span><a href="https://medium.com/@calebhicks?source=post_header_lockup">By Caleb Hicks</a></span>
       </div>
     </div>
-
-    <div class="card" data-tab="bootstrap">
-      <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
+    <div class="card"
+         data-tab="jquery">
+      <div class="headline">
+        <a href="https://arstechnica.com/science/2018/09/inside-the-eight-desperate-weeks-that-saved-spacex-from-ruin/">The eight desperate weeks that saved SpaceX from ruin</a>
+      </div>
       <div class="author">
-        <div class="img-container">
-          <img src="./assets/max.jpg" />
-        </div>
-        <span>By MAX GOODBOYE</span>
+        <div class="img-container"><img src="https://pbs.twimg.com/profile_images/584065468337623040/eVtOSdRl_400x400.jpg"></div><span><a href="https://arstechnica.com/author/ericberger/">By Eric Burgher</a></span>
       </div>
     </div>
-
-  </div>
+    <div class="card"
+         data-tab="Technology">
+      <div class="headline">
+        <a href="https://medium.com/lambda-school-blog/introducing-lambda-next-our-revolutionary-new-job-search-and-placement-program-603ef12f7d37">Introducing Lambda Next — Our Revolutionary New Job Search and Placement Program</a>
+      </div>
+      <div class="author">
+        <div class="img-container"><img src="https://cdn-images-1.medium.com/fit/c/60/60/1*0-WKf4jOk0Iqmrv2V_IwdA.jpeg"></div><span><a href="https://medium.com/@austenallred">By Austen Allred</a></span>
+      </div>
+    </div>
+  </div><!-- Angelo Deleon FSW14 2018 -->
 </body>
-
 </html>
