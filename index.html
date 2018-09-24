@@ -4,6 +4,8 @@
 <head>
   <title>Lambda Times</title>
   <link rel="stortcut icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" async></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -55,189 +57,192 @@
   <!-- CAROUSEL COMPONENT -->
   <div class="carousel">
     <div class="left-button">
-      <</div> <img class="img current-img" src="./assets/carousel/mountains.jpeg" />
+      <i class="fas fa-chevron-left"></i></div>
+    <div class="slider">
+      <img class="img current-img" src="./assets/carousel/mountains.jpeg" />
       <img class="img" src="./assets/carousel/computer.jpeg" />
       <img class="img" src="./assets/carousel/trees.jpeg" />
       <img class="img" src="./assets/carousel/turntable.jpeg" />
-      <div class="right-button">></div>
+    </div>
+    <div class="right-button"><i class="fas fa-chevron-right"></i></div>
+  </div>
+
+  <!-- CARDS COMPONENT -->
+  <div class="cards-container">
+
+    <!-- CARD COMPONENTS -->
+    <div class="card" data-tab="javascript">
+      <div class="headline">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
     </div>
 
-    <!-- CARDS COMPONENT -->
-    <div class="cards-container">
-
-      <!-- CARD COMPONENTS -->
-      <div class="card" data-tab="javascript">
-        <div class="headline">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/sir.jpg" />
-          </div>
-          <span>By SIR RUFF'N'STUFF</span>
+    <div class="card" data-tab="javascript">
+      <div class="headline">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
         </div>
+        <span>By BONES R. LIFE</span>
       </div>
-
-      <div class="card" data-tab="javascript">
-        <div class="headline">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/bones.jpg" />
-          </div>
-          <span>By BONES R. LIFE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="bootstrap">
-        <div class="headline">Bootstrap 5: Get a Sneak Peak at all the New Features</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/fido.jpg" />
-          </div>
-          <span>By FIDO WALKSALOT</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="technology">
-        <div class="headline">AI: What Are the Ethical Ramifications of the Future?</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/max.jpg" />
-          </div>
-          <span>By MAX GOODBOYE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="jquery">
-        <div class="headline">History of Javascript Libraries: from jQuery to React</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/puppers.jpg" />
-          </div>
-          <span>By PUPPER S. DOGGO</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="bootstrap">
-        <div class="headline">UI Frameworks: A Comparison, Which Made Our List? (Hint: Bootstrap is on it)</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/max.jpg" />
-          </div>
-          <span>By MAX GOODBOYE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="node">
-        <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/sir.jpg" />
-          </div>
-          <span>By SIR RUFF'N'STUFF</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="node">
-        <div class="headline">MongoDB: NoSQL vs. SQL, the Debate Continues...</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/bones.jpg" />
-          </div>
-          <span>By BONES R. LIFE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="jquery">
-        <div class="headline">jQuery Animations: When and Where to Use Them, and Not CSS</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/fido.jpg" />
-          </div>
-          <span>By FIDO WALKSALOT</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="technology">
-        <div class="headline">AR or VR: How We Will See the World Through a Digital Lense</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/max.jpg" />
-          </div>
-          <span>By MAX GOODBOYE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="javascript">
-        <div class="headline">When to Rest, When to Spread: Why There Are Two Meanings Behind '...'</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/puppers.jpg" />
-          </div>
-          <span>By PUPPER S. DOGGO</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="javascript">
-        <div class="headline">Typescript: Ten Things you Should Know Before Building Your Next Angular Application</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/sir.jpg" />
-          </div>
-          <span>By SIR RUFF'N'STUFF</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="technology">
-        <div class="headline">Quantum Computing: Where we Are Now, and Where We Will Be Very Soon</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/max.jpg" />
-          </div>
-          <span>By MAX GOODBOYE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="jquery">
-        <div class="headline">Why I Use jQuery in Every Application I Create and Why You Should Too</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/fido.jpg" />
-          </div>
-          <span>By FIDO WALKSALOT</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="bootstrap">
-        <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/max.jpg" />
-          </div>
-          <span>By MAX GOODBOYE</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="javascript">
-        <div class="headline">Proof Dogs are Smarter: JavaScript for Cats</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/fido.jpg" />
-          </div>
-          <span>By FIDO WALKSALOT</span>
-        </div>
-      </div>
-
-      <div class="card" data-tab="technology">
-        <div class="headline">As robot dog sales go up more dogs are retiring early. Is an early dog retirement for
-          you?</div>
-        <div class="author">
-          <div class="img-container">
-            <img src="./assets/sir.jpg" />
-          </div>
-          <span>By SIR RUFF'N'STUFF</span>
-        </div>
-      </div>
-
     </div>
+
+    <div class="card" data-tab="bootstrap">
+      <div class="headline">Bootstrap 5: Get a Sneak Peak at all the New Features</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">AI: What Are the Ethical Ramifications of the Future?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="jquery">
+      <div class="headline">History of Javascript Libraries: from jQuery to React</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/puppers.jpg" />
+        </div>
+        <span>By PUPPER S. DOGGO</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="bootstrap">
+      <div class="headline">UI Frameworks: A Comparison, Which Made Our List? (Hint: Bootstrap is on it)</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">MongoDB: NoSQL vs. SQL, the Debate Continues...</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>By BONES R. LIFE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="jquery">
+      <div class="headline">jQuery Animations: When and Where to Use Them, and Not CSS</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">AR or VR: How We Will See the World Through a Digital Lense</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">When to Rest, When to Spread: Why There Are Two Meanings Behind '...'</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/puppers.jpg" />
+        </div>
+        <span>By PUPPER S. DOGGO</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">Typescript: Ten Things you Should Know Before Building Your Next Angular Application</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">Quantum Computing: Where we Are Now, and Where We Will Be Very Soon</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="jquery">
+      <div class="headline">Why I Use jQuery in Every Application I Create and Why You Should Too</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="bootstrap">
+      <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="javascript">
+      <div class="headline">Proof Dogs are Smarter: JavaScript for Cats</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">As robot dog sales go up more dogs are retiring early. Is an early dog retirement for
+        you?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>

@@ -1,6 +1,8 @@
 class Carousel {
   constructor(carousel) {
     this.carousel = carousel;
+    // Slider
+    this.slider = document.querySelector('.slider');
     // Images
     this.carouselImages = Array.from(
       document.querySelectorAll('.carousel img')
@@ -17,47 +19,52 @@ class Carousel {
   }
 
   nextImage() {
-    let nextImg;
+    let nextImg, toLast;
     this.carouselImages.forEach((img, i) => {
       if (img.classList.contains('current-img')) {
-        // TweenMax.to(img, 0.5, {
-        //   left: 1200
-        // });
-        // setTimeout(() => img.classList.remove('current-img'), 500);
-        img.classList.remove('current-img');
-
-        // if at last img go to first img
-        if (this.carouselImages.length - 1 === i) {
+        TweenMax.to(this.slider, 0.5, {
+          x: '-100%'
+        });
+        setTimeout(() => {
+          TweenMax.to(this.slider, 0, {
+            x: '0%'
+          });
+          toLast = this.carouselImages.shift();
+          this.carouselImages.push(toLast);
+          this.slider.append(img);
+          img.classList.remove('current-img');
           nextImg = this.carouselImages[0];
-          // else go to next img
-        } else {
-          nextImg = this.carouselImages[i + 1];
-          //   TweenMax.to(nextImg, 0.5, {
-          //     right: 1200
-          //   });
-        }
+          nextImg.classList.add('current-img');
+        }, 500);
       }
     });
-
-    nextImg.classList.add('current-img');
   }
 
   previousImage() {
-    let previousImg;
+    let nextImg, fromLast;
     this.carouselImages.forEach((img, i) => {
       if (img.classList.contains('current-img')) {
-        img.classList.remove('current-img');
-        // if at first img go to last img
-        if (i === 0) {
-          previousImg = this.carouselImages[this.carouselImages.length - 1];
-          // else go to previous img
-        } else {
-          previousImg = this.carouselImages[i - 1];
-        }
+        TweenMax.to(this.slider, 0.5, {
+          x: '100%'
+        });
+        setTimeout(() => {
+          TweenMax.to(this.slider, 0, {
+            x: '0%'
+          });
+          fromLast = this.carouselImages.pop();
+
+          this.carouselImages.unshift(fromLast);
+          console.log(this.carouselImages[0]);
+          this.slider.innerHTML = this.carouselImages;
+
+          // this.slider.prepend(this.carouselImages[this.carouselImages.length]);
+          console.log(this.carouselImages[this.carouselImages.length - 1]);
+          img.classList.remove('current-img');
+          nextImg = this.carouselImages[0];
+          nextImg.classList.add('current-img');
+        }, 500);
       }
     });
-
-    previousImg.classList.add('current-img');
   }
 }
 
