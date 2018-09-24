@@ -12,4 +12,4 @@
 2.  An event is when something happens after being triggered.
 3.  An event listener is function that waits for an event to to be triggered.
 4.  You would convert a NodeList onto an Array because NodeList only have a couple methods that can be used on it. Byu converting into an array you have access to all the methods an array has.
-5.  Components are small packaged elements you can create that can be used to make up a webpage.
+5.  Components are small packaged elements you can create that can be used to make up a webpage..
