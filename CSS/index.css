@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 1;
 }
 .top-bar .container {
   width: 100%;
@@ -299,6 +300,11 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
+  width: 0%;
+  height: 500px;
+  transition: all 0.5s;
+}
+.carousel .img-active {
   width: 100%;
-  display: none;
+  transition: all 0.5s;
 }
