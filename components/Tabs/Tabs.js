@@ -53,21 +53,26 @@ class TabCard {
     // Assign this.element to the passed in element.
     this.element = element;
   }
-  selectCard(){
+   
+selectCard(){
     // Update the style of this.element to display = null
     this.element ();{
       document.querySelector(card).style.display='none';
     };
   }
 
-}
+
 
 // Create a reference to all ".tab" classes
-let tabs = document.querySelectorAll('.tab');
+let tab = document.querySelectorAll('.tab');
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map(() =>
-  new TabLink(tabs));
+tab= Array.from(tab).map(() =>
+  new tab (TabLink));
 
 
 //Once you are complete, call the .select method on the first tab
 tab[0].select()
+
+function newFunction() {
+  return this;
+}
