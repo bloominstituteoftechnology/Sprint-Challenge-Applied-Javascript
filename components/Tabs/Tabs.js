@@ -6,7 +6,7 @@ class TabLink {
     this.tabData = element.tabData; 
     // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
     if(){
-      this.cards = ;
+      this.cards = element.cards;
     } else {
       this.cards = ;
     }
