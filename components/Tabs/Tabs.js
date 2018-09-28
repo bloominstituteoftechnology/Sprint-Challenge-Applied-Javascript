@@ -44,7 +44,7 @@ class TabLink {
     })
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    this.cards.forEach(card => card.selectCard());
+    this.card.forEach(card => card.selectCard());
   }
 }
 
@@ -64,10 +64,12 @@ selectCard(){
 
 
 // Create a reference to all ".tab" classes
-let tab = document.querySelectorAll('.tab');
+let tabs = document.querySelectorAll('.tab')
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tab= Array.from(tab).map(() =>
-  new tab (TabLink));
+tabs= Array.from(tabs).map (tab  => new TabLink (tab));
+
+//   let dropdowns = document.querySelectorAll('.dropdown');
+// dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
 
 
 //Once you are complete, call the .select method on the first tab
