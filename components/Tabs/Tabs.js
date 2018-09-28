@@ -12,16 +12,18 @@ class TabLink {
     }
 
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map('card', =>
-      new TabCard ('.TabCard'));
+    cards = Array.from(cards).map(cards => {
+      return new TabCard (TabCard);
+
+      
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', ()=>{
   
  this. selectTab();
     });
-  };
+  });
 
-  selectTab(){
+  selectTab();{
 
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
