@@ -2,7 +2,7 @@
 
 We've covered a lot this week. We've learned how to plug Javascript up to our HTML/CSS static pages and create dynamic content. We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.
 
-## Assessing your Applied Javascript Fu
+## Assessing your Applied Javascript
 
 - Answers to your written questions will be recorded in _ANSWERS.md_
 - This is to be worked on alone but you can use outside resources. You can _reference_ any old code you may have, and documentation, however, please refrain from copying and pasting any of your answers. Try and understand the question and put your responses in your own words.
