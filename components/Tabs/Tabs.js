@@ -8,61 +8,52 @@ this.tabData = element.dataset.tab ;
     if (this.tabData === 'all'){
       this.cards = document.querySelectorAll('.card') ;
     } else {
-  
-      this.cards = document.querySelectorAll(`.card[data-tab ='${this.tabData}']`) ;
+      this.cards = 
+      document.querySelectorAll(`.card[data-tab ='${this.tabData}']`) ;
     }
     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(cards => new TabCard(cards, this));
+    this.cards = Array.from(this.cards).map( element => {
+      return new TabCard(element)
+    });
     // Add a click event that invokes selectTab
-    this.element.addEventListener('click', () => this.selectTab());{
-   selectTab();
-  }
+    this.element.addEventListener('click' , () => this.selectTab());{
+  this.selectTab();
+  };
+}
+  selectTab(){
 // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll('.tab');
+const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(element =>
-      element.classList.remove('active-tab'));
-
+    tabs.forEach(element =>{
+      element.classList.remove('active-tab');
+    })
     // Add a class of ".active-tab" to this.element
-    this.element.classList.add('active-tab');
-
-
+    this.element.classList.add ('active-tab');
     //  Select all of the elements with the .card class on them
-    const cards = ('.card') ; { 
-      document.querySelectorAll('.card');
-    
+    const cards = 
+    document.querySelectorAll ('.card');  
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => {
+    cards.forEach (card => {
       card.style.display = 'none';
  //Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    this.card.forEach(card => card.selectCard());
+    this.card.forEach (card => card.selectCard ());
   });
 }
-
 class TabCard {
-  constructor(element){
+  constructor (element){
     // Assign this.element to the passed in element.
     this.element = element;
-  }
-   
-selectCard()
-}
+  }  
+selectCard () {
     // Update the style of this.element to display = null
-    this.element ();{
-      document.querySelector(card).style.display='none';
-    };
-
-// Create a reference to all ".tab" classes
-let tabs = this.element.querySelectorAll(".tab");{
-// Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from.map; () => new TabLink (tabs);
-}
-//Once you are complete, call the .select method on the first tab
-this.activeTab;{
-this.activeTab.selectTab();
-}
-function newFunction() {
-  return this;
-    }
+    this.element.style.display = null;
   }
 }
+// Create a reference to all ".tab" classes
+let tabs = document.querySelectorAll ('.tab');
+// Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
+tabs = Array.from (tabs).map (element =>{
+}  return new TabLink (element);
+});
+//Once you are complete, call the .select method on the first tab
+tabs [0].selectTab ();
