@@ -32,4 +32,4 @@ Your stretch challenge is to write the functionality of a `Carousel` component. 
 - Complete the carousel functionality in `Carousel.js`
 - If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
 - Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over iteself.
-- If you have finished the above, play around with the styling on all the components, and understand how each is built.
+- If you have finished the above, play around with the styling on all the components, and understand how each is built
