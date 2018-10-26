@@ -26,7 +26,12 @@ class TabLink {
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
-    this.tabElement.addEventListener('click', () => this.selectTab());
+    this.tabElement.addEventListener('click', () => {
+      this.selectTab()
+      let a = new TimelineMax();
+      a.from('.card', .3, { rotationY: 360, ease: Circ.easeOut });
+
+    });
   }
 
   selectTab() {

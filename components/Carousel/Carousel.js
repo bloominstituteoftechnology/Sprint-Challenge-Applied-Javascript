@@ -16,7 +16,9 @@ class Carousel {
       a.staggerFrom('#first', 0.5, { opacity: 0, ease: Sine.easeIn });
     });
       
-    this.left.addEventListener('click', event => this.select(event));
+    this.left.addEventListener('click', event => {
+      this.select(event)
+    });
     this.right.addEventListener('click', event => this.select(event));
   }
 
