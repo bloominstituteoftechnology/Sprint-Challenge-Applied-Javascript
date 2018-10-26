@@ -6,9 +6,19 @@ class Carousel {
 
         this.photos = this.carousel.querySelectorAll('img');
         this.currentIndex = this.photos[0];
+
+        this.leftButton.addEventListener('click', () => this.handleLeftClick());
+        this.rightButton.addEventListener('click', () => this.handleRightClick());
     }
 
     // Methods
+
+    handleLeftClick() {
+        console.log('Left Button');
+    }
+    handleRightClick() {
+        console.log('Right Button');
+    }
 }
 
 
