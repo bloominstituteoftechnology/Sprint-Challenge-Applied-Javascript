@@ -18,8 +18,8 @@ class TabLink {
 
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelector(`.card[data-tab='${this.tabData}']`);
-      console.log(this.cards);
+      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
+      // console.log(this.cards);
     }
 
 
@@ -28,7 +28,7 @@ class TabLink {
     // Pass in a card object to the TabCard class. 
 
     // this.cards = Array.from(this.cards).map();
-    this.cards = Array.from(this.cards).map(myCard => new TabCard(myCard));
+    this.cards = Array.from(this.cards).map((myCard) => new TabCard(myCard));
     // console.log(this.cards);
 
     // Add a click event that invokes this.selectTab
@@ -42,14 +42,15 @@ class TabLink {
     // console.log(tabs);
     
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(function(myTab) {myTab.classList.remove("active-tab")});
+    tabs.forEach(function(myTab) {myTab.classList.remove('active-tab')});
+    // console.log(tabs);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // console.log(cards);
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(function(myTab) {myTab.classList.display = "none";})
+    cards.forEach(function(myCard) {myCard.style.display = 'none';})
     // console.log(cards)
     
     // Add a class of ".active-tab" to this.tabElement
@@ -70,14 +71,14 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.style.display = "flex";
+    this.cardElement.style.display = 'flex';
     // console.log(this.cardElement);
   }
-
 }
 
 // First step! Create a reference to all ".tab" classes.
 let tabs = document.querySelectorAll('.tab');
+// console.log(tabs);
 
 // Map over the array and convert each tab reference into a new TabLink object.  
 // Pass in the tab object to the Tabs class.  
@@ -85,3 +86,4 @@ let tabs = document.querySelectorAll('.tab');
 // class at the top of the page!
 
 tabs = Array.from(tabs).map(tab => new TabLink(tab))
+// console.log(tabs);
