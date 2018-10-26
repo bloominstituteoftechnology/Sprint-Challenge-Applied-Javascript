@@ -1,3 +1,34 @@
+class Tabs {
+
+  constructor(tabElement) {
+
+    this.tabElement = tabElement;
+
+    this.tabs = document.querySelectorAll('.tab');
+
+    // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
+    this.tabs = Array.from(this.tabs).map(tab => new TabLink(tab));
+
+  }
+
+  addCard(card, tabID) {
+
+    this.tabs[0].addCard(card);
+    let correctTab = this.tabs.find(function(tab) {
+      return tab.tabData == tabID;
+    });
+    correctTab.addCard(card);
+
+  }
+
+  addTab(tab) {
+
+    this.tabs.push(tab);
+
+  }
+
+}
+
 class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
@@ -23,6 +54,7 @@ class TabLink {
 
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click', () => this.selectTab());
+
   }
 
   selectTab(){
@@ -50,15 +82,6 @@ class TabLink {
 
     this.cards.push(new TabCard(card));
 
-    if(this.tabData == 'all'){
-      // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = document.querySelectorAll('.card');
-    } else {
-      // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
-
-    }
-
   }
 
 }
@@ -75,8 +98,4 @@ class TabCard {
 
 }
 
-// First step! Create a reference to all ".tab" classes.
-let tabs = document.querySelectorAll('.tab');
-
-// Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
-tabs = Array.from(tabs).map(tab => new TabLink(tab));
+let tabs = new Tabs(document.querySelector('.tab'));

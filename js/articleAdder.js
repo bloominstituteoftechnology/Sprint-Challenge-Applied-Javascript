@@ -37,13 +37,7 @@ articleSubmit.addEventListener('click', event => {
 
   }
 
-  else {
-
-    let tab = tabs.find(tab => tab.tabData == articleCategory);
-    console.log(tab);
-    tab.addCard(card);
-
-  }
+  tabs.addCard(card, articleCategory);
 
   document.querySelector('.cards-container').appendChild(card);
 
@@ -129,7 +123,7 @@ function createTab(category) {
   newTab.textContent = category.toUpperCase();
 
   document.querySelector('.topics').appendChild(newTab);
-  tabs.push(new TabLink(newTab));
+  tabs.addTab(new TabLink(newTab));
 
 }
 

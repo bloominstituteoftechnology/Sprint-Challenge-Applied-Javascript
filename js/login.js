@@ -34,11 +34,15 @@ loginBG.addEventListener('click', event => {
 
 loginButton.addEventListener('click', event => {
 
-  event.preventDefault();
-  loggedIn = true;
-  loginText.textContent = document.querySelector('#username-input').value;
-  hideLogin();
-  writeButton.style.display = "block";
+  if (document.querySelector('#username-input').value != "" && document.querySelector('#password-input').value != "") {
+
+    event.preventDefault();
+    loggedIn = true;
+    loginText.textContent = document.querySelector('#username-input').value;
+    hideLogin();
+    writeButton.style.display = "block";
+
+  }
 
 });
 
