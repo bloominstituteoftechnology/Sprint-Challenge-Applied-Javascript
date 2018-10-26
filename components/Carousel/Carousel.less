@@ -1,5 +1,6 @@
 .carousel {
   .width-100();
+
   .flex(center, center);
   height: 500px;
   position: relative;
@@ -8,6 +9,7 @@
   @media(min-width: 1200px){
     width: 1200px;
   }
+  
   .left-button, .right-button {
     .flex(center);
     color: @lambda-times-color-white;
@@ -24,18 +26,31 @@
       border: 2px solid @lambda-times-color-primary;
     }
   }
+
   .left-button {
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
   }
+
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
   }
+  
   img {
     .width-100();
     display: none;
   }
-}
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+} // end carousel

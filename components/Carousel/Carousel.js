@@ -10,7 +10,7 @@ class Carousel {
     this.selectedImageIndex = 0;
     this.selectedImage = this.images[this.selectedImageIndex];
     this.selectedImage.style.display = "flex";
-
+    
     this.leftButton.addEventListener('click', () => this.leftButtonClick());
     this.rightButton.addEventListener('click', () => this.rightButtonClick());
   }
