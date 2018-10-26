@@ -305,4 +305,34 @@ body {
 .carousel .current {
   width: 100%;
   display: flex;
+  opacity: 0;
+  animation-delay: 1.1s;
+  animation-name: transit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.carousel .image-gone {
+  width: 100%;
+  opacity: 1;
+  animation-name: gone;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes transit {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes gone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    width: 0%;
+    display: none;
+  }
 }

@@ -4,7 +4,6 @@ class Carousel {
         this.leftButton = this.items.querySelector('.left-button');
         this.rightButton = this.items.querySelector('.right-button');
         this.images = items.querySelectorAll('img');
-        console.log(this.rightButton.textContent);
 
         this.images.forEach((element, i) => {
             if (element.classList.value === 'current') this.current = i;
@@ -16,10 +15,18 @@ class Carousel {
             if (this.current === 0) this.leftButton.textContent = '';
             if (this.current > 0) this.rightButton.textContent = '>';
 
+
             this.images.forEach(element => {
                 element.classList.remove('current');
             })
-            this.images[this.current].classList.add('current');
+
+            this.images[this.current].classList.remove('image-gone');
+            if (this.current > 0) this.images[this.current - 1].classList.add('image-gone');
+
+            setTimeout(() => {
+                this.images[this.current].classList.add('current');
+            }, 2000)
+
 
         } else if (event.target === this.rightButton) {
             if (this.current < this.images.length - 1) this.current++
@@ -27,10 +34,18 @@ class Carousel {
             if (this.current === this.images.length - 1) this.rightButton.textContent = '';
             if (this.current < this.images.length - 1) this.leftButton.textContent = '<';
 
+
             this.images.forEach(element => {
                 element.classList.remove('current');
             })
+            if (this.images[this.current].classList.value === 'image-gone') this.images[this.current].classList.remove('image-gone');
+
+            this.images[this.current - 1].classList.add('image-gone');
+
+
             this.images[this.current].classList.add('current');
+
+
         }
 
     }
