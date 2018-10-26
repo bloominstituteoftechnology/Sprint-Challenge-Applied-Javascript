@@ -252,6 +252,7 @@ body {
   font-weight: bold;
 }
 .carousel {
+  user-select:none;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -298,7 +299,14 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .img-none {
+  width: 0%;
+  visibility: hidden;
+  transition: 200ms;
+}
+.carousel .img-display {
   width: 100%;
-  display: none;
+  visibility: visible;
+  transition: 200ms;
+  z-index: -1;
 }
