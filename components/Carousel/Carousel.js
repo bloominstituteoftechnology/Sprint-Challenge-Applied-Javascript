@@ -6,12 +6,32 @@ class Carousel {
     this.currentIndex = 0;
     this.images = document.querySelectorAll('img');
     this.images = Array.from(this.images); // .map(imageSlide => new ImageSlide(imageSlide))
-    this.leftArrow.addEventListener('click', () => {this.revealImage()})
-    this.rightArrow.addEventListener('click', () => {this.revealImage()})
+    // this.leftArrow.addEventListener('click', () => {this.revealImage()})
+    // this.rightArrow.addEventListener('click', () => {this.revealImage()})
+    this.leftArrow.addEventListener('click', () => {this.revealImageLeft()});
+    this.rightArrow.addEventListener('click', () => {this.revealImageRight()});
 }
+revealImageLeft() {
+    // console.log(this.images.length);
+    
+    for(let i = 0; i < this.images.length; i++){
+        this.images[i].style.transform = "translateX(-300px)";
+        // console.log(this.images[i]);        
+    };
+};
+
+revealImageRight() {
+    for(let i = 0; i < this.images.length; i++){
+        this.images[i].style.display = "block";
+        // console.log(this.images[i]);        
+    };
+};
+
 revealImage() {
+    console.log(this.images);
+    
     this.images.forEach(image => image.style.display = "block");
-    // console.log(this.images);
+    // console.log(this.clickEvent);
     
     }
 }
