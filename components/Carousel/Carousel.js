@@ -1,52 +1,35 @@
 class Carousel {
     constructor(carouselElement) {
         this.carouselElement = carouselElement;
-        console.log(this.carouselElement);
-
-        this.leftButton = document.querySelector('.left-button');
-        this.rightButton = document.querySelector('.right-button');
-
-        this.images = this.carouselElement.querySelectorAll('.carousel-img');
-        
-
-        this.images = new Image(this.images);
-       
-        console.log(this.images[0]);
-
-        this.leftButton.addEventListener('click', () => this.leftScroll());
-        this.rightButton.addEventListener('click', () => this.rightScroll());
+        this.carouselImage = carouselElement.querySelectorAll('.carousel-img');
+        this.leftButton = carouselElement.querySelector('.left-button');
+        this.rightButton = carouselElement.querySelector('.right-button');
+        this.count = 0;
+        this.leftButton.addEventListener('click', () => this.countDown() );
+        this.rightButton.addEventListener('click', () => this.countUp() );
+        this.carouselImage[0].style.display = 'block';
 
     }
-    leftClick() {
-
-
+    imageDisplay() {
+        document.querySelectorAll('.carousel-img').forEach( item => item.style.display = 'none');
+        this.carouselImage[this.count].style.display = 'block';
     }
-    rightClick() {
-
+    countUp() {
+        this.count++;
+        if(this.count > 3) { this.count = 0}
+        this.imageDisplay();
     }
-    displayImg() {
-        
-    }
-
-}
-
-class Image {
-    constructor(imgElement) {
-        this.imgElement = imgElement;
-        console.log(this.imgElement);
+    countDown() {
+        this.count--;
+        if(this.count < 0) { this.count = this.carouselImage.length - 1}
+        this.imageDisplay();
     }
 }
 
+// Grab grab the carousel DOM element and assign it to a variable.
 let carousel = document.querySelectorAll('.carousel');
-
-
+// Convert the NodeList we just created. Convert it to an Array. Then map the array into the class Carousel.
 carousel = Array.from(carousel).map( item => new Carousel(item));
-
-
-let carouselImages = document.querySelectorAll('.carousel-img')
-
-
-carouselImages[0].displayImg;
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
