@@ -4,14 +4,37 @@ class Carousel {
 
         this.left = this.element.querySelector('.left-button');
         this.right = this.element.querySelector('.right-button');
-        this.images = this.element.querySelectorAll('img');
+
+        
+        this.images = document.querySelectorAll(`.image`);
+        this.images = Array.from(this.images);
+        console.log(this.images)
+        this.index = 0
        
         
         this.left.addEventListener('click', () => this.select())
         this.right.addEventListener('click', () => this.select())
     }
+         
     select() {
-        this.images.forEach(image => image.style.display = 'block')
+        
+        
+        if (this.index > 0 && this.index < 3) {
+            this.images[this.index - 1].style.display = 'none'
+            this.images[this.index].style.display = 'block';
+            this.index += 1 
+        }
+        else if (this.index === 3) {
+            this.images[this.index - 1].style.display = 'none';
+            this.images[this.index].style.display = 'block';
+            this.index -= 3
+        }  
+        else {
+            this.images[this.index + 3].style.display = 'none';
+            this.images[this.index].style.display = 'block';
+            this.index += 1; 
+        }
+        console.log(this.images[this.index]);
     }
 }
 
@@ -19,7 +42,7 @@ let carousel = document.querySelectorAll('.carousel');
 
 //carousel = new Carousel
 carousel = Array.from(carousel).map(part => new Carousel(part));
-console.log(carousel);
+
 
 
 
