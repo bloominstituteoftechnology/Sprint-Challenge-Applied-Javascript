@@ -28,7 +28,6 @@ class Carousel {
 
     }
     handleRightClick() {
-        console.log('Right Button');
         this.images.forEach(img => img.hide());
 
         this.currentIndex === 0 ? this.currentIndex = this.images.length - 1 : this.currentIndex = this.currentIndex - 1;

@@ -38,7 +38,7 @@ We are going to create a Lambda Newspaper. The styling is modeled after the [LA 
 
 Your stretch challenge is to write the functionality of a `Carousel` component. You have the HTML and CSS already in place, simply un-comment the HTML in the `index.html` file. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. You may reference the `Tabs.js` file for assistance.
 
-- [ ] Complete the carousel functionality in `Carousel.js`
+- [x] Complete the carousel functionality in `Carousel.js`
 
 - [ ] If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
 
