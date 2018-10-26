@@ -10,24 +10,34 @@ class Carousel {
         this.rightBtn.addEventListener("click",()=>this.goRight());
     }
     goLeft(){
-        this.images[this.imgIndex].classList.remove('visible');
+        let currentIndex = this.imgIndex;
         if(this.imgIndex <= 0){
             this.imgIndex = this.images.length-1;
         }
         else{
             this.imgIndex--;
         }
-        this.images[this.imgIndex].classList.add('visible');
+        TweenMax.to(this.images[currentIndex],0.5,{opacity:0,ease: Power1.easeIn,onComplete:()=>{
+            this.images[currentIndex].classList.remove('visible');
+            this.images[currentIndex].removeAttribute("style");
+            TweenMax.from(this.images[this.imgIndex],0.5,{opacity:0, ease: Power3.easeIn});
+            this.images[this.imgIndex].classList.add('visible');
+        }})
     }
     goRight(){
-        this.images[this.imgIndex].classList.remove('visible');
+        let currentIndex = this.imgIndex;
         if(this.imgIndex >= this.images.length-1){
             this.imgIndex = 0;
         }
         else{
             this.imgIndex++;
         }
-        this.images[this.imgIndex].classList.add('visible');
+        TweenMax.to(this.images[currentIndex],0.5,{opacity:0,ease: Power1.easeIn,onComplete:()=>{
+            this.images[currentIndex].classList.remove('visible');
+            this.images[currentIndex].removeAttribute("style");
+            TweenMax.from(this.images[this.imgIndex],0.5,{opacity:0,ease: Power3.easeIn});
+            this.images[this.imgIndex].classList.add('visible');
+        }})
     }
 }
 
