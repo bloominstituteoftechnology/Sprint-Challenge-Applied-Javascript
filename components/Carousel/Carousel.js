@@ -1,31 +1,31 @@
 class Carousel {
     constructor(element) {
         this.element = element; 
-        this.counter = 0;
+        this.index = 0;
         this.backBtn = document.querySelector('.left-button'); 
         this.nextBtn = document.querySelector('.right-button'); 
         this.nextBtn.addEventListener('click', () => this.nextImg());
         this.backBtn.addEventListener('click', () => this.previousImg());
     }
-    nextImg() {
-        this.element.style.display = 'none';
-        let nextEl = this.element;
-        console.log(nextEl)
-        console.log(nextEl.nextElementSibling)
-        while (this.counter >= 0 && this.counter < 4 && nextEl) {
-            nextEl = nextEl.nextElementSibling;
-        }
-        nextEl.style.display = 'flex';
-        
+
+    nextImg() {       
+        if (this.index < carousel.length - 1) {
+            this.element.style.display = "none";
+            this.element = this.element.nextElementSibling;
+            this.element.style.display = "flex";
+            this.index++;
+        }    
     }
-    previousImg() {
-        console.log(this.element)
-        this.element.style.display = 'none';
-        // console.log(this.element.previousElementSibling)
-        this.element.previousElementSibling.style.display = 'flex'; 
+
+    previousImg() {       
+        if (this.index > 0) {
+            this.element.style.display = "none";
+            this.element = this.element.previousElementSibling;
+            this.element.style.display = "flex";
+            this.index--;
+        }
     }
 }
-
 
 let carousel = document.querySelectorAll('.carousel img');
 carousel[0].style.display = 'flex';
