@@ -1,8 +1,8 @@
 let loggedIn = false;
 let loginText = document.querySelector('#login');
-let loginBG = document.querySelector('.login-bg');
-let loginForm = document.querySelector('.login-form');
-let loginButton = document.querySelector('#submit');
+let loginBG = document.querySelector('.login .form-bg');
+let loginForm = document.querySelector('.login .form');
+let loginButton = document.querySelector('#login-submit');
 
 loginText.addEventListener('click', () => {
 
@@ -16,6 +16,7 @@ loginText.addEventListener('click', () => {
 
     loggedIn = false;
     loginText.textContent = "LOG IN";
+    writeButton.style.display = "none";
 
   }
 
@@ -23,7 +24,7 @@ loginText.addEventListener('click', () => {
 
 loginBG.addEventListener('click', event => {
 
-  if (event.target.classList.contains('login-bg')) {
+  if (event.target.classList.contains('form-bg')) {
 
     hideLogin();
 
@@ -37,6 +38,7 @@ loginButton.addEventListener('click', event => {
   loggedIn = true;
   loginText.textContent = document.querySelector('#username-input').value;
   hideLogin();
+  writeButton.style.display = "block";
 
 });
 
@@ -67,16 +69,5 @@ function showLogin() {
   document.addEventListener('wheel', preventDefault);
 
   document.addEventListener('keydown', handleKeyboard);
-
-}
-
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-function handleKeyboard(event) {
-
-  if (event.key.includes('Arrow'))
-    event.preventDefault();
 
 }

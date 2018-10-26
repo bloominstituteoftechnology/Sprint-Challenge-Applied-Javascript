@@ -302,7 +302,7 @@ body {
   width: 100%;
   display: none;
 }
-.login .login-bg {
+.form-bg {
   background-color: white;
   opacity: 0.8;
   width: 100%;
@@ -314,7 +314,7 @@ body {
   transform: translate(-50%, -50%);
   position: fixed;
 }
-.login .login-form {
+.form {
   display: none;
   background-color: rgba(209, 209, 209);
   padding: 15px 0;
@@ -326,24 +326,24 @@ body {
   transform: translate(-50%, -50%);
   position: fixed;
 }
-.login .login-form span {
+.form span {
   margin-top: 10px;
   padding-left: 40px;
   display: inline-block;
   width: 40%;
   font-size: 1.6rem;
 }
-.login .login-form input {
+.form input {
   min-height: 25px;
   display: inline-block;
   width: 50%;
 }
-.login .login-form textarea {
+.form textarea {
   min-height: 25px;
   display: inline-block;
   width: 50%;
 }
-.login .login-form #submit {
+.form .submit {
   display: inline-block;
   width: auto;
   margin-top: 10px;
