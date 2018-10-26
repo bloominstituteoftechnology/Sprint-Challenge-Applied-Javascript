@@ -49,7 +49,7 @@ class Index {
                 this.position--;
             }
 
-        } else {
+        } else if (direction = 'right') {
             if (this.position === this.max-1){
                 this.position = 0;
             } else {
