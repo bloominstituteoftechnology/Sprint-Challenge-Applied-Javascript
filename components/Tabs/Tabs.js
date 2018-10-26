@@ -3,12 +3,12 @@ class TabLink {
     this.link = link;
   
     this.tabLink = this.link.dataset.tab;
-    this.tabData = document.querySelector(`.card[data-tab='${this.tabLink}']`);
+    this.tabData = document.querySelectorAll(`.card[data-tab='${this.tabLink}']`);
    
     if(this.tabLink === 'all'){
       this.tabCard = document.querySelectorAll('.card');
     } else {
-      this.tabCard = document.querySelectorAll(`.card[data-tab='${this.link.dataset.tab}']`);
+      this.tabCard = this.tabData;
     }
       
     // // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
