@@ -2,26 +2,32 @@ class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
     this.tabElement = tabElement;
+    // console.dir(this.tabElement);
     
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this.tabElement.dataset.tab;
-    
-    // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
+    // console.log(this.tabData);
+    // We need to find out if a user clicked 'all' cards or a specific category. 
+    //  Follow the instructions below to accomplish this task:    
   
     // Check to see if this.tabData is equal to 'all'
     
     if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
       this.cards = document.querySelectorAll('.card');
-    } else if (this.tabData !== 'all'){
+    } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelector(`.card[data-tab = '${this.tabData}']`);
+      this.cards = document.querySelectorAll(`.card[data-tab = '${this.tabData}']`);
+      
+      // this.cards = new TabCard(this.cards);
     }
     // console.log(this.cards);
     
-    // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    this.cards = Array.from(this.cards).map((card) => {new TabCard(card)});
-    
+    // Map over the newly converted NodeList we just created in our if statement above. 
+    // Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
+    this.cards = Array.from(this.cards).map((card) => new TabCard(card));
+    // console.log(this.cards);
+
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click', () => {this.selectTab()});
     // console.log(this.tabElement);
@@ -40,12 +46,11 @@ class TabLink {
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach((card) => {card.style.display = 'none'});
-
-    console.log(cards);
+    // console.log(cards);
     
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add('active-tab');
-  
+      this.tabElement.classList.add('active-tab');
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     // console.log(this.cards);
     this.cards.forEach(card => card.selectCard());
@@ -61,6 +66,7 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = 'flex';
+    
   }
 }
 
