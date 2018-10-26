@@ -1,30 +1,56 @@
 class Carousel {
-    constructor(element) {
-        this.element = element;
-
-        this.photoContainer = this.element.querySelector('.carousel');
-        this.next = this.element.querySelector('.right-button');
-        this.prev = this.element.querySelector('.left-button');
-        this.photos = this.querySelectorAll('.carousel img');
-
-
-        this.count = 0;
-        this.photoTot = this.photos.length;
-        this.current = this.photos[0];
+    constructor(imgElement) {
+        this.carouselImg = imgElement;
+        this.current = 0;
+        this.next = document.querySelector('.right-button');
+        this.prev = document.querySelector('.left-button');
+        this.photos = carousel.querySelectorAll('img');
+        this.photos[this.current].style.display = 'block';
 
 
-        this.next.addEventListener('click', () => {
-            this.navigate(-1)
-        });
 
+        this.next.addEventListener('click', () => this.selectNext());
+        this.prev.addEventListener('click', () => this.selectPrev());
     }
 
+    selectPrev() {
+        this.photos = document.querySelectorAll('img');
 
+        this.photos.forEach(img => {
+            img.style.display = 'none';
+        });
+
+        --this.current;
+        if (this.current < 0) {
+            this.current = 3;
+        }
+
+        this.photos[this.current].style.display = 'block';
+        console.log(this.current);
+    }
+
+    selectNext() {
+        this.photos = document.querySelectorAll('img');
+
+        this.photos.forEach(img => {
+            img.style.display = 'none';
+        });
+
+        ++this.current;
+        if (this.current > 3) {
+            this.current = 0;
+        }
+
+        this.photos[this.current].style.display = 'block';
+        console.log(this.current);
+    }
 }
 
 
 
-// let carousel = document.querySelectorAll(".carousel");
+let carousel = document.querySelector('.carousel');
+
+carousel = new Carousel(carousel);
 
 
 
