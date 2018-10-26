@@ -5,22 +5,21 @@ class Carousel {
         this.rightButton = myCarousel.querySelector(".right-button");
         this.images = this.myCarousel.querySelectorAll("img");
         this.images = Array.from(this.images).map( image => new Image (image));
-        this.index = 0;
-        this.max = this.images.length;
-        this.images[this.index].select();
+        this.index = new Index (this.images.length);
+        this.images[this.index.position].select();
 
         this.leftButton.addEventListener('click', () => this.advanceLeft() );
         this.rightButton.addEventListener('click', () => this.advanceRight() );
     }
     advanceLeft(){
-        this.images[this.index].deselect();
-        this.index--;
-        this.images[this.index].select();
+        this.images[this.index.position].deselect();
+        this.index.advance('left');
+        this.images[this.index.position].select();
     }
     advanceRight(){
-        this.images[this.index].deselect();
-        this.index++;
-        this.images[this.index].select();
+        this.images[this.index.position].deselect();
+        this.index.advance('right');
+        this.images[this.index.position].select();
     }
 
 }
@@ -37,9 +36,29 @@ class Image {
     }
 }
 
-// class Index {
-//     constructor (index)
-// }
+class Index {
+    constructor (max){
+        this.max = max;
+        this.position = 0;
+    }
+    advance(direction){
+        if (direction === 'left'){
+            if (this.position === 0){
+                this.position = this.max-1;
+            } else {
+                this.position--;
+            }
+
+        } else {
+            if (this.position === this.max-1){
+                this.position = 0;
+            } else {
+                this.position++;
+            }
+        }
+    }
+    
+}
 
 let carousel = document.querySelector(".carousel");
 
