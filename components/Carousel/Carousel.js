@@ -1,50 +1,78 @@
 class Carousel {
-    constructor(element) {
-        this.element = element;   
+  constructor(element) {
+    this.element = element;
 
-        this.left = this.element.querySelector('.left-button');
-        this.right = this.element.querySelector('.right-button');
+    this.left = this.element.querySelector('.left-button');
+    this.right = this.element.querySelector('.right-button');
 
-        
-        this.images = document.querySelectorAll(`.image`);
-        this.images = Array.from(this.images);
-        console.log(this.images)
-        this.index = 0
-       
-        
-        this.left.addEventListener('click', () => this.select())
-        this.right.addEventListener('click', () => this.select())
+    this.images = document.querySelectorAll(`.image`);
+    this.images = Array.from(this.images);
+    this.index1 = 0;
+    this.index2 = 0;
+
+    this.left.addEventListener('click', event => this.select(event));
+    this.right.addEventListener('click', event => this.select(event));
+
+    // this.tween = TweenMax.to('.image', {opacity: 1, rotationX: 360, ease: Sine.easeIn });
+  }
+
+  select(event) {
+    if (event.target === this.right) {
+      this.images.forEach(image => (image.style.display = 'none'));
+      if (this.index1 === 1) {
+        this.images[0].style.display = 'none';
+        this.images[1].style.display = 'block';
+        this.index1 = 2;
+        this.index2 = 0;
+      } else if (this.index1 === 2) {
+        this.images[1].style.display = 'none';
+        this.images[2].style.display = 'block';
+        this.index1 = 3;
+        this.index2 = 1;
+      } else if (this.index1 === 3) {
+        this.images[2].style.display = 'none';
+        this.images[3].style.display = 'block';
+        this.index1 = 0;
+        this.index2 = 2;
+      } else {
+        this.images[3].style.display = 'none';
+        this.images[0].style.display = 'block';
+        this.index1 = 1;
+        this.index2 = 3;
+      }
     }
-         
-    select() {
-        
-        
-        if (this.index > 0 && this.index < 3) {
-            this.images[this.index - 1].style.display = 'none'
-            this.images[this.index].style.display = 'block';
-            this.index += 1 
-        }
-        else if (this.index === 3) {
-            this.images[this.index - 1].style.display = 'none';
-            this.images[this.index].style.display = 'block';
-            this.index -= 3
-        }  
-        else {
-            this.images[this.index + 3].style.display = 'none';
-            this.images[this.index].style.display = 'block';
-            this.index += 1; 
-        }
-        console.log(this.images[this.index]);
+
+    if (event.target === this.left) {
+      this.images.forEach(image => (image.style.display = 'none'));
+      if (this.index2 === 1) {
+        this.images[2].style.display = 'none';
+        this.images[1].style.display = 'block';
+        this.index2 = 0;
+        this.index1 = 2;
+      } else if (this.index2 === 2) {
+        this.images[3].style.display = 'none';
+        this.images[2].style.display = 'block';
+        this.index2 = 1;
+        this.index1 = 3;
+      } else if (this.index2 === 3) {
+        this.images[0].style.display = 'none';
+        this.images[3].style.display = 'block';
+        this.index2 = 2;
+        this.index1 = 0;
+      } else {
+        this.images[1].style.display = 'none';
+        this.images[0].style.display = 'block';
+        this.index2 = 3;
+        this.index1 = 1;
+      }
     }
+  }
 }
 
 let carousel = document.querySelectorAll('.carousel');
 
 //carousel = new Carousel
 carousel = Array.from(carousel).map(part => new Carousel(part));
-
-
-
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
