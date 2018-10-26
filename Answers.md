@@ -10,7 +10,7 @@ An event is when the user interacts with something on the page such as clicking 
 
 3. What is an event listener?
 
-An event listening is the machanism which records events happening on the page and allows the developer to attach a response to an event.
+An event listening is the mechanism which records events happening on the page and allows the developer to attach a response to an event.
 
 4. Why would we convert a NodeList into an Array?
 
