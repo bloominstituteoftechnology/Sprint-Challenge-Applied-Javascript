@@ -4,7 +4,7 @@ class Carousel {
     this.leftArrow = document.querySelector('.left-button');
     this.rightArrow = document.querySelector('.right-button');
     this.currentIndex = 0;
-    this.images = document.querySelectorAll('img');
+    this.images = document.querySelectorAll('.carousel img');
     this.images = Array.from(this.images); // .map(imageSlide => new ImageSlide(imageSlide))
     // this.leftArrow.addEventListener('click', () => {this.revealImage()})
     // this.rightArrow.addEventListener('click', () => {this.revealImage()})
