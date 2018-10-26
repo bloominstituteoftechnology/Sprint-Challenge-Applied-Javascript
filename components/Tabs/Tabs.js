@@ -29,7 +29,8 @@ class TabLink {
         console.log(`${this.tabData} Button was clicked`);
 
         // Select all elements with the .tab class on them
-        // const tabs = document.querySelectorAll();
+        const tabs = document.querySelectorAll('.tab');
+        console.log(tabs);
 
         // Iterate through the NodeList removing the .active-tab class from each element
         // tabs.forEach()
