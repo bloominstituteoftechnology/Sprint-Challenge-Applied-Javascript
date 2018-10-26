@@ -5,6 +5,7 @@ class Carousel {
         this.right = this.element.querySelector('.right-button');
         this.image = this.element.querySelectorAll('img');
         this.image = Array.from(this.image);
+        this.image[0].classList.toggle('active');
         this.index = 0;
         this.current = this.image[`${this.index}`];
 
