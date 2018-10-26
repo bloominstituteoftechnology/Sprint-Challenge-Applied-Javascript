@@ -221,6 +221,7 @@ body {
   justify-content: space-between;
   align-items: none;
   flex-direction: column;
+  display: none;
   background-color: #fff;
   width: 380px;
   margin-bottom: 16px;

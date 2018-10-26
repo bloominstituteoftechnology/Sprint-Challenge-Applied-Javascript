@@ -4,10 +4,12 @@ class Tabs {
 
     this.tabElement = tabElement;
 
-    this.tabs = document.querySelectorAll('.tab');
+    this.tabs = tabElement.querySelectorAll('.tab');
 
     // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
     this.tabs = Array.from(this.tabs).map(tab => new TabLink(tab));
+
+    this.tabs[0].selectTab();
 
   }
 
@@ -69,13 +71,21 @@ class TabLink {
     const cards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => card.style.display = "none");
+    cards.forEach(card => TweenMax.to(card, 1, {scale: 0, onComplete: () => {
 
-    // Add a class of ".active-tab" to this.tabElement
-    this.tabElement.classList.add('active-tab');
+      // Add a class of ".active-tab" to this.tabElement
+      this.tabElement.classList.add('active-tab');
 
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+      card.style.display = "none";
+
+      // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
+      this.cards.forEach(card => {
+        card.selectCard();
+        TweenMax.to(card.cardElement, 1, {scale: 1});
+      });
+
+    }}));
+
   }
 
   addCard(card) {
@@ -98,4 +108,4 @@ class TabCard {
 
 }
 
-let tabs = new Tabs(document.querySelector('.tab'));
+let tabs = new Tabs(document.querySelector('.tabs'));

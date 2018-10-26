@@ -19,7 +19,7 @@ formBG.addEventListener('click', event => {
 
   }
 
-})
+});
 
 articleSubmit.addEventListener('click', event => {
 
