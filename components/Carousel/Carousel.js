@@ -23,10 +23,12 @@ class Carousel {
     this.btnLeft.addEventListener('mousedown', () => this.start(this.slideLeft.bind(this)));
     this.btnLeft.addEventListener('mouseup', () => this.stop());
     this.btnLeft.addEventListener('mouseleave', () => this.stop());
+
+    this.btnLeft.style.zIndex = 100;
   }
 
   start(cb) {
-    this.interval = setInterval(cb, 800);
+    this.interval = setInterval(cb, 1000);
   }
 
   stop() {
@@ -34,15 +36,24 @@ class Carousel {
   }
 
   slideRight() {
-    this.images[this.index].style.display = 'none';
-    this.index = (this.index + 1) % this.images.length;
-    this.images[this.index].style.display = 'block';
+    const nextIndex = (this.index + 1) % this.images.length;
+    this.fadeInOut(nextIndex);
   }
 
   slideLeft() {
-    this.images[this.index].style.display = 'none';
-    this.index = this.index === 0 ? this.images.length-1 : this.index-1;
-    this.images[this.index].style.display = 'block';
+    const nextIndex = this.index === 0 ? this.images.length-1 : this.index-1;
+    this.fadeInOut(nextIndex);
+  }
+
+  fadeInOut(nextIndex) {
+    TweenLite.to(this.images[this.index], .4, {autoAlpha: '0', onComplete: () => {
+      this.images[this.index].style.display = 'none';
+      this.images[nextIndex].style.display = 'block';
+    }});
+
+    TweenLite.fromTo(this.images[nextIndex], .4, {autoAlpha: 0}, {autoAlpha: 1, onComplete: () => {
+      this.index = nextIndex;
+    }, delay: .4});
   }
 }
 
