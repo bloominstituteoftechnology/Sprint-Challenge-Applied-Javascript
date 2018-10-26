@@ -1,11 +1,51 @@
 class Carousel {
+    constructor(items) {
+        this.items = items;
+        this.leftButton = this.items.querySelector('.left-button');
+        this.rightButton = this.items.querySelector('.right-button');
+        this.images = items.querySelectorAll('img');
+
+        this.images.forEach((element, i) => {
+            if (element.classList.value === 'current') this.current = i;
+        });
+
+        if (event.target === this.leftButton) {
+            if (this.current > 0) this.current--
+
+            this.images.forEach(element => {
+                element.classList.remove('current');
+            })
+            this.images[this.current].classList.add('current');
+
+        } else if (event.target === this.rightButton) {
+            if (this.current < this.images.length - 1) this.current++
+
+            this.images.forEach(element => {
+                element.classList.remove('current');
+            })
+            this.images[this.current].classList.add('current');
+        }
+
+    }
 
 }
 
-let carousel = document.querySelector();
+let carousel = document.querySelector('.carousel');
+
+carousel.addEventListener('click', () => {
+    return new Carousel(carousel);
+})
+
+// carousel.querySelector('left-button').addEventListener('click', (event) => {
+//     return new Carousel(event);
+// })
+
+// carousel.querySelector('right-button').addEventListener('click', (event) => {
+//     return new Carousel(event);
+// })
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
-    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
+    1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
     2. You will need to grab a reference to all of the images
     3. Create a current index
     4. Those buttons are gonna need some click handlers.
