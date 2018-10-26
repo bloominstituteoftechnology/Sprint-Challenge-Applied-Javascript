@@ -24,7 +24,7 @@ class Carousel {
 
 
 
-let carousel = document.querySelectorAll(".carousel");
+// let carousel = document.querySelectorAll(".carousel");
 
 
 
