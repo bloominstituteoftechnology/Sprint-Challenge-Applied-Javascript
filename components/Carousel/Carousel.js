@@ -19,6 +19,7 @@ class Carousel {
 
     handleLeftClick() {
         console.log('Left Button');
+
     }
     handleRightClick() {
         console.log('Right Button');
@@ -28,6 +29,10 @@ class Carousel {
 class CarouselImage {
     constructor(image) {
         this.image = image;
+    }
+
+    showImage() {
+        this.image.style.display = 'inline-block';
     }
 }
 
