@@ -37,12 +37,32 @@ class Carousel {
 
   slideRight() {
     const nextIndex = (this.index + 1) % this.images.length;
-    this.fadeInOut(nextIndex);
+    this.slideOut(nextIndex);
   }
 
   slideLeft() {
     const nextIndex = this.index === 0 ? this.images.length-1 : this.index-1;
-    this.fadeInOut(nextIndex);
+    this.slideIn(nextIndex);
+  }
+
+  slideOut(nextIndex) {
+    TweenLite.to(this.images[this.index], .4, {xPercent: '+=100', ease:Power1.easeOut, onComplete: () => {
+      TweenLite.set(this.images[this.index], {xPercent: '-=100', display: 'none'});
+      TweenLite.set(this.images[nextIndex], {xPercent: '-=50', display: 'block'});
+      TweenLite.to(this.images[nextIndex], .4, {xPercent: '+=50', ease:Power1.easeOut, onComplete: () => {
+        this.index = nextIndex;
+      } })
+    }})
+  }
+
+  slideIn(nextIndex) {
+    TweenLite.to(this.images[this.index], .4, {xPercent: '-=100', ease:Power1.easeOut, onComplete: () => {
+      TweenLite.set(this.images[this.index], {xPercent: '+=100', display: 'none'});
+      TweenLite.set(this.images[nextIndex], {xPercent: '+=50', display: 'block'});
+      TweenLite.to(this.images[nextIndex], .4, {xPercent: '-=50', ease:Power1.easeOut, onComplete: () => {
+        this.index = nextIndex;
+      } })
+    }})
   }
 
   fadeInOut(nextIndex) {
