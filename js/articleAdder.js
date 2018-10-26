@@ -23,25 +23,29 @@ formBG.addEventListener('click', event => {
 
 articleSubmit.addEventListener('click', event => {
 
-  event.preventDefault();
-
   let articleName = document.querySelector('#title-input').value;
   let articleCategory = document.querySelector('#category-input').value;
 
-  let card = createArticle(articleName, articleCategory, loginText.textContent);
+  if (articleName != "" && articleCategory != "") {
 
-  if (categories.indexOf(articleCategory) == -1) {
+    event.preventDefault();
 
-    createTab(articleCategory);
-    categories.push(articleCategory);
+    let card = createArticle(articleName, articleCategory, loginText.textContent);
+
+    if (categories.indexOf(articleCategory) == -1) {
+
+      createTab(articleCategory);
+      categories.push(articleCategory);
+
+    }
+
+    tabs.addCard(card, articleCategory);
+
+    document.querySelector('.cards-container').appendChild(card);
+
+    event.target.parentNode.reset();
 
   }
-
-  tabs.addCard(card, articleCategory);
-
-  document.querySelector('.cards-container').appendChild(card);
-
-  event.target.parentNode.reset();
 
 });
 
