@@ -251,6 +251,18 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
+.cards-container .card p {
+  display: none;
+}
+.cards-container .card .notHidden {
+  display: flex;
+}
+.cards-container .expanded {
+  width: 90%;
+}
+.cards-container:hover {
+  cursor: pointer;
+}
 .carousel {
   width: 100%;
   display: flex;

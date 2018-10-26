@@ -43,7 +43,10 @@ class TabLink {
     this.tabElement.classList.add('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => {
+      card.selectCard();
+      card.closeCard();
+    });
   }
 }
 
@@ -51,12 +54,27 @@ class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
+    //adding below for my own stretch.. adding content to cards to unhide when clicked
+    this.cardContent = this.cardElement.querySelector('p');
+
+    
+    this.cardElement.addEventListener('click',(event)=>{
+      console.log('a card was clicked');
+      this.openCard();
+    })
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = 'flex';
   }
-
+  openCard(){
+    this.cardContent.classList.add('notHidden');
+    this.cardElement.classList.add('expanded');
+  }
+  closeCard(){
+    this.cardContent.classList.remove('notHidden');
+    this.cardElement.classList.remove('expanded');
+  }
 }
 
 // First step! Create a reference to all ".tab" classes.

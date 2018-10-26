@@ -7,6 +7,8 @@
     width: 1200px;
   }
   .card {
+
+
     .border-bottom-grey();
     .flex(space-between, none, column);
     background-color: @lambda-times-color-white;
@@ -35,5 +37,19 @@
         font-weight: bold;
       }
     }
+    p {
+      display: none;
+    }
+    .notHidden {
+      display: flex;
+    }
+
+  }
+  .expanded {
+    width: 90%;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
