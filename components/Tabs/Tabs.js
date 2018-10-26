@@ -40,7 +40,7 @@ class TabLink {
         console.log('Cards:', cards);
 
         // Iterate through the NodeList setting the display style each one to 'none'
-        // cards.forEach()
+        cards.forEach(card => card.style.display = 'none');
 
         // Add a class of ".active-tab" to this.tabElement
         // this.tabElement;
