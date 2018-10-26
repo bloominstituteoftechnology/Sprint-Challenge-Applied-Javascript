@@ -5,7 +5,7 @@ class TabLink {
     // console.log(this.tabElement);
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this.tabElement.dataset.tab; 
-    
+    // console.log(this.tabData);
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     // Check to see if this.tabData is equal to 'all'
@@ -68,3 +68,4 @@ let tabs = document.querySelectorAll('.tab');
 
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
 tabs = Array.from(tabs).map( item => new TabLink(item));
+// console.log(tabs);
