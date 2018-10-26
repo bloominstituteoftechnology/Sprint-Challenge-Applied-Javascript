@@ -9,7 +9,7 @@ class TabLink {
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     // Check to see if this.tabData is equal to 'all'
-    if(this.tabData === '.tab.active-tab'){
+    if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
        this.cards = document.querySelectorAll('.card');
     } else {
@@ -19,7 +19,7 @@ class TabLink {
     
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-     this.cards = Array.from(this.cards).map(link => new TabCard(link));
+     this.cards = Array.from(this.cards).map(cardLink => new TabCard(cardLink));
 
     // Add a click event that invokes this.selectTab
      this.tabElement.addEventListener('click', () => {
@@ -34,7 +34,7 @@ class TabLink {
     
     // Iterate through the NodeList removing the .active-tab class from each element
      tabs.forEach( tab => {
-       tab.classList.remove('.active-tab'); // **removed dot from class if doesn't work add back**
+       tab.classList.remove('active-tab'); // **removed dot from class if doesn't work add back**
      })
 
     // Select all of the elements with the .card class on them
@@ -46,7 +46,7 @@ class TabLink {
     })
     
     // Add a class of ".active-tab" to this.tabElement
-    this.tabElement.classList.add('.active-tab'); //  *** again removed dot from active-tab if it doesn't work replace it.
+    this.tabElement.classList.add('active-tab'); //  *** again removed dot from active-tab if it doesn't work replace it.
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
      this.cards.forEach(card => card.selectCard());
