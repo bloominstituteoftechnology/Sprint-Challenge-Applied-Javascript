@@ -64,3 +64,4 @@ let tabs = document.querySelectorAll('.tab');
 
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
+//tabs[0].selectTab();
