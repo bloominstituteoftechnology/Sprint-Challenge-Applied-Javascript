@@ -4,13 +4,13 @@ class Carousel {
         this.leftButton = this.carousel.querySelector('.left-button');
         this.rightButton = this.carousel.querySelector('.right-button');
 
-        this.photos = this.carousel.querySelectorAll('img');
+        this.images = this.carousel.querySelectorAll('img');
 
-        this.photos = Array.from(this.photos).map(img => new CarouselImage(img));
+        this.images = Array.from(this.images).map(img => new CarouselImage(img));
 
         this.currentIndex = 0;
 
-        this.currentImage = this.photos[this.index];
+        // this.currentImage = this.images[this.currentIndex];
 
         this.leftButton.addEventListener('click', () => this.handleLeftClick());
         this.rightButton.addEventListener('click', () => this.handleRightClick());
@@ -19,11 +19,21 @@ class Carousel {
     // Methods
 
     handleLeftClick() {
-        console.log('Left Button');
+        this.images.forEach(img => img.hide());
+
+        this.currentIndex === this.images.length - 1 ? this.currentIndex = 0 : this.currentIndex = this.currentIndex + 1;
+
+        this.images[this.currentIndex].showImage();
+
 
     }
     handleRightClick() {
         console.log('Right Button');
+        this.images.forEach(img => img.hide());
+
+        this.currentIndex === 0 ? this.currentIndex = this.images.length - 1 : this.currentIndex = this.currentIndex - 1;
+
+        this.images[this.currentIndex].showImage();
     }
 }
 
@@ -35,6 +45,10 @@ class CarouselImage {
     showImage() {
         this.image.style.display = 'inline-block';
     }
+
+    hide() {
+        this.image.style.display = 'none';
+    }
 }
 
 
@@ -42,7 +56,7 @@ class CarouselImage {
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
 
-carousel.photos[0].showImage();
+carousel.images[0].showImage();
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
