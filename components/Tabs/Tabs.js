@@ -73,4 +73,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map((it) => { return new TabLink(it); });
 
 // this last
-tabs[3].selectTab();
+tabs[0].selectTab();
