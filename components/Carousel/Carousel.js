@@ -4,21 +4,35 @@ class Carousel {
         this.carouselImages = this.carousel.querySelectorAll('img');
         this.carouselLButton = this.carousel.querySelector('.left-button');
         this.carouselRButton = this.carousel.querySelector('.right-button');
-        this.carouselLButton.addEventListener('click', () => this.prevImage(this.activeImage));
-        this.carouselRButton.addEventListener('click', () => this.nextImage(this.activeImage));
+        this.carouselLButton.addEventListener('click', currentImage => this.prevImage());
+        this.carouselRButton.addEventListener('click', currentImage => this.nextImage());
         this.activeImage = this.carouselImages[0];
         this.activeImageIndex = 0;
         this.displayImage(this.activeImage);
+        console.log(this.carouselImages.length);
     }
-    prevImage(currentImage) {}
-    nextImage(currentImage) {
-        currentImage.style.display = 'none';
-        this.activeImage = this.carouselImages[++this.activeImageIndex];
-        this.activeImageIndex += 1;
-        this.displayImage(this.activeImage);
+    prevImage() {
+        this.activeImage.style.display = 'none';
+        if (this.activeImageIndex > 0) {
+            this.activeImageIndex -= 1;
+        } else {
+            this.activeImageIndex = this.carouselImages.length - 1;
+        }
+        this.displayImage();
     }
-    displayImage(nextImage) {
-        nextImage.style.display = 'block';
+    nextImage() {
+        this.activeImage.style.display = 'none';
+        if (this.activeImageIndex < this.carouselImages.length - 1) {
+            ++this.activeImageIndex;
+        } else {
+            this.activeImageIndex = 0;
+        }
+
+        this.displayImage();
+    }
+    displayImage() {
+        this.activeImage = this.carouselImages[this.activeImageIndex];
+        this.activeImage.style.display = 'block';
     }
 }
 
