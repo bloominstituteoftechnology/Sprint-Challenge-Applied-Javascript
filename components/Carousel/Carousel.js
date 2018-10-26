@@ -8,7 +8,6 @@ class Carousel {
         this.currentIndex = 0;
 
         this.images = Array.from(element.querySelectorAll('img'))
-        console.log(this.images);
 
         this.images[0].style.display = "block";
 
@@ -16,20 +15,23 @@ class Carousel {
         this.rightBtn.addEventListener('click', () => this.rightImage());
     }
     leftImage(){
+        TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
         if(this.currentIndex < 1)
             this.currentIndex = this.images.length ;
         this.currentIndex--;
         this.images.forEach((img) => img.style.display = "none");
-        console.log(this.currentIndex);
         this.images[this.currentIndex].style.display = "block";
+        TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
         
     }
     rightImage(){
-        if(this.currentIndex == this.images.length -1)
+        TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
+        if(this.currentIndex >= this.images.length -1)
             this.currentIndex = -1;
         this.currentIndex++;
         this.images.forEach((img) => img.style.display = "none");
         this.images[this.currentIndex].style.display = "block";
+        TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
         
     }
 
