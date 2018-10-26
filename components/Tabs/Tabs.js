@@ -34,15 +34,22 @@ class TabLink {
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
+    // animate selected cards display
+    TweenLite.to(cards, .4, {autoAlpha: 0, onComplete: () => {
+      // Iterate through the NodeList setting the display style each one to 'none'
+      cards.forEach(card => card.style.display = 'none');
 
-    // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => card.style.display = 'none')
+      // Add a class of ".active-tab" to this.tabElement
+      this.tabElement.classList.add('active-tab');
     
-    // Add a class of ".active-tab" to this.tabElement
-    this.tabElement.classList.add('active-tab');
-  
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+      // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
+      this.cards.forEach(card => card.selectCard());
+    }});
+
+
+    // animate selected cards display
+    const cardsElems = Array.from(this.cards).map( card => card.cardElement);
+    TweenLite.to(cardsElems, .4, {autoAlpha: 1, delay: .4});
   }
 }
 
@@ -54,6 +61,7 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = 'flex';
+    this.cardElement.style.opacity = 0;
   }
 
 }
