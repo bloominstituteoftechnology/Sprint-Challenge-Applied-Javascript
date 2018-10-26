@@ -30,7 +30,11 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(tab => tab.classList.remove('active-tab'));
+    TweenLite.to(tabs, .4 , {className:'-=active-tab'});
+    // tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+    // Add a class of ".active-tab" to this.tabElement
+    TweenLite.to(this.tabElement, .4, {className:'+=active-tab'});
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
@@ -38,9 +42,6 @@ class TabLink {
     TweenLite.to(cards, .4, {autoAlpha: 0, onComplete: () => {
       // Iterate through the NodeList setting the display style each one to 'none'
       cards.forEach(card => card.style.display = 'none');
-
-      // Add a class of ".active-tab" to this.tabElement
-      this.tabElement.classList.add('active-tab');
     
       // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
       this.cards.forEach(card => card.selectCard());
