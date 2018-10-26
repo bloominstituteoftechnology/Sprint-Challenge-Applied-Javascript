@@ -61,8 +61,9 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.display = 'flex';
-    // console.log('this.cardElement', this.cardElement)
+    this.cardElement.style.display = 'flex';
+
+    console.log('this.cardElement', this.cardElement)
   }
 
 }
