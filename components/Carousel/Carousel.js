@@ -5,7 +5,11 @@ class Carousel {
         this.rightButton = this.carousel.querySelector('.right-button');
 
         this.photos = this.carousel.querySelectorAll('img');
+        this.photos = Array.from(this.photos).map(img => new CarouselImage(img));
+
         this.currentIndex = this.photos[0];
+
+        console.log(this.photos);
 
         this.leftButton.addEventListener('click', () => this.handleLeftClick());
         this.rightButton.addEventListener('click', () => this.handleRightClick());
@@ -18,6 +22,12 @@ class Carousel {
     }
     handleRightClick() {
         console.log('Right Button');
+    }
+}
+
+class CarouselImage {
+    constructor(image) {
+        this.image = image;
     }
 }
 
