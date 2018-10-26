@@ -1,6 +1,38 @@
-// class Carousel {
+class Carousel {
+    constructor(carouselEle){
+        this.carouselEle = carouselEle;
+        this.rightBtn = this.carouselEle.querySelector('.right-button');
+        this.leftBtn = this.carouselEle.querySelector('.left-button');
+        this.images = this.carouselEle.querySelectorAll('img');
+        this.imgIndex = 0;
+        this.images[0].classList.add('visible');
+        this.leftBtn.addEventListener("click",()=>this.goLeft());
+        this.rightBtn.addEventListener("click",()=>this.goRight());
+    }
+    goLeft(){
+        this.images[this.imgIndex].classList.remove('visible');
+        if(this.imgIndex <= 0){
+            this.imgIndex = this.images.length-1;
+        }
+        else{
+            this.imgIndex--;
+        }
+        this.images[this.imgIndex].classList.add('visible');
+    }
+    goRight(){
+        this.images[this.imgIndex].classList.remove('visible');
+        if(this.imgIndex >= this.images.length-1){
+            this.imgIndex = 0;
+        }
+        else{
+            this.imgIndex++;
+        }
+        this.images[this.imgIndex].classList.add('visible');
+    }
+}
 
-// }
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
 
 // let carousel = document.querySelector();
 
@@ -13,32 +45,3 @@
     6. Have fun!
 */
 
-const carousel = document.querySelector('.carousel');
-const leftBtn = carousel.querySelector('.left-button');
-const rightBtn = carousel.querySelector('.right-button');
-const images = carousel.querySelectorAll('img');
-let imgIndex = 0;
-
-leftBtn.addEventListener('click',()=>{
-    images[imgIndex].classList.remove('visible');
-    if(imgIndex <= 0){
-        imgIndex = images.length-1;
-    }
-    else{
-        imgIndex--;
-    }
-    images[imgIndex].classList.add('visible');
-})
-
-rightBtn.addEventListener('click',()=>{
-    images[imgIndex].classList.remove('visible');
-    if(imgIndex >= images.length-1){
-        imgIndex = 0;
-    }
-    else{;
-        imgIndex++;
-    }
-    images[imgIndex].classList.add('visible');
-})
-
-images[0].classList.add('visible');
