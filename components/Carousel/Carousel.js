@@ -12,6 +12,7 @@ class Carousel {
 revealImage() {
     this.images.forEach(image => image.style.display = "block");
     // console.log(this.images);
+    
     }
 }
 // class ImageSlide {
@@ -20,8 +21,8 @@ revealImage() {
 let carousel = document.querySelector('.carousel');
 // console.log(carousel);
 carousel = new Carousel(carousel);
-
-console.log(images);
+carousel.revealImage();
+// console.log(carousel.revealImage);
 
 
 
