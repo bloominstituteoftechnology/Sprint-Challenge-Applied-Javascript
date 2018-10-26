@@ -8,10 +8,9 @@ class Carousel {
     this.corouselImgs[this.index].style.display = 'block';
      
     this.leftButton.addEventListener('click', () => { this.swapImageLeft() });
+    this.leftButton.style.zIndex = 3;
     this.rightButton.addEventListener('click', () =>  { this.swapImageRight() });
     
-
-    console.log(this.corouselImgs);
 
     }
 
@@ -20,7 +19,8 @@ class Carousel {
             this.corouselImgs[this.index].style.display = 'none'; 
             this.index++;
             this.corouselImgs[this.index].style.display = 'block';
-            console.log(this.index);
+
+           TweenLite.from(this.corouselImgs[this.index], 1, {autoAlpha:0, x: 100});
         
         }
     }
@@ -30,6 +30,8 @@ class Carousel {
             this.corouselImgs[this.index].style.display = 'none'; 
             this.index--;
             this.corouselImgs[this.index].style.display = 'block';
+
+            TweenLite.from(this.corouselImgs[this.index], 1, {autoAlpha:0, x: -100});
         }
     }
 }
