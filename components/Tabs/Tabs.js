@@ -22,28 +22,34 @@ class TabLink {
         this.cards = Array.from(this.cards).map(card => TabCard(card));
 
         // Add a click event that invokes this.selectTab
-        // this.tabElement.addEventListener();
+        this.tabElement.addEventListener('click', () => {
+            this.selectTab()
+        });
     }
 
     selectTab() {
 
         // Select all elements with the .tab class on them
-        // const tabs = document.querySelectorAll();
+        const tabs = document.querySelectorAll('tab');
 
         // Iterate through the NodeList removing the .active-tab class from each element
-        // tabs.forEach()
+        tabs.forEach(tab => {
+            tab.classList.remove('active-tab')
+        });
 
         // Select all of the elements with the .card class on them
-        // const cards = ;
+        const cards = document.querySelectorAll('.card');
 
         // Iterate through the NodeList setting the display style each one to 'none'
-        // cards.forEach()
+        cards.forEach(card => {
+            card.classList.toggle('none')
+        });
 
         // Add a class of ".active-tab" to this.tabElement
-        // this.tabElement;
+        this.tabElement.classList.add('active-tab');
 
         // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-        // this.cards.forEach(card => card.selectCard());
+        this.cards.forEach(card => card.selectCard());
     }
 }
 
