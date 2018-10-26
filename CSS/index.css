@@ -302,3 +302,50 @@ body {
   width: 100%;
   display: none;
 }
+.login .login-bg {
+  background-color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+.login .login-form {
+  display: none;
+  background-color: rgba(209, 209, 209);
+  padding: 15px 0;
+  margin: auto;
+  width: 40%;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+.login .login-form span {
+  margin-top: 10px;
+  padding-left: 40px;
+  display: inline-block;
+  width: 40%;
+  font-size: 1.6rem;
+}
+.login .login-form input {
+  min-height: 25px;
+  display: inline-block;
+  width: 50%;
+}
+.login .login-form textarea {
+  min-height: 25px;
+  display: inline-block;
+  width: 50%;
+}
+.login .login-form #submit {
+  display: inline-block;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 40%;
+}
