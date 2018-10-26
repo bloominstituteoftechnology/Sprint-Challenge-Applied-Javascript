@@ -7,6 +7,6 @@ an event is an action that occurs by another source such as a mouse or keyboard 
 3. What is an event listener?
 it is coding that waits on an event to occur and does what it was specified to do should that event occur
 4. Why would we convert a NodeList into an Array?
-so that you can use your javascript instead of using the nodelists that is a browser api that let you access dom elements
+so that you can use your javascript to modify the array instead of using the nodelists that is a browser api that let you access dom elements
 5. What is a component? 
-it is a reusable piece of code that you can use throughout your design
+any web page item that utilizes css javascript an html for functionality
