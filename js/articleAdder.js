@@ -140,4 +140,11 @@ function handleKeyboard(event) {
   if (event.key.includes('Arrow'))
     event.preventDefault();
 
+  if (event.key == "Escape") {
+
+    hideWriter();
+    hideLogin();
+
+  }
+
 }
