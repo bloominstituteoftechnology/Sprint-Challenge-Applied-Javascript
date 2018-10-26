@@ -314,3 +314,6 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .visible {
+  display: block;
+}
