@@ -11,6 +11,7 @@
     width: 1200px;
   }
   .left-button, .right-button {
+    transition: all .8s ease-in-out;
     .flex(center, center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
@@ -42,10 +43,7 @@
   img {
     .width-100();
     display: none;
-    height: 0;
+    opacity: 0;
   }
 
-  .height {
-    height: auto;
-  }
 }

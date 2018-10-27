@@ -248,6 +248,7 @@ body {
 }
 .carousel .left-button,
 .carousel .right-button {
+  transition: all 0.8s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,8 +284,5 @@ body {
 .carousel img {
   width: 100%;
   display: none;
-  height: 0;
-}
-.carousel .height {
-  height: auto;
+  opacity: 0;
 }

@@ -9,11 +9,11 @@ class Carousel {
         this.leftArrow.addEventListener('click', (e) => {
             if (e) {
                 this.images.forEach(image => {
-                    image.style.height = '0';
+                    image.style.opacity = '0';
                     image.style.display = 'none'});
                     this.images[this.currentIndex].style.display = 'block';
-                    this.images[this.currentIndex].style.height = '100%';
-                if (this.currentIndex < 3) {
+                    this.images[this.currentIndex].style.opacity = '1';
+                if (this.currentIndex < this.images.length - 1) {
                     this.currentIndex++;
                 } else {
                     this.currentIndex = 0
@@ -23,11 +23,11 @@ class Carousel {
         this.rightArrow.addEventListener('click', (e) => {
             if (e) {
                 this.images.forEach(image => {
-                    image.style.height = '0';
+                    image.style.opacity = '0';
                     image.style.display = 'none'});
                     this.images[this.currentIndex].style.display = 'block';
-                    this.images[this.currentIndex].style.height = '100%';
-                if (this.currentIndex < 3) {
+                    this.images[this.currentIndex].style.opacity = '1';
+                if (this.currentIndex < this.images.length - 1) {
                     this.currentIndex++;
                 } else {
                     this.currentIndex = 0
@@ -38,8 +38,8 @@ class Carousel {
 }
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
-const startingImage = document.querySelector('.carousel img:last-of-type').style.display = "block";
-document.querySelector('.carousel img:last-of-type').style.height = '100%';
+document.querySelector('.carousel img:last-of-type').style.display = "block";
+document.querySelector('.carousel img:last-of-type').style.opacity = '1';
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
