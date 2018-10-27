@@ -57,24 +57,31 @@ class TabCard {
     //adding below for my own stretch.. adding content to cards to unhide when clicked
     this.cardContent = this.cardElement.querySelector('p');
 
-    
-    this.cardElement.addEventListener('click',(event)=>{
-      console.log('a card was clicked');
-      this.openCard();
-    })
+    // below was being added twice for each card... b/c of the structure of 'all' tab
+    // this.cardElement.addEventListener('click',(event)=>{
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    //   console.log('a card was clicked');
+    //   this.openCard();
+      
+    //})
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = 'flex';
   }
-  openCard(){
-    this.cardContent.classList.add('notHidden');
-    this.cardElement.classList.add('expanded');
-  }
+  // openCard(){
+  //   this.cardContent.classList.add('notHidden');
+  //   this.cardElement.classList.add('expanded');
+  // }
   closeCard(){
     this.cardContent.classList.remove('notHidden');
     this.cardElement.classList.remove('expanded');
   }
+  // toggleCard(){
+  //   this.cardContent.classList.toggle('notHidden');
+  //   this.cardElement.classList.toggle('expanded');
+  // }
 }
 
 // First step! Create a reference to all ".tab" classes.
@@ -82,3 +89,12 @@ let tabs = document.querySelectorAll('.tab');
 
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
+
+let cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  card.addEventListener('click',(event)=> {
+    event.currentTarget.querySelector('p').classList.toggle('notHidden');
+    event.currentTarget.classList.toggle('expanded');
+  })
+})
