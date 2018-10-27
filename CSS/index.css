@@ -292,6 +292,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 1;
 }
 .carousel .right-button {
   top: 50%;
@@ -305,11 +306,6 @@ body {
 .carousel .current {
   width: 100%;
   display: flex;
-  opacity: 0;
-  animation-delay: 1.1s;
-  animation-name: transit;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
 }
 .carousel .image-gone {
   width: 100%;
