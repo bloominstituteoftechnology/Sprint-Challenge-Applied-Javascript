@@ -5,31 +5,47 @@ class Carousel {
         this.load = true;
 
         this.leftButton = this.items.querySelector('.left-button');
+        this.leftButton.textContent = '<';
         this.rightButton = this.items.querySelector('.right-button');
         this.images = this.items.querySelectorAll('img');
 
         this.leftButton.addEventListener('click', () => { this.leftClick() });
         this.rightButton.addEventListener('click', () => { this.rightClick(event) });
-        console.log('beginning')
+
     }
 
     leftClick() {
-        console.log('there')
-        if (this.current > 0) this.current--;
-        if (this.load = true) this.load = false;
+
+        if (this.current > 0) {
+            this.images[this.current].classList.add('previous');
+            this.current--;
+        }
+
         if (this.images[this.current]) {
-            this.images[this.current].classList.add('current');
-            this.images[this.current + 1].classList.remove('current');
+            setTimeout(() => {
+                this.images[this.current].classList.add('current');
+                this.images[this.current].classList.remove('previous');
+                this.images[this.current + 1].classList.remove('current');
+            }, 500)
         }
     }
 
     rightClick() {
-        console.log('here')
-        if (this.current < this.images.length - 1) this.current++;
-        if (this.load = true) this.load = false;
+
+        if (this.current < this.images.length - 1) {
+            this.images[this.current].classList.add('previous');
+            this.current++;
+        }
+
         if (this.images[this.current]) {
-            this.images[this.current].classList.add('current');
-            this.images[this.current - 1].classList.remove('current');
+
+            setTimeout(() => {
+                this.images[this.current].classList.add('current');
+                this.images[this.current].classList.remove('previous');
+                this.images[this.current - 1].classList.remove('current');
+                this.images[this.current - 1].classList.remove('load');
+            }, 500);
+
         }
 
     }

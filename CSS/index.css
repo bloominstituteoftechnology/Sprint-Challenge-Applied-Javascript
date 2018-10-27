@@ -304,28 +304,36 @@ body {
   display: none;
 }
 .carousel .current {
+  width: 10%;
+  display: flex;
+  opacity: 0;
+  animation-delay: 0.1s;
+  animation-name: load;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+.carousel .load {
   width: 100%;
   display: flex;
-}
-.carousel .image-gone {
-  width: 100%;
-  opacity: 1;
-  animation-name: gone;
+  opacity: 0.8;
+  animation-name: load;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes transit {
-  from {
-    opacity: 0;
-  }
+.carousel .previous {
+  width: 100%;
+  opacity: 1;
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes load {
   to {
     opacity: 1;
+    width: 100%;
   }
 }
-@keyframes gone {
-  from {
-    opacity: 1;
-  }
+@keyframes fade {
   to {
     opacity: 0;
     width: 0%;
