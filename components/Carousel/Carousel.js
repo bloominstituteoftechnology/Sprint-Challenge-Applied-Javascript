@@ -5,10 +5,9 @@ class Carousel {
         this.rightButton = element.querySelector('.right-button'); // div class for right button
         this.leftButton = element.querySelector('.left-button'); // div class for left button
         this.images = element.querySelectorAll('.img'); // node 4list of all images
-        this.images = Array.from(this.images).map(image => new Images(image)); // array of 4 images
         this.currentIndex = 0;
-        
-        
+        this.images[0].style.display = 'block'; // this will display the first image in the carousel
+
         this.rightButton.addEventListener('click', () => {
             this.next();
         })
@@ -20,19 +19,30 @@ class Carousel {
     }
 
     next() {
+        this.images[this.currentIndex].style.display = 'none'; // need to display current image to none before logic
 
+        // If the image is the last one, we will display the first image.
+        if (this.currentIndex === this.images.length-1) {
+            this.currentIndex = 0;
+        } else {
+            this.currentIndex = this.currentIndex + 1;
+        }
+        this.images[this.currentIndex].style.display = 'block';
     }
 
     previous() {
+        this.images[this.currentIndex].style.display = 'none'; // need to display current image to none before logic
 
+        // If the image is first one, then previous will go to last image. 
+        if (this.currentIndex === 0) {
+            this.currentIndex = this.images.length-1;
+        } else {
+            this.currentIndex = this.currentIndex - 1;
+        }
+        this.images[this.currentIndex].style.display = 'block';
     }
 }
 
-class Images {
-    constructor(element) {
-        this.element = element;
-    }
-}
 
 let carousel = new Carousel (document.querySelector('.carousel'));
 
