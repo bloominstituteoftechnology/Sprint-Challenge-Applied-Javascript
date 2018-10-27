@@ -28,6 +28,7 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   .right-button {
     top: 50%; 
@@ -37,5 +38,53 @@
   img {
     .width-100();
     display: none;
+  }
+
+  .current {
+    width: 10%;
+    display: flex;
+    opacity: 0;
+    animation-delay: .1s;
+    animation-name: load;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .load {
+    .width-100();
+    display: flex;
+    opacity: 0.8;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .previous {
+    .width-100();
+    opacity: 1;
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    //width: 0%;
+  }
+}
+
+@keyframes load {
+  from{
+  }
+  to {
+    opacity: 1;
+    .width-100();
+  }
+}
+
+@keyframes fade {
+  from{
+  }
+  to {
+    opacity: 0;
+    width: 0%;
+    display: none;
+
   }
 }
