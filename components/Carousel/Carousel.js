@@ -1,50 +1,38 @@
 class Carousel {
- constructor(element) {
-    this.element = element;
-    this.leftArrow = document.querySelector('.left-button');
-    this.rightArrow = document.querySelector('.right-button');
-    this.currentIndex = 0;
-    this.images = document.querySelectorAll('.carousel img');
-    this.images = Array.from(this.images); // .map(imageSlide => new ImageSlide(imageSlide))
-    // this.leftArrow.addEventListener('click', () => {this.revealImage()})
-    // this.rightArrow.addEventListener('click', () => {this.revealImage()})
-    this.leftArrow.addEventListener('click', () => {this.revealImageLeft()});
-    this.rightArrow.addEventListener('click', () => {this.revealImageRight()});
-}
-revealImageLeft() {
-    // console.log(this.images.length);
-    
-    for(let i = 0; i < this.images.length; i++){
-        this.images[i].style.transform = "translateX(-300px)";
-        // console.log(this.images[i]);        
-    };
-};
-
-revealImageRight() {
-    for(let i = 0; i < this.images.length; i++){
-        this.images[i].style.display = "block";
-        // console.log(this.images[i]);        
-    };
-};
-
-revealImage() {
-    console.log(this.images);
-    
-    this.images.forEach(image => image.style.display = "block");
-    // console.log(this.clickEvent);
-    
+    constructor(element) {
+        this.element = element;
+        this.leftArrow = document.querySelector('.left-button');
+        this.rightArrow = document.querySelector('.right-button');
+        this.currentIndex = 0;
+        this.images = document.querySelectorAll('.carousel img');
+        this.images = Array.from(this.images); // .map(imageSlide => new ImageSlide(imageSlide))
+        console.log(this.images);
+        this.leftArrow.addEventListener('click', (e) => {
+            if (e) {
+                this.images.forEach(image => image.style.display = 'none');
+                this.images[this.currentIndex].style.display = 'block';
+                if (this.currentIndex < 3) {
+                    this.currentIndex++;
+                } else {
+                    this.currentIndex = 0
+                }
+            };
+        });
+        this.rightArrow.addEventListener('click', (e) => {
+            if (e) {
+                this.images.forEach(image => image.style.display = 'none');
+                this.images[this.currentIndex].style.display = 'block';
+                if (this.currentIndex < 3) {
+                    this.currentIndex++;
+                } else {
+                    this.currentIndex = 0
+                }
+            };
+        });
     }
 }
-// class ImageSlide {
-//     constructor
-// }
 let carousel = document.querySelector('.carousel');
-// console.log(carousel);
 carousel = new Carousel(carousel);
-carousel.revealImage();
-// console.log(carousel.revealImage);
-
-
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
  [x]  1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
