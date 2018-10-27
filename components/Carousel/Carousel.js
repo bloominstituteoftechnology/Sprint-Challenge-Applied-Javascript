@@ -8,8 +8,11 @@ class Carousel {
         this.images = Array.from(this.images);
         this.leftArrow.addEventListener('click', (e) => {
             if (e) {
-                this.images.forEach(image => image.style.display = 'none');
-                this.images[this.currentIndex].style.display = 'block';
+                this.images.forEach(image => {
+                    image.style.height = '0';
+                    image.style.display = 'none'});
+                    this.images[this.currentIndex].style.display = 'block';
+                    this.images[this.currentIndex].style.height = '100%';
                 if (this.currentIndex < 3) {
                     this.currentIndex++;
                 } else {
@@ -19,8 +22,11 @@ class Carousel {
         });
         this.rightArrow.addEventListener('click', (e) => {
             if (e) {
-                this.images.forEach(image => image.style.display = 'none');
-                this.images[this.currentIndex].style.display = 'block';
+                this.images.forEach(image => {
+                    image.style.height = '0';
+                    image.style.display = 'none'});
+                    this.images[this.currentIndex].style.display = 'block';
+                    this.images[this.currentIndex].style.height = '100%';
                 if (this.currentIndex < 3) {
                     this.currentIndex++;
                 } else {
@@ -32,8 +38,9 @@ class Carousel {
 }
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
-let startingImage = document.querySelector('.carousel img:last-of-type').style.display = "block";
-// console.log(images);
+const startingImage = document.querySelector('.carousel img:last-of-type').style.display = "block";
+document.querySelector('.carousel img:last-of-type').style.height = '100%';
+
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
  [x]  1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
@@ -41,5 +48,5 @@ let startingImage = document.querySelector('.carousel img:last-of-type').style.d
  [x]  3. Create a current index
  [x]  4. Those buttons are gonna need some click handlers.
     5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
-    6. Have fun!
+ [x]  6. Have fun!
 */

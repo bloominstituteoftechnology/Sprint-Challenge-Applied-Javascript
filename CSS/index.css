@@ -230,6 +230,7 @@ body {
 }
 .carousel {
   width: 100%;
+  border: 10px ridge #333333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,6 +239,7 @@ body {
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  transition: all 0.8s ease-in-out;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -255,6 +257,7 @@ body {
   font-size: 40px;
   border-radius: 50%;
   position: absolute;
+  padding-bottom: 4px;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -269,13 +272,19 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  padding-right: 3px;
 }
 .carousel .right-button {
   top: 50%;
+  padding-left: 3px;
   right: 25px;
   transform: translate(0, -50%);
 }
 .carousel img {
   width: 100%;
   display: none;
+  height: 0;
+}
+.carousel .height {
+  height: auto;
 }
