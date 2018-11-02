@@ -1,5 +1,6 @@
 class Carousel {
-
+    constructor(element) {
+        this.element = element;
 }
 
 //set the carousel reference
