@@ -24,17 +24,12 @@ class Tabs {
     }
   
     getCards(data){
-      console.log(data);
       // Update the logic in the if statment to check if 'all' is equal to the passed in data.
       if(data === "all") {
         // Return a reference to all the ".card" classes
-        console.log("Reference to all .card classes: ", document.querySelectorAll(".card"));
         return document.querySelectorAll(".card");
       } else {
         // Return a reference to the data attributes of all the ".card" classes.  Hint: use the passed data value in getCards() to accomplish this.
-        // console.log("reference to the data attributes of all card classes: V1", this.element.querySelectorAll(`.card[data-tab = "${data}"]`)) //this returns null for nodelist
-        console.log("reference to the data attributes of all card classes: V2", document.querySelectorAll(`.card[data-tab = "${data}"]`)) //this returns null for nodelist
-        // return this.element.querySelectorAll(`.card[data-tab = "${data}"]`);
         return document.querySelectorAll(`.card[data-tab = "${data}"]`);
       }
     }
@@ -47,9 +42,7 @@ class Tabs {
       // assign this.parent to the parent reference
       this.parent = parent;
       // Nothing to update here, notice we are accessing the parent's method getCards(), nothing to update here
-      console.log("test, ", this.element.dataset.tab) // this checks out
       this.cards = this.parent.getCards(this.element.dataset.tab);
-      console.log(this.cards) //I'm getting null for the nodelist 
       // Map over the cards array and convert each card reference into a new TabCard object. Pass in the card object to the TabCard class.
       this.cards = Array.from(this.cards).map(card => new TabCard(card));
       // Add a click event that invokes selectTab
@@ -92,7 +85,6 @@ class Tabs {
   
   // Create a reference to ".tabs"
   let tabs = document.querySelectorAll(".tabs");
-  console.log("tab references: ", tabs)
+
   // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
   tabs = Array.from(tabs).map(tabs => new Tabs(tabs)); 
-  console.log("tabs object created using tab references: ", tabs)
