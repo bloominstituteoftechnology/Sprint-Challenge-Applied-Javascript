@@ -15,7 +15,7 @@ class TabLink {
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
-      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
+      this.cards = document.querySelectorAll(`.card[data-tab=${this.tabData}]`);
     }
     // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class.
     // this.cards = Array.from(this.cards).map();
@@ -44,10 +44,10 @@ class TabLink {
     // cards.forEach()
     cards.forEach( card => {
       card.classList.style.display = 'none';
-    })
+    });
     // Add a class of ".active-tab" to this.tabElement
     // this.tabElement;
-    this.tabElement.classList.add('active-tab')
+    this.tabElement.classList.add('active-tab');
     // Notice we are looping through the this.cards array and invoking selectCard()
     // from the TabCard class. Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
@@ -75,4 +75,4 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab')
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
 // tabs = Array.from(tabs).map()
-tabs = Array.from(tabs).map( tab => new TabCard(tab));
+tabs = Array.from(tabs).map( tab => new TabLink(tab));
