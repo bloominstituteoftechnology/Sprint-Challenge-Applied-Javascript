@@ -14,6 +14,7 @@ class TabLink {
       this.cards = document.querySelectorAll(".card");
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
+      //Pay attention to the .card in the query selector. You had .tab which broke it. Watch the HTML!!!!!
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`)
       // this.cards = tabElement.querySelectorAll("this.tabData")
     }
