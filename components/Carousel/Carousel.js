@@ -1,5 +1,23 @@
 class Carousel {
-
+  constructor(img){
+    this.img = img;
+    this.imgs = this.img.querySelectorAll('.carousel > img');
+    this.rButton = this.img.querySelector('.right-button');
+    this.lButton = this.img.querySelector('.left-button');
+    this.index =
+    this.rButton.addEventListener('click', () => {
+      this.rightButton();
+    });
+    this.lButton.addEventListener('click', () => {
+      this.leftButton();
+    });
+  }
+  leftButton(){
+    const lB = document.querySelector
+  }
+  rightButton(){
+    const rB =
+  }
 }
 
 let carousel = document.querySelector();
