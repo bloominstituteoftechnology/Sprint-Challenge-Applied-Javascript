@@ -22,7 +22,7 @@ class TabLink {
 
   selectTab(){
 
-    // Select all elements with the .tab class on them
+    // Select all elements with the .tab class on them 
     const tabs = document.querySelectorAll('.tab');
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach('.active-tab');
