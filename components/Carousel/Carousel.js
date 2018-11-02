@@ -1,5 +1,6 @@
 class Carousel {
     constructor(element) {
+        //reference the DOM element
         this.element = element;
         //grabbed reference to the carousel for left buttons
         this.leftButton = this.element.querySelector('.left-button')
@@ -7,6 +8,13 @@ class Carousel {
         this.rightButton = this.element.querySelector('.right-button')
         //grabbed a reference to all of the images
         this.images = this.element.querySelectorAll('img')
+        //Set the index
+        this.indexArr = [0,1,2,3]
+        this.index = 0
+
+    
+
+
 }
 
 //set the carousel reference
