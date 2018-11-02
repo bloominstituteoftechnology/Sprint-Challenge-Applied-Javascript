@@ -11,6 +11,11 @@ class Carousel {
         //Set the index
         this.indexArr = [0,1,2,3]
         this.index = 0
+        //Add event listener to execute script on click
+        this.rightButton.addEventListener('click', () => this.scrollRight())
+        this.leftButton.addEventListener('click', () => this.scrollLeft())
+
+  }
 
     
 
