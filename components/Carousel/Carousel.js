@@ -7,7 +7,17 @@
     6. Have fun!
 */
 class Carousel {
-    
+    constructor(imgElement) {
+        this.imgElement = imgElement;
+        this.panel = this.imgElement.querySelector('.carousel img');
+        console.log(this.imgElement);
+        console.log(panel);
+        console.log(imgElement);
+
+        // I am giving up with 5 minutes left, all day I have not been able to console.log(anything at all). Below was my 5th attempt at a carousel using code I found on web, above was my 6th start. Started the day feeling good, ended with a 
+        // meh!!
+    }
+    //method
 }
 
 
