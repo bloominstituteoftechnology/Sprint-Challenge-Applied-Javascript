@@ -11,10 +11,10 @@ class TabLink {
     // Check to see if this.tabData is equal to 'all'
     if( this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = querySelectorAll(".card");
+      this.cards = tabElement.querySelectorAll(".card");
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = querySelectorAll("this.tabData");
+      this.cards = tabElement.querySelectorAll("tabData");
     }
 
 
