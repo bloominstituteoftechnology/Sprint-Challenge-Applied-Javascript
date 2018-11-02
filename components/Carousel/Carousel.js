@@ -16,6 +16,26 @@ class Carousel {
         this.leftButton.addEventListener('click', () => this.scrollLeft())
 
   }
+  scrollRight() {
+      //iterate through the classList adding/removing images (toggle on/off)
+    this.images.forEach ( item => item.classList.remove('carousel-inactive-right') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-right') )
+    this.images.forEach( item  => item.classList.remove('carousel-inactive-left') )
+    this.images.forEach ( item => item.classList.remove('carousel-active-left') )
+    
+    //increment the value of the index
+    this.index++
+
+    this.index %= 4;
+
+    this.index == 0 ?
+    this.images[3].classList.toggle('carousel-inactive-right')
+    :
+    this.images[this.index-1].classList.toggle('carousel-inactive-right')
+
+    this.images[this.index].classList.add('carousel-active-right')
+    console.log('ind:', this.index);
+  }
 
     
 
@@ -24,8 +44,8 @@ class Carousel {
 
 //set the carousel reference
 let carousel = document.querySelector('.carousel');
-//create 'new' Carousel
-carousel = new Carousel(carousel)
+//Changed line of code to convert nodes to array - this works better for me here.
+carousel = Array.from(carousel).map(link => new Carousel(link));
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
