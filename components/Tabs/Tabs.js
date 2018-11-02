@@ -47,10 +47,11 @@ class TabLink {
     })
     // Add a class of ".active-tab" to this.tabElement
     // this.tabElement;
-    this.tabElement =
+    this.tabElement.classList.add('active-tab')
     // Notice we are looping through the this.cards array and invoking selectCard()
     // from the TabCard class. Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
+    this.cards.forEach( card => card.selectCard());
 
   }
 }
