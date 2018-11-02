@@ -5,6 +5,8 @@ class Carousel {
         this.leftButton = this.element.querySelector('.left-button')
         //grabbed reference to the carousel for right buttons
         this.rightButton = this.element.querySelector('.right-button')
+        //grabbed a reference to all of the images
+        this.images = this.element.querySelectorAll('img')
 }
 
 //set the carousel reference
