@@ -14,7 +14,8 @@ class TabLink {
       this.cards = tabElement.querySelectorAll(".card");
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = tabElement.querySelectorAll(`.tabs[data-tab="${this.tabElement}"]`)
+      this.cards = tabElement.querySelectorAll(`.tabs[data-tab="${this.tabData}"]`)
+      // this.cards = tabElement.querySelectorAll("this.tabData")
     }
 
 
@@ -41,10 +42,13 @@ class TabLink {
 
     // Select all of the elements with the .card class on them
     const cards = querySelectorAll(".card");
+    console.log(querySelectorAll(".card"));
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach( card => {
       card.style.display = "none";
+
+      console.log(this.selectTab())
     });
     
     // Add a class of ".active-tab" to this.tabElement
