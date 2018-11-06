@@ -59,8 +59,13 @@ class TabCard {
 
 }
 
-// First step! Create a reference to all ".tab" classes.
-// let tabs = document.querySelectorAll();
+/* START HERE: 
 
-// Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
-// tabs = Array.from(tabs).map()
+- Select all classes named ".tab" and assign that value to the tabs variable
+
+- With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
+
+- In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
+
+*/
+let tabs = document.querySelectorAll();
