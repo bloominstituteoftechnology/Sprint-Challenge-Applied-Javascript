@@ -16,21 +16,25 @@ class Carousel {
       this.current = 0;
       this.images[this.current].style.display = "block";
       this.images[this.images.length - 1].style.display = "block";
-      TweenMax.to(this.images[this.current], 0, { x: window.innerWidth });
+      TweenMax.to(this.images[this.current], 0, {
+        x: this.images[0].width
+      });
       TweenMax.to(this.images[this.current], 1, { x: 0 });
       TweenMax.to(this.images[this.images.length - 1], 0, { x: 0 });
       TweenMax.to(this.images[this.images.length - 1], 1, {
-        x: -window.innerWidth
+        x: -this.images[0].width
       });
     } else {
       this.current++;
       this.images[this.current].style.display = "block";
       this.images[this.current - 1].style.display = "block";
-      TweenMax.to(this.images[this.current], 0, { x: window.innerWidth });
+      TweenMax.to(this.images[this.current], 0, {
+        x: this.images[0].width
+      });
       TweenMax.to(this.images[this.current], 1, { x: 0 });
       TweenMax.to(this.images[this.current - 1], 0, { x: 0 });
       TweenMax.to(this.images[this.current - 1], 1, {
-        x: -window.innerWidth
+        x: -this.images[0].width
       });
     }
   }
@@ -41,21 +45,25 @@ class Carousel {
       this.current = this.images.length - 1;
       this.images[this.current].style.display = "block";
       this.images[0].style.display = "block";
-      TweenMax.to(this.images[this.current], 0, { x: -window.innerWidth });
+      TweenMax.to(this.images[this.current], 0, {
+        x: -this.images[0].width
+      });
       TweenMax.to(this.images[this.current], 1, { x: 0 });
       TweenMax.to(this.images[0], 0, { x: 0 });
       TweenMax.to(this.images[0], 1, {
-        x: window.innerWidth
+        x: this.images[0].width
       });
     } else {
       this.current--;
       this.images[this.current].style.display = "block";
       this.images[this.current + 1].style.display = "block";
-      TweenMax.to(this.images[this.current], 0, { x: -window.innerWidth });
+      TweenMax.to(this.images[this.current], 0, {
+        x: -this.images[0].width
+      });
       TweenMax.to(this.images[this.current], 1, { x: 0 });
       TweenMax.to(this.images[this.current + 1], 0, { x: 0 });
       TweenMax.to(this.images[this.current + 1], 1, {
-        x: window.innerWidth
+        x: this.images[0].width
       });
     }
   }
