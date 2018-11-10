@@ -39,12 +39,6 @@ class TabLink {
   
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     // console.log(this.cards)
-
-
-
-
-
-
   }
 
 
@@ -73,7 +67,8 @@ class TabLink {
     this.tabElement.classList.add('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => cards.selectCard());
+    // console.log(cards)
   }
 }  
 
