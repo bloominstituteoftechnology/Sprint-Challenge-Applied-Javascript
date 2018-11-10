@@ -29,22 +29,25 @@ class TabLink {
   selectTab(){
 
     // Select all elements with the .tab class on them
-    // const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
-    // tabs.forEach()
+    // use .classList.remove()
+    tabs.forEach(removeActiveTab => removeActiveTab.remove('.active-tab'));
 
     // Select all of the elements with the .card class on them
-    // const cards = ;
+    const cards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach()
+    // use style.display = '';
+    cards.forEach(noDisplay => noDisplay.style.display ='none');
     
     // Add a class of ".active-tab" to this.tabElement
-    // this.tabElement;
+    // classList.add('className');
+    this.tabElement.classList.add('.active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    // this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => card.selectCard());
   }
 }
 
@@ -69,4 +72,7 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll(".tab").forEach(tab => new TabLink(tab));
+//let tabs = document.querySelectorAll(".tab").forEach(tab => new TabLink(tab));
+
+// Can also use .map()
+let tabs = document.querySelectorAll(".tab").map(tab => new TabLink(tab));
