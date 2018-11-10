@@ -12,7 +12,7 @@ class TabLink {
       this.cards = tabs ;
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = this.tabData ;
+      this.cards = this.tabData;
     }
     
 
@@ -75,6 +75,8 @@ class TabCard {
 */
 let tabs = document.querySelectorAll('.tab');
 
-tabs.forEach(function(tab) {
-  return new Tabcard(tab)
+tabs.forEach(function(tabs) {
+  return new Tabcard(tabs)
 })
+
+
