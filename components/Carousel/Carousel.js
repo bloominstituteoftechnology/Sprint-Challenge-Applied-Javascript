@@ -17,7 +17,17 @@ class Carousel {
         this.rightButton.addEventListener('click', this.cycleRight.bind(this))
     }
     cycleLeft() {
-        
+        if(this.index > 0) {
+            this.index--;
+            this.images[this.index].style.display = "flex";
+            this.images[this.index+1].style.display = "none"
+        }
+
+        else {
+            this.index = this.imageLength - 1;
+            this.images[this.index].style.display = "flex";
+            this.images[0].style.display = "none"
+        }
     }
     
     cycleRight() {
