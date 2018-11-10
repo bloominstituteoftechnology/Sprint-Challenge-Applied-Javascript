@@ -4,7 +4,8 @@ class Carousel {
     this.images = this.carouselElement.querySelectorAll('img');
     this.lButton = this.carouselElement.querySelector('.left-button');
     this.rButton = this.carouselElement.querySelector('.right-button');
-    this.position = 0;
+
+    this.position = 0; //Index position variable
 
     this.images[0].style.display = 'block';
 
@@ -18,14 +19,14 @@ class Carousel {
 
   previousImg() {
     this.images.forEach(item => item.style.display = 'none');
-    if (this.position === 0) this.position = this.images.length - 1;
+    if (this.position === 0) this.position = this.images.length - 1; //loops back to end of this.images
     else this.position--;
     this.images[this.position].style.display = 'block';
   }
 
   nextImg() {
     this.images.forEach(item => item.style.display = 'none');
-    if (this.position === this.images.length - 1) this.position = 0;
+    if (this.position === this.images.length - 1) this.position = 0; //loops back to beginning of this.images
     else this.position++;
     this.images[this.position].style.display = 'block';
   }
