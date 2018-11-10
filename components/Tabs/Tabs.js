@@ -29,7 +29,7 @@ class TabLink {
   selectTab(){
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll(.tabs .tab);
+    const tabs = document.querySelectorAll('.tabs .tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach( tab => {
@@ -43,7 +43,7 @@ class TabLink {
     cards.forEach(card => card.style.display = 'none');
     
     // Add a class of ".active-tab" to this.tabElement
-    this.tabElement = tabElement.classList.add('tabs-link-selected');
+    this.tabElement.classList.toggle('tabs-link-selected');
   
     // Notice we are looping through the this.cards array 
     // and invoking selectCard() from the TabCard class. 
@@ -77,4 +77,3 @@ return a new instance of TabLink and pass in each tab as a parameter
 */
 let tabs = document.querySelectorAll('.tabs .tab')
                    .forEach(tab => new TabLink(tab));
-             
