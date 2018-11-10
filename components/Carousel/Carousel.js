@@ -9,7 +9,10 @@ class Carousel {
     this.images[this.index].style.display = 'block';
 
     this.leftBtn.addEventListener('click', this.moveLeft.bind(this));
+    this.leftBtn.addEventListener('dblclick', this.autoSlide.bind(this));
+
     this.rightBtn.addEventListener('click', this.moveRight.bind(this));
+    this.rightBtn.addEventListener('dblclick', this.autoSlide.bind(this));
   }
 
   moveRight() {
@@ -34,6 +37,32 @@ class Carousel {
       this.index--
       this.images[this.index].style.display = 'block';
     }
+  }
+
+  autoSlide() {
+    const slides = this.images;
+    let go = true;
+    let count = 0;
+
+    let int = setInterval(this.moveRight.bind(this), 1500);
+
+    //End Loop with key board
+    window.addEventListener("keyup", function(event) {
+        clearInterval(int);
+    });
+  }
+
+  autoSlideReverse() {
+    const slides = this.images;
+    let go = true;
+    let count = 0;
+
+    let int = setInterval(this.moveLeft.bind(this), 1500);
+
+    //End Loop with key board
+    window.addEventListener("keyup", function(event) {
+        clearInterval(int);
+    });
   }
 }
 
