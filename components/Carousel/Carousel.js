@@ -5,8 +5,13 @@ class Carousel {
         
         this.leftButton = this.element.querySelector('.left-button');
         this.rightButton = this.element.querySelector('.right-button');
+        
         this.images = this.element.querySelectorAll('img');
-        this.index = Array.from(this.images).length - 1
+        this.imageLength = this.images.length;
+        
+        //Sets the first image to display automatically
+        this.index = 0;
+        this.images[this.index].style.display = "flex";
         
         this.leftButton.addEventListener('click', this.cycleLeft.bind(this));
         this.rightButton.addEventListener('click', this.cycleRight.bind(this))
@@ -16,7 +21,21 @@ class Carousel {
     }
     
     cycleRight() {
+        if(this.index < this.imageLength-1) {
+            this.index++;
+            this.images[this.index].style.display = "flex";
+            this.images[this.index-1].style.display = "none"
+        }
         
+        else {
+            this.index = 0;
+            this.images[this.index].style.display = "flex";
+            this.images[this.imageLength-1].style.display = "none"
+            
+        }
+
+        console.log(this.index);
+
     }
     
 }
