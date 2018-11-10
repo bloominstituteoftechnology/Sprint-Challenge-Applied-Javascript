@@ -281,6 +281,7 @@ body {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  z-index: 100;
 }
 .carousel .left-button:hover,
 .carousel .right-button:hover {
@@ -299,6 +300,8 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
+  position: absolute;
   width: 100%;
   display: none;
+  z-index: 0;
 }
