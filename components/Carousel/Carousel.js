@@ -9,26 +9,18 @@ class Carousel {
     this.images = document.querySelectorAll('.carousel img');
 
     this.index = 0;
+    this.images[this.index].style.display = 'block';
 
-    console.log(this.leftButton, this.rightButton)
-
-    this.leftButton.addEventListener('click', () => this.left());
-    this.rightButton.addEventListener('click', () => this.right());
+    this.leftButton.addEventListener('click', () => this.move(-1));
+    this.rightButton.addEventListener('click', () => this.move(1));
   }
 
-  right() {
+  move(dir) {
     this.images[this.index].style.display = 'none';
-    this.index++;
+    this.index += dir;
     if(this.index >= this.images.length) {
       this.index = 0;
-    }
-    this.images[this.index].style.display = 'block';
-  }
-
-  left() {
-    this.images[this.index].style.display = 'none';
-    this.index--;
-    if(this.index <= 0) {
+    } else if(this.index < 0) {
       this.index = this.images.length - 1;
     }
     this.images[this.index].style.display = 'block';
