@@ -10,4 +10,4 @@ an interface that uses a function to interact with the DOM
 so that we could use array methods on it 
 
 5. What is a component? 
-a component is code that is made up of 
+a component is code that is made up of html, css, and javascript, so that it can be reused
