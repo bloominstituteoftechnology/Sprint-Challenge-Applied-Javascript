@@ -10,11 +10,10 @@ class TabLink {
     //Follow the instructions below to accomplish this task:    
 
     // Check to see if this.tabData is equal to 'all'
-    // if(this.tabData = document.querySelectorAll(".tab")){
       if(this.tabData === "all"){
-      // if(this.tabData = document.querySelector(`.tab[data-tab="all"]`)){
       // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = document.querySelectorAll(`.card[data-tab="all"]`);
+      // this.cards = document.querySelectorAll(`.card[data-tab="all"]`);
+      this.cards = document.querySelectorAll(`.card`);
       console.log(this.cards)
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
