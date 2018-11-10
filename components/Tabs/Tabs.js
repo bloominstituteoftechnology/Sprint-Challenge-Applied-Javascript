@@ -15,10 +15,10 @@ class TabLink {
     console.log(this.tabData);
     if (this.tabData === "all") {
       this.cards = document.querySelectorAll(".card");
-      console.log("Selected all of " + this.cards.length);
+      //console.log("Selected all of " + this.cards.length);
     } else {
       this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
-      console.log("Selected  "  + this.cards.length);
+      //console.log("Selected  "  + this.cards.length);
     }
 
     // Map over the cards array and convert each card element into a new instance
