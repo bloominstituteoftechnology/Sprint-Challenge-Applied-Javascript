@@ -40,8 +40,7 @@ class TabLink {
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach( card => {
-      //card.style.display = 'none';
-      card.setAttribute('display','none');
+      card.style.display = 'none';
     })
     
     // Add a class of ".active-tab" to this.tabElement
@@ -59,7 +58,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.style.display = 'flex';
   }
 
 }
