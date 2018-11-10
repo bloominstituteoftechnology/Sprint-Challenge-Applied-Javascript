@@ -1,10 +1,3 @@
-// let i = 0; // start point
-// let images = [];
-// let time = 3000
-
-// // Image List
-// images[0] = 
-
 class Carousel {
   constructor(carousel) {
     this.carousel = carousel;
@@ -14,15 +7,29 @@ class Carousel {
     this.currentIndex = 0;
     this.lbtn.addEventListener('click', () => {this.leftButton() })
     this.rbtn.addEventListener('click', () => {this.rightButton() })
+    this.img[0].style.display = "block";
   }
 
   leftButton() {
-
+    this.img.forEach(x => (x.style.display = "none"));
+    if (this.currentIndex == this.img.length - 1) {
+      this.currentIndex = 0;
+      this.img[this.currentIndex].style.display = "block";
+    } else {
+      this.currentIndex++;
+      this.img[this.currentIndex].style.display = "block";
+    }
   }
   rightButton() {
-
+    this.img.forEach(x => (x.style.display = "none"));
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.img.length - 1;
+      this.img[this.currentIndex].style.display = "block";
+    } else {
+      this.currentIndex--;
+      this.img[this.currentIndex + 1].style.display = "block";
+    }
   }
-
 }
 
 let carousel = document.querySelector('.carousel');
