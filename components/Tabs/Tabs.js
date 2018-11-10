@@ -73,11 +73,11 @@ class TabLink {
     // for( i=0 ; i<this.cards.length; i++) {
     //   this.cards[i].selectCard();
     // }
-    this.cards.forEach(function(x){
-      console.log(x)
-    })
-    
-    // this.cards.forEach(card => card.selectCard(card) ) ;
+    // this.cards.forEach(function(x){
+    //   console.log(x)
+    // })
+
+    this.cards.forEach(card => card.selectCard() ) ;
   }
 
   //
