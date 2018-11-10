@@ -8,7 +8,7 @@ class TabLink {
     this.tabElementData = this.tabElement.dataset.tab
     // console.log(this.tabElementData)
 
-    this.tabElementContent = document.querySelector(`.cards-container .card[data-tab ='${this.tabElementData}']`)
+    this.tabElementContent = document.querySelector(`.cards-container .card`)
 
     // console.log(this.tabElementContent)
 
@@ -60,9 +60,9 @@ class TabLink {
     const cards = document.querySelectorAll('.card')
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach((x) => {
-      x.style.display = "none";
-    })
+    // cards.forEach((x) => {
+    //   x.style.display = "none";
+    // })
     
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add('active-tab');
@@ -76,7 +76,7 @@ class TabLink {
     this.cards.forEach(function(x){
       console.log(x)
     })
-
+    
     // this.cards.forEach(card => card.selectCard(card) ) ;
   }
 
