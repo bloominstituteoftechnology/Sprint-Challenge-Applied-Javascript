@@ -20,7 +20,10 @@ class Carousel {
         }
         this.curImg.style.display = 'none';
         this.curImg = this.imgNodeList[this.storedValue];
-        this.curImg.style.display = 'block';        
+        this.curImg.style.display = 'block';
+        let curLeft = this.curImg;
+
+        TweenMax.fromTo(curLeft, .7, {opacity: 0, ease: Circ.easeOut, x: 1200 }, {opacity: 1, ease: Circ.easeOut, x: 0});        
     }
     right() {
         if (this.storedValue === this.imgNodeList.length -1) {
@@ -30,7 +33,9 @@ class Carousel {
         }
         this.curImg.style.display = 'none';
         this.curImg = this.imgNodeList[this.storedValue];
-        this.curImg.style.display = 'block';
+        this.curImg.style.display = 'block';     
+        let curRight = this.curImg;
+        TweenMax.fromTo(curRight, .7, {opacity: 0, ease: Bounce.easeOut, x: -1200}, {opacity: 1, ease: Circ.easeOut, x: 0});        
     }
 
 }
