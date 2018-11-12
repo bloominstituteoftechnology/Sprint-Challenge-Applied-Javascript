@@ -1,14 +1,37 @@
 class Carousel {
     constructor(element) {
         this.element = element;
-
         this.leftButton = this.element.querySelector('.left-button');
-
         this.rightButton = this.element.querySelector('.right-button');
+        this.images = this.element.querySelectorAll('.carousel img');
+        this.counter = 0;
+        this.amount = this.images.length;
+        this.current = this.images[0];
+        this.current.style.display = 'block';
+    
+        this.rightButton.addEventListener('click', () => {
+            const direction = 1;
+            this.current.style.display = 'none';
+            this.counter = this.counter + direction;
+            if (!this.images[this.counter]) {
+                this.counter = 0;
+            }
+            this.current = this.images[this.counter];
+            this.current.style.display = 'block';
 
-        this.images = this.element.querySelectorAll('img');
-    }
-
+        });
+    
+        this.leftButton.addEventListener('click', () => {
+            const direction = -1;
+            this.current.style.display = 'none';
+            this.counter = this.counter + direction;
+            if (direction === -1 && this.counter < 0) {
+                this.counter = this.amount - 1;
+            }
+            this.current = this.images[this.counter];
+            this.current.style.display = 'block';
+        });
+    } 
 }
 
 let carousel = document.querySelector('.carousel');
