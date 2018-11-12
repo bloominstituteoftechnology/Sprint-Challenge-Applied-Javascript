@@ -11,13 +11,20 @@ class Carousel {
     
         this.rightButton.addEventListener('click', () => {
             const direction = 1;
+            //this.current.style.opacity = '0';
             this.current.style.display = 'none';
+           // this.current.style.transform = 'scale(0)';
+           // this.current.style.transition = '1s';
             this.counter = this.counter + direction;
             if (!this.images[this.counter]) {
                 this.counter = 0;
             }
             this.current = this.images[this.counter];
+            //this.current.style.opacity = '0';
             this.current.style.display = 'block';
+            //this.current.style.opacity = 1;
+            //this.current.style.transform = 'scale(1)';
+            //this.current.style.transition = '1s';
 
         });
     
