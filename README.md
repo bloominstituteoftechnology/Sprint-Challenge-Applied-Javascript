@@ -1,3 +1,5 @@
+Primary edit to create pull.
+
 # Sprint-Challenge Applied Javascript
 
 We've covered a lot this week. We've learned how to plug Javascript into our HTML/CSS static pages and create dynamic content. We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.
@@ -6,9 +8,9 @@ We've covered a lot this week. We've learned how to plug Javascript into our HTM
 
 ## Set Up The Project With Git
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
+* [x] You are now ready to build this project with your preferred IDE
 
 ## Comprehension Questions
 
@@ -19,6 +21,8 @@ Answer the following questions to the best of your ability. You can exercise you
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
 5. What is a component?
+
+(done)
 
 ## Challenge: Lambda Newspaper
 
