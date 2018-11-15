@@ -8,7 +8,8 @@
   @media(min-width: 1200px){
     width: 1200px;
   }
-  .left-button, .right-button {
+  .left-button, 
+  .right-button {
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
@@ -37,5 +38,8 @@
   img {
     .width-100();
     display: none;
+    transistion: transform .275s linear;
+    top: 0;
+    bottom: 0;
   }
 }

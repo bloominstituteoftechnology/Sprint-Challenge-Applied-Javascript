@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 
   <!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 28, 2018</span>
+    <span class="date">NOVEMBER 15, 2018</span>
     <h1>Lambda Times</h1>
     <span class="temp">98°</span>
   </div>
@@ -40,6 +40,7 @@
     <div class="topics">
       <span class="title">TRENDING TOPICS:</span>
       <div data-tab="all" class="tab active-tab">ALL</div>
+      <div data-tab="soft skills" class="tab">SOFT SKILLS</div>
       <div data-tab="javascript" class="tab">JAVASCRIPT</div>
       <div data-tab="technology" class="tab">TECHNOLOGY</div>
       <div data-tab="node" class="tab">NODE.JS</div>
@@ -50,19 +51,40 @@
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+   <div class="carousel">
     <div class="left-button"><</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div> 
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
 
     <!-- CARD COMPONENTS -->
+
+  <div class="card" data-tab="communication">
+    <div class="headline">Does This Potato Look Professional? How to Choose the Right Emoji For a Slack Message With Your Boss</div>
+    <div class="author">
+      <div class="img-container">
+        <img src="./assets/potatokiss.jpeg" />
+      </div>
+      <span>By PADDY O'GRATIN</span>
+    </div>
+  </div>
+      
+  <div class="card" data-tab="humans">
+    <div class="headline">How to Talk to People in 3D</div>
+    <div class="author">
+      <div class="img-container">
+        <img src="./assets/slack-memes-34.jpg" />
+      </div>
+      <span>By R. LIVE HUMAN</span>
+    </div>
+  </div>
+
     <div class="card" data-tab="javascript">
       <div class="headline">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</div>
       <div class="author">
@@ -213,7 +235,8 @@
       </div>
     </div>
 
-  </div>
+  
+
 </body>
 
 </html>

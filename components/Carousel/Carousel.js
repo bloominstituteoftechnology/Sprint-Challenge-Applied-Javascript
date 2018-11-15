@@ -2,7 +2,7 @@ class Carousel {
   constructor(container) {
     this.container = container;
     console.log(this.container);
-    this.images = Array.from(this.container.querySelectorAll('igm'));
+    this.images = Array.from(this.container.querySelectorAll('img'));
     this.currentImage = 0;
 
     this.rightBtn = this.container.querySelector('.right-button');
@@ -16,7 +16,7 @@ class Carousel {
 
     this.displayActive();
 
-    this.autoTimer(2000);
+    this.autoTimer(4000);
   }
 
   // autoTimer(duration) {
