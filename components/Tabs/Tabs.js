@@ -11,10 +11,10 @@ class TabLink {
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData == 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = document.querySelectorAll(".card");
+      this.cards = document.querySelectorAll('.card');
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll("." + this.tabData);
+      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
     }
     
 
@@ -43,7 +43,7 @@ class TabLink {
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(function(cards) {
-      cards.style.display = "none"
+      cards.style.display = 'none'
     });
     
     // Add a class of ".active-tab" to this.tabElement
@@ -61,7 +61,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.style.display = "flex";
+    this.cardElement.style.display = 'flex';
   }
 
 }
@@ -75,6 +75,6 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll(".tab").forEach(function(tab) {
+let tabs = document.querySelectorAll('.tab').forEach(function(tab) {
   return new TabLink(tab)
 });
