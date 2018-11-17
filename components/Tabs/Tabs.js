@@ -25,46 +25,46 @@ class TabLink {
     this.tabElement.addEventListener('click', e => this.selectTab());
   }
 
-    //selectTab() {
+  selectTab() {
 
     //Select all elements with the .tab class on them
-    //const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
 
     //Iterate through the NodeList removing the .active-tab class from each element
-    //tabs.forEach()
+    tabs.forEach(element => element.classList.remove('.active-tab'));
 
     //Select all of the elements with the .card class on them
-    //const cards = ;
+    const cards = document.querySelectorAll('.cards');
 
     //Iterate through the NodeList setting the display style each one to 'none'
-    //cards.forEach()
+    cards.forEach(element => (element.style.display = "none"));
 
     //Add a class of ".active-tab" to this.tabElement
-    //this.tabElement;
+    this.tabElement.classList.add('.active-tab');
 
     //Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    //this.cards.forEach(card => card.selectCard());
-    //}
-    //}
+    this.cards.forEach(card => card.selectCard());
+  }
+}
 
-    //class TabCard {
-    //constructor(cardElement) {
-    //Assign this.cardElement to the cardElement DOM reference
-    //this.cardElement;
-    //}
-    // selectCard() {
-    //Update the style of this.cardElement to display = "flex"
-    //this.cardElement;
-    //}
+//class TabCard {
+//constructor(cardElement) {
+//Assign this.cardElement to the cardElement DOM reference
+//this.cardElement;
+//}
+// selectCard() {
+//Update the style of this.cardElement to display = "flex"
+//this.cardElement;
+//}
 
-    //}
+//}
 
 
 
-    // START HERE: 
+// START HERE: 
 
-    // - Select all classes named ".tab" and assign that value to the tabs variable
-    let tabs = document.querySelectorAll('.tabs');
+// - Select all classes named ".tab" and assign that value to the tabs variable
+let tabs = document.querySelectorAll('.tabs');
 
 // - With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
 tabs.forEach(function (tab) {
