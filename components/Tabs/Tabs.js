@@ -25,10 +25,10 @@ class TabLink {
     this.tabElement.addEventListener("click", () => {
       this.selectTab;
     }
-  }
+  )};
 
   selectTab(){
-
+    
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll(".tab");
     
@@ -72,4 +72,3 @@ class TabCard {
 */
 let tabs = document.querySelectorAll(".tabs .tab");
 tabs.forEach(tab => new TabLink(tab));
-};
