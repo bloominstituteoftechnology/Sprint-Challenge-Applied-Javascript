@@ -19,30 +19,30 @@ class TabLink {
     
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    this.cards = Array.from(this.cards).map(=> {
-      
-    });
+    this.cards = Array.from(this.cards).map( this.cards => new Card(this));
 
     // Add a click event that invokes this.selectTab
-    // this.tabElement.addEventListener();
+    this.tabElement.addEventListener('click' this.selectTab);
   }
 
   selectTab(){
 
     // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
     // tabs.forEach()
 
     // Select all of the elements with the .card class on them
-    // const cards = ;
+    const cards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach()
+    cards.forEach((item) => {
+      let card = new Card(item);
+    })
     
     // Add a class of ".active-tab" to this.tabElement
-    // this.tabElement;
+    this.tabElement = ;
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
@@ -52,11 +52,11 @@ class TabLink {
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // this.cardElement;
+     this.cardElement = this.tabElement;
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement = this.style.display = 'flex';
   }
 
 }
