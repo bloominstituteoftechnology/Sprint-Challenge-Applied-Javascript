@@ -9,21 +9,21 @@ class TabLink {
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
 
     //Check to see if this.tabData is equal to 'all'
-    //if () {
-    //If `all` is true, select all cards regardless of their data attribute values
-    //this.cards = ;
-    //} else {
-    //else if `all` is false, only select the cards with matching this.tabData values
-    //this.cards = ;
-    //}
+    if (this.tabData === 'all') {
+      //If `all` is true, select all cards regardless of their data attribute values
+      this.cards = document.querySelectorAll(".cards-container .card");
+    } else {
+      //else if `all` is false, only select the cards with matching this.tabData values
+      this.cards = document.querySelectorAll(`.cards-container .card[data-tab='${this.tabData}']`);
+    }
 
 
     //Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    //this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
-    //this.tabElement.addEventListener();
-    //}
+    this.tabElement.addEventListener('click', e => this.selectTab());
+  }
 
     //selectTab() {
 
@@ -66,12 +66,12 @@ class TabLink {
     // - Select all classes named ".tab" and assign that value to the tabs variable
     let tabs = document.querySelectorAll('.tabs');
 
-    // - With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
-    tabs.forEach(function (tab) {
-      console.log(tab);
-    });
+// - With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
+tabs.forEach(function (tab) {
+  console.log(tab);
+});
 
-    // - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
-    tabs.forEach(function (tab) {
-      return new Tablink(tab);
-    });
+// - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
+tabs.forEach(function (tab) {
+  return new Tablink(tab);
+});
