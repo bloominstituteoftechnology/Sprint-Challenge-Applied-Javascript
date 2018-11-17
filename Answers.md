@@ -12,4 +12,7 @@
   when that event occurs.
 
 4. Why would we convert a NodeList into an Array?
+- NodeLists aren't javascript arrays, nodelists don’t have access to array methods. So we convert them   
+  into an array to gain access.
+  
 5. What is a component? 
