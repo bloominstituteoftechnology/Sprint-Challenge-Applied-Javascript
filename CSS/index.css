@@ -8,25 +8,33 @@
   font-family: 'PT Sans';
   font-style: italic;
   font-weight: 400;
-  src: local('PT Sans Italic'), local('PTSans-Italic'), url(https://fonts.gstatic.com/s/ptsans/v9/jizYRExUiTo99u79D0e0x8mN.ttf) format('truetype');
+  src: local('PT Sans Italic'), local('PTSans-Italic'),
+    url(https://fonts.gstatic.com/s/ptsans/v9/jizYRExUiTo99u79D0e0x8mN.ttf)
+      format('truetype');
 }
 @font-face {
   font-family: 'PT Sans';
   font-style: italic;
   font-weight: 700;
-  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(https://fonts.gstatic.com/s/ptsans/v9/jizdRExUiTo99u79D0e8fOydLxUY.ttf) format('truetype');
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'),
+    url(https://fonts.gstatic.com/s/ptsans/v9/jizdRExUiTo99u79D0e8fOydLxUY.ttf)
+      format('truetype');
 }
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0KEwA.ttf) format('truetype');
+  src: local('PT Sans'), local('PTSans-Regular'),
+    url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0KEwA.ttf)
+      format('truetype');
 }
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+    url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf)
+      format('truetype');
 }
 * {
   box-sizing: border-box;
@@ -54,6 +62,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 10;
 }
 .top-bar .container {
   width: 100%;
@@ -299,9 +308,9 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
-  width: 0%;
+  width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   transition: transform 0.275s linear;
   top: 0;
   bottom: 0;

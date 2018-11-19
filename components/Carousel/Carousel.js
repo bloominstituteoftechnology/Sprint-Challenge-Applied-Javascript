@@ -1,27 +1,21 @@
 class Carousel {
   constructor(container) {
     this.container = container;
-    console.log(this.container);
-    this.images = Array.from(this.container.querySelectorAll('img'));
+    this.leftButton = container.querySelector('.left-button');
+    this.rightButton = container.querySelector('.right-button');
+    this.images = container.querySelectorAll('img');
+    this.changeLeft();
     this.currentImage = 0;
-
-    this.rightBtn = this.container.querySelector('.right-button');
-    this.leftBtn = this.container.querySelector('.left-button');
-
-    this.moveRight = this.moveRight.bind(this);
-    this.moveLeft = this.moveLeft.bind(this);
-
-    $(this.rightBtn).click(this.moveRight);
-    $(this.leftBtn).click(this.moveLeft);
-
+    this.rightButton.addEventListener('click', () => {
+      this.changeRight();
+    });
+    this.leftButton.addEventListener('click', () => {
+      this.changeLeft();
+    });
     this.displayActive();
 
     this.autoTimer(4000);
   }
-
-  // autoTimer(duration) {
-  // 	setInterval(this.moveRight, duration);
-  // }
 
   displayActive() {
     $(this.images[this.currentImage]).css({
@@ -29,7 +23,7 @@ class Carousel {
     });
   }
 
-  moveRight() {
+  changeRight() {
     const previous =
       this.currentImage - 1 < 0
         ? this.images.length - 1
@@ -50,7 +44,7 @@ class Carousel {
     this.currentImage = previous;
   }
 
-  moveLeft() {
+  changeLeft() {
     const next = (this.currentImage + 1) % this.images.length;
     const nextSlide = this.images[next];
     const currentSlide = this.images[this.currentImage];
@@ -69,6 +63,6 @@ class Carousel {
   }
 }
 
-let carousel = $('.carousel');
+let carousel = $('carousel');
 
 carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
