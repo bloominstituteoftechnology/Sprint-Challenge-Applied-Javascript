@@ -1,68 +1,48 @@
 class Carousel {
-  constructor(container) {
-    this.container = container;
-    this.leftButton = container.querySelector('.left-button');
-    this.rightButton = container.querySelector('.right-button');
-    this.images = container.querySelectorAll('img');
-    this.changeLeft();
-    this.currentImage = 0;
-    this.rightButton.addEventListener('click', () => {
-      this.changeRight();
-    });
-    this.leftButton.addEventListener('click', () => {
-      this.changeLeft();
-    });
-    this.displayActive();
+  constructor(carousel) {
+    this.carousel = carousel;
 
-    this.autoTimer(4000);
+    this.rightButton = document.querySelector('.right-button');
+    this.leftButton = document.querySelector('.left-button');
+    this.pictures = document.querySelectorAll('.carousel-img');
+    this.slideIndex = 1;
+    Array.from(this.pictures).map(picture => new Picture(picture));
+
+    this.rightButton.addEventListener('click', () => this.toggel(1));
+    this.leftButton.addEventListener('click', () => this.toggel(-1));
   }
-
-  displayActive() {
-    $(this.images[this.currentImage]).css({
-      display: 'block'
-    });
+  toggel(n) {
+    this.show((this.slideIndex += n));
   }
-
-  changeRight() {
-    const previous =
-      this.currentImage - 1 < 0
-        ? this.images.length - 1
-        : this.currentImage - 1;
-    const previousSlide = this.images[previous];
-    const currentSlide = this.images[this.currentImage];
-    previousSlide.style.display = 'block';
-    previousSlide.style.position = 'absolute';
-    previousSlide.style.transform = 'translateX(-100%)';
-    currentSlide.style.transform = 'translateX(100%)';
-    setTimeout(() => (previousSlide.style.transform = 'translateX(0)'), 0);
-
-    setTimeout(() => {
-      currentSlide.style.display = 'none';
-      previousSlide.style.position = 'relative';
-    }, 275);
-
-    this.currentImage = previous;
-  }
-
-  changeLeft() {
-    const next = (this.currentImage + 1) % this.images.length;
-    const nextSlide = this.images[next];
-    const currentSlide = this.images[this.currentImage];
-    nextSlide.style.display = 'block';
-    nextSlide.style.position = 'absolute';
-    nextSlide.style.transform = 'translateX(100%)';
-    currentSlide.style.transform = 'translateX(-100%)';
-    setTimeout(() => (nextSlide.style.transform = 'translateX(0)'), 0);
-
-    setTimeout(() => {
-      currentSlide.style.display = 'none';
-      nextSlide.style.position = 'relative';
-    }, 275);
-
-    this.currentImage = next;
+  show(n) {
+    if (n > this.pictures.length) {
+      this.slideIndex = 1;
+    }
+    if (n < 1) {
+      this.slideIndex = this.pictures.length;
+    }
+    for (let i = 0; i < this.pictures.length; i++) {
+      this.pictures[i].style.display = 'none';
+    }
+    this.pictures[this.slideIndex - 1].style.display = 'block';
   }
 }
 
-let carousel = $('carousel');
+class Picture {
+  constructor(picture) {
+    this.picture = picture;
+  }
+}
 
-carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
+let carousel = document.querySelector('.carousel');
+
+new Carousel(carousel);
+//console.log(carousel);
+/* If You've gotten this far, you're on your own! Although we will give you some hints:
+    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
+    2. You will need to grab a reference to all of the images
+    3. Create a current index
+    4. Those buttons are gonna need some click handlers.
+    5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
+    6. Have fun!
+*/
