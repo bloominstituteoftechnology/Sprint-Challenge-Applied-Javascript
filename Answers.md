@@ -10,7 +10,7 @@
    ==> An event listener is a function that allows specific elements that were choosen to listen to specific events and when that event occurs it fires a callback.
 
 4. Why would we convert a NodeList into an Array?
-   ==> NodeLists are array-like but don't feature many mthods provided by an Array. So, converting a NodeLists into an Array, can allow us to use more methods of array.
+   ==> NodeLists are array-like but don't feature many methods provided by an Array. So, converting a NodeLists into an Array, can allow us to use more methods of an Array.
 
 5. What is a component?
    ==> Components are reusable pieces of code that can be used to build elements sharing functionality and styling.
