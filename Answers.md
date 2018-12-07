@@ -9,4 +9,4 @@
 4. Why would we convert a NodeList into an Array?
   - If you need methods that a NodeList does not provide, but an Array does, you can convert it to an Array to unlock more of those methods.
 5. What is a component? 
-  - Components is a set combination of three parts, HTML, CSS, and JavaScript that work together to create reusable and modular building block to modern applications.
+  - Components are a set combination of three parts, HTML, CSS, and JavaScript that work together to create reusable and modular building block to modern applications.

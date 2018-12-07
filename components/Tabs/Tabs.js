@@ -1,6 +1,18 @@
 class TabLink {
   constructor(tabElement){
-    // assign this.tabElement to the tabElement DOM reference
+    this.tabElement = tabElement;
+    
+    this.tabData = this.tabElement.dataset.tab;
+    console.log(this.tabData)
+  }
+  selectTab(){
+
+  }
+}
+
+let tabs = document.querySelectorAll(".tab").forEach(item=>new TabLink(item));
+
+// assign this.tabElement to the tabElement DOM reference
     // this.tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
@@ -16,14 +28,14 @@ class TabLink {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
     }
-    /*
+    
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     // this.cards = Array.from(this.cards).map();
 
     // Add a click event that invokes this.selectTab
     // this.tabElement.addEventListener();
-  }
+
 
   selectTab(){
 
@@ -44,8 +56,8 @@ class TabLink {
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
-  }
-}
+    
+
 
 class TabCard {
   constructor(cardElement){
@@ -68,4 +80,3 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
