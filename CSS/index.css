@@ -251,6 +251,14 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
+.cards-container .card[data-tab="picture"] .author .img-container {
+  height: 150px;
+  border: none;
+  padding-left: 15%;
+}
+.cards-container .card[data-tab="picture"] .author .img-container img {
+  width: 10px;
+}
 .carousel {
   width: 100%;
   display: flex;
