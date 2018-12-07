@@ -9,9 +9,9 @@ class TabLink {
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     // Check to see if this.tabData is equal to 'all'
-    if(this.tabData === 'All' ){
+    if(this.tabData === 'all' ){
       // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = this.cardElement.dataset.tab;
+      this.cards = document.querySelectorAll('.cards')
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       this.cards = document.querySelector(`.cards[data-tab="${this.tabData}"]`);
@@ -19,7 +19,7 @@ class TabLink {
     
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    this.cards = Array.from(this.cards).map(cardElement => new TabCard(cardElement));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click',() => {this.selectTab();});
