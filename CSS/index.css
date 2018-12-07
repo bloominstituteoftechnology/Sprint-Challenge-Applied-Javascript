@@ -4,6 +4,14 @@
 .border-bottom-grey {
   border-bottom: 1px solid lightgrey;
 }
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 @font-face {
   font-family: 'PT Sans';
   font-style: italic;
@@ -46,7 +54,7 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 .top-bar {
-  z-index: 5000;
+  z-index: 500;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -302,4 +310,10 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
