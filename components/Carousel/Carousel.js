@@ -6,10 +6,34 @@ class Carousel {
     this.images = document.querySelectorAll(".carousel img");
     this.currentIndex = 0;
     this.currentPicture = this.images[this.currentIndex];
-    this.currentPicture.classList.toggle("current-picture");
+    this.currentPicture.style.display = "block";
+    this.leftBtn.addEventListener("click", () => {
+      this.picLeft();
+    });
+    this.rightBtn.addEventListener("click", () => {
+      this.picRight();
+    });
   }
-  picLeft() {}
-  picRight() {}
+  picLeft() {
+    this.currentPicture.style.display = "none";
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.images.length - 1;
+    } else {
+      this.currentIndex = this.currentIndex - 1;
+    }
+    this.currentPicture = this.images[this.currentIndex];
+    this.currentPicture.style.display = "block";
+  }
+  picRight() {
+    this.currentPicture.style.display = "none";
+    if (this.currentIndex === this.images.length - 1) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex = this.currentIndex + 1;
+    }
+    this.currentPicture = this.images[this.currentIndex];
+    this.currentPicture.style.display = "block";
+  }
 }
 
 const carousel = new Carousel(document.querySelector(".carousel"));
