@@ -29,7 +29,7 @@ In the context of the DOM, an event listener waits for a particular type of even
 
 A NodeList is an array-like object, but it doesn't have all the methods of an array. 
 
-For the sake of convenience, if we can afford to use extra resources, we can turn it into an array and gain access to all the methods of the Array prototype, saving time and thinking power instead of coding these functionalities from scratch.
+For the sake of convenience, if we can afford to use extra resources, we can turn it into an array and gain access to all the methods of the Array prototype (like `.map` and `.filter`, to name a few), saving time and thinking power instead of coding these functionalities from scratch.
 
 # 5. What is a component? 
 
