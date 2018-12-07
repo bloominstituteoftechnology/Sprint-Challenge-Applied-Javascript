@@ -14,7 +14,7 @@ A piece of JavaScript code that "listens" for an event to happen, and then if th
 
 4. Why would we convert a NodeList into an Array?
 
-Because we can do more with it in that form!
+Because we can do more with it in that form! NodeLists are actually a browser API, whereas Arrays are JS. NodeLists also may be "live" (things like querySelector are static)
 
 
 5. What is a component? 

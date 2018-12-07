@@ -11,7 +11,7 @@ class Carousel {
         this.index += 1;
         if (this.index >= 5) {
             this.index = 1
-        }
+        } 
         this.el.querySelectorAll('.slider').forEach((cV) => {
             cV.classList.toggle('active-slider', false)
         })
@@ -22,7 +22,7 @@ class Carousel {
         this.index -= 1;
         if (this.index <= 0) {
             this.index = 4
-        }
+        } else
         this.el.querySelectorAll('.slider').forEach((cV) => {
             cV.classList.toggle('active-slider', false)
         })
