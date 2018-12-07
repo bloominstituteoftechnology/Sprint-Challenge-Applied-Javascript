@@ -302,6 +302,9 @@ body {
   width: 100%;
   display: none;
 }
+.active-slider {
+  display: flex;
+}
 @keyframes slideInLeft {
   from {
     -webkit-transform: translate3d(-100%, 0, 0);
