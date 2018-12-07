@@ -1,3 +1,5 @@
+// NOTE: The Carousel.js instructions gave us the choice  for fade-in or slide-in
+
 class Carousel {
   constructor(carouselElement) {
     this.carouselElement = carouselElement;
@@ -14,33 +16,34 @@ class Carousel {
   }
 
   nextPhotoLeft() {
-    this.images.forEach(img => img.classList.remove("img-view"));
+    this.images.forEach(img => {
+      TweenMax.to(img, 1, { opacity: 0 });
+      img.classList.remove("img-view");
+    });
     this.index--;
     if (this.index < 0) {
       this.index = 3;
     }
     this.images[this.index].classList.add("img-view");
+    const currentImg = this.images[this.index];
+    TweenMax.to(currentImg, 1, { opacity: 1 });
   }
 
   nextPhotoRight() {
-    this.images.forEach(img => img.classList.remove("img-view"));
+    this.images.forEach(img => {
+      TweenMax.to(img, 1, { opacity: 0 });
+      img.classList.remove("img-view");
+    });
     this.index++;
     if (this.index > 3) {
       this.index = 0;
     }
     this.images[this.index].classList.add("img-view");
+    const currentImg = this.images[this.index];
+    TweenMax.to(currentImg, 1, { opacity: 1 });
   }
 }
 
 let carousel = document
   .querySelectorAll(".carousel")
   .forEach(carousel => new Carousel(carousel));
-
-/* If You've gotten this far, you're on your own! Although we will give you some hints:
-    [x] You will need to grab a reference to the carousel, and in it grab the left and right buttons
-    [x] You will need to grab a reference to all of the images
-    [x] Create a current index
-    [x] Those buttons are gonna need some click handlers.
-    5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
-    6. Have fun!
-*/
