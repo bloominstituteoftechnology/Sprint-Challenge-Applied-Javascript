@@ -6,28 +6,61 @@ class Carousel {
         this.imgs = this.element.querySelectorAll('img');
         this.numImgs = this.imgs.length;
         this.currentIndex = 0;
+        this.container = this.element.querySelector('.car-imgs');
         this.imgs[0].style.display = "block";
         this.left.addEventListener('click', () => this.leftClick());
         this.right.addEventListener('click', () => this.rightClick());
     }
 
     leftClick(){
+        let lastImg = this.imgs[this.currentIndex];
         if(this.currentIndex === 0){
             this.currentIndex = this.numImgs - 1;
         } else {
             this.currentIndex--;
         }
-        this.imgs.forEach(el => el.style.display = 'none');
-        this.imgs[this.currentIndex].style.display = 'block';
+        TweenMax.fromTo(this.imgs[this.currentIndex], 1, {
+            display: 'inline',
+            x: '100vw'
+        }, {
+            display: 'block',
+            x: 0
+        });
+        TweenMax.fromTo(this.left, 1, {
+            opacity: 0.8,
+            zIndex: 1
+        }, {
+            opacity: 1,
+            zIndex: 1
+        });
+
+        lastImg.style.display = 'none';
+        this.imgs[this.currentIndex].style.display = 'inline';
+
     }
 
     rightClick(){
+        let lastImg = this.imgs[this.currentIndex];
         if(this.currentIndex === this.numImgs - 1){
             this.currentIndex = 0;
         } else {
             this.currentIndex++;
         }
-        this.imgs.forEach(el => el.style.display = 'none');
+        TweenMax.fromTo(this.imgs[this.currentIndex], 1, {
+            display: 'inline',
+            x: '-100vw'
+        }, {
+            display: 'block',
+            x: 0
+        });
+        TweenMax.fromTo(this.left, 1, {
+            opacity: 0.8,
+            zIndex: 1
+        }, {
+            opacity: 1,
+            zIndex: 1
+        });
+        lastImg.style.display = 'none';
         this.imgs[this.currentIndex].style.display = 'block';
     }
 }
