@@ -3,40 +3,57 @@ class Carousel {
         this.element = element;
         this.left = document.querySelector(`.left-button`);
         this.right = document.querySelector(`.right-button`);
-        this.image = document.querySelectorAll(`img`);
-        this.image[1].style.display = 'block';
-        this.image[2].style.display = 'block';
-        this.disp = [1,2];
+        this.image = document.querySelectorAll(`.carImg`);
+        this.image[0].style.display = 'flex';
+        // this.image[2].style.display = 'flex';
+        this.disp = 0;
+        // console.log(this.disp);
         this.left.addEventListener('click', () => this.cycleLeft());
         this.right.addEventListener('click', () => this.cycleRight());
     }
     cycleLeft(){
         this.image.forEach(x => x.style.display = 'none');
-        const count = Array.from(this.image).length;
-        if(this.disp[0] > 0){
-            this.disp[0] = this.disp[0] - 1; 
+        const count = Array.from(this.image).length - 1;
+        if(this.disp > 0){
+            this.disp -= 1; 
         }
         else{
-            this.disp[0] = count;
+            this.disp = count;
         }
-        this.disp[1] = this.disp[1] - 1;
-        this.image[this.disp[0]].style.display = 'block';
-        this.image[this.disp[1]].style.display = 'block';
-        console.log('left');
+        // if(this.disp[1] > 0){
+        //     this.disp[1] = this.disp[1] - 1; 
+        // }
+        // else{
+        //     this.disp[1] = count;
+        // }
+        this.image[this.disp].style.display = 'flex';
+        // this.image[this.disp[0]].style.order = -1;
+        // this.image[this.disp[1]].style.display = 'flex';
+        // this.image[this.disp[1]].style.order = 0;
+        // console.log('left');
+        // console.log(this.disp);
     }
     cycleRight(){
         this.image.forEach(x => x.style.display = 'none');
-        const count = Array.from(this.image).length;
-        if(this.disp[1] < count){
-            this.disp[1] += 1; 
+        const count = Array.from(this.image).length - 1;
+        if(this.disp < count){
+            this.disp += 1; 
         }
         else{
-            this.disp[0] +=1;
+            this.disp = 0;
         }
-        this.disp[1] += 1;
-        this.image[this.disp[0]].style.display = 'block';
-        this.image[this.disp[1]].style.display = 'block';
-        console.log('right');
+        // if(this.disp[0] < count){
+        //     this.disp[0] = this.disp[0] + 1; 
+        // }
+        // else{
+        //     this.disp[0] = 0;
+        // }
+        this.image[this.disp].style.display = 'flex';
+        // this.image[this.disp[0]].style.order = -1;
+        // this.image[this.disp[1]].style.display = 'flex';
+        // this.image[this.disp[1]].style.order = 0;
+        // console.log('right');
+        // console.log(this.disp);
     }
 }
 
