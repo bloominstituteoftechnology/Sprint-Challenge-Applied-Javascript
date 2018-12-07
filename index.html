@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script> 
 </head>
 
 <body>
@@ -50,14 +50,14 @@
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+ <div class="carousel">
     <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
+    <img src="./assets/carousel/mountains.jpeg" class="slider active-slider" data-position="1"/>
+    <img src="./assets/carousel/computer.jpeg" class="slider" data-position="2"/>
+    <img src="./assets/carousel/trees.jpeg" class="slider" data-position="3"/>
+    <img src="./assets/carousel/turntable.jpeg" class="slider" data-position="4"/>
     <div class="right-button">></div>
-  </div> -->
+  </div> 
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -123,8 +123,28 @@
       </div>
     </div>
 
-    <div class="card" data-tab="node">
+    <div class="card" data-tab="technology">
       <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">technology</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">technology in 2018: Which stuff?</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/sir.jpg" />
