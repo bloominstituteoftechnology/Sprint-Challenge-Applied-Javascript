@@ -61,6 +61,7 @@ body {
   justify-content: none;
   align-items: none;
   flex-direction: row;
+  z-index: 99;
   color: #fff;
   letter-spacing: 1px;
   padding: 0 10px;
@@ -259,7 +260,6 @@ body {
   flex-direction: row;
   height: 500px;
   position: relative;
-  z-index: -1;
   overflow: hidden;
   margin-top: 16px;
 }
