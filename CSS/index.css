@@ -61,6 +61,7 @@ body {
   justify-content: none;
   align-items: none;
   flex-direction: row;
+  z-index: 99;
   color: #fff;
   letter-spacing: 1px;
   padding: 0 10px;
@@ -301,4 +302,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .active-slider {
+  display: flex;
 }
