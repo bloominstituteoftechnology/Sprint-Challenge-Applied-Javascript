@@ -25,7 +25,6 @@ class TabLink {
   }
 
   selectTab(e){
-
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll(".tab");
     
@@ -42,7 +41,7 @@ class TabLink {
     this.tabElement.classList.add("active-tab");
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => card.selectCard(e));
   }
 }
 
@@ -55,7 +54,6 @@ class TabCard {
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = "flex";
   }
-
 }
 
 /* START HERE: 

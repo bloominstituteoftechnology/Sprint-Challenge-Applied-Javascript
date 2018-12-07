@@ -1,10 +1,5 @@
-class Carousel {
-
-}
-
-let carousel = document.querySelector();
-
-/* If You've gotten this far, you're on your own! Although we will give you some hints:
+/* 
+    If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     2. You will need to grab a reference to all of the images
     3. Create a current index
@@ -12,3 +7,39 @@ let carousel = document.querySelector();
     5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
+
+class Carousel {
+    constructor(carouselElement) {
+        this.carouselElement = carouselElement;
+
+        this.leftButton = carouselElement.querySelector(".left-button");
+        this.rightButton = carouselElement.querySelector(".right-button");
+
+        this.images = carouselElement.querySelectorAll("img");
+        
+        this.currentIndex = 0;
+        this.images[0].style.display = "block";
+
+        this.leftButton.addEventListener("click", e => this.clickedLeft(e));
+        this.rightButton.addEventListener("click", e => this.clickedRight(e));
+    }
+
+    clickedLeft(e) {
+        this.images[this.currentIndex].style.display = "none";
+
+        this.currentIndex = this.currentIndex ?  
+                            this.currentIndex - 1 : this.images.length - 1;
+        this.images[this.currentIndex].style.display = "block";
+    }
+
+    clickedRight(e) {
+        this.images[this.currentIndex].style.display = "none";
+
+        this.currentIndex = this.currentIndex + 1 === this.images.length ? 
+                            0 : this.currentIndex + 1;
+        this.images[this.currentIndex].style.display = "block";
+    }
+}
+
+let carousel = document.querySelector(".carousel");
+new Carousel(carousel);
