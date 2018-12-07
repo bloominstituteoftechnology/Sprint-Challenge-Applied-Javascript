@@ -58,6 +58,7 @@ body {
   flex-direction: row;
   position: fixed;
   height: 44px;
+  z-index: 100;
   background-color: #333;
 }
 .top-bar .container {
@@ -317,6 +318,7 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   position: absolute;
+  left: 0%;
 }
 .carousel .carousel-imgs img {
   -webkit-user-select: none;
