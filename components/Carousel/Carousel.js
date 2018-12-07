@@ -7,7 +7,6 @@ class Carousel {
         this.imgs = this.element.querySelectorAll('img');
         this.carouselLeftButton.addEventListener('click',(e) => this.moveCarousel(e))
         this.carouselRightButton.addEventListener('click',(e) => this.moveCarousel(e))
-        this.imgs[this.index].style.display = "block";
     }
     moveCarousel(e){
         let mover = 1;
@@ -20,9 +19,9 @@ class Carousel {
             this.index = 0;
         }
         this.imgs.forEach(img => {
-            img.style.display = "none";
+            img.classList.add('hidden--img');
         })
-        this.imgs[this.index].style.display = "block";
+        this.imgs[this.index].classList.remove('hidden--img');
     }
 }
 

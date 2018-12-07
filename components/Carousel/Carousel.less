@@ -37,6 +37,19 @@
   }
   img {
     .width-100();
-    display: none;
+    display: block;
+    transform: translateX(0);
+    transition-duration: .5s;
   }
+  img.hidden--img {
+    transform: translateX(600px);
+    animation-name: opas;
+    animation-duration: .5s;
+    width: 0;
+  }
+}
+@keyframes opas {
+  0% {opacity: .3;}
+  20% {opacity: 0;}
+  100% {opacity: 0;}
 }
