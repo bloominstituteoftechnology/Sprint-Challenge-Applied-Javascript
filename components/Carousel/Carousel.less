@@ -10,6 +10,7 @@
   }
   .left-button, .right-button {
     .flex(center);
+    .no-select();
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
     font-size: 40px;
@@ -28,14 +29,17 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    // .no-select();
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    // .no-select();
   }
   img {
     .width-100();
     display: none;
+    .no-select();
   }
 }
