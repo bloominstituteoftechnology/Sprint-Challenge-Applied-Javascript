@@ -259,6 +259,7 @@ body {
   flex-direction: row;
   height: 500px;
   position: relative;
+  z-index: -1;
   overflow: hidden;
   margin-top: 16px;
 }
