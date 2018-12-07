@@ -1,7 +1,7 @@
 class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
-    // this.tabElement;
+    this.tabElement = tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
     // this.tabData = ; 
@@ -68,4 +68,5 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => new TabLink(tab));
