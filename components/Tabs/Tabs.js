@@ -11,7 +11,7 @@ class TabLink {
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-       this.cards = document.querySelectorAll('.card'); //Might not need the ALL
+       this.cards = document.querySelector('.card'); //Might not need the ALL
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       this.cards =  document.querySelector(`.card[data-tab="${this.tabData}"]`);
@@ -26,7 +26,6 @@ class TabLink {
     // Add a click event that invokes this.selectTab
      this.tabElement.addEventListener('click' , () => 
      this.selectTab());
-     console.log('is this cliked')
   };
 
   selectTab(){
@@ -43,8 +42,8 @@ class TabLink {
     const cards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach((cards), () => {
-      cards.document.querySelector('.card').style.display = 'none'; //Could be Wrong
+    cards.forEach((card), () => {
+      card.document.querySelector('.card').style.display = 'none'; //Could be Wrong
     });
 
  
@@ -63,7 +62,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    //  this.cardElement
+      this.cardElement.document.querySelector('.card').style.display = 'flex';
   }
 
 }
