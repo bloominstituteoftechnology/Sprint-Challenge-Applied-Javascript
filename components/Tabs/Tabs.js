@@ -19,18 +19,15 @@ class TabLink {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`)
     }
       // else if `all` is false, only select the cards with matching this.tabData values
-      console.log(this.cards) 
-    }
-    
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    // this.cards = Array.from(this.cards).map();
+     this.cards = Array.from(this.cards).map(element => new TabCard(element));
 
     // Add a click event that invokes this.selectTab
-    // this.tabElement.addEventListener();
+     this.tabElement.addEventListener('click', () => {this.selectTab()});
   }
 
-  selectTab(){
+  selectTab() { 
 
     // Select all elements with the .tab class on them
     // const tabs = document.querySelectorAll();
