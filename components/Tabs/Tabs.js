@@ -86,59 +86,68 @@ function addArticle(e) {
   const titleField = document.querySelector(".formArticleTitle");
   const topicField = document.querySelector(".formArticleTopicList");
   
-  const topicOptions = topicField.querySelectorAll("option");
-
   const newCardAuthor = authorField.value;
   const newCardTitle = titleField.value;
-  const newCardTopic = topicOptions[topicField.selectedIndex].value;
 
-  const activeTab = document.querySelector(".active-tab");
+  // Input validation first
+  if (newCardAuthor === "") {
+    alert("Provide your name first.");
+  } else if (newCardTitle === "") {
+    alert("Provide a title first.");
+  } else if (topicField.selectedIndex === 0) {
+    alert("Select a topic first");
+  } else {
+    const topicOptions = topicField.querySelectorAll("option");
+    const newCardTopic = topicOptions[topicField.selectedIndex].value;
 
-  // Build DOM elements
-  // ------------------
+    const activeTab = document.querySelector(".active-tab");
 
-  const cardElement = document.createElement("div");
-  cardElement.classList.add("card");
-  cardElement.setAttribute("data-tab", newCardTopic);
+    // Build DOM elements
+    // ------------------
 
-  const headlineElement = document.createElement("div");
-  headlineElement.classList.add("headline");
-  headlineElement.textContent = newCardTitle;
+    const cardElement = document.createElement("div");
+    cardElement.classList.add("card");
+    cardElement.setAttribute("data-tab", newCardTopic);
 
-  const authorElement = document.createElement("div");
-  authorElement.classList.add("author");
+    const headlineElement = document.createElement("div");
+    headlineElement.classList.add("headline");
+    headlineElement.textContent = newCardTitle;
 
-  const imgContainerElement = document.createElement("div");
-  imgContainerElement.classList.add("img-container");
+    const authorElement = document.createElement("div");
+    authorElement.classList.add("author");
 
-  const authorDisplayElement = document.createElement("span");
-  authorDisplayElement.textContent = `By ${newCardAuthor}`;
+    const imgContainerElement = document.createElement("div");
+    imgContainerElement.classList.add("img-container");
 
-  profileImgElement = document.createElement("img");
-  profileImgElement.src = "./assets/anon.png";
+    const authorDisplayElement = document.createElement("span");
+    authorDisplayElement.textContent = `By ${newCardAuthor}`;
 
-  imgContainerElement.appendChild(profileImgElement);
+    profileImgElement = document.createElement("img");
+    profileImgElement.src = "./assets/anon.png";
 
-  authorElement.appendChild(imgContainerElement);
-  authorElement.appendChild(authorDisplayElement);
+    imgContainerElement.appendChild(profileImgElement);
 
-  cardElement.appendChild(headlineElement);
-  cardElement.appendChild(authorElement);
+    authorElement.appendChild(imgContainerElement);
+    authorElement.appendChild(authorDisplayElement);
 
-  cardsArea.appendChild(cardElement);
+    cardElement.appendChild(headlineElement);
+    cardElement.appendChild(authorElement);
 
-  console.log("REACHED")
+    cardsArea.appendChild(cardElement);
 
-  if (newCardTopic !== activeTab.textContent
-      && activeTab.dataset.tab != "all") {
-    cardElement.style.display = "none";
-    console.log("SLAPPD");
+    console.log("REACHED")
+
+    if (newCardTopic !== activeTab.textContent
+        && activeTab.dataset.tab != "all") {
+      cardElement.style.display = "none";
+      console.log("SLAPPD");
+    }
+
+    // Clear all fields
+    // ----------------
+
+    authorField.value = "";
+    titleField.value = ""
+    topicField.selectedIndex = 0;
   }
-
-  // Clear all fields
-  // ----------------
-
-  authorField.value = "";
-  titleField.value = ""
-  topicField.selectedIndex = 0;
 }
