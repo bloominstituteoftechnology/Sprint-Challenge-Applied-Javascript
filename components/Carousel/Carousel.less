@@ -44,4 +44,32 @@
     .width-100();
     display: none;
   }
+  .slide-skips {
+    color: white;
+    opacity: .8;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    transform: translate(0, -100%);
+    justify-content: center;
+
+    .slide-skip {
+      opacity: .5;
+      border-radius: 50px;
+      border: 1px solid white;
+      padding: 12px;
+      z-index: 100;
+      transition: background-color .25s;
+      margin: 0 6px;
+      margin-bottom: 25px;
+      
+      .active {
+        background-color: white;
+      }
+
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
 }

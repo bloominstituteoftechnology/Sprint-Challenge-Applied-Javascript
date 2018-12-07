@@ -304,3 +304,28 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .slide-skips {
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  transform: translate(0, -100%);
+  justify-content: center;
+}
+.carousel .slide-skips .slide-skip {
+  opacity: 0.5;
+  border-radius: 50px;
+  border: 1px solid white;
+  padding: 12px;
+  z-index: 100;
+  transition: background-color 0.25s;
+  margin: 0 6px;
+  margin-bottom: 25px;
+}
+.carousel .slide-skips .slide-skip .active {
+  background-color: white;
+}
+.carousel .slide-skips .slide-skip:hover {
+  background-color: white;
+}
