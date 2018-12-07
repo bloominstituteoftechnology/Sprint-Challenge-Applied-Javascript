@@ -282,6 +282,10 @@ body {
   height: 50px;
   cursor: pointer;
 }
+.carousel .left-button:active,
+.carousel .right-button:active {
+  outline: none;
+}
 .carousel .left-button:hover,
 .carousel .right-button:hover {
   color: #333;
@@ -302,7 +306,7 @@ body {
   max-width: 1200px;
   max-height: 100%;
   object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(85%);
 }
 .carousel .slider__item {
   width: 100%;
