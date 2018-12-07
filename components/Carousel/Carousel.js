@@ -17,7 +17,10 @@ class Carousel {
 
         //Keep track if Carousel Animating or not
         this.animating = false;
-
+        
+        //Create TimeBar Reference
+        this.timeBar = document.querySelector('.time-bar');
+        this.timeBarStart();
         //Create Slide Skip-To Buttons
         this.skipTosContainer = this.carousel.querySelector('.slide-skips');
         this.skipToBtns = [];
@@ -35,6 +38,9 @@ class Carousel {
     moveLeft() {
         //If a slide transition IS NOT happening, we can do this.
         if(!this.animating) {
+            //Hitting left will pause the automatic looping of images. This gets resumed if you move the slide right.
+            TweenMax.killAll();
+            this.timeBar.style.width = '0%';
             //Hide all images, then display the next slide to the right/-1  index
             let exitSlide = this.currentSlide;
             let nextSlideIndex = this.currentSlideIndex - 1;
@@ -90,13 +96,14 @@ class Carousel {
             this.slideSkipBtnsDeactivate();
             this.slideSkipBtnActivate(this.currentSlideIndex);
             this.animateCarousel(exitSlide, this.currentSlide);
+            this.timeBarReset();
         }
     }
 
     animateCarousel(exit, next) {
         this.animating = true;
         //Animate exit/current slide fading out.
-        TweenMax.fromTo(exit, .4, {
+        TweenMax.fromTo(exit, .5, {
             opacity: 1
         }, {
             opacity: 0,
@@ -104,7 +111,7 @@ class Carousel {
                 exit.style.display = 'none';
                 exit.style.opacity = 1;
                 next.style.display = 'flex';
-                TweenMax.fromTo(next, .4, {
+                TweenMax.fromTo(next, .5, {
                     opacity: 0
                 }, {
                     opacity: 1,
@@ -144,6 +151,28 @@ class Carousel {
     slideSkipBtnActivate(i) {
         this.skipToBtns[i].style.backgroundColor = 'white';
         this.skipToBtns[i].classList.add('active');
+    }
+
+    timeBarStart() {
+        let maxWidth = document.querySelector('.carousel').clientWidth;
+        TweenMax.fromTo(this.timeBar, 6, {
+            width: '0%'
+        }, {
+            width: maxWidth,
+            onComplete: () => {
+                this.moveRight();
+                this.timeBarReset();
+            }
+        });
+    }
+
+    timeBarReset() {
+        TweenMax.to(this.timeBar, 1, {
+            width: '0%',
+            onComplete: () => {
+                this.timeBarStart();
+            }
+        });
     }
 }
 
