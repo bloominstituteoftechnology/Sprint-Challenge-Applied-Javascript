@@ -3,23 +3,43 @@ class Carousel {
         this.element = element;
     
         this.rightButton = document.querySelector(".right-button");
-        this.rightButton.addEventListener("click", () => {this.clickRight});
+        console.log(this.rightButton)
+        this.rightButton.addEventListener("click", () => {this.clickRight()});
 
         this.leftButton = document.querySelector(".left-button");
-        this.leftButton.addEventListener("click", () => {this.clickLeft});
+        this.leftButton.addEventListener("click", () => {this.clickLeft()});
 
-        currentIndex = 0;
-        images[currentIndex].classList.add("current-img")
+        this.currentIndex = 0
+        this.images = document.querySelectorAll(".carousel img")
+        this.images[this.currentIndex].classList.add("current-img")
     }
 
     clickRight() {
+        this.images[this.currentIndex].classList.remove("current-img")
+        this.currentIndex += 1;
+        if (this.currentIndex === this.images.length) {
+            this.currentIndex = 0;
+        }
+        this.images[this.currentIndex].classList.add("current-img")
+        
+    }
+
+    clickLeft() {
+        this.images[this.currentIndex].classList.remove("current-img")
+        this.currentIndex -= 1;
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.images.length-1;
+        }
+        this.images[this.currentIndex].classList.add("current-img")
         
     }
 }
 
 let carousel = document.querySelector(".carousel");
-let images = document.querySelectorAll(".carousel img")
+carousel = new Carousel();
+console.log(carousel)
 
+console.log("hello")
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
     2. You will need to grab a reference to all of the images
