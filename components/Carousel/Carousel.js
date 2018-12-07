@@ -4,14 +4,7 @@ class Carousel {
     this.leftButton = document.querySelector('.left-button')
     this.rightButton = document.querySelector('.right-button')
     this.images = document.querySelectorAll('.carousel img')
-    //console.log(this.images[0]);
     this.currentIndex = 0;
-    if (this.currentIndex < 0) {
-        this.currentIndex = 2;
-    }
-    if (this.currentIndex > 2) {
-        this.currentIndex = 0;
-    }
     this.currentImage = this.images[this.currentIndex];
     this.currentImage.style.display = 'block';
     this.leftButton.addEventListener('click', () => this.previousImage());
@@ -29,10 +22,6 @@ class Carousel {
         this.currentIndex = 0;
     }
     this.images[this.currentIndex].style.display = 'block';
-    // const images = document.querySelectorAll('.carousel img');
-    // images.forEach(image => image.style.display = 'none');
-    // this.currentImage = this.images[this.currentImage];
-    // this.currentImage.style.display = 'block';
  }
  nextImage() {
     const images = document.querySelectorAll('.carousel img');
@@ -45,10 +34,6 @@ class Carousel {
         this.currentIndex = 0;
     }
     this.images[this.currentIndex].style.display = 'block';
-    // const images = document.querySelectorAll('.carousel img');
-    // images.forEach(image => image.style.display = 'none');
-    // this.currentImage = this.images[this.currentImage];
-    // this.currentImage.style.display = 'block';
  }
 }
 
