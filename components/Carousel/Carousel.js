@@ -12,14 +12,16 @@ class Carousel {
     this.images = Array.from(this.carousel.querySelectorAll("img"))
       .map(img => new CarouselImage(img));
     // display first image
-    this.images[0].display = "block";
-    // console.log(this.images);
+    console.log(this.images);
+    this.images[this.currIndex].img.style.display = "block";
     // add event listeners to buttons:
     this.ltButton.addEventListener('click', () => this.btnClick("left"));
     this.rtButton.addEventListener('click', () => this.btnClick("right"));
   }
   
   btnClick(btn) {
+    // hide current image
+    this.images[this.currIndex].img.style.removeProperty('display');
     // check which button, update index accordingly:
     if (btn === "left"){
       // update this.currIndex to move one left or to end if at beginning
@@ -36,8 +38,9 @@ class Carousel {
         this.currIndex ++;
       }
     }
-
-    console.log(this.currIndex);
+    // display next image
+    this.images[this.currIndex].img.style.display = "block";
+    // console.log(this.currIndex);
   } // btnClick
 }
 
