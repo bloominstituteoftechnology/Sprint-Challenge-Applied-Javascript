@@ -15,16 +15,19 @@ class Carousel {
     leftClick(){
         let lastImg = this.imgs[this.currentIndex];
         this.container.style.backgroundImage = `url(${this.imgs[this.currentIndex].src})`;
+        lastImg.style.display = 'none';
+        
+
         if(this.currentIndex === 0){
             this.currentIndex = this.numImgs - 1;
         } else {
             this.currentIndex--;
         }
+
+        this.imgs[this.currentIndex].style.display = 'block';
         TweenMax.fromTo(this.imgs[this.currentIndex], 1, {
-            display: 'inline',
             x: '100vw'
         }, {
-            display: 'block',
             x: 0
         });
         TweenMax.fromTo(this.left, 1, {
@@ -34,22 +37,22 @@ class Carousel {
             opacity: 1,
             zIndex: 1
         });
-
-        lastImg.style.display = 'none';
-        this.imgs[this.currentIndex].style.display = 'inline';
-
     }
 
     rightClick(){
         let lastImg = this.imgs[this.currentIndex];
         this.container.style.backgroundImage = `url(${this.imgs[this.currentIndex].src})`;
+        lastImg.style.display = 'none';
+        
         if(this.currentIndex === this.numImgs - 1){
             this.currentIndex = 0;
         } else {
             this.currentIndex++;
         }
+
+        this.imgs[this.currentIndex].style.display = 'block';
         TweenMax.fromTo(this.imgs[this.currentIndex], 1, {
-            display: 'inline',
+            display: 'block',
             x: '-100vw'
         }, {
             display: 'block',
@@ -61,10 +64,7 @@ class Carousel {
         }, {
             opacity: 1,
             zIndex: 1
-        });
-        lastImg.style.display = 'none';
-        
-        this.imgs[this.currentIndex].style.display = 'block';
+        });    
     }
 }
 
