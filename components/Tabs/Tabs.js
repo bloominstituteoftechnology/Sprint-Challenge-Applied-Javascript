@@ -49,7 +49,7 @@ class TabLink {
      this.tabElement.classList.add('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-      this.cards.forEach(card => card.selectCard());
+       this.cards.forEach(card => card.selectCard());
   }
 }
 
@@ -60,7 +60,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-     this.cardElement;
+     this.cardElement.style.display = "flex";
   }
 
 }
