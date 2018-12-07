@@ -16,9 +16,11 @@ class Carousel {
         this.rightButton = carouselElement.querySelector(".right-button");
 
         this.images = carouselElement.querySelectorAll("img");
+        this.indicators = carouselElement.querySelectorAll(".indicator");
         
         this.currentIndex = 0;
         this.images[0].style.display = "block";
+        this.indicators[0].style.borderColor = "white";
 
         this.leftButton.addEventListener("click", e => this.clickedLeft(e));
         this.rightButton.addEventListener("click", e => this.clickedRight(e));
@@ -27,7 +29,11 @@ class Carousel {
     clickedLeft(e) {
         const newIndex = this.currentIndex ?  
                             this.currentIndex - 1 : this.images.length - 1;
+                            
         this.images[newIndex].style.display = "block";
+
+        this.indicators[this.currentIndex].style.borderColor = "lightgrey";
+        this.indicators[newIndex].style.borderColor = "white";
 
         const distance = this.images[newIndex].width;
 
@@ -48,7 +54,11 @@ class Carousel {
     clickedRight(e) {
         const newIndex = this.currentIndex + 1 === this.images.length ? 
                             0 : this.currentIndex + 1;
+
         this.images[newIndex].style.display = "block";
+
+        this.indicators[this.currentIndex].style.borderColor = "lightgrey";
+        this.indicators[newIndex].style.borderColor = "white";
 
         const distance = this.images[newIndex].width;
 

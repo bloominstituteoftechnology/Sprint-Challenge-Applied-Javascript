@@ -40,4 +40,17 @@
     .width-100();
     display: none;
   }
+  .indicators {
+    position: absolute;
+    bottom: 10px;
+    z-index: 2;
+    .flex(center, flex-stanonert, row);
+
+    .indicator {
+      display: inline-block;
+      border: 10px double @lambda-times-color-lightgrey;
+      border-radius: 100%;
+      margin: 0 10px;
+    }
+  }
 }

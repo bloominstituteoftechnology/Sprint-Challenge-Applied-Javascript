@@ -305,3 +305,18 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .indicators {
+  position: absolute;
+  bottom: 10px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-stanonert;
+  flex-direction: row;
+}
+.carousel .indicators .indicator {
+  display: inline-block;
+  border: 10px double lightgrey;
+  border-radius: 100%;
+  margin: 0 10px;
+}
