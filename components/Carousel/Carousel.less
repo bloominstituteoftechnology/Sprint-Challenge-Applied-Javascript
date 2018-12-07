@@ -1,10 +1,9 @@
 .carousel {
-  border: 10px solid red;
   .width-100();
   .flex(center, center);
   height: 500px;
+  width: 100%;
   position: relative;
-  overflow: hidden;
   margin-top: 16px;
 
   @media(min-width: 1200px) {
@@ -13,6 +12,7 @@
 
   .left-button,
   .right-button {
+    z-index: 999;
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
@@ -22,6 +22,10 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+
+    &:active {
+      outline: none;
+    }
 
     &:hover {
       color: @lambda-times-color-primary;
@@ -43,7 +47,27 @@
   }
 
   img {
-    .width-100();
-    display: block;
+    max-width: 1200px;
+    max-height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
   }
+
+  .slider__item {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    // opacity: 0;
+    transition: opacity .5s ease-in-out;
+  }
+
+  .showing {
+    z-index: 6;
+    opacity: 1;
+  }
+
 }
