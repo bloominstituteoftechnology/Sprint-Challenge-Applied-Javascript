@@ -45,7 +45,7 @@ class TabLink {
     this.tabElement.classList.add('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach((card, i) => card.selectCard(i));
   }
 }
 
@@ -54,9 +54,16 @@ class TabCard {
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
   }
-  selectCard(){
+  selectCard(i){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = 'flex';
+    //Now animate the card fading in, but delayed so they all animate in a cascade.
+    TweenMax.fromTo(this.cardElement, .3, {
+      opacity: 0
+    }, {
+      opacity: 1,
+      delay: i * 0.15
+    })
   }
 
 }
