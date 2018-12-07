@@ -16,9 +16,10 @@ class Carousel {
     }
 
     changeIndex(direction){
+
         this.index.classList.remove('current');
         this.counter = this.counter + direction;
-        //console.log(this.counter);
+        console.log(`Before the change:${this.counter}`);
         if (direction === -1 && 
             this.counter < 0) { 
             this.counter = this.length - 1; 
@@ -31,13 +32,13 @@ class Carousel {
         this.index.classList.add('current');
 
         if(direction === 1){
-            
-            //TweenMax.to(this.imgs[this.counter -1], .5, {x: 1500, clearProps:"x"});
             TweenMax.from(this.index, .5, {x: -1500, clearProps:"x"});
-            console.log(this.counter)
-            console.log(this.imgs[this.counter -1]);
+            console.log(`After the change:${this.counter}`);
+            console.log(this.imgs[this.counter]);
         } else {
-            TweenMax.to(this.index, .5, {x: -1500, clearProps:"x"});
+            TweenMax.from(this.index, .5, {x: 1500, clearProps:"x"});
+            console.log(`After the change:${this.counter}`);
+            console.log(this.imgs[this.counter]);
         }
     }
 }
