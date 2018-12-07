@@ -50,7 +50,6 @@ class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
-    console.log(cardElement);
  }
 
   selectCard(){
