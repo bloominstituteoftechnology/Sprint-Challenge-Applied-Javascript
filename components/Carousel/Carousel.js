@@ -29,6 +29,7 @@ class Carousel {
         this.el.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true)
         this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
     }
+}
 
     let carousel = document.querySelector(".carousel");
 
