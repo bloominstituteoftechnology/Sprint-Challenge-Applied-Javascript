@@ -6,9 +6,9 @@ We've covered a lot this week. We've learned how to plug Javascript into our HTM
 
 ## Set Up The Project With Git
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] You are now ready to build this project with your preferred IDE
+* [*] Fork the project into your GitHub user account
+* [*] Clone the forked project into a directory on your machine
+* [*] You are now ready to build this project with your preferred IDE
 
 ## Comprehension Questions
 
