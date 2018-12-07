@@ -16,10 +16,10 @@ class TabLink {
 // If `all` is true, select all cards regardless of their data attribute values
 // else if `all` is false, only select the cards with matching this.tabData values
     
-    if(this.tabData === 'all') {
+    if(this.tabData === 'all'){
       this.cards = document.querySelectorAll('.card');
     } else {
-      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
     
 
@@ -28,9 +28,11 @@ class TabLink {
 //Pass in a card object to the TabCard class. 
 // Add a click event that invokes this.selectTab
 
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    this.cards = Array.from(this.cards).map(card =>  new TabCard(card));
     this.tabElement.addEventListener('click', () => this.selectTab());
-    };
+    
+
+  }; // end TabLink
 
   
 
@@ -41,10 +43,10 @@ class TabLink {
 // Add a class of ".active-tab" to this.tabElement
   selectTab(){ 
     const tabs = document.querySelectorAll('.tab');
-      tabs.forEach(tab => tab.classList.remove('active-tab'));
+      tabs.forEach(tab =>  tab.classList.remove('active-tab'));
 
-    const cards = document.querySelectoryAll('.card');
-      cards.forEach(card => card.style.display = 'none'));
+    const cards = document.querySelectorAll('.card');
+      cards.forEach(card =>  card.style.display = 'none');
       
       this.tabElement.classList.add('active-tab');
   
@@ -80,4 +82,4 @@ class TabCard {
 
 */
 let tabs = document.querySelectorAll('.tab');
-tabs.forEach(tab => new TabLink(tab));
+tabs.forEach(tab =>  new TabLink(tab));
