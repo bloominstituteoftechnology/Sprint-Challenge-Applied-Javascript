@@ -30,7 +30,6 @@ class Carousel {
     }
     this.current.displayNewImage(this.index);
 
-    console.log(this.index);
 
   }
 }
