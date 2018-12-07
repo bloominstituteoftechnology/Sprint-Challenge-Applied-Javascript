@@ -6,14 +6,24 @@ class Carousel {
         // console.log(this.leftBtn);
         this.rightBtn = this.carousel.getElementsByClassName("right-button");
         // console.log(this.rightBtn)
+        this.carouselImgs = Array.from(this.carousel.getElementsByTagName("img"));
+        console.log(this.carouselImgs);
+        this.index = []; 
+            for (let i = 0; i < this.carouselImgs.length; i++) {
+            this.index.push(this.carouselImgs.indexOf(this.carouselImgs[i]));
+        }
+        console.log(this.index);
+       
+
     }
 }
+
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     DONE 1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
 
-    2. You will need to grab a reference to all of the images
+    DONE 2. You will need to grab a reference to all of the images
 
     3. Create a current index
 
