@@ -192,6 +192,7 @@ body {
   letter-spacing: 2px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 .tabs .topics .tab:hover {
   text-decoration: underline;

@@ -21,6 +21,7 @@ class Carousel {
         //Create TimeBar Reference
         this.timeBar = document.querySelector('.time-bar');
         this.timeBarStart();
+        
         //Create Slide Skip-To Buttons
         this.skipTosContainer = this.carousel.querySelector('.slide-skips');
         this.skipToBtns = [];
@@ -125,6 +126,9 @@ class Carousel {
 
     skipToSlide(i) {
         if(!this.animating) {
+            //Pause carousel
+            TweenMax.killAll();
+            this.timeBar.style.width = '0%';
             //Set slide skip button to active, set the rest to inactive.
             this.slideSkipBtnsDeactivate();
             this.slideSkipBtnActivate(i);
