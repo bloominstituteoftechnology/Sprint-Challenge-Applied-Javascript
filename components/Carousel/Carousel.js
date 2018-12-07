@@ -16,7 +16,7 @@ class Carousel {
             cV.classList.toggle('active-slider', false)
         })
         this.el.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true);
-        this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
+        //this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
     }
     leftClick() {
         this.index -= 1;
@@ -27,7 +27,7 @@ class Carousel {
             cV.classList.toggle('active-slider', false)
         })
         this.el.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true)
-        this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
+        //this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
     }
 }
 
