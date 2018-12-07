@@ -154,6 +154,74 @@ body {
   margin-right: 25px;
   flex: 1;
 }
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+@media (min-width: 1200px) {
+  .carousel {
+    width: 1200px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  color: #fff;
+  background-color: #333;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.carousel .indicators {
+  position: absolute;
+  bottom: 10px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-stanonert;
+  flex-direction: row;
+}
+.carousel .indicators .indicator {
+  display: inline-block;
+  border: 10px double lightgrey;
+  border-radius: 100%;
+  margin: 0 10px;
+}
 .tabs {
   border-bottom: 1px solid lightgrey;
   display: flex;
@@ -252,71 +320,58 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
 }
-.carousel {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-  margin-top: 16px;
+.add-card-form {
+  width: 75%;
+  margin: 5px auto 50px;
 }
-@media (min-width: 1200px) {
-  .carousel {
-    width: 1200px;
-  }
+.add-card-form h2 {
+  font-size: 30px;
 }
-.carousel .left-button,
-.carousel .right-button {
-  display: flex;
-  justify-content: center;
-  align-items: none;
-  flex-direction: row;
-  color: #fff;
-  background-color: #333;
-  font-size: 40px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
+.add-card-form label {
+  display: block;
+  font-size: 1.8rem;
 }
-.carousel .left-button:hover,
-.carousel .right-button:hover {
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #333;
+.add-card-form input[type="text"] {
+  width: 25%;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px 0 20px;
 }
-.carousel .left-button {
-  top: 50%;
-  left: 25px;
-  transform: translate(0, -50%);
+.add-card-form select {
+  width: 25%;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px 0 20px;
 }
-.carousel .right-button {
-  top: 50%;
-  right: 25px;
-  transform: translate(0, -50%);
+.add-card-form textarea {
+  display: block;
+  font-family: lightgrey;
+  width: 95%;
+  height: 100px;
+  padding: 10px 20px;
+  margin: 10px 0 20px;
 }
-.carousel img {
-  position: absolute;
-  width: 100%;
-  display: none;
-}
-.carousel .indicators {
-  position: absolute;
-  bottom: 10px;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: flex-stanonert;
-  flex-direction: row;
-}
-.carousel .indicators .indicator {
+.add-card-form button {
   display: inline-block;
-  border: 10px double lightgrey;
-  border-radius: 100%;
-  margin: 0 10px;
+  background-color: crimson;
+  color: snow;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: inset 0px -3px 7px 0px grey;
+  padding: 10px 25px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin-left: 1%;
+}
+.add-card-form button:hover {
+  background-color: grey;
+  transition-duration: 500ms;
+  transition-property: all;
+}
+.add-card-form button:active {
+  position: relative;
+  top: 1px;
 }

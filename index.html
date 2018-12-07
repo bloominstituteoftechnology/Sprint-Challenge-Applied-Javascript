@@ -220,7 +220,26 @@
         <span>By MAX GOODBOYE</span>
       </div>
     </div>
-
+  </div>
+  
+  <!-- Form to add new article card -->
+  <div class="add-card-form">
+    <h2>Add your own article:</h2>
+    <label for="author" class="newAuthor">Name :</label>
+    <input class="formArticleAuthor" type="text" placeholder="Enter your name" required>
+    <label for="title" class="newTitleLabel">Title :</label>
+    <input class="formArticleTitle" type="text" placeholder="Enter the title of your article" required>
+    <label for="title" class="newTitleLabel">Topic :</label>
+    <select class="formArticleTopicList">
+      <option selected disabled>Select a topic</option>
+      <option value="javascript">Javascript</option>
+      <option value="technology">Technology</option>
+      <option value="node.js">Node.js</option>
+      <option value="jquery">jQuery</option>
+      <option value="bootstrap">Bootstrap</option>
+    </select>
+    <textarea required class="formArticleText" placeholder="Start writing your article here...."></textarea>
+    <button class="submitArticleBtn">Post Article</button>
   </div>
 </body>
 

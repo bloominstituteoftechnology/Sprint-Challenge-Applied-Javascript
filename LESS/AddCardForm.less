@@ -1,0 +1,63 @@
+.add-card-form {
+    width: 75%;
+    margin: 5px auto 50px;
+
+    h2 {
+        font-size: 30px;
+    }
+
+    label {
+        display: block;
+        font-size: 1.8rem;
+    }
+
+    input[type="text"] {
+        width: 25%;
+        padding: 10px 20px;
+        border: 1px solid @lambda-times-color-grey;
+        border-radius: 5px;
+        margin: 10px 0 20px;
+    }
+
+    select {
+        width: 25%;
+        padding: 10px 20px;
+        border: 1px solid @lambda-times-color-grey;
+        border-radius: 5px;
+        margin: 10px 0 20px;
+    }
+
+    textarea {
+        display: block;
+        font-family: @lambda-times-color-lightgrey;
+        width: 95%;
+        height: 100px;
+        padding: 10px 20px;
+        margin: 10px 0 20px;
+    }
+
+    button {
+        display: inline-block;
+        background-color: @post-article-button-background-color;
+        color: @post-article-button-font-color;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: inset 0px -3px 7px 0px @post-article-button-box-shadow-color;
+        padding: 10px 25px;
+        border: 1px solid @post-article-button-border-color;
+        border-radius: 3px;
+        margin-left: 1%;
+
+        &:hover {
+            background-color: @lambda-times-color-grey;
+            transition-duration: 500ms;
+            transition-property: all;
+        }
+
+        &:active {
+            position:relative;
+            top:1px;
+        }
+    }
+}
