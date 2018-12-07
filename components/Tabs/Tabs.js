@@ -21,7 +21,7 @@ class TabLink {
     
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    this.cards = Array.from(this.cards).map(x => new TabCard(x));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click', () => {this.selectTab()});
@@ -73,6 +73,6 @@ class TabCard {
 */
 let tabs = document.querySelectorAll('.tabs');
 
-tabs.forEach( tablink => {
-  new TabLink(tablink);
+tabs.forEach( tab => {
+  new TabLink(tab);
 });
