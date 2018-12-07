@@ -4,12 +4,12 @@ class Carousel {
     console.log("carousel");
 
     // Create a current index
-    const currentIndex = 0;
+    this.currentImageIndex = 0;
 
-    const images = document.querySelectorAll(".carousel img");
-    console.log(images);
+    this.images = document.querySelectorAll(".carousel img");
+    console.log(this.images);
     // display first image as default
-    images[0].style.display = "block";
+    this.images[0].style.display = "block";
 
     const rightButton = document.querySelector(".right-button");
     console.log(rightButton);
@@ -21,6 +21,9 @@ class Carousel {
   }
   slideNext() {
     console.log("slide next clicked");
+    this.images[this.currentImageIndex].style.display = "none";
+    this.currentImageIndex++;
+    this.images[this.currentImageIndex].style.display = "block";
   }
 
   slideBack() {
