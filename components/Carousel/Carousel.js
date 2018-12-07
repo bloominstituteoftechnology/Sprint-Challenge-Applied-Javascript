@@ -37,7 +37,6 @@ class CarouselImage {
     }
 }
 
-
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
 
