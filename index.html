@@ -7,8 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -50,14 +51,14 @@
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+  <div class="carousel">
     <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
+    <img src="./assets/carousel/mountains.jpeg" data-index="0"/>
+    <img src="./assets/carousel/computer.jpeg" data-index="1"/>
+    <img src="./assets/carousel/trees.jpeg" data-index="2"/>
+    <img src="./assets/carousel/turntable.jpeg" data-index="3"/>
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -205,6 +206,26 @@
 
     <div class="card" data-tab="bootstrap">
       <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">Another Node article</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>By BONES R. LIFE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="technology">
+      <div class="headline">Another Technology Article</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/max.jpg" />
