@@ -8,7 +8,9 @@ class Carousel {
 
         this.images = document.querySelectorAll(".carousel-img");
 
-        this.images[0].style.display = "block";
+        this.currentImage = 0;
+
+        this.images[this.currentImage].style.display = "block";
         
         this.leftButton.addEventListener("click", () => this.moveLeft())
 
@@ -19,12 +21,24 @@ class Carousel {
         console.log("Left button works!");
         this.images.forEach(image => image.style.display = "none");
 
-      
+        if (this.currentImage === 0) {
+            this.currentImage = this.images.length - 1;
+        } else { 
+            this.currentImage = this.currentImage - 1;
+        }
+        this.images[this.currentImage].style.display = "block";
     }
 
     moveRight() {
         console.log("Right button works!");
         this.images.forEach(image => image.style.display = "none");
+
+        if (this.currentImage === this.images.length - 1) {
+            this.currentImage = 0;
+        } else { 
+            this.currentImage = this.currentImage + 1;
+        }
+        this.images[this.currentImage].style.display = "block";
     }
 }
 
