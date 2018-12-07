@@ -52,10 +52,8 @@ class Carousel {
 
         this.imgs[this.currentIndex].style.display = 'block';
         TweenMax.fromTo(this.imgs[this.currentIndex], 1, {
-            display: 'block',
             x: '-100vw'
         }, {
-            display: 'block',
             x: 0
         });
         TweenMax.fromTo(this.left, 1, {
