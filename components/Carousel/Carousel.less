@@ -1,10 +1,13 @@
 .carousel {
   .width-100();
-  .flex(center, center);
+  //.flex(center, center);
+  display: block;
   height: 500px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  background-color: black;
+  background: black;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -12,12 +15,15 @@
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     font-size: 40px;
     border-radius: 50%;
+    font-weight: 800;
     position: absolute;
     width: 50px;
     height: 50px;
     cursor: pointer;
+    transition: all .3s;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
@@ -28,14 +34,57 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   img {
+    background-color: black;
     .width-100();
     display: none;
+  }
+  .slide-skips {
+    color: white;
+    opacity: .8;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    transform: translate(0, -100%);
+    justify-content: center;
+
+    .slide-skip {
+      opacity: .7;
+      border-radius: 50px;
+      border: 1px solid white;
+      padding: 12px;
+      z-index: 100;
+      transition: background-color .25s;
+      margin: 0 6px;
+      margin-bottom: 25px;
+      background-color: rgba(0, 0, 0, 0);
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .time-bar {
+    background-color: white;
+    opacity: .7;
+    z-index: 100;
+    width: 0%;
+    height: 6px;
+    position: absolute;
+    bottom: 0;
+}
+
+  .active {
+    background-color: white;
   }
 }

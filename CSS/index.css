@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 101;
 }
 .top-bar .container {
   width: 100%;
@@ -120,14 +121,14 @@ body {
   flex-direction: row;
   background-color: #fff;
   border-bottom: 1px solid lightgrey;
-  width: 100%;
   height: 120px;
   margin-top: 44px;
   padding-bottom: 15px;
+  width: 100%;
 }
 @media (min-width: 1280px) {
   .header {
-    width: 1280px;
+    width: 100%;
   }
 }
 .header h1 {
@@ -159,13 +160,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 100%;
   height: 47px;
   background-color: #fff;
+  width: 100%;
 }
 @media (min-width: 1280px) {
   .tabs {
-    width: 1280px;
+    width: 100%;
   }
 }
 .tabs .topics {
@@ -192,6 +193,7 @@ body {
   letter-spacing: 2px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 .tabs .topics .tab:hover {
   text-decoration: underline;
@@ -253,14 +255,13 @@ body {
 }
 .carousel {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  display: block;
   height: 500px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  background-color: black;
+  background: black;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -275,12 +276,15 @@ body {
   flex-direction: row;
   color: #fff;
   background-color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   font-size: 40px;
   border-radius: 50%;
+  font-weight: 800;
   position: absolute;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .carousel .left-button:hover,
 .carousel .right-button:hover {
@@ -292,13 +296,52 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
 }
 .carousel img {
+  background-color: black;
   width: 100%;
   display: none;
+}
+.carousel .slide-skips {
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  transform: translate(0, -100%);
+  justify-content: center;
+}
+.carousel .slide-skips .slide-skip {
+  opacity: 0.7;
+  border-radius: 50px;
+  border: 1px solid white;
+  padding: 12px;
+  z-index: 100;
+  transition: background-color 0.25s;
+  margin: 0 6px;
+  margin-bottom: 25px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.carousel .slide-skips .slide-skip:hover {
+  background-color: white;
+  cursor: pointer;
+}
+.carousel .time-bar {
+  background-color: white;
+  opacity: 0.7;
+  z-index: 100;
+  width: 0%;
+  height: 6px;
+  position: absolute;
+  bottom: 0;
+}
+.carousel .active {
+  background-color: white;
 }
