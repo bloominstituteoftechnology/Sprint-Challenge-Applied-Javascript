@@ -36,12 +36,17 @@
     right: 25px;
     transform: translate(0, -50%);
   }
-  img {
+
+  .carousel-imgs {
     .noSelect();
-    .width-100();
-    display: none;
-  }
-  .current-img {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    left: 0%;
+    img {
+      .noSelect();
+      .width-100();
+    }
   }
 }

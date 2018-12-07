@@ -309,13 +309,18 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .carousel-imgs {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+}
+.carousel .carousel-imgs img {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   width: 100%;
-  display: none;
-}
-.carousel .current-img {
-  display: block;
 }
