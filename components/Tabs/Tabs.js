@@ -32,13 +32,13 @@ class TabLink {
     tabs.forEach(item => item.classList.remove('active-tab'))
 
     // Select all of the elements with the .card class on them
-    const cards = querySelectorAll(document.querySelectorAll('.card'));
+    const cards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(item => item.style.display = 'none')
     
     // Add a class of ".active-tab" to this.tabElement
-    this.tabElement.classList.add('.active-tab');
+    this.tabElement.classList.add('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     this.cards.forEach(card => card.selectCard());
@@ -48,11 +48,11 @@ class TabLink {
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // this.cardElement;
+    this.cardElement = cardElement;
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.style.display = 'flex';
   }
 
 }
@@ -66,4 +66,5 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tab');
+tabs.forEach(item => new TabLink(item));
