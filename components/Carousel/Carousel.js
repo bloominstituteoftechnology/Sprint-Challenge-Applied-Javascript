@@ -20,8 +20,7 @@ class Carousel {
   }
   
   btnClick(btn) {
-    // hide current image
-    this.images[this.currIndex].img.style.removeProperty('display');
+    let prevIndex = this.currIndex;
     // check which button, update index accordingly:
     if (btn === "left"){
       // update this.currIndex to move one left or to end if at beginning
@@ -38,8 +37,13 @@ class Carousel {
         this.currIndex ++;
       }
     }
+    // hide current image
+    // this.images[prevIndex].img.style.removeProperty('display');
+    $(this.images[prevIndex].img).toggle('slide');
     // display next image
-    this.images[this.currIndex].img.style.display = "block";
+    // this.images[this.currIndex].img.style.display = "block";
+    $(this.images[this.currIndex].img).toggle('slide');
+    
     // console.log(this.currIndex);
   } // btnClick
 }
