@@ -8,6 +8,8 @@ class Carousel {
 
         this.photo = document.querySelectorAll(`.image[data-tab='${this.photoData}']`);
 
+        this.photo = new Image(this.imageContent);
+
         this.leftButton.addEventListener('click', () => {this.leftClick()});
         this.rightButton.addEventListener('click', () => {this.rightClick()});
 
@@ -15,14 +17,27 @@ class Carousel {
 
     leftClick() {
         let pictures = document.querySelectorAll('.image');
-        Array.from(pictures).forEach(picture => picture.classList.remove('img'));
-        this.photo.classList.add('active-img');
+        pictures.forEach(picture => picture.classList.remove('img'));
+        this.photoCarousel.classList.add('active-img');
+        this.pictures.forEach(pictures => (pictures.selectImage));
     }
 
     rightClick() {
-        // let pictures = document.querySelectorAll('.image');
+        let pictures = document.querySelectorAll('.image');
         Array.from(pictures).forEach(picture => picture.classList.remove('img'));
-        this.photo.classList.add('active-img');
+        this.photoCarousel.classList.add('active-img');
+        this.pictures.forEach(pictures => (pictures.selectImage));
+    }
+}
+
+
+class Image {
+    constructor(imageContent) {
+        this.imageContent = imageContent;
+    }
+
+    selectImage() {
+        this.imageContent.style.display = 'flex';
     }
 }
 
