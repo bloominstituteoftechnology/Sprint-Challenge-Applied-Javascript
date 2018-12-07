@@ -27,7 +27,7 @@ class Carousel {
     }
 
     nextImg() {
-        
+        this.currentImg = this.currentImg.nextElementSibling;
     }
 
     previousImg() {
