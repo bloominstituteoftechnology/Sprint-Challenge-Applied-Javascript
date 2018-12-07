@@ -1,11 +1,19 @@
 class Carousel {
     constructor(element);
+    this.element = element;
+    this.leftBtn = this.element.querySelector('.left-button');
+    this.rightBtn = this.element.querySelector('.right-button');
+    this.images = this.element.querySelectorAll('.image');
     
+    let index = 0;
+    this.index = index;
+    this.images[index].style.display = 'flex';
+
+
 
 }
 
-let carousel = document.querySelector('.carousel .left-button .right-button');
-let images = document.querySelectorAll('.image');
+let carousel = document.querySelector('.carousel').forEach(element => new Carousel(element));
 
 /* If You've gotten this far, you're on your own! Although we will give you
  some hints:
