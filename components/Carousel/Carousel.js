@@ -15,20 +15,30 @@ class Carousel {
         console.log(this.index);
     }
 
-    changeIndex(direction){ 
+    changeIndex(direction){
         this.index.classList.remove('current');
         this.counter = this.counter + direction;
-        console.log(this.counter);
+        //console.log(this.counter);
         if (direction === -1 && 
             this.counter < 0) { 
-          this.counter = this.length - 1; 
+            this.counter = this.length - 1; 
         }
         if (direction === 1 && 
             !this.imgs[this.counter]) { 
-          this.counter = 0;
+            this.counter = 0;
         }
         this.index = this.imgs[this.counter];
         this.index.classList.add('current');
+
+        if(direction === 1){
+            
+            //TweenMax.to(this.imgs[this.counter -1], .5, {x: 1500, clearProps:"x"});
+            TweenMax.from(this.index, .5, {x: -1500, clearProps:"x"});
+            console.log(this.counter)
+            console.log(this.imgs[this.counter -1]);
+        } else {
+            TweenMax.to(this.index, .5, {x: -1500, clearProps:"x"});
+        }
     }
 }
 
