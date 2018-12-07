@@ -8,8 +8,8 @@ class Carousel {
     this.leftBtn.addEventListener("click", () => this.left());
     this.rightBtn.addEventListener("click", () => this.right());
     this.currentIndex.style.display = "block";
-    this.i = 1;
-    setInterval(() => this.right(), 5000);
+    this.i = 0;
+    //setInterval(() => this.right(), 5000);
   }
 
   left() {
@@ -18,8 +18,8 @@ class Carousel {
       this.images[this.i].style.display = "block";
       this.i -= 1;
     } else {
-      this.images[3].style.display = "block";
-      this.i = 1;
+      this.images[this.images.length - 1].style.display = "block";
+      this.i = this.images.length - 1;
     }
   }
 
@@ -31,7 +31,7 @@ class Carousel {
       this.i += 1;
     } else {
       this.images[0].style.display = "block";
-      this.i = 1;
+      this.i = 0;
     }
   }
 }
