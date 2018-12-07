@@ -25,19 +25,45 @@ class Carousel {
     }
 
     clickedLeft(e) {
-        this.images[this.currentIndex].style.display = "none";
-
-        this.currentIndex = this.currentIndex ?  
+        const newIndex = this.currentIndex ?  
                             this.currentIndex - 1 : this.images.length - 1;
-        this.images[this.currentIndex].style.display = "block";
+        this.images[newIndex].style.display = "block";
+
+        const distance = this.images[newIndex].width;
+
+        const slideAnimation = new TimelineMax();
+        slideAnimation.to(this.images[this.currentIndex], 1, {
+            x: distance,
+            onComplete: () => {
+                this.images[this.currentIndex].style.display = "none";
+                this.currentIndex = newIndex;
+            }
+        }).fromTo(this.images[newIndex], 1, {
+            x: -distance
+        }, {
+            x: 0
+        }, 0);
     }
 
     clickedRight(e) {
-        this.images[this.currentIndex].style.display = "none";
-
-        this.currentIndex = this.currentIndex + 1 === this.images.length ? 
+        const newIndex = this.currentIndex + 1 === this.images.length ? 
                             0 : this.currentIndex + 1;
-        this.images[this.currentIndex].style.display = "block";
+        this.images[newIndex].style.display = "block";
+
+        const distance = this.images[newIndex].width;
+
+        const slideAnimation = new TimelineMax();
+        slideAnimation.to(this.images[this.currentIndex], 1, {
+            x: -distance,
+            onComplete: () => {
+                this.images[this.currentIndex].style.display = "none";
+                this.currentIndex = newIndex;
+            }
+        }).fromTo(this.images[newIndex], 1, {
+            x: distance
+        }, {
+            x: 0
+        }, 0);
     }
 }
 
