@@ -7,12 +7,13 @@
     }
 
     label {
-        display: block;
+        display: inline-block;
+        width: 7.5%;
         font-size: 1.8rem;
     }
 
     input[type="text"] {
-        width: 25%;
+        width: 50%;
         padding: 10px 20px;
         border: 1px solid @lambda-times-color-grey;
         border-radius: 5px;
@@ -20,34 +21,26 @@
     }
 
     select {
-        width: 25%;
+        width: 50%;
         padding: 10px 20px;
         border: 1px solid @lambda-times-color-grey;
         border-radius: 5px;
         margin: 10px 0 20px;
     }
 
-    textarea {
-        display: block;
-        font-family: @lambda-times-color-lightgrey;
-        width: 95%;
-        height: 100px;
-        padding: 10px 20px;
-        margin: 10px 0 20px;
-    }
-
     button {
-        display: inline-block;
+        display: block;
         background-color: @post-article-button-background-color;
         color: @post-article-button-font-color;
-        font-size: 15px;
+        font-size: 20px;
         font-weight: bold;
         cursor: pointer;
         box-shadow: inset 0px -3px 7px 0px @post-article-button-box-shadow-color;
-        padding: 10px 25px;
+        padding: 15px 50px;
         border: 1px solid @post-article-button-border-color;
         border-radius: 3px;
-        margin-left: 1%;
+        margin-top: 20px;
+        
 
         &:hover {
             background-color: @lambda-times-color-grey;

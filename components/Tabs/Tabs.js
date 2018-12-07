@@ -5,7 +5,12 @@ class TabLink {
     
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = tabElement.dataset.tab;
-    
+
+    // Add a click event that invokes this.selectTab
+    this.tabElement.addEventListener("click", e => this.selectTab(e));
+  }
+
+  selectTab(e){
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     // Check to see if this.tabData is equal to 'all'
@@ -20,11 +25,6 @@ class TabLink {
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
-    // Add a click event that invokes this.selectTab
-    this.tabElement.addEventListener("click", e => this.selectTab(e));
-  }
-
-  selectTab(e){
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll(".tab");
     
@@ -68,3 +68,77 @@ class TabCard {
 
 let tabs = document.querySelectorAll(".tab");
 tabs.forEach(tab => new TabLink(tab));
+
+
+// FOR ADDING A NEW ARTICLE
+// ========================
+
+const postArticleButton = document.querySelector(".submitArticleBtn");
+postArticleButton.addEventListener("click", e => addArticle(e));
+
+function addArticle(e) {
+  // Selectors and value assignments
+  // -------------------------------
+
+  const cardsArea = document.querySelector(".cards-container");
+
+  const authorField = document.querySelector(".formArticleAuthor");
+  const titleField = document.querySelector(".formArticleTitle");
+  const topicField = document.querySelector(".formArticleTopicList");
+  
+  const topicOptions = topicField.querySelectorAll("option");
+
+  const newCardAuthor = authorField.value;
+  const newCardTitle = titleField.value;
+  const newCardTopic = topicOptions[topicField.selectedIndex].value;
+
+  const activeTab = document.querySelector(".active-tab");
+
+  // Build DOM elements
+  // ------------------
+
+  const cardElement = document.createElement("div");
+  cardElement.classList.add("card");
+  cardElement.setAttribute("data-tab", newCardTopic);
+
+  const headlineElement = document.createElement("div");
+  headlineElement.classList.add("headline");
+  headlineElement.textContent = newCardTitle;
+
+  const authorElement = document.createElement("div");
+  authorElement.classList.add("author");
+
+  const imgContainerElement = document.createElement("div");
+  imgContainerElement.classList.add("img-container");
+
+  const authorDisplayElement = document.createElement("span");
+  authorDisplayElement.textContent = `By ${newCardAuthor}`;
+
+  profileImgElement = document.createElement("img");
+  profileImgElement.src = "./assets/anon.png";
+
+  imgContainerElement.appendChild(profileImgElement);
+
+  authorElement.appendChild(imgContainerElement);
+  authorElement.appendChild(authorDisplayElement);
+
+  cardElement.appendChild(headlineElement);
+  cardElement.appendChild(authorElement);
+
+  cardsArea.appendChild(cardElement);
+
+  console.log("REACHED")
+
+  if (newCardTopic !== activeTab.textContent
+      && activeTab.dataset.tab != "all") {
+    cardElement.style.display = "none";
+    console.log("SLAPPD");
+  }
+
+  // Clear all fields
+  // ----------------
+
+  authorField.value = "";
+  titleField.value = ""
+  topicField.selectedIndex = 0;
+}

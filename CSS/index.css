@@ -328,43 +328,36 @@ body {
   font-size: 30px;
 }
 .add-card-form label {
-  display: block;
+  display: inline-block;
+  width: 7.5%;
   font-size: 1.8rem;
 }
 .add-card-form input[type="text"] {
-  width: 25%;
+  width: 50%;
   padding: 10px 20px;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 10px 0 20px;
 }
 .add-card-form select {
-  width: 25%;
+  width: 50%;
   padding: 10px 20px;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 10px 0 20px;
 }
-.add-card-form textarea {
-  display: block;
-  font-family: lightgrey;
-  width: 95%;
-  height: 100px;
-  padding: 10px 20px;
-  margin: 10px 0 20px;
-}
 .add-card-form button {
-  display: inline-block;
+  display: block;
   background-color: crimson;
   color: snow;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: inset 0px -3px 7px 0px grey;
-  padding: 10px 25px;
+  padding: 15px 50px;
   border: 1px solid grey;
   border-radius: 3px;
-  margin-left: 1%;
+  margin-top: 20px;
 }
 .add-card-form button:hover {
   background-color: grey;
