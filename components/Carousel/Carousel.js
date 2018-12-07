@@ -9,22 +9,36 @@ class Carousel {
         let carouselIndex = 0;
         this.carouselIndex = carouselIndex;
         this.images[carouselIndex].style.display = 'flex';
+        // this.images.forEach(image => image.style.display = 'flex');
 
         this.leftButton.addEventListener('click', () => this.selectLeft(carouselIndex));
         this.rightButton.addEventListener('click', () => this.selectRight(carouselIndex));
     }
 
+    // selectLeft(index) {
+    //     this.images[this.carouselIndex].style.display = 'none';
+    //     if (this.carouselIndex <= 0) {this.carouselIndex = this.images.length}
+    //     this.carouselIndex--;
+    //     this.images[this.carouselIndex].style.display = 'flex';
+    // }
+    // selectRight(index) {
+    //     this.images[this.carouselIndex].style.display = 'none';
+    //     if (this.carouselIndex >= this.images.length-1) {this.carouselIndex = -1}
+    //     this.carouselIndex++;
+    //     this.images[this.carouselIndex].style.display = 'flex';
+    // }
+
     selectLeft(index) {
-        this.images[this.carouselIndex].style.display = 'none';
+        $(this.images[this.carouselIndex]).hide();
         if (this.carouselIndex <= 0) {this.carouselIndex = this.images.length}
         this.carouselIndex--;
-        this.images[this.carouselIndex].style.display = 'flex';
+        $(this.images[this.carouselIndex]).show('slow');
     }
     selectRight(index) {
-        this.images[this.carouselIndex].style.display = 'none';
+        $(this.images[this.carouselIndex]).hide();
         if (this.carouselIndex >= this.images.length-1) {this.carouselIndex = -1}
         this.carouselIndex++;
-        this.images[this.carouselIndex].style.display = 'flex';
+        $(this.images[this.carouselIndex]).show('slow');
     }
 }
 
