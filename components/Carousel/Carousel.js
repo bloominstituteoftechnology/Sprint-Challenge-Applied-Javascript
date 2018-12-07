@@ -1,49 +1,30 @@
 class Carousel {
-    constructor(element) {
-        this.element = element;
-        this.leftE = leftE;
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.leftBtn = this.carousel.querySelector('.left-button');
+        this.rightBtn = this.carousel.querySelector('.right-button');
+        this.images = this.carousel.querySelector('.carousel img');
+
+        let carouselIndex = 0;
+        this.carouselIndex = carouselIndex;
+        this.images.forEach( image => image.style.display = 'flex');
+            
+        
     
 
-        this.element.addEventListener('click', () => clicked());
+        this.leftBtn.addEventListener('click', () => selectLeft());
+        this.rightBtn.addEventListener('click', () => selectRight());
     }
 
-    clicked() {
-        if (this.leftE) {
-            if (currentIndex == 0) {
-                currentIndex = images.length - 1;
-            } else {
-                currentIndex = currentIndex -1;
-            }
-        } else {
-            if (currentIndex == images.length -1) {
-                currentIndex = 0;
-            } else {
-                currentIndex = currentIndex + 1;
-            }
-        }
-        imgRef.src = images[currentIndex];
+    selectLeft(){
+        $(this.images[this.carouselIndex]).hide();
     }
+}    
+
     
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel (carousel);
 
-
-};
-
-let carousel = document.querySelector('.carosel');
-let left = document.querySelector('.carosel .left-button');
-let right = document.querySelector('.carosel .right-button');
-
-//Array index of images
-let images = Array.from(imgRef).map((image) => {return image.src})
-console.log(images);
-
-
-new Carousel(left, true);
-new Carousel(right, false);
-
-let currentIndex = 0;
-//Image ref
-let imgRef = document.querySelectorAll('.carosel img');
-imgRef.style.display = 'block';
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
