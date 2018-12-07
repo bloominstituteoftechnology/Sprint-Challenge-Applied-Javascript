@@ -12,8 +12,18 @@ class Carousel {
     if (this.currentIndex > 2) {
         this.currentIndex = 0;
     }
+    this.currentImage = this.images[this.currentIndex];
+    this.currentImage.style.display = 'block';
+    this.leftButton.addEventListener('click', () => this.previousImage());
+    this.rightButton.addEventListener('click', () => this.nextImage());
  }
  // METHODS
+ previousImage() {
+    console.log('Previous works!');
+ }
+ nextImage() {
+    console.log('Next works!');
+ }
 }
 
 let carousel = document.querySelectorAll('.carousel').forEach(carousel => new Carousel(carousel));
