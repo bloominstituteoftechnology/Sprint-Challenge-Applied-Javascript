@@ -1,22 +1,23 @@
 class Carousel {
     constructor(carousel) {
         this.carousel = carousel;
-        this.images = this.carousel.querySelectorAll('.carousel img');
+        this.images = document.querySelectorAll('.carousel img')
+        this.imagesmap = Array.from(this.images).map(item => new CarouselImg(item));
         this.current = this.images[0];
-
-        if (this.carousel.classList.contains('left-button')) {
+        this.current.style.display = 'inline-block';
+        // if (this.carousel.classList.contains('left-button')) {
         
-        };
+        // };
 
-        else if (this.carousel.classList.contains('right-button') {
+        // else if (this.carousel.classList.contains('right-button') {
 
-        };
+        // };
         
-        this.carousel.addEventListener('click', function() {
+        // this.carousel.addEventListener('click', function() {
 
-        };
+        // };
 
-        )
+        // )
         
     }
 }
@@ -26,9 +27,10 @@ class CarouselImg {
     this.imgElement = imgElement;
 }
     selectImg() {
-    this.imgElement.style.display = 'flex';
+    console.log('testing')
+    this.imgElement.style.display = 'inline-block';
     }
-    
+}
 
 let carousel = document.querySelectorAll('.carousel, .left-button, .right-button');
 carousel.forEach(item => new Carousel(item));
