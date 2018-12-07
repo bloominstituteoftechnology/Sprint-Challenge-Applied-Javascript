@@ -23,11 +23,17 @@ class Carousel {
     console.log("slide next clicked");
     this.images[this.currentImageIndex].style.display = "none";
     this.currentImageIndex++;
+    // 4 === 4, reset to 0
+    if (this.currentImageIndex === this.images.length) {
+      this.currentImageIndex = 0;
+    }
     this.images[this.currentImageIndex].style.display = "block";
   }
-
   slideBack() {
     console.log("slide back clicked");
+    this.images[this.currentImageIndex].style.display = "none";
+    this.currentImageIndex--;
+    this.images[this.currentImageIndex].style.display = "block";
   }
 }
 
