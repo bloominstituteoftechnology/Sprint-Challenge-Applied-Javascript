@@ -200,6 +200,7 @@ body {
   background-color: #fff;
   color: #333;
   border: 2px solid #333;
+  display: block;
 }
 .cards-container {
   display: flex;
