@@ -14,7 +14,7 @@ class Carousel {
 
   left() {
     this.images.forEach(img => (img.style.display = "none"));
-    if (this.i > -1) {
+    if (this.i > 0) {
       this.images[this.i].style.display = "block";
       this.i -= 1;
     } else {
@@ -26,7 +26,7 @@ class Carousel {
   right() {
     this.images.forEach(img => (img.style.display = "none"));
     //this.currentIndex = this.currentIndex.nextElementSibling;
-    if (this.i < 4) {
+    if (this.i < this.images.length) {
       this.images[this.i].style.display = "block";
       this.i += 1;
     } else {
