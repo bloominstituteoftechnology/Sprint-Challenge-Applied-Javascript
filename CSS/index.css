@@ -294,6 +294,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 20;
 }
 .carousel .right-button {
   top: 50%;
