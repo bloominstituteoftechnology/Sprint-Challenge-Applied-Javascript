@@ -65,8 +65,22 @@
     transition: opacity .5s ease-in-out;
   }
 
+
+  .slider__content {
+    position: absolute;
+    z-index: 99999;
+    border: 10px solid red;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    h1 {
+      color: rgba(255, 255, 255, 0.909);
+    }
+  }
+
   .showing {
-    z-index: 6;
     opacity: 1;
   }
 
