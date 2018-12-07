@@ -6,16 +6,16 @@ class Carousel {
     // Create a current index
     this.currentImageIndex = 0;
 
-    this.images = document.querySelectorAll(".carousel img");
+    this.images = this.element.querySelectorAll(".carousel img");
     console.log(this.images);
     // display first image as default
-    this.images[0].style.display = "block";
+    this.images[this.currentImageIndex].style.display = "block";
 
-    const rightButton = document.querySelector(".right-button");
+    const rightButton = this.element.querySelector(".right-button");
     console.log(rightButton);
     rightButton.addEventListener("click", () => this.slideNext());
 
-    const leftButton = document.querySelector(".left-button");
+    const leftButton = this.element.querySelector(".left-button");
     console.log(leftButton);
     leftButton.addEventListener("click", () => this.slideBack());
   }
