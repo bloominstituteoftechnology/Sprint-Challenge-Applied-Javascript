@@ -20,10 +20,15 @@ class Carousel {
   }
   
   btnClick(btn) {
+    // store previous index
     let prevIndex = this.currIndex;
+    let exit = '';
+    let enter = '';
     // check which button, update index accordingly:
     if (btn === "left"){
       // update this.currIndex to move one left or to end if at beginning
+      exit = 'left';
+      enter = 'right'
       if (this.currIndex === 0) {
         this.currIndex = this.images.length - 1;
       } else {
@@ -31,6 +36,8 @@ class Carousel {
       }
     } else {
       // update this.currIndex to move one right or back to beginning if at end
+      exit = 'right';
+      enter = 'left';
       if (this.currIndex === this.images.length - 1) {
         this.currIndex = 0;
       } else {
@@ -39,10 +46,10 @@ class Carousel {
     }
     // hide current image
     // this.images[prevIndex].img.style.removeProperty('display');
-    $(this.images[prevIndex].img).toggle('slide');
+    $(this.images[prevIndex].img).toggle({'effect':'slide', 'direction':exit});
     // display next image
     // this.images[this.currIndex].img.style.display = "block";
-    $(this.images[this.currIndex].img).toggle('slide');
+    $(this.images[this.currIndex].img).toggle({'effect':'slide', 'direction':enter});
     
     // console.log(this.currIndex);
   } // btnClick
@@ -53,6 +60,7 @@ class CarouselImage {
     this.img = imgElement;
     this.index = this.img.dataset.index;
   }
+
 }
 
 let carousel = new Carousel(document.querySelector(".carousel"));
