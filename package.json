@@ -1,0 +1,25 @@
+{
+  "name": "Sprint-Challenge-Applied-Javascript",
+  "version": "1.0.0",
+  "description": "We've covered a lot this week. We've learned how to plug Javascript into our HTML/CSS static pages and create dynamic content. We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "less-watch-compiler less css index.less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebMats/Sprint-Challenge-Applied-Javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebMats/Sprint-Challenge-Applied-Javascript/issues"
+  },
+  "homepage": "https://github.com/WebMats/Sprint-Challenge-Applied-Javascript#readme",
+  "dependencies": {
+    "less": "^3.9.0",
+    "less-watch-compiler": "^1.13.0"
+  }
+}

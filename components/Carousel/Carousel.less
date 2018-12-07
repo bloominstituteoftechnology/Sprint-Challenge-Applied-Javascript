@@ -1,5 +1,6 @@
 .carousel {
   .width-100();
+  z-index: 0;
   .flex(center, center);
   height: 500px;
   position: relative;
@@ -28,6 +29,7 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 20;
   }
   .right-button {
     top: 50%; 
@@ -36,6 +38,19 @@
   }
   img {
     .width-100();
-    display: none;
+    display: block;
+    transform: translateX(0);
+    transition-duration: .5s;
   }
+  img.hidden--img {
+    transform: translateX(600px);
+    animation-name: opas;
+    animation-duration: .5s;
+    width: 0;
+  }
+}
+@keyframes opas {
+  0% {opacity: .3;}
+  20% {opacity: 0;}
+  100% {opacity: 0;}
 }
