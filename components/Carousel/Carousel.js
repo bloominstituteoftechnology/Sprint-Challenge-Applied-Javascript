@@ -30,7 +30,7 @@ class Carousel {
             })
             // slides[i].style.display = "none"; 
         }
-        TweenMax.to(slides[this.slideIndex-1], 1, {
+        TweenMax.to(slides[this.slideIndex-1], 1.5, {
             display: "block",
             opacity: '1'
         })
