@@ -14,54 +14,89 @@ class Carousel {
 
         //Show current slide/image
         this.currentSlide.style.display = 'flex';
+
+        //Keep track if Carousel Animating or not
+        this.animating = false;
     }
 
     moveLeft() {
-        //Hide all images, then display the next slide to the left/-1 index
-        let exitSlide = this.currentSlide;
-        let nextSlideIndex = this.currentSlideIndex - 1;
-        let nextSlide = undefined;
-        if(this.slides[nextSlideIndex] !== undefined) {
-            this.currentSlideIndex = nextSlideIndex;
-            nextSlide = this.slides[nextSlideIndex];
-            this.slides.forEach(s => {
-                s.style.display = 'none';
-            });
-            this.currentSlide = nextSlide;
-            this.currentSlide.style.display = 'flex';
-        } else {
-            this.currentSlideIndex = this.slides.length - 1;
-            nextSlide = this.slides[this.slides.length - 1];
-            this.slides.forEach(s => {
-                s.style.display = 'none';
-            });
-            this.currentSlide = nextSlide;
-            this.currentSlide.style.display = 'flex';
+        //If a slide transition IS NOT happening, we can do this.
+        if(!this.animating) {
+            //Hide all images, then display the next slide to the right/-1  index
+            let exitSlide = this.currentSlide;
+            let nextSlideIndex = this.currentSlideIndex - 1;
+            let nextSlide = undefined;
+            if(this.slides[nextSlideIndex] !== undefined) {
+                this.currentSlideIndex = nextSlideIndex;
+                nextSlide = this.slides[nextSlideIndex];
+                // this.slides.forEach(s => {
+                //     s.style.display = 'none';
+                // });
+                this.currentSlide = nextSlide;
+                //this.currentSlide.style.display = 'flex';
+            } else {
+                this.currentSlideIndex = this.slides.length - 1;
+                nextSlide = this.slides[this.slides.length - 1];
+                // this.slides.forEach(s => {
+                //     s.style.display = 'none';
+                // });
+                this.currentSlide = nextSlide;
+                //this.currentSlide.style.display = 'flex';
+            }
+            this.animateCarousel(exitSlide, this.currentSlide);
         }
+        
     }
 
     moveRight() {
-        //Hide all images, then display the next slide to the right/+1 index
-        let exitSlide = this.currentSlide;
-        let nextSlideIndex = this.currentSlideIndex + 1;
-        let nextSlide = undefined;
-        if(this.slides[nextSlideIndex] !== undefined) {
-            this.currentSlideIndex = nextSlideIndex;
-            nextSlide = this.slides[nextSlideIndex];
-            this.slides.forEach(s => {
-                s.style.display = 'none';
-            });
-            this.currentSlide = nextSlide;
-            this.currentSlide.style.display = 'flex';
-        } else {
-            this.currentSlideIndex = 0;
-            nextSlide = this.slides[0];
-            this.slides.forEach(s => {
-                s.style.display = 'none';
-            });
-            this.currentSlide = nextSlide;
-            this.currentSlide.style.display = 'flex';
+        //If a slide transition IS NOT happening, we can do this.
+        if(!this.animating) {
+            //Hide all images, then display the next slide to the right/+1  index
+            let exitSlide = this.currentSlide;
+            let nextSlideIndex = this.currentSlideIndex + 1;
+            let nextSlide = undefined;
+            if(this.slides[nextSlideIndex] !== undefined) {
+                this.currentSlideIndex = nextSlideIndex;
+                nextSlide = this.slides[nextSlideIndex];
+                // this.slides.forEach(s => {
+                //     s.style.display = 'none';
+                // });
+                this.currentSlide = nextSlide;
+                //this.currentSlide.style.display = 'flex';
+            } else {
+                this.currentSlideIndex = 0;
+                nextSlide = this.slides[0];
+                // this.slides.forEach(s => {
+                //     s.style.display = 'none';
+                // });
+                this.currentSlide = nextSlide;
+                //this.currentSlide.style.display = 'flex';
+            }
+            this.animateCarousel(exitSlide, this.currentSlide);
         }
+    }
+
+    animateCarousel(exit, next) {
+        this.animating = true;
+        //Animate exit/current slide fading out.
+        TweenMax.fromTo(exit, .4, {
+            opacity: 1
+        }, {
+            opacity: 0,
+            onComplete: () => {
+                exit.style.display = 'none';
+                exit.style.opacity = 1;
+                next.style.display = 'flex';
+                TweenMax.fromTo(next, .4, {
+                    opacity: 0
+                }, {
+                    opacity: 1,
+                    onComplete: () => {
+                        this.animating = false;
+                    }
+                });
+            }
+        });
     }
 }
 

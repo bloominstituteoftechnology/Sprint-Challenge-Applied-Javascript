@@ -253,14 +253,13 @@ body {
 }
 .carousel {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  display: block;
   height: 500px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  background-color: black;
+  background: black;
 }
 @media (min-width: 1200px) {
   .carousel {
@@ -292,13 +291,16 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
 }
 .carousel img {
+  background-color: black;
   width: 100%;
   display: none;
 }

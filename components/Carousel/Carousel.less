@@ -1,10 +1,13 @@
 .carousel {
   .width-100();
-  .flex(center, center);
+  //.flex(center, center);
+  display: block;
   height: 500px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  background-color: black;
+  background: black;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -28,13 +31,16 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 100;
   }
   img {
+    background-color: black;
     .width-100();
     display: none;
   }
