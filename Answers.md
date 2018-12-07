@@ -14,4 +14,8 @@ An event listener, used in JavaScript as “addEventListener()”, is the higher
 
 4. Why would we convert a NodeList into an Array?
 
+It is sometimes necessary to convert a NodeList into an array using Array.from() because the NodeList object is an array-like object that lacks many of the array methods (such as .map() and .filter()). Although NodeList has .forEach(), we may find it necessary to convert it into an Array so that we can access those methods. However, this is a costly conversion in terms of application efficiency, so we should only do it if it’s actually necessary.
+
 5. What is a component?
+
+A component is a group of files (CSS, HTML, JavaScript) that collectively make up an element that we might want to place on a given web page (i.e. a button, a textbox, a drop-down menu, etc.). By compartmentalizing these collect code files into a single directory (“Button,” “Dropdown,” etc.), we can then choose when to reuse the code. Furthermore, we only need to write the code once, which allows extensibility and efficiency through code reuse and DRY compartmentalization.
