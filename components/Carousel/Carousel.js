@@ -24,56 +24,68 @@ class Carousel {
 
         this.leftButton.addEventListener("click", e => this.clickedLeft(e));
         this.rightButton.addEventListener("click", e => this.clickedRight(e));
+
+        this.hasOngoingAnimation = false;
     }
 
     clickedLeft(e) {
-        const newIndex = this.currentIndex ?  
-                            this.currentIndex - 1 : this.images.length - 1;
-                            
-        this.images[newIndex].style.display = "block";
+        if (!this.hasOngoingAnimation) {
+            this.hasOngoingAnimation = true;
 
-        this.indicators[this.currentIndex].style.borderColor = "lightgrey";
-        this.indicators[newIndex].style.borderColor = "white";
+            const newIndex = this.currentIndex ?  
+                                this.currentIndex - 1 : this.images.length - 1;
+                                
+            this.images[newIndex].style.display = "block";
 
-        const distance = this.images[newIndex].width;
+            this.indicators[this.currentIndex].style.borderColor = "lightgrey";
+            this.indicators[newIndex].style.borderColor = "white";
 
-        const slideAnimation = new TimelineMax();
-        slideAnimation.to(this.images[this.currentIndex], 1, {
-            x: distance,
-            onComplete: () => {
-                this.images[this.currentIndex].style.display = "none";
-                this.currentIndex = newIndex;
-            }
-        }).fromTo(this.images[newIndex], 1, {
-            x: -distance
-        }, {
-            x: 0
-        }, 0);
+            const distance = this.images[newIndex].width;
+
+            const slideAnimation = new TimelineMax();
+            slideAnimation.to(this.images[this.currentIndex], 1, {
+                x: distance,
+                onComplete: () => {
+                    this.images[this.currentIndex].style.display = "none";
+                    this.currentIndex = newIndex;
+                    this.hasOngoingAnimation = false;
+                }
+            }).fromTo(this.images[newIndex], 1, {
+                x: -distance
+            }, {
+                x: 0
+            }, 0);
+        }
     }
 
     clickedRight(e) {
-        const newIndex = this.currentIndex + 1 === this.images.length ? 
-                            0 : this.currentIndex + 1;
+        if (!this.hasOngoingAnimation) {
+            this.hasOngoingAnimation = true;
 
-        this.images[newIndex].style.display = "block";
+            const newIndex = this.currentIndex + 1 === this.images.length ? 
+                                0 : this.currentIndex + 1;
 
-        this.indicators[this.currentIndex].style.borderColor = "lightgrey";
-        this.indicators[newIndex].style.borderColor = "white";
+            this.images[newIndex].style.display = "block";
 
-        const distance = this.images[newIndex].width;
+            this.indicators[this.currentIndex].style.borderColor = "lightgrey";
+            this.indicators[newIndex].style.borderColor = "white";
 
-        const slideAnimation = new TimelineMax();
-        slideAnimation.to(this.images[this.currentIndex], 1, {
-            x: -distance,
-            onComplete: () => {
-                this.images[this.currentIndex].style.display = "none";
-                this.currentIndex = newIndex;
-            }
-        }).fromTo(this.images[newIndex], 1, {
-            x: distance
-        }, {
-            x: 0
-        }, 0);
+            const distance = this.images[newIndex].width;
+
+            const slideAnimation = new TimelineMax();
+            slideAnimation.to(this.images[this.currentIndex], 1, {
+                x: -distance,
+                onComplete: () => {
+                    this.images[this.currentIndex].style.display = "none";
+                    this.currentIndex = newIndex;
+                    this.hasOngoingAnimation = false;
+                }
+            }).fromTo(this.images[newIndex], 1, {
+                x: distance
+            }, {
+                x: 0
+            }, 0);
+        }
     }
 }
 
