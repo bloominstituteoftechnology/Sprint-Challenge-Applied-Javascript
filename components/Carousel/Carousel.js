@@ -2,7 +2,10 @@ class Carousel {
     constructor(carousel) {
         this.carousel = carousel;
         this.images = document.querySelectorAll('.carousel img')
-        console.log(this.images);
+        this.currentIndex = this.images[0];
+        console.log(this.currentIndex)
+
+
     }
 }
 
