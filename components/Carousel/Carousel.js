@@ -1,20 +1,37 @@
 class Carousel {
     constructor(carousel) {
         this.carousel = carousel;
-        // console.log(this.carousel);
-        this.leftBtn = this.carousel.getElementsByClassName("left-button");
-        // console.log(this.leftBtn);
-        this.rightBtn = this.carousel.getElementsByClassName("right-button");
-        // console.log(this.rightBtn)
-        this.carouselImgs = Array.from(this.carousel.getElementsByTagName("img"));
-        console.log(this.carouselImgs);
-        this.index = []; 
-            for (let i = 0; i < this.carouselImgs.length; i++) {
-            this.index.push(this.carouselImgs.indexOf(this.carouselImgs[i]));
-        }
-        console.log(this.index);
-       
+        console.log(this.carousel);
 
+        this.leftBtn = this.carousel.querySelector(".left-button");
+        console.log(this.leftBtn);
+
+        this.rightBtn = this.carousel.querySelector(".right-button");
+        console.log(this.rightBtn)
+
+        this.carouselImgs = this.carousel.querySelectorAll("img");
+        console.log(this.carouselImgs);
+
+        this.index = []; 
+        
+        this.carouselImgs.forEach((img, index) => this.index.push(index));
+        console.log(this.index);
+
+        this.currentImg = this.carouselImgs[0];
+
+        this.currentImg.style.display = "block";
+
+       this.rightBtn.addEventListener("click", () => nextImg());
+       this.leftBtn.addEventListener("click", () => previousImg());
+
+    }
+
+    nextImg() {
+        
+    }
+
+    previousImg() {
+        
     }
 }
 
