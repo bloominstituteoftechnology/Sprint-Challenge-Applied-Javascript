@@ -1,7 +1,8 @@
 class Carousel {
     constructor(carousel) {
         this.carousel = carousel;
-        console.log(carousel)
+        this.images = document.querySelectorAll('.carousel img')
+        console.log(this.images);
     }
 }
 
