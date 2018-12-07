@@ -54,7 +54,7 @@
     justify-content: center;
 
     .slide-skip {
-      opacity: .5;
+      opacity: .7;
       border-radius: 50px;
       border: 1px solid white;
       padding: 12px;
@@ -62,14 +62,16 @@
       transition: background-color .25s;
       margin: 0 6px;
       margin-bottom: 25px;
-      
-      .active {
-        background-color: white;
-      }
+      background-color: rgba(0, 0, 0, 0);
 
       &:hover {
         background-color: white;
+        cursor: pointer;
       }
     }
+  }
+
+  .active {
+    background-color: white;
   }
 }

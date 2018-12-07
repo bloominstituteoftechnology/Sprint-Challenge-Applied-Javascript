@@ -314,7 +314,7 @@ body {
   justify-content: center;
 }
 .carousel .slide-skips .slide-skip {
-  opacity: 0.5;
+  opacity: 0.7;
   border-radius: 50px;
   border: 1px solid white;
   padding: 12px;
@@ -322,10 +322,12 @@ body {
   transition: background-color 0.25s;
   margin: 0 6px;
   margin-bottom: 25px;
-}
-.carousel .slide-skips .slide-skip .active {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
 }
 .carousel .slide-skips .slide-skip:hover {
+  background-color: white;
+  cursor: pointer;
+}
+.carousel .active {
   background-color: white;
 }

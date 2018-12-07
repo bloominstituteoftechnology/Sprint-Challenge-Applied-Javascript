@@ -17,6 +17,19 @@ class Carousel {
 
         //Keep track if Carousel Animating or not
         this.animating = false;
+
+        //Create Slide Skip-To Buttons
+        this.skipTosContainer = this.carousel.querySelector('.slide-skips');
+        this.skipToBtns = [];
+        this.slides.forEach((s, i) => {
+            let newSkip = document.createElement('div');
+            newSkip.classList.add('slide-skip');
+            newSkip.dataset.slide = i;
+            newSkip.addEventListener('click', () => this.skipToSlide(i));
+            this.skipTosContainer.appendChild(newSkip);
+            this.skipToBtns.push(newSkip);
+        });
+        this.slideSkipBtnActivate(this.currentSlideIndex);
     }
 
     moveLeft() {
@@ -43,6 +56,8 @@ class Carousel {
                 this.currentSlide = nextSlide;
                 //this.currentSlide.style.display = 'flex';
             }
+            this.slideSkipBtnsDeactivate();
+            this.slideSkipBtnActivate(this.currentSlideIndex);
             this.animateCarousel(exitSlide, this.currentSlide);
         }
         
@@ -72,6 +87,8 @@ class Carousel {
                 this.currentSlide = nextSlide;
                 //this.currentSlide.style.display = 'flex';
             }
+            this.slideSkipBtnsDeactivate();
+            this.slideSkipBtnActivate(this.currentSlideIndex);
             this.animateCarousel(exitSlide, this.currentSlide);
         }
     }
@@ -97,6 +114,36 @@ class Carousel {
                 });
             }
         });
+    }
+
+    skipToSlide(i) {
+        if(!this.animating) {
+            //Set slide skip button to active, set the rest to inactive.
+            this.slideSkipBtnsDeactivate();
+            this.slideSkipBtnActivate(i);
+            //Hide all images, then display the next slide to the right/-1  index
+            let exitSlide = this.currentSlide;
+            let nextSlideIndex = i;
+            let nextSlide = undefined;
+
+            this.currentSlideIndex = nextSlideIndex;
+            nextSlide = this.slides[nextSlideIndex];
+            this.currentSlide = nextSlide;
+
+            this.animateCarousel(exitSlide, this.currentSlide);
+        }
+    }
+
+    slideSkipBtnsDeactivate() {
+        this.skipToBtns.forEach(s => {
+            s.style.backgroundColor = 'rgba(0,0,0,0)';
+            s.classList.remove('active');
+        });
+    }
+
+    slideSkipBtnActivate(i) {
+        this.skipToBtns[i].style.backgroundColor = 'white';
+        this.skipToBtns[i].classList.add('active');
     }
 }
 
