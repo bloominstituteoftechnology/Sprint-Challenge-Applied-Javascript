@@ -1,5 +1,5 @@
 # Sprint-Challenge Applied Javascript
-init
+
 We've covered a lot this week. We've learned how to plug Javascript into our HTML/CSS static pages and create dynamic content. We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.
 
 **This project is to be worked on alone but you can use outside resources like Google. You can _reference_ any old code you may have and the training kit content.**
