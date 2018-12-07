@@ -2,9 +2,9 @@ class Carousel {
     constructor(el) {
         this.el = el;
         this.index = 1;
-        this.position = this.elemenet.dataset.position;
-        this.left.addEventListener('click', () => this.leftClick())
-        this.right.addEventListener('click', () => this.rightClick())
+        this.position = this.el.dataset.position;
+        this.left.addEventListener('click', () => this.leftClick());
+        this.right.addEventListener('click', () => this.rightClick());
     }
 
     rightClick() {
@@ -12,23 +12,28 @@ class Carousel {
         if (this.index >= 5) {
             this.index = 1
         }
-        this.element.querySelectorAll('.slider').forEach((cV) => {
+        this.el.querySelectorAll('.slider').forEach((cV) => {
             cV.classList.toggle('active-slider', false)
         })
-        this.element.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true)
+        this.el.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true);
+        this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
     }
     leftClick() {
         this.index -= 1;
         if (this.index <= 0) {
             this.index = 4
         }
-        this.element.querySelectorAll('.slider').forEach((cV) => {
+        this.el.querySelectorAll('.slider').forEach((cV) => {
             cV.classList.toggle('active-slider', false)
         })
-        this.element.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true)
+        this.el.querySelector(`.slider[data-position='${this.index}']`).classList.toggle('active-slider', true)
+        this.el.style.animation = "slideInLeft .33s linear 0s 1 forwards";
     }
 
     let carousel = document.querySelector(".carousel");
+
+    new Carousel(caro);
+
 
     /* If You've gotten this far, you're on your own! Although we will give you some hints:
         1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
