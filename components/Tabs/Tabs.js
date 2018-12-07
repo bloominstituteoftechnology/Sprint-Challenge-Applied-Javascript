@@ -3,7 +3,7 @@ class TabLink {
     // assign this.tabElement to the tabElement DOM reference
     this.tabElement = tabElement;
     // Get the `data-tab` value from this.tabElement and store it here
-    //this.tabData;
+    this.tabData = this.tabElement.dataset.tab;
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:
     /*
     // Check to see if this.tabData is equal to 'all'
