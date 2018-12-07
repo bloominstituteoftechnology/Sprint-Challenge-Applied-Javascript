@@ -4,6 +4,11 @@
 .border-bottom-grey {
   border-bottom: 1px solid lightgrey;
 }
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 @font-face {
   font-family: 'PT Sans';
   font-style: italic;
@@ -253,6 +258,9 @@ body {
 }
 .carousel {
   width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,12 +277,16 @@ body {
 }
 .carousel .left-button,
 .carousel .right-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   display: flex;
   justify-content: center;
-  align-items: none;
+  align-items: center;
   flex-direction: row;
   color: #fff;
   background-color: #333;
+  border: 2px solid #333;
   font-size: 40px;
   border-radius: 50%;
   position: absolute;
@@ -286,7 +298,6 @@ body {
 .carousel .right-button:hover {
   color: #333;
   background-color: #fff;
-  border: 2px solid #333;
 }
 .carousel .left-button {
   top: 50%;
@@ -299,6 +310,12 @@ body {
   transform: translate(0, -50%);
 }
 .carousel img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   width: 100%;
   display: none;
+}
+.carousel .current-img {
+  display: block;
 }

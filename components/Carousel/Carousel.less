@@ -1,5 +1,6 @@
 .carousel {
   .width-100();
+  .noSelect();
   .flex(center, center);
   height: 500px;
   position: relative;
@@ -9,9 +10,11 @@
     width: 1200px;
   }
   .left-button, .right-button {
-    .flex(center);
+    .noSelect();
+    .flex(center, center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
+    border: 2px solid @lambda-times-color-primary;
     font-size: 40px;
     border-radius: 50%;
     position: absolute;
@@ -21,7 +24,6 @@
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
-      border: 2px solid @lambda-times-color-primary;
     }
   }
   .left-button {
@@ -35,7 +37,11 @@
     transform: translate(0, -50%);
   }
   img {
+    .noSelect();
     .width-100();
     display: none;
+  }
+  .current-img {
+    display: block;
   }
 }
