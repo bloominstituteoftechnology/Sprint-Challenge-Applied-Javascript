@@ -14,6 +14,7 @@ class Carousel {
 
     leftClick(){
         let lastImg = this.imgs[this.currentIndex];
+        this.container.style.backgroundImage = `url(${this.imgs[this.currentIndex].src})`;
         if(this.currentIndex === 0){
             this.currentIndex = this.numImgs - 1;
         } else {
@@ -41,6 +42,7 @@ class Carousel {
 
     rightClick(){
         let lastImg = this.imgs[this.currentIndex];
+        this.container.style.backgroundImage = `url(${this.imgs[this.currentIndex].src})`;
         if(this.currentIndex === this.numImgs - 1){
             this.currentIndex = 0;
         } else {
@@ -61,6 +63,7 @@ class Carousel {
             zIndex: 1
         });
         lastImg.style.display = 'none';
+        
         this.imgs[this.currentIndex].style.display = 'block';
     }
 }
