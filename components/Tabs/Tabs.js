@@ -14,7 +14,6 @@ class TabLink {
     } else {
       // UNCLEAR: else if `all` is false, only select the cards with matching this.tabData values
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
-      console.log(this.cards)
     }
     
 
@@ -42,7 +41,7 @@ class TabLink {
     // YES: Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add("active-tab");
   
-    // NO: Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
+    // YES: Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     this.cards.forEach(card => card.selectCard());
   }
 }
