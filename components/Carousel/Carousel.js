@@ -7,8 +7,11 @@ class Carousel {
     this.currentIndex = 0;
     this.currentImage = this.images[this.currentIndex];
     this.currentImage.style.display = 'block';
+    // this.currentImage.style.zIndex = '-2';
     this.leftButton.addEventListener('click', () => this.previousImage());
     this.rightButton.addEventListener('click', () => this.nextImage());
+    // this.leftButton.style.zIndex = '-1';
+    // this.rightButton.style.zIndex = '-1';
  }
  // METHODS
  previousImage() {
@@ -22,6 +25,7 @@ class Carousel {
         this.currentIndex = 0;
     }
     this.images[this.currentIndex].style.display = 'block';
+    // this.images[this.currentIndex].style.zIndex = '-2';
  }
  nextImage() {
     const images = document.querySelectorAll('.carousel img');
@@ -34,6 +38,7 @@ class Carousel {
         this.currentIndex = 0;
     }
     this.images[this.currentIndex].style.display = 'block';
+    // this.images[this.currentIndex].style.zIndex = '-2';
  }
 }
 
