@@ -1,3 +1,6 @@
+
+live preview : https://john2796.github.io/Sprint-Challenge-Applied-Javascript/
+
 # Sprint-Challenge Applied Javascript
 
 We've covered a lot this week. We've learned how to plug Javascript into our HTML/CSS static pages and create dynamic content. We learned about the DOM and how we can modify HTML elements dynamically. We've learned about events and how to listen for, and act on them. And finally, we learned about component architecture and how to build components that share functionality and styling with many elements. In this Sprint Challenge we will be utilizing all of the above.
