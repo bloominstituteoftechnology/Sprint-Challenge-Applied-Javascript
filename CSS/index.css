@@ -285,6 +285,9 @@
   width: 100%;
   display: none;
 }
+.carousel .current {
+  display: block;
+}
 * {
   box-sizing: border-box;
 }
