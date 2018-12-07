@@ -6,18 +6,62 @@ class Carousel {
         this.right = this.carousel.querySelector('.right-button');
         this.slides = this.carousel.querySelectorAll('img');
         this.currentSlide = this.slides[0];
+        this.currentSlideIndex = 0;
         
         //Assign Event Listeners
         this.left.addEventListener('click', () => this.moveLeft());
         this.right.addEventListener('click', () => this.moveRight());
+
+        //Show current slide/image
+        this.currentSlide.style.display = 'flex';
     }
 
     moveLeft() {
-
+        //Hide all images, then display the next slide to the left/-1 index
+        let exitSlide = this.currentSlide;
+        let nextSlideIndex = this.currentSlideIndex - 1;
+        let nextSlide = undefined;
+        if(this.slides[nextSlideIndex] !== undefined) {
+            this.currentSlideIndex = nextSlideIndex;
+            nextSlide = this.slides[nextSlideIndex];
+            this.slides.forEach(s => {
+                s.style.display = 'none';
+            });
+            this.currentSlide = nextSlide;
+            this.currentSlide.style.display = 'flex';
+        } else {
+            this.currentSlideIndex = this.slides.length - 1;
+            nextSlide = this.slides[this.slides.length - 1];
+            this.slides.forEach(s => {
+                s.style.display = 'none';
+            });
+            this.currentSlide = nextSlide;
+            this.currentSlide.style.display = 'flex';
+        }
     }
 
     moveRight() {
-        
+        //Hide all images, then display the next slide to the right/+1 index
+        let exitSlide = this.currentSlide;
+        let nextSlideIndex = this.currentSlideIndex + 1;
+        let nextSlide = undefined;
+        if(this.slides[nextSlideIndex] !== undefined) {
+            this.currentSlideIndex = nextSlideIndex;
+            nextSlide = this.slides[nextSlideIndex];
+            this.slides.forEach(s => {
+                s.style.display = 'none';
+            });
+            this.currentSlide = nextSlide;
+            this.currentSlide.style.display = 'flex';
+        } else {
+            this.currentSlideIndex = 0;
+            nextSlide = this.slides[0];
+            this.slides.forEach(s => {
+                s.style.display = 'none';
+            });
+            this.currentSlide = nextSlide;
+            this.currentSlide.style.display = 'flex';
+        }
     }
 }
 
