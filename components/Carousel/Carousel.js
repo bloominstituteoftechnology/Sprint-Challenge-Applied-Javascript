@@ -12,13 +12,14 @@ class Carousel {
 
         this.images[this.currentImage].style.display = "block";
         
-        this.leftButton.addEventListener("click", () => this.moveLeft())
+        this.leftButton.addEventListener("click", () => this.moveLeft());
 
-        this.rightButton.addEventListener("click", () => this.moveRight())
+        this.rightButton.addEventListener("click", () => this.moveRight());
+
+        setInterval(() => this.moveRight(), 5000);
     }
 
     moveLeft() {
-        console.log("Left button works!");
         this.images.forEach(image => image.style.display = "none");
 
         if (this.currentImage === 0) {
@@ -30,7 +31,6 @@ class Carousel {
     }
 
     moveRight() {
-        console.log("Right button works!");
         this.images.forEach(image => image.style.display = "none");
 
         if (this.currentImage === this.images.length - 1) {
