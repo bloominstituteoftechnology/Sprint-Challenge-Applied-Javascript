@@ -46,6 +46,7 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 .top-bar {
+  z-index: 999;
   width: 100%;
   display: flex;
   justify-content: center;

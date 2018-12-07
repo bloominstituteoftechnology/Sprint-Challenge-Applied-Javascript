@@ -2,30 +2,27 @@ class Carousel {
     constructor(carouselBanana){
       this.carouselBanana = carouselBanana;
       this.imgItem = this.carouselBanana.querySelectorAll("img");
-      this.activeImg = this.imgItem[0];
+      this.num = 0;
+      this.activeImg = this.imgItem[`${this.num}`];
+
       this.leftBtn = this.carouselBanana.querySelector(".left-button");
       this.rightBtn = this.carouselBanana.querySelector(".right-button")
-      console.log(this.carouselBanana)
-      // activate current slide and deactivate others
-      this.img = Array.from(this.imgItem).forEach(item=>item.classList.remove("img--is--active"))
-      console.log(this.img)
-      this.activeImg.classList.add('img--is--active');
-  
-    //   this.data = this.img.dataset.slide;
-    //   console.log(this.data)
+      
+      this.activeImg.style.display = "block";
   
       this.rightBtn.addEventListener("click",()=> this.right())
       this.leftBtn.addEventListener("click",()=> this.left())
     }
     // metthods
     right() {
-        // let img = document.querySelectorAll("img");
-        // Array.from(img).forEach(item)
-  
+        this.num = this.num + 1;
+        console.log(activeImg)
+        this.activeImg.style.display = "none";
+        this.activeImg.nextSibling.style.display = "block";
     }
   
     left() {
-        
+        this.num = 2;
     }
   }
   
