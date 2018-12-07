@@ -8,7 +8,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" async></script>
+
 </head>
 
 <body>
@@ -45,19 +47,20 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="picture" class="tab">PICTURES</div>
     </div>
   </div>
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+  <div class="carousel">
     <div class="left-button"><</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -103,6 +106,12 @@
       </div>
     </div>
 
+    <div class="card" data-tab="picture">
+        <div class="author">
+            <img class="img-container" src="./assets/sloth1.jpg" />
+        </div>
+      </div>
+
     <div class="card" data-tab="jquery">
       <div class="headline">History of Javascript Libraries: from jQuery to React</div>
       <div class="author">
@@ -122,6 +131,12 @@
         <span>By MAX GOODBOYE</span>
       </div>
     </div>
+
+    <div class="card" data-tab="picture">
+        <div class="author">
+            <img class="img-container" src="./assets/sloth2.jpg" />
+        </div>
+      </div>
 
     <div class="card" data-tab="node">
       <div class="headline">Node.js in 2018: Which Framework? Express, Sails, Hapi?</div>
@@ -153,6 +168,12 @@
       </div>
     </div>
 
+    <div class="card" data-tab="picture">
+        <div class="author">
+            <img class="img-container" src="./assets/sloth3.jpg" />
+        </div>
+      </div>
+
     <div class="card" data-tab="technology">
       <div class="headline">AR or VR: How We Will See the World Through a Digital Lense</div>
       <div class="author">
@@ -173,6 +194,12 @@
       </div>
     </div>
 
+    <div class="card" data-tab="picture">
+        <div class="author">
+            <img class="img-container" src="./assets/sloth4.jpg" />
+        </div>
+      </div>
+
     <div class="card" data-tab="javascript">
       <div class="headline">Typescript: Ten Things you Should Know Before Building Your Next Angular Application</div>
       <div class="author">
@@ -190,6 +217,12 @@
           <img src="./assets/max.jpg" />
         </div>
         <span>By MAX GOODBOYE</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="picture">
+      <div class="author">
+          <img class="img-container" src="./assets/sloth5.jpg" />
       </div>
     </div>
 
