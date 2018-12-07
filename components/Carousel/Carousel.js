@@ -12,7 +12,7 @@ class Carousel {
     this.images = Array.from(this.carousel.querySelectorAll("img"))
       .map(img => new CarouselImage(img));
     // display first image
-    console.log(this.images);
+    // console.log(this.images);
     this.images[this.currIndex].img.style.display = "block";
     // add event listeners to buttons:
     this.ltButton.addEventListener('click', () => this.btnClick("left"));
@@ -27,29 +27,56 @@ class Carousel {
     // check which button, update index accordingly:
     if (btn === "left"){
       // update this.currIndex to move one left or to end if at beginning
-      exit = 'left';
-      enter = 'right'
+      exit = 'right';
+      enter = 'left'
       if (this.currIndex === 0) {
+        // console.log("current img: ", this.currIndex);
         this.currIndex = this.images.length - 1;
+        // console.log("target img: ", this.currIndex);
+        for (let i = 0; i < this.currIndex; i++) {
+          setTimeout(() => {
+            // console.log("exit img: ", i);
+            // console.log("enter img: ", i+1);
+            this.images[i].slideImg(enter);
+            this.images[i + 1].slideImg(exit);
+          },200 * i);
+        }
       } else {
         this.currIndex --;
+        // hide current img
+        this.images[prevIndex].slideImg(exit);
+        // display next img
+        this.images[this.currIndex].slideImg(enter);
       }
     } else {
       // update this.currIndex to move one right or back to beginning if at end
-      exit = 'right';
-      enter = 'left';
+      exit = 'left';
+      enter = 'right';
       if (this.currIndex === this.images.length - 1) {
         this.currIndex = 0;
+        let invert = this.images.length - 1;
+        for (let i = 0; i < invert; i++) {
+          setTimeout(() => {
+            // console.log("exit img: ", i);
+            // console.log("enter img: ", i+1);
+            this.images[invert - i].slideImg(enter);
+            this.images[invert - (i + 1)].slideImg(exit);
+          },200 * i);
+        }
       } else {
         this.currIndex ++;
+        // hide current img
+        this.images[prevIndex].slideImg(exit);
+        // display next img
+        this.images[this.currIndex].slideImg(enter);
       }
     }
-    // hide current image
-    // this.images[prevIndex].img.style.removeProperty('display');
-    $(this.images[prevIndex].img).toggle({'effect':'slide', 'direction':exit});
-    // display next image
-    // this.images[this.currIndex].img.style.display = "block";
-    $(this.images[this.currIndex].img).toggle({'effect':'slide', 'direction':enter});
+    // // hide current image
+    // // $(this.images[prevIndex].img).toggle({'effect':'slide', 'direction':exit, 'duration':800});
+    // this.images[prevIndex].slideImg(exit);
+    // // display next image
+    // // $(this.images[this.currIndex].img).toggle({'effect':'slide', 'direction':enter, 'duration':800});
+    // this.images[this.currIndex].slideImg(enter);
     
     // console.log(this.currIndex);
   } // btnClick
@@ -59,6 +86,10 @@ class CarouselImage {
   constructor (imgElement) {
     this.img = imgElement;
     this.index = this.img.dataset.index;
+  }
+
+  slideImg(direction) {
+    $(this.img).toggle({'effect':'slide', 'direction':direction, 'duration':400});
   }
 
 }
