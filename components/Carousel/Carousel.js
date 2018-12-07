@@ -9,10 +9,6 @@ class Carousel {
         this.counter = 0;
         this.lButton.addEventListener('click', (e) => this.changeIndex(-1));
         this.rButton.addEventListener('click', (e) => this.changeIndex(1));
-        console.log(this.lButton);
-        console.log(this.rButton);
-        console.log(this.imgs);
-        console.log(this.index);
     }
 
     changeIndex(direction){
@@ -33,22 +29,17 @@ class Carousel {
 
         if(direction === 1){
             TweenMax.from(this.index, .5, {x: -1500, clearProps:"x"});
-            console.log(`After the change:${this.counter}`);
-            console.log(this.imgs[this.counter]);
+            // console.log(`After the change:${this.counter}`);
+            // console.log(this.imgs[this.counter]);
         } else {
             TweenMax.from(this.index, .5, {x: 1500, clearProps:"x"});
-            console.log(`After the change:${this.counter}`);
-            console.log(this.imgs[this.counter]);
+            // console.log(`After the change:${this.counter}`);
+            // console.log(this.imgs[this.counter]);
         }
     }
 }
 
 let carousel = document.querySelectorAll('.carousel').forEach(car => new Carousel(car));
-//let lButton = carousel.querySelector('.left-button');
-// let rButton = carousel.querySelector('.right-button');
-
-// let imgs = carousel.querySelectorAll('img');
-
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
