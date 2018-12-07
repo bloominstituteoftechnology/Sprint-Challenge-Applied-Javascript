@@ -7,7 +7,7 @@ class Carousel {
         this.ct = 0;
         this.imageNum = this.images.length;
         this.curr = this.images[this.ct];
-        this.curr.style.display = "flex";
+        this.curr.classList.add("show")
         this.leftBtn.addEventListener("click", () => this.scrollLeft());
         this.rightBtn.addEventListener("click", () => this.scrollRight());
     }
@@ -17,9 +17,9 @@ class Carousel {
         } else {
             this.ct -= 1;
         }
-        this.curr.style.display = "none";
+        this.curr.classList.remove("show")
         this.curr = this.images[this.ct];
-        this.curr.style.display = "flex";
+        this.curr.classList.add("show")
     }
     scrollRight() {
         if (this.ct === this.imageNum-1) {
@@ -27,9 +27,9 @@ class Carousel {
         } else {
             this.ct += 1;
         }
-        this.curr.style.display = "none";
+        this.curr.classList.remove("show")
         this.curr = this.images[this.ct];
-        this.curr.style.display = "flex";
+        this.curr.classList.add("show")
     }
 }
 

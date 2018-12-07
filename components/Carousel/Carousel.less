@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 16px;
+  width: 9999px;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -36,6 +37,17 @@
   }
   img {
     .width-100();
-    display:none;
+  }
+  img.default {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1s linear;
+  }
+  img.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    transition: all 1s;
   }
 }
