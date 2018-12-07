@@ -252,6 +252,7 @@ body {
   font-weight: bold;
 }
 .carousel {
+  border: 10px solid red;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -300,5 +301,5 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  display: block;
 }
