@@ -10,6 +10,13 @@ class Carousel {
     console.log(images);
     // display first image as default
     images[0].style.display = "block";
+
+    const rightButton = document.querySelector(".right-button");
+    console.log(rightButton);
+    rightButton.addEventListener("click", () => this.slideNext());
+  }
+  slideNext() {
+    console.log("slide next");
   }
 }
 
