@@ -54,6 +54,7 @@ body {
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 100;
 }
 .top-bar .container {
   width: 100%;
@@ -253,6 +254,7 @@ body {
 }
 .carousel {
   width: 100%;
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;

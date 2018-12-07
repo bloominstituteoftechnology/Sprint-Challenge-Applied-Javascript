@@ -10,7 +10,6 @@ class Carousel {
         this.imgs[this.index].style.display = "block";
     }
     moveCarousel(e){
-        
         let mover = 1;
         e.target.getAttribute('class') == "left-button" ? mover = -1 : null;
         this.index = this.index + mover;
