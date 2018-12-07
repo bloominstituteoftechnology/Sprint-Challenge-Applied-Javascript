@@ -9,33 +9,34 @@ class Carousel {
         this.rightButton = document.querySelector(".right-button");
         //Gets all images in the carousel
         this.images = document.querySelectorAll(".carousel img");
-        this.leftButton.addEventListener("click", event => this.clickedLeft(event));
-        this.rightButton.addEventListener("click", event => this.clickedRight(event));
+        this.enabled = true;
+        this.leftButton.addEventListener("click", event => this.clickedLeft());
+        this.rightButton.addEventListener("click", event => this.clickedRight());
     }
-    clickedRight(event) {
+    clickedRight() {
         this.images[this.currentIndex].style.display = "none";
         this.currentIndex = this.currentIndex + 1 === this.images.length ?
             0 : this.currentIndex + 1;
         this.images[this.currentIndex].style.display = "block";
-        TweenMax.from(this.images, 0.5, {
-            x: 400,
-            opacity: 0.1
-          });
+        TweenMax.staggerFrom(this.images, 0.3, {
+            opacity: 0.1,
+            ease: Back.easeOut.config(1.7),
+            x: 400
+        });
     }
-    clickedLeft(event) {
+    clickedLeft() {
         this.images[this.currentIndex].style.display = "none";
-        
         this.currentIndex = this.currentIndex ?
             this.currentIndex - 1 : this.images.length - 1;
         this.images[this.currentIndex].style.display = "block";
-        TweenMax.from(this.images, 0.5, {
-            x: -400,
-            opacity: 0.1
-          });
+        TweenMax.staggerFrom(this.images, 0.3, {
+            opacity: 0.1,
+            ease: Back.easeOut.config(1.7),
+            x: -400
+        });
     }
 }
 
 
 let carousel = document.querySelectorAll('.carousel');
 new Carousel(carousel);
-
