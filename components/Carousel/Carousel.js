@@ -11,6 +11,7 @@ class Carousel {
         this.leftBtn.addEventListener('click', ()=>{this.plusSlides(-1)});
         this.slideIndex = 1;
         this.showSlides(this.slideIndex);
+        console.log(this.slideIndex);
     }
     plusSlides(n){
         this.showSlides(this.slideIndex += n);
@@ -19,21 +20,27 @@ class Carousel {
         showSlides(slideIndex = n);
     }
     showSlides(n){
+        console.log(this.slideIndex);
         let i;
         let slides = document.querySelectorAll(".caro-img");
-        if (n > slides.length) {this.slideIndex = 1} 
+        console.log(slides);
+        if (n > slides.length) {
+            this.slideIndex = 1
+        };
         if (n < 1) {this.slideIndex = slides.length}
+        console.log(this.slideIndex);
         for (i = 0; i < slides.length; i++) {
             TweenMax.to(slides[i], 0, {
                 display:'none',
-                opacity: '.4'
+                opacity: '1'
             })
             // slides[i].style.display = "none"; 
         }
         TweenMax.to(slides[this.slideIndex-1], 1.5, {
             display: "block",
             opacity: '1'
-        })
+        }
+        )
         // slides[this.slideIndex-1].style.display = "block";  
     }
  }
