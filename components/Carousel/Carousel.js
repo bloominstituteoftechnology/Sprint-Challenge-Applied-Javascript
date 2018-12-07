@@ -2,7 +2,7 @@ class Carousel {
     constructor(carousel){
         this.element = carousel;
         this.currentIndex = 1;
-        this.data = this.element.dataset.position;
+        this.imageAmount = this.element.querySelectorAll('.slider').length;
         this.leftBTN = this.element.querySelector('.left-button');
         this.rightBTN = this.element.querySelector('.right-button');
         this.leftBTN.addEventListener('click', () => this.left())
@@ -10,7 +10,7 @@ class Carousel {
     }
     right(){
         this.currentIndex +=1;
-        if(this.currentIndex >= 5){
+        if(this.currentIndex >= this.imageAmount+1){
             this.currentIndex = 1
         }
         this.element.querySelectorAll('.slider').forEach((cv)=>{cv.classList.toggle('active-slider',false)})
@@ -19,7 +19,7 @@ class Carousel {
     left(){
         this.currentIndex -=1;
         if(this.currentIndex <= 0){
-            this.currentIndex = 4
+            this.currentIndex = this.imageAmount;
         }
         this.element.querySelectorAll('.slider').forEach((cv)=>{cv.classList.toggle('active-slider',false)})
         this.element.querySelector(`.slider[data-position='${this.currentIndex}']`).classList.toggle('active-slider',true)
