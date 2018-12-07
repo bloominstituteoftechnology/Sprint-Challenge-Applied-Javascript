@@ -15,14 +15,26 @@ class Carousel {
     }
     // metthods
     right() {
+        this.imgItem[this.num].style.display = "none";
+        
         this.num = this.num + 1;
-        console.log(activeImg)
-        this.activeImg.style.display = "none";
-        this.activeImg.nextSibling.style.display = "block";
+
+        if (this.num > 3) {
+            this.num = 0;
+        }
+        this.imgItem[this.num].style.display = "block";
+        
     }
   
     left() {
-        this.num = 2;
+        this.imgItem[this.num].style.display = "none";
+        
+        this.num = this.num - 1;
+
+        if (this.num < 1) {
+            this.num = 3;
+        }
+        this.imgItem[this.num].style.display = "block";
     }
   }
   
