@@ -14,9 +14,17 @@ class Carousel {
     const rightButton = document.querySelector(".right-button");
     console.log(rightButton);
     rightButton.addEventListener("click", () => this.slideNext());
+
+    const leftButton = document.querySelector(".left-button");
+    console.log(leftButton);
+    leftButton.addEventListener("click", () => this.slideBack());
   }
   slideNext() {
-    console.log("slide next");
+    console.log("slide next clicked");
+  }
+
+  slideBack() {
+    console.log("slide back clicked");
   }
 }
 
