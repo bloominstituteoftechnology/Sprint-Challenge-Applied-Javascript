@@ -62,7 +62,7 @@ class TabCard {
       opacity: 0
     }, {
       opacity: 1,
-      delay: i * 0.15
+      delay: (i * 0.10)
     })
   }
 
