@@ -1,13 +1,36 @@
 class Carousel {
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.carouselImage = this.carousel.querySelectorAll('img');
+        console.log(this.carouselImage);
+
+        console.log(carousel);
+        this.leftButton = document.querySelector('.left-button');
+        this.rightButton = document.querySelector('.right-button');
+
+        this.leftButton.addEventListener('click', () => this.scrollLeft());
+        this.rightButton.addEventListener('click', () => this.scrollRight());
+
+
+
+    }
+
+    scrollRight() {
+        console.log('right clicked')
+    };
+    scrollLeft() {
+        console.log('left clicked')
+    };
 
 }
 
 let carousel = document.querySelector('.carousel');
-let carouselImages = document.querySelectorAll('.carousel img')
-let leftButton = document.querySelector('.left-button');
-let rightButton = document.querySelector('.right-button');
+carousel = new Carousel(carousel);
 
-console.log(rightButton);
+
+
+
+
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
