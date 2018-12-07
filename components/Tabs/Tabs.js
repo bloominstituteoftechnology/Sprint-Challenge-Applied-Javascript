@@ -13,18 +13,12 @@ class TabLink {
   }
 
   selectTab(){
-
-    // Select all elements with the .tab class on them
-    // const tabs = document.querySelectorAll();
-    
-    // Iterate through the NodeList removing the .active-tab class from each element
-    // tabs.forEach()
-
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
     // Select all of the elements with the .card class on them
-    // const cards = ;
-
+    const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach()
+    cards.forEach(card => card.style.display = 'none');
     
     // Add a class of ".active-tab" to this.tabElement
     // this.tabElement;
