@@ -6,21 +6,21 @@ class TabLink {
 
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this.tabElement.dataset.tab;
-    // console.log(this.tabData);
+    // console.log(this.tabData); // all, javascript, technology, node, jquery, bootstrap
+
 
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
 
-
-    // =========================================================== not sure on this bit
     // Check to see if this.tabData is equal to 'all'
     if (this.tabData === 'all') {
-      console.log('This is true');
+      // console.log('This is true');
       // If `all` is true, select all cards regardless of their data attribute values
-      // this.cards = ;
+      this.cards = this.tabData;
+      console.log(this.cards);
     } else {
-      console.log('This is false');
       // else if `all` is false, only select the cards with matching this.tabData values
-      // this.cards = ;
+      this.cards = document.querySelector(`.card[data-tab='${this.tabData}']`);
+      console.log(this.cards);
     }
 
 
@@ -32,7 +32,6 @@ class TabLink {
   }
 
   selectTab() {
-
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
 
@@ -42,11 +41,10 @@ class TabLink {
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
     // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach(param => param.style.display = 'none');
+    cards.forEach(param => param.style.display = 'none');
 
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add('active-tab');
-
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
   }
@@ -56,12 +54,12 @@ class TabCard {
   constructor(cardElement) {
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
+    console.log(this.cardElement);
   }
   selectCard() {
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.display = 'flex';
   }
-
 }
 
 /* START HERE: 
