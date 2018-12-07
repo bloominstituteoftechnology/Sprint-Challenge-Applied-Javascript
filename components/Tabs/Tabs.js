@@ -53,6 +53,11 @@ class TabCard {
   selectCard(e){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = "flex";
+    TweenMax.fromTo(this.cardElement, 1, {
+      opacity: 0
+    }, {
+      opacity: 1
+    });
   }
 }
 
@@ -135,12 +140,15 @@ function addArticle(e) {
 
     cardsArea.appendChild(cardElement);
 
-    console.log("REACHED")
-
     if (newCardTopic !== activeTab.textContent
         && activeTab.dataset.tab != "all") {
       cardElement.style.display = "none";
-      console.log("SLAPPD");
+    } else {
+      TweenMax.fromTo(cardElement, 1, {
+        opacity: 0
+      }, {
+        opacity: 1
+      });
     }
 
     // Clear all fields
