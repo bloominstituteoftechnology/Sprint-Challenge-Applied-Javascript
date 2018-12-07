@@ -9,6 +9,7 @@ class Carousel {
     this.rightBtn.addEventListener("click", () => this.right());
     this.currentIndex.style.display = "block";
     this.i = 1;
+    setInterval(() => this.right(), 5000);
   }
 
   left() {
