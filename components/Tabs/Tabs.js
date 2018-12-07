@@ -21,7 +21,6 @@ class TabLink {
     
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    // this.tabCards.forEach( card => new TabCard(card));
     this.cards = Array.from(this.cards).map((card) => {
       return new TabCard(card);
     });
@@ -65,12 +64,11 @@ class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
-    console.log(this.cardElement)
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     this.cardElement.style.display = "flex";
-    console.log('test')
+    
   }
 
 }
