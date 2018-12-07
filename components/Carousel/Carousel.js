@@ -89,5 +89,9 @@ class Carousel {
     }
 }
 
-let carousel = document.querySelector(".carousel");
-new Carousel(carousel);
+let carousel = new Carousel(document.querySelector(".carousel"));
+
+let seconds = 0;
+let autoSlider = window.setInterval(e => {
+    carousel.clickedRight(e);
+}, 6000);
