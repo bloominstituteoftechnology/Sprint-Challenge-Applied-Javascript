@@ -23,6 +23,7 @@ class Carousel {
             this.images.forEach((image, index) => {
                 if(this.currentIndex === index) {
                     image.style.display = 'block';
+                    TweenMax.from(image, 1, {x:-1000});
                 }
             })
         })
@@ -39,6 +40,7 @@ class Carousel {
             this.images.forEach((image, index) => {
                 if(this.currentIndex === index) {
                     image.style.display = 'block';
+                    TweenMax.from(image, 1, {x:1000});
                 }
             })
         })
