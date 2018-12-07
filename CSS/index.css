@@ -292,6 +292,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel .right-button {
   top: 50%;
@@ -301,4 +302,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+  right: 0px;
+  transition: right 1s ease;
+  position: relative;
 }

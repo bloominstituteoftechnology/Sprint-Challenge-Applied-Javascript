@@ -7,34 +7,86 @@ class Carousel {
         this.rightArrow = this.carouselElement.querySelector('.right-button');
         this.slides = this.carouselElement.querySelectorAll('img');
         this.slides[0].style.display = 'block';
+        this.slides[0].style.right = '-600px';
+        this.slides[1].style.display = 'block';
+        this.slides[1].style.right = '-600px';
 
         this.rightArrow.addEventListener('click', _ => this.slideRight());
         this.leftArrow.addEventListener('click', _ => this.slideLeft());
     }
 
     slideRight() {
-        
-        if(current < this.slides.length-1){
+        this.slides[current].style.transition = 'right 1s ease';
+
+        this.slides[current].addEventListener('transitionend', _ => {
+            if (current > 0) {
+                this.slides[current - 1].style.display = 'none';
+                this.slides[current - 1].style.order = '0';
+            } else {
+                this.slides[this.slides.length - 1].style.display = 'none';
+                this.slides[this.slides.length - 1].style.order = '0';
+            }
+
+            this.slides[current].style.transition = 'none';
+            if (current < this.slides.length - 1) {
+                this.slides[current].style.right = `-600px`;
+                this.slides[current].style.order = `-1`;
+                this.slides[current + 1].style.right = '-600px';
+                this.slides[current + 1].style.display = 'block';
+            } else {
+                this.slides[current].style.right = `-600px`;
+                this.slides[current].style.order = `-1`;
+                this.slides[0].style.right = `-600px`;
+                this.slides[0].style.display = `block`;
+            }
+
+        });
+        if (current < this.slides.length - 1) {
+            this.slides[current].style.right = `600px`;
+            this.slides[current + 1].style.right = `600px`;
             current++;
-            this.slides.forEach(slide => slide.style.display = 'none');
-            this.slides[current].style.display = 'block';
-        }else{
+        } else {
+            this.slides[current].style.right = `600px`;
+            this.slides[0].style.right = `600px`;
             current = 0;
-            this.slides.forEach(slide => slide.style.display = 'none');
-            this.slides[current].style.display = 'block';
         }
     }
 
     slideLeft() {
-        if(current > 0){
-            current--;
-            this.slides.forEach(slide => slide.style.display = 'none');
-            this.slides[current].style.display = 'block';
-        }else{
-            current = this.slides.length-1;
-            this.slides.forEach(slide => slide.style.display = 'none');
-            this.slides[current].style.display = 'block';
-        }
+    //     this.slides[current].style.transition = 'right 1s ease';
+
+    //     this.slides[current].addEventListener('transitionend', _ => {
+    //         if (current > 0) {
+    //             this.slides[current - 1].style.display = 'none';
+    //             this.slides[current - 1].style.order = '-1';
+    //         } else {
+    //             this.slides[this.slides.length - 1].style.display = 'none';
+    //             this.slides[this.slides.length - 1].style.order = '-1';
+    //         }
+
+    //         this.slides[current].style.transition = 'none';
+    //         if (current > 0) {
+    //             this.slides[current].style.right = `1800px`;
+    //             this.slides[current].style.order = `0`;
+    //             this.slides[current - 1].style.right = '-1800px';
+    //             this.slides[current - 1].style.display = 'block';
+    //         } else {
+    //             this.slides[current].style.right = `-1800px`;
+    //             this.slides[current].style.order = `-1`;
+    //             this.slides[0].style.right = `-1200px`;
+    //             this.slides[0].style.display = `block`;
+    //         }
+
+    //     });
+    //     if (current > 0) {
+    //         this.slides[current].style.right = `-1800px`;
+    //         this.slides[current - 1].style.right = `-1800px`;
+    //         current--;
+    //     } else {
+    //         this.slides[current].style.right = `-1800px`;
+    //         this.slides[0].style.right = `-1800px`;
+    //         current = 0;
+    //     }
     }
 }
 
