@@ -28,14 +28,20 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 2;
   }
   .right-button {
     top: 50%; 
     right: 25px;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); 
+    z-index: 2;
   }
   img {
     .width-100();
     display: none;
+  }
+  .current {
+    display: block;
+    z-index: 1;
   }
 }
