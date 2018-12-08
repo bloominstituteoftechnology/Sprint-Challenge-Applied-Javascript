@@ -4,13 +4,14 @@
   position: fixed;
   height: 44px;
   background-color: @lambda-times-color-primary;
+  z-index: 1;
   .container {
     .width-100();
     .flex();
     color: @lambda-times-color-white;
     letter-spacing: 1px;
     padding: 0 10px;
-    @media(min-width: 1280px){
+    @media (min-width: 1280px) {
       width: 1280px;
     }
     .container-left {
@@ -30,7 +31,7 @@
       span {
         cursor: pointer;
         margin-right: 5%;
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
         &:hover {
