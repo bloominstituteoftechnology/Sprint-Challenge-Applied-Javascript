@@ -222,6 +222,9 @@ body {
   border-radius: 100%;
   margin: 0 10px;
 }
+.carousel .indicators .indicator:hover {
+  cursor: pointer;
+}
 .tabs {
   border-bottom: 1px solid lightgrey;
   display: flex;
