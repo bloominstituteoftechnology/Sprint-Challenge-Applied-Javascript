@@ -99,7 +99,7 @@ class Carousel {
     }
 
     clickedDot(e, newIndex) {
-        if (!this.hasOngoingAnimation) {
+        if (!this.hasOngoingAnimation && newIndex != this.currentIndex) {
             this.hasOngoingAnimation = true;
 
             // this.images[this.currentIndex].style.display = "none";
