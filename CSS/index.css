@@ -302,3 +302,7 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .active-img {
+  width: 100%;
+  display: flex;
+}
