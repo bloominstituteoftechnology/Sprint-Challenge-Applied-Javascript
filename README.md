@@ -32,9 +32,15 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM (Document Object Model) is an object-based representation of the source HTML document.  It is an interface that allows viewing of the content of a webpage that can also be used to modify a page's content, structure and styles.
+
 2. What is an event?
 
+An event is an action that can be detected by Javascript, such as click, mouseover and scroll.
+
 3. What is an event listener?
+
+An event listener is a procedure in a program that waits for an event to occur.  For example, using the click event causes the program to react to that input in a specified manner.
 
 4. Why would we convert a NodeList into an Array?
 
