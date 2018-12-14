@@ -40,11 +40,15 @@ An event is an action that can be detected by Javascript, such as click, mouseov
 
 3. What is an event listener?
 
-An event listener is a procedure in a program that waits for an event to occur.  For example, using the click event causes the program to react to that input in a specified manner.
+An event listener is a procedure in a program that waits for an event to occur.  For example, using the click event causes the program to react to a mouse click in a specified manner.
 
 4. Why would we convert a NodeList into an Array?
 
+NodeLists are array-like objects but do not have as many methods as provided by arrays. Arrays are also faster and compatible with many different browsers.
+
 5. What is a component?
+
+A component is a stand-alone, independent part of an application which has a reusable set of logic, behaviors and interface elements.  
 
 ### Git Set up
 
