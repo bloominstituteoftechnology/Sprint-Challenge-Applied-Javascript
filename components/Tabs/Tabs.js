@@ -6,7 +6,7 @@ class TabLink {
     
     
     // Get the `data-tab` value from this.tabElement and store it here
-    this.tabData = this.tabElement.dataset[".data-tab"]; 
+    this.tabData = this.tabElement.dataset.tab; 
     console.log(this.tabData)
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
@@ -15,11 +15,13 @@ class TabLink {
 
     if(this.tabData ==='all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      
+      document.getElementsByClassName("tab active-tab")
+      console.log (true)
 
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-        ;
+      document.getElementsByClassName("tab")
+      console.log(false);
     };
     
 
@@ -78,5 +80,7 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll(".tab").forEach(tabs => new TabLink(tabs));
-  //console.log(tabs)
+let tabs = document.querySelectorAll(".tab")
+
+tabs.forEach(tab => new TabLink(tab));
+ // console.log(tabs)
