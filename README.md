@@ -31,15 +31,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+The DOM is the interface where every piece of code comes together to run. 
 2. What is an event?
-
+An event is something that happens due to a piece of code in the program or a user interfacing with the program.
 3. What is an event listener?
-
+An event listener is an event which is activated due to a specific key or action taken.
 4. Why would we convert a NodeList into an Array?
-
+A NodeList is only an Array-like object therefore we would only be able to manipulate it to a certain degree. If we did convert it into an Array it would be subject to all Array methods. 
 5. What is a component?
-
+A component is a piece of a larger program, it could be described as the div, class, header, etc. these pieces of code are part of a larger program which would not run without them.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
