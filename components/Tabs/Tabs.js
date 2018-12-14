@@ -14,7 +14,7 @@ class TabLink {
       this.cards = document.querySelectorAll(`.card`);
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelector(`.card[data-set='${this.data}']`) ;
+      this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`) ;
     }
 
 
@@ -22,8 +22,9 @@ class TabLink {
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
-    this.tabElement.addEventListener('click', selectTab());
-  }
+    this.tabElement.addEventListener('click', () => {this.selectTab();
+    })
+  };
 
   selectTab(){
 
@@ -68,4 +69,4 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll('.tab').forEach(tabs => {new TabLink(tabs)});
+let tabs = document.querySelectorAll('.tab').forEach(tab => {new TabLink(tab)});
