@@ -10,12 +10,15 @@ class TabLink {
        this.cards = document.querySelector(".tabData");
   }
 
-  this.cards = Array.from(document.querySelectorAll(".card"));
-  this.cards = new TabCard
-  TabCard = this.cards.map("card") => 
-  this.tabElement.addEventListener("click",  () => {this.selectTab})
+  this.cards = Array.from(this.cards).map(card => {
+    return this.cards = new TacCard(card);
+  });
 
-  }
+
+
+this.tabElement.addEventListener("click",  () => {this.selectTab})
+
+}
 
 
 selectTab() {
@@ -32,8 +35,10 @@ selectTab() {
    this.tabElement.classList.add("active-tab");
    this.cards.forEach(card => card.selectCard());
   }
-
 }
+
+
+
 
   class TabCard {
   constructor(cardElemtnt) {
