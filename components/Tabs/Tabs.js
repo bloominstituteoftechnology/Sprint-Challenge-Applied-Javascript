@@ -10,8 +10,9 @@ class TabLink {
        this.cards = document.querySelector(".tabData");
   }
 
-  this.cards = Array.from(this.cards).map((card) => card.innerHTML);
-
+  this.cards = Array.from(document.querySelectorAll(".card"));
+  this.cards = new TabCard
+  TabCard = this.cards.map("card") => 
   this.tabElement.addEventListener("click",  () => {this.selectTab})
 
   }
