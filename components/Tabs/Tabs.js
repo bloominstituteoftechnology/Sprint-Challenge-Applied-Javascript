@@ -3,18 +3,20 @@ class TabLink {
     this.tabElement = tabElement;
     this.tabData = this.tabElement.dataset.tab
   
-  if (this.tabData = "all") {
+  if (this.tabData === "all") {
       
        this.cards = document.querySelectorAll("card");
   } else {
        this.cards = document.querySelector(".tabData");
   }
 
+  this.cards = Array.from(this.cards).map((card) => card.innerHTML);
 
-
+  this.tabElement.addEventListener("click",  () => {this.selectTab})
 
   }
-}
+
+
 selectTab() {
   
   const tabs = document.querySelectorAll(".tab");
@@ -30,8 +32,9 @@ selectTab() {
    this.cards.forEach(card => card.selectCard());
   }
 
+}
 
-    class TabCard {
+  class TabCard {
   constructor(cardElemtnt) {
     this.cardElemtnt = cardElemtnt;
 
