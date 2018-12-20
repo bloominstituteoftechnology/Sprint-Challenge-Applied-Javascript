@@ -32,13 +32,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+It's a programming interface for HTML. It represents the page so that style, structure , and content and all be changed/manipulated. Using a scripting language like JavaScript.
+
 2. What is an event?
+
+An even is a trigger , something a user does on a wepage that is detected. 
 
 3. What is an event listener?
 
+It is a method that uses an event handler(callback) for a selected element.
+
 4. Why would we convert a NodeList into an Array?
 
+In order to use some  array/advanced methods.
+
 5. What is a component?
+
+It is a modular set of imformation/styles/behaviors .
+
 
 ### Git Set up
 
