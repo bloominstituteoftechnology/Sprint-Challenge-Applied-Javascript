@@ -4,19 +4,20 @@ class TabLink {
     this.tabData = this.tabElement.dataset.tab
   
   if (this.tabData === "all") {
-      
+     
        this.cards = document.querySelectorAll("card");
   } else {
        this.cards = document.querySelector(".tabData");
   }
 
-  this.cards = Array.from(this.cards).map(card => {
-    return this.cards = new TacCard(card);
-  });
+  this.cards = Array.from(this.tabElement).map(function(card) {
+        
+return this.cards = new TabCarc(card)
 
+  })
+       
 
-
-this.tabElement.addEventListener("click",  () => {this.selectTab})
+  this.tabElement.addEventListener("click",  () => {this.selectTab})
 
 }
 
