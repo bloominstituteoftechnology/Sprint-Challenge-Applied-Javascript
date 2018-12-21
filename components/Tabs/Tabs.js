@@ -7,18 +7,18 @@ class TabLink {
      
        this.cards = document.querySelectorAll(".card");
   } else {
-       this.cards = document.querySelectorAll(`.card [data-tab= '${this.tabData}']`);
+       this.cards = document.querySelectorAll(`.card[data-tab= '${this.tabData}']`);
   }
 
   this.cards = Array.from(this.cards).map(function(card) {
         
-    return  new TabCard(card)
+        return  new TabCard(card)
 
   })
        
 
   this.tabElement.addEventListener("click",  () => {this.selectTab()})
-  alert("this is working ");
+ 
 }
 
 
@@ -37,8 +37,6 @@ selectTab() {
    this.cards.forEach(card => card.selectCard());
   }
 }
-
-
 
 
   class TabCard {
