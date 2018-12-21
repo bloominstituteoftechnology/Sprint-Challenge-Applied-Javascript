@@ -5,14 +5,14 @@ class TabLink {
   
   if (this.tabData === "all") {
      
-       this.cards = document.querySelectorAll("card");
+       this.cards = document.querySelectorAll(".card");
   } else {
-       this.cards = document.querySelector(".tabData");
+       this.cards = document.querySelectorAll(`.card [data-tab= '${this.tabData}']`);
   }
 
-  this.cards = Array.from(this.tabElement).map(function(card) {
+  this.cards = Array.from(this.cards).map(function(card) {
         
-return this.cards = new TabCarc(card)
+    return  new TabCard(card)
 
   })
        
@@ -33,7 +33,7 @@ selectTab() {
    for(let i = 0; i < cards.length; i++) {
      cards[i].style.display = "none";
    }
-   this.tabElement.classList.add(".active-tab");
+   this.tabElement.classList.add("active-tab");
    this.cards.forEach(card => card.selectCard());
   }
 }
@@ -42,19 +42,19 @@ selectTab() {
 
 
   class TabCard {
-  constructor(cardElemtnt) {
-    this.cardElemtnt = cardElemtnt;
+  constructor(cardElement) {
+    this.cardElement = cardElement;
 
   }
 
  selectCard() {
-this.cardElemtnt.style.display = "flex"
+this.cardElement.style.display = "flex"
 
  }
 
 }
 
-let tabs = document.querySelectorAll(".tabs");
+let tabs = document.querySelectorAll(".tab");
 tabs.forEach(function(tab) {
   return new TabLink(tab)
 });
