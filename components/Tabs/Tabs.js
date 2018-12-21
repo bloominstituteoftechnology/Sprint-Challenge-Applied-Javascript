@@ -17,8 +17,8 @@ return this.cards = new TabCarc(card)
   })
        
 
-  this.tabElement.addEventListener("click",  () => {this.selectTab})
-
+  this.tabElement.addEventListener("click",  () => {this.selectTab()})
+  alert("this is working ");
 }
 
 
@@ -33,7 +33,7 @@ selectTab() {
    for(let i = 0; i < cards.length; i++) {
      cards[i].style.display = "none";
    }
-   this.tabElement.classList.add("active-tab");
+   this.tabElement.classList.add(".active-tab");
    this.cards.forEach(card => card.selectCard());
   }
 }
