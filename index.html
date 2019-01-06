@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Lambda Times</title>
   <link rel="stortcut icon" href="./favicon.ico">
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
-
 <body>
 
   <!-- TOP BAR COMPONENT -->
@@ -30,9 +31,9 @@
 
   <!-- HEADER COMPONENT -->
   <div class="header">
-    <span class="date">SMARCH 28, 2018</span>
+    <span class="date">January 6, 2019</span>
     <h1>Lambda Times</h1>
-    <span class="temp">98°</span>
+    <span class="temp">55°</span>
   </div>
 
   <!-- TABS COMPONENT -->
@@ -45,19 +46,28 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="lifeMan" class="tab">JUST LIFE, MAN</div>
+
     </div>
   </div>
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+
   <!-- CAROUSEL COMPONENT -->
+
   <!-- <div class="carousel">
     <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
+    <div class="images">
+      <img src="./assets/carousel/pyramids.jpeg" />
+      <img src="./assets/carousel/nyc.jpeg" />
+      <img src="./assets/carousel/beach.jpeg" />
+      <img src="./assets/carousel/moon.jpeg" />
+      <img src="./assets/carousel/space.jpeg" />
+    </div>
     <div class="right-button">></div>
-  </div> -->
+  </div>
+  -->
+
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -67,14 +77,14 @@
       <div class="headline">ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects</div>
       <div class="author">
         <div class="img-container">
-          <img src="./assets/sir.jpg" />
+          <img src="./assets/sir.jpg"/>
         </div>
         <span>By SIR RUFF'N'STUFF</span>
       </div>
     </div>
 
     <div class="card" data-tab="javascript">
-      <div class="headline">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences</div>
+      <div class="headline">Type Coercion: Why Does NaN !== NaN? and Other Strange Occurences</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/bones.jpg" />
@@ -94,7 +104,7 @@
     </div>
 
     <div class="card" data-tab="technology">
-      <div class="headline">AI: What Are the Ethical Ramifications of the Future?</div>
+      <div class="headline">AI: What Are the Ethical Rammifications of the Future?</div>
       <div class="author">
         <div class="img-container">
           <img src="./assets/max.jpg" />
@@ -109,7 +119,7 @@
         <div class="img-container">
           <img src="./assets/puppers.jpg" />
         </div>
-        <span>By PUPPER S. DOGGO</span>
+        <span>By PUPPY A. DOG</span>
       </div>
     </div>
 
@@ -119,7 +129,7 @@
         <div class="img-container">
           <img src="./assets/max.jpg" />
         </div>
-        <span>By MAX GOODBOYE</span>
+        <span>By MAX LIFE</span>
       </div>
     </div>
 
@@ -129,7 +139,7 @@
         <div class="img-container">
           <img src="./assets/sir.jpg" />
         </div>
-        <span>By SIR RUFF'N'STUFF</span>
+        <span>By SIR SPONGEBOB</span>
       </div>
     </div>
 
@@ -139,7 +149,7 @@
         <div class="img-container">
           <img src="./assets/bones.jpg" />
         </div>
-        <span>By BONES R. LIFE</span>
+        <span>By JOHN STWEART</span>
       </div>
     </div>
 
@@ -149,7 +159,7 @@
         <div class="img-container">
           <img src="./assets/fido.jpg" />
         </div>
-        <span>By FIDO WALKSALOT</span>
+        <span>By JAMES VICK</span>
       </div>
     </div>
 
@@ -213,7 +223,26 @@
       </div>
     </div>
 
+    <div class="card" data-tab="lifeMan">
+      <div class="headline">How I learned to Stop Worrying and Love the Kong</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/schmup.jpg" />
+        </div>
+        <span>By The Indomitable Schmup</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="lifeMan">
+      <div class="headline">12 Signs Your People are Just Playing Video Games</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/schmup.jpg" />
+        </div>
+        <span>By The Indomitable Schmup</span>
+      </div>
+    </div>
+
   </div>
 </body>
-
 </html>
