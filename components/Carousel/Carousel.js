@@ -43,10 +43,10 @@ class CarouselButton {
   constructor(element, parent){
     this.element = element;
     this.parent = parent;
-    this.element.addEventListener("click", () => { this.btnClick(); })
+    this.element.addEventListener("click", () => { this.buttonClick(); })
   }
 
-  btnClick(){
+  buttonClick(){
     if(this.element.classList.contains("left-button")){
       this.parent.scroll("left");
     }
