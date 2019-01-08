@@ -203,7 +203,7 @@ body {
 }
 .cards-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: none;
   flex-direction: row;
   width: 100%;
@@ -223,7 +223,7 @@ body {
   flex-direction: column;
   background-color: #fff;
   width: 380px;
-  margin-bottom: 16px;
+  margin: 10px;
   padding: 24px;
 }
 .cards-container .card .headline {
