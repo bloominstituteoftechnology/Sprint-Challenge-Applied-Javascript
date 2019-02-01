@@ -302,3 +302,8 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .active {
+  display: block;
+  transition-duration: 1s;
+  transition-property: display;
+}
