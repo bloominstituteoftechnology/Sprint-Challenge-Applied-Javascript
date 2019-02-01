@@ -32,13 +32,27 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The Document Object Model is an API (Application Programming Interface) that bridges the gap between our code and the browser.
+In this case, the document is the webpage we are working on. The object is a rendering of the webpage that creates nodes/elements.
+The model is the upside down tree that shows the parent/child relatinship of the object.
+
+
 2. What is an event?
+
+A DOM event is when certain languages can register something happen to a particalur DOM element.
 
 3. What is an event listener?
 
+An event listener takes in a type of event, such as a mouseclick, and a callback function. When the event type happens, the callback function is invoked.
+
 4. Why would we convert a NodeList into an Array?
 
+NodeLists give us access to forEach. However, we do not get map or filter or any of the other prototype methods.
+
 5. What is a component?
+
+Boilerplate code that allows us to quickly manipulate HTML, CSS, and JS in a way that provides specific function and can be easily reused.
+Social media sites, especially, rely on components.
 
 ### Git Set up
 
