@@ -300,10 +300,10 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  width: 0;
+  transition-duration: 1s;
+  transition-property: width;
 }
 .carousel .active {
-  display: block;
-  transition-duration: 1s;
-  transition-property: display;
+  width: 100%;
 }

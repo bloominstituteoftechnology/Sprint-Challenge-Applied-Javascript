@@ -36,14 +36,16 @@
   }
   img {
     .width-100();
-    display: none;
-    
+    // display: none;
+    display: block;
+    width: 0%;
+    transition-duration: 10s;
+    transition-property: width;
     
   }
   .active{
-    display: block;
-    transition-duration: 1s;
-    transition-property: display;
+    // display: block;
+    width: 100%;
   }
   
 }
