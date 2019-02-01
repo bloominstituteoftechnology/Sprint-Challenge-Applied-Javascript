@@ -37,8 +37,9 @@ class TabLink {
     const cards = document.querySelectorAll(".card");
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(link => link.document.querySelectorAll("card").style.display = "none");
-    
+    cards.forEach(element => {element.style.display = "none";
+  
+  });
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add(".active-tab");
   
@@ -54,7 +55,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement  = document.querySelectorAll(".cardElement").style.display = "flex";
+    this.cardElement.style.display = "flex";
   }
 
 }
