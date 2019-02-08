@@ -11,11 +11,11 @@ class TabLink {
     // <- Delete this comment block when you work on the if statement
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData === "all") {
-      // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = document.querySelector(`.cards-container[tabData-tab = '${this.tabData}']`);
+      // If `all` is true, select all cards regardless of their data attribute values      
+     this.cards = document.querySelectorAll(".card");
     } else {
-      // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelector(`.card[tabData-tab = '${this.tabData}']`);
+      // else if `all` is false, only select the cards with matching this.tabData values     
+     this.cards = document.querySelectorAll(`.card[tabData-tab = "${this.tabData}"]`);
     }
     // <- Delete this comment block when you work on the if statement
 
@@ -37,7 +37,7 @@ class TabLink {
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
 
-    // Iterate through the NodeList setting the display style each one to 'none'
+    // Iterate through the NodeList setting the display style each one to 'none'   CORRECTION NEEDED
     cards.forEach(tabElement.style.display = "none");
     
     // Add a class of ".active-tab" to this.tabElement
