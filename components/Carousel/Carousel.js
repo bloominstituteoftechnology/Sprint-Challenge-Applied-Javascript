@@ -1,8 +1,12 @@
 class Carousel {
+    this.carousel = carousel;
+    this.buttonRight = document.querySelector('right-button')
+    this.buttonRight.addEventListener('click', () => this.rightClick());
+    
 
 }
 
-let carousel = document.querySelector();
+let carousel = document.querySelector('.carousel');
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
