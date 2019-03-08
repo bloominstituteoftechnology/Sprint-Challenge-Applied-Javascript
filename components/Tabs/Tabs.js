@@ -52,3 +52,9 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 console.log(tabs);
 tabs.forEach(item => new TabLink(item));
+
+//changing the date to match current date
+
+const date = new Date();
+const dmy = date.toDateString();
+const update = document.querySelector('.date').innerHTML = dmy;
