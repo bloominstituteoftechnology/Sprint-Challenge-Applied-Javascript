@@ -300,4 +300,16 @@ body {
 }
 .carousel img {
   width: 100%;
+  display: none;
+  animation: slide-in-left 0.7s cubic-bezier(0.77, 0, 0.175, 1) alternate backwards;
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

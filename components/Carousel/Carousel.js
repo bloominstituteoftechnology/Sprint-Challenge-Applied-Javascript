@@ -2,11 +2,9 @@ class Carousel {
     constructor(carousel) {
         this.carousel = carousel;
         this.imgs = this.carousel.querySelectorAll("img");
-        console.log(imgs);
-
-
+        
         this.leftButton = this.carousel.querySelector(".left-button");
-        this.rightBuytton = this.carousel.querySelector(".right-button");
+        this.rightButton = this.carousel.querySelector(".right-button");
         this.index = 0;
         this.imgs[this.index].style.display = "block";
 
@@ -38,7 +36,7 @@ class Carousel {
 }
 
 
-const carousels = document.querySelector(".carousel");
+const carousels = document.querySelectorAll(".carousel");
 carousels.forEach(carousel => new Carousel(carousel));
 
 
