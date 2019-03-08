@@ -6,7 +6,7 @@ class TabLink {
 
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData =  this.tabElement.dataset.tab;
-    // console.log(this.tabData)
+    console.log(this.tabData)
 
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     // Check to see if this.tabData is equal to 'all'
@@ -16,7 +16,7 @@ class TabLink {
       // console.log(this.cards)
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll(`.card[data-tab="${this.data}"]`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
       // console.log(this.cards)
     }
 
@@ -24,10 +24,10 @@ class TabLink {
      // Convert each this.cards element into a new instance of the TabCard class.
      // Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map(card => {
-      // console.log(card)
+      // console.dir(card)
       return new TabCard(card)
     });
-    
+    console.dir(this.cards)
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click', () => {
       this.selectTab();
@@ -46,7 +46,7 @@ class TabLink {
     
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
-    console.log(cards)
+    // console.log(cards)
 
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(card => {
@@ -59,7 +59,6 @@ class TabLink {
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     this.cards.forEach(card => card.selectCard());
-    
   }
 }
 
@@ -85,5 +84,7 @@ class TabCard {
 
 */
 let tabs = document.querySelectorAll('.tab').forEach(function(element){
-  return new TabLink(element);
+  // console.log(element);
+  new TabLink(element);
 });
+// console.log(tabs)
