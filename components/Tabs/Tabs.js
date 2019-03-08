@@ -4,11 +4,8 @@ class TabLink {
   constructor(tabElement){
   
     this.tabElement = tabElement;
-    console.log(tabElement);
     this.tabData = this.tabElement.dataset.tab; 
-    console.log(this.tabData);
-       
-    
+
     if(this.tabData == 'all'){
       
       this.cards = document.querySelectorAll('.card');
