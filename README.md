@@ -30,11 +30,11 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
-1. What is the DOM?
+1. What is the DOM? the document 
 
-2. What is an event?
+2. What is an event? an action onto an object 
 
-3. What is an event listener?
+3. What is an event listener? 
 
 4. Why would we convert a NodeList into an Array?
 
