@@ -4,7 +4,7 @@ class TabLink {
     this.tabElement = document.tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
-    this.tabData = this. 
+    this.tabData = this.element.querySelector('.data-tab')
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
