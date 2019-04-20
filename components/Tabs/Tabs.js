@@ -1,7 +1,7 @@
 class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
-    this.tabElement = tabElement;
+    this.tabElement = document.tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this. 
