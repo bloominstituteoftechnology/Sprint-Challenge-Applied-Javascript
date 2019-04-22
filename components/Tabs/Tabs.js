@@ -9,7 +9,7 @@ class TabLink {
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
-     <- Delete this comment block when you work on the if statement
+    //  <- Delete this comment block when you work on the if statement
     // Check to see if this.tabData is equal to 'all'
 
     if(this.tabData === 'all'){
