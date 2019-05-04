@@ -34,9 +34,9 @@ Edit this document to include your answers after each question. Make sure to lea
 
 2. What is an event? an action onto an object 
 
-3. What is an event listener? 
+3. What is an event listener? an action given by the programmer to make the window react to what action youve put in and a callback to say where this action shall fire 
 
-4. Why would we convert a NodeList into an Array?
+4. Why would we convert a NodeList into an Array? so we can pass in a .forEach
 
 5. What is a component?
 
