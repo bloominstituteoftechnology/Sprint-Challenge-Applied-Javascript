@@ -33,14 +33,13 @@ Edit this document to include your answers after each question. Make sure to lea
 1. What is the DOM?
 Document Object Model
 2. What is an event?
-
+An interface to represent events that take place in the DOM.
 3. What is an event listener?
-
+An object that can handle a dispatched event.
 4. Why would we convert a NodeList into an Array?
-
-
+To use common array methods that aren't implemented in a NodeList.
 5. What is a component?
-
+A paradigm that allows developers to create reusable, custom, modular code.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account

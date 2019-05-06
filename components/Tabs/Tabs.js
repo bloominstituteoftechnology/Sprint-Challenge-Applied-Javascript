@@ -11,11 +11,11 @@ class TabLink {
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
       
     // If `all` is true, select all cards regardless of their data attribute values
-    if(this.selectTab(this.tabData.dataset.tab) = 'all'){
+    if(this.selectTab() = 'all'){
       cards.forEach(item => item.style.display = "flex");
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards.selectCard(this.tabData.dataset.tab).style.display = "flex";
+      this.selectCard().style.display = "flex";
     }
     
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
