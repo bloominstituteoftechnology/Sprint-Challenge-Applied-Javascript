@@ -6,7 +6,7 @@ class TabLink {
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this.tabElement.dataset.tab;
     this.selectTab = this.selectTab.bind(this);
-    
+
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
       
     // If `all` is true, select all cards regardless of their data attribute values
@@ -14,7 +14,7 @@ class TabLink {
       this.cards = document.querySelectorAll('div.card');
     } else{
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll(`div.card${this.tabData}`);
+      this.cards = document.querySelectorAll(`.card${this.tabData}`);
     }
     
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
@@ -25,15 +25,15 @@ class TabLink {
   }
 
   selectTab(){
-
+    console.log(this.tabData);
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(item => item.classList.remove("active-tab"));
 
-    // Select all of the elements with the .card class on them
-    let cards = document.querySelectorAll(".card");
+    // Select all of the elements with the .card class on 
+    const cards = document.querySelectorAll(".card");
     
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(item => item.style.display = "none");
@@ -68,7 +68,12 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll(".tab");
+
+let tabs = document.querySelectorAll("div.tab");
 tabs.forEach(item => new TabLink(item));
 
-
+/*class TabLink{
+  constructor(tabnav, link){
+    this.link = link;
+  }
+} */
