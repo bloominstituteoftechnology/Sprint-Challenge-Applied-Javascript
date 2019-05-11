@@ -11,25 +11,36 @@ class Carousel {
         // 3. Create a current index
         this.index = 0;
 
-        this.imgs[this.index].style.display = 'inline-block';
+        this.imgs[this.index].style.display = 'block';
+
+        // 4. Those buttons are gonna need some click handlers.
+        this.leftButton.addEventListener('click', () => this.moveLeft());
+        this.rightButton.addEventListener('click', () => this.moveRight());
 }};
 
-// 4. Those buttons are gonna need some click handlers.
-this.leftButton.addEventListener('click', () => this.moveLeft());
-this.rightButton.addEventListener('click', () => this.moveRight());
 
 moveRight() {
     // initially displaying none
     this.imgs[this.index].style.display = 'none';
     // iterate over the images, if this.index is less than the length of the nodelist, then set index to 0, otherwise iterate AND set the image at that index to display inline-block
-    (this.index === this.imgs.length-1) ? this.index = 0 : this.index++, this.imgs[this.index].style.display = 'inline-block';
+    if(this.index === this.imgs.length-1) {
+        this.index = 0;
+    } else {
+        this.index++;
+        this.imgs[this.index].style.display = 'block';
+    }
 };
 
 moveLeft() {
     // initially displaying none
     this.imgs[this.index].style.display = 'none';
     // iterate over the images, if this.index is less than the length of the nodelist, then set index to 0, otherwise iterate AND set the image at that index to display inline-block
-    (this.index === this.imgs.length-1) ? this.index = 0 : this.index++, this.imgs[this.index].style.display = 'inline-block';
+    if(this.index === this.imgs.length-1) {
+        this.index = 0;
+    } else {
+        this.index++;
+        this.imgs[this.index].style.display = 'block';
+    }
 };
 
 const carousels = document.querySelector('.carousel');
