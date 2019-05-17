@@ -11,8 +11,8 @@ class Carousel {
     this.images[this.timg - 1].classList.add("prev");
     this.images[0].classList.add("active");
     this.images[1].classList.add("next");
-    this.leftButton.addEventListener("click", this.moveNext);
-    this.rightButton.addEventListener("click", this.movePrev);
+    this.rightButton.addEventListener("click", this.moveNext);
+    this.leftButton.addEventListener("click", this.movePrev);
   }
   moveNext = () => {
     console.log(this.moving);
@@ -61,7 +61,7 @@ class Carousel {
       let oldNext = this.slide + 2;
       // Test if carousel has more than three items
       console.log(this.timg);
-      if (this.timg - 1 >= 3) {
+      if (this.timg > 3) {
         // Checks and updates if the new slides are out of bounds
         if (newPrevious <= 0) {
           oldPrevious = this.timg - 1;

@@ -1,23 +1,44 @@
-.carousel {
+
+.carousel-wrapper {
   overflow: hidden;
-  width: 90%;
-  transform-style: preserve-3d;
+  max-width: 1000px;
 }
-.carousel * {
+.carousel-wrapper * {
   box-sizing: border-box;
 }
-.carousel__photo {
-  opacity: 0;
-  position: absolute;
-  top:0;
-  width: 100%;
-  margin: auto;
-  padding: 1rem 4rem;
-  z-index: 100;
-  transition: transform .5s, opacity .5s, z-index .5s;
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  max-width: 1000px;
+  transform-style: preserve-3d;
 }
+.left-button,
+.right-button {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  overflow: visible;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+
+}
+.left-button::after,
+.right-button::after {
+  content: " ";
+}
+.right-button::after {
+  left: 47%;
+}
+
 .carousel__photo.initial,
 .carousel__photo.active {
+  display: block;
+  max-width: 800px;
   opacity: 1;
   position: relative;
   z-index: 900;
@@ -32,38 +53,14 @@
 .carousel__photo.next {
   transform: translateX(100%);
 }
-.left-button,
-.right-button {
-  position: absolute;
-  top:50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: #FFF;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1001; /* Sit on top of everything */
-  border: 1px solid black;
+.carousel__photo {
+  display: none;
+  top:0;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
-.left-button {
-  left:0;
-}
-.right-button {
-  right:0;
-}
-.left-button::after,
-.right-button::after {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 50%;
-  left: 54%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.right-button::after {
-  left: 47%;
-  transform: translate(-50%, -50%) rotate(-45deg);
+p{
+      margin: 0px 8px;
 }
