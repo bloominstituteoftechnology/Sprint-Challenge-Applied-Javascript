@@ -9,12 +9,12 @@
 .carousel__photo {
   opacity: 0;
   position: absolute;
-  top:0;
+  top: 0;
   width: 100%;
   margin: auto;
   padding: 1rem 4rem;
   z-index: 100;
-  transition: transform .5s, opacity .5s, z-index .5s;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
 }
 .carousel__photo.initial,
 .carousel__photo.active {
@@ -35,21 +35,22 @@
 .left-button,
 .right-button {
   position: absolute;
-  top:50%;
+  top: 50%;
   width: 3rem;
   height: 3rem;
   background-color: #FFF;
   transform: translateY(-50%);
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1001; /* Sit on top of everything */
+  z-index: 1001;
+  /* Sit on top of everything */
   border: 1px solid black;
 }
 .left-button {
-  left:0;
+  left: 0;
 }
 .right-button {
-  right:0;
+  right: 0;
 }
 .left-button::after,
 .right-button::after {

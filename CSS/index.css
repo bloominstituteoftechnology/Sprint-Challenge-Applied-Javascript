@@ -252,53 +252,74 @@ body {
   font-weight: bold;
 }
 .carousel {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 500px;
-  position: relative;
   overflow: hidden;
-  margin-top: 16px;
+  width: 90%;
+  transform-style: preserve-3d;
 }
-@media (min-width: 1200px) {
-  .carousel {
-    width: 1200px;
-  }
+.carousel * {
+  box-sizing: border-box;
 }
-.carousel .left-button,
-.carousel .right-button {
-  display: flex;
-  justify-content: center;
-  align-items: none;
-  flex-direction: row;
-  color: #fff;
-  background-color: #333;
-  font-size: 40px;
-  border-radius: 50%;
+.carousel__photo {
+  opacity: 0;
   position: absolute;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-.carousel .left-button:hover,
-.carousel .right-button:hover {
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #333;
-}
-.carousel .left-button {
-  top: 50%;
-  left: 25px;
-  transform: translate(0, -50%);
-}
-.carousel .right-button {
-  top: 50%;
-  right: 25px;
-  transform: translate(0, -50%);
-}
-.carousel img {
+  top: 0;
   width: 100%;
-  display: none;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+}
+.carousel__photo.initial,
+.carousel__photo.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+.carousel__photo.prev,
+.carousel__photo.next {
+  z-index: 800;
+}
+.carousel__photo.prev {
+  transform: translateX(-100%);
+  /* Move 'prev' item to the left */
+}
+.carousel__photo.next {
+  transform: translateX(100%);
+  /* Move 'next' item to the right */
+}
+.left-button,
+.right-button {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #FFF;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  /* Sit on top of everything */
+  border: 1px solid black;
+}
+.left-button {
+  left: 0;
+}
+.right-button {
+  right: 0;
+}
+.left-button::after,
+.right-button::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.right-button::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
