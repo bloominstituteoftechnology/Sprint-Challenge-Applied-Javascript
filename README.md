@@ -32,7 +32,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 The dom is the document object model.
-2. What is an event?
+2. What is an event?  
 Something that happens on the page like a click or scroll
 3. What is an event listener?
 An event listener is a piece of code you can use to find events.
