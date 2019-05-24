@@ -44,6 +44,10 @@ body {
   background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
+  background-image: url('/LESS/overlay.png'), url('/LESS/black-and-white-black-and-white-monochrome-707676.jpg');
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100%;
+  background-attachment: fixed;
 }
 .top-bar {
   width: 100%;
