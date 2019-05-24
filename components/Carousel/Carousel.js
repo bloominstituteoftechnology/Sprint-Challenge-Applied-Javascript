@@ -5,7 +5,7 @@ class Carousel {
 
 
 
-let carousel = document.querySelector()
+let carousel = document.querySelector('.carousel')
 
 // const carouselInstance = new Carousel(carousel);
 
