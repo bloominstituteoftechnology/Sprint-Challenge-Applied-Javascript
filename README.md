@@ -32,7 +32,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
-Document object model
+Document object model. Catalogs web page into individual objects that programmers can select and manipulate. 
 
 2. What is an event?
 3. HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.
