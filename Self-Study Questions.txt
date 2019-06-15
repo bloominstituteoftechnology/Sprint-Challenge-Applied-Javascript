@@ -1,0 +1,18 @@
+Demonstrate your understanding of this week's concepts by answering the following free-form questions.
+
+Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
+
+What is the DOM?
+-  A representation of the html and css elements of a webpage. Document Object Model
+
+What is an event?
+- When something happens on the page and a function is called to interact with the user
+
+What is an event listener?
+- The que to the program to trigger the event.
+
+Why would we convert a NodeList into an Array?
+- We have more to work with outside of forEach
+
+What is a component?
+- Reusable code to help elements share functionality and styling 
