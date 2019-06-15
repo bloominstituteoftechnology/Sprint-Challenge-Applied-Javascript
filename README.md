@@ -31,14 +31,29 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+</br>
+DOM stands for Document Object Model. It is a language neutral Application Programming Interface (API). DOM has tree like structure representing your content, structure, and style. DOM is also dynamic, it acts as a bridge that connects the content and the browser.
+</br>
 
 2. What is an event?
+</br>
+An event is every interaction a user has with a site. For example: click, scroll, double click, etc. 
+</br>
 
 3. What is an event listener?
+</br>
+When an event happens on a page, it's a trigger. The event listener need to be able to listen for specific events on specific elements. So, we put an event listener on an element and give it a callback. When that event is triggered on the element, the callback runs.
+</br>
 
 4. Why would we convert a NodeList into an Array?
+</br>
+When we run the `querySelectorAll()`, it returns us back with a NodeList, but unfortunately, you can't use any of these elements you got from a NodeList. In order to use it, you have to convert the NodeLists into an Array. The reason for that is because NodeLists are actually not JavaScript API, but a browser API. Browser API would give you access DOM element, they are not JavaScript methods. 
+</br>
 
 5. What is a component?
+</br>
+A component is reusable piece of code that can be used to build elements sharing functionality and styling. Components are building block to modern application development. 
+</br>
 
 ### Git Set up
 
