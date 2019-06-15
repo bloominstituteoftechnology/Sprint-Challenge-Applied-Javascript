@@ -32,13 +32,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM stands for the Document Object Module.
+
 2. What is an event?
+
+And event is used to interact with the page by users.
 
 3. What is an event listener?
 
+The event listener is a method that attaches an event to an element .
+
 4. Why would we convert a NodeList into an Array?
 
+In order to use .forEach.
+
 5. What is a component?
+
+A component is a block of code that is reusable and contains multiple elements for reuse.
 
 ### Git Set up
 
