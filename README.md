@@ -32,13 +32,21 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+-- is the Document object model that allows you to add interactivity with programming languages like javascript --
+
 2. What is an event?
 
+-- an event is something that interacts with the webpage so like a click, mouseover dblclick etc.--
+
 3. What is an event listener?
+-- an even listener looks out for the event to happen and then triggers a callback function in response. --
 
 4. Why would we convert a NodeList into an Array?
 
+-- to give the developer access to array methods such as .forEach, .map, .filter.--
+
 5. What is a component?
+-- Components are the building block to modern application development. Being able to use HTML, CSS, and JS in a reusable way opens up new possibilities for web developers.--
 
 ### Git Set up
 
