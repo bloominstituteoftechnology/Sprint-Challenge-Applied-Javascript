@@ -32,13 +32,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+D-ocument O-bject M-odel is an interface that allows a programming language to manipulate the content, structure, and style of a website.
+
 2. What is an event?
+
+An event can be something the browser does or something done by the user. Ex: a button was clicked, input field was changed, webpage finished loading, page scroll, etc.
 
 3. What is an event listener?
 
+An event listener is a function that waits for an event to occur before executing.
+
 4. Why would we convert a NodeList into an Array?
 
+You need to convert a NodeList into an Array in order to have access to array methods like forEach.
+
 5. What is a component?
+
+A component is a small, re-usable block of code made up of HTML, CSS, and JavaScript.
 
 ### Git Set up
 
