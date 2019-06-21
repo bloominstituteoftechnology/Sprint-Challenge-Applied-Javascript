@@ -31,14 +31,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+    The dom is a bridge to the content & browser and is therefore an API. 
 2. What is an event?
-
+    An event is something that happens when a user interacts with a webpage
 3. What is an event listener?
-
+    An event listener is the thing that "listens" to what the user is doing while interacting on a webpage. Certain activities will trigger an event listerner (for example, a click could trigger the "click" event listener). 
 4. Why would we convert a NodeList into an Array?
-
+    Because we cannot use any array methods (with the exception of .forEach) on the NodeList since it is not (in reality) an array
 5. What is a component?
+    A componenet is something that has it's own functionality that can also be re-usable. (will eleaborate later).
 
 ### Git Set up
 
