@@ -32,13 +32,22 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is a W3C (World Wide Web Consortium) standard. The DOM defines a standard for accessing documents: "The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+
 2. What is an event?
+
+HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.
 
 3. What is an event listener?
 
+HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.
+
 4. Why would we convert a NodeList into an Array?
 
+
 5. What is a component?
+
+Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps.
 
 ### Git Set up
 
