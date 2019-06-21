@@ -31,19 +31,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+DOM is a data structure with parent and child elements and we can follow the elements to get to the exact elements we want.
 2. What is an event?
-
+Events are actions that happen in the system you are coding, which the system tells you about so you can respond to them 
 3. What is an event listener?
-
+They are JavaScript code that are not added inside the script tags, but rather, inside the html tags, that execute JavaScript when something happens
 4. Why would we convert a NodeList into an Array?
-
+NodeLists are array-like but don't feature many of the methods provided by the Array
 5. What is a component?
-
+A component is HTML, CSS, or JavaScript brought together for reuse in a website or application
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
 * [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 * [ ] You are now ready to build this project with your preferred IDE
 
