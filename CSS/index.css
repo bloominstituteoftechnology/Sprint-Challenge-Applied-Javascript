@@ -196,6 +196,7 @@ body {
 .tabs .topics .tab:hover {
   text-decoration: underline;
 }
+
 .cards-container {
   display: flex;
   justify-content: space-evenly;
