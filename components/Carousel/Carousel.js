@@ -7,6 +7,7 @@ class Carousel {
         this.index = 0;
         this.images[this.index].style.display = 'block';
         this.images[this.index].style.zIndex = '-1';
+        this.images[this.index].style.transition = '1000'
         this.arrowLeft.addEventListener('click', () => this.moveLeft());
         this.arrowRight.addEventListener('click', () => this.moveRight());
 
