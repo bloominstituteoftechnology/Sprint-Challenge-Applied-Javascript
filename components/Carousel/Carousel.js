@@ -1,4 +1,18 @@
-class Carousel {}
+class Carousel {
+  constructor(element) {
+    this.element = element;
+    this.prev = this.element.querySelector(".left-button");
+    this.next = this.element.querySelector(".right-button");
+    this.pics = this.element.querySelectorAll("img");
+    this.index = 0;
+    this.prev.addEventListener("click", () => this.picShift());
+    this.next.addEventListener("click", () => this.picShift());
+  }
+}
+
+picShift() {
+
+}
 
 let carousel = document.querySelector(".carousel");
 carousel = new Carousel(carousel);

@@ -69,6 +69,5 @@ class TabCard {
 let tabs = document.querySelectorAll(".tab");
 
 tabs.forEach(function(tab) {
-  console.log("can anyone see me", tab);
   return new TabLink(tab);
 });
