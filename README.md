@@ -36,11 +36,19 @@ I think of the DOM as a traslator, the dom gives us unique array like abilites a
 
 2. What is an event?
 
+Event's ware ways we(users) interact, it happens via clicks, scrolls etc then the dom creates/propagates evnt object.
+
 3. What is an event listener?
+
+addEventListener() adds a function or object that uses EventListener to act on the specific type called for.
 
 4. Why would we convert a NodeList into an Array?
 
+nodelist is array like but not an array, we get more methods and functionality by using arrays.
+
 5. What is a component?
+
+components allow us to create reusable custom elements, bootstrap has some good examples.
 
 ### Git Set up
 
