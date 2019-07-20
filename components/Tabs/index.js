@@ -43,7 +43,46 @@ axios.get(' https://lambda-times-backend.herokuapp.com/topics')
         topics.appendChild(tab3);
         topics.appendChild(tab4);
         topics.appendChild(tab5);
+
+        // let tabs = [tab1, tab2, tab3, tab4, tab5]
+        // tabs.forEach(el => new TabLink(el));
     })
     .catch(err => {
         console.log(err);
     });
+
+// class TabLink {
+//     constructor(tabElement) {
+//         this.tabElement = tabElement;
+//         this.tabData = this.tabElement.dataset.tab;
+
+//         if (this.tabData === 'all') {
+//             this.cards = document.querySelectorAll('.card');
+//         } else {
+//             this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+//         }
+
+//         this.cards = Array.from(this.cards).map(el => new TabCard(el));
+//         this.tabElement.addEventListener('click', this.selectTab.bind(this));
+//     }
+
+//     selectTab() {
+
+//         const tabs = document.querySelectorAll('.tab');
+//         tabs.forEach(el => el.classList.remove('active-tab'));
+//         const cards = document.querySelectorAll('.card');
+//         cards.forEach(el => el.style.display = "none");
+//         this.tabElement.classList.toggle('active-tab');
+//         this.cards.forEach(card => card.selectCard());
+//     }
+// }
+
+// class TabCard {
+//     constructor(cardElement) {
+//         this.cardElement = cardElement;
+//     }
+//     selectCard() {
+//         this.cardElement.style.display = "flex";
+//     }
+
+// }
