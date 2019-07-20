@@ -11,7 +11,7 @@
 
 function Header() {
     // Create Template
-const headerContainer = document.querySelector('.header-container');
+
 const headerDiv = document.createElement('div');
 const headerDate = document.createElement('span');
 const title = document.createElement('h1');
@@ -30,7 +30,7 @@ title.textContent = 'Lambda Times';
 headerTemp.textContent = '98°';
 
 // Assemble Header
-headerContainer.appendChild(Header);
+
 headerDiv.appendChild(headerDate);
 headerDiv.appendChild(title);
 headerDiv.appendChild(headerTemp);
@@ -38,3 +38,5 @@ headerDiv.appendChild(headerTemp);
 return headerDiv;
 }
 
+const headerContainer = document.querySelector('.header-container');
+headerContainer.appendChild(Header());

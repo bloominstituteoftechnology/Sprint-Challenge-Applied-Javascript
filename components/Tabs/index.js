@@ -12,7 +12,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 	.then (data => {
 		console.log('It worked!', data);
         const topics = document.querySelector('.topics');
-        topics.appendChild(tabMaker(data.topics));
+        topics.appendChild(tabMaker(data));
 	})
 	.catch(err => {
 		console.log('oops!');
@@ -20,7 +20,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
 
 // Component to generate Topic list
-function tabMaker() {
+function tabMaker(data) {
 
 // Create Template
 const tabDiv = document.createElement('div');
@@ -29,7 +29,7 @@ const tabDiv = document.createElement('div');
 tabDiv.classList.add('tab');
 
 // Assign Value
-tabDiv.textContent = `${data.topic}`;
+tabDiv.textContent = `${data.topics}`;
 
 return tabDiv;
 }
