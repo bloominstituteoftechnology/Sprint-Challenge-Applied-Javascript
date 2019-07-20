@@ -10,3 +10,13 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header() {}
+let container = document.querySelector('.header-container');
+
+const header = document.createElement('div');
+container.appendChild(header);
+header.classList.add('header');
+
+
+header.appendChild(date);
+date.classList.add('date');
+date.textContent = 'March 28, 2019';
