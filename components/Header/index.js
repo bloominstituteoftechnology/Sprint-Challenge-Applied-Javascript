@@ -25,7 +25,6 @@ headerTemp.classList.add('temp');
 
 // Assign Values
 headerDate.textContent = `${currDate}`;
-console.log(currDate);
 title.textContent = 'Lambda Times';
 headerTemp.textContent = '98°';
 
