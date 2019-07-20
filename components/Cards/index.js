@@ -20,20 +20,41 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((resolve) => {
-    console.log('axios', resolve)
     resolve.data.articles.javascript.forEach(data => {
     let javascript = createJavaScriptCards(data)
     cardsContainer.appendChild(javascript)
+    console.log(resolve.data)
     })
+    return axios.get('https://lambda-times-backend.herokuapp.com/articles')
 })
 .then((resolve) => {
-    console.log('boot', resolve)
     resolve.data.articles.bootstrap.forEach(data => {
-        let bootstrap = createBootStrapCards(data);
-        cardsContainer.appendChild(bootstrap);
-
+    let bootstrap = createBootStrapCards(data);
+    cardsContainer.appendChild(bootstrap);
     })
-});
+    return axios.get('https://lambda-times-backend.herokuapp.com/articles')
+})
+.then((resolve) => {
+    resolve.data.articles.jquery.forEach(data => {
+    let jquery = createBootStrapCards(data);
+    cardsContainer.appendChild(jquery);
+    })
+    return axios.get('https://lambda-times-backend.herokuapp.com/articles')
+})
+.then((resolve) => {
+    resolve.data.articles.node.forEach(data => {
+    let node = createBootStrapCards(data);
+    cardsContainer.appendChild(node);
+    })
+    return axios.get('https://lambda-times-backend.herokuapp.com/articles')
+})
+.then((resolve) => {
+    resolve.data.articles.technology.forEach(data => {
+    let technology = createBootStrapCards(data);
+    cardsContainer.appendChild(technology);
+    })
+})
+
 
 let cardsContainer = document.querySelector('.cards-container')
 function createJavaScriptCards(js){
@@ -62,8 +83,8 @@ function createJavaScriptCards(js){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
+    imageContainer.appendChild(authorsName)
     
-    console.log('js', js)
     return card
 }
 
@@ -93,7 +114,100 @@ function createBootStrapCards(boot){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
+    imageContainer.appendChild(authorsName)
     
-    console.log('boot', boot)
+    return card
+}
+
+function createjQueryCards(jq){
+    // Creating Elements
+    let card = document.createElement('div');
+    let headline = document.createElement('div');
+    let author = document.createElement('div');
+    let imageContainer = document.createElement('div');
+    let img = document.createElement('img');
+    let authorsName = document.createElement('span');
+    
+    // Giving Elements Classes
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imageContainer.classList.add('img-container');
+    
+    // Adding content to the elements
+    headline.textContent = jq.headline;
+    img.src = jq.authorPhoto;
+    authorsName.textContent = jq.authorName;
+    
+    // Appending elements together
+    cardsContainer.appendChild(card);
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(img)
+    imageContainer.appendChild(authorsName)
+    
+    return card
+}
+
+function createNodeCards(node){
+    // Creating Elements
+    let card = document.createElement('div');
+    let headline = document.createElement('div');
+    let author = document.createElement('div');
+    let imageContainer = document.createElement('div');
+    let img = document.createElement('img');
+    let authorsName = document.createElement('span');
+    
+    // Giving Elements Classes
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imageContainer.classList.add('img-container');
+    
+    // Adding content to the elements
+    headline.textContent = node.headline;
+    img.src = node.authorPhoto;
+    authorsName.textContent = node.authorName;
+    
+    // Appending elements together
+    cardsContainer.appendChild(card);
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(img)
+    imageContainer.appendChild(authorsName)
+    
+    return card
+}
+
+function createTechnologyCards(tech){
+    // Creating Elements
+    let card = document.createElement('div');
+    let headline = document.createElement('div');
+    let author = document.createElement('div');
+    let imageContainer = document.createElement('div');
+    let img = document.createElement('img');
+    let authorsName = document.createElement('span');
+    
+    // Giving Elements Classes
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imageContainer.classList.add('img-container');
+    
+    // Adding content to the elements
+    headline.textContent = tech.headline;
+    img.src = tech.authorPhoto;
+    authorsName.textContent = tech.authorName;
+    
+    // Appending elements together
+    cardsContainer.appendChild(card);
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(img)
+    imageContainer.appendChild(authorsName)
+    
     return card
 }
