@@ -9,6 +9,9 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 const header = document.querySelector('.headerContainer')
+
+
+
 function Header(date, title, temp) {
     const header = document.createElement('div');
     const span1 = document.createElement('span');
