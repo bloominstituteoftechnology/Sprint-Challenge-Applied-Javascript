@@ -1,50 +1,51 @@
-// Step 2: Create Tabs
-// -----------------------
-// Using axios send a GET request to the address: https://lambda-times-backend.herokuapp.com/topics
-// Once the data is returned console.log it and review the structure.
-// Iterate over the topics creating a new Tab component and add it to the DOM
-// under the .topics element.
-//
-//  The tab component should look like this:
-//    <div class="tab">topic here</div>
+let topicsUrl = 'https://lambda-times-backend.herokuapp.com/topics';
 
-/* <div class="tabs">
-        <div class="topics">
-        <span class="title">TRENDING TOPICS:</span>
-        </div>
-    </div> */
+// Function used to get tab data 
+function getTabData (topicsUrl) {
 
+    // Get tab data from url
+    axios.get(topicsUrl)
+    .then( response => {
 
+          // Get topics  
+          let topicContent = []; 
+          topicContent = response["data"]["topics"];
+          topicContent.unshift("all")
+          console.log(topicContent)
 
-    axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then (data => {
-        // console.log('data: ', data)
-        const myInfo = data.data;
-        // console.log('UserInfo: ', myInfo)
-        
-        const tabs = document.querySelector('.topics')
-        const tab = tabCreator(myInfo)
-        tabs.appendChild(tab)
-        })
-     
+          // iterate through the array to create tabs
+          for(i in topicContent){
+
+                CreateTabs(topicContent[i]);
+
+          };                 
+
+    })
+     .catch( error => {
+         console.log("Error:", error); //console logs errors
+     })
+
+};
+
+// Create function   
+function CreateTabs(tabTopic){
+
+    // query select where to append
+    let tab = document.querySelector('.topics')
+
+    // create element
+    let tabs = document.createElement('div');
     
+    //create class list 
+    tabs.classList.add('tab'); 
+    
+    //text content 
+    tabs.innerText = tabTopic;
 
+    //append child
+    tab.appendChild(tabs);
 
-    //tab component 
+ };
 
-    const tabs = document.querySelector('.topics')
-    console.log(tabs)
-
-    function tabCreator(arg) {
-        //create class elements 
-        const tab = document.createElement('div')
-
-        //create class lists
-        tab.classList.add('tab')
-
-        //textcontent 
-        tab.innerHTML = "All" + arg.topics
-
-        return tab
-
-    }
+// gets tab data
+getTabData(topicsUrl);
