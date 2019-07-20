@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+The interface which manipulates content, structure, and style of a webpage with Javascript as the catalyst.  Feeding from HTML and CSS structure, this model allows JS to access elements in the document as objects.
 
 2. What is an event?
+These are actions that take place in a browser; initiated by users and browsers alike.  Javascript is used to interact with the browser in a multitude of ways.
 
 3. What is an event listener?
+An interface to an element that is suspended until the specific action takes place.  This 'suspense' is expressed with the word 'listen'. 
 
 4. Why would we convert a NodeList into an Array?
+Nodelists are array-like; meaning they do not function as arrays can.  As such, Array methods cannot be utilized until converted. 
 
 5. What is a component?
+Reusability of functionality and styling.  A reusable methodology to practice easy creation of buttons, tabs, elements, etc.., of an HTML document - of which many need to be made multiple times.  In other words, you can create a template for further tabs or buttons added to HTML.
 
 ### Git Set up
 
