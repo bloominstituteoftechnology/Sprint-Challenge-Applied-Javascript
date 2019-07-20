@@ -20,3 +20,13 @@ header.classList.add('header');
 header.appendChild(date);
 date.classList.add('date');
 date.textContent = 'March 28, 2019';
+
+const title = document.createElement('h1');
+title.classList.add('h1')
+title.textContent = 'Lambda Times';
+header.appendChild(title);
+
+const temp = document.createElement('span');
+temp.classList.add('temp')
+
+Header();
