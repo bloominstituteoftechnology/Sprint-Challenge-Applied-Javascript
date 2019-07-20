@@ -30,14 +30,7 @@ function getTabData (url) {
           // Get topics  
           let topicContent = []; 
           topicContent = response["data"]["topics"];
-          
-          //let mainTabDiv = document.getElementsByClassName("topics")[0];
-          //let newDiv = document.createElement('div');
-          //newDiv.classList.add('tab'); 
-          //newDiv.innerText = 'ALL';
-          //newDiv.createAttr
-          //mainTabDiv.appendChild(newDiv);
-
+                   
           // Create all the THINGS.......
           for(i in topicContent){
 
