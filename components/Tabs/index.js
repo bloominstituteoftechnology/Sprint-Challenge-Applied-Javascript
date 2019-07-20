@@ -7,6 +7,24 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const createTab = (response, index) => {
+    let tab;
+
+    // ultimate ghetto technique 
+    response.length = index
+
+    // add text content
+    response.reverse().forEach((el) => {
+        tab = document.createElement('div')
+        tab.classList.add('tab');
+        tab.textContent = el;
+    });
+    return tab;
+
+}
+
+// get data 
 axios.get(' https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
         console.log(`Success: ${response.data.topics}`);
@@ -29,20 +47,3 @@ axios.get(' https://lambda-times-backend.herokuapp.com/topics')
     .catch(err => {
         console.log(err);
     });
-
-
-const createTab = (response, index) => {
-    let tab;
-
-    // ultimate ghetto technique 
-    response.length = index
-
-    // add text content
-    response.reverse().forEach((el) => {
-        tab = document.createElement('div')
-        tab.classList.add('tab');
-        tab.textContent = el;
-    });
-    return tab;
-
-}
