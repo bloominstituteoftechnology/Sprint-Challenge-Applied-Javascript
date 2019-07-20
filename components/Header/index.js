@@ -3,7 +3,7 @@
 // Using a function create the component you see below:
 //
 //  <div class="header">
-//    <span class="date">MARCH 28, 2019</span>
+//    <span class="date">SMARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
 //  </div >
@@ -11,7 +11,7 @@
 
 data = [
     {
-        date: 'MARCH 28, 2019',
+        date: 'SMARCH 28, 2019',
         h1: 'Lambda Times',
         temp: '98º'
     }
