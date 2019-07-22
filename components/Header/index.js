@@ -22,4 +22,16 @@ function Header() {
     header.appendChild(h3);
     header.appendChild(spanTemp);
 
+
+    // add the class names for the elements
+    header.classList.add('header');
+    spanDate.classList.add('date');
+    spanTemp.classList.add('temp')
+
+
+    // put the content inside the new elements
+    spanDate.textContent = 'SMARCH 28, 2019';
+    h1.textContent = 'Lambda Times';
+    spanTemp.textContent = '98°';
+
 }
