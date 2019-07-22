@@ -9,6 +9,9 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
+
+// get the div header-container inside the html
+
 function Header() {
     // define the new Elemnts
     const header = document.createElement('div');
@@ -35,3 +38,6 @@ function Header() {
     spanTemp.textContent = '98°';
 
 }
+
+const header = document.querySelector('.header-container');
+header.appendChild(Header())
