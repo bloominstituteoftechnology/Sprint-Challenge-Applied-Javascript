@@ -14,6 +14,94 @@
 //     </div>
 //     <span>By {authors name}</span>
 //   </div>
-// </div>
-//
-// Create a card for each of the articles and add the card to the DOM.
+
+
+function CardComponent(arr){
+
+    const cards = document.querySelector('.cards-container')
+    arr.forEach(element => {
+        // define new elements
+        const card = document.createElement('div');
+        const headline = document.createElement('div');
+        const author = document.createElement('div');
+        const img_contanier = document.createElement('div');
+        const img = document.createElement('img');
+        const span = document.createElement('span');
+
+        // put together 
+        card.appendChild(headline);
+        headline.appendChild(author);
+        author.appendChild(img_contanier);
+        img_contanier.appendChild(img);
+        author.appendChild(span);
+
+
+        // add the class names
+        card.classList.add('card')
+        headline.classList.add('headline');
+        author.classList.add('author');
+
+        headline.textContent = element.headline;
+        img.src = element.authorPhoto;
+        span.textContent = element.authorName;
+
+        cards.appendChild(card)
+    });
+}
+
+
+
+const promiseArticles = axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+    .then(response => {
+        cardComponent(response.data.articles);
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+
+function cardComponent(objects) {
+
+    // get the .cards-container div
+    const cards = document.querySelector('.cards-container');
+
+
+    // get each obj(tobic) inside the obj
+    for(let obj in objects) {
+        const arr = objects[obj];
+        arr.forEach(article => {
+            //create elements
+            const card = document.createElement('div');
+            const headline = document.createElement('div');
+            const author = document.createElement('div');
+            const imgContainer = document.createElement('div');
+            const img = document.createElement('img');
+            const authorName = document.createElement('span');
+
+            // style elements
+            card.classList.add('card');
+            headline.classList.add('headline');
+            author.classList.add('author');
+            imgContainer.classList.add('img-container');
+
+            // add content
+
+            headline.textContent = article.headline;
+            img.src = article.authorPhoto;
+            authorName.textContent = article.authorName;
+
+            // add elements to card
+
+            card.appendChild(headline);
+            card.appendChild(author);
+
+            author.appendChild(imgContainer);
+            author.appendChild(authorName);
+
+            imgContainer.appendChild(img);
+
+            // add to dom
+
+            cards.appendChild(card);
+        })
+    }
+}

@@ -32,5 +32,5 @@ function TapComponent(arr){
     })
 }
 
-const myTopics = document.querySelector('.topics')
-console.log(myTopics)
+// const myTopics = document.querySelector('.topics')
+// console.log(myTopics)
