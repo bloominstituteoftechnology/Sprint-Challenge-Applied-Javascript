@@ -12,32 +12,33 @@
 
 // get the div header-container inside the html
 
+const header_Container = document.querySelector('.header-container');
+console.log(header_Container)
+
+header_Container.appendChild(Header()); 
+
 function Header() {
-    // define the new Elemnts
+    // create elements
     const header = document.createElement('div');
-    const spanDate = document.createElement('span');
-    const h1 = document.createElement('h1');
-    const spanTemp = document.createElement('span');
+    const date = document.createElement('span');
+    const title = document.createElement('h1');
+    const temp = document.createElement('span');
 
-
-    // set up the strcture inside the html 
-    header.appendChild(spanDate);
-    header.appendChild(h3);
-    header.appendChild(spanTemp);
-
-
-    // add the class names for the elements
+    // style elements
     header.classList.add('header');
-    spanDate.classList.add('date');
-    spanTemp.classList.add('temp')
+    date.classList.add('date');
+    temp.classList.add('temp');
 
+    // add content
+    date.textContent = 'MARCH 28, 2019';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
 
-    // put the content inside the new elements
-    spanDate.textContent = 'SMARCH 28, 2019';
-    h1.textContent = 'Lambda Times';
-    spanTemp.textContent = '98°';
+    // add elements to header
 
+    header.appendChild(date);
+    header.appendChild(title);
+    header.appendChild(temp);
+
+    return header;
 }
-
-const header = document.querySelector('.header-container');
-header.appendChild(Header())
