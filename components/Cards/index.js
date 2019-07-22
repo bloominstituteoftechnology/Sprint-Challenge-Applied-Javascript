@@ -1,3 +1,4 @@
+// import tab from '../Tabs/index'
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -36,23 +37,25 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 })
 .then((resolve) => {
     resolve.data.articles.jquery.forEach(data => {
-    let jquery = createBootStrapCards(data);
+    let jquery = createjQueryCards(data);
     cardsContainer.appendChild(jquery);
     })
     return axios.get('https://lambda-times-backend.herokuapp.com/articles')
 })
 .then((resolve) => {
     resolve.data.articles.node.forEach(data => {
-    let node = createBootStrapCards(data);
+    let node = createNodeCards(data);
     cardsContainer.appendChild(node);
     })
     return axios.get('https://lambda-times-backend.herokuapp.com/articles')
 })
 .then((resolve) => {
     resolve.data.articles.technology.forEach(data => {
-    let technology = createBootStrapCards(data);
+    let technology = createTechnologyCards(data);
     cardsContainer.appendChild(technology);
     })
+    
+   
 })
 
 
@@ -71,6 +74,7 @@ function createJavaScriptCards(js){
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
+    card.dataset.tab = 'javascript'
     
     // Adding content to the elements
     headline.textContent = js.headline;
@@ -84,7 +88,7 @@ function createJavaScriptCards(js){
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
     imageContainer.appendChild(authorsName)
-    
+
     return card
 }
 
@@ -102,11 +106,13 @@ function createBootStrapCards(boot){
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
-    
+    card.dataset.tab = 'bootstrap'
+
     // Adding content to the elements
     headline.textContent = boot.headline;
     img.src = boot.authorPhoto;
     authorsName.textContent = boot.authorName;
+
     
     // Appending elements together
     cardsContainer.appendChild(card);
@@ -133,7 +139,8 @@ function createjQueryCards(jq){
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
-    
+    card.dataset.tab = 'jquery'
+
     // Adding content to the elements
     headline.textContent = jq.headline;
     img.src = jq.authorPhoto;
@@ -164,7 +171,8 @@ function createNodeCards(node){
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
-    
+    card.dataset.tab = 'node.js'
+
     // Adding content to the elements
     headline.textContent = node.headline;
     img.src = node.authorPhoto;
@@ -195,7 +203,8 @@ function createTechnologyCards(tech){
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
-    
+    card.dataset.tab = 'technology'
+
     // Adding content to the elements
     headline.textContent = tech.headline;
     img.src = tech.authorPhoto;
@@ -210,4 +219,12 @@ function createTechnologyCards(tech){
     imageContainer.appendChild(authorsName)
     
     return card
+}
+
+function selectTab(){
+    tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach((tab) => {
+        tab.classList.toggle('active-tab')
+    })
 }
