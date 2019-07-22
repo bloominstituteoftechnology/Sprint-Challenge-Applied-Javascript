@@ -24,7 +24,7 @@ function header() {
 // Give elements content
     date.textContent = 'MARCH 28, 2019';
     h1.textContent = 'Lambda Times';
-    temp.textContent = '98 degrees';
+    temp.innerHTML = '98&deg';
 
 // Append elements together
     headerContainer.appendChild(header);

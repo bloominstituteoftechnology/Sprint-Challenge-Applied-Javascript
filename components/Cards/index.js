@@ -87,7 +87,7 @@ function createJavaScriptCards(js){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
-    imageContainer.appendChild(authorsName)
+    author.appendChild(authorsName)
 
     return card
 }
@@ -120,7 +120,7 @@ function createBootStrapCards(boot){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
-    imageContainer.appendChild(authorsName)
+    author.appendChild(authorsName)
     
     return card
 }
@@ -152,7 +152,7 @@ function createjQueryCards(jq){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
-    imageContainer.appendChild(authorsName)
+    author.appendChild(authorsName)
     
     return card
 }
@@ -184,7 +184,7 @@ function createNodeCards(node){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
-    imageContainer.appendChild(authorsName)
+    author.appendChild(authorsName)
     
     return card
 }
@@ -216,7 +216,7 @@ function createTechnologyCards(tech){
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(img)
-    imageContainer.appendChild(authorsName)
+    author.appendChild(authorsName)
     
     return card
 }
