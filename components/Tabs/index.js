@@ -11,5 +11,26 @@
 // get the promise 
 const promise = axios.get(' https://lambda-times-backend.herokuapp.com/topics')
                 .then(response => {
-                    console.log(response)
+                    console.log(response.data)
+                    TapComponent(response.data.topics)
                 })
+                .catch(err => {
+                    console.log(`Error: ${err}`)
+                })
+
+
+// create the component Tab
+function TapComponent(arr){
+
+    const myTopics = document.querySelector('.topics')
+    arr.map(item => {
+        const tab = document.createElement('div');
+        tab.classList.add('tab')
+
+        tab.innerHTML = item;
+        myTopics.appendChild(tab);
+    })
+}
+
+const myTopics = document.querySelector('.topics')
+console.log(myTopics)
