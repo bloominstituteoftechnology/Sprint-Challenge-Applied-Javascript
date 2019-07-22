@@ -8,29 +8,27 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-// get the promise 
-const promise = axios.get(' https://lambda-times-backend.herokuapp.com/topics')
-                .then(response => {
-                    console.log(response.data)
-                    TapComponent(response.data.topics)
-                })
-                .catch(err => {
-                    console.log(`Error: ${err}`)
-                })
+// get the address
+const promiseTopics = axios
+  .get(`https://lambda-times-backend.herokuapp.com/topics`)
+  .then(response => {
+    const arr = response.data.topics;
+    TabComponent(arr);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
+// create component
+function TabComponent(arr) {
+  const topics = document.querySelector(".topics");
 
-// create the component Tab
-function TapComponent(arr){
+  // loop over each one
+  arr.forEach(topic => {
+    const tab = document.createElement("div");
+    tab.classList.add("tab");
+    tab.textContent = topic;
 
-    const myTopics = document.querySelector('.topics')
-    arr.map(item => {
-        const tab = document.createElement('div');
-        tab.classList.add('tab')
-
-        tab.innerHTML = item;
-        myTopics.appendChild(tab);
-    })
+    topics.appendChild(tab);
+  });
 }
-
-// const myTopics = document.querySelector('.topics')
-// console.log(myTopics)

@@ -17,3 +17,24 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+// function CarouselComonent(){
+
+//   const carousel = document.createElement('div')
+//   const leftBtn = document.createElement('div')
+//   const rightBtn = document.createElement('div') 
+//   const img_1 = document.createElement('img')
+//   const img_2 = document.createElement('img')
+//   const img_3 = document.createElement('img')
+//   const img_4 = document.createElement('img')
+
+//   //
+//   carousel.classList.add('carousel');
+//   leftBtn.classList.add('left-button');
+//   rightBtn.classList.add('right-button');
+
+//   // 
+//   img_1.textContent = 
+
+// }
