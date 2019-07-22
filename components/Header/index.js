@@ -17,6 +17,9 @@ function Header() {
     const spanTemp = document.createElement('span');
 
 
-    
+    // set up the strcture inside the html 
+    header.appendChild(spanDate);
+    header.appendChild(h3);
+    header.appendChild(spanTemp);
 
 }
