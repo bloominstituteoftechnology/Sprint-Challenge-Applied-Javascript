@@ -23,17 +23,20 @@ let cardsContainer = document.querySelector('.cards-container');
 let articleData = 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((axiosDataCards) => {
-        let axiosData = Object.entries(axiosDataCards.data.articles);
-        console.log(axiosData);
-       
-        axiosData.forEach(element => {
-            cardsContainer.appendChild(createArticle(axiosData));
-        })
+        console.log(axiosDataCards.data)
+        cardMaker(axiosDataCards.data.articles)
 })
 .catch((err) => {
     console.log('error', err)
 })
 
+function cardMaker(obj) {
+    for(let key in obj) {
+        obj[key].forEach((article) => {
+            cardsContainer.appendChild(createArticle(article))
+        })
+    }
+}
 
 
 
