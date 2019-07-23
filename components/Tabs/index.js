@@ -7,6 +7,9 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+const url = "https://lambda-times-backend.herokuapp.com/topics";
+
+
 function callApi (url){
     axios
     .get(url)
@@ -16,7 +19,7 @@ function callApi (url){
         const login = response.data.login 
     })
 .catch(err => console.error(err))
-}
+} 
 
 
 
