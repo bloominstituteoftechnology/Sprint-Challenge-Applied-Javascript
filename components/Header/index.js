@@ -32,6 +32,6 @@ function header() {
     header.appendChild(h1);
     header.appendChild(temp);
 
-    console.log(header)
+    // console.log(header)
 }
 header()
