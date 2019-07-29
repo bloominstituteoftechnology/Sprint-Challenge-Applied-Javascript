@@ -10,7 +10,10 @@
 // And add it to the DOM in the .headerContainer component
 
 
-function header() {
+const newHeader = document.querySelector('.header-container');
+newHeader.appendChild(createHeader());
+
+function createHeader() {
 
     // Elements
     const header = document.createElement('div');
@@ -26,7 +29,6 @@ function header() {
     h1.textContent('Lambda Times')
     temp.textContent('98 Degrees')
     
-    headerContainer.appendChild(header)
     header.appendChild(date);
     header.appendChild(h1);
     header.appendChild(temp);
