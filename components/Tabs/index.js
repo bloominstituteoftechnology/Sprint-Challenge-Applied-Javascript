@@ -9,10 +9,11 @@
 //    <div class="tab">topic here</div>
 
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then( (response)=> {
         // deal with the response data in here
         console.log(response.data);
+        
         newtab(response.data)
         
     
@@ -27,7 +28,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 // variable name
 
         const tab1 = document.createElement('div');
-
+        //const topictitle = document.createElement('span');
 
 // Structure of Elements
       
@@ -36,7 +37,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 // set Class Names
 
        tab1.classList.add('tab')
-
+        //topictitle.classList.add()
 
        let entrypoint2 = document.querySelector('.topics')
        entrypoint2.appendChild(tab1)

@@ -9,36 +9,37 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header(data) {
+let entrypoint = document.querySelector('.header-container')
+entrypoint.appendChild(header())
 
-    const header = document.createElement('div');
+
+function header(data) {
+
+    const header1 = document.createElement('div');
     const date = document.createElement('span');
     const titleh1 = document.createElement('h1');
     const tempature = document.createElement('span');
 
 // Structure of Elements
 
-    header.appendChild(date)
-    date.textContent = data.date
+    header1.appendChild(date)
+    date.textContent = 'SMARCH 28, 2019';
 
-    header.appendChild(titleh1)
-    titleh1.textContent = data.titleh1
+    header1.appendChild(titleh1)
+    titleh1.textContent = 'Lambda Times';
 
-    header.appendChild(tempature)
-    tempature.textContent = data.temp
+    header1.appendChild(tempature)
+    tempature.textContent = '98°';
 
 
 // set Class Names
 
-    header.classList.add('header')
+    header1.classList.add('header')
     date.classList.add('date')
     tempature.classList.add('temp')
 
 
-    let entrypoint = document.querySelector('.header-container')
-    entrypoint.appendChild(header)
 
 
-
-    return header
+    return header1
 }
