@@ -17,3 +17,23 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+
+
+
+const cards = document.querySelector('.card');
+
+//Axios, send a GET request to the following URL 
+
+axios.get('https://api.github.com/users/BenSolt')
+    .then( (response)=> {
+        // deal with the response data in here
+        console.log(response.data);
+        newCard(response.data)
+        //cards.append(card1);
+    
+        })
+    .catch( (err) => {
+      console.log(err)
+        // deal with the error in here
+    })
