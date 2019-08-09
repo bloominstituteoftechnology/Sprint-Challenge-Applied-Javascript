@@ -42,7 +42,7 @@ HTML DOM events allow JavaScript to register different event handlers on element
 
 HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.
 
-4. Why would we convert a NodeList into an Array?
+4. Why would we convert a NodeList into an Array?.
 
 
 5. What is a component?
