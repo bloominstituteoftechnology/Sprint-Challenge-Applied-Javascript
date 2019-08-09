@@ -20,31 +20,33 @@
 
 
 
-
-const cards = document.querySelector('.card');
-
-const cardArticle = [
-];
-
 //Axios, send a GET request to the following URL 
 
-    axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
-    .then( (response)=> {
-        // deal with the response data in here
 
-            cardArticle.forEach(item => {
-    
-            console.log(response.data);
-        })
+
+const test2 = document.querySelector(".cards-container")
+
+     axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+     .then( (response)=> {
         console.log(response.data);
-        newCard(response.data)
-    })
-
+        let articles = response.data.articles
+        for (topic in articles){
+            articles[topic].forEach(item => {
+                test2.appendChild(newCard(item))
+            }
+        
+            )
+        }
+       //response.data.articles.forEach(item => {
+       //     test2.appendChild(newCard(item)) 
+       // })
+        
+     })
     .catch( (err) => {
       console.log(err)
         // deal with the error in here
     })
-// })
+ 
 
 
     function newCard(data) {
@@ -59,60 +61,39 @@ const cardArticle = [
 
 // Structure of Elements
 
-
-let entrypoint3 = document.querySelector('.cards-container')
-     entrypoint3.appendChild(card1);
-
-
      
 card1.appendChild(headline1);
-headline1.textContent = data.headline;
+headline1.textContent = data.headline
 
 card1.appendChild(author1);
-author1.textContent = data.author1;
 
-author1.appendChild(imgholder);
 
-    imgholder.appendChild(image1);
-    image1.src = data.assets_url;
+author1.appendChild(imgholder)
 
-card1.appendChild(authorname);
+    imgholder.appendChild(image1)
+    image1.src = data.authorPhoto;
+
+author1.appendChild(authorname);
 authorname.textContent = data.authorName
+
+
 
 //set Class Names
 
     card1.classList.add('card')
+    
 
     headline1.classList.add('headline')
      headline1.textContent = data.headline
      
      author1.classList.add('author')
-     author1.textContent = data.authorName
+     //author1.textContent = data.authorName
 
+     imgholder.classList.add('img-container')
+     
 
     
      
      
     return card1
     }
-
-    // array
-
-    // const cardArray = [
-    // 'javascript',
-    // 'bootstrap',
-    // 'technology',
-    // 'jquery',
-    // 'node.js',
-    // ];
-
-
-    // cardArray.forEach(items => {
-    //     axios.get(`https://lambda-times-backend.herokuapp.com/articles{items}`)
-    //     .then( (response)=> {
-    //     const newCard2 = newCard(response.data)
-    //    card.appendChild(newCard2);
-    //   }
-    //      )
-  
-    //   });
