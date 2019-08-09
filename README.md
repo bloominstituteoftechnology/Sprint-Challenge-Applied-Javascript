@@ -51,6 +51,16 @@ In order to use other array methods
 
 
 
+<!-- Personal Notes -->
+
+NodeLists and Arrays are two different things because NodeLists are actually not a JavaScript API, but a browser API.
+
+Things like querySelectorAll() and getElementsByTagName()` aren’t JavaScript methods, they’re browser APIs that let you access DOM elements. You can then manipulate them with JavaScript.
+
+<!-- End of Personal Notes -->
+
+
+
 5. What is a component?
 
 Components are the building block to modern application development. A component is made of several parts: HTML, CSS, or JavaScript brought together for reuse in a website or application.
