@@ -42,8 +42,7 @@ A: A piece of code that gets executed when an event occurs.
 
 4. Why would we convert a NodeList into an Array?
 
-A: You can either use querySelector/querySelectorAll from the beginning, or do something similar to this:
-    let nodeArray = [].slice.call(document.querySelectorAll(element));
+A: So that we can use JavaScript's built-in array functions like forEach and map.
 
 5. What is a component?
 
