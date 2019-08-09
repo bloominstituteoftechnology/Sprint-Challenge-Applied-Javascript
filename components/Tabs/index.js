@@ -10,12 +10,16 @@
 
 axios
     .get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(res => res.for)
+    .then(res => res.data.topics.forEach(item => topics.appendChild(CreateTab(item))))
     .catch(err => console.log(err))
 
-function TabComp(item) {
+const topics = document.querySelector('.topics')
+
+function CreateTab(item) {
     const tab = document.createElement('div')
     tab.classList.add('tab')
-    tab.textContent(item)
+    tab.textContent = item
 
+    return tab;
 }
+
