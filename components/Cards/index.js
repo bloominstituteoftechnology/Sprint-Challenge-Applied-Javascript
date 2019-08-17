@@ -1,7 +1,7 @@
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
-// Stduy the response data you get back, closely.
+// Study the response data you get back, closely.
 // You will be creating a component for each 'article' in the list.
 // This won't be as easy as just iterating over an array though.
 // Create a function that will programmatically create the following DOM component:
@@ -32,35 +32,41 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         let card = document.createElement('div')
         card.classList.add('headline')
 
+        
         const headline = document.createElement('div')
         headline.textContent = `Headline: ${array.headline}`
         card.appendChild(headline)
-
+        
         const author = document.createElement('div')
         author.textContent = `Author: ${array.authorName}`
-        author.appendChild(author)
+        card.appendChild(author)
 
         const img = document.createElement('div')   
         img.classList.add('img-container')
         img.src = array.authorPhoto_url
-
-        const span = document.createElement9('span')
-        span.textContent = `${array.authorName}`
-        author.appendChild(span)
+        
+        const span = document.createElement('span')
+        span.textContent = `By: ${array.authorName}`
+        span.appendChild(author)
+        
+        const articles1 = document.createElement('articles')
+        articles1.textContent = array.articles
+        card.appendChild(articles1)
+// do I have to type out articles 1-13? not DRY.
 
         return card
     }
 
-    // const data = [
-    //     {
-    //         headline:''
-    //         name: ''
-    //         photo: ''
-    // },
+    const articles = [
+        {
+            headline:'',
+            name: '',
+            photo: '',
+    },
 
-    // ]
+    ]
 
-    // data.forEach((item) => {
-    //     let article = articleCreator(item);
-    //     containerCard.appendChild(article);
-    // });
+    articles.forEach((item) => {
+        let article = Card(item);
+        containerCard.appendChild(article);
+    });

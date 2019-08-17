@@ -13,7 +13,7 @@ const container = document.querySelector('.header-container')
 
 function Header(array) {
     const divHead = document.createElement('div')
-    divHead.classList.add.length('header')
+    divHead.classList.add('header')
 
     const spanDate = document.createElement('span')
     spanDate.textContent = `Date: 28 March 2019${array.date}`
@@ -21,6 +21,7 @@ function Header(array) {
     divHead.appendChild(span)
 
     const h1 = document.createElement('h1')
+    h1.classList.add('h1')
     h1.textContent = 'Lambda Times'
     h1.appendChild(h1)
 
