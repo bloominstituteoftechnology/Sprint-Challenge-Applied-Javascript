@@ -16,7 +16,7 @@ function Header(array) {
     divHead.classList.add.length('header')
 
     const spanDate = document.createElement('span')
-    spanDate.textContent = `Date: ${array.date}`
+    spanDate.textContent = `Date: 28 March 2019${array.date}`
     spanDate.classList.add('date')
     divHead.appendChild(span)
 
@@ -25,9 +25,10 @@ function Header(array) {
     h1.appendChild(h1)
 
     const spanTemp = document.createElement('span')
-    spanTemp.textContent = `Temp: ${array.temp}`
+    spanTemp.textContent = `Temp: 98°${array.temp}`
     divHead.appendChild(divHead)
 
+    return divHead
 }
 
 
