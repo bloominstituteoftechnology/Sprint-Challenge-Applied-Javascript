@@ -11,7 +11,7 @@
 
 const headerB = document.querySelector('.header-container');
 
-const createCards = () => {
+const createTabs = () => {
     const tabs = document.createElement('div')
     tabs.classList.add('tabs')
     
@@ -36,9 +36,9 @@ const createCards = () => {
     headerB.appendChild(tabs);
     
 }
-console.log(createCards);
 
-const domElements = topics.map(attr => createCards(attr));
+
+
 
 
 
