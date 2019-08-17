@@ -17,3 +17,12 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((response) => {
+    console.log(response.data.message);
+})
+.catch((error) =>{
+    console.log('Network request was unsuccessful')
+    console.log(error)
+})
