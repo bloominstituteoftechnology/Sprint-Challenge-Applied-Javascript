@@ -17,3 +17,17 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselMaker = document.querySelector('carousel-container');
+
+function (){
+  const leftButton = document.createElement('div'); 
+  leftButton.classList.add('left-button');
+  leftButton.textContent = 'carousel-left';
+  
+  const rightButton = document.createElement('div');
+  rightButton.classList.add('right-button');
+  rightButton.textContent = 'carousel-right'; 
+
+
+}
