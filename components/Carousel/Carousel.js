@@ -17,3 +17,41 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselMaker = document.querySelector('carousel-container');
+
+function (){
+  const leftButton = document.createElement('div'); 
+  leftButton.classList.add('left-button');
+  leftButton.textContent = 'carousel-left';
+  
+  const slidesDiv = document.createElement('div');
+  slidesDiv.textContent = 'slides';
+
+
+  const rightButton = document.createElement('div');
+  rightButton.classList.add('right-button');
+  rightButton.textContent = 'carousel-right'; 
+
+
+}
+
+// Images Array
+
+images[0] = 'assets/carousel/computer.jpeg';
+images[1] = 'assets/carousel/mountains.jpeg';
+images[2] = 'assets/carousel/trees.jpeg';
+images[3] = 'assets/carousel/turntable.jpeg';
+// implement timed shift of imgs
+function shiftImg(){
+  document.slide.src = images[i];
+
+  if(i < images.length - 1){
+    i++; }  
+    else {
+      i = 0;
+    }
+    setTimeout('shiftImg()', 1000);
+  }
+
+window.onload = shiftImg;
