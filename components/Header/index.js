@@ -38,5 +38,9 @@ function Header() {
         
     }
 
+    Header();
+    // const container = document.querySelector('.header-container')
+    // container.appendChild(Header())
+
     // const container = document.querySelector('.header-container')
     // container.appendChild(header)
