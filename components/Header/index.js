@@ -28,7 +28,7 @@ function Header(text) {
     tempSpan.textContent = text
     newDiv.appendChild(tempSpan)
 
-    const container = document.querySelector('.headerContainer')
+    const container = document.querySelector('.header-container')
     container.appendChild(newDiv)
 
 }
