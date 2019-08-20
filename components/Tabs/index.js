@@ -8,41 +8,81 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(response => {
-        console.log(response)
-        // document.querySelector('.topics').appendChild(tab(response.data))
-    })
+    .then((response => {
+        let dom = document.querySelector('.topics')
+        response.data.topics.forEach(element => {
+            dom.appendChild(createTab(element))
+        })
+    }))
+
     .catch((error) => {
+        console.log('Network Error')
         console.log(error)
     })
 
-    const tabs = document.querySelector('div')
+    // let tabs = document.querySelector('div')
+// function createTab(object) {
 
-    function tab (array) {
-        const tabs = document.createElement('tabs')
-        tabs.textContent = `Topic: ${array.tabs}`
+//     let div = document.createElement("div");
+//     div.classList.add("tab");
+//     div.innerHTML = object;
+
+//     return div;
+
+// }
+
+    function createTab (object) {
+        let tabs = document.createElement('div')
+        tabs.classList.add('tab')
+        tabs.innerHTML = object
+        // tabs.textContent = 'Topics:'
         
-        tabs.addEventListener('click', () => {
-            tabs.classList.toggle('topics')
-        })
-
-        const topics = document.createElement('div')
-        topics.textContent = `Topics: ${array.topics}`
-        tabs.classList.add('topics')
-        tabs.appendChild(topics)
+        // let topics = document.createElement('div')
+        // topics.textContent = `Topics: ${array.topics}`
+        // tabs.classList.add('topics')
+        // tabs.appendChild(topics)
 
         return tabs
     }
 
-let menuItems = [
-    'All',
-    'Bootstrap',
-    'JavaScript',
-    'JQuery',
-    'Node',
-    'Technology'
-];
+
+// axios.get('https://lambda-times-backend.herokuapp.com/topics')
+//     .then((response) => {
+//         let dom = document.querySelector(".topics");
+//         response.data.topics.forEach(element => {
+//             dom.appendChild(createTab(element));
+//         })
+//     })
+//     .catch((error) => {
+//         console.log("Network Error");
+//         console.log(error);
+//     })
+
+// function createTab(object) {
+
+//     let div = document.createElement("div");
+//     div.classList.add("tab");
+//     div.innerHTML = object;
+
+//     return div;
+
+// }
+
+// tabs.addEventListener('click', () => {
+//     tabs.classList.toggle('topics')
+// })
+
+
+// let menuItems = [
+//     'All',
+//     'Bootstrap',
+//     'JavaScript',
+//     'JQuery',
+//     'Node',
+//     'Technology'
+// ];
 
 // menuItems.forEach((item) => {
 //     let tab = tab(item);

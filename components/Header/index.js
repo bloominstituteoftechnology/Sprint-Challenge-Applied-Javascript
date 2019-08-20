@@ -9,27 +9,50 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-const container = document.querySelector('.header-container')
-
-function Header(array) {
-    const divHead = document.createElement('div')
+function Header() {
+    let divHead = document.createElement('div')
     divHead.classList.add('header')
 
-    const spanDate = document.createElement('span')
-    spanDate.textContent = `Date: 28 March 2019${array.date}`
-    spanDate.classList.add('date')
-    divHead.appendChild(span)
+    let date = document.createElement('span')
+    date.classList.add('date')
+    date.textContent = 'Date: 28 March 2019'
+    divHead.appendChild(date)
 
-    const h1 = document.createElement('h1')
+    let h1 = document.createElement('h1')
     h1.classList.add('h1')
     h1.textContent = 'Lambda Times'
-    h1.appendChild(h1)
+    divHead.appendChild(h1)
 
-    const spanTemp = document.createElement('span')
-    spanTemp.textContent = `Temp: 98°${array.temp}`
-    divHead.appendChild(divHead)
+    let spanTemp = document.createElement('span')
+    spanTemp.textContent = 'Temp: 98°'
+    divHead.appendChild(spanTemp)
 
     return divHead
 }
 
+document.querySelector('.header-container').appendChild(Header())
 
+// function Header() {
+
+//     let div = document.createElement("div");
+//     div.classList.add("header");
+
+//     let span = document.createElement("span");
+//     span.classList.add("date");
+//     span.innerHTML = "Smarch 28, 2019";
+//     div.appendChild(span);
+
+//     let h1 = document.createElement("h1");
+//     h1.innerHTML = "Lambda Times";
+//     div.appendChild(h1);
+
+//     let span2 = document.createElement("span");
+//     span2.classList.add("temp");
+//     span2.innerHTML = "98°";
+//     div.appendChild(span2);
+
+//     return div;
+
+// }
+
+// document.querySelector(".header-container").appendChild(Header());
