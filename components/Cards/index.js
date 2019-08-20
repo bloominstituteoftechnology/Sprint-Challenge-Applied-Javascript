@@ -55,28 +55,46 @@ function cardMaker(headlines, imgUrl, author) {
 
 }
 
-const cardContainer = document.querySelector('.cards-container')
+
 
 //Test Cardmaker 
 //cardContainer.appendChild(cardMaker('Testin Testing 123', '../../assets/fido.jpg', 'Ariel'))
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response, reject) => {
+        const cardContainer = document.querySelector('.cards-container')
+
         const data = response.data.articles //<-- Data to read through
-        //const keys = Object.keys(data)
+
         const values = Object.values(data)
-        for(const value of values){
-            console.log(value)
-            cardContainer.appendChild(cardMaker(value[0].headline, value[0].authorPhoto, value[0].authorName))
-        }
+        console.log(values)    
         
+        values.forEach((value) => {
+            value.forEach((newValue) => {
+                cardContainer.appendChild(cardMaker(newValue.headline, newValue.authorPhoto, newValue.authorName))
+            })
+        })
 
-
-
-        //console.log(keys)
-        // console.log(values)
-        // console.log(data)
     })
     .catch((error) => {
         console.log(`The request was rejected ${error}`)
     })
+
+
+//     axios.get('https://lambda-times-backend.herokuapp.com/articles')
+//   .then((response) => {
+
+//     let cardsCont = document.querySelector(".cards-container");
+
+//     let arrayValues = Object.values(response.data.articles);
+
+//     arrayValues.forEach(element => {
+//       element.forEach(article => {
+//         cardsCont.appendChild(createCard(article));
+//         console.log("CreatedCard");
+//       })
+//     })
+//   })
+//   .catch((error) => {
+
+//   })

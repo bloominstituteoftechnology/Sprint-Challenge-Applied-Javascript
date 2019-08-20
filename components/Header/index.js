@@ -39,3 +39,4 @@ const container = document.querySelector('.header-container')
 
 container.appendChild(Header())
 
+// axios.get('https://api.openweathermap.org/data/2.5/weather?q=London')

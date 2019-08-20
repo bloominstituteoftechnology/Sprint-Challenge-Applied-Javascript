@@ -21,6 +21,14 @@ function tabMaker(topic) {
 
 // Grabs the ellement to add new tabs too
 const topics = document.querySelector('.topics')
+// topics.addEventListener('click', event => {
+//     event.currentTarget.classList.toggle('title')
+// })
+
+const tabs = document.querySelector('.tabs');
+
+
+// topics.classList.toggle('.tabs')
 
 // Testing Funcion
 // topics.appendChild(tabMaker('well hello'))
@@ -29,9 +37,10 @@ const topics = document.querySelector('.topics')
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then((response, reject) => {
-        //console.log(response.data.topics) <-- Data to read through
+        //console.log(response.data.topics) //<-- Data to read through
         response.data.topics.forEach((topic) => {
         topics.appendChild(tabMaker(topic))
+        
         })
     })
     .catch((error) => {
