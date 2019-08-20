@@ -21,20 +21,23 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         console.log(response)
+    Object.entries(response.data.articles).forEach(([key, value]) => {
+        articleCreator(`${key}: ${value}`)
+    })
+
     })
     .catch(err => {
         console.log(err)
     })
 
-
-function articleCreator(userObj) {
+function articleCreator(element) {
 
     const newArticleDiv = document.createElement('div')
     newArticleDiv.classList.add('card')
 
     const headlineDiv = document.createElement('div')
     headlineDiv.classList.add('headline')
-    headlineDiv.textContent = userObj.articles.headline
+    headlineDiv.textContent = element
     newArticleDiv.appendChild(headlineDiv)
 
     const authorDiv = document.createElement('div')
@@ -46,13 +49,14 @@ function articleCreator(userObj) {
     headlineDiv.appendChild(imgDiv)
 
     const authorImg = document.createElement('img')
-    authorImg.src = userObj.data.authorPhoto
+    authorImg.src = element
     imgDiv.appendChild(authorImg)
 
     const authorSpan = document.createElement('span')
-    authorSpan.textContent = `By ${userObj.data.authorName}`
+    authorSpan.textContent = element
 
 
     const container = document.querySelector('.cards-container')
     container.appendChild(newArticleDiv)
 }
+
