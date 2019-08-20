@@ -19,53 +19,53 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 
+// const cardContainer = document.querySelector('.class-container')
 
-const createCards = (user)=> {
+// let dogs = [];
 
-const card = document.createElement('div');
-card.classList.add('card');
+// dogs.forEach(javascript => {
+//     axios
+//     .get(`https://lambda-times-backend.herokuapp.com/articles.${javascript}`)
+//     .then(userData => {
+//         cardContainer.appendChild(createCards(userData.data))
+//     })
+//     .catch(error => console.error(error));
+// })
 
-const headline = document.createElement('div');
-headline.classList.add('div');
+// const createCards = user => {
+//   const card = document.createElement("div");
+//   card.classList.add("card");
 
-const imageC = document.createElement('div');
-imageC.classList.add('img-container');
+//   const headline = document.createElement("div");
+//   headline.classList.add("headline");
 
+//   const author = document.createElement('div')
+//   author.classList.add('author')
 
-const span = document.createElement('span');
-
-const hTags = [];
-for(let i = 0; i < i.length; i++){
-    hTags.push(document.createElement('p'))
-}
-
-hTags[0].textContent = user.headline;
-hTags[1].textContent = user.authorPhoto;
-hTags[2].textContent = user.authorName;
-
-
-
-return card
-}
+//   const imageC = document.createElement("div");
+//   imageC.classList.add("img-container");
+//   imageC.setAttribute("src", user['jpg']);
 
 
+//   const spanC = document.createElement("span");
+//   span.classList.add("span");
+//   spanC.textContent = `By: ${user.authorName}`;
 
-
-
-
-
+//   headline.textContent = "Javascript"
 
 
 
 
 
+//   return card;
+// };
 
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then((response) => {
-    console.log(response.data.message);
-})
-.catch((error) =>{
-    console.log('Network request was unsuccessful')
-    console.log(error)
-})
+// createCards();
+// axios
+//   .get("https://lambda-times-backend.herokuapp.com/articles")
+//   .then(response => {
+//     console.log(response.data.artices);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });

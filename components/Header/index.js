@@ -20,19 +20,24 @@ function Header() {
         spanTags.push(document.createElement('span'));
     }
     spanTags[0].classList.add('date');
-    spanTags[0].textContent = 'MARCH 28, 2019';
+    spanTags[0].textContent = `March 28, 2019 `;
 
     spanTags[1].classList.add('temp');
-    spanTags[1].textContent = '98';
+    spanTags[1].textContent = '98° ';
 
     const h1 = document.createElement('h1');
     h1.textContent = 'Lambda Times';
 
-    spanTags.forEach(s => divE.appendChild(s));
+    divE.appendChild(spanTags[0]);
     divE.appendChild(h1);
-    
+    divE.appendChild(spanTags[1])
+    headerC.appendChild(divE);
 
+    
     return divE;
 }
+
+Header();
+
 
 

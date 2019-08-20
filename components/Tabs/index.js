@@ -8,49 +8,30 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+// const tab = document.querySelector(".tab");
 
-const headerB = document.querySelector('.header-container');
+const createTabs = (tab) => {
+  const tabs = document.createElement("div");
+  tabs.classList.add("tab");
+  tabs.textContent = tab;
+  //"tab" whatever the argument I pass in is
 
-const createTabs = () => {
-    const tabs = document.createElement('div')
-    tabs.classList.add('tabs')
-    
-    const topics = document.createElement('div')
-    topics.classList.add('topics')
+  return tabs;
+};
 
-    const span = document.createElement('span')
-    span.classList.add('title')
+const container = document.querySelector('.topics')//variable for the container or div
 
-    hTags = [];
-    for(let i = 0; i < 6; i++) {
-        hTags.push(document.createElement('h2'))        
-    }
-    hTags[0].textContent = `Topics: `; 
-    hTags[1].textContent = `Topics: `; 
-    hTags[2].textContent = `Topics: `; 
-    hTags[3].textContent = `Topics: `; 
-    hTags[4].textContent = `Topics: `; 
-
-    tabs.appendChild(span);
-    span.appendChild(hTags);
-    headerB.appendChild(tabs);
-    
-}
-
-
-
-
-
-
-
-
-
-
-axios .get(' https://lambda-times-backend.herokuapp.com/topics')
-.then((response) => {
-    console.log(response.data.message);
-})
-.catch((error) =>{
-    console.log('Network request was unsuccessful')
-    console.log(error)
-})
+axios
+  .get(" https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => { //always response
+      const topicsArray = response.data.topics; //creating a variable to contain what we get back from url
+      topicsArray.forEach(tab => {
+        container.appendChild(createTabs(tab))
+        // for each to run through each variable and then append that to the container
+        console.log(tab);
+      })
+    })
+    .catch(error => {
+    console.log("Network request was unsuccessful");
+    console.log(error);
+  });
