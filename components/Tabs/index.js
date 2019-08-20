@@ -22,17 +22,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         console.log(error)
     })
 
-    // let tabs = document.querySelector('div')
-// function createTab(object) {
-
-//     let div = document.createElement("div");
-//     div.classList.add("tab");
-//     div.innerHTML = object;
-
-//     return div;
-
-// }
-
     function createTab (object) {
         let tabs = document.createElement('div')
         tabs.classList.add('tab')
@@ -47,6 +36,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         return tabs
     }
 
+// tabs.addEventListener('click', () => {
+//     tabs.classList.toggle('topics')
+// })
+
 
 // axios.get('https://lambda-times-backend.herokuapp.com/topics')
 //     .then((response) => {
@@ -59,20 +52,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 //         console.log("Network Error");
 //         console.log(error);
 //     })
-
-// function createTab(object) {
-
-//     let div = document.createElement("div");
-//     div.classList.add("tab");
-//     div.innerHTML = object;
-
-//     return div;
-
-// }
-
-// tabs.addEventListener('click', () => {
-//     tabs.classList.toggle('topics')
-// })
 
 
 // let menuItems = [

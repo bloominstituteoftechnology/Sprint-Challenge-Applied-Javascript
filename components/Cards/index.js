@@ -20,47 +20,44 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response => {
-        // let containerCard = document.querySelector('.cards-container')
-        // response.data.containerCard.forEach((cards) => {
-        //     containerCard.appendChild(createCard(cards))
-        // })
-        console.log(response)
-    }))
+        // console.log(response);
+        let containerCard = document.querySelector('.cards-container')
+        let arrayValues = Object.values(response.data.articles);
+        arrayValues.forEach(element => {
+            element.forEach(article => {
+            containerCard.appendChild(Card(article))
+        })
+    })
+}))
 
     .catch((error) => {
         console.log(error)
     })
 
-    let containerCard = document.querySelector('.cards-container')
-
-    function Card() {
+    function Card(object) {
         let card = document.createElement('div')
         card.classList.add('card')
         
-        let headline = document.createElement('div')
-        headline.classList.add('headline')
-        headline.textContent = 'Headline:'
-        card.appendChild(headline)
+        let headlines = document.createElement('div')
+        headlines.classList.add('headline')
+        headlines.textContent = object.headline
+        card.appendChild(headlines)
         
-        let author = document.createElement('div')
-        author.classList.add('author')
-        author.textContent = 'Author:'
-        card.appendChild(author)
+        let authors = document.createElement('div')
+        authors.classList.add('author')
+        card.appendChild(authors)
 
-        let img = document.createElement('div')   
-        img.classList.add('img-container')
-        img.src = authorPhoto_url
-        card.appendChild(img)
-        
+        let pic = document.createElement('div')   
+        pic.classList.add('img-container')
+        authors.appendChild(pic)
+
+        let img = document.createElement('img')
+        img.src = object.authorPhoto
+        pic.appendChild(img)
+
         let span = document.createElement('span')
-        span.classList.add('authorName')
-        span.textContent = 'By:'
-        card.appendChild(author)
-        
-        let articles = document.createElement('articles')
-        articles.textContent = 'articles'
-        card.appendChild(articles1)
-// do I have to type out articles 1-13? not DRY.
+        span.textContent = 'By: ' + object.authorName
+        pic.appendChild(span)
 
         return card
     };
@@ -72,14 +69,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     //     container.appendChild(card)
     // })
 
-    // const articles = [
-    //     {
-    //         headline:'',
-    //         name: '',
-    //         photo: '',
-    // },
-
-    // ]
 
 // articles.forEach((item) => {
 //     axios.get('https://lambda-times-backend.herokuapp.com/articles')
