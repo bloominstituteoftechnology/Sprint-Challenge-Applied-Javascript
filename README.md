@@ -36,9 +36,12 @@ Edit this document to include your answers after each question. Make sure to lea
 2. What is an event?
 
   Event is an object the contains information on user interactions with a site.
-  
+
 
 3. What is an event listener?
+
+  Event listener is a method on an element that take two arguments, first the event to listen for, second the callback to fire when that event is triggered.
+  
 
 4. Why would we convert a NodeList into an Array?
 
