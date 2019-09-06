@@ -13,11 +13,14 @@
 //Similar to the first version...not sure if this is correct. I got the topics on the page. The style looks off, but I need to work on the other task. COma back to later, if there's time. 
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(result =>{
-        console.log(result);
+        // console.log(result);
         const topics = document.querySelector('.topics');
         topics.appendChild(TabComponent(result.data));
         // const topicData = result.data;
         // console.log(topicData);
+        //for loop?? for (let i = 0; i < result.data.length; i++){
+
+        // }
     })
     .catch(err =>{
         console.log(`You did something wrong, go back and fix it!`);
