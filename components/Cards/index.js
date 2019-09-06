@@ -19,3 +19,34 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 
+let container = document.querySelector('.cards-container')
+function Card(headline, imgUrl, authorsName) {
+    let cardContainer = document.createElement('div')
+    let headlineDiv = document.createElement('div')
+    let authorDiv = document.createElement('div')
+    let imgContainer = document.createElement('div')
+    let img = document.createElement('img')
+    let span = document.createElement('span')
+    
+    cardContainer.classList.add('card')
+    headlineDiv.classList.add('headline')
+    authorDiv.classList.add('author')
+    imgContainer.classList.add('img-container')
+    
+
+    cardContainer.appendChild(headlineDiv)
+    cardContainer.appendChild(authorDiv)
+    authorDiv.appendChild(imgContainer)
+    imgContainer.appendChild(img)
+    authorDiv.appendChild(span)
+
+    headlineDiv.textContent = headline
+    img.src = imgUrl
+    span.textContent = authorsName
+
+    return cardContainer
+}
+
+
+    
+
