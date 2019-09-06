@@ -7,3 +7,14 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+const createTabs = (tab) => {
+    const tabs = document.createElement("div");
+    tabs.classList.add("tab");
+    tabs.textContent = tab;
+    //"tab" whatever the argument I pass in is
+  
+    return tabs;
+  };
+  
