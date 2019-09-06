@@ -37,7 +37,9 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     console.log(nodeArray);
 
 
-    //teh for loop and the .forEach() both populate the page with empty cards....why wont they populate!?!?!?!?!?!?    
+    //The for loop and the .forEach() both populate the page with empty cards....why wont they populate!?!?!?!?!?!? 
+    //Realized that I hadn't appended anything in the component. Rookie mistake!! Still not sure how I got them populated. Look over the weekend. Ask for help. 
+    
     for(i = 0; i < javascriptArray.length; i++){
         cardsContainer.appendChild(articleCards(javascriptArray[i]));
     }
