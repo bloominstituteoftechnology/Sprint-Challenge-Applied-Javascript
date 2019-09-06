@@ -17,3 +17,39 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+
+const carousel = document.querySelector(".carousel-container");
+
+const sliderImages = [
+  "/Users/meeraandersen/Desktop/Full Stack/Web23 Projects/Sprint-Challenge-Applied-Javascript/assets/carousel/computer.jpeg",
+  "/Users/meeraandersen/Desktop/Full Stack/Web23 Projects/Sprint-Challenge-Applied-Javascript/assets/carousel/mountains.jpeg",
+  "/Users/meeraandersen/Desktop/Full Stack/Web23 Projects/Sprint-Challenge-Applied-Javascript/assets/carousel/trees.jpeg",
+  "/Users/meeraandersen/Desktop/Full Stack/Web23 Projects/Sprint-Challenge-Applied-Javascript/assets/carousel/turntable.jpeg"
+]
+
+sliderImages.forEach(imageURL => {
+  let image = document.createElement('img');
+  image.src = imageURL;
+  carousel.appendChild(newImgSlider(image));
+  
+})
+
+function newImgSlider(){
+  const carouselSlides = document.createElement('div');
+  const leftButton = document.createElement('div');
+  const rightButton = document.createElement('div');
+
+
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+  carouselSlides.classList.add('carousel');
+
+
+  carouselSlides.appendChild(leftButton);
+  carouselSlides.appendChild(rightButton);
+
+  rightButton.textContent = ">";
+  leftButton.textContent = "<"
+}
