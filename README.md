@@ -46,6 +46,7 @@ Because nodeLists allow us to use forEach, but if we want to use .map or anythin
 
 5. What is a component?
 
+It is something that allows us to continue using certain parts of our code continuously (which allows us to create DRY code). 
 
 
 ### Git Set up
