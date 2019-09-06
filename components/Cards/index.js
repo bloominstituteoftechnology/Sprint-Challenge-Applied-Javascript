@@ -49,7 +49,7 @@ function newCard(info){
     ImgContainer.appendChild(Img);
     AuthorInfo.appendChild(Author);
 
-    console.log(info)
+    // console.log(info)
 
     // RETURN
     return card;
@@ -71,7 +71,7 @@ axios
         // console.log('Object keys', Object.keys(response.data.articles))
         const obj = Object.keys(response.data.articles);
         for(let i = 0; i < obj.length; i++){
-            console.log(obj[i]);
+            // console.log(obj[i]);
             response.data.articles[obj[i]].forEach(item => {
                 cards.appendChild(newCard(item))
             })

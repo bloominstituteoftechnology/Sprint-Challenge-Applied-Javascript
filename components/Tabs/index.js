@@ -32,7 +32,7 @@ function newTab(tabInfo){
     // PROMISE
     .then(response => {
         // RETURN RESPONSE
-        console.log(response);
+        // console.log(response);
         response.data.topics.forEach(items => {
             // APPEND
             topics.appendChild(newTab(items))
