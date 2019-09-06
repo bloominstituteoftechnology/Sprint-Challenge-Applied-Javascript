@@ -31,9 +31,12 @@ Edit this document to include your answers after each question. Make sure to lea
 1. What is the DOM?
 
  DOM is a dynamic tree-like structure representing the content, structure, and style of an HTML/XML document. The It represents the document as nodes and objects. That way, programming languages can connect to the page.
- 
+
 
 2. What is an event?
+
+  Event is an object the contains information on user interactions with a site.
+  
 
 3. What is an event listener?
 
