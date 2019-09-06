@@ -21,10 +21,12 @@
 // axios.get('https://lambda-times-backend.herokuapp.com/articles')
 // .then(response=> {
 //     console.log(response);
-//     response.data.arr.forEach(item=> {
-//         let newArticle = createArticle(item);
-//         cardContainer.appendChild(newArticle);
-//     });
+//     response.data.articles.forEach(item=> {
+//         for(i=0; i<item.length; i++){
+
+//             let newArticle = createArticle(item[i]);
+//             cardContainer.appendChild(newArticle);}
+//         });
 // })
 // .catch(error => {
 //     console.log(`AGH!`, error);
@@ -33,13 +35,16 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response=> {
     console.log(response);
-        let newArticle = createArticle(response, response.data.articles.javasript);
+    for(i=0; i<response.length; i++){
+        let findArticle = response.data.articles.javascript[i];
+        let newArticle = createArticle(findArticle);
         cardContainer.appendChild(newArticle);
+    }
 })
 
 
 const cardContainer = document.querySelector('.card-container');
-function createArticle(obj, arr){
+function createArticle(obj){
     let card = document.createElement('div');
     let author = document.createElement('div');
     let headline = document.createElement('div');
@@ -58,11 +63,17 @@ function createArticle(obj, arr){
     imgContainer.appendChild(image);
     author.appendChild(authorName);
 
-    for(i=0; i<arr.length; i++){
-    headline.textContent = `${obj.data.articles.arr[i].headline}`;
-    image.src = obj.data.articles.arr[i].authorPhoto;
-    authorName.textContent = `By ${obj.data.articles.arr[i].authorName}`;
-    };
+    for(i=0; i<obj.length; i++){
+        headline.textContent = `${obj[i].headline}`;
+        image.src = obj[i].authorPhoto;
+        authorName.textContent = `By ${obj[i].authorName}`;
+        };
+
+    // for(i=0; i<obj.length; i++){
+    // headline.textContent = `${obj.data.articles.arr[i].headline}`;
+    // image.src = obj.data.articles.arr[i].authorPhoto;
+    // authorName.textContent = `By ${obj.data.articles.arr[i].authorName}`;
+    // };
 
     return card;
 }
