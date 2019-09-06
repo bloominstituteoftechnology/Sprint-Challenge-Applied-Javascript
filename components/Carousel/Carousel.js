@@ -53,16 +53,43 @@ function makeCarousel(){
   carouselMain.appendChild(rBtn);
 
   // MAKE ARRAY OF PICTURES
-  var carouselImages = new Array;
+  const carouselImages = new Array;
   carouselImages[0] = mountains;
   carouselImages[1] = computer;
   carouselImages[2] = trees;
-  carouselImages[3] = turntables;
+  carouselImages[3] = turntable;
 
   // EVENT LISTENERS
-  lBtn.addEventListener('click', e => {
+  
+    // const slideIndex = 1;
+    // showSlides(slideIndex)
+  // let i= 0;
+  
+    do{
+      lBtn.addEventListener('click', e => {
+      carouselImages[i].style.display = 'flex';
+      i++;
+      })
+    }
+    while(i < carouselImages.length)
+  
+
+
+    // for(let i = 0; i < carouselImages.length; i++){
     
-  })
+    //   if(i < carouselImages.length){
+    //     lBtn.addEventListener('click', e => {
+    //     carouselImages[i].style.display = 'flex';
+    //     carouselImages[i].style.width = '50%'
+    //     })
+    //   }
+    //     // return carouselImages[i + 1]; 
+    //   // }else if(i = carouselImages.length){
+    //   //   return carouselImages[i - 3];
+    //   }
+    
+    
+  
 
 
 
