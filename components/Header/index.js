@@ -32,4 +32,4 @@ function Header(arr) {
 
     return divHead
 }
-
+console.log(Header());

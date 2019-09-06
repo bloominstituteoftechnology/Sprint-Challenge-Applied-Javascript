@@ -9,13 +9,28 @@
 //    <div class="tab">topic here</div>
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then()
+    .then(function(response) {
+        console.log(response);
+            const newTab = tabComponent(response)
+            tabTopics.appendChild(newTab);
+    })
+    .catch(function(error) {
+        console.log('There Is An Error');
+    })
 
+
+
+const tabTopics = document.querySelector('.topics');
 
 function tabComponent(item) {
     const divTab = document.createElement('div');
 
+    tabTopics.appendChild(divTab);
+
     divTab.classList.add('tab');
 
-    
+    divTab.textContent = 'topic here';
+
+    return divTab
 }
+
