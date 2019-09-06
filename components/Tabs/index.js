@@ -7,3 +7,35 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+function topic(rabbit) {
+    const tabs = document.createElement('div');
+    tabs.classList.add('tab');
+    // topics.appendChild(tabs);
+}
+
+// topic(response).forEach(item => {
+
+
+//         });
+
+
+axios
+    .get('https://lambda-times-backend.herokuapp.com/topics')
+    .then(response => {
+        console.log(response);
+        const rabbit = response.data.topics;
+
+        topic(rabbit);
+
+        
+
+        // response.data.message
+        // const newFriend = frands(response.data);
+        // entryPoint.appendChild(newFriend);
+
+    })
+    .catch(error => {
+        console.log("The data was not returned", error);
+    });
