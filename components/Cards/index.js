@@ -22,22 +22,38 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(resolve =>{
         debugger
         function cardMaker(){
-            let cardcontent = resolve.data.articles;
+            let cardContent = resolve.data.articles;
             let cardDivBody = document.querySelector('.cards-container');
 
             let cardDiv = document.createElement('div');
-            let headdiv = document.createElement('div');
+            let headDiv = document.createElement('div');
             let authorDiv = document.createElement('div');
             let imgDiv = document.createElement('div');
             let img = document.createElement('img');
             let span = document.createElement('span');
 
             cardDiv.classList.add('card');
-            headdiv.classList.add('headline')
+            headDiv.classList.add('headline')
             authorDiv.classList.add('author');
             imgDiv.classList.add('img-container');
 
-            cardDiv.appendChild(headdiv);
+            let javascript = cardContent.javascript;
+            let bootstrap = cardContent.bootstrap;
+            let technology = cardContent.technology;
+            let jquery = cardContent.jquery;
+            let node = cardContent.node;
+
+            let arr =[javascript, bootstrap, technology,jquery, node];
+            for(let i =0; i< arr.length; i++){
+                headDiv.textContent = arr[i].headline;
+                console.log(headDiv);
+            }
+
+
+            
+            // nav1.textContent = siteContent["nav"]["nav-item-1"];;
+
+            cardDiv.appendChild(headDiv);
             cardDiv.appendChild(authorDiv);
             authorDiv.appendChild(imgDiv);
             imgDiv.appendChild(img);
