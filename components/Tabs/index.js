@@ -9,28 +9,21 @@
 //    <div class="tab">topic here</div>
 
 
-const createTabs = (tab) => {
-    const tabs = document.createElement("div");
-    tabs.classList.add("tab");
-    tabs.textContent = tab;
-    //"tab" whatever the argument I pass in is
-  
-    return tabs;
-  };
-  
-  const container = document.querySelector('.topics')//variable for the container or div
-  
-  axios
-    .get(" https://lambda-times-backend.herokuapp.com/topics")
-    .then(response => { //always response
-        const topicsArray = response.data.topics; //creating a variable to contain what we get back from url
-        topicsArray.forEach(tab => {
-          container.appendChild(createTabs(tab))
-          // for each to run through each variable and then append that to the container
-          console.log(tab);
+let topicsSection = document.querySelector('.topics')
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then((response) => {
+        response.data.topics.forEach((topic) => {
+            let newTab = Tab(topic)
+            return newTab
         })
-      })
-      .catch(error => {
-      console.log("Network request was unsuccessful");
-      console.log(error);
-    });
+    })
+
+function Tab(tabName) {
+    const tabDiv = document.createElement('div')
+    topicsSection.appendChild(tabDiv)
+    tabDiv.classList.add('tab')
+    tabDiv.textContent = tabName
+
+    return tabDiv
+}
