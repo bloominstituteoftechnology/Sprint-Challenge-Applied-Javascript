@@ -28,6 +28,7 @@ function Tab(data) {
     const cards = document.querySelectorAll('.card');
     tabs = document.querySelector('.tabs .topics')
     tabs.appendChild(tab);
+
 }
 
 function renderContentbyTab() {
@@ -35,7 +36,14 @@ function renderContentbyTab() {
     const activeTabs = Array.from(document.querySelectorAll('.active-tab'));
     const activeTopics = activeTabs.map(tab => tab.innerHTML);
     console.log(activeTopics)
+    const cards = Array.from(document.querySelectorAll('.card'));
+    cards.forEach((card) => card.style.display = "none");
     activeTopics.forEach((topic) => document.querySelector(`.${topic}`).classList.add('card-active'));
+    cards.forEach((card) => {
+        if (card.classList.contains('card-active')) {
+            card.style.display = "flex";
+        }
+    });
 }
 
-renderContentbyTab();
+window.addEventListener("load", renderContentbyTab());
