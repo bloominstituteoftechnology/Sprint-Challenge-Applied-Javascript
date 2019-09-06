@@ -18,3 +18,19 @@ const createTabs = (tab) => {
     return tabs;
   };
   
+  const container = document.querySelector('.topics')//variable for the container or div
+  
+  axios
+    .get(" https://lambda-times-backend.herokuapp.com/topics")
+    .then(response => { //always response
+        const topicsArray = response.data.topics; //creating a variable to contain what we get back from url
+        topicsArray.forEach(tab => {
+          container.appendChild(createTabs(tab))
+          // for each to run through each variable and then append that to the container
+          console.log(tab);
+        })
+      })
+      .catch(error => {
+      console.log("Network request was unsuccessful");
+      console.log(error);
+    });
