@@ -18,12 +18,10 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(resolve =>{
-        debugger
-        function cardMaker(){
-            let cardContent = resolve.data.articles;
-            let cardDivBody = document.querySelector('.cards-container');
+        function cardMaker({headline, authorPhoto, authorName}){
 
             let cardDiv = document.createElement('div');
             let headDiv = document.createElement('div');
@@ -32,40 +30,64 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             let img = document.createElement('img');
             let span = document.createElement('span');
 
+            headDiv.textContent = headline;
+            span.textContent = authorName;
+            img.setAttribute('src', authorPhoto);
+        
             cardDiv.classList.add('card');
             headDiv.classList.add('headline')
             authorDiv.classList.add('author');
             imgDiv.classList.add('img-container');
-
-            let javascript = cardContent.javascript;
-            let bootstrap = cardContent.bootstrap;
-            let technology = cardContent.technology;
-            let jquery = cardContent.jquery;
-            let node = cardContent.node;
-
-            let arr =[javascript, bootstrap, technology,jquery, node];
-            for(let i =0; i< arr.length; i++){
-                headDiv.textContent = arr[i].headline;
-                console.log(headDiv);
-            }
-
-
-            
-            // nav1.textContent = siteContent["nav"]["nav-item-1"];;
-
+        
             cardDiv.appendChild(headDiv);
             cardDiv.appendChild(authorDiv);
             authorDiv.appendChild(imgDiv);
             imgDiv.appendChild(img);
             authorDiv.appendChild(span);
-
-            console.log(cardDiv);
+        
+            // console.log(cardDiv);
             return cardDiv;
         }
-        cardMaker()
+
+        let cardContent = Object.values(resolve.data.articles);
+        let cardDivBody = document.querySelector('.cards-container');
+
+        let javaScript = cardContent[0];
+        let javaComponent = javaScript.map(cardMaker);
+        javaComponent.forEach((element) => {
+            cardDivBody.appendChild(element);
+        });
+        console.log(cardDivBody);
+
+        let bootstrap = cardContent[1];
+        let c=bootComponent = bootstrap.map(cardMaker);
+        bootComponent.forEach((element) => {
+            cardDivBody.appendChild(element);
+        });
+        console.log(cardDivBody);
+
+        let technology = cardContent[2];
+        let techComponent = technology.map(cardMaker);
+        techComponent.forEach((element) => {
+            cardDivBody.appendChild(element);
+        });
+        console.log(cardDivBody);
+        
+        let jquery = cardContent[3];
+        let jqueryComponent = jquery.map(cardMaker);
+        jqueryComponent.forEach((element) => {
+            cardDivBody.appendChild(element);
+        });
+        console.log(cardDivBody);
+
+        let node = cardContent[4];
+        let nodeComponent = node.map(cardMaker);
+        nodeComponent.forEach((element) => {
+            cardDivBody.appendChild(element);
+        });
+        console.log(cardDivBody);
         
     })
     .catch(error =>{
-        debugger
         console.log(error.message)
     })
