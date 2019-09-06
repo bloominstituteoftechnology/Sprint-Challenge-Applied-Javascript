@@ -35,7 +35,7 @@ Edit this document to include your answers after each question. Make sure to lea
 3. What is an event listener?
 
 4. Why would we convert a NodeList into an Array?
-
+    We would convert it to an array to use array methods. We can use forEach on a NodeList, but not any other arrays.
 5. What is a component?
 
 ### Git Set up
