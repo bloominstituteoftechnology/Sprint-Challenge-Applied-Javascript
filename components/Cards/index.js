@@ -38,10 +38,10 @@ function newCard(info){
     ImgContainer.classList.add('img-container');
 
     // ADD CONTENT
-    cardHeadline.textContent = `${info}`;
-    // console.log(info)
-    Img.src = `${info}`;
-    Author.textContent = `By ${info}`;
+    cardHeadline.textContent = `${info.cardHeadline}`;
+    console.log(info)
+    Img.src = `${info.authorPhoto}`;
+    Author.textContent = `By ${info.authorName}`;
 
     // APPEND
     card.appendChild(cardHeadline);
@@ -65,13 +65,15 @@ axios
 
     // PROMISE
     .then(response => {
-        console.log(response);
+        // console.log(response);
         console.log(response.data.articles);
-        // for(let i = 0)
+        // console.log(Object.keys(response.data.articles))
+        // console.log(Object.values(response.data.articles))
         // response.data.articles.forEach(property => {
-        //     // console.log(response.data.articles[property])
+        //     console.log(response.data.articles[property])
         //     cards.appendChild(newCard(response.data.articles.property));
         // })
+
     })
     // CATCH ERRORS
     .catch(error => {
