@@ -41,9 +41,12 @@ Edit this document to include your answers after each question. Make sure to lea
 3. What is an event listener?
 
   Event listener is a method on an element that take two arguments, first the event to listen for, second the callback to fire when that event is triggered.
-  
+
 
 4. Why would we convert a NodeList into an Array?
+
+  Converting a NodeList to an array will make it easier to manipulate through the use of array methods such as map, filter and reduce which are not available on NodeLists.
+  
 
 5. What is a component?
 
