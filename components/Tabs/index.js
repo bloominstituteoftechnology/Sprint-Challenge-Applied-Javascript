@@ -4,32 +4,37 @@
 // Console.log the data and review the structure.
 // Iterate over the topics creating a new Tab component to add the DOM
 // under the .topics element.
-//
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+// axios.get('https://lambda-times-backend.herokuapp.com/topics')
+//     .then(response =>{
+//         console.log(response);
+//         response.data.topics.forEach(item=> {
+//             let newTab = createTab(item);
+//             allTopicsTab.appendChild(newTab)
+//         });
+//     })
+    // .catch(error => {
+    //     console.log(`AGH!`, error);
+    //   });
+
+    axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response =>{
         console.log(response);
-        response.data.topics.forEach(item=> {
-            let newTab = createTab(item);
-            allTopicsTab.appendChild(newTab)
-        });
+            let newTab = createTab(response);
+            allTopicsTab.appendChild(newTab);
     })
-    .catch(error => {
-        console.log(`AGH!`, error);
-      });
 
 const allTopicsTab = document.querySelector('.topics')
 
 function createTab(obj){
-    let topicTab = document.createElement('div');
-    topicTab.classList.add('tab');
-
-    for (let i = 0; i < obj.length; i++) {
-        topicTab.textContent = obj[i];
+    for (let i = 0; i < obj.data.topics.length; i++) {
+        let topicTab = document.createElement('div');
+        topicTab.classList.add('tab');
+        topicTab.textContent = obj.data.topics[i];
+        return topicTab;
     };
-    
-    return topicTab;
 }
+
