@@ -46,9 +46,12 @@ Edit this document to include your answers after each question. Make sure to lea
 4. Why would we convert a NodeList into an Array?
 
   Converting a NodeList to an array will make it easier to manipulate through the use of array methods such as map, filter and reduce which are not available on NodeLists.
-  
+
 
 5. What is a component?
+
+  Components are reusable pieces of code that can be used to build elements sharing functionality and styling.
+  
 
 ### Git Set up
 
