@@ -9,15 +9,20 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-var data = {
+const headerdata = [{
     date:'SMarch 28, 2019',
     title: 'Lambda Times',
     temp: '98°'
-}
+},]
 
 const headerContainer = document.querySelector('header-container');
 
+headerData.forEach(data => {
+    console.log('creating header', data.date)
 
+
+headerContainer.appendChild(Header(data.date, data.title, data.temp))
+})
 
 function Header(date, h1, temp) {
     //defining
@@ -44,4 +49,4 @@ function Header(date, h1, temp) {
     console.log('hello');
     return header
 }
-console.log(header(date, header, temp));
+console.log(headerContainer(date, header, temp));
