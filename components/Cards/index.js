@@ -18,6 +18,13 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+// do i need to make an array here of the data in console??
+// const cardData = [
+//     {
+
+//     }
+// ] 
+
 function articleCard(articleCards) {
     const card = document.createElement('div');
     const headline = document.createElement('div');
@@ -26,12 +33,12 @@ function articleCard(articleCards) {
     const image = document.createElement('img');
     const by = document.createElement('span');
 
+    // content
     headline.textContent = data.articles.headline;
     image.src = articleCards;
     author.textContent = data.articles.author;
 
-
-
+    // appends
     card.appendChild(headline);
     card.appendChild(author);
     author.appendChild(container);
@@ -39,19 +46,17 @@ function articleCard(articleCards) {
     author.appendChild(by);
 
     return card;
-
-
-
 }
 
 const entryPoint = document.querySelector(".cards-container");
 
+//axios fetch
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         console.log(response);
-    response.data.articles.forEach(data => {
-        const newCard = articleCard(data);
+    response.data.articles.forEach(item => {
+        const newCard = articleCard(item);
         entryPoint.appendChild(newCard);
     });
     })
