@@ -9,6 +9,12 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
+var data = {
+    date:'March 28, 2019',
+    title: 'Lambda Times',
+    temp: '98°'
+}
+
 const headerContainer = document.querySelector('header-container');
 
 
