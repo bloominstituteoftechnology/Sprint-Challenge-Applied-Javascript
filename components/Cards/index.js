@@ -38,8 +38,7 @@ function newCard(info){
     ImgContainer.classList.add('img-container');
 
     // ADD CONTENT
-    cardHeadline.textContent = `${info.cardHeadline}`;
-    console.log(info)
+    cardHeadline.textContent = `${info.headline}`;
     Img.src = `${info.authorPhoto}`;
     Author.textContent = `By ${info.authorName}`;
 
@@ -49,6 +48,8 @@ function newCard(info){
     AuthorInfo.appendChild(ImgContainer);
     ImgContainer.appendChild(Img);
     AuthorInfo.appendChild(Author);
+
+    console.log(info)
 
     // RETURN
     return card;
@@ -66,7 +67,15 @@ axios
     // PROMISE
     .then(response => {
         // console.log(response);
-        console.log(response.data.articles);
+        // console.log(response.data.articles);
+        // console.log('Object keys', Object.keys(response.data.articles))
+        const obj = Object.keys(response.data.articles);
+        for(let i = 0; i < obj.length; i++){
+            console.log(obj[i]);
+            response.data.articles[obj[i]].forEach(item => {
+                cards.appendChild(newCard(item))
+            })
+        }
         // console.log(Object.keys(response.data.articles))
         // console.log(Object.values(response.data.articles))
         // response.data.articles.forEach(property => {
