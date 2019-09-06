@@ -36,9 +36,17 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     const nodeArray = result.data.articles.node;
     console.log(nodeArray);
 
+
+    //teh for loop and the .forEach() both populate the page with empty cards....why wont they populate!?!?!?!?!?!?    
     for(i = 0; i < javascriptArray.length; i++){
         cardsContainer.appendChild(articleCards(javascriptArray[i]));
     }
+    // javascriptArray.forEach(item =>{
+    //     const pleasePopulate = articleCards(item);
+    //     cardsContainer.appendChild(pleasePopulate);
+    // })
+
+
     for(i = 0; i < bootstrapArray.length; i++){
         cardsContainer.appendChild(articleCards(bootstrapArray[i]));
     }
@@ -51,14 +59,6 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     for(i = 0; i < nodeArray.length; i++){
         cardsContainer.appendChild(articleCards(nodeArray[i]));
     }
-    // const objectToArray = Object.entries(articlesObject);
-    // console.log(objectToArray);
-    // console.log(articlesObject);
-    // console.log(typeof articlesObject);
-    // objectToArray.forEach(item => {
-    //     const newArticleCard = articleCards(item);
-    //     cardsContainer.appendChild(newArticleCard);
-    // })
 })
 
 function articleCards(item){
@@ -68,18 +68,25 @@ function articleCards(item){
     const cardHeadline = document.createElement('div');
     cardHeadline.textContent = item.headline;
     cardHeadline.classList.add('headline');
+    cardCard.appendChild(cardHeadline);
 
     const cardAuthor = document.createElement('div');
     cardAuthor.classList.add('author');
+    cardCard.appendChild(cardAuthor);
 
     const cardImgContainer = document.createElement('div');
     cardImgContainer.classList.add('img-container');
+    cardAuthor.appendChild(cardImgContainer);
 
     const cardImg = document.createElement('img');
     cardImg.src = item.authorPhoto;
+    cardImgContainer.appendChild(cardImg);
 
     const cardSpan = document.createElement('span');
     cardSpan.textContent = item.authorName;
+    cardAuthor.appendChild(cardSpan);
+
+
 
     return cardCard
 }
