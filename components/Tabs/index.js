@@ -21,7 +21,7 @@ axios
     })
 })
 
-tabBar.appendChild(newTabComponent(response.data.topics))
+
 
 
 function newTabComponent (data){
