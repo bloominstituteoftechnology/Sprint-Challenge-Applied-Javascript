@@ -34,12 +34,12 @@ function newTab(tabInfo){
         // RETURN RESPONSE
         console.log(response);
         response.data.topics.forEach(items => {
+            // APPEND
             topics.appendChild(newTab(items))
         })
-        // APPEND
     })
     // CATCH ERRORS
     .catch(error => {
-        console.log('The data was not received. Try again later.', error)
+        console.log('The data was not received. Try again.', error)
     })
 
