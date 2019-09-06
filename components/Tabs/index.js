@@ -8,14 +8,20 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+const topics = document.querySelector('.topics');
 
 //Version 6
 //Similar to the first version...not sure if this is correct. I got the topics on the page. The style looks off, but I need to work on the other task. COma back to later, if there's time. 
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(result =>{
         // console.log(result);
-        const topics = document.querySelector('.topics');
-        topics.appendChild(TabComponent(result.data));
+        const topicsTab = result.data.topics;
+        // console.log(topicsTab);
+        topicsTab.forEach(item => {
+            const newTab = TabComponent(item);
+            topics.appendChild(newTab);
+        })
+        
         // const topicData = result.data;
         // console.log(topicData);
         //for loop?? for (let i = 0; i < result.data.length; i++){
@@ -23,7 +29,7 @@ axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
         // }
     })
     .catch(err =>{
-        console.log(`You did something wrong, go back and fix it!`);
+        // console.log(`You did something wrong, go back and fix it!`);
     })
 
 
@@ -125,13 +131,21 @@ function TabComponent(array){
      const tab = document.createElement('div');
            
      //2. .textContent
-     tab.textContent = array.topics;
+     tab.textContent = array;
+     //only use array 
 
      //3. .classList.add()
-     tab.classList.add('tabs');
+     tab.classList.add('tab');
+
+    //I don't need all these classes (below)
+    //  tab.classList.add('tabs');
+    //  tab.classList.add('topics');
+    //  tab.classList.add('tab:hover');
+    //  tab.classList.add('active-tab');
+    //only use "tab"
 
      //4. .appendChildren() in the axios.get(``).then
-     
+    //  topics.appendChild(tab);
  
      return tab
  

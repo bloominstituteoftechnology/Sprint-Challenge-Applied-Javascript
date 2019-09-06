@@ -9,7 +9,10 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-
+const headerContainer = document.querySelector('.header-container');
+headerContainer.appendChild(Header());
+//these need to go outside of the function because the function only returns one thing 
+//three steps: 1. make the function 2. select where on the page where we're going to put the element 3. 
 
 function Header(item) {
     //1. create elements - document.createElement()
@@ -33,12 +36,10 @@ function Header(item) {
     header.appendChild(h1);
     header.appendChild(temp);
 
-    const headerContainer = document.querySelector('.header-container');
-    headerContainer.appendChild(header);
     //notes for the future, this appending NEEDS to happen in the function and then called outside. Different from the API exercises because we were defining outside the API and the function, but then calling inside the .then(). The appending needs to happen inside a method. 
 
     return header
 
 }
 
-console.log(Header());
+// console.log(Header());
