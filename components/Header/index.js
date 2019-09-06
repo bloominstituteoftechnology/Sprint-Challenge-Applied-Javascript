@@ -10,7 +10,7 @@
 // And add it to the DOM in the .header-container component
 
 var data = {
-    date:'March 28, 2019',
+    date:'SMarch 28, 2019',
     title: 'Lambda Times',
     temp: '98°'
 }
@@ -37,9 +37,11 @@ function Header(date, h1, temp) {
     temperature.classList.add('temp');
 
     //text content
-    headerDate.textContent = 'March 28, 2019';
-    headerTitle.textContent = 'Lambda Times';
-    temperature.textContent = '98°'
+    headerDate.textContent = date;
+    headerTitle.textContent = title;
+    temperature.textContent = temp;
 
+    console.log('hello');
     return header
 }
+console.log(header(date, header, temp));
