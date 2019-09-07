@@ -19,8 +19,20 @@ function Header(object) {
 const headcon = document.querySelector(".header-container");
 
 date.textcontent = "SMARCH 28, 2019";
+title.textcontent = "Lambda Times";
+temp.textcontent = "98°";
+
+
+header.appendChild(date);
+header.appendChild(title);
+header.appendChild(temp);
+
+
+
 
 //Class List
 header.classList.add("header");
 date.classlist.add("date");
 temp.classList.add("temp");
+
+headcon.appendChild(Header);
