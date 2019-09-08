@@ -14,7 +14,7 @@
 
 const headerContainer = document.querySelector('.header-container');
 
-function () {
+function Header() {
     const 
     header = document.createElement('div');
     date = document.createElement('span');
@@ -26,12 +26,19 @@ function () {
     date.classList.add('date');
     temp.classList.add('temp');
 
-    headerContainer.appendChild(header);
+    date.textContent = ('SMARCH 28, 2019');
+    title.textContent = ('Lambda Times')
+    temp.textContent = ('98°');
+
     header.appendChild(date);
     header.appendChild(title);
     header.appendChild(temp);
 
 
+
+    return header
+
 }
 
+headerContainer.appendChild(Header());
 
