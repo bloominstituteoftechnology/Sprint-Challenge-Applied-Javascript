@@ -13,21 +13,18 @@
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
     font-size: 40px;
-    border-radius: 50%;
     position: absolute;
-    width: 50px;
-    height: 50px;
     cursor: pointer;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
-      border: 2px solid @lambda-times-color-primary;
     }
   }
   .left-button {
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 1;
   }
   .right-button {
     top: 50%; 
@@ -36,6 +33,7 @@
   }
   img {
     .width-100();
-    display: none;
+    display: block;
+    
   }
 }

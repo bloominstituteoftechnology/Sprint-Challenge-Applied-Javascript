@@ -7,8 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/664f415367.js"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -45,19 +46,20 @@
       <div data-tab="node" class="tab">NODE.JS</div>
       <div data-tab="jquery" class="tab">jQUERY</div>
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      <div data-tab="Daryl being extra" class="tab">DARYL BEING EXTRA</div>
     </div>
   </div>
 
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
-    <div class="left-button"><</div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button">></div>
-  </div> -->
+  <div class="carousel">
+    <div class="left-button"><i class="fas fa-caret-square-left"></i></div>
+    <img class ="carousel img" src="./assets/carousel/architecture-black-and-white-dark-2081166.jpg" />
+    <img class = "carousel img"src="./assets/carousel/blur-code-dark-2653362.jpg" />
+    <img class = "carousel img"src="./assets/carousel/black-and-white-blackboard-chalkboard-356043.jpg" />
+    <img class = "carousel img"src="./assets/carousel/black-and-white-black-and-white-blur-34088.jpg" />
+    <div class="right-button"><i class="fas fa-caret-square-right"></i></div>
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -202,6 +204,39 @@
         <span>By FIDO WALKSALOT</span>
       </div>
     </div>
+
+    <div class="card" data-tab="Daryl being extra">
+      <div class="headline">Todays project was awesome! I'm going to play around with it and see if I can add some cool animations</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>Mr Daryl Magera</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="Daryl being extra">
+      <div class="headline">What is the DOM?
+        A Dom is an object representation of the html elements of a webpage. It is a bridge between the content and a browser.
+        </div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>Mr Daryl Magera</span>
+      </div>
+    </div>
+    <div class="card" data-tab="Daryl being extra">
+      <div class="headline"> What is a component? It is made up of several parts: Html,CSS or JavaScript brought together for reuse in a website or application.
+        </div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>Mr Daryl Magera</span>
+      </div>
+    </div>
+
 
     <div class="card" data-tab="bootstrap">
       <div class="headline">The Hottest New Bootstrap 4 Components Every Developer Needs to Know About</div>
