@@ -28,12 +28,16 @@ const startSlide = () => {
 // slides right
 const slideRight = () => {
     reset();
-    images[current + 1].style.display = 'block';
     current++
+    images[current].style.display = 'block';
+    // current++
+    // console.log(current);
 }
 
 // right button handler
 rightButton.addEventListener('click', () => {
+// clears the interval function on click
+clearInterval(interval);
 
     if(current === images.length - 1){
         current = - 1;
@@ -44,19 +48,30 @@ rightButton.addEventListener('click', () => {
 // slides left
 const slideLeft = () => {
     reset();
-    images[current - 1].style.display = 'block';
     current--
+    images[current].style.display = 'block';
+    // current--
+    // console.log(current)
 }
 
 // left button handler
 leftButton.addEventListener('click', () => {
+// clears the interval function on click
+clearInterval(interval);
 
     if (current === 0){
         current = images.length;
     }
-    slideLeft()
+    slideLeft();
 })
 
+// automatically slides right after every 3 seconds 
+let interval = setInterval(() => {
+    if(current === images.length - 1){
+        current = - 1;
+    }
+    slideRight();
+}, 3500);
 
 // start slide init
 startSlide();
@@ -73,11 +88,6 @@ startSlide();
 
 
 
-
-
-
-
-// const carouselInstance = new Carousel(carousel);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
