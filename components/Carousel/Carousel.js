@@ -71,7 +71,7 @@ let interval = setInterval(() => {
         current = - 1;
     }
     slideRight();
-}, 3500);
+}, 3800);
 
 // start slide init
 startSlide();
