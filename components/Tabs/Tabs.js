@@ -98,4 +98,13 @@ let tabs = document.querySelectorAll('.tab');
 // console.log(tabs);
 tabs.forEach(tab => {
   return new TabLink(tab);
-})
+});
+
+///////////////////===========Date============///////////////////////
+let date = document.querySelector('.date')
+let theDate = new Date();
+let day = theDate.getDate();
+let month = theDate.getMonth();
+let year = theDate.getFullYear();
+let monthName = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August','September', 'October', 'November', 'December']
+date.textContent = `${monthName[month]} ${day}, ${year}`;
