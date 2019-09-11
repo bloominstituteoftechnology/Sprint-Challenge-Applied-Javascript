@@ -22,22 +22,24 @@ const containMe = document.querySelector('.cards-container')
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
     .then(response => {
-
-        const {
-            articles
-        } = response.data;
-        for (let key in articles) {
-            console.log("response", articles[key]);
-            articles[key].forEach( element =>{
+        const articles = Object.keys(response.data.articles)
+        console.log(articles);
+        articles.forEach(key => {
+            console.log(response.data.articles[key])
+            response.data.articles[key].forEach(element => {
                 containMe.appendChild(createCard(element))
-
             })
+        })
 
-
-        }
-
-
-
+        //     const {
+        //         articles
+        //     } = response.data;
+        //     for (let key in articles) {
+        //         console.log("response", articles[key]);
+        //         articles[key].forEach( element =>{
+        //             containMe.appendChild(createCard(element))
+        //         })
+        //     }
     })
     .catch(error => {
         console.log("The data was not returned", error);
@@ -85,4 +87,3 @@ function createCard(article) {
     console.log(article)
     return cardContainer;
 }
-
