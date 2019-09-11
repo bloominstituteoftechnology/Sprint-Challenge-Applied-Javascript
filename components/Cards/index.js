@@ -22,28 +22,19 @@ const containMe = document.querySelector('.cards-container')
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
     .then(response => {
+
         const {
-            javascript,
-            bootstrap,
-            technology,
-            jquery,
-            node
-        } = response.data.articles;
-        console.log(response.data.articles)
-        // {
-        //     javascript,
-        //     bootstrap,
-        //     technology,
-        //     jquery,
-        //     node
-        // }
-        const dog = response.data.articles;
-            dog.forEach(element => {
-                // const tryMe = getArticles(element);
-                // console.log(tryMe);
-                const ralph = createCard(element);
-                console.log(ralph)
-            });
+            articles
+        } = response.data;
+        for (let key in articles) {
+            console.log("response", articles[key]);
+            articles[key].forEach( element =>{
+                containMe.appendChild(createCard(element))
+
+            })
+
+
+        }
 
 
 
@@ -86,11 +77,12 @@ function createCard(article) {
     author.classList.add('author');
     imgContainer.classList.add('img-container');
 
-    headline.textContent = `${this.headline}`;
-    image.src = `${this.authorPhoto}`;
-    name.textContent = `${this.authorName}`
+    headline.textContent = article.headline;
+    image.src = article.authorPhoto;
+    name.textContent = article.authorName;
 
 
-    console.log(`im here ${article}`)
+    console.log(article)
     return cardContainer;
 }
+
