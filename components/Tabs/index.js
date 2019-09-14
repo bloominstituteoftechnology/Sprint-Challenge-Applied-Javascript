@@ -40,4 +40,12 @@ function lambdaTabs(data) {
 
 }
 
-const container = document.querySelector('.topics');
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+  .then( response => {
+    response.data.topics.forEach( items => {
+      const tops = lambdaTabs(items);
+      container.appendChild(tops);
+    });
+  });
+
+  const container = document.querySelector('.topics');
