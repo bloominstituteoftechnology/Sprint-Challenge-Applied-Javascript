@@ -8,7 +8,6 @@
 */
 class Carousel {
 }
-
 let carousel = document.querySelector();
 /* HTML:
   <div class="carousel">
