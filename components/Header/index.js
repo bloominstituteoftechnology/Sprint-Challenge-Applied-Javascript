@@ -9,7 +9,7 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header(?) {
+function Header() {
 
   //creating elements
   const lambdaHeader = document.createElement('div');
@@ -23,11 +23,11 @@ function Header(?) {
   lambdaTemp.classList.add('temp');
 
   //adding content
-  lambdaDate.textContent = ;
-  lambdaTitle.textContent = ;
-  lambdaTemp.textContent = ;
+  // lambdaDate.textContent = ;
+  // lambdaTitle.textContent = ;
+  // lambdaTemp.textContent = ;
 
-  //add to parent elements
+  //add to parent 
   lamdaHeader.appendChild(lamdaDate);
   lamdaHeader.appendChild(lambdaTitle);
   lambdaHeader.appendChild(lambdaTemp);
