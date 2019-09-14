@@ -30,7 +30,7 @@ function lambdaTabs(data) {
   lambdaTag.classList.add('tab');
 
   //adding content
-  lambdatag.textcontent = data.topics;
+  lambdaTag.textcontent = data.topics;
 
   //add to parent
 
@@ -44,8 +44,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then( response => {
     response.data.topics.forEach( items => {
       const tops = lambdaTabs(items);
-      container.appendChild(tops);
+      entryPoint.appendChild(tops);
     });
   });
 
-  const container = document.querySelector('.topics');
+  const entryPoint = document.querySelector('.topics');

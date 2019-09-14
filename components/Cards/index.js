@@ -17,3 +17,61 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+  /////////////////////////////////
+
+  function lambdaArticles(info) {
+
+    //create Elements
+    const lambdaCard = document.createElement('div');
+    const lambdaHeadLine = document.createElement('div');
+    const lambdaAuthor = document.createElement('div');
+    const lambdaImgContainer = document.createElement('div');
+    const lambdaImg = document.createElement('img');
+    const lambdaName = document.createElement('span');
+
+    //adding classes
+    lambdaCard.classList.add('card');
+    lambdaHeadLine.classList.add('headline');
+    lambdaAuthor.classList.add('author');
+    lambdaImgContainer.classList.add('img-container');
+
+    //add to parent
+    lambdaCard.appendChild(lambdaHeadLine);
+    lambdaCard.appendChild(lambdaAuthor);
+    lambdaCard.appendChild(lambdaImgcontainer);
+    lambdaCard.appendChild(lambdaImg);
+    lambdaCard.appendChild(lambdaName);
+
+    //add content
+
+
+    //add event listeners
+
+    return lambdaCard;
+
+  };
+
+  const entryArt = document.querySelector('.cards-container');
+
+  axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+      console.log(response);
+      response.data.articles.forEach(items => {
+        const arts = lambdaArticles(items);
+        entryArt.appendChild(arts);
+      });
+    });
