@@ -10,10 +10,10 @@
 // And add it to the DOM in the .header-container component
 
 function Header() {
-    var x = document.createElement("header");
-  x.setAttribute("class", "myHeader");
+    var x = document.createElement(".header-container");
+  x.setAttribute("class", ".header-container");
   document.body.appendChild(x);
   var y = document.createElement("h1"); 
   y.appendChild(t);
-  document.getElementById("myHeader").appendChild(y);
+  document.getElementsByClassName(".header-container").appendChild(y);
 }
