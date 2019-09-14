@@ -26,32 +26,37 @@ class tablink {
 
     // this maps over the cards array and converts each card element into a new instance of the TabCard  
     // class and pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new tabCard(card));
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
     // adds a click event that invokes selectTab.
     this.element.addEventListener('click', () => {this.selectTab()});
     }
 
     selectTab() {
+
     // this selects all elements with the .tab class on them.
     const tabs = document.querySelectorAll('.tab');
     // this itterates through the node list removing the .active-tab class from each element.
     tabs.forEach(tab => {tab.classList.remove('active-tab')});
     // adds a class of '.active-tab' to this.element.
-    this,element.classList.add('active-tab');
+    this.element.classList.add('active-tab');
+
     // selects all elements with the .card class on them.
     const cards = document.querySelectorAll('.card');
     // itterates through nodeList setting ther display style of each one to 'none'.
-    cards.forEach(card => card.getElementsByClassName.display = 'none');
+    cards.forEach(card => {card.style.display = 'none';});
     this.cards.forEach(card => card.selectCard());
     }
 }
 
 class tabCard {
     constructor(element) {
+    // Assigns this.element to the passed in element.
     this.element = element;
     }
     selectCard() {
+        // Update the style of this.element to display = null
         this.element.style.display = null;
+        console.log(this.element);
     }
 }
 
