@@ -9,13 +9,13 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {
+function header(date, title, temp) {
 
   //creating elements
   const lambdaHeader = document.createElement('div');
   const lambdaDate = document.createElement('span');
   const lambdaTitle = document.createElement('h1');
-  const lambdaTemp = document.createELement('span');
+  const lambdaTemp = document.createElement('span')
 
   //creating classes
   lambdaHeader.classList.add('header');
@@ -23,13 +23,13 @@ function Header() {
   lambdaTemp.classList.add('temp');
 
   //adding content
-  // lambdaDate.textContent = ;
-  // lambdaTitle.textContent = ;
-  // lambdaTemp.textContent = ;
+  lambdaDate.textContent = date;
+  lambdaTitle.textContent = title;
+  lambdaTemp.textContent = temp;
 
-  //add to parent 
-  lamdaHeader.appendChild(lamdaDate);
-  lamdaHeader.appendChild(lambdaTitle);
+  //add to parent
+  lambdaHeader.appendChild(lambdaDate);
+  lambdaHeader.appendChild(lambdaTitle);
   lambdaHeader.appendChild(lambdaTemp);
 
   //add event listeners
@@ -39,3 +39,5 @@ function Header() {
 }
 
 const container = document.querySelector('.header-container')
+
+header-container.appendChild(header(`SMARCH 28, 2019`, 'Lambda Times', '98*'))

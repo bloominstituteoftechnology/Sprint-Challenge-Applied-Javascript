@@ -68,10 +68,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   const entryArt = document.querySelector('.cards-container');
 
   axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(response => {
+    .then((response) => {
       console.log(response);
       response.data.articles.forEach(items => {
         const arts = lambdaArticles(items);
         entryArt.appendChild(arts);
       });
     });
+    // .catch(err => {
+    //   console.log(err);
+    // });
