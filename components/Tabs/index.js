@@ -8,18 +8,20 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
+// axios.get('https://lambda-times-backend.herokuapp.com/topics')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .finally(function () {
+//     // always executed
+//   });
+
+  //////////////////////////
 
 function lambdaTabs(data) {
 
@@ -30,7 +32,7 @@ function lambdaTabs(data) {
   lambdaTag.classList.add('tab');
 
   //adding content
-  lambdaTag.textcontent = data.topics;
+  lambdaTag.textContent = data;
 
   //add to parent
 
@@ -42,10 +44,12 @@ function lambdaTabs(data) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then( response => {
-    response.data.topics.forEach( items => {
+    console.log(response);
+    response.data.topics.forEach(items => {
+      console.log(items);
       const tops = lambdaTabs(items);
       entryPoint.appendChild(tops);
     });
   });
 
-  const entryPoint = document.querySelector('.topics');
+const entryPoint = document.querySelector('.topics');
