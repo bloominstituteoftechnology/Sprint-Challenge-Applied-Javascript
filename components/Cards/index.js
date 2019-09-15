@@ -52,11 +52,14 @@
     //add to parent
     lambdaCard.appendChild(lambdaHeadLine);
     lambdaCard.appendChild(lambdaAuthor);
-    lambdaCard.appendChild(lambdaImgcontainer);
+    lambdaCard.appendChild(lambdaImgContainer);
     lambdaCard.appendChild(lambdaImg);
     lambdaCard.appendChild(lambdaName);
 
     //add content
+    lambdaHeadLine.textContent = info.headline;
+    lambdaAuthor.textContent = info.authorName;
+    lambdaImg.src = info.authorPhoto;
 
 
     //add event listeners
@@ -65,12 +68,12 @@
 
   };
 
-  const entryArt = document.querySelector('.cards-container');
+  ///////////////////////////////////////////////
 
   axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response) => {
-      console.log(response);
-      response.data.articles.forEach(items => {
+      response.data.articles.bootstrap.forEach(items => {
+        console.log(items);
         const arts = lambdaArticles(items);
         entryArt.appendChild(arts);
       });
@@ -78,3 +81,49 @@
     // .catch(err => {
     //   console.log(err);
     // });
+
+    ////////////////////////////////////////////
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+      .then((response) => {
+        response.data.articles.javascript.forEach(items => {
+          console.log(items);
+          const arts = lambdaArticles(items);
+          entryArt.appendChild(arts);
+        });
+      });
+
+    ////////////////////////////////////////////////
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+      .then((response) => {
+        response.data.articles.jquery.forEach(items => {
+          console.log(items);
+          const arts = lambdaArticles(items);
+          entryArt.appendChild(arts);
+        });
+      });
+
+    ////////////////////////////////////////////////////
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+      .then((response) => {
+        response.data.articles.node.forEach(items => {
+          console.log(items);
+          const arts = lambdaArticles(items);
+          entryArt.appendChild(arts);
+        });
+      });
+
+    ///////////////////////////////////////////////////////
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+      .then((response) => {
+        response.data.articles.technology.forEach(items => {
+          console.log(items);
+          const arts = lambdaArticles(items);
+          entryArt.appendChild(arts);
+        });
+      });
+
+    const entryArt = document.querySelector('.cards-container');

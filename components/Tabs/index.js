@@ -44,9 +44,7 @@ function lambdaTabs(data) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then( response => {
-    console.log(response);
     response.data.topics.forEach(items => {
-      console.log(items);
       const tops = lambdaTabs(items);
       entryPoint.appendChild(tops);
     });
