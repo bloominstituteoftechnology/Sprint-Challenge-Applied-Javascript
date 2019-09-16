@@ -50,7 +50,7 @@ function Card( heading, pic, authName ) {
 
 let articleArray = [];
 const cardsContainer = document.querySelector('.cards-container');
-console.log(cardsContainer)
+// console.log(cardsContainer)
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then( response => {
@@ -67,7 +67,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     let data = articleList[topic];
     
     data.forEach( item => {
-      console.log(item)
+      // console.log(item)
       let heading = item.headline;
       let pic = item.authorPhoto;
       let authName = item.authorName;
