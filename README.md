@@ -29,14 +29,21 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+DOM is short for Document Object Model. It is a representation of a document with a logical tree structure. This representation can be manipulated via various scripting languanges.
+
 
 2. What is an event?
+Events are actions that occurs as a result of the user action or as result of state change of the elements of a DOM tree
+
 
 3. What is an event listener?
+An event listener is a procedure or function in a computer program that waits for an event to occur.
 
 4. Why would we convert a NodeList into an Array?
+NodeLists are array-like but they don't feature many methods that arrays provide.
 
 5. What is a component?
+Componets are a suit of different technologies that allow you to create custom and reusable elements.
 
 ### Git Set up
 
