@@ -8,10 +8,11 @@ function getArticleData (articleUrl) {
     // Get article data from url
     axios.get(articleUrl)
     .then( response => {
+        console.log("articles:", response.data.articles)
 
           // Get articles  
           let articleContent = []; 
-          articleContent = response["data"]["articles"];      
+          articleContent = response.data.articles;      
 
           let articleName = "javascript";
 
@@ -53,8 +54,6 @@ function createArticle(articleContent, articleName) {
 
         //query select where to append 
         let container = document.querySelector(".cards-container")
-
-        
 
         // create class elements
         let newDiv0 = document.createElement('div');
