@@ -17,13 +17,16 @@ data = [
     }
 ]
 
+//Add the function to the component given, to .header-container
 const aHeader = document.querySelector('.header-container')
-// console.log(aHeader)
+
+console.log(aHeader)
 
 data.map(item => {
-    // console.log('item: ', item);
+    console.log('item: ', item);
     aHeader.appendChild(Header(item))
 })
+
 
 function Header(arg) {
     //create class elements 

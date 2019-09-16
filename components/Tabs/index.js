@@ -1,17 +1,17 @@
-let topicsUrl = 'https://lambda-times-backend.herokuapp.com/topics';
+let url = 'https://lambda-times-backend.herokuapp.com/topics';
 
 // Function used to get tab data 
-function getTabData (topicsUrl) {
+function getTabData (url) {
 
     // Get tab data from url
-    axios.get(topicsUrl)
+    axios.get(url)
     .then( response => {
 
           // Get topics  
           let topicContent = []; 
           topicContent = response["data"]["topics"];
           topicContent.unshift("all")
-          console.log(topicContent)
+          console.log("topic content:", topicContent)
 
           // iterate through the array to create tabs
           for(i in topicContent){
@@ -34,12 +34,12 @@ function CreateTabs(tabTopic){
     let tab = document.querySelector('.topics')
 
     // create element
-    let tabs = document.createElement('div');
+    let tabs = document.createElement('div')
     
     //create class list 
-    tabs.classList.add('tab'); 
+    tabs.classList.add('tab')
     
-    //text content 
+    //text content
     tabs.innerText = tabTopic;
 
     //append child
@@ -48,4 +48,4 @@ function CreateTabs(tabTopic){
  };
 
 // gets tab data
-getTabData(topicsUrl);
+getTabData(url);
