@@ -8,6 +8,15 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then((results) => {
+        let data = results.data.topics;
+        data.forEach((item) => {
+            const tabs = Tabs(item);
+            topics.appendChild(tabs);
+        });
+    });
+
 class tablink {
     constructor(element) {
     // assigns this.element to element reference
@@ -66,5 +75,7 @@ class tabCard {
     tabs = Array.from(tabs).map(tab => new tablink(tab));
     // once complete, this calls the .select method on first tab.
     tabs[0].selectTab();
+
+
 
 
