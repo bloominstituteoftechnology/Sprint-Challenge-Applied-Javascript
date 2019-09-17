@@ -8,34 +8,29 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+
+const tabs = document.querySelector(".topics");
+
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
-  .then(function(response) {
-    // handle success
+  .then(response => {
+    response.data.topics.forEach(singleTopic => {
+      tabs.appendChild(divTabs(singleTopic))
+    });
     console.log(response);
-  })
-  .catch(function(error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function() {
-    // always executed
+  
   });
 
-const tabs = document.querySelector(".tabs");
+  //taking out the second var in divTabs helped me prioritize through .tab classlist alone
 
-function divTabs(data) {
-  const topics = document.createElement("topics");
-  topics.classList.add("topics");
-
+function divTabs(topic) {
   const tab = document.createElement("div");
   tab.classList.add("tab");
-  tab.textContent = "topic here";
-  topics.appendChild(tab);
+  tab.textContent = `${topic}`;
 
-  console.log(topics);
-  return topics;
+  
+  return tab;
+  
 }
 
-const mainTab = document.querySelector(".tabs");
-mainTab.appendChild(divTabs());
+
