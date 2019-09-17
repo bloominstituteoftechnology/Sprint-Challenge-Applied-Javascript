@@ -66,3 +66,5 @@ class tabCard {
     tabs = Array.from(tabs).map(tab => new tablink(tab));
     // once complete, this calls the .select method on first tab.
     tabs[0].selectTab();
+
+
