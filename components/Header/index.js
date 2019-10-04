@@ -12,8 +12,7 @@
 const headerContent = document.querySelector('.header-container')
 
 headerContent.appendChild(createHeader())
-
-console.log(headerContent);
+// console.log(headerContent);
 
 function createHeader() {
 
@@ -34,7 +33,7 @@ headerDate.textContent = "October 4, 2019";
 headerTitle.textContent = "Lambda Times";
 headerTemp.textContent = "98°";
 
-console.log(headerDate);
+// console.log(headerDate);
 
 
 return headerDiv;
