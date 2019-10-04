@@ -84,7 +84,7 @@ authorname.textContent = data.authorName
     
 
     headline1.classList.add('headline')
-     headline1.textContent = data.headline
+     //headline1.textContent = data.headline
      
      author1.classList.add('author')
      //author1.textContent = data.authorName

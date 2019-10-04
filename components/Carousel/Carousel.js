@@ -24,5 +24,23 @@ function Carouselfunc(data) {
 const carousel1 = document.createElement('div');
 const btnL = document.createElement('div');
 const img = documents.createElement('img');
-const btnL = document.createElement('div');
+const btnR = document.createElement('div');
+
+
+//structure of elements
+
+carousel1.appendChild(btnL);
+carousel1.appendChild(img);
+carousel1.appendChild(btnR);
+
+
+//class name
+
+carousel1.classList.add('carousel');
+btnL.classList.add('left-button');
+btnR.classList.add('right-button');
+img.classList.add('img');
+
+
+return carousel1
 }
