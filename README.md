@@ -29,8 +29,12 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+The Document Object Model (DOM) is a programming interface for HTML documents. It represents the page so that programs can change the document structure, style, and content 
+
 
 2. What is an event?
+An event can be something the browser does, or something a user does, such as,
+An HTML web page has finished loading, an HTML input field was changed, or an HTML button was clicked
 
 3. What is an event listener?
 
