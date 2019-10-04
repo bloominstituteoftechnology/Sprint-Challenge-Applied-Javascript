@@ -29,4 +29,4 @@ function header() {
 
 const headerParent = document.querySelector('.header-container')
 
-headerParent.appendChild(header)
+headerParent.appendChild(header());
