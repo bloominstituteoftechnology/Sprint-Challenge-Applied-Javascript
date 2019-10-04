@@ -16,9 +16,16 @@
 //   </div>
 // </div>
 //
+
+
+
+
+
 // Create a card for each of the articles and add the card to the DOM.
 
 //
+
+//creating a new function for the new card holder container with 3 items inside (based on the html example above)
 
 function sectionCards (item1, item2, item3){
 
@@ -60,29 +67,44 @@ function sectionCards (item1, item2, item3){
 
 }
 
-// creating a new cont to hold '.card-container
+// creating a new const to hold '.card-container
 
 const containerCards = document.querySelector('.cards-container')
 
 
-//creating axios 
+
+
+
+
+
+//creating axios and creating new array for each of the subcategories using.map 
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response)=>{
-    console.log('working', response)
+    console.log(response)
+
+
+
+    // 1- creating new const for each subCategory found in topics  (js, node etc..)  and grabbing each database (articles) found in the console.log 
 
 
         const javascript = response.data.articles.javascript
-        javascript.forEach((array) => {
+
+     // 2- looping through the new created const and create a new const that will add new array with what they are supposed to have inside  (headline, authorPhoto. authorName)
+
+        javascript.map((array) => {
         const newJs = sectionCards(array.headline, array.authorPhoto, array.authorName)
 
+    // 3- finally append the last const to the container that holds all the cards 
         containerCards.appendChild(newJs)
        
     });
 
+    // reapeat steps 1 to 3 with the different data/artciles 
+
     
         const bootstrap = response.data.articles.bootstrap
-        bootstrap.forEach((array)=>{
+        bootstrap.map((array)=>{
         const newBstp =sectionCards(array.headline, array.authorPhoto, array.authorName)
         containerCards.appendChild(newBstp)
 
@@ -90,7 +112,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
    })
 
         const technology =response.data.articles.technology
-        technology.forEach((array)=>{
+        technology.map((array)=>{
         const newTech = sectionCards(array.headline, array.authorPhoto, array.authorName)
         containerCards.appendChild(newTech)
 
@@ -100,7 +122,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 
         const jquery = response.data.articles.jquery
-        jquery.forEach((array)=>{
+        jquery.map((array)=>{
         const newJquery = sectionCards(array.headline, array.authorPhoto, array.authorName)
         containerCards.appendChild(newJquery)
 
@@ -119,11 +141,14 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   
     
     })
+
+
+    // here , it will check if database was not found and couldn't be reached. 
     
     
-    .catch((error)=>{
-        console.log('Not working')
-        console.log(error)
+    .catch((error)=> {
+        console.log('Not working', errror)
+       
     })
 
 
