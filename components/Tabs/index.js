@@ -8,6 +8,8 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+const tabs_topics = document.querySelector(".topics");
+
 axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then(response => {
@@ -19,8 +21,7 @@ axios
             tab.classList.add("tab");
             // ADD TEXT/VALUE
             tab.textContent = topic;
-
-            const tabs_topics = document.querySelector(".topics");
+            // APPEND
             tabs_topics.appendChild(tab);
         });
     })
