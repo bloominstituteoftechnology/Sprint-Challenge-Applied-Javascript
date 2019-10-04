@@ -9,11 +9,8 @@
 //    <div class="tab">topic here</div>
 function createTab(topic){
 const tab = document.createElement('div');
-
 tab.classList.add('tab')
-
 tab.textContent = topic
-
 return tab;
 }
 const topics = document.querySelector('.topics')
