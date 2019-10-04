@@ -28,15 +28,28 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
-1. What is the DOM?
 
-2. What is an event?
 
-3. What is an event listener?
 
-4. Why would we convert a NodeList into an Array?
+1-What is the DOM?
+The DOM which means “ Document Object Model”  is used to manipulate the web page by changing html,css and js but only in that specific “version.” We can think about it as an “representation” of the html elements with some extra methods such as event listeners which we can manipulate using the node list. 
+ 
+ 
+2-What is an event? 
+Events are user interactions with the site such as “click, scroll, keydown, etc). The event notifies the code to so something when called with specific event listeners.
+ 
+ 
+3-What is an event listener?
+Some examples of event listeners are “click, alert, mousenter, mouseout, scroll.” They happen when we target a specific element and call an event on it. For example, I can call an event on a button and say “when double click , change the background color to red.”
 
-5. What is a component?
+ 
+4-Why would we convert a NodeList into an Array? 
+We want to convert a NodeList nto an array because NodeList only have few methods we can use such as forEach. When we covert it to an array , we can use all the methods (filter, reduce, map etc..)and manipulate our array.
+
+
+5- What is a component? 
+Component is just reusable code that we can use in order to avoid D.R.Y.
+
 
 ### Git Set up
 
