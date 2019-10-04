@@ -17,3 +17,12 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+function Carouselfunc(data) {
+//elements
+const carousel1 = document.createElement('div');
+const btnL = document.createElement('div');
+const img = documents.createElement('img');
+const btnL = document.createElement('div');
+}
