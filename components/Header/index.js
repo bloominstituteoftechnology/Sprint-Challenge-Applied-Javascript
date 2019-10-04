@@ -9,4 +9,5 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
+//initial commit for Emily
 function Header() {}
