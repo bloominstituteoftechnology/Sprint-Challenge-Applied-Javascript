@@ -11,30 +11,42 @@
 
 
 function Header() {
+
+    //  add elements 
     const 
     header1 = document.createElement('div'),
     newDate= document.createElement('span'),
     newTitle = document.createElement('h1'),
     newTemp = document.createElement('span')
+
+    // add existing classes
    
     
     header1.classList.add('header')
     newDate.classList.add('date')
     newTemp.classList.add('temp')
 
+    // append boxes
+
 
 
     header1.appendChild(newDate)
     header1.appendChild(newTitle)
 
+    // add content
     
     newTitle.textContent='Lambda Times'
     newDate.textContent = 'SMARCH 28, 2019'
     newTemp.textContent='98°'
 
+    //returning the big main div holding all other elements 
+
     return header1
 
 }
+
+// append new created div 'Header'into the main 'header container'.
+
 
 const headerContainer = document.querySelector('.header-container')
 headerContainer.appendChild(Header())

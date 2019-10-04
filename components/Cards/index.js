@@ -18,10 +18,11 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-
+//
 
 function sectionCards (item1, item2, item3){
 
+    // creating elements 
 
     const 
     cardBox = document.createElement('div'),
@@ -32,7 +33,7 @@ function sectionCards (item1, item2, item3){
     writeBy = document.createElement('span')
     
      
-    
+    //append elements
 
     cardBox.appendChild(headlineBox)
     cardBox.appendChild(authorBox)
@@ -40,24 +41,31 @@ function sectionCards (item1, item2, item3){
     imgBox.appendChild(imgReal)
     authorBox.appendChild(writeBy)
 
+    //add class to elements
+
     headlineBox.classList.add('headline')
     cardBox.classList.add('card')
     authorBox.classList.add('author')
     imgBox.classList.add('img-container')
 
+    //add content 
 
     headlineBox.textContent = item1
     imgReal.src = item2
-    writeBy.textContent = `By ${item3}`
+    writeBy.textContent = item3
     
+//returning the new created div 
 
     return cardBox
 
 }
 
-
+// creating a new cont to hold '.card-container
 
 const containerCards = document.querySelector('.cards-container')
+
+
+//creating axios 
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response)=>{
@@ -79,11 +87,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         containerCards.appendChild(newBstp)
 
 
-
-
    })
-
-
 
         const technology =response.data.articles.technology
         technology.forEach((array)=>{
@@ -92,8 +96,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
         })
 
-
-   
 
 
 

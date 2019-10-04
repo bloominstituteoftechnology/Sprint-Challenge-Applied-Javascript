@@ -10,23 +10,18 @@
 
 
 
-function newTabs(item){
-    const divTabs = document.createElement('div')
-    divTabs.classList.add('tab') 
-    divTabs.textContent = item
-    return divTabs
-}
+//creating axios and iterating over it to create a new array of tabs. 
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
      .then((response)=>{
-         console.log(response.data.topics)
+         console.log(response)
          console.log('I am returnung some data')
 
          const mainTopics = document.querySelector('.topics')
 
          const oneTopic = response.data.topics
-         oneTopic.forEach((element) => {
-             const article =newTabs(element)
+         oneTopic.map((el) => {
+             const article =newTabs(el)
              mainTopics.appendChild(article)
          });
 
@@ -35,6 +30,16 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
      .catch((error)=>{
          console.log(error)
      })
+
+
+     function newTabs(item){
+        const divTabs = document.createElement('div')
+        divTabs.classList.add('tab') 
+        divTabs.textContent = item
+        return divTabs
+
+        
+    }
 
 
 
