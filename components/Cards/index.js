@@ -18,20 +18,76 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+
+
+
+function cardCreator(arg) {
+
+    const card = document.createElement('div')
+    const headline = document.createElement('div')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    const img = document.createElement('img')
+    const authorsName = document.createElement('span')
+
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgContainer.classList.add('img-container')
+
+
+    card.appendChild(headline)
+    card.appendChild(author)
+    author.appendChild(imgContainer)
+    imgContainer.appendChild(img)
+    author.appendChild(authorsName)
+
+    authorsName.textContent = arg.authorName
+    img.src = arg.authorPhoto
+    headline.textContent = arg.headline
+
+    return card
+
+}
+const entryPoint = document.querySelector('.cards-container')
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(data => {
-        console.log(data)
-        
+    .then(arg => {
+        let articles = arg.data.articles
+        for (topic in articles) {
+            articles[topic].forEach(item => {
+                entryPoint.appendChild(cardCreator(item))
+            });
+        }
     })
 
 
 
-function cardCreator(arg)  {
+        //     .then(arg => {
+//         console.log(arg)
+//         arg.data.articles.map().forEach(item =>{
+//         articles.appendChild(cardCreator(item))
+//         })
 
-    const card= document.createElement('div')
-    const headline= document.createElement('div')
-    const author= document.createElement('div')
-    const img= document.createElement('img')
-    const authorsName= document.createElement('span')
 
-}
+//     })
+
+    // <div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {authors name}</span>
+//   </div>
+// </div>
+
+
+
+    // axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    // .then(arg => {
+    //     console.log(arg)
+    //     arg.data.topics.forEach(item => {
+    //         topics.appendChild(tabCreator(item))
+    //     });
+    // })
