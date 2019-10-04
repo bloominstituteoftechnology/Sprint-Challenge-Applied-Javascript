@@ -17,3 +17,38 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+// const carousel_container = document.querySelector(".carousel-container");
+
+// function Carousel() {
+//     const carousel = document.createElement("div");
+//     const carousel_left_btn = document.createElement("div");
+//     const carousel_img_1 = document.createElement("img");
+//     const carousel_img_2 = document.createElement("img");
+//     const carousel_img_3 = document.createElement("img");
+//     const carousel_img_4 = document.createElement("img");
+//     const carousel_right_btn = document.createElement("div");
+
+//     carousel.classList.add("carousel");
+//     carousel_left_btn.classList.add("left-button");
+//     carousel_right_btn.classList.add("right-button");
+
+//     carousel_left_btn.textContent = "<";
+//     carousel_right_btn.textContent = ">";
+
+//     carousel_img_1.setAttribute("src", "./assets/carousel/mountains.jpeg");
+//     carousel_img_2.setAttribute("src", "./assets/carousel/computer.jpeg");
+//     carousel_img_3.setAttribute("src", "./assets/carousel/trees.jpeg");
+//     carousel_img_4.setAttribute("src", "./assets/carousel/turntable.jpeg");
+
+//     carousel.appendChild(carousel_left_btn);
+//     carousel.appendChild(carousel_img_1);
+//     carousel.appendChild(carousel_img_2);
+//     carousel.appendChild(carousel_img_3);
+//     carousel.appendChild(carousel_img_4);
+//     carousel.appendChild(carousel_right_btn);
+
+//     carousel_container.appendChild(carousel);
+// }
+
+// Carousel();
