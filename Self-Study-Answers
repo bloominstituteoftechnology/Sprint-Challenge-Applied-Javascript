@@ -1,0 +1,5 @@
+ 1. DOM stands for Document Object Model. The DOM is an interface that programmers can use to interact with webpages and it gives developers access to read and manipulate the web pages content, structure and style.
+ 2.  An event is when a user interacts with a webpage. 
+ 3. An event listener is a function that waits for an event to happen. The listener reacts by calling a callback function when triggered.
+ 4. NodeLists are Array-like but do not have all the same methods that Arrays have. Converting a NodeList to an Array allows us to use Array methods and properties.
+ 5. Components are reusable pieces of code that can be used to build elements that share functionality and styling.
