@@ -16,4 +16,52 @@
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button"> > </div>
   </div>
-*/
+// */
+
+function CarouselComonent() {
+  const carousel = document.createElement("div");
+  const leftBtn = document.createElement("div");
+  const rightBtn = document.createElement("div");
+  const img_1 = document.createElement("img");
+  const img_2 = document.createElement("img");
+  const img_3 = document.createElement("img");
+  const img_4 = document.createElement("img");
+
+  // add the class names (Styles)
+  carousel.classList.add("carousel");
+  leftBtn.classList.add("left-button");
+  rightBtn.classList.add("right-button");
+
+  // put the content
+  leftBtn.textContent = "<";
+  rightBtn.textContent = ">";
+  // img_1.src =  ;
+  // img_2.src = '';
+  // img_3.src = '';
+  // img_4.src = '';
+
+  carousel.appendChild(leftBtn);
+  carousel.appendChild(img_1);
+  carousel.appendChild(img_2);
+  carousel.appendChild(img_3);
+  carousel.appendChild(img_4);
+  carousel.appendChild(rightBtn);
+
+  // toggleBtn(leftBtn);
+  // toggleBtn(rightBtn);
+  return carousel;
+}
+
+// function toggleBtn(btn , imgs){
+
+//   btn.addEventListener('click',() => {
+//     while(true){
+//       img[dataset]
+//     } .
+//   })
+// }
+// console.log(CarouselComonent())
+
+
+
+const carouselContainer = document.querySelector('.carousel-container').appendChild(CarouselComonent());
