@@ -2,7 +2,7 @@
 
 This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint explored the DOM and the concept of components. During this Sprint, you studied the DOM, DOM Events, and Components, as well as HTTP GET requests, and the axios library. In your challenge this week, you will demonstrate proficiency by creating an online Lambda newspaper called "Lambda Times."
 
-## Instructions
+## Instructions 
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+    Document Object Model is an object representation of html elements on a webpage. It allows us to manipulate a webpages structure, content, * styling.
 
 2. What is an event?
+    An interaction that a user has with a webpage. Examples include scrolling, clicking, or pressing a key on the keyboard.
 
 3. What is an event listener?
+    An event listener is code that is executed when a user interaction even happens on a webpage.
 
 4. Why would we convert a NodeList into an Array?
+    To access array methods that are unavailable on a nodelist, for example, .forEach.
 
 5. What is a component?
+    It's a concept of modern web development wherein reusable pieces of code are used to build out the functionality and styling of elements.
 
 ### Git Set up
 
