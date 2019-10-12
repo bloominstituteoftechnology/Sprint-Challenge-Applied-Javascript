@@ -34,8 +34,8 @@ axios
 .get(`https://lambda-times-backend.herokuapp.com/topics`)
   .then((response) => {       
 
-    console.log("success", response);
-    console.log("the array we need", response.data.topics);
+    // console.log("success", response);
+    // console.log("the array we need", response.data.topics);
     
     // add array to our function
     createTab(response.data.topics);
