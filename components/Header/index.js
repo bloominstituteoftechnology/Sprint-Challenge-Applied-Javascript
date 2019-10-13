@@ -10,6 +10,7 @@
 // And add it to the DOM in the .header-container component
 
 function Header() {
+<<<<<<< HEAD
     
     //header element creation 
     const headerDiv = document.createElement('div');
@@ -40,3 +41,8 @@ function Header() {
 
 const headerCont = document.querySelector('.header-container');
 headerCont.appendChild(Header());
+=======
+    const headerdiv = document.createElement('div');
+    
+}
+>>>>>>> 5aee33dd2a7f5546118b5b4a38af1a7716d6b08c
