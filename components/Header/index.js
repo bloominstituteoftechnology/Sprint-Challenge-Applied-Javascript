@@ -14,4 +14,23 @@ function Header() {
   const spanDate = document.createElement("span");
   const h1 = document.createElement("h1");
   const spanTemp = document.createElement("span");
+
+  header.classList.add("header");
+  spanDate.classList.add("span", "date");
+  h1.classList.add("h1");
+  spanTemp.classList.add("span", "temp");
+
+  spanDate.textContent = "SMARCH 28 2019";
+  h1.textContent = "Lambda Times";
+  spanTemp.textContent = "98";
+
+  header.appendChild(spanDate);
+  header.appendChild(h1);
+  header.appendChild(spanTemp);
+
+  return header;
 }
+
+const headerContainer = document.querySelector(".header-container");
+const header = Header();
+headerContainer.appendChild(header);
