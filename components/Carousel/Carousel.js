@@ -46,7 +46,7 @@ function Carousel(){
   rightBtn.textContent = '>'
   img.src = images[currentImage]
 
-  // appending content to carousel
+  // elements content to carousel
   carousel.append(leftBtn)
   carousel.appendChild(img)
   carousel.append(rightBtn)
@@ -54,17 +54,25 @@ function Carousel(){
   // Event handlers
 
   leftBtn.addEventListener('click', ()=>{
-    if (currentImage > 0)
+    if (currentImage > 0){
       currentImage--
-    else
-    currentImage = images.length
+      img.src = images[currentImage]
+    } else {
+      currentImage = 3
+      img.src = images[currentImage]
+
+    }
   })
 
   rightBtn.addEventListener('click', ()=>{
-    if (currentImage < images.length)
+    if (currentImage < images.length -1){
       currentImage++
-    else
+      img.src = images[currentImage]
+    } else{
       currentImage = 0
+      img.src = images[currentImage]
+
+    }
   })
 
   // Return complete component
@@ -73,4 +81,4 @@ function Carousel(){
 
 let carouselContainer = document.querySelector('.carousel-container')
 carouselContainer.appendChild(Carousel())
-
+let carouselImg = document.querySelector('.carousel-container .carousel img')
