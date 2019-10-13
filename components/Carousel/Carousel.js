@@ -18,3 +18,59 @@
   </div>
 */
 
+
+let images = [
+  "./assets/carousel/mountains.jpeg", 
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+]
+
+let currentImage = 0
+
+function Carousel(){
+  // Element creation
+  const carousel = document.createElement('div')
+  const leftBtn = document.createElement('div')
+  const rightBtn = document.createElement('div')
+  const img = document.createElement('img')
+  
+  // Adding class
+  carousel.classList.add('carousel')
+  leftBtn.classList.add('left-button')
+  rightBtn.classList.add('right-button')
+
+
+  // Adding content
+  leftBtn.textContent = '<'
+  rightBtn.textContent = '>'
+  img.src = images[currentImage]
+
+  // appending content to carousel
+  carousel.append(leftBtn)
+  carousel.appendChild(img)
+  carousel.append(rightBtn)
+
+  // Event handlers
+
+  leftBtn.addEventListener('click', ()=>{
+    if (currentImage > 0)
+      currentImage--
+    else
+    currentImage = images.length
+  })
+
+  rightBtn.addEventListener('click', ()=>{
+    if (currentImage < images.length)
+      currentImage++
+    else
+      currentImage = 0
+  })
+
+  // Return complete component
+  return carousel
+}
+
+let carouselContainer = document.querySelector('.carousel-container')
+carouselContainer.appendChild(Carousel())
+
