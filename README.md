@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for document object model, it is language nuetral and allows you to manipulate a web page without editing the pages HTML or CSS.
+
 2. What is an event?
+
+Events are things that happen in HTML, javascript can react to HTML events.
 
 3. What is an event listener?
 
+A procedure or function that waits for an event to happen.
+
 4. Why would we convert a NodeList into an Array?
 
+If you wanted to use forEach, map ect. methods that you cannot use with a node list.
+
 5. What is a component?
+
+Components allow you to create reusable custom elements.
 
 ### Git Set up
 
@@ -49,7 +59,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
 * [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
 
