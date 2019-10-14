@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Document object model. Visualized by what you see upon clicking "Inspect Element." You can attach event listeners to the DOM via Javascript to create responsive elements on a webpage.
+
 2. What is an event?
+
+Interactive events that happen when a listener's parameters/specifications come to pass
 
 3. What is an event listener?
 
+Examples of event listeners include click, keydown, and mouseover. They specify an interactive element you want to happen when the user completes a specific action such as scrolling over a picture.
+
 4. Why would we convert a NodeList into an Array?
 
+Because arrays have access to various methods and many of the useful ones won't work on a nodelist unless it's converted.
+
 5. What is a component?
+
+Code that creates a structure we want to replicate many times on a website. For example, the elements within the newsfeed on Facebook or articles (which contain author photo, headline, text, etc.) on a media website.
 
 ### Git Set up
 
