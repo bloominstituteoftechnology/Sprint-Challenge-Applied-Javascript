@@ -25,16 +25,16 @@ function Card(obj) {
 
   const header = document.createElement("div");
   header.classList.add("headline");
-  header.textContent = headline;
+  header.textContent = "headline";
 
   const imageContainer = document.createElement("div");
   imageContainer.classList.add("img-container");
 
   const newImg = document.createElement("img");
-  newImg.src = imgSrc;
+  newImg.src = "imgSrc";
 
   const span = document.createElement("span");
-  span.textContent = authorName;
+  span.textContent = "authorName";
 
   newCard.appendChild(header);
   newCard.appendChild(imageContainer);
@@ -50,11 +50,15 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response.data.articles);
-    response.data.articles.forEach(article => {
-      console.log(response);
-      const newCard = new Card(article);
-      entry.appendChild(newCard);
-    });
+    for (let key in response.data.articles) {
+      console.log(key);
+      for (let i = 0; i < response.data.articles[key].length; i++) {
+        // Do whatever you need to
+        const newCard = Card();
+        console.log(response.data.articles[key][i]);
+        // entry.appendChild(newCard);
+      }
+    }
   })
 
   .catch(err => {
