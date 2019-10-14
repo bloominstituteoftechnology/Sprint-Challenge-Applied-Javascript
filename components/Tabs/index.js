@@ -9,19 +9,26 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-const topicTabs = document.querySelector('.tabs');
+function tabTopicCreator (data){
+    const $newTab = document.createElement('div');
+    $newTab.classList.add('tab');
+    $newTab.textContent = data;
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics');
-.then(response =>{
-    console.log(response.data.topics);
-    topicTabs.appendChild(topicsDiv(response.data.topics));
-})
+    const $tabSelector = document.querySelector('.tabs');
+    const $topicSelector = document.querySelector('.topics');
 
+    $topicSelector.appendChild($newTab);
 
-
-function topicsDiv(){
-    const tabDiv = document.createElement('div');
-    tabDiv.classList.add('tab');
-    
-    return tabDiv;
+    return $tabSelector;
 }
+
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then((response) => { 
+        response.data.topics.forEach(topic => tabTopicCreator(topic));
+        console.log(response);
+    })
+
+    .catch((err) => { 
+        console.log(err) 
+    })

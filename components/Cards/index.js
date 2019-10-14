@@ -18,36 +18,60 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-function createCard(){
-    //element creation 
-    const cardDiv = document.createElement('div');
+function newCard(data){
+    //main div
+    const $cardDiv = document.createElement('div');
+    $cardDiv.classList.add('card');
 
-        const headlineDiv = document.createElement('div');
-        const authorDiv = document.createElement('div');
-            const imgContainerDiv = document.createElement('div');
-            const cardImage = document.createElement('img');
-        const cardSpan = document.createElement('span');
+    //headline div
+    const $headlineDiv = document.createElement('div');
+    $headlineDiv.classList.add('headline');
+    $headlineDiv.textContent = data.headline;
 
-    //class assignment. 
+    //author div
+    const $authorDiv = document.createElement('div');
+    $authorDiv.classList.add('author');
 
-    cardDiv.classList.add('card');
-    headlineDiv.classList.add('headline');
-    authorDiv.classList.add('author');
-    imgContainerDiv.classList.add('img-container');
+    //img Container 
+    const $authorImgCont = document.createElement('div');
+    $authorImgCont.classList.add('img-container');
 
-    //appendment 
-    cardDiv.appendChild(headlineDiv);
-        headlineDiv.appendChild(authorDiv);
-            authorDiv.appendChild(imgContainerDiv);
-                imgContainerDiv.appendChild(cardImage);
-            authorDiv.appendChild(cardSpan);
+    //author image
+    const $authorImg = document.createElement('img');
+    $authorImg.src = data.authorPhoto;
 
+    //Author name 
+    const $authorName = document.createElement('span');
+    $authorName.textContent = data.authorName;
 
-    //text content 
+    //append
 
-    return cardDiv;
+    $cardDiv.appendChild($headlineDiv);
+    $cardDiv.appendChild($authorDiv);
+
+    $authorDiv.appendChild($authorImgCont);
+    $authorDiv.appendChild($authorName);
+
+    $authorImgCont.appendChild($authorImg);
+
+    const $mainCardCont = document.querySelector('.cards-container');
+    $mainCardCont.appendChild($cardDiv);
+
+    return $cardDiv;
+
+    
 }
 
-const newFunc = createCard();
+axios.get('https://lambda-times-backend.herokuapp.com/articles') 
+    .then((response) => { 
+        console.log(response);
+        response.data.articles.javascript.forEach(article => newCard(article));
+        response.data.articles.bootstrap.forEach(article => newCard(article));
+        response.data.articles.jquery.forEach(article => newCard(article));
+        response.data.articles.node.forEach(article => newCard(article));
+        response.data.articles.technology.forEach(article => newCard(article));
+    })
 
-console.log(newFunc);
+    .catch((err) => { 
+        console.log(err) 
+    })

@@ -10,39 +10,34 @@
 // And add it to the DOM in the .header-container component
 
 function Header() {
-<<<<<<< HEAD
     
     //header element creation 
-    const headerDiv = document.createElement('div');
-    const headerSpan = document.createElement('span');
-    const headerH1 = document.createElement('h1');
-    const headerSpan2 = document.createElement('span')
+    const $headerDiv = document.createElement('div');
+    const $headerSpan = document.createElement('span');
+    const $headerH1 = document.createElement('h1');
+    const $headerSpan2 = document.createElement('span')
     
     //header class assignment. 
 
-    headerDiv.classList.add('header');
-    headerSpan.classList.add('date');
-    headerSpan2.classList.add('temp');
+    $headerDiv.classList.add('header');
+    $headerSpan.classList.add('date');
+    $headerSpan2.classList.add('temp');
 
     //header text content addition
-    headerSpan.textContent = 'March 28, 2019';
-    headerH1.textContent = 'Lambda Times';
-    headerSpan2.textContent = '98 Degree';
+    $headerSpan.textContent = 'March 28, 2019';
+    $headerH1.textContent = 'Lambda Times';
+    $headerSpan2.textContent = '98 \u00b0';
 
     //append 
-    headerDiv.appendChild(headerSpan);
-    headerDiv.appendChild(headerSpan);
-    headerDiv.appendChild(headerH1);
-    headerDiv.appendChild(headerSpan2);
+    $headerDiv.appendChild($headerSpan);
+    $headerDiv.appendChild($headerSpan);
+    $headerDiv.appendChild($headerH1);
+    $headerDiv.appendChild($headerSpan2);
 
-    return headerDiv;
+    return $headerDiv;
 
 }
 
-const headerCont = document.querySelector('.header-container');
-headerCont.appendChild(Header());
-=======
-    const headerdiv = document.createElement('div');
-    
-}
->>>>>>> 5aee33dd2a7f5546118b5b4a38af1a7716d6b08c
+const $headerCont = document.querySelector('.header-container');
+$headerCont.appendChild(Header());
+
