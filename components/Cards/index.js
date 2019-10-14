@@ -31,7 +31,7 @@ function Card(obj) {
   imageContainer.classList.add("img-container");
 
   const newImg = document.createElement("img");
-  newImg.src = "imgSrc";
+  //   newImg.src = "imgSrc";
 
   const span = document.createElement("span");
   span.textContent = "authorName";
@@ -54,9 +54,9 @@ axios
       console.log(key);
       for (let i = 0; i < response.data.articles[key].length; i++) {
         // Do whatever you need to
-        const newCard = Card();
+        const newCard = Card(response.data.articles[key][i]);
         console.log(response.data.articles[key][i]);
-        // entry.appendChild(newCard);
+        entry.appendChild(newCard);
       }
     }
   })
