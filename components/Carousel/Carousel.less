@@ -38,4 +38,24 @@
     .width-100();
     display: block;
   }
+  
+  .left-animation{
+    animation: carouselLeft 1s 1;
+    
+  }
+  
+  .right-animation{
+    animation: carouselRight 1s 1;
+    
+  }
+
+
+  @keyframes carouselLeft{
+    0%{position: absolute; left: 0%;}
+    100%{position: absolute; left: 100%;}
+  }
+  @keyframes carouselRight{
+    0%{position: absolute; right: 0%;}
+    100%{position: absolute; right: 100%;}
+  }
 }

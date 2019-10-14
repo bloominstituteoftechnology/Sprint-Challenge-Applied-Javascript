@@ -53,25 +53,45 @@ function Carousel(){
 
   // Event handlers
 
-  leftBtn.addEventListener('click', ()=>{
+  leftBtn.addEventListener('click', (e)=>{
     if (currentImage > 0){
+      img.classList.toggle('left-animation')
       currentImage--
-      img.src = images[currentImage]
+      setTimeout(()=>{
+        img.classList.toggle('left-animation')
+        img.src = images[currentImage]
+
+      }, 500)
+      
     } else {
-      currentImage = 3
-      img.src = images[currentImage]
+      img.classList.toggle('left-animation')
+      currentImage = images.length - 1
+      setTimeout(()=>{
+        img.classList.toggle('left-animation')
+        img.src = images[currentImage]
+
+      }, 500)
 
     }
   })
 
   rightBtn.addEventListener('click', ()=>{
     if (currentImage < images.length -1){
+      img.classList.toggle('right-animation')
       currentImage++
-      img.src = images[currentImage]
-    } else{
-      currentImage = 0
-      img.src = images[currentImage]
+      setTimeout(()=>{
+        img.classList.toggle('right-animation')
+        img.src = images[currentImage]
 
+      }, 500)
+    } else{
+      img.classList.toggle('right-animation')
+      currentImage = 0
+      setTimeout(()=>{
+        img.classList.toggle('right-animation')
+        img.src = images[currentImage]
+
+      }, 500)
     }
   })
 
