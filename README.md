@@ -30,30 +30,41 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The term DOM stands for Document Object Model and serves as the browser’s visual representation of your page’s HTML elements.
+
 2. What is an event?
+
+An event is any interaction a user has with the site or page. An event could be a click of the mouse, a press of a key, or even the mouse simply hovering over an object on the page.
 
 3. What is an event listener?
 
+An event listener is a way for the browser to track events that happen on specific elements. You put event listeners on specific HTML elements and pass them a callback function, so when the event is triggered the callback function is automatically run.
+
 4. Why would we convert a NodeList into an Array?
+
+When you run certain DOm selectors such as, ‘.querySelectAll’ an array-like object is returned called a NodeList. This NodeList is similar to an array but comes with different built-in methods like, ‘.forEach’, to manipulate the data within. You convert the NodeList into an array in order to utilize the full range of array methods such as, ‘.map’ or ‘.reduce’, not built-in to the NodeList data structure.
 
 5. What is a component?
 
+Components are pieces or blocks of code that can be reused in order to build HTML elements, within the DOM, which share functionality and styling. You can use components to consolidate elements with similar design patterns in order to keep your code ‘DRY’.
+
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [X] Fork the project into your GitHub user account
+* [X] Clone the forked project into a directory on your machine
+* [X] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [X] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [X] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [X] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [X] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
