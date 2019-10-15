@@ -58,7 +58,7 @@ axios
 .get(`https://lambda-times-backend.herokuapp.com/articles`)
 
   .then((response) => {       
-
+    console.log(response);
     // console.log("success", response.data.articles);
     // console.log("Bootstrap", response.data.articles.bootstrap);
     // console.log("JavaScript", response.data.articles.javascript);
