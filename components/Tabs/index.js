@@ -11,7 +11,7 @@
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then((resolve) => {
        let topics = resolve.data.topics;
-    //    console.log(topics);
+       console.log(topics);
         
        topics.forEach(element => {
         const tbs = document.querySelector('.tabs')

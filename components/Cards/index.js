@@ -46,7 +46,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     
     })
 
-
+    // Creates the card
     function cardCreator (art) {
         // console.log(head)
         const card = document.createElement('div')
