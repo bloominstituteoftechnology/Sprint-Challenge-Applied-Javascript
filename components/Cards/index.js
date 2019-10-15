@@ -37,11 +37,11 @@ function cardCreator(e) {
     card.appendChild(author);
 
     const imageContainer = document.createElement('div');
-    imageContainer.classList.add('image');
+    imageContainer.classList.add('img-container');
     
     author.appendChild(imageContainer);
 
-    const image = document.createElement('image');
+    const image = document.createElement('img');
     image.src = e.authorPhoto;
     imageContainer.appendChild(image);
 
