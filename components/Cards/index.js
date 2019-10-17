@@ -45,7 +45,6 @@ function newCard(data){
     $authorName.textContent = data.authorName;
 
     //append
-
     $cardDiv.appendChild($headlineDiv);
     $cardDiv.appendChild($authorDiv);
 
