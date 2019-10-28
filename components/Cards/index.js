@@ -45,47 +45,17 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             imgDiv.appendChild(img);
             authorDiv.appendChild(span);
         
-            // console.log(cardDiv);
             return cardDiv;
         }
 
         let cardContent = Object.values(resolve.data.articles);
         let cardDivBody = document.querySelector('.cards-container');
 
-        let javaScript = cardContent[0];
-        let javaComponent = javaScript.map(cardMaker);
-        javaComponent.forEach((element) => {
-            cardDivBody.appendChild(element);
-        });
-        console.log(cardDivBody);
-
-        let bootstrap = cardContent[1];
-        let c=bootComponent = bootstrap.map(cardMaker);
-        bootComponent.forEach((element) => {
-            cardDivBody.appendChild(element);
-        });
-        console.log(cardDivBody);
-
-        let technology = cardContent[2];
-        let techComponent = technology.map(cardMaker);
-        techComponent.forEach((element) => {
-            cardDivBody.appendChild(element);
-        });
-        console.log(cardDivBody);
-        
-        let jquery = cardContent[3];
-        let jqueryComponent = jquery.map(cardMaker);
-        jqueryComponent.forEach((element) => {
-            cardDivBody.appendChild(element);
-        });
-        console.log(cardDivBody);
-
-        let node = cardContent[4];
-        let nodeComponent = node.map(cardMaker);
-        nodeComponent.forEach((element) => {
-            cardDivBody.appendChild(element);
-        });
-        console.log(cardDivBody);
+        for (let i=0; i<cardContent.length; i++) {
+            cardContent[i].map(cardMaker).forEach((element) => {
+                cardDivBody.appendChild(element);
+            });
+        }
         
     })
     .catch(error =>{
