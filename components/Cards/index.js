@@ -53,6 +53,8 @@ function Cards(items) {
     Author.appendChild(ImagesDiv);
     Author.appendChild(Span);
 
+    ImagesDiv.appendChild(ImagesTag);
+
 }
 
 
