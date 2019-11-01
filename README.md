@@ -38,15 +38,15 @@ Edit this document to include your answers after each question. Make sure to lea
 
 3. What is an event listener? 
 
-# A specific function that happens when a user clicks, scrolls, or mouses over an html element. 
+    # A specific function that happens when a user clicks, scrolls, or mouses over an html element. 
 
 4. Why would we convert a NodeList into an Array? Node lists are specific to browsers where arrays are more specific for Javascript
 
-# Node lists are specific to browsers where arrays are more specific for Javascript
+        # Node lists are specific to browsers where arrays are more specific for Javascript
 
 5. What is a component?  
 
-# Stand alone independent parts of the application that are responsible for handling specific jobs or functions. 
+    # Stand alone independent parts of the application that are responsible for handling specific jobs or functions. 
 ### Git Set up
 
 * [x] Fork the project into your GitHub user account
