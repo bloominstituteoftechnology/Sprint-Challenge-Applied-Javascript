@@ -34,8 +34,8 @@ function cardMaker(headlineContent, authorImage, authorsName){
     authorImg.src = authorImage;
     authorName.textContent = authorsName;
 
-    
 
+    
     card.appendChild(headline);
     card.appendChild(author);
     author.appendChild(imgContainer);
