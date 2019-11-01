@@ -39,7 +39,7 @@ function showCards() {
 const show = document.querySelector('.cards-container');
 function Cards(object) {
     //Show data on console
-    //console.log(object);
+    console.log(object);
     const Card = document.createElement('div');
     Card.classList.add('card');
 
