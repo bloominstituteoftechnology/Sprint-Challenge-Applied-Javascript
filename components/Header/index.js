@@ -9,6 +9,9 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
+const headerContainer = document.querySelector('.header-container');
+headerContainer.appendChild(Header());
+
 function Header() {
 
     const headerDiv = document.createElement('div');
@@ -29,5 +32,5 @@ function Header() {
     headerSecondSpan.textContent = '98°';
 
 
-
+return headerDiv;
 }
