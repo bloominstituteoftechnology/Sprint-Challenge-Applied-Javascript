@@ -9,6 +9,7 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
+const container = document.querySelector('.header-container');
 function Header() {
 
     const Head = document.createElement('div');
@@ -25,10 +26,10 @@ function Header() {
     classTemp.classList.add('temp');
     classTemp.textContent = '98°';
 
-    Head.appendChild();
-    Head.appendChild();
-    Head.appendChild();
-    Head.appendChild();
+    Head.appendChild(classDate);
+    Head.appendChild(myH1);
+    Head.appendChild(classTemp);
+    
 
     
     
