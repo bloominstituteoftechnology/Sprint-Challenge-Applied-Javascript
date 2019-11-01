@@ -49,7 +49,9 @@ function Cards(items) {
 
     Card.appendChild(Headline);
     Card.appendChild(Author);
-    
+
+    Author.appendChild(ImagesDiv);
+    Author.appendChild(Span);
 
 }
 
