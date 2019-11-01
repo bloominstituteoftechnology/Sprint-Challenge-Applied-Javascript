@@ -30,7 +30,7 @@ function Header() {
     Head.appendChild(myH1);
     Head.appendChild(classTemp);
     
-
+    container.appendChild(Head);
     
     
 }
