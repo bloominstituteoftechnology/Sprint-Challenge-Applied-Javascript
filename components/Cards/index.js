@@ -26,7 +26,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 
 
-
+const show = document.querySelector('.cards-container');
 function Cards(items) {
     const Card = document.createElement('div');
     Card.classList.add('card');
@@ -55,6 +55,7 @@ function Cards(items) {
 
     ImagesDiv.appendChild(ImagesTag);
 
+    show.appendChild(Card)
 }
 
 
