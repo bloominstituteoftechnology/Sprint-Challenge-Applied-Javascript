@@ -9,17 +9,13 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-const headerContainer = document.querySelector('.header-container');
-  
-headerContainer.append(header);
-
-function Header() {
+function Header(obj) {
     const topH = document.createElement('div'),
           span = document.createElement('span'),
           h1 = document.createElement('h1'),
-          span2 = document.createElement('span'),
+          span2 = document.createElement('span');
 
-          topH.appendchild(span, h1, span2);
+          topH.append(span, h1, span2);
 
           topH.classList.add("header");
           span.classList.add("date");
@@ -32,3 +28,6 @@ function Header() {
           return topH;
 }
 
+const headerContainer = document.querySelector('.header-container');
+  
+headerContainer.append(Header());
