@@ -11,22 +11,25 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(function(res) {
-    console.log(res);
+    // console.log(res);
+    tabCreator(res);
+    entryPointTab.append(newDiv);
   })
   .catch(function(err) {
     console.log(err);
   });
-
 const entryPointTab = document.querySelector(".tabs");
 
-function tabCreator(tab) {
-  let newDiv = document.createElement("div");
-  newDiv.classList.add("tab");
-  newDiv.textContent = tab.data.topics[0];
-  //? Set data topics in forEach loop...
-
-  entryPointTab.prepend(newDiv);
+let newDiv;
+function tabCreator(res) {
+  for (let i = 0; i < res.data.topics.length; i++) {
+    newDiv = document.createElement("div");
+    newDiv.classList.add("tab");
+    newDiv.textContent = res.data.topics[i];
+    // console.log(`${i}=${newDiv.textContent}`);
+    // console.log(entryPointTab.append(newDiv));
+    entryPointTab.append(newDiv);
+  }
   return newDiv;
 }
-
-tabCreator(tabData);
+//? why does commenting out the console.log() break the function?
