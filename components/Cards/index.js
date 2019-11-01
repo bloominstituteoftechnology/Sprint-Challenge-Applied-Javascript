@@ -32,4 +32,35 @@ function card(info){
     cardsHeadline.classList.add("headline");
     cardsAuthorContainer.classList.add("author");
     cardsImgContainer.classList.add("img-container");
+
+    cardsHeadline.textContent = info.headline;
+    cardsImg.setAttribute("src", info.authorPhoto);
+    cardsAuthor.textContent = info.authorName;
+
+    cards.appendChild(cardsHeadline);
+    cards.appendChild(cardsAuthorContainer);
+    cardsAuthorContainer.appendChild(cardsImgContainer);
+    cardsImgContainer.appendChild(cardsImg);
+    cardsAuthorContainer.appendChild(cardsAuthor);
+
+    cardContainer.appendChild(cards);
+
+    return cards;
+
 }
+
+
+axios
+    .get("https://lambda-times-backend.herokuapp.com/articles")
+    .then(response => {
+
+        const articles = response.data.articles;
+
+        for (var key in articles) {
+            const info = articles[key];
+
+            info.forEach(element => {
+                card(element);
+            });
+        }
+    })
