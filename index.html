@@ -1,55 +1,109 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Lambda Times</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./components/Tabs/index.js" async></script>
+    <script src="./components/Header/index.js" async></script>
+    <script src="./components/Cards/index.js" async></script>
+    <script src="./components/Carousel/Carousel.js" async></script>
+  </head>
 
-<head>
-  <title>Lambda Times</title>
-  <link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./components/Tabs/index.js" async></script>
-  <script src="./components/Header/index.js" async></script>
-  <script src="./components/Cards/index.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
-</head>
-
-<body>
-
-  <!-- TOP BAR COMPONENT -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="container-left">
-        <span>TOPICS</span><span>SEARCH</span>
-      </div>
-      <div class="container-center">
-        <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
-      </div>
-      <div class="container-right">
-        <span>LOG IN</span>
+  <body>
+    <!-- TOP BAR COMPONENT -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="container-left"><span>TOPICS</span><span>SEARCH</span></div>
+        <div class="container-center">
+          <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span
+          ><span>MUSIC</span><span>ANNOUNCEMENTS</span>
+        </div>
+        <div class="container-right">
+          <span>LOG IN</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- HEADER COMPONENT, PLACE HEADER HERE -->
-  <div class="header-container">
-  </div>
+    <!-- HEADER COMPONENT, PLACE HEADER HERE -->
+    <div class="header-container"></div>
 
-  <!-- TABS COMPONENT, PLACE TABS HERE-->
-  <div class="tabs">
-    <div class="topics">
-      <span class="title">TRENDING TOPICS:</span>
+    <!-- TABS COMPONENT, PLACE TABS HERE-->
+    <div class="tabs">
+      <div class="topics">
+        <span class="title">TRENDING TOPICS:</span>
+        <div data-tab="all" class="tab active-tab"><a href="index.html">ALL</a></div>
+        
+        
+      </div>
     </div>
-  </div>
 
-  <!-- STRETCH GOAL: ONLY ATTEMPT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
-  <!-- CAROUSEL COMPONENT -->
-  <div class="carousel-container">
-  </div>
+    <!-- STRETCH GOAL: ONLY ATTEMPT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+    <!-- CAROUSEL COMPONENT -->
+    <div class="carousel">
+      <!-- Full-width images with number and caption text -->
 
-  <!-- CARDS CONTAINER, PLACE ARTICLE CARDS HERE -->
-  <div class="cards-container">
-  </div>
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <img
+          src="./assets/carousel/mountains.jpeg"
+          style="width:100%"
+          alt="Mountains"
+          title="Mountains"
+        />
+        <div class="text">Mountains</div>
+      </div>
 
-</body>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <img
+          src="./assets/carousel/computer.jpeg"
+          style="width:100%"
+          alt="Computer"
+          title="Computer"
+        />
+        <div class="text">Computer</div>
+      </div>
 
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <img
+          src="./assets/carousel/trees.jpeg"
+          style="width:100%"
+          alt="Forest"
+          title="Forest"
+        />
+        <div class="text">Forest</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img
+          src="./assets/carousel/turntable.jpeg"
+          style="width:100%"
+          alt="Turntable"
+          title="Turntable"
+        />
+        <div class="text">Turntable</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <!-- CARDS CONTAINER, PLACE ARTICLE CARDS HERE -->
+    <div class="cards-container"></div>
+  </body>
 </html>
