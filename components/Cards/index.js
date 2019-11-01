@@ -29,19 +29,19 @@ axios
   });
 
 function newCard(card) {
-  const articleCard = document.createElement("div"),
+  const newArticleCard = document.createElement("div"),
     newHeadline = document.createElement("div"),
     newAuthor = document.createElement("div"),
     newImageDiv = document.createElement("div"),
     newImage = document.createElement("img"),
     newAuthorName = document.createElement("span");
 
-  articleCard.appendChild(newHeadline);
-  articleCard.appendChild(newAuthor);
+  newArticleCard.appendChild(newHeadline);
+  newArticleCard.appendChild(newAuthor);
   newAuthor.appendChild(newImageDiv);
   newAuthor.appendChild(newAuthorName);
 
-  articleCard.classList.add("card");
+  newArticleCard.classList.add("card");
   newHeadline.classList.add("headline");
   newAuthor.classList.add("author");
   newImageDiv.classList.add("img-container");
@@ -52,8 +52,8 @@ function newCard(card) {
 
   newImageDiv.appendChild(newImage);
 
-  const mainCardContainer = document.querySelector(".cards-container");
-  mainCardContainer.appendChild(articleCard);
+  const cardContainer = document.querySelector(".cards-container");
+  cardContainer.appendChild(newArticleCard);
 
-  return articleCard;
+  return newArticleCard;
 }
