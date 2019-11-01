@@ -32,6 +32,6 @@ function Header() {
 
 const headerLoc = document.querySelector('.header-container');
 
-console.log (headerLoc)
+// console.log (headerLoc)
 
 headerLoc.appendChild(Header());
