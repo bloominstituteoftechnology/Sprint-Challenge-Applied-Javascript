@@ -17,12 +17,17 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
+
+function showCards() {
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response =>{
-        //const Data = response.data.topics;
+        const Data = response.data.topics;
+        const Article = Object.values(Data);
 
         console.log(response);
     })
+}
+
 
 
 
