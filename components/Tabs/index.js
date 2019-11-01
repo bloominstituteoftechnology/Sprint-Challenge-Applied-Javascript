@@ -13,7 +13,7 @@ function axiosFunction(){
     .then(response =>{
         const Data = response.data.topics;
 
-        console.log(response);
+        //console.log(response);
 
         Data.forEach(item =>{
             insertTopic(item);
