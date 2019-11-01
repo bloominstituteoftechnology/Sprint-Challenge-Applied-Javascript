@@ -14,6 +14,10 @@ function Header() {
         headerDate = document.createElement("span"),
         headerH1 = document.createElement("h1"),
         headerTemp = document.createElement("span");
+
+    headerDiv.classList.add("header");
+    headerDate.classList.add("date");
+    headerTemp.classList.add("temp");
         
 
 }
