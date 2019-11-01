@@ -22,10 +22,12 @@ const carouselCont = document.querySelector('.carousel-container');
 
 const carouselImgs = ["./assets/carousel/mountains.jpeg", "./assets/carousel/computer.jpeg", "./assets/carousel/trees.jpeg", "./assets/carousel/turntable.jpeg"];
 
-carouselCont.appendChild(Carousel(carouselImgs));
+let carousel = Carousel(carouselImgs, 0);
+
+carouselCont.appendChild(carousel);
 // carouselCont.appendChild(Carousel());
 
-function Carousel(imgs){
+function Carousel(imgs, indx){
   const carousel = document.createElement('div');
   const leftButton = document.createElement('div');
   const imgOne = document.createElement('img');
@@ -45,10 +47,19 @@ function Carousel(imgs){
   leftButton.classList.add('left-button');
   rightButton.classList.add('right-button');
 
-  imgOne.src = imgs[0];
-  imgTwo.src = imgs[1];
-  imgThree.src = imgs[2];
-  imgFour.src = imgs[3];
+  imgOne.src = imgs[indx];
+  imgTwo.src = imgs[(indx + 1)%3];
+  imgThree.src = imgs[(indx + 2)%3];
+  imgFour.src = imgs[(indx + 3)%3];
+
+  
+  leftButton.addEventListener('click', () => {
+    changeIndex(-1);
+  })
+
+  rightButton.addEventListener('click', () => {
+    changeIndex(1);
+  })
 
   return carousel;
 }
@@ -57,3 +68,29 @@ const imageElements = document.querySelectorAll('.carousel-container img');
 imageElements.forEach(imgEl => {
   imgEl.style.display = 'block';
 })
+
+// carousel button functionality
+
+let i = 0;
+
+function changeIndex(delta){
+  i += delta;
+
+  if(i === -1){
+    i = 3;
+  }
+  if (i === 4){
+    i = 0;
+  }
+
+  carouselCont.removeChild(carousel);
+  carousel = Carousel(carouselImgs, i);
+  carouselCont.appendChild(carousel);
+
+  const imgEls = document.querySelectorAll('.carousel-container img');
+    imgEls.forEach(imgEl => {
+      imgEl.style.display = 'block';
+  })
+}
+
+
