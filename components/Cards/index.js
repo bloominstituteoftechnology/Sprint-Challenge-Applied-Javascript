@@ -17,42 +17,43 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-const topicsCard = document.querySelector(".card");
-
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response);
-    response.data.articles.forEach(article => {
-      topicsCard.appendChild(cards(article));
-    });
+    response.data.articles.bootstrap.forEach(article => newCard(article));
+    response.data.articles.javascript.forEach(article => newCard(article));
+    response.data.articles.jquery.forEach(article => newCard(article));
+    response.data.articles.node.forEach(article => newCard(article));
+    response.data.articles.technology.forEach(article => newCard(article));
   });
 
-// function cards
-function cards(card) {
-  const newCard = document.createElement("div"),
+function newCard(card) {
+  const articleCard = document.createElement("div"),
     newHeadline = document.createElement("div"),
     newAuthor = document.createElement("div"),
     newImageDiv = document.createElement("div"),
     newImage = document.createElement("img"),
-    newName = document.createElement("span");
+    newAuthorName = document.createElement("span");
 
-  newCard.appendChild("div");
-  newCard.appendChild("div");
-  newCard.appendChild("div");
-  newCard.appendChild("div");
-  newCard.appendChild("img");
-  newCard.appendChild("span");
+  articleCard.appendChild(newHeadline);
+  articleCard.appendChild(newAuthor);
+  newAuthor.appendChild(newImageDiv);
+  newAuthor.appendChild(newAuthorName);
 
-  newHeadline.textContent = "Headline of article";
-  newAuthor.textContent = "author";
-  newImage.src = card;
-  newName.textContent = "authors name";
+  articleCard.classList.add("card");
+  newHeadline.classList.add("headline");
+  newAuthor.classList.add("author");
+  newImageDiv.classList.add("img-container");
 
-  newCard.classList.add("card");
-  newCard.classList.add("headline");
-  newCard.classList.add("author");
-  newCard.classList.add("img-container");
+  newHeadline.textContent = card.headline;
+  newImage.src = card.authorPhoto;
+  newAuthorName.textContent = card.authorName;
 
-  return newCard;
+  newImageDiv.appendChild(newImage);
+
+  const mainCardContainer = document.querySelector(".cards-container");
+  mainCardContainer.appendChild(articleCard);
+
+  return articleCard;
 }
