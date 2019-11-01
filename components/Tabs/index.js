@@ -15,7 +15,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     })
 
     .catch(error => {
-        console.log('The data request was not returned!', error);
+        // console.log('The data request was not returned!', error);
     });
 
 const tabs = document.querySelector('.topics');
@@ -25,10 +25,10 @@ const tabs = document.querySelector('.topics');
 function newTab(tabData) {
 
     let arr = tabData.data.topics;
-    console.log(arr, 'arr');
+    // console.log(arr, 'arr');
 
     arr.forEach(item => {
-        console.log(item, 'item')
+        // console.log(item, 'item')
         const tab = document.createElement('div');
         tab.classList.add('tab');
         tab.textContent = item;
