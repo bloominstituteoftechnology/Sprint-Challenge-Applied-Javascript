@@ -7,3 +7,25 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+//over array
+
+// make the element
+
+// add classlist to element
+
+// add content to element
+
+//append
+
+
+// axios request
+ axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    .then(response => {
+        console.log("recived", response);
+        
+    })
+    .catch( error => {
+        console.log(error)
+    })
