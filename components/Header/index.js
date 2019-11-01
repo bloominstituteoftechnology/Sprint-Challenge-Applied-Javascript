@@ -10,11 +10,12 @@
 // And add it to the DOM in the .header-container component
 
 function Header() {
+  // element
   const headDiv = document.createElement("div");
   const headSpan = document.createElement("span");
   const hH1 = document.createElement("h1");
   const headSpan2 = document.createElement("span");
-
+  // append
   const hContainer = document.querySelector(".header-container");
   hContainer.appendChild(Header());
 
