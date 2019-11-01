@@ -21,36 +21,43 @@
 function showCards() {
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response =>{
-        const Data = response.data.topics;
-        const Article = Object.values(Data);
+        const artData = response.data.articles;
+        const artValues = Object.values(artData);
 
         console.log(response);
+
+        artValues.forEach(item => {
+            item.forEach(items => {
+                Cards(items);
+            })
+        });
     })
 }
 
 
 
-
 const show = document.querySelector('.cards-container');
-function Cards(items) {
+function Cards(object) {
+    //Show data on console
+    //console.log(object);
     const Card = document.createElement('div');
     Card.classList.add('card');
 
     const Headline = document.createElement('div');
     Headline.classList.add('headline');
-    Headline.textContent = items.Headline;
+    Headline.textContent = object.headline;
 
     const Author = document.createElement('div');
     Author.classList.add('author');
 
     const ImagesDiv = document.createElement('div');
-    ImagesDiv.classList.add('.img-container')
+    ImagesDiv.classList.add('img-container')
 
     const ImagesTag = document.createElement('img');
-    ImagesTag.src = items.authorPhoto;
+    ImagesTag.src = object.authorPhoto;
 
-    const Span = document.createElement('img');
-    Span.textContent = items.authorName
+    const Span = document.createElement('span');
+    Span.textContent = object.authorName
 
     Card.appendChild(Headline);
     Card.appendChild(Author);
@@ -61,6 +68,10 @@ function Cards(items) {
     ImagesDiv.appendChild(ImagesTag);
 
     show.appendChild(Card)
+
+    
 }
+
+showCards();
 
 
