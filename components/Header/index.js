@@ -24,4 +24,12 @@ function Header() {
     const classTemp = document.createElement('span');
     classTemp.classList.add('temp');
     classTemp.textContent = '98°';
+
+    Head.appendChild();
+    Head.appendChild();
+    Head.appendChild();
+    Head.appendChild();
+
+    
+    
 }
