@@ -47,6 +47,8 @@ function Cards(items) {
     const Span = document.createElement('img');
     Span.textContent = items.authorName
 
+    Card.appendChild(Headline);
+    Card.appendChild(Author);
     
 
 }
