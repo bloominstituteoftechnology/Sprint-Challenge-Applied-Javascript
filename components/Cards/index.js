@@ -17,30 +17,21 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-// axios.get("https://lambda-times-backend.herokuapp.com/articles")
-// .then(response => {
-//   console.log(response);
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+.then(response => {
+  console.log(response);
     
-//   response.data.articles.object.(entry =>{
+  response.data.object.for(item =>{
       
-     
-//     const newArticle = carded(entry);
-//     article.appendChild(newArticle);
-//     console.log(newArticle)
-//   });
+    const newArticle = carded(item);
+    article.appendChild(newArticle);
+    console.log(newArticle);
+
+  });
 
     
-// })
-async function fetchArticles() {
-    const response = await fetch 
-    ("https://lambda-times-backend.herokuapp.com/articles")
-    const data = await response.json();
-    console.log(data);
-}
-fetchArticles();
-// .catch(error => {
-//   console.log("The data was not returned", error);
-// });
+});
+
 
   const article = document.querySelector('.cards-container');
 
