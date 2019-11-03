@@ -20,7 +20,7 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    console.log(response);
+    //console.log(response);
     response.data.articles.bootstrap.forEach(article => newCard(article));
     response.data.articles.javascript.forEach(article => newCard(article));
     response.data.articles.jquery.forEach(article => newCard(article));
@@ -39,6 +39,7 @@ function newCard(card) {
   newArticleCard.appendChild(newHeadline);
   newArticleCard.appendChild(newAuthor);
   newAuthor.appendChild(newImageDiv);
+  newImageDiv.appendChild(newImage);
   newAuthor.appendChild(newAuthorName);
 
   newArticleCard.classList.add("card");
@@ -49,8 +50,6 @@ function newCard(card) {
   newHeadline.textContent = card.headline;
   newImage.src = card.authorPhoto;
   newAuthorName.textContent = card.authorName;
-
-  newImageDiv.appendChild(newImage);
 
   const cardContainer = document.querySelector(".cards-container");
   cardContainer.appendChild(newArticleCard);
