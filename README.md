@@ -4,7 +4,7 @@ This challenge allows you to practice the concepts and techniques learned over t
 
 ## Instructions
 
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.***
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+Document Object model
 
 2. What is an event?
+event is something that happens to the page i.e. clicking a button makes a sound
 
 3. What is an event listener?
+this is something that is listening for an event i.e. the click or mouseover
 
 4. Why would we convert a NodeList into an Array?
+easier to loop through
 
 5. What is a component?
+div tag, p tag, 
 
 ### Git Set up
 
