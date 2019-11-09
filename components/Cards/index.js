@@ -35,7 +35,7 @@ const cardCreator = (article) => {
 
    // Element Content
    headline.textContent = article.headline;
-   img.scr = article.authorPhoto;
+   img.src = article.authorPhoto;
    name.textContent = article.authorName;
 
 
