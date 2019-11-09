@@ -29,14 +29,24 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+DOM (Document Object Model) connects webpages written in HTML to programming languages like Java script. It is an application programming interface (API). The HTML part of the document can be manipulated and changed using java script programming language. The DOM document is represented in the form of a logical tree; each branch of the tree ends in a node, these nodes can be accessed by Java script and styling, text content can be manipulated. These nodes can also have event handlers which can be triggered when the code is executed. 
 
 2. What is an event?
+When a user interacts with a webpage, certain actions are triggered like mouse click, scroll, key down, drag and drop etc. These actions are defined as an event.
 
 3. What is an event listener?
+Specific elements in DOM can be selected and events can be fired using an event listener. This is a callback function that can be executed when we want a certain event to occur in our webpage. The command used for this is:
+element.addEventListener('click', callback);
+
 
 4. Why would we convert a NodeList into an Array?
+The command querySelectorAll will allow selection of all array elements or objects in a nodeList. These elements can be accessed by using the array index numbers starting from zero. Node list can use the foreach method to access array elements but cannot use reduce.
+Some of the elements in a DOM are not technically an array, it is generally an array like object. These are called HTML elements. These elements can be converted to array by using the following:
+	Array.from(arrayLikeObject)
+
 
 5. What is a component?
+Components are building blocks of programming language, they also help in keeping the code DRY. 
 
 ### Git Set up
 
