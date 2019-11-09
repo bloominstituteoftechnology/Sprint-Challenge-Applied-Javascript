@@ -50,19 +50,19 @@ function cardMaker(arr){
 
 //
 // Create a card for each of the articles and add the card to the DOM.
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then(arr =>{
-    console.log(arr.data.articles)
-   const cardsContainer = document.querySelector('.cards-container')
-    
-    articleKeys = Object.keys(arr.data.articles)
-    
+axios
+    .get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response =>{
+    console.log('here are the arrays of articles by toping', response.data.articles)
+    const cardsContainer = document.querySelector('.cards-container')
+    articleKeys = Object.keys(response.data.articles)
     articleKeys.forEach(element => {
-      console.log(arr.data.articles[element])
-      arr.data.articles[element].forEach(x => {
+      console.log("Array of a specific toping", response.data.articles[element])
+      response.data.articles[element].forEach(x => {
         cardsContainer.appendChild(cardMaker(x))
       })
     });
+    
 })
 .catch(err => 
   console.log(err))
