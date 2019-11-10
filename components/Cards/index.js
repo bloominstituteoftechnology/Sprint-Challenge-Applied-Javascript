@@ -19,7 +19,7 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 class CardCreator {
-  function (card1){
+constructor (item){
       const card = document.createElement('div');
       const head1 = document.createElement('div');
       const auth1 = document.createElement('div');
@@ -38,9 +38,9 @@ class CardCreator {
       auth1.classList.add('author');
       img_cont.classList.add('img-container');
 
-      head1.textContent = card1.headline;
-      img1.src = card1.authorPhoto;
-      text1.textContent = `By ${card1.authorName}`;
+      head1.textContent = item.headline;
+      img1.src = item.authorPhoto;
+      text1.textContent = `By ${item.authorName}`;
 
       return card;
 
@@ -49,46 +49,25 @@ class CardCreator {
   const cardsContainer = document.querySelector('.cards-container');
 
   axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then( response => {
-      
-      console.log(response);
-  
-      let  obj = response.data.articles;
-      
-      let newArray = Object.keys(obj).map(function(key) {
-          return [obj[key]];
-      });
-  
-      // Need to loop over nested arrays to make one large array
-  
-      let largeArray = [];
-  
-      for ( let i=0; i<newArray.length; i++ )
-      {
-          for ( let j=0; j<newArray[i].length; j++ )
-          {
-              for ( let k=0; k<newArray[i][j].length; k++ )
-              {            
-              largeArray.push(newArray[i][j][k]);
-              }
-          }
-      }
-          
-      largeArray.forEach( item => {
-          let card = new CardCreator(item);
-          cardsContainer.appendChild(card);
-      })      
-  
-      return obj;
-  })
-  .then(response => {
-      console.log('Second .then', response);
-  
-      response.forEach( item => {
-          let card = new CardCreator(item);
-          cardsContainer.appendChild(card);
-          })    
-  })
-  .catch( error => {
-      console.log("Error:", error);
-  })
+.then(response => {
+
+    const  responseData = response.data.articles;
+    
+    const dataArray = Object.keys(responseData).map(function(key) {
+        return [responseData[key]];
+    });
+
+    dataArray.forEach(item => {
+        item.forEach(item => {
+            item.forEach(item => {
+
+                const card = new CardCreator(item);
+                cardsContainer.appendChild(card);
+            })
+        })
+    }) 
+})
+.catch( error => {
+    console.log("Error:", error);
+});
+ 
