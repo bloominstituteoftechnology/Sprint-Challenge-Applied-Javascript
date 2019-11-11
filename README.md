@@ -1,3 +1,5 @@
+<--Initial Commit -->
+
 # Sprint-Challenge Applied Javascript - Lambda Times
 
 This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint explored the DOM and the concept of components. During this Sprint, you studied the DOM, DOM Events, and Components, as well as HTTP GET requests, and the axios library. In your challenge this week, you will demonstrate proficiency by creating an online Lambda newspaper called "Lambda Times."
@@ -30,28 +32,38 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for the Document Object Model and it is a tool that takes the HTML, CSS and JavaScript code and allows us to make changes to the directly to the page without having direct access to the original HTML, CSS or JavaScript code. It is not only the code in JS. It is not just the HTML. It is not just the CSS. Rather, it is a representation of three combined together to create the webpage. 
+
 2. What is an event?
+
+An event is a thing that happens on a page. For example, a mouseover, a click, loading, keyup, etc. 
 
 3. What is an event listener?
 
+An event listener is a method attached to an element that waits for 'mouseover', 'click', etc. to carry out a specified task like showing a date, toggling, etc. 
+
 4. Why would we convert a NodeList into an Array?
+
+A NodeList is NOT an array. Someone might convert a NodeList into an array to iterate over it, however, it is possible to iterate over a NodeList using forEach(). It just depends on whether or not your NodeList is static or not. If it is live changes in the DOM will take place, but it is static, those changes won't happen. 
 
 5. What is a component?
 
+A component is reusable code that can be modified and used over and over again to keep your code DRY. Examples include code used to generate buttons, cards, etc. 
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [X] Fork the project into your GitHub user account
+* [X] Clone the forked project into a directory on your machine
+* [X] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [X] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [X] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [X] Following the instructions in the `Header/index.js` file, create the Header component. 
 
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
