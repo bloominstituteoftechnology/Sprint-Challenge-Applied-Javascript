@@ -24,5 +24,18 @@ function Header() {
     // create header text
     const headerContent = document.createElement('h1');
     headerContent.textContent = "Lambda Times";
+    
+    header.appendChild(headerContent);
 
+    // create temperature container
+    const temperature =  document.createElement('span');
+    temperature.className = 'temp';
+    temperature.textContent = '98°';
+
+    header.appendChild(temperature);
+
+    return header;
 }
+
+const headerContainer = document.querySelector('.header-container');
+headerContainer.appendChild(Header());
