@@ -57,7 +57,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
          const imageSrc=document.createElement('img');
          const authName=document.createElement('span');
 
-         //Adding classNames 
+         //Adding classNames.
 
          cards.classList.add('card')
          headline.classList.add("headline");
