@@ -59,10 +59,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
          //Adding classNames 
 
-         cards.classList.add="card";
-         headline.classList.add="headline";
-         author.classList.add="author";
-         image.classList.add="img-container";
+         cards.classList.add('card')
+         headline.classList.add("headline");
+         author.classList.add("author");
+         image.classList.add("img-container");
          
          //Adding content 
           
@@ -73,10 +73,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
         //appending 
         cards.appendChild(headline);
-        headline.appendChild(author);
+        cards.appendChild(author);
         author.appendChild(image);
         image.appendChild(imageSrc)
-        imageSrc.appendChild(authName)
+        author.appendChild(authName);
 
         return cards;
      }
+     
+
+    
