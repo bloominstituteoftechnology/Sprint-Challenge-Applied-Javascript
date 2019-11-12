@@ -24,7 +24,7 @@ function Header() {
   title.textContent = 'Lambda Times';
   temp.textContent = '98°';
   //applystyles
-  header.classList.add('.header');
+  header.classList.add('header');
   date.classList.add('.date');
   title.classList.add('h1');
   temp.classList.add('.temp');
