@@ -20,85 +20,26 @@
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        // console.log('here are the arrays of articles by toping', response.data.articles)
-        const cardsContainer = document.querySelector('.cards-container')
-        articleKeys = Object.keys(response.data.articles)
-
+        const cardsContainer = document.querySelector('.cards-container');
+        articleKeys = Object.keys(response.data.articles);
         const tabTitle = document.querySelectorAll(".tab");
-        // console.log("tabTitle", tabTitle); //select individual tabs
 
-
-        //This renders all the articles form all the categories======>>>
-        // articleKeys.forEach(element => {
-        //   console.log("Array of a specific toping", response.data.articles[element])
-        //   response.data.articles[element].forEach(x => {
-        //     cardsContainer.appendChild(cardMaker(x))
-        //   })
-        // });
-        //============^^^^^^^^^
-
-        //This rensers  the articles from a specific category only when clicked on the tab=====>>>>
         function restContainer() {
             cardsContainer.innerHTML = '';
         }
 
         tabTitle.forEach(tab => {
-            // console.log("tab", tab);
             tab.addEventListener('click', (e) => {
-                console.log(e.target);
                 restContainer();
                 let articleName = e.target.getAttribute("attr");
-                console.log(articleName);
                 response.data.articles[articleName].forEach(item => {
                     cardsContainer.appendChild(cardMaker(item));
                 })
             })
         });
-
-
-
-
-
-
-
-
-        // tabTitle[0].addEventListener('click', (e) => {
-        //    // const articleKeys= Object.values(response.data.articles);
-        //     //console.log("articleKeys", articleKeys);
-        //     restContainer();
-        //    // console.log("cardsContainer", cardsContainer.innerHTML='')
-        //     response.data.articles['javascript'].forEach(x => {
-        //         cardsContainer.appendChild(cardMaker(x))
-        //     })
-        // })
-        // tabTitle[1].addEventListener('click', (e) => {
-        //     restContainer();
-        //     response.data.articles['bootstrap'].forEach(x => {
-        //         cardsContainer.appendChild(cardMaker(x))
-        //     })
-        // })
-        // tabTitle[2].addEventListener('click', (e) => {
-        //     restContainer();
-        //     response.data.articles['technology'].forEach(x => {
-        //         cardsContainer.appendChild(cardMaker(x))
-        //     })
-        // })
-        // tabTitle[3].addEventListener('click', (e) => {
-        //     restContainer();
-        //     response.data.articles['jquery'].forEach(x => {
-        //         cardsContainer.appendChild(cardMaker(x))
-        //     })
-        // })
-        // tabTitle[4].addEventListener('click', (e) => {
-        //     response.data.articles['node'].forEach(x => {
-        //         cardsContainer.appendChild(cardMaker(x))
-        //     })
-        // })
-        //==============^^^^
-
     })
     .catch(err =>
-        console.log(err))
+        console.log(err));
 
 
 function cardMaker(arr) {
@@ -118,9 +59,9 @@ function cardMaker(arr) {
     cardImg.appendChild(authorName);
 
     // set the content
-    cardHeadline.textContent = arr.headline
-    cardPic.setAttribute('src', arr.authorPhoto)
-    authorName.textContent = `By ${arr.authorName}`
+    cardHeadline.textContent = arr.headline;
+    cardPic.setAttribute('src', arr.authorPhoto);
+    authorName.textContent = `By ${arr.authorName}`;
 
     // apply styles
     newCard.classList.add('card');
