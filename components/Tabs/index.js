@@ -7,9 +7,17 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+// function test (){
+//     let testedTopic = split(".js");
+//     return testedTopic;
+// };
+
 function tabMaker(topic) {
     const tab = document.createElement('div');
     tab.classList.add('tab');
+
+    tab.setAttribute("attr", topic)
     tab.textContent = topic;
     return tab;
 };

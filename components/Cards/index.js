@@ -20,12 +20,12 @@
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log('here are the arrays of articles by toping', response.data.articles)
+        // console.log('here are the arrays of articles by toping', response.data.articles)
         const cardsContainer = document.querySelector('.cards-container')
         articleKeys = Object.keys(response.data.articles)
 
         const tabTitle = document.querySelectorAll(".tab");
-        console.log("tabTitle", tabTitle[1]); //select individual tabs
+        // console.log("tabTitle", tabTitle); //select individual tabs
 
 
         //This renders all the articles form all the categories======>>>
@@ -38,31 +38,62 @@ axios
         //============^^^^^^^^^
 
         //This rensers  the articles from a specific category only when clicked on the tab=====>>>>
-        tabTitle[0].addEventListener('click', (e) => {
-            response.data.articles['javascript'].forEach(x => {
-                cardsContainer.appendChild(cardMaker(x))
+        function restContainer() {
+            cardsContainer.innerHTML = '';
+        }
+
+        tabTitle.forEach(tab => {
+            // console.log("tab", tab);
+            tab.addEventListener('click', (e) => {
+                console.log(e.target);
+                restContainer();
+                let articleName = e.target.getAttribute("attr");
+                console.log(articleName);
+                response.data.articles[articleName].forEach(item => {
+                    cardsContainer.appendChild(cardMaker(item));
+                })
             })
-        })
-        tabTitle[1].addEventListener('click', (e) => {
-            response.data.articles['bootstrap'].forEach(x => {
-                cardsContainer.appendChild(cardMaker(x))
-            })
-        })
-        tabTitle[2].addEventListener('click', (e) => {
-            response.data.articles['technology'].forEach(x => {
-                cardsContainer.appendChild(cardMaker(x))
-            })
-        })
-        tabTitle[3].addEventListener('click', (e) => {
-            response.data.articles['jquery'].forEach(x => {
-                cardsContainer.appendChild(cardMaker(x))
-            })
-        })
-        tabTitle[4].addEventListener('click', (e) => {
-            response.data.articles['node'].forEach(x => {
-                cardsContainer.appendChild(cardMaker(x))
-            })
-        })
+        });
+
+
+
+
+
+
+
+
+        // tabTitle[0].addEventListener('click', (e) => {
+        //    // const articleKeys= Object.values(response.data.articles);
+        //     //console.log("articleKeys", articleKeys);
+        //     restContainer();
+        //    // console.log("cardsContainer", cardsContainer.innerHTML='')
+        //     response.data.articles['javascript'].forEach(x => {
+        //         cardsContainer.appendChild(cardMaker(x))
+        //     })
+        // })
+        // tabTitle[1].addEventListener('click', (e) => {
+        //     restContainer();
+        //     response.data.articles['bootstrap'].forEach(x => {
+        //         cardsContainer.appendChild(cardMaker(x))
+        //     })
+        // })
+        // tabTitle[2].addEventListener('click', (e) => {
+        //     restContainer();
+        //     response.data.articles['technology'].forEach(x => {
+        //         cardsContainer.appendChild(cardMaker(x))
+        //     })
+        // })
+        // tabTitle[3].addEventListener('click', (e) => {
+        //     restContainer();
+        //     response.data.articles['jquery'].forEach(x => {
+        //         cardsContainer.appendChild(cardMaker(x))
+        //     })
+        // })
+        // tabTitle[4].addEventListener('click', (e) => {
+        //     response.data.articles['node'].forEach(x => {
+        //         cardsContainer.appendChild(cardMaker(x))
+        //     })
+        // })
         //==============^^^^
 
     })
