@@ -27,16 +27,25 @@ In meeting the minimum viable product (MVP) specifications listed below, you sho
 Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
-
 1. What is the DOM?
+
+Answer: Document Object Model. It is what our browsers rely on for content. 
 
 2. What is an event?
 
+Answer: An interaction between the user and a web page such as clicking a button. 
+
 3. What is an event listener?
+
+Answer: A method that takes in the parameters of an interaction and performs a specified action based on different requirements.
 
 4. Why would we convert a NodeList into an Array?
 
+Answer: To be able to access array methods such as .map(), .filter(), .reduce().
+
 5. What is a component?
+
+Answer: A compenent is a standalone object, such as a button, that requires no outside assistance to work and not dependent upon other code to work. It is modular and DRY. 
 
 ### Git Set up
 
