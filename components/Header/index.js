@@ -22,7 +22,7 @@ function Header(info) {
     header.classList.add('.header')
     headerDate.classList.add('.date')
     headerTemperature.classList.add('.temp')  
-    
+    entryPoint.appendChild('header')
     return header
 
 }
