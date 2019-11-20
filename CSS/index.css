@@ -28,27 +28,6 @@
   font-weight: 700;
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v11/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: 'PT Sans', sans-serif;
-  background-image: url('/LESS/overlay.png'), url('/LESS/black-and-white-black-and-white-monochrome-707676.jpg');
-  background-repeat: repeat, no-repeat;
-  background-size: auto, 100% 100%;
-  background-attachment: fixed;
-}
 .top-bar {
   width: 100%;
   display: flex;
@@ -57,6 +36,7 @@ body {
   flex-direction: row;
   position: fixed;
   height: 44px;
+  z-index: 999;
   background-color: #333;
 }
 .top-bar .container {
@@ -302,5 +282,37 @@ body {
 .carousel img {
   width: 100%;
   display: block;
-  transition: all 3s ease-in-out 3s;
+}
+.carousel .img {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: 'PT Sans', sans-serif;
+  background-image: url('/LESS/overlay.png'), url('/LESS/black-and-white-black-and-white-monochrome-707676.jpg');
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100%;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
