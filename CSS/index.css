@@ -137,6 +137,11 @@
   margin-right: 25px;
   flex: 1;
 }
+.tab-container {
+  position: sticky;
+  top: 0;
+  z-index: 9999999;
+}
 .tabs {
   border-bottom: 1px solid lightgrey;
   display: flex;
