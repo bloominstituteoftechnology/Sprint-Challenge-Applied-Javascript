@@ -2,6 +2,13 @@
 @import './mixins';
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic,900');
 
+// all imports 
+@import './components/TopBar/TopBar';
+@import './components/Header/Header';
+@import './components/Tabs/Tabs';
+@import './components/Cards/Cards';
+@import './components/Carousel/Carousel';
+
 * {
   box-sizing: border-box;
 }
@@ -19,12 +26,13 @@ body {
   background-image: url('/LESS/overlay.png'), url('/LESS/black-and-white-black-and-white-monochrome-707676.jpg');
   background-repeat: repeat, no-repeat;
   background-size: auto, 100% 100%;
-   background-attachment: fixed;
+  background-attachment: fixed;
+  overflow-x: hidden;
   
 }
 
-@import './components/TopBar/TopBar';
-@import './components/Header/Header';
-@import './components/Tabs/Tabs';
-@import './components/Cards/Cards';
-@import './components/Carousel/Carousel';
+// @import './components/TopBar/TopBar';
+// @import './components/Header/Header';
+// @import './components/Tabs/Tabs';
+// @import './components/Cards/Cards';
+// @import './components/Carousel/Carousel';
