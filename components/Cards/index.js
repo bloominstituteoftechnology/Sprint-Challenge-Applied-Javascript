@@ -43,14 +43,16 @@ class CardCreator {
         span.textContent = `By ${item.authorName}`;
                         
         return div1;
-      }
     }
+}
 
 
 const cardsContainer = document.querySelector('.cards-container');
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
+
+    console.log(response);
 
     const  responseData = response.data.articles;
     
@@ -76,42 +78,42 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 // CAROUSEL would not work on the actual page.
 
 
-class CreateCarousel {
-    constructor(array) {
-      const mainDiv = document.createElement('div');
-      const btnDivL = document.createElement('div');
-      const btnDivR = document.createElement('div');
+// class CreateCarousel {
+//     constructor(array) {
+//       const mainDiv = document.createElement('div');
+//       const btnDivL = document.createElement('div');
+//       const btnDivR = document.createElement('div');
   
-      mainDiv.appendChild(btnDivL);
+//       mainDiv.appendChild(btnDivL);
   
-      array.forEach((source)=>{
-        const newImage = document.createElement('img');
-        newImage.src = source;
-        mainDiv.appendChild(newImage);
+//       array.forEach((source)=>{
+//         const newImage = document.createElement('img');
+//         newImage.src = source;
+//         mainDiv.appendChild(newImage);
 
-        return newImage
-      })
+//         return newImage
+//       })
   
-      mainDiv.appendChild(btnDivR);
+//       mainDiv.appendChild(btnDivR);
   
-      mainDiv.classList.add('carousel');
-      btnDivL.classList.add('left-button');
-      btnDivR.classList.add('right-button');
+//       mainDiv.classList.add('carousel');
+//       btnDivL.classList.add('left-button');
+//       btnDivR.classList.add('right-button');
   
-      btnDivL.textContent = 'U+1f878';
-      btnDivR.textContent = 'U+1f87a';
+//       btnDivL.textContent = 'U+1f878';
+//       btnDivR.textContent = 'U+1f87a';
   
-      return mainDiv;
-    }
-  }
+//       return mainDiv;
+//     }
+//   }
 
-const srcArray = ['./assets/carousel/mountains.jpeg', './assets/carousel/computer.jpeg', './assets/carousel/trees.jpeg', './assets/carousel/turntable.jpeg']
+// const srcArray = ['./assets/carousel/mountains.jpeg', './assets/carousel/computer.jpeg', './assets/carousel/trees.jpeg', './assets/carousel/turntable.jpeg']
 
 
-function appendCarousel(array) {
-    const carousel = new CreateCarousel(array);
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.appendChild(carousel);
-  }
+// function appendCarousel(array) {
+//     const carousel = new CreateCarousel(array);
+//     const carouselContainer = document.querySelector('.carousel-container');
+//     carouselContainer.appendChild(carousel);
+//   }
 
-appendCarousel(srcArray);
+// appendCarousel(srcArray);
