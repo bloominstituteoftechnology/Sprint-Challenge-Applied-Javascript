@@ -7,13 +7,12 @@
     6. Have fun!
 */
 
-/* HTML:
-  <div class="carousel">
+ //HTML:
+ /* <div class="carousel">
     <div class="left-button"> < </div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button"> > </div>
-  </div>
-*/
+  </div>*/
