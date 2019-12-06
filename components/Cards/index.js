@@ -26,23 +26,16 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     console.log(`THEN IS WORKING`, dataObj.data);
     
     Object.values(dataObj.data.articles)
-    .forEach(article =>{
-        // for (var blog in article){
-        //     console.log(`in the for loop`, Object.values(article));
-        
-        Object.values(article).forEach(article => {
+    .forEach(articles =>{               
+        Object.values(articles).forEach(article => {
             const newArticle = articleComp(article);
             articleCont.appendChild(newArticle);
-        })         
-        
+        })      
     });  
-
 })
 .catch (error => {
     console.log(`CATCH IS WORKING`, error)
 });
-
-
 
 function articleComp(response){
     //create element
@@ -62,8 +55,8 @@ function articleComp(response){
 
     //append
     cardDiv.append(headlineDiv, authorDiv);
-    authorDiv.append(imageDiv);
-    imageDiv.append(image, authorSpan);
+    authorDiv.append(imageDiv, authorSpan);
+    imageDiv.append(image);
     
     //content
     headlineDiv.textContent = response.headline;
