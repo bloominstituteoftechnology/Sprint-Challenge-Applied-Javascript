@@ -7,3 +7,34 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const topics = [];
+const tabs = document.querySelector(".topics");
+
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
+.then(response => {
+    response.data.topics.forEach(topic => {
+        //console.log(topics);
+        tabs.appendChild(newTab(topic));
+        return topics;
+    })
+})
+
+function newTab(topic) {
+    const tab = document.createElement("div");
+    tab.textContent = topic;
+    tab.classList.add("tab");
+    //console.log(tab);
+    return tab;
+}
+
+// tabs.appendChild(newTab(topics[0])); //why wont this pass into newTab??
+
+
+
+
+//console.log(topics);
+// topics.forEach(topic => {
+//     console.log(topic);
+//     tabs.appendChild(newTab(topic));
+// });
