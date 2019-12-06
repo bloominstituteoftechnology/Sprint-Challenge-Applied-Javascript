@@ -29,6 +29,6 @@ function Header(){
     return newHeader;
 }
 
-const entryPoint = document.querySelector('.header-container');
+const headerEntryPoint = document.querySelector('.header-container');
 const myHeader = Header();
-entryPoint.appendChild(myHeader);
+headerEntryPoint.appendChild(myHeader);
