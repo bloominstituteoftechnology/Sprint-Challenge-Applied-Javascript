@@ -39,17 +39,17 @@ function articlesCard(objData) {
     const headLine = document.createElement('div');
     const authorBody = document.createElement('div');
     const imgContainer = document.createElement('div');
-    const img = document.createElement('img');
+    const image = document.createElement('img');
     const authorName = document.createElement('span');
 
     //structure
-    cardBody.appendChild(headLine);
-    cardBody.appendChild(authorBody);
+    imgContainer.appendChild(image);
 
     authorBody.appendChild(imgContainer);
     authorBody.appendChild(authorName);
 
-    imgContainer.appendChild(img);
+    cardBody.appendChild(headLine);
+    cardBody.appendChild(authorBody);
 
     //add classes
     cardBody.classList.add('card');
@@ -59,8 +59,8 @@ function articlesCard(objData) {
 
     //text content
     headLine.textContent = objData.headline;
-    authorBody.textContent = objData.authorName;
-    img.src = objData.authorPhoto;
-
+    authorName.textContent = `By: ${objData.authorName}`;
+    image.src = objData.authorPhoto;
+    console.log(cardBody);
     return cardBody;
 }
