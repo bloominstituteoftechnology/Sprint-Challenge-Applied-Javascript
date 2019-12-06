@@ -32,6 +32,10 @@ function carouselCreator(){
   mountain.src = "./assets/carousel/mountains.jpeg";
   computer.src = "./assets/carousel/computer.jpeg" ;
   trees.src = "./assets/carousel/trees.jpeg";
-  turntable = "./assets/carousel/turntable.jpeg";
-  
+  turntable.src = "./assets/carousel/turntable.jpeg";
+  rightButton.classList.add('right-button');
+
+  leftButton.textContent = "<"
+  rightButton.textContent = ">"
 }
+

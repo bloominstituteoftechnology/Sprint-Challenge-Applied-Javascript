@@ -20,16 +20,14 @@
 
 
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`).then( res =>{
-    console.log(res.data)
+    console.log('get request succesful')
   const keysArray =  Object.keys(res.data.articles)
     for (let index = 0; index < keysArray.length; index++) {
         const key = keysArray[index];
         res.data.articles[`${key}`].forEach(element => {
             cardCreator(element)
-            console.log(element,"this is the element in articles")
         });
        }
-  console.log(keysArray)
     }).catch(err =>{
       console.log(err, 'you have failed')
     })
