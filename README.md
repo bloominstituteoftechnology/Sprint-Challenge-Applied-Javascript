@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+2. Document Objecct Model
 
-2. What is an event?
+3. What is an event?
+4. Something that happens fom input by user
 
-3. What is an event listener?
+5. What is an event listener?
+6. A procedure or function that waits for an event to occur
 
-4. Why would we convert a NodeList into an Array?
+7. Why would we convert a NodeList into an Array?
+8. To use methods such as forEach
 
-5. What is a component?
+9. What is a component?
+10. Potential set of reusable elements
 
 ### Git Set up
 
@@ -49,7 +54,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
 * [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
 
