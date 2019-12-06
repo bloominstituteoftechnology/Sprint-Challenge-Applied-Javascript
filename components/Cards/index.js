@@ -23,11 +23,20 @@ const entryPointArticle = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(function (response) {
     // handle success
-    console.log(response.data);
+    // console.log(response.data.articles);
     
-    // ADD NEXT 2 LINES AFTER CHECKING DATA 
+    const arrayArticles = Object.values(response.data.articles)
+    arrayArticles.forEach(item => {
     const myArticles = articlesCreator(response.data);
     entryPointArticle.prepend(myArticles);
+    });
+
+    console.log(arrayArticles);
+    return arrayArticles;
+
+    // old
+    // const myArticles = articlesCreator(response.data.articles);
+    // entryPointArticle.prepend(myArticles);
 
   })
   .catch(function (error) {
@@ -37,7 +46,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .finally(function () {
     // always executed
   });
-
 
 
 
@@ -65,9 +73,22 @@ function articlesCreator(data){
   imgContainer.appendChild(authorImg);
   
 // //   content
-//   headline.textContent = data.articles.headline;  
-//   authorImg.src = data.articles.authorPhoto;
-//   authorName.textContent = data.articles.authorName;
+  const arrayArticlesMod = Object.values(data)
+
+  // headline.textContent = arrayArticlesMod.[""0""][""0""].headline
+ 
+  
+  // [""0""][1][""0""].authorName
+  // [""0""][1][1].authorName
+  // authorImg.src = data.articles.authorPhoto;
+  // authorName.textContent = arrayArticlesMod.forEach(item => {
+
+  //   });
+
+  // arrayArticles.forEach(item => {
+  //   const myArticles = articlesCreator(response.data);
+  //   entryPointArticle.prepend(myArticles);
+  //   });
 
 //   const dataInArray = Object.entries(data);
 //   tab.textContent = dataInArray.topics;
