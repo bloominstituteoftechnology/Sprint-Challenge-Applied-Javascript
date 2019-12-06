@@ -22,12 +22,14 @@
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
         const cardContainer = document.querySelector(".cards-container");
-        // const entries = Object.entries(response.data.articles);
-        // console.log(entries);
-        // cardContainer.appendChild(createCard(response.data.articles.bootstrap.forEach(article => {
 
-        // })));
-        console.log(response.data.articles);
+        //code that does nothing
+        Object.entries(response.data.articles).forEach(([key, value]) => {
+            console.log(`${key} : ${response.data.articles[key]}`);
+        })
+        //code that does nothing
+
+        //mvp how to convert to a loop on object?
         response.data.articles.bootstrap.forEach(article => {
             cardContainer.appendChild(createCard(article));
         })
@@ -50,12 +52,12 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
     function createCard(obj){
         //console.log(obj);
-        const card = document.createElement("div"),
-        headline = document.createElement("div"),
-        author = document.createElement("div"),
+        const card   = document.createElement("div"),
+        headline     = document.createElement("div"),
+        author       = document.createElement("div"),
         imgContainer = document.createElement("div"),
-        img = document.createElement("img"),
-        authorName = document.createElement("span");
+        img          = document.createElement("img"),
+        authorName   = document.createElement("span");
         
         card.classList.add("card");
         headline.classList.add("headline");
