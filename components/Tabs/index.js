@@ -10,22 +10,21 @@
 
 const tops = document.querySelector(".topics");
 
-
- axios.get("https://lambda-times-backend.herokuapp.com/topics")
- .then(response =>{
-     response.data.topics.forEach(element => {
-        tops.append(bab(element))
-      });
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    response.data.topics.forEach(element => {
+      tops.append(bab(element));
+    });
     //  console.log(response)
- });
+  });
 
- function bab(array){
+function bab(array) {
+  const tabThere = document.createElement("div");
 
-    const tabThere = document.createElement('div');
+  tabThere.classList.add("tab");
 
-    tabThere.classList.add('tab');
+  tabThere.textContent = array;
 
-    tabThere.textContent = array;
-
-    return tabThere
- }
+  return tabThere;
+}
