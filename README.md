@@ -35,7 +35,7 @@ Edit this document to include your answers after each question. Make sure to lea
 3. What is an event listener?
     listens for something that happens and then does something
 4. Why would we convert a NodeList into an Array?
-    
+    so that we can use array methods 
 5. What is a component?
     a reusable part of a webpage
 
