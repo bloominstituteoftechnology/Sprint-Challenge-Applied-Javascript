@@ -7,7 +7,7 @@
 // Create a function that will programmatically create the following DOM component:
 //
 // <div class="card">
-//   <div class="headline">{Headline of article}</div>
+//   <div class="headline">{Headline of article}</div> c
 //   <div class="author">
 //     <div class="img-container">
 //       <img src={url of authors image} />
@@ -17,3 +17,55 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const articleCont = document.querySelector(".cards-container");
+
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+.then(dataObj =>{
+    console.log(dataObj);
+    
+    Object.keys(dataObj.data.articles)
+    
+    
+    
+    .forEach(article =>{
+        const newArticle = articleComp(article);
+        articleCont.appendChild(newArticle);
+    });  
+
+})
+.catch (error => {
+    console.log(error)
+});
+
+
+
+function articleComp(articles){
+    //create element
+    const 
+        cardDiv = document.createElement("div"),
+        headlineDiv = document.createElement("div"),
+        authorDiv = document.createElement("div"),
+        imageDiv = document.createElement("div"),
+        image = document.createElement("img"),
+        authorSpan = document.createElement("span");
+
+    //class
+    cardDiv.classList.add("card");
+    headlineDiv.classList.add("headline");
+    authorDiv.classList.add("author");
+    imageDiv.classList.add("img-container");
+
+    //append
+    cardDiv.append(headlineDiv, authorDiv);
+    authorDiv.append(imageDiv);
+    imageDiv.append(image, authorSpan);
+    
+    //content
+    headlineDiv.textContent = articles.headline;
+    image.src = articles.authorPhoto;
+    authorSpan.textContent = articles.authorName;
+
+    return cardDiv
+}
