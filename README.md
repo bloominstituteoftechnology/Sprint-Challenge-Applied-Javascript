@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Object-based representation of the source HTML document. It can be used to delete, add, or change content on an HTML document.
+
 2. What is an event?
+
+User interactions on a site are events. Events could be used to trigger dynamic functionality in sites.
 
 3. What is an event listener?
 
+Event listener tracks events and adds functionality through a callback. 
+
 4. Why would we convert a NodeList into an Array?
 
+NodeList is an array-lie object, which means it does not have the full functionality of an array. It could be useful to convert to an array to get access to more methods (methods other than forEach)
+
 5. What is a component?
+
+Modular/stand-alone groups of code that cover css,html, and js. They allow for automation and reusability.
+
 
 ### Git Set up
 
