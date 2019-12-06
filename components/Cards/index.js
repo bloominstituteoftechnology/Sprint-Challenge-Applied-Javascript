@@ -23,25 +23,28 @@ const articleCont = document.querySelector(".cards-container");
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(dataObj =>{
-    console.log(dataObj);
+    console.log(`THEN IS WORKING`, dataObj.data);
     
-    Object.keys(dataObj.data.articles)
-    
-    
-    
+    Object.values(dataObj.data.articles)
     .forEach(article =>{
-        const newArticle = articleComp(article);
-        articleCont.appendChild(newArticle);
+        // for (var blog in article){
+        //     console.log(`in the for loop`, Object.values(article));
+        
+        Object.values(article).forEach(article => {
+            const newArticle = articleComp(article);
+            articleCont.appendChild(newArticle);
+        })         
+        
     });  
 
 })
 .catch (error => {
-    console.log(error)
+    console.log(`CATCH IS WORKING`, error)
 });
 
 
 
-function articleComp(articles){
+function articleComp(response){
     //create element
     const 
         cardDiv = document.createElement("div"),
@@ -63,9 +66,9 @@ function articleComp(articles){
     imageDiv.append(image, authorSpan);
     
     //content
-    headlineDiv.textContent = articles.headline;
-    image.src = articles.authorPhoto;
-    authorSpan.textContent = articles.authorName;
+    headlineDiv.textContent = response.headline;
+    image.src = response.authorPhoto;
+    authorSpan.textContent = response.authorName;
 
     return cardDiv
 }
