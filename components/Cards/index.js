@@ -20,9 +20,30 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    response.data.forEach(item => {
-        getCard(item);
+    const entryPoint = document.querySelector('.cards-container')
+   
+    console.log('articles' , response) 
+    response.data.articles.javascript.forEach(item => {
+       const freshCard = getCard(item);
+        entryPoint.appendChild(freshCard)
     })
+    response.data.articles.bootstrap.forEach(item => {
+        const freshCard = getCard(item);
+        entryPoint.appendChild(freshCard)
+    })
+    response.data.articles.technology.forEach(item => {
+        const freshCard = getCard(item);
+        entryPoint.appendChild(freshCard)
+    })
+    response.data.articles.jquery.forEach(item => {
+        const freshCard = getCard(item);
+        entryPoint.appendChild(freshCard)
+    })
+    response.data.articles.node.forEach(item => {
+        const freshCard = getCard(item);
+        entryPoint.appendChild(freshCard)
+    })
+    
 })
 
 
@@ -48,8 +69,7 @@ function getCard (moreData){
     freshCard.appendChild(newAuthor)
     newAuthor.appendChild(newImgCont)
 
-    const entryPoint = document.querySelector('.cards-container')
-    entryPoint.appendChild(freshCard)
+   
 
 return freshCard
 }

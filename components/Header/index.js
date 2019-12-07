@@ -19,8 +19,8 @@ function Header(data) {
     newSpan.classList.add('date')
     spanTwo.classList.add('temp')
 
-    newSpan.textContent = data.date
-    spanTwo.textContent = data.temp
+    newSpan.textContent = 'March 28, 2019'
+    spanTwo.textContent = '98 \xB0'
 
 
 
@@ -35,3 +35,4 @@ function Header(data) {
     return newHeader
 }
 const entryPoint = document.querySelector('.header-container')
+entryPoint.appendChild(Header()) 
