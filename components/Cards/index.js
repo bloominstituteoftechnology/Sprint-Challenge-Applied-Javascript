@@ -30,7 +30,7 @@ axios
 
 
     ///////////////// Create Card Component /////////////////
-function createCard (object){
+function cardCreator (object){
     ///////////////// Create Elements /////////////////
     const cardDiv = document.createElement('div');
     const headline = document.createElement('div');
@@ -40,10 +40,17 @@ function createCard (object){
     const writtenBy = document.createElement('span');
 
     ///////////////// Add Classes /////////////////
+    cardDiv.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+
+    ///////////////// Add Attributes /////////////////
+    img.src = "object.articles.arrayItem.authorPhoto";
+
+    ///////////////// Add Content /////////////////
+    headline.textContent = "object.articles.arrayItem.headline";
+    writtenBy.textContent =  `By: ${object.articles.arrayItem.authorName}`;
     
-
-
-
-
-
-}
+    return cardDiv;
+};
