@@ -16,9 +16,9 @@ axios
 		const topics = res.data;
 		console.log(res, 'topics');
 		console.log(topics);
-		topics.forEach((param) => {
-			createTopic(param);
-		});
+		createTopic(topics);
+		const newTopic = createTopic(topics);
+		tab.appendChild(newTopic);
 	})
 	.catch((err) => {
 		console.log(err);
