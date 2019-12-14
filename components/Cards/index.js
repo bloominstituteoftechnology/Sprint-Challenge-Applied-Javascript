@@ -28,26 +28,12 @@ axios
         .then((response) => {
             console.log(response);
             const articles = response.data.articles;
-            let eachArticle = articles.forEach((article) => {
-                return article;
-            })
-            let articleContentArray = eachArticle.forEach((array) => {
-                return array;
-            })
-            let articleContentArrayInfo = articleContentArray.forEach((info) => {
-                const headlineInfo = info.headline;
-                const authorPhotoInfo = info.authorPhoto;
-                const authorNameInfo = info.authorName;
-                articleContentArrayInfo.forEach(() => {
-                    cardsContainer.appendChild(cardCreator(articleContentArrayInfo));
-                })
-            })
-            
+            articles.forEach(article => cardsContainer.appendChild(cardCreator(article.headline, article.authorPhoto, article.authorName)));
         })
 
 
     ///////////////// Create Card Component /////////////////
-function cardCreator (object){
+function cardCreator (articleHeadline, articleAuthorPhoto, articleAuthorName){
     ///////////////// Create Elements /////////////////
     const cardDiv = document.createElement('div');
     const headline = document.createElement('div');
@@ -63,11 +49,11 @@ function cardCreator (object){
     imgContainer.classList.add('img-container');
 
     ///////////////// Add Attributes /////////////////
-    authorImg.src = "object.articles.arrayItem.authorPhoto";
+    authorImg.src = articleAuthorPhoto;
 
     ///////////////// Add Content /////////////////
-    headline.textContent = "object.articles.arrayItem.headline";
-    writtenBy.textContent =  "By: ${object.articles.arrayItem.authorName}";
+    headline.textContent = articleHeadline;
+    writtenBy.textContent = `By: ${articleAuthorName}`;
 
     ///////////////// Append / Nest Elements /////////////////
     cardDiv.appendChild(headline);
@@ -81,4 +67,4 @@ function cardCreator (object){
     return cardDiv;
 };
 
-cardCreator();
+// cardCreator();
