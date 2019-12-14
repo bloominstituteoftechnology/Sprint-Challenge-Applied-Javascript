@@ -19,8 +19,8 @@ axios
         .then((response) => {
             // console.log(response);
             const newTopics = response.data.topics;
-            newTopics.forEach(() => {
-                topicsElement.appendChild(tabCreator(newTopics))
+            newTopics.forEach((topic) => {
+                topicsElement.appendChild(tabCreator(topic))
             })
         })
 
@@ -30,7 +30,7 @@ function tabCreator (object) {
 
     tabTopic.classList.add('tab');
 
-    tabTopic.textContent = "Topic Here";
+    tabTopic.textContent = object;
 
     // console.log(tabTopic);
 
