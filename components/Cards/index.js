@@ -20,6 +20,15 @@
 
 const cardContainer = document.querySelector('.cards-container');
 
+axios
+	.get('https://lambda-times-backend.herokuapp.com/articles')
+	.then((res) => {
+		console.log(res, 'Articles');
+	})
+	.catch((err) => {
+		console.log('Error!', err);
+	});
+
 function newCard(obj) {
 	// Creating new elements
 
@@ -36,5 +45,20 @@ function newCard(obj) {
 	card.appendChild(author);
 	author.appendChild(imgContainer);
 	imgContainer.appendChild(authorImg);
-	imgContainer.appendChild(authorName);
+	author.appendChild(authorName);
+
+	// Added CSS Classes to elements
+
+	card.classList.add('card');
+	headline.classList.add('headline');
+	author.classList.add('author');
+	imgContainer.classList.add('img-container');
+
+	// headline.textContent =
+	// imgContainer.src =
+	// authorName.textContent =
+
+	return card;
 }
+
+newCard();
