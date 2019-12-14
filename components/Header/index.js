@@ -19,7 +19,7 @@ function Header(param) {
 	const lambdaTimes = document.createElement('h2');
 	const temp = document.createElement('span');
 
-	console.log(mainHeader, 'IS this working right now??');
+	console.log(mainHeader, 'Is this working?');
 
 	// Appending elements to create structure
 
