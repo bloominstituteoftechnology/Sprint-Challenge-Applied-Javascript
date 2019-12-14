@@ -23,7 +23,8 @@ const cardContainer = document.querySelector('.cards-container');
 axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
-		console.log(res, 'Articles');
+		const articles = res.data.articles;
+		console.log(articles, 'Is this working?');
 	})
 	.catch((err) => {
 		console.log('Error!', err);
