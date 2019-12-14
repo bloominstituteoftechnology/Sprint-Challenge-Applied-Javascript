@@ -25,6 +25,8 @@ function Header() {
     spandate.classList.add('date');
     spantemp.classList.add('temp');
 
+/*....................add title...................*/
+    title.textContent = 'Lambda Times';
 
 
     return divHeader;
@@ -36,4 +38,4 @@ function Header() {
 
 const domHeader = document.querySelector('.header-container');
 
-// console.log(Header());
+console.log(Header());
