@@ -11,9 +11,10 @@
 
 const headerContainer = document.querySelector('.header-container');
 
+headerContainer.appendChild(Header());
 
 
-function Header(obj) {
+function Header() {
     ///////////////// Create Elements /////////////////
     const headerDiv = document.createElement('div');
     const date = document.createElement('span');
@@ -35,7 +36,12 @@ function Header(obj) {
     title.textContent = "Lambda Times";
     temp.textContent = "98°";
 
+    console.log(headerDiv);
+
     return headerDiv;
 }
+
+
+
 
 
