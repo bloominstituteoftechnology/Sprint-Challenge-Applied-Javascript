@@ -18,14 +18,31 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+    ///////////////// .cards-container Element /////////////////
+const cardsContainer = document.querySelector('.cards-container');
+
 
     ///////////////// Axios /////////////////
-
-
 axios
     .get("https://lambda-times-backend.herokuapp.com/articles")
         .then((response) => {
             console.log(response);
+            const articles = response.data.articles;
+            let eachArticle = articles.forEach((article) => {
+                return article;
+            })
+            let articleContentArray = eachArticle.forEach((array) => {
+                return array;
+            })
+            let articleContentArrayInfo = articleContentArray.forEach((info) => {
+                const headlineInfo = info.headline;
+                const authorPhotoInfo = info.authorPhoto;
+                const authorNameInfo = info.authorName;
+                articleContentArrayInfo.forEach(() => {
+                    cardsContainer.appendChild(cardCreator(articleContentArrayInfo));
+                })
+            })
+            
         })
 
 
@@ -36,7 +53,7 @@ function cardCreator (object){
     const headline = document.createElement('div');
     const author = document.createElement('div');
     const imgContainer = document.createElement('div');
-    const img = document.createElement('img');
+    const authorImg = document.createElement('img');
     const writtenBy = document.createElement('span');
 
     ///////////////// Add Classes /////////////////
@@ -46,11 +63,22 @@ function cardCreator (object){
     imgContainer.classList.add('img-container');
 
     ///////////////// Add Attributes /////////////////
-    img.src = "object.articles.arrayItem.authorPhoto";
+    authorImg.src = "object.articles.arrayItem.authorPhoto";
 
     ///////////////// Add Content /////////////////
     headline.textContent = "object.articles.arrayItem.headline";
-    writtenBy.textContent =  `By: ${object.articles.arrayItem.authorName}`;
+    writtenBy.textContent =  "By: ${object.articles.arrayItem.authorName}";
+
+    ///////////////// Append / Nest Elements /////////////////
+    cardDiv.appendChild(headline);
+    cardDiv.appendChild(author);
+    author.appendChild(imgContainer);
+    imgContainer.appendChild(authorImg);
+    author.appendChild(writtenBy);
     
+    // console.log(cardDiv);
+
     return cardDiv;
 };
+
+cardCreator();
