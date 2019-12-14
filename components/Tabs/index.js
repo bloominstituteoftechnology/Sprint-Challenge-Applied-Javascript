@@ -17,7 +17,7 @@ const topicsElement = document.querySelector('.topics');
 axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             const newTopics = response.data.topics;
             newTopics.forEach(() => {
                 topicsElement.appendChild(tabCreator(newTopics))
@@ -32,7 +32,7 @@ function tabCreator (object) {
 
     tabTopic.textContent = "Topic Here";
 
-    console.log(tabTopic);
+    // console.log(tabTopic);
 
     return tabTopic;
 };

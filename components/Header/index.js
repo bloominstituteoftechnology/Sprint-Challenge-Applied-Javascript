@@ -36,7 +36,7 @@ function Header() {
     title.textContent = "Lambda Times";
     temp.textContent = "98°";
 
-    console.log(headerDiv);
+    // console.log(headerDiv);
 
     return headerDiv;
 }
