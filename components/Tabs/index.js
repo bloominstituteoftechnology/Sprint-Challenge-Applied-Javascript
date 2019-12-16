@@ -14,7 +14,9 @@ axios
 	.get('https://lambda-times-backend.herokuapp.com/topics')
 	.then((res) => {
 		console.log(res, 'topics');
-		const topicsList = data.topics;
+		const topicsList = res.data.topics;
+		const newList = Object.keys(topicsList);
+		console.log(newList, 'hopefully this works');
 	})
 	.catch((err) => {
 		console.log(err);
@@ -31,8 +33,6 @@ function addTopic(obj) {
 	});
 	return newTopic;
 }
-
-tab.appendChild(addTopic(topicsList));
 
 // axios
 // 	.get('https://lambda-times-backend.herokuapp.com/topics')

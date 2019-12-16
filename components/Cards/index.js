@@ -24,12 +24,12 @@ axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
 		const articles = res.data;
-		newCard(articles);
-		// articles.forEach((info) => {
-		// 	const infoAdded = info;
-		// 	cardContainer.appendChild(infoAdded);
-		// });
-		cardContainer.appendChild(newCard);
+		const newArticle = Object.keys(articles).forEach((key) => {
+			console.log(key, articles[key]);
+		});
+		newCard(newArticle);
+
+		cardContainer.appendChild(newCard(newArticle));
 		console.log(articles, 'Is this working?');
 	})
 	.catch((err) => {
