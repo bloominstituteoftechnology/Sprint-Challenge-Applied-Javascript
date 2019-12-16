@@ -11,7 +11,6 @@
 
 
 function Header() {
-};
 
     const newDiv = document.createElement('div');
     newDiv.classList.add('header');
@@ -32,6 +31,10 @@ function Header() {
     newDiv.appendChild(newSpan);
     newDiv.appendChild(newH1);
     newDiv.appendChild(newSpan2);
+};
+
+const headerThings = Header();
+
 
 
 
