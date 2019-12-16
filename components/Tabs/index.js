@@ -12,11 +12,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then(response => {
     console.log(response);
 
-    // Topics
+    // Creating additions to Topics
 
     const topics = document.querySelector('.topics');
 
-    // Creating and Iterating through topics:
 
     response.data.topics.forEach(topic => {
       const tab = document.createElement('div');
