@@ -28,7 +28,8 @@ function Header() {
     headerDate.classList.add('date');
     headerTemp.classList.add('temp');
 
-
+    // adding attributes to the elements
+    
 }
 
 

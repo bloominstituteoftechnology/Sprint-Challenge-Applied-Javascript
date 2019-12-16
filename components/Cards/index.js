@@ -18,14 +18,16 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+const cardsContainer = document.querySelector('.cards-container');
+
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(res => {
         console.log(res);
-        const cardArr = res.data.articles;
+        const cardArr = res.data.articles['bootstarp', 'javascript', 'jquery', 'node', 'technology'];
         cardArr.forEach((authorCard) => {
             const newCard = updateArticles(authorCard);
-            headerContainer.appendChild(newCard);
+            cardsContainer.appendChild(newCard);
         });
         console.log(cardArr);
 
@@ -34,25 +36,31 @@ axios
         console.log(err);
     })
 
-function updateArticles() {
+function updateArticles(obj) {
     // creating elements
     const card = document.createElement('div');
     const cardHeadline = document.createElement('div');
     const author = document.createElement('div');
     const imageContainer = document.createElement('div');
     const image = document.createElement('img');
-    const authorName = document.createElement('span');
+    const authorsName = document.createElement('span');
 
     // appending to the header div
     card.appendChild(cardHeadline);
     card.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(image);
-    author.appendChild(authorName);
+    author.appendChild(authorsName);
 
     // adding classes back in
     card.classList.add('card');
     cardHeadline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
+
+    // add contents to the elements we created
+    card.textContent = obj.articles;
+    cardHeadline.textContent = obj.headline;
+    author.textContent = obj.authorName;
+    image.src = obj.authorPhoto;
 }
