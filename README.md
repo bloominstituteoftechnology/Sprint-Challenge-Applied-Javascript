@@ -29,15 +29,17 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+DOM stands for Direct Object Modle and this is a branching data structure that shows how a web page is formated.
 2. What is an event?
-
+Events notify the code of any user interations with the webpage.
 3. What is an event listener?
+An event listner is code that looks for user interaction to preform a change in the webpage after said interaction.
 
 4. Why would we convert a NodeList into an Array?
+We would convert a nodelist into and Array to make the information in a node list useable. You can not call information from a node list.
 
 5. What is a component?
-
+A component is a data structure made up of three parts HTML CSS and Javascript.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
