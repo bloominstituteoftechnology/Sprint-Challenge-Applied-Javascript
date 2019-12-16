@@ -23,17 +23,29 @@ const cardContainer = document.querySelector('.cards-container');
 axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
-		const articles = res.data.articles;
-		// articles.forEach((tech) => {
-
-		// })
+		const articles = res.data;
 		newCard(articles);
+		articles.forEach((info) => {
+			const infoAdded = info;
+			cardContainer.appendChild(infoAdded);
+		});
 		cardContainer.appendChild(newCard);
 		console.log(articles, 'Is this working?');
 	})
 	.catch((err) => {
 		console.log('Error!', err);
 	});
+
+// articles.forEach((info) => {
+// 	axios
+// 		.get('https://lambda-times-backend.herokuapp.com/articles')
+// 		.then((res) => {
+// 			const newInfo = res.articles;
+// 			const newAuthor = newCard(newInfo);
+// 			cardContainer.appendChild(newAuthor);
+// 		})
+// 		.catch((err) => console.log(err));
+// });
 
 function newCard(obj) {
 	// Creating new elements
