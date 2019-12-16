@@ -42,8 +42,8 @@ Components are a set combination of three parts; HTML, CSS and JavaScript and th
 
 * [x ] Fork the project into your GitHub user account
 * [x ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [x ] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
