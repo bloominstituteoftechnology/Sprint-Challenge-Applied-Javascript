@@ -25,10 +25,10 @@ axios
 	.then((res) => {
 		const articles = res.data;
 		newCard(articles);
-		articles.forEach((info) => {
-			const infoAdded = info;
-			cardContainer.appendChild(infoAdded);
-		});
+		// articles.forEach((info) => {
+		// 	const infoAdded = info;
+		// 	cardContainer.appendChild(infoAdded);
+		// });
 		cardContainer.appendChild(newCard);
 		console.log(articles, 'Is this working?');
 	})
