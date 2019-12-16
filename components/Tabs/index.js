@@ -33,6 +33,7 @@ function addTopic(obj) {
 }
 
 tab.appendChild(addTopic(topicsList));
+
 // axios
 // 	.get('https://lambda-times-backend.herokuapp.com/topics')
 // 	.then((res) => {

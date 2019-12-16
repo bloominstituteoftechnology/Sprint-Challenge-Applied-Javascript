@@ -24,6 +24,11 @@ axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
 		const articles = res.data.articles;
+		// articles.forEach((tech) => {
+
+		// })
+		newCard(articles);
+		cardContainer.appendChild(newCard);
 		console.log(articles, 'Is this working?');
 	})
 	.catch((err) => {
@@ -55,11 +60,13 @@ function newCard(obj) {
 	author.classList.add('author');
 	imgContainer.classList.add('img-container');
 
-	// headline.textContent =
-	// imgContainer.src =
-	// authorName.textContent =
+	console.log(card);
+
+	headline.textContent = `${obj.headline}`;
+	imgContainer.src = `${obj.authorPhoto}`;
+	authorName.textContent = `${obj.authorName}`;
 
 	return card;
 }
 
-newCard();
+// cardContainer.appendChild(newCard());
