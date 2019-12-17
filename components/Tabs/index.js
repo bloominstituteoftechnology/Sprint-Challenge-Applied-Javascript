@@ -4,6 +4,29 @@
 // Once the data is returned console.log it and review the structure.
 // Iterate over the topics creating a new Tab component and add it to the DOM
 // under the .topics element.
-//
+
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const tab = document.querySelector('.tabs');
+
+axios
+	.get('https://lambda-times-backend.herokuapp.com/topics')
+	.then((res) => {
+		console.log(res, 'topics');
+		const topicsList = res.data.topics;
+		topicsList.forEach((item) => {
+			const newTab = addTopic(item);
+			tab.appendChild(newTab);
+		});
+	})
+	.catch((err) => {
+		console.log(err);
+	});
+
+function addTopic(string) {
+	const newTopic = document.createElement('ul');
+	newTopic.textContent = string;
+
+	return newTopic;
+}

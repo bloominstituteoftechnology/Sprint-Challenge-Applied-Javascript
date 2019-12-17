@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+ Direct Object Model - Where JavaScript gets all the power it needs to create dynamic HTML. It is a the object oriented representation of the web page.
+
 2. What is an event?
+
+An event is something the browser or the user does that causes a reaction. Once it is detected then something will occur on the web page. 
 
 3. What is an event listener?
 
+An event listener attaches to the element in which you want to cause the event occur to. Example would be clicking on a certain element causing a reaction to happen.
+
 4. Why would we convert a NodeList into an Array?
 
+Converting a NodeList into an Array will allow us to access certain methods on the array that are not available to do on the NodeList.
+
 5. What is a component?
+
+A component is resuable pieces of code that can be used to build elements sharing functionality and styling.
 
 ### Git Set up
 
