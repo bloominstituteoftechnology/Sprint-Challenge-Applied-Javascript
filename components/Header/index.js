@@ -11,7 +11,9 @@
 
 const headerContainer = document.querySelector('.header-container');
 
+const headerContent = Header();
 
+headerContainer.appendChild(headerContent);
 
 function Header() {
     // creading the elements
@@ -31,7 +33,11 @@ function Header() {
     headerTemp.classList.add('temp');
 
     // adding attributes to the elements
-    
+    headerDate.textContent = 'SMARCH 28, 2019';
+    headerTitle.textContent = 'Lambda Times';
+    headerTemp.textContent = '98°';
+
+    return header;
 }
 
 

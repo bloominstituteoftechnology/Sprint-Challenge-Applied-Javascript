@@ -14,17 +14,11 @@ axios
     .get('https://lambda-times-backend.herokuapp.com/topics')
     .then(res => {
         console.log(res)
-        const newTab = res.data.topics;
-        newTab.push('aNewTab');
+        const topics = res.data.topics;
+        topics.forEach(obj => {
+            addTab(obj);
+        })
 
-        // const bootstraps = newTab.bootstrap;
-        // const javascripts = newTab.javascript;
-        // const jquerys = newTab.jquery;
-        // const nodes = newTab.node;
-        // const technologys = newTab.technology;
-
-        // const allTabs = bootstraps.concat(javascripts, jquerys, nodes, technologys);
-        // console.log(allTabs)
     })
         
 
@@ -35,6 +29,7 @@ axios
 function addTab(obj) {
     const tab = document.createElement('div');
     tab.classList.add('tab');
-
-    //tab.textContent = obj.topics[5];
+    tab.textContent = obj;
+    topicsArr.appendChild(tab);
+    
 }
