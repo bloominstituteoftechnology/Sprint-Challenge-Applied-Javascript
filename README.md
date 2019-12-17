@@ -30,13 +30,21 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+   an object represpentation of html elements on a webpage.
+
 2. What is an event?
 
+  Any user interaction with a site. examplese like scrolling up and down or moving of the mouse.
+
 3. What is an event listener?
+
+    It's when we choose specific elements to listen to specfic events.
 
 4. Why would we convert a NodeList into an Array?
 
 5. What is a component?
+
+Are reusable pieces of cpde that can be used to build elments by sharing funcationality and styling.
 
 ### Git Set up
 
