@@ -15,51 +15,18 @@ axios
 	.then((res) => {
 		console.log(res, 'topics');
 		const topicsList = res.data.topics;
-		const newList = Object.keys(topicsList);
-		console.log(newList, 'hopefully this works');
+		topicsList.forEach((item) => {
+			const newTab = addTopic(item);
+			tab.appendChild(newTab);
+		});
 	})
 	.catch((err) => {
 		console.log(err);
 	});
 
 function addTopic(obj) {
-	const newTopic = document.createElement('p');
-	const topicItems = obj.topics;
+	const newTopic = document.createElement('ul');
+	newTopic.textContent = obj;
 
-	topicItems.forEach((text) => {
-		const topic = document.createElement('p');
-		topic.textContent = text;
-		newTopic.appendChild(topic);
-	});
 	return newTopic;
 }
-
-// axios
-// 	.get('https://lambda-times-backend.herokuapp.com/topics')
-// 	.then((res) => {
-// 		const topics = res.data;
-// 		console.log(res, 'topics');
-// 		console.log(topics);
-// 		createTopic(topics);
-// 		const newTopic = createTopic(topics);
-// 		tab.appendChild(newTopic);
-// 	})
-// 	.catch((err) => {
-// 		console.log(err);
-// 	});
-
-// function createTopic(arr) {
-// 	const tabItem = document.createElement('p');
-
-// 	tab.appendChild(tabItem);
-
-// 	//creating new tab
-
-// 	newTab.forEach((topic) => {
-// 		const item = document.createElement('li');
-// 		item.textContent = topic;
-// 		tabItem.appendChild(item);
-// 	});
-
-// 	return tabItem;
-// }
