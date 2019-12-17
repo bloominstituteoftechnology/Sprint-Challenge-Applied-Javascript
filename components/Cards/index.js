@@ -25,10 +25,20 @@ axios
 	.then((res) => {
 		const articles = res.data.articles;
 		console.log(articles, 'show articles');
-		Object.keys(articles).forEach((item) => {
-			const newArticle = newCard(item);
-			console.log(newArticle, 'Adding in articles');
-			cardContainer.appendChild(newArticle);
+		const javascript = articles.javascript;
+		const bootstrap = articles.boostrap;
+		const jquery = articles.jquery;
+		const node = articles.node;
+		const technology = articles.technology;
+
+		// --- This is one option to do it and then forEach over this to add to the DOM. Array of just javascript articles
+
+		const allArticles = javascript.concat(bootstrap, jquery, node, technology);
+		console.log(allArticles, 'Array of articles');
+		allArticles.forEach((item) => {
+			const createdArticle = newCard(item);
+			// console.log(createdArticle, 'Creating in articles');
+			cardContainer.appendChild(createdArticle);
 		});
 	})
 	.catch((err) => {
@@ -36,6 +46,8 @@ axios
 	});
 
 function newCard(obj) {
+	//this will create only 1 card. Do not over think this!
+
 	// Creating new elements
 
 	const card = document.createElement('div');
@@ -60,13 +72,11 @@ function newCard(obj) {
 	author.classList.add('author');
 	imgContainer.classList.add('img-container');
 
-	console.log(card);
+	// console.log(card);
 
-	headline.textContent = obj;
-	imgContainer.src = obj.authorPhoto;
-	authorName.textContent = obj.authorName;
+	headline.textContent = `${obj.headline}`;
+	imgContainer.src = `${obj.authorPhoto}`;
+	authorName.textContent = `${obj.authorName}`;
 
 	return card;
 }
-
-// cardContainer.appendChild(newCard());

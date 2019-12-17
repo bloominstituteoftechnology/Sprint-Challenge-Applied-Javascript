@@ -24,9 +24,9 @@ axios
 		console.log(err);
 	});
 
-function addTopic(obj) {
+function addTopic(string) {
 	const newTopic = document.createElement('ul');
-	newTopic.textContent = obj;
+	newTopic.textContent = string;
 
 	return newTopic;
 }
