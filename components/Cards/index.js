@@ -24,43 +24,57 @@ axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(res => {
         console.log(res);
-        const cardArr = res.data.articles['bootstarp', 'javascript', 'jquery', 'node', 'technology'];
-        cardArr.forEach((authorCard) => {
+        const cardArr = res.data.articles;
+
+        const bootstraps = cardArr.bootstrap;
+        const javascripts = cardArr.javascript;
+        const jquerys = cardArr.jquery;
+        const nodes = cardArr.node;
+        const technologys = cardArr.technology;
+
+        const allCards = bootstraps.concat(javascripts, jquerys, nodes, technologys);
+        console.log(allCards)
+
+        allCards.forEach((authorCard) => {
             const newCard = updateArticles(authorCard);
             cardsContainer.appendChild(newCard);
         });
-        console.log(cardArr);
 
     })
     .catch(err => {
         console.log(err);
     })
 
-function updateArticles(obj) {
+function updateArticles(object) {
     // creating elements
-    const card = document.createElement('div');
+    const cards = document.createElement('div');
     const cardHeadline = document.createElement('div');
     const author = document.createElement('div');
     const imageContainer = document.createElement('div');
-    const image = document.createElement('img');
+    const img = document.createElement('img');
     const authorsName = document.createElement('span');
 
-    // appending to the header div
-    card.appendChild(cardHeadline);
-    card.appendChild(author);
-    author.appendChild(imageContainer);
-    imageContainer.appendChild(image);
-    author.appendChild(authorsName);
-
     // adding classes back in
-    card.classList.add('card');
+    cards.classList.add('card');
     cardHeadline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
 
+    // appending to the header div
+    cards.appendChild(cardHeadline);
+    cards.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(img);
+    author.appendChild(authorsName);
+
+    
+
     // add contents to the elements we created
-    card.textContent = obj.articles;
-    cardHeadline.textContent = obj.headline;
-    author.textContent = obj.authorName;
-    image.src = obj.authorPhoto;
+    cardHeadline.textContent = object.headline
+    img.src = object.authorPhoto
+    authorsName.textContent = `By: ${object.authorName}`;    
+
+    
+
+    return cards;
 }

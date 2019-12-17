@@ -16,6 +16,15 @@ axios
         console.log(res)
         const newTab = res.data.topics;
         newTab.push('aNewTab');
+
+        // const bootstraps = newTab.bootstrap;
+        // const javascripts = newTab.javascript;
+        // const jquerys = newTab.jquery;
+        // const nodes = newTab.node;
+        // const technologys = newTab.technology;
+
+        // const allTabs = bootstraps.concat(javascripts, jquerys, nodes, technologys);
+        // console.log(allTabs)
     })
         
 
@@ -23,8 +32,9 @@ axios
         console.log(err);
     })
 
-function addTab() {
+function addTab(obj) {
     const tab = document.createElement('div');
     tab.classList.add('tab');
 
+    //tab.textContent = obj.topics[5];
 }
