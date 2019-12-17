@@ -25,15 +25,15 @@ axios
 	.then((res) => {
 		const articles = res.data.articles;
 		console.log(articles, 'show articles');
+		const bootstrap = articles.bootstrap;
 		const javascript = articles.javascript;
-		const bootstrap = articles.boostrap;
 		const jquery = articles.jquery;
 		const node = articles.node;
 		const technology = articles.technology;
 
 		// --- This is one option to do it and then forEach over this to add to the DOM. Array of just javascript articles
 
-		const allArticles = javascript.concat(bootstrap, jquery, node, technology);
+		const allArticles = bootstrap.concat(javascript, jquery, node, technology);
 		console.log(allArticles, 'Array of articles');
 		allArticles.forEach((item) => {
 			const createdArticle = newCard(item);
