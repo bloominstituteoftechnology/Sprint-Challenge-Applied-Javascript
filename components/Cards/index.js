@@ -24,13 +24,11 @@ axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
 		const articles = res.data;
-		const newArticle = Object.keys(articles).forEach((key) => {
-			console.log(key, articles[key]);
+		Object.keys(articles).forEach((key) => {
+			const newArticle = newCard(key);
+			console.log(newArticle, 'Adding in article');
+			cardContainer.appendChild(newArticle);
 		});
-		newCard(newArticle);
-
-		cardContainer.appendChild(newCard(newArticle));
-		console.log(articles, 'Is this working?');
 	})
 	.catch((err) => {
 		console.log('Error!', err);
