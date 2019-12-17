@@ -9,16 +9,16 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-Const headerCont = document.querySelector('.header-container');
+const headerCont = document.querySelector('.header-container');
 console.log(headerCont); 
 
-const component = Header();
-headerCont.appendChild(component);
+headerCont.appendChild(Header());
 
-function Header() {  //function that will hold the component//
+function Header() {  
     
     const header = document.createElement('div'); //created variable and set that equal to the created of the div element//
     header.classList.add('header'); //now you can use the variable you created and add a class to what the variable equals which is a created div//
+    header.textContent = "Lambda Times";
 
     const date = document.createElement('span');
     date.classList.add('date');
