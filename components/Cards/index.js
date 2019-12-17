@@ -24,7 +24,7 @@ axios
 	.get('https://lambda-times-backend.herokuapp.com/articles')
 	.then((res) => {
 		const articles = res.data.articles;
-		console.log(articles, 'show articles');
+		// console.log(articles, 'show articles');
 		const bootstrap = articles.bootstrap;
 		const javascript = articles.javascript;
 		const jquery = articles.jquery;
@@ -75,7 +75,7 @@ function newCard(obj) {
 	// console.log(card);
 
 	headline.textContent = `${obj.headline}`;
-	imgContainer.src = `${obj.authorPhoto}`;
+	authorImg.src = obj.authorPhoto;
 	authorName.textContent = `${obj.authorName}`;
 
 	return card;
