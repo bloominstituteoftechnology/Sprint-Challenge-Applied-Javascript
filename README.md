@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+1- The DOM (document object model) is a representation of the HTML page elements and created when the browser loads a web page. Once the page read, your browser only uses the DOM.
 
 2. What is an event?
+2- An event allows JavaScript to react to HTML elements and execute.
 
 3. What is an event listener?
+3- An event listener gives an event handler (or many) to a specified element on any HTML DOM object.
 
 4. Why would we convert a NodeList into an Array?
+4- NodeLists are a way to access DOM elements. Arrays is a JS object used to contain collections or lists of things. So, you convert NL’s to an array to manipulate, callback, retrieve data, etc. the array.
 
 5. What is a component?
+5- A component is a part or small piece of a larger whole or system. A singular modular piece of code
 
 ### Git Set up
 
@@ -49,11 +54,11 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
