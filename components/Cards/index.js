@@ -18,66 +18,103 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const cards = document.querySelector('.cards-container');
-function cardCreator(e) {
+function GitCard(title, imgUrl, author) {
 
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    const headline = document.createElement('div');
-    headline.classList.add('headline');
-    headline.textContent = e.headline;
-    card.appendChild(headline);
-
-    const author = document.createElement('div');
-    author.classList.add('e.author');
-    card.appendChild(author);
-
+    const newCard = document.createElement('div');
+    const newHeadline = document.createElement('div');
+    const newAuthor = document.createElement('div');
     const container = document.createElement('div');
-    container.classList.add('img');
-    author.appendChild(container);
+    const doggoImg = document.createElement('img');
+    const authorName = document.createElement('span');
 
-    const img = document.createElement('img');
-    img.src = e
-    container.appendChild(img);
+    newCard.classList.add('card');
+    newHeadline.classList.add('headline');
+    newAuthor.classList.add('author');
+    container.classList.add('img-container');
+    
+    newHeadline.textContent = title;
+    doggoImg.src = imgUrl;
+    authorName.textContent = `By ${author}`;
 
-    const span = document.createElement('span');
-    author.appendChild(span);
-    span.text = `By ${author}`
 
-    cards.appendChild(card);
 
-    return card;
+    newCard.appendChild(newHeadline);
+    newCard.appendChild(newAuthor);
+    newAuthor.appendChild(container);
+    container.appendChild(doggoImg);
+    newAuthor.appendChild(authorName);
+
+
+
+    return newCard;
+
 }
 
-    axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((response) => {
-        console.log(response.data.articles);
-        let bootstrap = response.data.articles.bootstrap;
-        let javascript = response.data.articles.javascript;
-        let jquery = response.data.articles.jquery;
-        let node = response.data.articles.node;
-        let tech = response.data.articles.technology;
+const cards = document.querySelector('.cards-container');
 
-        bootstrap.forEach(i => {
-            const card = cardCreator(i);
-            cards.appendChild(card);
-        })
-        javascript.forEach(i => {
-            const card = cardCreator(i);
-            cards.appendChild(card);
-        })
-        jquery.forEach(i => {
-            const card = cardCreator(i);
-            cards.appendChild(card);
-        })
-        node.forEach(i => {
-            const card = cardCreator(i);
-            cards.appendChild(card);
-        })
-        tech.forEach(i => {
-            const card = cardCreator(i);
-            cards.appendChild(card);
-        })
-    })
-console.log(cards)
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(res => {
+
+    console.log(res);
+
+    res.data.articles.bootstrap.forEach((card) => {
+        const getCard = GitCard(
+            card.headline,
+            card.authorPhoto,
+            card.authorName,
+        );
+
+        cards.appendChild(getCard);
+
+    });
+
+    res.data.articles.javascript.forEach((card) => {
+
+        //console.log(card);
+
+        const getCard = GitCard(
+            card.headline,
+            card.authorPhoto,
+            card.authorName,
+        );
+
+        cards.appendChild(getCard);
+
+    });
+
+    res.data.articles.jquery.forEach((card) => {
+        const getCard = GitCard(
+        card.headline,
+        card.authorPhoto,
+        card.authorName,
+        );
+
+        cards.appendChild(getCard);
+    });
+
+    res.data.articles.node.forEach((card) => {
+
+        const getCard = GitCard(
+            card.headline,
+            card.authorPhoto,
+            card.authorName,
+        );
+
+        cards.appendChild(getCard);
+
+    });
+
+    res.data.articles.technology.forEach((card) => {
+
+        const getCard = GitCard(
+            card.headline,
+            card.authorPhoto,
+            card.authorName,
+        );
+
+        cards.appendChild(getCard);
+    });
+})
+
+.catch((err) => {
+    console.log(err);
+});
