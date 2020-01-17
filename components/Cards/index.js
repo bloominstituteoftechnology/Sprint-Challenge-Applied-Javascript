@@ -6,14 +6,46 @@
 // This won't be as easy as just iterating over an array though.
 // Create a function that will programmatically create the following DOM component:
 //
-// <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
-//
-// Create a card for each of the articles and add the card to the DOM.
+
+function Article(items) {
+  const cards = document.createElement("div");
+  const Headline = document.createElement("div");
+  const author = document.createElement("div");
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  const authorsName = document.createElement("span");
+
+  cards.appendChild(Headline);
+  cards.appendChild(author);
+  author.appendChild(imgContainer);
+  author.appendChild(authorsName);
+  imgContainer.appendChild(img);
+
+  cards.classList.add("card");
+  Headline.classList.add("headline");
+  author.classList.add("author");
+  imgContainer.classList.add("img-container");
+
+  Headline.textContent = items.headline;
+  authorsName.textContent = items.authorName;
+  img.src = items.authorPhoto;
+
+  return cards;
+}
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(res => {
+    const articleArray = res.data.articles;
+    console.log(res);
+    Object.keys(articleArray).map(key => {
+      value = articleArray[key];
+      value.map(arts => {
+        const cardsContainer = document.querySelector(".cards-container");
+        cardsContainer.append(Article(arts));
+      });
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });
