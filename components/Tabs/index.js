@@ -14,7 +14,6 @@ axios
   .then(response => {
     const topics = response.data.topics;
     topics.forEach(item => {
-      console.log(item);
       connectToTabs.append(TopicCreator(item));
     });
   })
@@ -25,13 +24,10 @@ axios
 function TopicCreator(input) {
   // Create HTML Elements
   const mainFrame = document.createElement("div");
-
   // Add Classes
   mainFrame.classList.add("tabs");
-
   // Add Content
   mainFrame.textContent = input;
-
   // return main element
   return mainFrame;
 }
