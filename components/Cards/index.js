@@ -30,22 +30,20 @@ function cardCreator(e) {
     card.appendChild(headline);
 
     const author = document.createElement('div');
-    author.classList.add('author');
-
+    author.classList.add('e.author');
     card.appendChild(author);
 
     const container = document.createElement('div');
-    container.classList.add('image');
-
+    container.classList.add('img');
     author.appendChild(container);
 
     const img = document.createElement('img');
-    img.src = e.photo;
+    img.src = e
     container.appendChild(img);
 
     const span = document.createElement('span');
     author.appendChild(span);
-    span.text = `By ${e.author}`
+    span.text = `By ${author}`
 
     cards.appendChild(card);
 
