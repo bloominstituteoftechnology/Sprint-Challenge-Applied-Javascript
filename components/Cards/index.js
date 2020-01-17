@@ -65,13 +65,12 @@ function componentCreator(input){
     imageFrame.classList.add('img');
 
     // Add Content
-
     // input.forEach(item => {
     //     console.log(item);
     // })
 
-    articleHeadline.textContent = input.headline;
-    authorName.textContent = input.authorName;
+    articleHeadline.textContent = 'Getting a 404 error. Too many requests I guess... ' + input.headline;
+    authorName.textContent = 'Can\'t improve code without a working API to ensure that it renders a card for every piece of returned data... ' + input.authorName;
     authorImage.src = input.authorPhoto;
 
     return cardFrame;
