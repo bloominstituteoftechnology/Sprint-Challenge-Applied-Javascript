@@ -18,20 +18,20 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-axios.get( 'https://lambda-times-backend.herokuapp.com/articles')
-.then(response => {
-    response.data.articles.forEach(element => {
-        cardsContainer.appendChild(createArticle1(element))
-    });
-  console.log(response);
-})
-.catch( error => {
-  // console.log("the data was not returned", error)
-})
+// axios.get( 'https://lambda-times-backend.herokuapp.com/articles')
+// .then(response => {
+// //     response.data.articles.forEach(element => {
+// //         cardsContainer.appendChild(createArticle1(element.title, element.imgs,element.name))
+// //     });
+// //   console.log(response);
+// })
+// .catch( error => {
+//   // console.log("the data was not returned", error)
+// })
 
 const cardsContainer = document.querySelector('cards-container')
 
-function createArticle1 (JavaSciptdata){
+function createArticle1 (title, imgs, name){
 
     const card = document.createElement('div')
     const headLine = document.createElement('div')
@@ -53,7 +53,7 @@ function createArticle1 (JavaSciptdata){
     author.classList.add('author')
     imgContainer.classList.add('img-container')
 
-    headLineTitle.textContent = JavaScriptdata.headLine
+    headLineTitle.textContent = title
 
-
+    return card
 }
