@@ -25,9 +25,40 @@ const injectCardsToHTML = document.querySelector('.cards-container');
 // Write code to inject the data into the HTML class.
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    const dataForComponent = response.data.articles;
-    console.log(dataForComponent);
-    injectCardsToHTML.append(componentCreator(dataForComponent));
+    const javascript = response.data.articles.javascript;
+    console.log(response.data.articles);
+
+    javascript.forEach(item => {
+        console.log(item);
+        injectCardsToHTML.append(componentCreator(item));
+    })
+
+    const bootstrap = response.data.articles.bootstrap;
+
+    bootstrap.forEach(item => {
+        injectCardsToHTML.append(componentCreator(item));
+    })
+
+    // technology
+    const technology = response.data.articles.technology;
+    technology.forEach(item => {
+        injectCardsToHTML.append(componentCreator(item));
+    })
+    // jquery
+
+    const jquery = response.data.articles.jquery;
+    jquery.forEach(item => {
+        injectCardsToHTML.append(componentCreator(item));
+    })
+
+    // node
+    const node = response.data.articles.node;
+    node.forEach(item => {
+        injectCardsToHTML.append(componentCreator(item));
+    })
+
+
+
 })
 .catch(error => {
     console.log(error);
@@ -40,9 +71,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 
 function componentCreator(input){
-
     console.log(input);
-
     // Create HTML Elements
     const cardFrame = document.createElement('div');
     const articleHeadline = document.createElement('div');
@@ -69,8 +98,8 @@ function componentCreator(input){
     //     console.log(item);
     // })
 
-    articleHeadline.textContent = 'Getting a 404 error. Too many requests I guess... ' + input.headline;
-    authorName.textContent = 'Can\'t improve code without a working API to ensure that it renders a card for every piece of returned data... ' + input.authorName;
+    articleHeadline.textContent =  input.headline;
+    authorName.textContent = input.authorName;
     authorImage.src = input.authorPhoto;
 
     return cardFrame;
