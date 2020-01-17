@@ -26,15 +26,12 @@ const injectCardsToHTML = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
     const javascript = response.data.articles.javascript;
-    console.log(response.data.articles);
-
     javascript.forEach(item => {
         console.log(item);
         injectCardsToHTML.append(componentCreator(item));
     })
 
     const bootstrap = response.data.articles.bootstrap;
-
     bootstrap.forEach(item => {
         injectCardsToHTML.append(componentCreator(item));
     })
@@ -56,9 +53,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     node.forEach(item => {
         injectCardsToHTML.append(componentCreator(item));
     })
-
-
-
 })
 .catch(error => {
     console.log(error);

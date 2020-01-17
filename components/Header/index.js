@@ -33,6 +33,7 @@ temperatureFrame.textContent = '98°';
 
  // return main div.
  return headerDiv;
+ 
 }
  // Inject it into HTML file.
 
