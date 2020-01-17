@@ -17,3 +17,69 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const cards = document.querySelector('.cards-container');
+function cardCreator(e) {
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const headline = document.createElement('div');
+    headline.classList.add('headline');
+    headline.textContent = e.headline;
+    card.appendChild(headline);
+
+    const author = document.createElement('div');
+    author.classList.add('author');
+
+    card.appendChild(author);
+
+    const container = document.createElement('div');
+    container.classList.add('image');
+
+    author.appendChild(container);
+
+    const img = document.createElement('img');
+    img.src = e.photo;
+    container.appendChild(img);
+
+    const span = document.createElement('span');
+    author.appendChild(span);
+    span.text = `By ${e.author}`
+
+    cards.appendChild(card);
+
+    return card;
+}
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then((response) => {
+        console.log(response.data.articles);
+        let bootstrap = response.data.articles.bootstrap;
+        let javascript = response.data.articles.javascript;
+        let jquery = response.data.articles.jquery;
+        let node = response.data.articles.node;
+        let tech = response.data.articles.technology;
+
+        bootstrap.forEach(i => {
+            const card = cardCreator(i);
+            cards.appendChild(card);
+        })
+        javascript.forEach(i => {
+            const card = cardCreator(i);
+            cards.appendChild(card);
+        })
+        jquery.forEach(i => {
+            const card = cardCreator(i);
+            cards.appendChild(card);
+        })
+        node.forEach(i => {
+            const card = cardCreator(i);
+            cards.appendChild(card);
+        })
+        tech.forEach(i => {
+            const card = cardCreator(i);
+            cards.appendChild(card);
+        })
+    })
+console.log(cards)
