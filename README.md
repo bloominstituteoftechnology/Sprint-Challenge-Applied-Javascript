@@ -34,6 +34,7 @@ The DOM (Document Object Model) is an object representation of a webpage.
 
 2. What is an event?
 
+
 3. What is an event listener?
 
 4. Why would we convert a NodeList into an Array?
