@@ -18,24 +18,24 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-// axios.get( 'https://lambda-times-backend.herokuapp.com/articles')
-// .then(response => {
-// //     response.data.articles.forEach(element => {
-// //         cardsContainer.appendChild(createArticle1(element.title, element.imgs,element.name))
-// //     });
-// //   console.log(response);
-// })
-// .catch( error => {
-//   // console.log("the data was not returned", error)
-// })
+
+axios.all([axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
+           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
+           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
+           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
+           axios.get(`https://lambda-times-backend.herokuapp.com/articles`)])
+     .then(axios.spread((firstResponse, secondResponse, thirdResponse,fourthResponse, fifthResponse) => {  
+         console.log(firstResponse.data,secondResponse.data, thirdResponse.data,fourthResponse.data, fifthResponse);
+     }))
+     .catch(error => console.log(error));
 
 const cardsContainer = document.querySelector('cards-container')
 
-function createArticle1 (title, imgs, name){
+function createArticle1 (data){
 
     const card = document.createElement('div')
     const headLine = document.createElement('div')
-    const headLineTitle = document.createElement('h1')
+    // const headLineTitle = document.createElement('h1')
     const author = document.createElement('div')
     const imgContainer = document.createElement('div')
     const authorImg = document.createElement('img')
@@ -43,7 +43,7 @@ function createArticle1 (title, imgs, name){
 
     card.appendChild(headLine)
     card.appendChild(author)
-    headLine.appendChild(headLineTitle)
+    // headLine.appendChild(headLineTitle)
     author.appendChild(imgContainer)
     author.appendChild(authorsName)
     imgContainer.appendChild(authorImg)
@@ -53,7 +53,10 @@ function createArticle1 (title, imgs, name){
     author.classList.add('author')
     imgContainer.classList.add('img-container')
 
-    headLineTitle.textContent = title
+    headLine.textContent = data.headline
+    authorImg.src = data.authorPhoto
+    authorsName.textContent = data.authorName
+
 
     return card
 }
