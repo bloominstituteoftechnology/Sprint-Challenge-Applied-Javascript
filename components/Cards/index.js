@@ -17,46 +17,45 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const cardContainer = document.querySelector('.cards-container')
 
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+ .then(response => {
+     console.log(response.data.articles)
+     Object.values(response.data.articles).forEach(elements => {
+         elements.forEach(element =>{
+            cardContainer.appendChild(createCards(element)) 
+         })
+     });
+ }) 
+ .catch(error => {
 
-axios.all([axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
-           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
-           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
-           axios.get(`https://lambda-times-backend.herokuapp.com/articles`),
-           axios.get(`https://lambda-times-backend.herokuapp.com/articles`)])
-     .then(axios.spread((firstResponse, secondResponse, thirdResponse,fourthResponse, fifthResponse) => {  
-         console.log(firstResponse.data,secondResponse.data, thirdResponse.data,fourthResponse.data, fifthResponse);
-     }))
-     .catch(error => console.log(error));
+ })
 
-const cardsContainer = document.querySelector('cards-container')
+ function createCards(obj){
+    const newCard = document.createElement('div'),
+        newHeadLine = document.createElement('div'),
+        newAuthor = document.createElement('div'),
+        newImgContainer = document.createElement('div'),
+        newImg= document.createElement('img'),
+        newSpan = document.createElement('span')
+    //add classes
+        newCard.classList.add("card");
+        newHeadLine.classList.add("headline");
+        newAuthor.classList.add("author");
+        newImgContainer.classList.add("img-container");
+    //add content
+        newHeadLine.textContent = obj.headline;
+        newImg.setAttribute("src", obj.authorPhoto);
+        newSpan.textContent = obj.authorName;
 
-function createArticle1 (data){
+    // append
 
-    const card = document.createElement('div')
-    const headLine = document.createElement('div')
-    // const headLineTitle = document.createElement('h1')
-    const author = document.createElement('div')
-    const imgContainer = document.createElement('div')
-    const authorImg = document.createElement('img')
-    const authorsName = document.createElement('span')
+        newCard.appendChild(newHeadLine);
+        newCard.appendChild(newAuthor);
+        newAuthor.appendChild(newImgContainer);
+        newAuthor.appendChild(newSpan);
+        newImgContainer.appendChild(newImg);
 
-    card.appendChild(headLine)
-    card.appendChild(author)
-    // headLine.appendChild(headLineTitle)
-    author.appendChild(imgContainer)
-    author.appendChild(authorsName)
-    imgContainer.appendChild(authorImg)
-
-    card.classList.add('card')
-    headLine.classList('headLine')
-    author.classList.add('author')
-    imgContainer.classList.add('img-container')
-
-    headLine.textContent = data.headline
-    authorImg.src = data.authorPhoto
-    authorsName.textContent = data.authorName
-
-
-    return card
-}
+        return newCard
+ }
