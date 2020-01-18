@@ -25,7 +25,6 @@ function newCard() {
     const imgSrc = document.createElement('imgSrc');
     const span = document.createElement('span');
 
-    newCard.append(card);
     card.append(headline);
     card.append(author);
     author.append(imgContainer);
