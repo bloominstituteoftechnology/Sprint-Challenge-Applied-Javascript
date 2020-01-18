@@ -68,12 +68,23 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         
         enterPoint.append(articleCard(info));
     })
-    console.log("debu6",response);
+    
     response.data.articles.bootstrap.forEach(info=>{
         
         enterPoint.append(articleCard(info));
     })
-    console.log("debug11", enterPoint)
+    response.data.articles.technology.forEach(info=>{
+        
+        enterPoint.append(articleCard(info));
+    })
+    response.data.articles.jquery.forEach(info=>{
+        
+        enterPoint.append(articleCard(info));
+    })
+    response.data.articles.node.forEach(info=>{
+        
+        enterPoint.append(articleCard(info));
+    })
 })
 .catch(error =>{
 console.log("oops", error);
