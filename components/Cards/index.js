@@ -18,12 +18,40 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+const cardsEntryPoint = document.querySelector('.cards-container');
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
+                  
+       response.data.articles.bootstrap.forEach(item => {
+            const newArticleCard = Card(item);
+            cardsEntryPoint.appendChild(newArticleCard);
+        })
 
+        response.data.articles.javascript.forEach(item => {
+            const newArticleCard = Card(item);
+            cardsEntryPoint.appendChild(newArticleCard);
+        })
 
-        console.log(response);
+        response.data.articles.jquery.forEach(item => {
+            const newArticleCard = Card(item);
+            cardsEntryPoint.appendChild(newArticleCard);
+        })
+
+        response.data.articles.node.forEach(item => {
+            const newArticleCard = Card(item);
+            cardsEntryPoint.appendChild(newArticleCard);
+        })
+
+        response.data.articles.technology.forEach(item => {
+            const newArticleCard = Card(item);
+            cardsEntryPoint.appendChild(newArticleCard);
+            //console.log(item);
+        })
+        //console.log(response);
     })
+
+   
 
 function Card(finalResponse){
     const 
@@ -39,13 +67,13 @@ function Card(finalResponse){
     newAuthorContainer.classList.add('author');
     newImageContainer.classList.add('img-container');
 
+    newCard.append(newHeadline, newAuthorContainer);
+    newAuthorContainer.append(newImageContainer, newAuthor);
+    newImageContainer.appendChild(newImage);
+    
     newHeadline.textContent = finalResponse.headline;
     newImage.src = finalResponse.authorPhoto;
     newAuthor.textContent = `By ${finalResponse.authorName}`;
-
-    newCard.append(newHeadline, newAuthorContainer);
-    newAuthorContainer.appendChild(newImageContainer, newAuthor);
-    newImageContainer.appendChild(newImage);
-
+    
     return newCard;
 }
