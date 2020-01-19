@@ -9,4 +9,31 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+//ready to start project, first commit to start PR according to Sprint Instructions.
+
+function Header() {
+    //creating elements
+    let header = document.createElement('div'),
+        date = document.createElement('span'),
+        time = document.createElement('h1'),
+        temp = document.createElement('span');
+
+    //adding class(s) where needed
+    header.classList.add('header');
+    date.classList.add('date');
+    temp.classList.add('temp');
+
+    //Structuring of elements
+    header.append(date);
+    header.append(time);
+    header.append(temp);
+
+    //adding content to files
+    date.textContent = "March 28, 2019";
+    time.textContent = "Lambda Times";
+    temp.textContent = "98°"
+
+return header;
+}
+let headerContainer = document.querySelector('.header-container');
+headerContainer.append(Header())
