@@ -30,20 +30,39 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
-2. What is an event?
+<ANSWER>
 
-3. What is an event listener?
+DOM: Document Object Model, is an interface to web pages. It is essentially an API to the page, allowing programs to read and manipulate the page’s content, structure, and styles 
+
+2. What is an event? Events interact with the HTML it allows loading of pages, it also allows interaction with buttons, closing a window and resizing any action that needs to be taken goes through the Event Handler.
+
+
+<ANSWER>
+
+
+3. What is an event listener? attaches an Event to an element in the HTML  you can also addd event Listeners to any DOM object. 
+
+
+<ANSWER>
 
 4. Why would we convert a NodeList into an Array?
 
+<ANSWER>
+
+Because if you do not convert into array you miss out on JavaScript functionality. Arrays loop where as NodeList do not.
+
 5. What is a component?
+
+<ANSWER>
+
+an object having a graphical representation that can be displayed on the screen and that can interact with the user. Examples of components are the buttons, checkboxes, and scrollbars of a typical graphical user interface
 
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [x ] Fork the project into your GitHub user account
+* [x ] Clone the forked project into a directory on your machine
+* [x ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [x ] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
