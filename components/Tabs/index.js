@@ -7,3 +7,10 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const tabsEntryPoint = document.querySelector('tabs');
+const axiosPromise = axios.get('https://lambda-times-backend.herokuapp.com/topics');
+
+console.log(axiosPromise);
+
+
