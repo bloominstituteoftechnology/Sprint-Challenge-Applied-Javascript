@@ -9,8 +9,6 @@
 //    <div class="tab">topic here</div>
 
 function getCardTopic(topic) {
-    console.log(topic)
-    console.log(document.querySelectorAll(`card`))
     document.querySelectorAll('.card').forEach(card => {
         if (topic === card.dataset.article) {
             card.style.display = "block"

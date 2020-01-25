@@ -302,4 +302,7 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+  object-fit: cover;
+  width: 0;
+  height: 100%;
 }
