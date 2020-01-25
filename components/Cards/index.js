@@ -25,8 +25,9 @@ function createElement(elementType, elementContent=undefined, elementAttr=undefi
     return element
 }
 
-function createCard({ headline, authorPhoto, authorName }) {
+function createCard({ headline, authorPhoto, authorName }, article) {
     const cardDiv = createElement("div", undefined, "class", "card")
+    cardDiv.setAttribute(`data-article`, article)
     const headlineDiv = createElement("div", headline, "class", "headline")
     const authorDiv = createElement("div", undefined, "class", "author")
     const imgDiv = createElement("div", undefined, "class", "img-container")
@@ -43,10 +44,11 @@ function createCard({ headline, authorPhoto, authorName }) {
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(res => {
+        console.log(res.data)
         const articlesKeys = Object.keys(res.data.articles)
         articlesKeys.forEach(article => {
             res.data.articles[article].forEach(card => {
-                document.querySelector(".cards-container").appendChild(createCard(card))
+                document.querySelector(".cards-container").appendChild(createCard(card, article))
             })
         })
     })
