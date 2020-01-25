@@ -17,3 +17,75 @@
     <div class="right-button"> > </div>
   </div>
 */
+let carouselIndex = 0
+
+
+function carouselLeftButton() {
+  let prevIndex = carouselIndex
+  carouselIndex = carouselIndex - 1
+  
+  if (carouselIndex < 0) {
+    carouselIndex = 3
+  }
+  const carouselImages = document.querySelector(".carousel").getElementsByTagName("img")
+  // carouselImages[prevIndex].style.display = "none"
+  // carouselImages[carouselIndex].style.display = "block"
+  gsap.to(`.img-${prevIndex}`, {
+    duration: 1,
+    width: 0,
+    height: "100%",
+    display: "none"
+  })
+  gsap.to(`.img-${carouselIndex}`, {
+    width: "100%",
+    display: "block",
+  })
+}
+
+function carouselRightButton() {
+  let prevIndex = carouselIndex
+  carouselIndex = carouselIndex + 1
+  
+  if (carouselIndex > 3) {
+    carouselIndex = 0
+  }
+  const carouselImages = document.querySelector(".carousel").getElementsByTagName("img")
+  // carouselImages[prevIndex].style.display = "none"
+  // carouselImages[carouselIndex].style.display = "block"
+  gsap.to(`.img-${prevIndex}`, {
+    duration: 1,
+    width: 0,
+    height: "100%",
+    display: "none"
+  })
+  gsap.to(`.img-${carouselIndex}`, {
+    width: "100%",
+    display: "block"
+  })
+}
+
+
+function createCarousel() {
+  const carouselDiv = createElement("div", undefined, "class", "carousel")
+  const leftDiv = createElement("div", undefined, "class", "left-button")
+  leftDiv.addEventListener("click", carouselLeftButton)
+  const rightDiv = createElement("div", undefined, "class", "right-button")
+  rightDiv.addEventListener("click", carouselRightButton)
+  const imgs = ["./assets/carousel/turntable.jpeg","./assets/carousel/trees.jpeg","./assets/carousel/computer.jpeg","./assets/carousel/mountains.jpeg"]
+  const imgArr = imgs.map((img, i) => {
+    const imgElement = createElement("img", undefined, "src", img)
+    imgElement.className = `img-${i}`
+    if (i === 0) {
+      imgElement.style.width = "100%"
+      imgElement.style.display = "block"
+    }
+    return imgElement
+  })
+  carouselDiv.appendChild(leftDiv)
+  imgArr.forEach((img) => carouselDiv.appendChild(img))
+  carouselDiv.appendChild(rightDiv)
+  return carouselDiv  
+}
+
+document.querySelector(".carousel-container").appendChild(createCarousel())
+

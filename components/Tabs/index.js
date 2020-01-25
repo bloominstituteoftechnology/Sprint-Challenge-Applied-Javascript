@@ -7,3 +7,29 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+function getCardTopic(topic) {
+    document.querySelectorAll('.card').forEach(card => {
+        if (topic === card.dataset.article) {
+            card.style.display = "block"
+        } else {
+            card.style.display = "none"
+        }
+    })
+}
+axios.get("https://lambda-times-backend.herokuapp.com/topics").then((res) => {
+    res.data.topics.forEach(topic => {
+        const topicDiv = document.createElement("div")
+        topicDiv.className = "tab"
+        topicDiv.textContent = topic
+        topicDiv.addEventListener("click", () => {
+            if (topic === "node.js") {
+                topic = "node"
+            }
+            getCardTopic(topic)
+        })
+        document.querySelector(".topics").appendChild(topicDiv)
+    });
+}).catch((err) => {
+    console.log(err)
+})
