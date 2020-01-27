@@ -55,20 +55,22 @@ axios
   .then(response => {
     // console.log(response.data.topics);
     const article = response.data.articles;
-    // console.log(article);
+    console.log(response);
 
     article.javascript.forEach(e => {
-      // myCard(e);
       cardContainer.appendChild(myCard(e));
-      // myCard(e.headline);
-      // const newArt = document.createElement("div");
-      // cardContainer.appendChild(newArt);
-      // newArt.classList.add("card");
-      // newArt.textContent = e.headline;
-      // console.log(myCard(e));
-      // newArt.appendChild(myCard(e));
-      // console.log(newArt);
-      // console.log(e);
+    });
+    article.bootstrap.forEach(e => {
+      cardContainer.appendChild(myCard(e));
+    });
+    article.technology.forEach(e => {
+      cardContainer.appendChild(myCard(e));
+    });
+    article.jquery.forEach(e => {
+      cardContainer.appendChild(myCard(e));
+    });
+    article.node.js.forEach(e => {
+      cardContainer.appendChild(myCard(e));
     });
   })
   .catch(error => {
