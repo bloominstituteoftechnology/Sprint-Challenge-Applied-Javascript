@@ -18,29 +18,48 @@
   </div>
 */
 
-function createCarousel(info) {
+function createCarousel() {
   //create elements
   const carousel = document.createElement("div");
   const leftBtn = document.createElement("div");
-  const img = document.createElement("img");
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("img");
+  const img3 = document.createElement("img");
+  const img4 = document.createElement("img");
   const rightBtn = document.createElement("div");
 
   //structure
   carousel.appendChild(leftBtn);
-  carousel.appendChild(img);
+  carousel.appendChild(img1);
+  carousel.appendChild(img2);
+  carousel.appendChild(img3);
+  carousel.appendChild(img4);
   carousel.appendChild(rightBtn);
 
   //set class names
-  carousel.classList("carousel");
-  leftBtn.classList("left-button");
-  rightBtn.classList("right-button");
+  carousel.classList.add("carousel");
+  leftBtn.classList.add("left-button");
+  rightBtn.classList.add("right-button");
+  img1.classList.add("img");
+  img2.classList.add("img");
+  img3.classList.add("img");
+  img4.classList.add("img");
 
-  //add content
+  //add content - images not linking
+  img1.src = "../../assets/carousel/computer.jpeg";
+  img2.src = "./assets/carousel/mountains.jpeg";
+  img3.src = "./assets/carousel/trees.jpeg";
+  img4.src = "./assets/carousel/turntable.jpeg";
 
-  //add click event
+  //add click event - edit
   carousel.addEventListener("click", () => {
     carousel.classList.toggle("selected");
   });
-
+  console.log(carousel);
   return carousel;
 }
+
+const newCarousel = document.querySelector(".carousel-container");
+newCarousel.appendChild(createCarousel());
+// const grabMe = axios.get("../../assets/carousel");
+console.log(newCarousel);
