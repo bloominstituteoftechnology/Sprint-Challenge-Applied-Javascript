@@ -41,29 +41,36 @@ function myCard(info) {
   newAuthor.appendChild(newName);
 
   //content
-  newHeadline.textContent = info.headlineContent;
-  newImage.textContent = info.authorImage;
-  newName.textContent = info.authorsName;
-
-  return myCard;
+  newHeadline.textContent = info.headline;
+  newImage.src = info.authorPhoto;
+  newName.textContent = info.authorName;
+  // console.log(newCard);
+  return newCard;
 }
 
-// const cardContainer = document.querySelector(".cards-container");
+const cardContainer = document.querySelector(".cards-container");
 
-// axios
-//   .get("https://lambda-times-backend.herokuapp.com/articles")
-//   .then(response => {
-//     const article = response.data.articles;
-//     console.log(article);
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    // console.log(response.data.topics);
+    const article = response.data.articles;
+    // console.log(article);
 
-//     // response.data.articles.forEach(element => {
-//     //   const newCard = document.createElement("div");
-//     //   topics.appendChild(newTab);
-//     //   newTab.classList.add("tab");
-//     //   newTab.textContent = element;
-//     });
-//   })
-
-//   .catch(error => {
-//     console.log("Oops! We can't find the data");
-//   });
+    article.javascript.forEach(e => {
+      // myCard(e);
+      cardContainer.appendChild(myCard(e));
+      // myCard(e.headline);
+      // const newArt = document.createElement("div");
+      // cardContainer.appendChild(newArt);
+      // newArt.classList.add("card");
+      // newArt.textContent = e.headline;
+      // console.log(myCard(e));
+      // newArt.appendChild(myCard(e));
+      // console.log(newArt);
+      // console.log(e);
+    });
+  })
+  .catch(error => {
+    console.log("Oops! We can't find the data");
+  });
