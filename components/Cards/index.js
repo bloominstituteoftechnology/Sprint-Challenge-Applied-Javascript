@@ -27,8 +27,8 @@ function articleCreator(x){
     let authorsName = document.createElement('span');
 
     card.classList.add('card');
-    headline.classList.add('headline');
-    headline.textContent = `${x.headLine}`
+    headline.classList.add('headLine');
+    headline.textContent = `${x.headline}`
     author.classList.add('author');
     imgContainer.classList.add('img-container');
     authorsImg.src = `${x.authorPhoto}`;
@@ -48,10 +48,12 @@ const cardsContainer = document.querySelector('.cards-container')
 const promiseTwo = axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         console.log(response)
-        for(let i in response.data.articles){
-            i.forEach(y => {
-                cardsContainer.appendChild(articleCreator(y))
+        for (let i in response.data.articles) {
+            response.data.articles[i].forEach(x => {
+                cardsContainer.appendChild(articleCreator(x))
             });
+            
+            
         }
     })
 
