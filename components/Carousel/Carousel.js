@@ -61,5 +61,5 @@ function createCarousel() {
 
 const newCarousel = document.querySelector(".carousel-container");
 newCarousel.appendChild(createCarousel());
-// const grabMe = axios.get("../../assets/carousel");
+
 console.log(newCarousel);
