@@ -34,4 +34,13 @@ function createCarousel(info) {
   carousel.classList("carousel");
   leftBtn.classList("left-button");
   rightBtn.classList("right-button");
+
+  //add content
+
+  //add click event
+  carousel.addEventListener("click", () => {
+    carousel.classList.toggle("selected");
+  });
+
+  return carousel;
 }
