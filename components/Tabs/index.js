@@ -1,4 +1,4 @@
-import Axios from "axios";
+// import axios from "axios";
 // const axios = require('axios');
 
 // Step 2: Create Tabs
@@ -12,33 +12,42 @@ import Axios from "axios";
 //    <div class="tab">topic here</div>
 
 
-
-Axios.get ("https://lambda-times-backend.herokuapp.com/topics")
-    .then (function(response){
-        console.log("response", response)
-        topics.appendChild(createTabs(response.data));
-    })
-    .catch (function(error) {
-
-    })
-    .then (function () {
-
-    });
-
-
-
-
 const topics = document.querySelector(".topics");
 
-function createTabs (data){
-    const tab = document.createElement("div");
 
+
+
+axios.get ("https://lambda-times-backend.herokuapp.com/topics")
+.then (function(response){
+    response.data.topics.forEach(topic => {
+        topics.appendChild(createTabs(topic));
+    })
     
-    tab.classList.add(tab);
+    
+})
+.catch (function(error) {
+
+})
+.then (function () {
+
+});
+
+
+
+
+
+
+
+
+
+
+function createTabs (topic){
+    const tab = document.createElement("div");
+    tab.textContent = topic;
+    
+    tab.classList.add("tab");
 
     return tab;
-
-
 }
 
 
