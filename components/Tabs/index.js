@@ -7,3 +7,25 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+const topicReq = axios.get( "https://lambda-times-backend.herokuapp.com/topics")
+topicReq.then(res => console.log(res.data))
+
+let topics = document.getElementsByClassName('topics')[0] //parent element to append to 
+
+function newTab( tabName){
+	 let div = document.createElement('div')
+	 div.classList.add('tab')
+	 div.innerText = tabName 
+	 topics.appendChild(div)
+
+}
+
+newTab('ruby') // new tab component
+
+
+topicReq.then(res => { 						// iterate through all topics making new tabs for each
+	const topicArr = res.data.topics
+	topicArr.forEach(item => newTab(item))
+})
