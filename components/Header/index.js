@@ -30,3 +30,5 @@ function Header() {
 	return div 
 
 }
+const head = document.querySelectorAll(".header-container")[0]
+head.appendChild(Header())

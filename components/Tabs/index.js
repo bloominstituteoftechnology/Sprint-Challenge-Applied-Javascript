@@ -22,7 +22,7 @@ function newTab( tabName){
 
 }
 
-newTab('ruby') // new tab component
+newTab('all') // new tab component
 
 
 topicReq.then(res => { 						// iterate through all topics making new tabs for each

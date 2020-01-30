@@ -42,7 +42,7 @@ articleReq.then(res=> {
 	const newObj = Object.fromEntries(obj)
 
 
-		console.log(newObj)
+
  const o = newObj.javascript
  const o1 = newObj.bootstrap
  const o2 = newObj.technology
@@ -52,30 +52,30 @@ articleReq.then(res=> {
 
 
 function createDom(obj){
-	const div1 = document.createElement('div')
-	const div2= document.createElement('div')
-	const div3= document.createElement('div')
-	const div4= document.createElement('div')
+	const div1card = document.createElement('div')
+	const div2headline= document.createElement('div')
+	const div3author= document.createElement('div')
+	const div4img= document.createElement('div')
 	const img = document.createElement('img')
 	const span = document.createElement('span')
 
-	div1.classList.add('card')
-	div2.classList.add('headline')
-	div2.innerText = `${obj.headline}`
-	div3.classList.add('author')
-	div4.classList.add('img-container')
+	div1card.classList.add('card')
+	div2headline.classList.add('headline')
+	div2headline.innerText = `${obj.headline}`
+	div3author.classList.add('author')
+	div4img.classList.add('img-container')
 	img.src = `${obj.authorPhoto}`
 	span.innerText = `By ${obj.authorName}`
 
 
-	div1.appendChild(div2)
-	div1.appendChild(div3)
-	div3.appendChild(div4)
-	div4.appendChild(img)
-	div4.appendChild(span)
+	div1card.appendChild(div2headline)
+	div1card.appendChild(div3author)
+	div3author.appendChild(div4img)
+	div4img.appendChild(img)
+	div4img.appendChild(span)
 
-const body = document.querySelectorAll(".header-container")[0]
-body.appendChild(div1)
+	const body = document.querySelectorAll(".cards-container")[0]
+	body.appendChild(div1card)
 
 }
 
