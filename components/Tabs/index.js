@@ -10,7 +10,7 @@
 
 
 const topicReq = axios.get( "https://lambda-times-backend.herokuapp.com/topics")
-topicReq.then(res => console.log(res.data))
+// topicReq.then(res => console.log(res.data))
 
 let topics = document.getElementsByClassName('topics')[0] //parent element to append to 
 
