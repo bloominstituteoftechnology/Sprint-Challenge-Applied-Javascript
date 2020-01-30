@@ -40,9 +40,7 @@ articleReq.then(res=> {
 	const article= res.data.articles
 	const obj = Object.entries(article)
 	const newObj = Object.fromEntries(obj)
-		// let newArr = []
-		// newArr.push(newObj.javascript)
-		// newArr.push(newObj.bootstrap)
+
 
 		console.log(newObj)
  const o = newObj.javascript
@@ -51,8 +49,6 @@ articleReq.then(res=> {
  const o3 = newObj.jquery
  const o4 = newObj.node
 
-
-o2.forEach(item => console.log(item))
 
 
 function createDom(obj){
