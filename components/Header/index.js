@@ -23,14 +23,8 @@ function Header(data) {
     spanTwo.textContent = '98 \xB0'
 
 
-
-
     newHeader.appendChild(newSpan)
     newHeader.appendChild(spanTwo)
-
-
-
-
 
     return newHeader
 }

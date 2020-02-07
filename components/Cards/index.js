@@ -46,7 +46,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     
 })
 
-
 function getCard (moreData){
     const freshCard = document.createElement('div')
     const newHeadline = document.createElement('div')
@@ -64,12 +63,9 @@ function getCard (moreData){
     newHeadline.textContent = moreData.headline 
     newAuthor.textContent = moreData.authorName
 
-
     freshCard.appendChild(newHeadline)
     freshCard.appendChild(newAuthor)
     newAuthor.appendChild(newImgCont)
-
-   
 
 return freshCard
 }

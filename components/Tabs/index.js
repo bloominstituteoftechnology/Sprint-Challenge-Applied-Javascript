@@ -32,10 +32,6 @@ function Topic (topic) {
     
     newTopic.textContent = topic
 
-    
-
-
-
     return newTopic
 }
 
