@@ -24,18 +24,20 @@ function createTab(topic){
 
 //get entry point
 const tabEntry = document.querySelector('.topics');
-console.log(tabEntry);
+//console.log(tabEntry);
 
 //GET request & promise
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
     console.log(response);
+
+    //loop response
     response.data.topics.forEach(topic => {
-      console.log(response);
-    //   const freshTab = new Tab();
-    //   tab.appendChild(freshTab);
-    });
+        const freshTab = new createTab(topic);
+        tabEntry.appendChild(freshTab);
+    })
+   
   })
 
   .catch(err => {
