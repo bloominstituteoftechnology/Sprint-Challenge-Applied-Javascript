@@ -19,7 +19,7 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 //funtion to create card
-function createCard(){
+function createCard(response){
 //create elements
   const newCard = document.createElement('div');
   const newHeadline = document.createElement('div');
@@ -44,9 +44,9 @@ function createCard(){
     newImageCtn.appendChild(newAuthorImg);
 
     //set the content
-    newHeadline.textContent = headline;
-    newAuthorImg.src = authorPhoto;
-    newAuthorName.textContent = `By ${authorName}`;
+    newHeadline.textContent = response.headline;
+    newAuthorImg.src = response.authorPhoto;
+    newAuthorName.textContent = `By ${response.authorName}`;
 
 return newCard;
 
@@ -60,24 +60,43 @@ const cardEntry = document.querySelector('.cards-container');
 //api call
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
-        console.log(response)//data.articles
-        console.log("This first   " +  response.data.articles.javascript) //first object of javascript
-       console.log(response.data.articles.javascript[0].authorName) //this actually is returning properly
+      // console.log("First response: " + response);
+
+       const javascript = response.data.articles.javascript;
+       const bootstrap = response.data.articles.bootstrap;
+       const technology = response.data.articles.technology;
+       const jquery = response.data.articles.jquery;
+       const node = response.data.articles.node;
+
+       console.log(javascript)
+
+       javascript.forEach(article => {
+        console.log(article)
+           
+            const freshCard = createCard(article);
+            cardEntry.appendChild(freshCard);
+           //cardEntry.appendChild(createCard(articleCard))
+       });
 
         //  for (let key in response.data.articles){
         //      console.log("Key: "  + key);//works - puts out javascript, bootstrap , etc
 
-        for (let i = 0; i < response.data.articles[key].length; i++) {
+        // for (let i = 0; i < response.data.articles[key].length; i++) {
             
-            //const freshCard = Card();
-            const freshCard = Card(response.data.articles[key][i]);
-            console.log(response.data.articles[key][i]);
-            // entry.appendChild(newCard);
-            entry.appendChild(freshCard);
-          }
+        //     //const freshCard = Card();
+        //     const freshCard = Card(response.data.articles[key][i]);
+        //     console.log(response.data.articles[key][i]);
+        //     // entry.appendChild(newCard);
+        //     entry.appendChild(freshCard);
+        //   }
         
 
-        //     //  for (let i = 0; i < response.data.articles[key].length; i++){
+      })//end response
+        .catch(error => {
+            console.log("Error in cards index.js.")
+        });
+
+         //     //  for (let i = 0; i < response.data.articles[key].length; i++){
         //     //      const freshCard = createCard();
         //     //      console.log("fresh: " + response.articles[key][i]);
 
@@ -86,13 +105,6 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
 
         //  }// for key in response
-
-
-      })//end response
-        .catch(error => {
-            console.log("Error in cards index.js.")
-        });
-
 
       //obj=response.data.articles;
       //console.log(obj);
