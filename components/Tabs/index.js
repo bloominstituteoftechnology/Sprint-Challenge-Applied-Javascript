@@ -27,21 +27,24 @@ const tabEntry = document.querySelector('.topics');
 console.log(tabEntry);
 
 //GET request & promise
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-.then(response => {
-        //log response
-      //console.log('Topics' + response);
-      
-     
-   
-  }).
-    catch(error => {
-      console.log('error. no data was returned');
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    console.log(response);
+    response.data.topics.forEach(topic => {
+      console.log(response);
+    //   const freshTab = new Tab();
+    //   tab.appendChild(freshTab);
     });
+  })
+
+  .catch(err => {
+    console.log(err);
+  });
 
 
 
 
-// loop response
+
 
 //append response
