@@ -17,16 +17,20 @@ function Header() {
     const headerTemp = document.createElement('span');
 
     //assign classes
-
+    headerDiv.classList.add('header');
+    headerDate.classList.add('date');
+    headerTemp.classList.add('temp');
 
     //set the content
-
+    headerDate.textContent = "5 MARCH 28,2019";
+    headerH1.textContent = "Lambda Times";
+    headerTemp.textContent = "98&#778";
 
     //append the elements
-
+    headerDiv.appendChild(headerDate, headerH1, headerTemp);
 
     //return the component
-
+    return headerDiv;
 }//end Header()
 
 //get entry point
