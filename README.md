@@ -29,16 +29,16 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-The Javascript version of HTML
+The tree structure Javascript version of HTML
 
 2. What is an event?
-It's a thing that happens
+It's a thing that happens, it can be triggered by a listener
 
 3. What is an event listener?
-A way to trigger an event
+A way to trigger an event by clicking or other stuff
 
 4. Why would we convert a NodeList into an Array?
-To manipulate it easier
+To manipulate it easier, arrays have more functionality than a NodeList
 
 5. What is a component?
 A module, so it could be a function that builds a card with data passed to it.

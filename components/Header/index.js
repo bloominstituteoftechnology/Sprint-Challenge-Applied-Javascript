@@ -26,7 +26,10 @@ function Header() {
 	date.classList.add('date');
 	temp.classList.add('temp')
 
+	//add content
+	date.textContent = "SMARCH 28, 2019"
 	title.textContent = "Lambda Times";
+	temp.textContent = "98°";
 
 	return container;
 

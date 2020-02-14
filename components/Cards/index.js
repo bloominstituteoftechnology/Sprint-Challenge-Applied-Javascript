@@ -20,18 +20,52 @@
 
 function createCard(data) {
 	
+	//Tags
 	const card = document.createElement('div');
 	const headline = document.createElement('div');
+	const author = document.createElement('div');
 	const imgContainer = document.createElement('div');
-	const img = document.createElement('div');
+	const img = document.createElement('img');
+	const name = document.createElement('span');
 
-	const author = document.createElement('span');
+	//Structure
+	card.appendChild(headline);
+	card.appendChild(author);
+	card.appendChild(name);
+	author.appendChild(imgContainer);
+	imgContainer.appendChild(img);
+	author.appendChild(name);
 
-	 
+	//Style
+	card.classList.add('card');
+	headline.classList.add('headline');
+	author.classList.add('author');
+	imgContainer.classList.add('img-container');
+
+	//Content
+	headline.textContent = data.headline;
+	name.textContent = `By ${data.authorName}`;
+	img.setAttribute("src", data.authorPhoto);
+
+	return card;
 
 }
 
+//Insert point
+const insertIntoCardContainer = document.querySelector('.cards-container');
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then((data) => {
-	console.log(data);
+.then(response => {
+
+	Object.values(response.data.articles).forEach(articleSet => {
+
+		articleSet.forEach(singleCard => {		
+			insertIntoCardContainer.appendChild(createCard(singleCard));
+		})//articleSet loop
+
+	})//singleCard loop
+
+})//then statement
+.catch(err => {
+	console.log('~!ERROR!~', err);
 })

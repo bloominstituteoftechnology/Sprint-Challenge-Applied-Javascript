@@ -22,7 +22,6 @@ const insertInto = document.querySelector('.topics');
 //Get data
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response => {
-	console.log(response);
 	response.data.topics.forEach(article => {
 		insertInto.appendChild(tabCreate(article));
 	})
