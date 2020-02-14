@@ -54,18 +54,28 @@ const cardEntry = document.querySelector('.cards-container');
 //api call
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        //console.log(response.data.articles);
+        console.log(response.data.articles);
 
-        //loop response
-        response.data.articles.forEach(article => {
-            console.log(response);
-            const newCard = new Card(article);
-            entry.appendChild(newCard);
-          });
+        //loop response - need keys and indexes?
+        // response.data.articles.forEach(article => {
+        //     console.log(response);// this is an js array
+
+        //     //console.log(key);
+
+
+        //     //const freshCard = new Card(article);
+        //     //cardEntry.appendChild(freshCard);
+        //  });
+
+        for (let key in response.data.articles){
+            console.log(key);//returns javascript, bootstrapp, technology, jquey, node
+        }
        
 
     })//end response
-
+        .catch(error => {
+            console.log("Error in cards index.js.")
+        })
 
 
 
