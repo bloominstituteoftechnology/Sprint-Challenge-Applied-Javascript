@@ -34,6 +34,7 @@ function Header() {
 }//end Header()
 
 //get entry point
-
+const entryPoint = document.querySelector('.header-container');
 
 //append elements to header-container
+entryPoint.appendChild(headerDiv);
