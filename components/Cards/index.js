@@ -19,7 +19,7 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 //funtion to create card
-function createCard(response){
+function createCard(){
 //create elements
   const newCard = document.createElement('div');
   const newHeadline = document.createElement('div');
@@ -34,28 +34,92 @@ function createCard(response){
     newAuthor.classList.add('author');
     newImageCtn.classList.add('img-container');
 
-//set the content
-    newHeadline.textContent = response.headline;
-    newAuthorImg.src = response.authorPhoto;
-    newAuthorName.textContent = `By ${response.authorName}`;
+
 
 //append the elements
-    newCard.appendChild(newHeadline, newAuthor, newAuthorName);
+    newCard.appendChild(newHeadline);
+    newCard.appendChild(newAuthor);
+    newCard.appendChild(newAuthorName);
     newAuthor.appendChild(newImageCtn);
     newImageCtn.appendChild(newAuthorImg);
+
+    //set the content
+    newHeadline.textContent = headline;
+    newAuthorImg.src = authorPhoto;
+    newAuthorName.textContent = `By ${authorName}`;
 
 return newCard;
 
 }//end createCard()
+
+
 
 //get entry point & don't name it entryPoint
 const cardEntry = document.querySelector('.cards-container');
 
 //api call
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
-  .then(response => {
-console.log(response.data.articles);//js array
+    .then(response => {
+        console.log(response)//data.articles
+        console.log("This first   " +  response.data.articles.javascript) //first object of javascript
+       console.log(response.data.articles.javascript[0].authorName) //this actually is returning properly
 
+        //  for (let key in response.data.articles){
+        //      console.log("Key: "  + key);//works - puts out javascript, bootstrap , etc
+
+        for (let i = 0; i < response.data.articles[key].length; i++) {
+            
+            //const freshCard = Card();
+            const freshCard = Card(response.data.articles[key][i]);
+            console.log(response.data.articles[key][i]);
+            // entry.appendChild(newCard);
+            entry.appendChild(freshCard);
+          }
+        
+
+        //     //  for (let i = 0; i < response.data.articles[key].length; i++){
+        //     //      const freshCard = createCard();
+        //     //      console.log("fresh: " + response.articles[key][i]);
+
+        //     //      cardEntry.appendChild(createCard(freshCard));
+        //     //  }
+
+
+        //  }// for key in response
+
+
+      })//end response
+        .catch(error => {
+            console.log("Error in cards index.js.")
+        });
+
+
+      //obj=response.data.articles;
+      //console.log(obj);
+    //   const keys = Object.keys(response.data.articles);
+    //  keys.map ( article => {
+    //    cardEntry.appendChild(createCard(article));
+    //  })
+
+
+//axios.get("https://lambda-times-backend.herokuapp.com/articles")
+ // .then(response => {
+//console.log(response.data.articles);//js OBJECT
+//const obj = (response.data.articles);
+//console.log(typeof mdata);//OBJECT
+
+// for (const prop in obj) {
+//     console.log(`obj.${prop}: ${obj[prop][0]["headline"]}`);
+//     console.log(`obj.${prop}: ${obj[prop][0]["authorPhoto"]}`);
+//     console.log(`obj.${prop}: ${obj[prop][0]["authorName"]}`);
+//   }
+// response.data.articles.forEach( item => {
+//     //console.log(`${item[prop][0]["headline"]}`);
+//          //console.log(`obj.${prop}: ${obj[prop][0]["authorPhoto"]}`);
+//        //console.log(`obj.${prop}: ${obj[prop][0]["authorName"]}`);
+// })
+
+//cardEntry.appendChild(newCard);
     // for (let key in response.data.articles) {
     //   console.log(key);
 
@@ -68,14 +132,12 @@ console.log(response.data.articles);//js array
     //   }
     // }
 
-    response.data.articles.forEach(article => {
-        const newCard = createCard(article);
-        cardEntry.appendChild(newCard);
-    })
-  })//end response
-        .catch(error => {
-            console.log("Error in cards index.js.")
-        })
+    // response.data.articles.forEach(article => {
+    //     const newCard = createCard(article);
+    //     cardEntry.appendChild(newCard);
+    // })
+  //})//end response
+       
 
 
 
