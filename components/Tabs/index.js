@@ -12,12 +12,12 @@ let topics = document.querySelector('.topics');
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(res => {
     // console.log(res)
-    let lambdaTopics = res.data.topics;
-    lambdaTopics.forEach(element => {
+    let lambdaTopics = res.data.topics; //creating a variable to hold the data from end point
+    lambdaTopics.forEach(element => { //iterating over each topic and creating tab components
         let topic = document.createElement('div');
         topic.classList.add('tab');
         topic.textContent = element;
-        topics.append(topic);
+        topics.append(topic); //adding tab component to parent div found in html
     });
 })
 .catch(err => {
