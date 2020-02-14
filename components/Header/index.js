@@ -15,9 +15,9 @@ function Header(info) {
           eH1 = document.createElement('h1'),
           eTemp = document.createElement('span');
         
-    eDate.textContent = info.date;
-    eH1.textContent = info.h1;
-    eTemp.textContent = info.temp;
+    eDate.textContent = 'February 14, 2020';
+    eH1.textContent = 'Lambda Times';
+    eTemp.textContent = '98\u00B0';
     
     newHeader.classList.add('header');
     eDate.classList.add('date');
@@ -33,3 +33,4 @@ function Header(info) {
 
 const entryPoint2 = document.querySelector('.header-container');
 
+entryPoint2.appendChild(Header());
