@@ -23,3 +23,45 @@ body {
 @import './components/Tabs/Tabs';
 @import './components/Cards/Cards';
 @import './components/Carousel/Carousel';
+
+img:hover{
+  display: inline-block;
+  background-color: #0074d9;
+ 
+  font-size: 1px;
+  padding: 1px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: rotate360 3s infinite;
+  transform: rotate(30deg);
+
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container-center{
+  background-color: black;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.container-left{
+  background-color: black;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.container-right{
+  background-color: black;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 50px;
+}
