@@ -105,82 +105,11 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
             cardEntry.appendChild(freshCard);
        });
 
-        //  for (let key in response.data.articles){
-        //      console.log("Key: "  + key);//works - puts out javascript, bootstrap , etc
-
-        // for (let i = 0; i < response.data.articles[key].length; i++) {
-            
-        //     //const freshCard = Card();
-        //     const freshCard = Card(response.data.articles[key][i]);
-        //     console.log(response.data.articles[key][i]);
-        //     // entry.appendChild(newCard);
-        //     entry.appendChild(freshCard);
-        //   }
-        
+         
 
       })//end response
         .catch(error => {
             console.log("Error in cards index.js.")
         });
 
-         //     //  for (let i = 0; i < response.data.articles[key].length; i++){
-        //     //      const freshCard = createCard();
-        //     //      console.log("fresh: " + response.articles[key][i]);
-
-        //     //      cardEntry.appendChild(createCard(freshCard));
-        //     //  }
-
-
-        //  }// for key in response
-
-      //obj=response.data.articles;
-      //console.log(obj);
-    //   const keys = Object.keys(response.data.articles);
-    //  keys.map ( article => {
-    //    cardEntry.appendChild(createCard(article));
-    //  })
-
-
-//axios.get("https://lambda-times-backend.herokuapp.com/articles")
- // .then(response => {
-//console.log(response.data.articles);//js OBJECT
-//const obj = (response.data.articles);
-//console.log(typeof mdata);//OBJECT
-
-// for (const prop in obj) {
-//     console.log(`obj.${prop}: ${obj[prop][0]["headline"]}`);
-//     console.log(`obj.${prop}: ${obj[prop][0]["authorPhoto"]}`);
-//     console.log(`obj.${prop}: ${obj[prop][0]["authorName"]}`);
-//   }
-// response.data.articles.forEach( item => {
-//     //console.log(`${item[prop][0]["headline"]}`);
-//          //console.log(`obj.${prop}: ${obj[prop][0]["authorPhoto"]}`);
-//        //console.log(`obj.${prop}: ${obj[prop][0]["authorName"]}`);
-// })
-
-//cardEntry.appendChild(newCard);
-    // for (let key in response.data.articles) {
-    //   console.log(key);
-
-    //   for (let i = 0; i < response.data.articles[key].length; i++) {
-       
-    //     //const newCard = createCard(response.data.articles[key][i]);
-    //    // console.log(response.data.articles[key][i]);
-        
-    //     //cardEntry.appendChild(newCard);
-    //   }
-    // }
-
-    // response.data.articles.forEach(article => {
-    //     const newCard = createCard(article);
-    //     cardEntry.appendChild(newCard);
-    // })
-  //})//end response
-       
-
-
-
-//create new card
-
-
-// append to entry point - which will not be named entryPoint
+  
