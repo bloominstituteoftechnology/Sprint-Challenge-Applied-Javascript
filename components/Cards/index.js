@@ -23,9 +23,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     // console.log(res)
     // console.log(res.data)
     // console.log(res.data.articles)
-    let articles = res.data.articles;
+    let articles = Object.values(res.data.articles);
     articles.forEach(article => {
-        
+        article.forEach(headline => {
+            cardsContainer.append(createArticle(headline));
+        })
     })
 })
 .catch(err => {
