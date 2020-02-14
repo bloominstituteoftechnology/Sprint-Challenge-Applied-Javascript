@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is the tree-like data structure of the page and it's elements.
+
 2. What is an event?
+
+Events are any interaction with the web page used to trigger something.
+They usually fire when a mouse is clicked, keyboard action, etc.
 
 3. What is an event listener?
 
+An event listener is when we set specific elements to listen for certain events, 
+and fire a callback function when that event happens.
+
 4. Why would we convert a NodeList into an Array?
 
+A NodeList looks like an array, but it isn't. 
+The only array method NodeLists have access to is .forEach(). 
+When converted to an array we can use .map(), reduce(), and any other array method.
+
 5. What is a component?
+
+A NodeList looks like an array, but it isn't. 
+The only array method NodeLists have access to is .forEach(). 
+When converted to an array we can use .map(), reduce(), and any other array method.
 
 ### Git Set up
 
