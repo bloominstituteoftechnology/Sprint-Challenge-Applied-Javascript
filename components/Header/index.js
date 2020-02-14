@@ -9,4 +9,24 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+function Header() {
+    //create elements
+
+
+    //assign classes
+
+
+    //set the content
+
+
+    //append the elements
+
+
+    //return the component
+
+}//end Header()
+
+//get entry point
+
+
+//append elements to header-container
