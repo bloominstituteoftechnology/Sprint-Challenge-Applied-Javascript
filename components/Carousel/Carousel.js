@@ -17,3 +17,23 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+let images = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+]
+
+function createCarousel(array) {
+  //create elements
+  let carousel = document.createElement('div');
+  array.forEach(img => {
+    let image = document.createElement('img');
+    image.src = img
+    carousel.append(image);
+  })
+  return carousel;
+}
+let carouselContainer = document.querySelector('.carousel-container')
+cardsContainer.append(createCarousel(images))
