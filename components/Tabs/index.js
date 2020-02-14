@@ -7,3 +7,25 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+//create function
+
+
+//create elements
+
+
+//assign classes
+
+
+//return
+
+
+//get entry point
+
+//GET request & promise
+
+//log response
+
+// loop response
+
+//append response
