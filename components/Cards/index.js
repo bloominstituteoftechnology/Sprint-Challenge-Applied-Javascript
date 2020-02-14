@@ -17,3 +17,30 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+//funtion to create card
+
+
+//create elments
+
+
+//assign classes
+
+
+//append the elements
+
+
+
+//get entry point & don't name it entryPoint
+
+
+//api call
+
+
+//loop response
+
+
+//create new card
+
+
+// append to entry point - which will not be named entryPoint
