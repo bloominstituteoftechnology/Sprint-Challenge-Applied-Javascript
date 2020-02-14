@@ -57,7 +57,7 @@ function createArticle(article) {
     //textContent
     headline.textContent = article.headline;
     image.src = article.authorPhoto;
-    by.textContent = article.authorName;
+    by.textContent = `By: ${article.authorName}`
 
     return card; //returning parent element
 }
