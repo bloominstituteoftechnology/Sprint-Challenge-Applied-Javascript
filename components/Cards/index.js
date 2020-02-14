@@ -49,15 +49,24 @@ return newCard;
 }//end createCard()
 
 //get entry point & don't name it entryPoint
-
+const cardEntry = document.querySelector('.cards-container');
 
 //api call
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response.data.articles);
-    })
+        //console.log(response.data.articles);
 
-//loop response
+        //loop response
+        response.data.articles.forEach(article => {
+            console.log(response);
+            const newCard = new Card(article);
+            entry.appendChild(newCard);
+          });
+       
+
+    })//end response
+
+
 
 
 //create new card
