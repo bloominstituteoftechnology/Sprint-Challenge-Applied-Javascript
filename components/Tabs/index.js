@@ -34,11 +34,11 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
     //loop response
     response.data.topics.forEach(topic => {
         const freshTab = new createTab(topic);
+        //append response
         tabEntry.appendChild(freshTab);
     })
    
   })
-
   .catch(err => {
     console.log(err);
   });
@@ -48,4 +48,3 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 
 
 
-//append response

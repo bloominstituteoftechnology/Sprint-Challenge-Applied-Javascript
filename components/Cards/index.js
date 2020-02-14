@@ -34,8 +34,6 @@ function createCard(response){
     newAuthor.classList.add('author');
     newImageCtn.classList.add('img-container');
 
-
-
 //append the elements
     newCard.appendChild(newHeadline);
     newCard.appendChild(newAuthor);
@@ -52,8 +50,6 @@ return newCard;
 
 }//end createCard()
 
-
-
 //get entry point & don't name it entryPoint
 const cardEntry = document.querySelector('.cards-container');
 
@@ -62,38 +58,30 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
        //console.log("First response: " + response);
 
-       const javascript = response.data.articles.javascript;
-       const bootstrap = response.data.articles.bootstrap;
-       const technology = response.data.articles.technology;
-       const jquery = response.data.articles.jquery;
-       const node = response.data.articles.node;
-
-       //console.log(javascript)
-
-///////////////////////////////////////////////////////////
-
-// let obj = response.data.articles
-//          Object.keys(obj).forEach((key) => {
-               
-//               // console.log("just the key " + key)
-//                console.log(key[obj])
-//          })
-
-// for(let item of response.data.articles){
-//     //console.log(response.data.articles.headline)
-// }
-//create a new array from the response
 let newArray = Object.values(response.data.articles);
 
 newArray.forEach(element => {
     element.forEach(article => {
+        //append elements
         cardEntry.appendChild(createCard(article));
     })
-});
+  });
 
+})//end response
+  .catch(error => {
+    console.log("Error in cards index.js.")
+ });
+
+  
 /////////////////////////////////////////////////////////
 
+    //    const javascript = response.data.articles.javascript;
+    //    const bootstrap = response.data.articles.bootstrap;
+    //    const technology = response.data.articles.technology;
+    //    const jquery = response.data.articles.jquery;
+    //    const node = response.data.articles.node;
 
+       //console.log(javascript)
     //    javascript.forEach(article => {
     //     //console.log(article)
            
@@ -128,29 +116,3 @@ newArray.forEach(element => {
     //         const freshCard = createCard(article);
     //         cardEntry.appendChild(freshCard);
     //    });
-
-         
-
-      })//end response
-        .catch(error => {
-            console.log("Error in cards index.js.")
-        });
-
-  
-/////////////////////////////
- //               let obj = response.data.articles
-//          Object.keys(obj).forEach((key, index) => {
- //               console.log(key, obj[key])
-//          })
-//     
-
-        // for (let i = 0; i<response.data.article.length; i++){
-         //       console.log(response.data.artticle[i])
-      //  }
-      //      
-
-        //  
-//
-///////////////////////
-        //
-//
