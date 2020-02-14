@@ -29,9 +29,22 @@ function createCard(infoObj){
   const newAuthorName = document.createElement('span');
 
 //assign classes
+    newCard.classList.add('card');
+    newHeadline.classList.add('headline')  ;
+    newAuthor.classList.add('author');
+    newImageCtn.classList.add('img-container');
 
+//set the content
+    newHeadline.textContent = headline;
+    newAuthorImg.src = 'imgSrc';
+    newAuthorName.textContent = `By ${authorName}`;
 
 //append the elements
+    newCard.appendChild(newHeadline, newAuthor, newAuthorName);
+    newAuthor.appendChild(newImageCtn);
+    newImageCtn.appendChild(newAuthorImg);
+
+return newCard;
 
 }//end createCard()
 
@@ -39,7 +52,10 @@ function createCard(infoObj){
 
 
 //api call
-
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        console.log(response.data.articles);
+    })
 
 //loop response
 
