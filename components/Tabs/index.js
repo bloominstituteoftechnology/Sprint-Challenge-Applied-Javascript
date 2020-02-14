@@ -9,22 +9,38 @@
 //    <div class="tab">topic here</div>
 
 //create function
-
-
-//create elements
-
-
-//assign classes
-
-
-//return
-
+function createTab(topic){
+    //create element
+    const newTab = document.createElement('div');
+  
+    //assign class
+    newTab.classList.add('tab');
+  
+    // set content
+    newTab.textContent = topic;
+  
+    return newTab;
+  }//end Tab
 
 //get entry point
+const tabEntry = document.querySelector('.topics');
+console.log(tabEntry);
 
 //GET request & promise
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(response => {
+        //log response
+      //console.log('Topics' + response);
+      
+     
+   
+  }).
+    catch(error => {
+      console.log('error. no data was returned');
+    });
 
-//log response
+
+
 
 // loop response
 
