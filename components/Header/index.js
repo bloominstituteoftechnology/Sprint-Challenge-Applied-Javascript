@@ -36,5 +36,8 @@ function Header() {
 //get entry point
 const entryPoint = document.querySelector('.header-container');
 
+//call the function on page load
+const headerMake = Header();
+
 //append elements to header-container
-entryPoint.appendChild(headerDiv);
+entryPoint.appendChild(headerMake);
