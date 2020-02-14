@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+The DOM is the Document Object Modifier. It gives us access to objects on the page and allows us to change the content.
 
 2. What is an event?
+An event is what happens when the page is interacted with. An example of this is an element changing color when clicked.
 
 3. What is an event listener?
+An event listener tells the page when an event is occurring.
 
 4. Why would we convert a NodeList into an Array?
+More can be done with Javascript arrays than in a NodeList.
 
 5. What is a component?
+Components are pieces of code that work together and can be reused.
 
 ### Git Set up
 
@@ -51,11 +56,11 @@ Your finished project must include all of the following requirements:
 
 * [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+* [x ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 

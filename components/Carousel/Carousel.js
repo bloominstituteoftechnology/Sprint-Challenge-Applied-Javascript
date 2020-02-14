@@ -17,3 +17,35 @@
     <div class="right-button"> > </div>
   </div>
 */
+const slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const prevSlide = document.querySelector(".left-button")
+console.log(click);
+prevSlide.addEventListener("click", () => {
+    'plusSlides(-1)'
+});
+
+const nextSlide = document.querySelector(".right-button")
+console.log(click);
+nextSlide.addEventListener("click", () => {
+    'plusSlides(1)'
+});
+  
+  var i;
+  const slides = document.getElementsbyClassName("carousel")
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = 'block';
+}

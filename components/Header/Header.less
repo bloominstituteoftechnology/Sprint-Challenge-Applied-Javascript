@@ -1,3 +1,21 @@
+.flex(@jc: none, @ai: none, @dir: row) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-direction: @dir;
+}
+.border-bottom-grey {
+  border-bottom: 1px solid @lambda-times-color-lightgrey;
+}
+.width-100 {
+  width: 100%;
+}
+@lambda-times-color-primary: #333;
+@lambda-times-color-white: #fff;
+@lambda-times-color-black: #000;
+@lambda-times-color-lightgrey: lightgrey;
+@lambda-times-color-background: #f1f1f1;
+
 .header {
   .flex(space-between, center);
   background-color: @lambda-times-color-white;
