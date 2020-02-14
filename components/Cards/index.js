@@ -19,17 +19,21 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 //funtion to create card
-
-
-//create elments
-
+function createCard(infoObj){
+//create elements
+  const newCard = document.createElement('div');
+  const newHeadline = document.createElement('div');
+  const newAuthor = document.createElement('div');
+  const newImageCtn = document.createElement('div');
+  const newAuthorImg = document.createElement('img');
+  const newAuthorName = document.createElement('span');
 
 //assign classes
 
 
 //append the elements
 
-
+}//end createCard()
 
 //get entry point & don't name it entryPoint
 
