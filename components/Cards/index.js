@@ -60,7 +60,7 @@ const cardEntry = document.querySelector('.cards-container');
 //api call
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
-      // console.log("First response: " + response);
+       //console.log("First response: " + response);
 
        const javascript = response.data.articles.javascript;
        const bootstrap = response.data.articles.bootstrap;
@@ -68,42 +68,66 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
        const jquery = response.data.articles.jquery;
        const node = response.data.articles.node;
 
-       console.log(javascript)
+       //console.log(javascript)
 
-       javascript.forEach(article => {
-        console.log(article)
-           
-            const freshCard = createCard(article);
-            cardEntry.appendChild(freshCard);
-       });
+///////////////////////////////////////////////////////////
 
-       bootstrap.forEach(article => {
-        console.log(article)
-           
-            const freshCard = createCard(article);
-            cardEntry.appendChild(freshCard);
-       });
+// let obj = response.data.articles
+//          Object.keys(obj).forEach((key) => {
+               
+//               // console.log("just the key " + key)
+//                console.log(key[obj])
+//          })
 
-       technology.forEach(article => {
-        console.log(article)
-           
-            const freshCard = createCard(article);
-            cardEntry.appendChild(freshCard);
-       });
+// for(let item of response.data.articles){
+//     //console.log(response.data.articles.headline)
+// }
+//create a new array from the response
+let newArray = Object.values(response.data.articles);
 
-       jquery.forEach(article => {
-        console.log(article)
-           
-            const freshCard = createCard(article);
-            cardEntry.appendChild(freshCard);
-       });
+newArray.forEach(element => {
+    element.forEach(article => {
+        cardEntry.appendChild(createCard(article));
+    })
+});
 
-       node.forEach(article => {
-        console.log(article)
+/////////////////////////////////////////////////////////
+
+
+    //    javascript.forEach(article => {
+    //     //console.log(article)
            
-            const freshCard = createCard(article);
-            cardEntry.appendChild(freshCard);
-       });
+    //         const freshCard = createCard(article);
+    //         cardEntry.appendChild(freshCard);
+    //    });
+
+    //    bootstrap.forEach(article => {
+    //     //console.log(article)
+           
+    //         const freshCard = createCard(article);
+    //         cardEntry.appendChild(freshCard);
+    //    });
+
+    //    technology.forEach(article => {
+    //     //console.log(article)
+           
+    //         const freshCard = createCard(article);
+    //         cardEntry.appendChild(freshCard);
+    //    });
+
+    //    jquery.forEach(article => {
+    //     //console.log(article)
+           
+    //         const freshCard = createCard(article);
+    //         cardEntry.appendChild(freshCard);
+    //    });
+
+    //    node.forEach(article => {
+    //     //console.log(article)
+           
+    //         const freshCard = createCard(article);
+    //         cardEntry.appendChild(freshCard);
+    //    });
 
          
 
@@ -113,3 +137,20 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
         });
 
   
+/////////////////////////////
+ //               let obj = response.data.articles
+//          Object.keys(obj).forEach((key, index) => {
+ //               console.log(key, obj[key])
+//          })
+//     
+
+        // for (let i = 0; i<response.data.article.length; i++){
+         //       console.log(response.data.artticle[i])
+      //  }
+      //      
+
+        //  
+//
+///////////////////////
+        //
+//
