@@ -27,10 +27,9 @@ const tabEntry = document.querySelector('.topics');
 //console.log(tabEntry);
 
 //GET request & promise
-axios
-  .get("https://lambda-times-backend.herokuapp.com/topics")
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
-    console.log(response);
+    //console.log(response);
 
     //loop response
     response.data.topics.forEach(topic => {

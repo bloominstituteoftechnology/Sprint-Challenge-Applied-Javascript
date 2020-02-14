@@ -54,7 +54,7 @@ const cardEntry = document.querySelector('.cards-container');
 //api call
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response.data.articles);
+        //console.log(response.data.articles);
 
         //loop response - need keys and indexes?
         // response.data.articles.forEach(article => {
@@ -67,8 +67,17 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         //     //cardEntry.appendChild(freshCard);
         //  });
 
-        for (let key in response.data.articles){
-            console.log(key);//returns javascript, bootstrapp, technology, jquey, node
+        // for (let key in response.data.articles){
+        //     //console.log(key);//returns javascript, bootstrapp, technology, jquey, node
+        // }
+
+        for(let i = 0; i < response.data.articles[key].length; i++){
+            const freshCard = createCard(response.data.articles[key][i]);
+
+            console.log("This" + response.data.articles);
+            console.log(response.data.articles[key][i]);
+
+            cardEntry.appendChild(newCard);
         }
        
 
