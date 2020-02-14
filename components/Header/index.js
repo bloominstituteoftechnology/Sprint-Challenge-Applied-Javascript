@@ -11,7 +11,10 @@
 
 function Header() {
     //create elements
-
+    const headerDiv = document.createElement('div');
+    const headerDate = document.createElement('span');
+    const headerH1 = document.createElement('span');
+    const headerTemp = document.createElement('span');
 
     //assign classes
 
