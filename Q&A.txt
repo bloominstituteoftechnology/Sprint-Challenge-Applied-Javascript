@@ -1,0 +1,14 @@
+1. What is the DOM?
+    The Dom is platform that treats an HTML Document as a tree like structure.
+
+2. What is an event?
+Events are things that happen to the HTMl docuement through JavaScript.
+
+3. What is an event listener?
+    EventListener is a procedure in JS that waits for an event to occur.
+
+4. Why would we convert a NodeList into an Array?
+    It converts browser API to JS API
+
+5. What is a component?
+    Compents are logic, beahviors and interface elements in JS
