@@ -17,3 +17,57 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+class Carousel {
+  constructor(element) {
+      
+      this.element = element;
+      let leftbutton = document.querySelector('.left-button');
+      this.leftbutton = leftbutton;
+      let rightbutton = document.querySelector('.right-button');
+      this.rightbutton = rightbutton;
+      let carouselimages = document.querySelectorAll('.carousel img');
+      this.carouselimages = carouselimages;
+      let index = 0;
+      this.index = index;
+      this.leftbutton.addEventListener('click', (event) => {
+          
+          this.CarouselClickLeft(event);
+      });
+      this.rightbutton.addEventListener('click', (event) => {
+          
+          this.CarouselClickRight(event);
+      });
+  }
+  CarouselClickLeft(event) {
+      if (this.index > 0) {
+          this.carouselimages[this.index].style.display = 'none';
+          this.index = this.index - 1;
+          this.carouselimages[this.index].style.display = 'flex';
+      }
+      else {
+          this.carouselimages[this.index].style.display = 'flex';
+      }
+
+  }
+  CarouselClickRight(event) {
+      if (this.index < 3) {
+          this.carouselimages[this.index].style.display = 'none';
+          this.index = this.index + 1;
+          this.carouselimages[this.index].style.display = 'flex';
+      }
+      else {
+          this.carouselimages[this.index].style.display = 'flex';
+      }
+  }
+}
+
+
+
+let carousel = document.querySelectorAll('.carousel');
+
+carousel = Array.from(carousel).map(link => new Carousel(link));
+
+carousel[0].CarouselClickLeft();
+
+
