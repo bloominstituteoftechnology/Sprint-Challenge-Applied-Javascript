@@ -23,10 +23,13 @@ const cardTest = document.querySelector(".cards-container");
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    response.data.articles.forEach(e => {
-      e.headline;
-      e.authorPhoto;
-      e.authorName;
+    const arrayConvert = Object.keys(response.data.articles);
+    arrayConvert.forEach(a => {
+      a.javascript;
+      a.bootstrap;
+      a.technology;
+      a.jquery;
+      a.node;
     });
     console.log(response);
   })
