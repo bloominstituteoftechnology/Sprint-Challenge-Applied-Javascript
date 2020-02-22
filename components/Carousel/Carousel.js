@@ -21,7 +21,6 @@ const carDiv = document.createElement("div");
 carDiv.classList.add("carousel");
 
 const leftBtn = document.createElement("div");
-leftBtn.classList.add("left-button");
 
 const image1 = createElement("img");
 image1.src = "./assets/carousel/mountains.jpeg";
