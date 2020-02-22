@@ -84,14 +84,22 @@ function appendArticles(target, data) {
 
 function Article(article) {
   const card = document.createElement("div");
-  const headline = document.createElement("div");
-  const author = document.createElement("div");
-  const imgContainer = document.createElement("div");
-  const image = document.createElement("img");
-  const name = document.createElement("span");
+  card.classList.add("card");
 
+  const headline = document.createElement("div");
+  headline.classList.add("headline");
   headline.textContent = article.headline;
+
+  const author = document.createElement("div");
+  author.classList.add("author");
+
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+
+  const image = document.createElement("img");
   image.setAttribute("src", article.authorPhoto);
+
+  const name = document.createElement("span");
   name.textContent = article.authorName;
 
   card.appendChild(headline);
@@ -99,11 +107,6 @@ function Article(article) {
   author.appendChild(imgContainer);
   imgContainer.appendChild(image);
   author.appendChild(name);
-
-  card.classList.add("card");
-  headline.classList.add("headline");
-  author.classList.add("author");
-  imgContainer.classList.add("img-container");
 
   return card;
 }
