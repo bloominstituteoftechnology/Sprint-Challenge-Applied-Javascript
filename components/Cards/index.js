@@ -18,32 +18,32 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const cardComponent = () => {
-  const cardDiv = document.createElement("div");
-  cardDiv.classList.add("card");
+// const cardComponent = () => {
+//   const cardDiv = document.createElement("div");
+//   cardDiv.classList.add("card");
 
-  const headline = document.createElement("div");
-  headline.classList.add("headline");
-  headline.textContent("Headline of article ADD LATER");
-  cardDiv.appendChild(headline);
+//   const headline = document.createElement("div");
+//   headline.classList.add("headline");
+//   headline.textContent("Headline of article ADD LATER");
+//   cardDiv.appendChild(headline);
 
-  //   const authorDiv = document.createElement("div");
-  //   authorDiv.classList.add("author");
-  //   cardDiv.appendChild(authorDiv);
+//   //   const authorDiv = document.createElement("div");
+//   //   authorDiv.classList.add("author");
+//   //   cardDiv.appendChild(authorDiv);
 
-  //   const imgDiv = document.createElement("div");
-  //   imgDiv.classList.add("img-container");
-  //   authorDiv.appendChild(imgDiv);
+//   //   const imgDiv = document.createElement("div");
+//   //   imgDiv.classList.add("img-container");
+//   //   authorDiv.appendChild(imgDiv);
 
-  //   const imgUrl = document.createElement("img");
-  //   imgUrl.src = "url ADD LATER";
-  //   imgDiv.appendChild(imgUrl);
+//   //   const imgUrl = document.createElement("img");
+//   //   imgUrl.src = "url ADD LATER";
+//   //   imgDiv.appendChild(imgUrl);
 
-  //   const authorSpan = document.createElement("span");
-  //   authorSpan.textContent = "By ADD Latter";
+//   //   const authorSpan = document.createElement("span");
+//   //   authorSpan.textContent = "By ADD Latter";
 
-  return cardDiv;
-};
+//   return cardDiv;
+// };
 
-const cardTest = document.querySelector(".cards-container");
-cardTest.appendChild(cardComponent());
+// const cardTest = document.querySelector(".cards-container");
+// cardTest.appendChild(cardComponent());
