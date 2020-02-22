@@ -6,7 +6,8 @@
 // This won't be as easy as just iterating over an array though.
 // Create a function that will programmatically create the following DOM component:
 //
-// <div class="card">
+// {
+//     <div class="card">
 //   <div class="headline">{Headline of article}</div>
 //   <div class="author">
 //     <div class="img-container">
@@ -14,36 +15,50 @@
 //     </div>
 //     <span>By {authors name}</span>
 //   </div>
-// </div>
+// </div> */
+// }
 //
 // Create a card for each of the articles and add the card to the DOM.
+const cardTest = document.querySelector(".cards-container");
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.forEach(e => {
+      e.headline;
+      e.authorPhoto;
+      e.authorName;
+    });
+    console.log(response);
+  })
+  .catch(function(error) {
+    // handle error
+    console.log(error);
+  });
 
-// const cardComponent = () => {
-//   const cardDiv = document.createElement("div");
-//   cardDiv.classList.add("card");
+const cardComponent = obj => {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
 
-//   const headline = document.createElement("div");
-//   headline.classList.add("headline");
-//   headline.textContent("Headline of article ADD LATER");
-//   cardDiv.appendChild(headline);
+  const headline = document.createElement("div");
+  headline.classList.add("headline");
+  headline.textContent = obj.headline;
+  cardDiv.appendChild(headline);
 
-//   //   const authorDiv = document.createElement("div");
-//   //   authorDiv.classList.add("author");
-//   //   cardDiv.appendChild(authorDiv);
+  const authorDiv = document.createElement("div");
+  authorDiv.classList.add("author");
+  cardDiv.appendChild(authorDiv);
 
-//   //   const imgDiv = document.createElement("div");
-//   //   imgDiv.classList.add("img-container");
-//   //   authorDiv.appendChild(imgDiv);
+  const imgDiv = document.createElement("div");
+  imgDiv.classList.add("img-container");
+  authorDiv.appendChild(imgDiv);
 
-//   //   const imgUrl = document.createElement("img");
-//   //   imgUrl.src = "url ADD LATER";
-//   //   imgDiv.appendChild(imgUrl);
+  const imgUrl = document.createElement("img");
+  imgUrl.src = obj.authorPhoto;
+  imgDiv.appendChild(imgUrl);
 
-//   //   const authorSpan = document.createElement("span");
-//   //   authorSpan.textContent = "By ADD Latter";
+  const authorSpan = document.createElement("span");
+  authorSpan.textContent = obj.authorName;
+  authorDiv.appendChild(authorSpan);
 
-//   return cardDiv;
-// };
-
-// const cardTest = document.querySelector(".cards-container");
-// cardTest.appendChild(cardComponent());
+  return cardDiv;
+};

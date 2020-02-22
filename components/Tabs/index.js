@@ -15,6 +15,7 @@ axios
   .then(response => {
     // handle success
     console.log(response);
+
     for (i = 0; i < response.data.topics.length; i++) {
       topElement.appendChild(tabComponent(response.data));
       //   console.log(response.data.topics[i]);
@@ -29,6 +30,5 @@ const tabComponent = obj => {
   const tabContainer = document.createElement("div");
   tabContainer.classList.add("tab");
   tabContainer.textContent = obj.topics[i];
-  console.log(obj.topics);
   return tabContainer;
 };
