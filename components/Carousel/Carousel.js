@@ -17,6 +17,27 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carDiv = document.createElement("div");
+carDiv.classList.add("carousel");
+
+const leftBtn = document.createElement("div");
+leftBtn.classList.add("left-button");
+
+const image1 = createElement("img");
+image1.src = "./assets/carousel/mountains.jpeg";
+
+const image2 = createElement("img");
+image2.src = "./assets/carousel/computer.jpeg";
+
+const image3 = createElement("img");
+image3.src = "./assets/carousel/trees.jpeg";
+
+const image4 = createElement("img");
+image4.src = "./assets/carousel/turntable.jpeg";
+
+const rightBtn = createElement("div");
+rightBtn.classList.add("right-button");
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
