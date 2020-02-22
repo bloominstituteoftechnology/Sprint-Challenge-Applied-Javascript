@@ -7,3 +7,9 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const tabComponent = () => {
+  const tabContainer = document.createElement("div");
+  tabContainer.classList.add("tab");
+  tabContainer.textContent = "Topic Here";
+};
