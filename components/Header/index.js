@@ -11,27 +11,29 @@
 
 function Header() {
   const header = document.createElement("div");
+  header.classList.add("header");
+
   const date = document.createElement("span");
+  date.classList.add("date");
+
   const heading = document.createElement("h1");
+  heading.textContent = "Lambda Times";
+
   const temperature = document.createElement("span");
+  temperature.classList.add("temp");
+  temperature.textContent = "98°";
 
   var today = new Date();
   var timeFormat = { month: "long", day: "numeric", year: "numeric" };
   date.textContent = today
     .toLocaleDateString("en-US", timeFormat)
     .toUpperCase();
-  heading.textContent = "Lambda Times";
-  temperature.textContent = "98°";
 
-  //creating content structure
+  //creating  structure of the website contents
 
   header.appendChild(date);
   header.appendChild(heading);
   header.appendChild(temperature);
-
-  header.classList.add("header");
-  date.classList.add("date");
-  temperature.classList.add("temp");
 
   return header;
 }
