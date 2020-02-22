@@ -20,32 +20,32 @@
 
 const cardsCont = document.querySelector('.cards-container');
 
-const jscard = document.createElement('div');
-jscard.textContent = 'JS Card';
-const bootstrap = document.createElement('div');
-bootstrap.textContent = 'Boot Card';
-const technology = document.createElement('div');
-technology.textContent = 'Tech Card';
-const jquery = document.createElement('div');
-jquery.textContent = 'JQuery Card';
-const node = document.createElement('div');
-node.textContent = 'Node Card';
+// const jscard = document.createElement('div');
+// jscard.textContent = 'JS Card';
+// const bootstrap = document.createElement('div');
+// bootstrap.textContent = 'Boot Card';
+// const technology = document.createElement('div');
+// technology.textContent = 'Tech Card';
+// const jquery = document.createElement('div');
+// jquery.textContent = 'JQuery Card';
+// const node = document.createElement('div');
+// node.textContent = 'Node Card';
+//
+// cardsCont.appendChild(jscard);
+// cardsCont.appendChild(bootstrap);
+// cardsCont.appendChild(technology);
+// cardsCont.appendChild(jquery);
+// cardsCont.appendChild(node);
 
-cardsCont.appendChild(jscard);
-cardsCont.appendChild(bootstrap);
-cardsCont.appendChild(technology);
-cardsCont.appendChild(jquery);
-cardsCont.appendChild(node);
 
-
-function Card (someCard) {
+function Card (someCard, i) {
   const mycard = document.createElement('div');
   mycard.classList.add('card');
 
   // inside card
   const headlineCard = document.createElement('div');
   headlineCard.classList.add('headline');
-  headlineCard.textContent = someCard.headline;//headline article
+  headlineCard.textContent = someCard[i];//headline article
 
   const author = document.createElement('div');
   author.classList.add('author');
@@ -60,13 +60,13 @@ function Card (someCard) {
   // inside imgCont
   const authorImg = document.createElement('img');
 
-  mycard.appendchild(headlineCard);
-  mycard.appendchild(author);
+  imgCont.appendchild(authorImg);
 
   author.appendchild(imgCont);
   author.appendchild(authorName);
 
-  imgCont.appendchild(authorImg);
+  mycard.appendchild(headlineCard);
+  mycard.appendchild(author);
 
   return mycard;
 
@@ -77,9 +77,9 @@ let dataObj = [];
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(function (response) {
     // handle success
-    dataObj.push(response.data);
+    dataObj.push(response.data.articles);
     dataObj.forEach((item, i) => {
-      let newCard = Card(item);
+      let newCard = Card(item, i);
       cardsCont.appendChild(newCard);
     });
 
