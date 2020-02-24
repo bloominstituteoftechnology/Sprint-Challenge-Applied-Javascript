@@ -20,7 +20,6 @@
 function articleCards(object){
   const newCard = document.createElement("div");
   newCard.classList.add("card");
-  newCard.textContent = object;
   const headline = document.createElement("div");
   headline.textContent = object;
   const author = document.createElement("div");
@@ -44,25 +43,19 @@ function articleCards(object){
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response) => {
   console.log(response);
-  //for(const key in response.data.articles){
-     //console.log(key);
-     // key.forEach((article)=>{
-         //let newArticle = newCard(article);
-        //for (const property in response.data.articles) {
-          ////  console.log(property);
-          //  response.data.article.property.forEach((article) => {
-              //  let newArticle = articleCards(article);
-               // const cardsContainer = document.querySelector('cards-container');
-               // cardsContainer.appendChild(newArticle);
-          //  })
-         
-           console.log(response.data.articles);
-
-    
-
-          })
-//})
-    
+      for (let property in response.data.articles) {
+        //  console.log(property);
+        console.log(Object.keys(response.data.articles));
+  
+       Object.keys(response.data.articles).forEach((article) => {
+               let newArticle = articleCards(article);
+               console.log(newArticle);
+               const cardsContainer = document.querySelector('.cards-container');
+               console.log(cardsContainer);
+               cardsContainer.appendChild(newArticle);
+         })
+        }
+    })
 
 .catch((err) => { 
     console.log(err) 
