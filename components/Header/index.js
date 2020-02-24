@@ -32,7 +32,7 @@ temp.classList.add('temp');
 
 date.textContent = 'MARCH 28,2019';
 title.textContent = 'Lamda Times';
-temp.textContent = '98';
+temp.textContent = '98°';
 
 
 
@@ -42,7 +42,11 @@ return header
 
 const headerContent = document.querySelector('.header-container');
 
-headerContent.appendChild(Header);
+const newHeader = Header();
+headerContent.appendChild(newHeader);
+
+
+
 
 
 
