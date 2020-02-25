@@ -31,7 +31,6 @@ function articleCards(object) {
   image.src = object.authorPhoto;
   const authName = document.createElement("span");
   authName.textContent = `By: ${object.authorName}`;
-
   newCard.appendChild(headline);
   newCard.appendChild(author);
   author.appendChild(imageContainer);
@@ -57,7 +56,6 @@ axios
       });
     }
   })
-
   .catch(err => {
     console.log(err);
   });

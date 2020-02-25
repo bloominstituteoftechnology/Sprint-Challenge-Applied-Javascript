@@ -14,14 +14,11 @@ function Header() {
   headerDiv.classList.add("header");
   const currentDate = document.createElement("span");
   currentDate.textContent = "March 28 2019";
-
   const pageHeader = document.createElement("h1");
   pageHeader.textContent = "Lambda Times";
-
   const temp = document.createElement("span");
   temp.classList.add("temp");
   temp.textContent = "98";
-
   headerDiv.appendChild(currentDate);
   headerDiv.appendChild(pageHeader);
   headerDiv.appendChild(temp);
