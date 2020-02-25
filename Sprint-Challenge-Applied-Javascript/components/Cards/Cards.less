@@ -1,0 +1,39 @@
+.cards-container {
+  .flex(space-evenly);
+  .width-100();
+  margin-top: 16px;
+  flex-wrap: wrap;
+  @media(min-width: 1200px){
+    width: 1200px;
+  }
+  .card {
+    .border-bottom-grey();
+    .flex(space-between, none, column);
+    background-color: @lambda-times-color-white;
+    width: 380px;
+    margin-bottom: 16px;
+    padding: 24px;
+    .headline {
+      font-size: 25px;
+      font-family: Didot, serif;
+    }
+    .author {
+      .flex(none, center);
+      margin-top: 15px;
+      .img-container {
+        padding-right: 10px;
+        border-right: 1px solid @lambda-times-color-lightgrey;
+        height: 40px;
+        img {
+          width: 40px;
+        }
+      }
+      span {
+        padding-left: 10px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+    }
+  }
+}
