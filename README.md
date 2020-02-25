@@ -46,7 +46,7 @@ We would convert a node list to an arrat to use array methods on it such as forE
 
 5. What is a component?
 
-A componet is a singular modular piece of code, that usually consists of html, css and JS
+A componet is a singular modular piece of code, that usually consists of html, CSS and JS.
 It is re-usable, D.R.Y and can stand alone.
 
 ### Git Set up
