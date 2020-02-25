@@ -19,32 +19,73 @@
 // }
 //
 // Create a card for each of the articles and add the card to the DOM.
-const cardTest = document.querySelector(".cards-container");
+const url = "https://lambda-times-backend.herokuapp.com/articles";
+const cardCont = document.querySelector(".cards-container");
 axios
-  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .get(url)
   .then(response => {
-    const arrayConvert = Object.keys(response.data.articles);
-    arrayConvert.forEach(a => {
-      a.javascript;
-      a.bootstrap;
-      a.technology;
-      a.jquery;
-      a.node;
+    console.log(response.data.articles.javascript);
+    response.data.articles.javascript.forEach(article => {
+      cardCont.appendChild(
+        cardComponent(article.headline, article.authorPhoto, article.authorName)
+      );
     });
-    console.log(response);
+
+    return axios.get(url);
   })
+  .then(response => {
+    console.log(response.data.articles.bootstrap);
+    response.data.articles.bootstrap.forEach(article => {
+      cardCont.appendChild(
+        cardComponent(article.headline, article.authorPhoto, article.authorName)
+      );
+    });
+
+    return axios.get(url);
+  })
+  .then(response => {
+    console.log(response.data.articles.technology);
+    response.data.articles.technology.forEach(article => {
+      cardCont.appendChild(
+        cardComponent(article.headline, article.authorPhoto, article.authorName)
+      );
+    });
+
+    return axios.get(url);
+  })
+  .then(response => {
+    console.log(response.data.articles.jquery);
+    response.data.articles.jquery.forEach(article => {
+      cardCont.appendChild(
+        cardComponent(article.headline, article.authorPhoto, article.authorName)
+      );
+    });
+
+    return axios.get(url);
+  })
+  .then(response => {
+    console.log(response.data.articles.node);
+    response.data.articles.node.forEach(article => {
+      cardCont.appendChild(
+        cardComponent(article.headline, article.authorPhoto, article.authorName)
+      );
+    });
+
+    return axios.get(url);
+  })
+
   .catch(function(error) {
     // handle error
     console.log(error);
   });
 
-const cardComponent = obj => {
+const cardComponent = (hl, authorP, authorN) => {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
 
   const headline = document.createElement("div");
   headline.classList.add("headline");
-  headline.textContent = obj.headline;
+  headline.textContent = hl;
   cardDiv.appendChild(headline);
 
   const authorDiv = document.createElement("div");
@@ -56,11 +97,11 @@ const cardComponent = obj => {
   authorDiv.appendChild(imgDiv);
 
   const imgUrl = document.createElement("img");
-  imgUrl.src = obj.authorPhoto;
+  imgUrl.src = authorP;
   imgDiv.appendChild(imgUrl);
 
   const authorSpan = document.createElement("span");
-  authorSpan.textContent = obj.authorName;
+  authorSpan.textContent = authorN;
   authorDiv.appendChild(authorSpan);
 
   return cardDiv;
