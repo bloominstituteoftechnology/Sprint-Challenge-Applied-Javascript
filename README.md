@@ -40,6 +40,8 @@ An event listener is a procedure in JavaScript that waits for an event to occur.
 
 
 4. Why would we convert a NodeList into an Array?
+Because with nodelist we can access DOM elements and arrays are a JavaScript object , they have their own methods and properties.
+
 
 5. What is a component?
 a component is a re usable set of code.
