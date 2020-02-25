@@ -55,15 +55,6 @@ axios
         cardsContainer.appendChild(newArticle);
         console.log("this is the new article", newArticle);
       });
-      //    console.log(Object.keys(articlesObj));
-      //  Object.keys(articlesObj).forEach((article) => {
-      //          let newArticle = articleCards(article);
-      //          console.log(newArticle);
-      //          const cardsContainer = document.querySelector('.cards-container');
-      //          console.log(cardsContainer);
-      //          cardsContainer.appendChild(newArticle);
-      //    })
-      //    console.log(Object.keys(articlesObj));
     }
   })
 
