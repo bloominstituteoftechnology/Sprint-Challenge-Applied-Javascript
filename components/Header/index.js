@@ -12,41 +12,36 @@
 
 
 
+function head(){
 
-function Header() {
 
 
 const header = document.createElement('div');
-const date = document.createElement('span');
-const title = document.createElement('h1');
+const headerDate = document.createElement('span');
+const headerTitle = document.createElement('h1');
 const temp = document.createElement('span');
 
-header.appendChild(date);
-header.appendChild(title);
+
+header.appendChild(headerDate);
+header.appendChild(headerTitle);
 header.appendChild(temp);
 
 
 header.classList.add('header');
-date.classList.add('date');
+headerDate.classList.add('date');
 temp.classList.add('temp');
 
-date.textContent = 'MARCH 28,2019';
-title.textContent = 'Lamda Times';
+
+headerDate.textContent = 'MARCH 28, 2019';
+headerTitle.textContent = 'Lambda Times';
 temp.textContent = '98°';
 
-
-
-return header
-
+return header;
 }
 
-const headerContent = document.querySelector('.header-container');
+const newHead = head();
 
-const newHeader = Header();
-headerContent.appendChild(newHeader);
+const headCont = document.querySelector('.header-container');
 
-
-
-
-
+headCont.appendChild(newHead);
 
