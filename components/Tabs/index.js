@@ -7,3 +7,15 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+topics = [];
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    response.data.topics.forEach(e => {
+      let divy = document.createElement("div");
+      divy.classList.add("tab");
+      divy.textContent = `${e}`;
+      console.log(divy);
+      document.querySelector(".topics").appendChild(divy);
+    });
+  });
