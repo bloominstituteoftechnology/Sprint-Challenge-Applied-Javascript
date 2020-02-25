@@ -18,39 +18,56 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const newCard = (post) => {
+function CreateCard(item) {
+    //define new elements
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgCont = document.createElement('div');
+    const img = document.createElement('img');
+    const byAuthor = document.createElement('span');
+    
+    //setup the structure of elements
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgCont);
+    author.appendChild(byAuthor);
+    imgCont.appendChild(img);
 
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
-  
-    const headlineDiv = document.createElement('div');
-    headlineDiv.classList.add('headline');
-    // headlineDiv.textContent =""
+    //add classes to element
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgCont.classList.add('img-container');
+    
+    //set text content
+    headline.textContent = item.headline;
+    img.src = item.authorPhoto;
+    byAuthor.textContent = item.authorName;
 
-    const authorDiv = document.createElement('div');
-    authorDiv.classList.add('author');
 
-    const imgDiv = document.createElement('div');
-    imgDiv.classList.add('img-container');
-
-    const img = document.createElement('img').src('');
-
-    const spanBy = document.createElement('span');
-    spanBy.textContent = "By authors name";
-
-    //img is a child of imgDiv
-    imgDiv.appendChild(img);
-
-    //spanBy and imgDiv are the children of authorDiv
-    authorDiv.appendChild(spanBy);
-    authorDiv.appendChild(imgDiv);
-
-    //authorDiv and headlineDiv are the children of cardDiv
-    cardDiv.appendChild(authorDiv);
-    cardDiv.appendChild(headlineDiv);
+    return card;
 }
 
-const cards = document.getElementsByClassName('card');
-cards.forEach(dataset  => {
-  articles.appendChild(newArticle(dataset));
-})
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then( (response) => { 
+        console.log(response.data.articles.javascript)
+        // deal with the response data in here
+        response.data.articles.javascript.forEach((item) => {
+            let newerCard = CreateCard(item);
+            cardContainer.appendChild(newerCard)
+        })
+        console.log(response);
+    })
+    .catch( err => {
+        // deal with the error in here
+        console.log("There is an error: ", err);
+    })
+
+    const cardContainer = document.querySelector('.cards-container');
+    // cardContainer.appendChild(articles);
+
+// const cards = document.getElementsByClassName('card');
+// cards.forEach(dataset  => {
+//   articles.appendChild(newArticle(dataset));
+// })
