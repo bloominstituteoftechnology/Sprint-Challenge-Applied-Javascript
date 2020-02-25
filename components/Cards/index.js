@@ -20,71 +20,70 @@
 
 const cardsCont = document.querySelector('.cards-container');
 
-// const jscard = document.createElement('div');
-// jscard.textContent = 'JS Card';
-// const bootstrap = document.createElement('div');
-// bootstrap.textContent = 'Boot Card';
-// const technology = document.createElement('div');
-// technology.textContent = 'Tech Card';
-// const jquery = document.createElement('div');
-// jquery.textContent = 'JQuery Card';
-// const node = document.createElement('div');
-// node.textContent = 'Node Card';
-//
-// cardsCont.appendChild(jscard);
-// cardsCont.appendChild(bootstrap);
-// cardsCont.appendChild(technology);
-// cardsCont.appendChild(jquery);
-// cardsCont.appendChild(node);
-
-
-function Card (someCard, i) {
+function Card (item) {
   const mycard = document.createElement('div');
   mycard.classList.add('card');
 
   // inside card
   const headlineCard = document.createElement('div');
   headlineCard.classList.add('headline');
-  headlineCard.textContent = someCard[i];//headline article
+  headlineCard.textContent = item.headline;//headline article
 
   const author = document.createElement('div');
   author.classList.add('author');
 
   // inside author
   const imgCont = document.createElement('div');
-  imgCont.src = 'replace with img url';//url author image
-
-  const authorName = document.createElement('span');
-  authorName.textContent = 'replace auth name';//author name
+  imgCont.classList.add('img-container');
 
   // inside imgCont
   const authorImg = document.createElement('img');
+  authorImg.src = item.authorPhoto;//url author image
 
-  imgCont.appendchild(authorImg);
+  const authorName = document.createElement('span');
+  authorName.textContent = item.authorName;//author name
 
-  author.appendchild(imgCont);
-  author.appendchild(authorName);
 
-  mycard.appendchild(headlineCard);
-  mycard.appendchild(author);
+  imgCont.appendChild(authorImg);
+
+  author.appendChild(imgCont);
+  author.appendChild(authorName);
+
+  mycard.appendChild(headlineCard);
+  mycard.appendChild(author);
 
   return mycard;
 
-}
+};
 
-let dataObj = [];
+// const axios = require('axios').default;
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then(function (response) {
+  .then( (response) => {
     // handle success
-    dataObj.push(response.data.articles);
-    dataObj.forEach((item, i) => {
-      let newCard = Card(item, i);
+    response.data.articles.javascript.forEach((item) => {
+      let newCard = Card(item);
+      cardsCont.appendChild(newCard);
+    });
+    response.data.articles.bootstrap.forEach((item) => {
+      let newCard = Card(item);
+      cardsCont.appendChild(newCard);
+    });
+    response.data.articles.technology.forEach((item) => {
+      let newCard = Card(item);
+      cardsCont.appendChild(newCard);
+    });
+    response.data.articles.jquery.forEach((item) => {
+      let newCard = Card(item);
+      cardsCont.appendChild(newCard);
+    });
+    response.data.articles.node.forEach((item) => {
+      let newCard = Card(item);
       cardsCont.appendChild(newCard);
     });
 
   })
-  .catch(function (error) {
+  .catch( (error) => {
     // handle error
     console.log(error);
   });
