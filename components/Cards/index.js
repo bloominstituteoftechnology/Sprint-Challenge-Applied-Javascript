@@ -32,11 +32,15 @@ function createArticle(article) {
      headline.classList.add('headline');
      author.classList.add('author');
      imageContainer.classList.add('img-container');
+     
 
     //structure elements
      card.appendChild(headline, author);
-     author.appendChild(imageContainer, by);
+     card.appendChild(author);
+     author.appendChild(by);
      imageContainer.appendChild(image);
+     author.appendChild(imageContainer);
+   
 
     //textContent
      headline.textContent = article.headline;
