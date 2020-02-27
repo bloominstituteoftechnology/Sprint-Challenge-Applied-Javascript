@@ -27,34 +27,19 @@ axios
   .then(response => {
     console.log(response);
     arrayConvert = Object.entries(response.data.articles);
-
-    // arrayConvert.forEach(lang => {
-    //   console.log(lang);
-    //   lang.forEach(article => {
-    //     cardCont.appendChild(
-    //       cardComponent(
-    //         article.headline,
-    //         article.authorPhoto,
-    //         article.authorName
-    //       )
-    //     );
-    //   });
-    // });
+    arrayConvert.forEach(lang => {
+      lang[1].forEach(art => {
+        cardCont.appendChild(
+          cardComponent(art.headline, art.authorPhoto, art.authorName)
+        );
+      });
+    });
   })
 
   .catch(function(error) {
     // handle error
     console.log(error);
   });
-setTimeout(e => {
-  arrayConvert.forEach(lang => {
-    lang[1].forEach(art => {
-      cardCont.appendChild(
-        cardComponent(art.headline, art.authorPhoto, art.authorName)
-      );
-    });
-  });
-}, 500);
 
 const cardComponent = (hl, authorP, authorN) => {
   const cardDiv = document.createElement("div");

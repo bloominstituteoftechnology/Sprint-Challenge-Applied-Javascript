@@ -15,7 +15,7 @@ const headerComponent = () => {
 
   const headerSpan = document.createElement("span");
   headerSpan.classList.add("date");
-  headerSpan.textContent = "Smarch 28, 2019";
+  headerSpan.textContent = "March 28, 2019";
   headerContainer.appendChild(headerSpan);
 
   const headerH = document.createElement("h1");
@@ -24,7 +24,7 @@ const headerComponent = () => {
 
   const secondSpan = document.createElement("span");
   secondSpan.classList.add("temp");
-  secondSpan.textContent = "98";
+  secondSpan.textContent = "100";
   headerContainer.appendChild(secondSpan);
 
   return headerContainer;
