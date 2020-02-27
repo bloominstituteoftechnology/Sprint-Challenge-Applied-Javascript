@@ -21,63 +21,40 @@
 // Create a card for each of the articles and add the card to the DOM.
 const url = "https://lambda-times-backend.herokuapp.com/articles";
 const cardCont = document.querySelector(".cards-container");
+let arrayConvert = [];
 axios
   .get(url)
   .then(response => {
-    console.log(response.data.articles.javascript);
-    response.data.articles.javascript.forEach(article => {
-      cardCont.appendChild(
-        cardComponent(article.headline, article.authorPhoto, article.authorName)
-      );
-    });
+    console.log(response);
+    arrayConvert = Object.entries(response.data.articles);
 
-    return axios.get(url);
-  })
-  .then(response => {
-    console.log(response.data.articles.bootstrap);
-    response.data.articles.bootstrap.forEach(article => {
-      cardCont.appendChild(
-        cardComponent(article.headline, article.authorPhoto, article.authorName)
-      );
-    });
-
-    return axios.get(url);
-  })
-  .then(response => {
-    console.log(response.data.articles.technology);
-    response.data.articles.technology.forEach(article => {
-      cardCont.appendChild(
-        cardComponent(article.headline, article.authorPhoto, article.authorName)
-      );
-    });
-
-    return axios.get(url);
-  })
-  .then(response => {
-    console.log(response.data.articles.jquery);
-    response.data.articles.jquery.forEach(article => {
-      cardCont.appendChild(
-        cardComponent(article.headline, article.authorPhoto, article.authorName)
-      );
-    });
-
-    return axios.get(url);
-  })
-  .then(response => {
-    console.log(response.data.articles.node);
-    response.data.articles.node.forEach(article => {
-      cardCont.appendChild(
-        cardComponent(article.headline, article.authorPhoto, article.authorName)
-      );
-    });
-
-    return axios.get(url);
+    // arrayConvert.forEach(lang => {
+    //   console.log(lang);
+    //   lang.forEach(article => {
+    //     cardCont.appendChild(
+    //       cardComponent(
+    //         article.headline,
+    //         article.authorPhoto,
+    //         article.authorName
+    //       )
+    //     );
+    //   });
+    // });
   })
 
   .catch(function(error) {
     // handle error
     console.log(error);
   });
+setTimeout(e => {
+  arrayConvert.forEach(lang => {
+    lang[1].forEach(art => {
+      cardCont.appendChild(
+        cardComponent(art.headline, art.authorPhoto, art.authorName)
+      );
+    });
+  });
+}, 500);
 
 const cardComponent = (hl, authorP, authorN) => {
   const cardDiv = document.createElement("div");
