@@ -64,15 +64,14 @@ cardCreator = obj => {
 
     return cardDiv
 }
-
-
-// <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
-//
+/*
+ <div class="card">
+    <div class="headline">{Headline of article}</div>
+    <div class="author">
+        <div class="img-container">
+            <img src={url of authors image} />
+        </div>
+        <span>By {authors name}</span>
+    </div>
+ </div>
+*/
