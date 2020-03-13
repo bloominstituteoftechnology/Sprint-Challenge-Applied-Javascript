@@ -24,6 +24,7 @@ function Header() {
     temp.classList.add("temp");
 
     // add content
+    date.textContent = "SMARCH 28, 2019";
     h1Title.textContent = "Lambda Times";
     temp.textContent = "98*"
 
@@ -31,5 +32,5 @@ function Header() {
 }
 
 
-const headContainer = document.querySelector(".header-container");
-headContainer.append(Header);
+const headContainer = document.querySelector(".header-container"); //you are creating the link
+headContainer.append(Header());
