@@ -38,10 +38,10 @@ function articleCard(data){
     author.classList.add("author");
     imgContainer.classList.add("img-container");
 // add attributes
-    authorImg.src = data.articles.bootstrap;
+    authorImg.src = data.authorPhoto;
 // add content
-headline.textContent = item;
-authorName.textContent = `By ${data.data.authorName}`;
+headline.textContent = data.headline;
+authorName.textContent = `By ${data.authorName}`;
 
 return card;
 }
@@ -49,16 +49,27 @@ return card;
 const connectToCardsContainer = document.querySelector(".cards-container"); //you are creating the referance to the HTML
 
 
-            axios
-            .get("https://lambda-times-backend.herokuapp.com/articles")
-            .then (response => {
-                console.log(response.data.articles)
-                response.data.articles.forEach( item => {
-                    connectToCardsContainer.append(createTabs(item));
-                  
-                })
-            })
 
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then (response => {
+    // console.log(response.data.articles.bootstrap)
+     response.data.articles.bootstrap.forEach( item => {
+        console.log(item)
+         connectToCardsContainer.append(articleCard(item));
+                  
+        })
+    })
+
+    // axios
+    //     .get("https://lambda-times-backend.herokuapp.com/topics")
+    //     .then (response => {
+    //         // console.log(response.data.topics)
+    //         response.data.topics.forEach( item => {
+    //             topics.append(createTabs(item));
+               
+    //         })
+    //     })
 
 
 

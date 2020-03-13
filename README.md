@@ -29,14 +29,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+-The DOM is a bridge between the content and the website itself.
 2. What is an event?
-
+- An event is something that will happen on the website that the user does, such as a mouse click, key press,  etc.
 3. What is an event listener?
-
+- An event listener is something that will be hearing for those events described above. 
 4. Why would we convert a NodeList into an Array?
-
+- We can convert a nodelist to an array by using const arr = Array.from(arr) , you would change it to an array to be able to use other properties on it.
 5. What is a component?
+- A component is a small part of a whole, the creation of a machine
 
 ### Git Set up
 

@@ -16,9 +16,9 @@
 //         });
 
 
-    function createTabs(item){
+    function createTabs(data){
         const tab = document.createElement("div");
-        tab.textContent = item;
+        tab.textContent = data;
         tab.classList.add("tab");
 
         return tab
@@ -29,7 +29,7 @@
     axios
         .get("https://lambda-times-backend.herokuapp.com/topics")
         .then (response => {
-            console.log(response.data.topics)
+            // console.log(response.data.topics)
             response.data.topics.forEach( item => {
                 topics.append(createTabs(item));
                
