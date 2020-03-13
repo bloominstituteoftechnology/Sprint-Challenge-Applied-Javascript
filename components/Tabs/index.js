@@ -4,19 +4,29 @@
 // Once the data is returned console.log it and review the structure.
 // Iterate over the topics creating a new Tab component and add it to the DOM
 // under the .topics element.
+
+function Tab(topic) {
+    const newTab = document.createElement("div");
+    newTab.classList.add("tab");
+    newTab.textContent = topic;
+  
+    return newTab;
+  }
+  
+  const topics = document.querySelector(".topics");
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(response => {
-        console.log(response);
-        response.data.topics.forEach(topic => {
-            console.log(response);
-            const newTabEnt = new newTab();
-            tab.appendChild(newTabEnt);
-        })
-    })
-    .catch(error => {
-        console.log(error);
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    console.log(response);
+    response.data.topics.forEach(topic => {
+      console.log(response);
+      const newTabEntry = new Tab();
+      tab.appendChild(newTabEntry);
+      const newTab = new Tab(topic);
+      topics.appendChild(newTab);
     });
+  })
