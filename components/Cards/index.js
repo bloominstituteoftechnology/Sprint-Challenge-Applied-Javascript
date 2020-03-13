@@ -38,19 +38,47 @@ function articleCard(data){
     author.classList.add("author");
     imgContainer.classList.add("img-container");
 // add attributes
-    authorImg.src = data.data.authorPhoto;
+    authorImg.src = data.articles.bootstrap;
 // add content
-headline.textContent = data.data.headline;
+headline.textContent = item;
 authorName.textContent = `By ${data.data.authorName}`;
 
 return card;
 }
 
-axios
-  .get("https://lambda-times-backend.herokuapp.com/articles")
-  .then(response => {
-    console.log(response);
-    });
+const connectToCardsContainer = document.querySelector(".cards-container"); //you are creating the referance to the HTML
+
+
+            axios
+            .get("https://lambda-times-backend.herokuapp.com/articles")
+            .then (response => {
+                console.log(response.data.articles)
+                response.data.articles.forEach( item => {
+                    connectToCardsContainer.append(createTabs(item));
+                  
+                })
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+        // followersArray.forEach(item=>{
+        //     axios 
+        //     .get(`https://api.github.com/users/${item}`)
+        //     .then(response=> cardDiv.append(cardCreator(response) )
+        //     )})
+          
+
+
+
 
 
     // axios
@@ -64,23 +92,3 @@ axios
     // .catch(error => {
     //   console.log("The data was not returned", error);
     // });
-
-
-
-
-
-
-
-// const connectToCardsContainer = document.querySelector(".cards-container"); //you are creating the referance to the HTML
-
-
-
-// axios
-//     .get("https://lambda-times-backend.herokuapp.com/articles")
-//     .then(response=>{
-//         Object.values(response.data.articles).forEach(item => {
-//             item.forEach()
-//         })
-//     })
-
-// headContainer.append(articleCard());
