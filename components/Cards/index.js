@@ -25,20 +25,25 @@ function Card(obj) {
     const header = document.createElement("div");
     header.classList.add("headline");
     header.textContent = obj.headline;
+
+    const author = document.createElement("div");
+    author.classList.add("author");
   
+
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");
   
     const newImg = document.createElement("img");
     newImg.src = obj.authorPhoto;
-  
-    const span = document.createElement("span");
+
+    const span = document.createElement('span');
     span.textContent = obj.authorName;
   
     newCard.appendChild(header);
-    newCard.appendChild(imageContainer);
-    newCard.appendChild(newImg);
-    newCard.appendChild(span);
+    newCard.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(newImg);
+    author.appendChild(span);
   
     return newCard;
   }
