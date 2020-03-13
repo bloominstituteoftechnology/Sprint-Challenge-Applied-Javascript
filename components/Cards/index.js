@@ -17,3 +17,29 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+function cardCreator(user){
+    const 
+    card = document.createElement('div'),
+    headline = document.createElement('div'),
+    author = document.createElement('div'),
+    imgContainer = document.createElement('div'),
+    authorImg = document.createElement('img'),
+    authorName = document.createElement('span');
+
+
+
+    return card;
+  }
+
+  axios
+
+    .get('https://lambda-times-backend.herokuapp.com/articles')
+
+    .then(response=>{
+        console.log(response);
+    })
+
+    .catch(err => {
+        console.log('the tab data was not returned' + err);
+    })
