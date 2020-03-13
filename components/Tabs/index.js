@@ -24,9 +24,11 @@ axios
     console.log(response);
     response.data.topics.forEach(topic => {
       console.log(response);
-      const newTabEntry = new Tab();
-      tab.appendChild(newTabEntry);
       const newTab = new Tab(topic);
       topics.appendChild(newTab);
     });
   })
+
+  .catch(error => {
+    console.log(error);
+  });
