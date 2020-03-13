@@ -19,3 +19,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     });
 
 
+function tabs() {
+    const tab = document.createElement('div');
+
+
+
+
+    tab.classList.add('tab')
+
+    tab.textContent = `${object.tab}`;
+}

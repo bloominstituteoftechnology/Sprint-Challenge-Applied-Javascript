@@ -38,7 +38,7 @@ function newCards(array) {
     array.forEach(item => {
         axios.get('https://lambda-times-backend.herokuapp.com/${item}')
             .then(response => {
-                let myCard = cardCreator(response.data)
+                let myCard = Header(response.data)
 
                 newCard.append(myCard);
             });
