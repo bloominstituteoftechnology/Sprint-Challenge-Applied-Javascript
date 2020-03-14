@@ -55,12 +55,56 @@ axios
   .then (response => {
     // console.log(response.data.articles.bootstrap)
      response.data.articles.bootstrap.forEach( item => {
-        console.log(item)
+        // console.log(item)
          connectToCardsContainer.append(articleCard(item));
                   
         })
     })
 
+    axios
+    .get("https://lambda-times-backend.herokuapp.com/articles")
+    .then (response => {
+      console.log(response.data)
+       response.data.articles.javascript.forEach( item => {
+        //   console.log(item)
+           connectToCardsContainer.append(articleCard(item));
+                    
+          })
+      })
+
+      axios
+    .get("https://lambda-times-backend.herokuapp.com/articles")
+    .then (response => {
+      console.log(response.data)
+       response.data.articles.node.forEach( item => {
+        //   console.log(item)
+           connectToCardsContainer.append(articleCard(item));
+                    
+          })
+      })
+
+      axios
+    .get("https://lambda-times-backend.herokuapp.com/articles")
+    .then (response => {
+      console.log(response.data)
+       response.data.articles.technology.forEach( item => {
+        //   console.log(item)
+           connectToCardsContainer.append(articleCard(item));
+                    
+          })
+      })
+
+      axios
+      .get("https://lambda-times-backend.herokuapp.com/articles")
+      .then (response => {
+        console.log(response.data)
+         response.data.articles.jquery.forEach( item => {
+          //   console.log(item)
+             connectToCardsContainer.append(articleCard(item));
+                      
+            })
+        })
+      
     // axios
     //     .get("https://lambda-times-backend.herokuapp.com/topics")
     //     .then (response => {
