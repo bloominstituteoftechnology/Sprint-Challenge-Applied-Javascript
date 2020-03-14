@@ -10,22 +10,29 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        let myCard = cardCreator(response.data)
-        newCard.appendChild(myCard)
-        console.log(myCard);
+        const myCard = response.data;
+        carded.append(tabs(myCard));
     })
     .catch(error => {
+        console.log("this is an error", error)
 
     });
 
-f
-function tabs() {
-    const tab = document.createElement('div');
+const carded = document.querySelector('.topics');
+
+
+function tabs(object) {
+    const tabs = document.createElement('div');
 
 
 
 
-    tab.classList.add('tab')
+    tabs.classList.add('tab')
 
-    tab.textContent = `${object.tab}`;
-}
+    tabs.textContent = `${object.topics}`;
+    return tabs;
+};
+
+// let newTabs = document.querySelector('.topics');
+
+// newTabs.appendChild(tabs("topic here"));

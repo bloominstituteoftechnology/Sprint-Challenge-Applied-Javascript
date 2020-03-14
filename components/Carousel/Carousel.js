@@ -19,39 +19,70 @@
 */
 
 
-function carousel(objects) {
-  const carousel = document.createElement('div');
-  const leftButton = document.createElement('div');
-  const img_one = document.createElement('img');
-  const img_two = document.createElement('img');
-  const img_three = document.createElement('img');
-  const img_four = document.createElement('img');
-  const rightButton = document.createElement('div');
+// function carousel(objects) {
+//   let newCarousel = document.querySelector('.carousel-container');
+//   // console.log('in carousel function');
+//   const carousel = document.createElement('div');
+//   const leftButton = document.createElement('div');
+//   const img_one = document.createElement('img');
+//   const img_two = document.createElement('img');
+//   const img_three = document.createElement('img');
+//   const img_four = document.createElement('img');
+//   const rightButton = document.createElement('div');
 
-  carousel.classList.add('carousel');
-  leftButton.classList.add('left-button');
-  rightButton.classList.add('right-button');
-
-  img_one.src = ("object./.assets / carousel / mountains.jpeg");
-  img_one.alt = 'mountains image';
-  img_two.src = ("object./.assets/carousel/computer.jpeg");
-  img_two = 'computer image';
-  img_three.src = ("object./.assets/carousel/trees.jpeg");
-  img_three = 'trees image';
-  img_four.src = ("object./.assets/carousel/turntable.jpeg")
-  img_four = 'turntable image';
-
-  carousel.appendChild(leftButton);
-  carousel.appendChild(img_one);
-  carousel.appendChild(img_two);
-  carousel.appendChild(img_three);
-  carousel.appendChild(img_four);
-  carousel.appendChild(rightButton);
+//   carousel.classList.add('carousel');
+//   leftButton.classList.add('left-button');
+//   rightButton.classList.add('right-button');
 
 
-  return carousel;
+//   let images = [
+//     "./assets/carousel/mountains.jpeg",
+//     './assets/carousel/computer.jpeg',
+//     './assets/carousel/trees.jpeg',
+//     'object./assets/carousel/turntable.jpeg'
+//   ]
+
+//   img_one.src = "./assets/carousel/mountains.jpeg";
+//   img_one.alt = 'mountains image';
+//   img_two.src = ("./assets/carousel/computer.jpeg");
+//   img_two.alt = 'computer image';
+//   img_three.src = ("./assets/carousel/trees.jpeg");
+//   img_three.alt = 'trees image';
+//   img_four.src = ("./assets/carousel/turntable.jpeg");
+//   img_four.alt = 'turntable image';
+
+//   carousel.appendChild(leftButton);
+//   carousel.appendChild(img_one);
+//   carousel.appendChild(img_two);
+//   carousel.appendChild(img_three);
+//   carousel.appendChild(img_four);
+//   carousel.appendChild(rightButton);
+//   newCarousel.appendChild(carousel);
 
 
-}
+//   return carousel;
 
-let newCarousel = document.querySelector('.carousel-container');
+
+// }
+// carousel();
+// let carouselScroller = (item => {
+//   header.ClassList$(`.carousel`).carousel('cycle')
+//   interval: 2000
+// });
+
+// images
+
+
+
+// function carousel(index) {
+//   index.forEach(item => {
+//     addEventListener('click', function () {
+//       `${item}`
+//     });
+
+//   })
+// }
+
+// carousel(images);
+
+

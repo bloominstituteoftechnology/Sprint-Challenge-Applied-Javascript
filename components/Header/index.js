@@ -14,16 +14,18 @@ function Header(object) {
     const header = document.createElement('div');
     const date = document.createElement('span');
     const lambdaTime = document.createElement('h1');
-    const temp = document.createElement('temp');
+    const temp = document.createElement('span');
 
 
     header.classList.add('header');
     date.classList.add('date');
+    lambdaTime.classList.add('h1');
     temp.classList.add('temp');
 
-    lambdaTime.textContent = object.lambdaTime;
-    date.textContent = object.location;
-    temp.textContent = object.temp;
+
+    date.textContent = "SMARCH 28, 2019";
+    lambdaTime.textContent = "Lambda Times";
+    temp.textContent = "98°";
 
     header.appendChild(date);
     header.appendChild(lambdaTime);
@@ -32,18 +34,35 @@ function Header(object) {
     return header;
 
 }
-let newCard = document.querySelector(".header-container");
 
-function newCards(array) {
-    array.forEach(item => {
-        axios.get('https://lambda-times-backend.herokuapp.com/${item}')
-            .then(response => {
-                let myCard = Header(response.data)
+let headers = document.querySelector(".header-container");
 
-                newCard.append(myCard);
-            });
-    })
-}
+
+headers.appendChild(Header("SMARCH 28, 2019", "Lambda Times", "98°"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let articleToggle = (item) => {
+//     article.classList.toggle('article-open');
+
+// }
+
+
+// button.addEventListener('click', articleToggle);
+
 
 
 // axios.get('https://lambda-times-backend.herokuapp.com/topics')
