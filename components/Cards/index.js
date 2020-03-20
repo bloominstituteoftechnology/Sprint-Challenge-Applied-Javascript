@@ -18,7 +18,7 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-function Cards(objects) {
+function Cards(article) {
     const card = document.createElement('div');
     const headline = document.createElement('div');
     const author = document.createElement('div');
@@ -30,11 +30,14 @@ function Cards(objects) {
     card.classList.add('card');
     headline.classList.add('headline');
     author.classList.add('author');
-    authorName.classList.add('')
+    imgContainer.classList.add('img-container');
+    // authorName.classList.add('')
 
-    imgContainer.src = objects.avatar_url;
-    authorImage.src = `objects.${authorImage}`;
-    authorName.textContent = object.authorName;
+    authorImage.src = article.authorPhoto;
+
+    authorName.textContent = article.authorName;
+
+    headline.textContent = article.headline;
 
 
     card.appendChild(headline);
@@ -43,6 +46,7 @@ function Cards(objects) {
     imgContainer.appendChild(authorImage);
     author.appendChild(authorName);
 
+
     return card;
 }
 
@@ -50,27 +54,56 @@ function Cards(objects) {
 
 let cards = document.querySelector(".cards-container");
 
+
 // const keys = object.keys(card);
 // const keys = object.keys(headline);
 // const keys = object.keys(author);
 // const keys = object.keys(authorName);
 
-
-
 function newCards(array) {
     // array.forEach(key,  => {
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
         .then(response => {
-            let myCard = response.data.articles
-            Objects.keys(myCard).forEach(items => {
-                myCard[items].forEach(element => (
-                    let newArray = Articles(element);
-                newCard.appendChild(newArray);
+            console.log("Got the response: " + JSON.stringify(response));
+            let articles = response.data.articles
+            console.log("Articles: " + JSON.stringify(articles));
+
+            articles.javascript
+            articles["javascript"]
+            Object.keys(articles).forEach(articleKey => {
+                console.log("Article Key " + articleKey);
+                const articlesArray = articles[articleKey];
+                articlesArray.forEach(article => {
+                    console.log("Element: " + JSON.stringify(article));
+                    let newCard = Cards(article);
+                    cards.appendChild(newCard);
+                });
+
+            });
+        });
+
+};
+
+// function getTheArticles(array){
+//     axios.get('https://lambda-times-backend.herokuapp.com/articles')
+//     .then(response =>{
+//     console.log(response)
+//     let articleArray = response.data.articles;
+//     Object.keys(articleArray).forEach(items =>{ articleArray[items].forEach(element =>{
+//     let newArray = Articles(element);
+//     totalArticles.appendChild(newArray);
+//     }) })
+//     })}
 
 
-            })
-        })
-}
+
+
+
+
+
+
+
+
 
 newCards();
                 // let theCard = cardCreator(response.data);
