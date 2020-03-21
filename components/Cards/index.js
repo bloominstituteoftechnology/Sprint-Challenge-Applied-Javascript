@@ -20,20 +20,44 @@
 
 const cardCont = document.querySelector('.cards-container')
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then(resp => {
+ axios.get('https://lambda-times-backend.herokuapp.com/articles').then(resp => {
 
     console.log('It works, ty Jesus', resp.data.articles)
 
-resp.data.articles.forEach(element => {
+
+ resp.data.articles.javascript.forEach(element => {
     
     cardCont.appendChild(someCard(element))
 
-});
+})
 
+resp.data.articles.bootstrap.forEach(element => {
+    
+    cardCont.appendChild(someCard(element))
 
+})
 
-}).catch(err => {
+resp.data.articles.technology.forEach(element => {
+    
+    cardCont.appendChild(someCard(element))
+
+})
+
+resp.data.articles.jquery.forEach(element => {
+    
+    cardCont.appendChild(someCard(element))
+
+})
+
+resp.data.articles.node.forEach(element => {
+    
+    cardCont.appendChild(someCard(element))
+
+})
+
+})
+
+.catch(err => {
     
     console.log("Oh no, please don't do this!", err)
 
