@@ -45,4 +45,4 @@ function Header() {
 const newHed = document.querySelector('.header-container');
 
 
-newHed.appendChild(header());
+newHed.appendChild(Header());
