@@ -23,7 +23,7 @@ function Header() {
     date.classList.add('date')
     weather.classList.add('temp')
 
-    date.textContent = 'SMARCH 28, 2019'
+    date.textContent = 'March 20, 2020'
     title.textContent = 'Lambda Times'
     weather.textContent = '98°'
     
