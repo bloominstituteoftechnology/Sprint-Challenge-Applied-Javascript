@@ -48,3 +48,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     console.log(error);
 })
 
+function articleCard(headText, imgsrc, aName) {
+    const cardContainer = document.querySelector('.cards-container');
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+    cardContainer.appendChild(cardDiv);
+
+}
