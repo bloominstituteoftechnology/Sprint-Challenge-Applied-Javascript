@@ -25,7 +25,7 @@ function Header() {
 
     date.textContent = 'March 20, 2020'
     title.textContent = 'Lambda Times'
-    weather.textContent = '98°'
+    weather.textContent = 'Covid-19 Ed. 98°'
     
     return headR;
 }

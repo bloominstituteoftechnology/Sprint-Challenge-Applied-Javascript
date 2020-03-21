@@ -21,7 +21,6 @@ const cardSection = document.querySelector('.cards-container')
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
-    console.log(response.data.articles)
     response.data.articles.javascript.forEach(article => {
         cardSection.appendChild(cardGenerator(article))
     })
@@ -37,6 +36,12 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     response.data.articles.node.forEach(article => {
         cardSection.appendChild(cardGenerator(article))
     })
+    
+    // response.data.articles.forEach(topic => {
+    //     topic.forEach(article => {
+    //         cardSection.appendChild(cardGenerator(article))
+    //     })
+    // })
 
 })
 .catch(err => {
