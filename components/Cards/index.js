@@ -17,3 +17,34 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((response) => {
+
+    const javascript = response.data.articles.javascript;
+    const bootstrap = response.data.articles.bootstrap;
+    const technology = response.data.articles.technology;
+    const jquery = response.data.articles.jquery;
+    const node = response.data.articles.node;
+
+    javascript.array.forEach(element => {
+        articleCard(element.headline,element.authorPhoto,element.authorName)
+    });
+    bootstrap.array.forEach(element => {
+        articleCard(element.headline,element.authorPhoto,element.authorName)
+    });
+    technology.array.forEach(element => {
+        articleCard(element.headline,element.authorPhoto,element.authorName)
+    });
+    jquery.array.forEach(element => {
+        articleCard(element.headline,element.authorPhoto,element.authorName)
+    });
+    node.array.forEach(element => {
+        articleCard(element.headline,element.authorPhoto,element.authorName)
+    });
+})
+
+.catch((error) => {
+    console.log(error);
+})
+
