@@ -14,7 +14,7 @@ function Header() {
     const headerContainer = document.querySelector('.header-container');
     const headerDiv = document.createElement('div');
     headerDiv.classList.add('header');
-    headerContainer.appendChild('headerDiv');
+    headerContainer.appendChild(headerDiv);
 
     const span = document.createElement('span');
     span.classList.add('date');
