@@ -54,4 +54,10 @@ function articleCard(headText, imgsrc, aName) {
     cardDiv.classList.add('card');
     cardContainer.appendChild(cardDiv);
 
+    const headLine = document.createElement('div');
+    headLine.classList.add('headline');
+    headLine.textContent = headText;
+    cardDiv.appendChild(headLine);
+
+
 }
