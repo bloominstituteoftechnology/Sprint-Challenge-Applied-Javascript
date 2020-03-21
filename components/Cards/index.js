@@ -27,19 +27,19 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     const jquery = response.data.articles.jquery;
     const node = response.data.articles.node;
 
-    javascript.array.forEach(element => {
+    javascript.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
-    bootstrap.array.forEach(element => {
+    bootstrap.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
-    technology.array.forEach(element => {
+    technology.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
-    jquery.array.forEach(element => {
+    jquery.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
-    node.array.forEach(element => {
+    node.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
 })
@@ -59,5 +59,21 @@ function articleCard(headText, imgsrc, aName) {
     headLine.textContent = headText;
     cardDiv.appendChild(headLine);
 
+    const author = document.createElement('div');
+    author.classList.add('author');
+    cardDiv.appendChild(author);
 
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+    author.appendChild(imgContainer);
+
+    const authorImg = document.createElement('img');
+    authorImg.src = imgsrc;
+    imgContainer.appendChild(authorImg);
+
+    const authorsName = document.createElement('span');
+    authorsName.textContent = aName;
+    author.appendChild(authorsName);
+
+    return cardDiv;
 }
