@@ -19,14 +19,16 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         entryPoint.appendChild(newTab)
     })
 
-    allTab.appendChild(singleTab(response.data.topics))
+    allTab.appendChild(singleTab(response.data))
 })
 
-const singleTab = () => {
+const singleTab = (obj) => {
 
     const tabComp = document.createElement("div")
 
     tabComp.classList.add("tab")
+
+    tabComp.textContent = obj
 
     return tabComp
 }

@@ -37,7 +37,5 @@ const articles = () => {
     artAuthor.classList.add("author")
     imgCont.classList.add("img-container")
 
-    
-
 
 }
