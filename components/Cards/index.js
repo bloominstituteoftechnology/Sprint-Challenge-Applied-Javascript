@@ -27,9 +27,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     keys.forEach(item => {
         console.log(response);
         response.data.articles[item].forEach(item => {
-            cardsContainer.appendChild(cardCreator(item))
-        })
-    })
+            cardsContainer.appendChild(cardCreator(item));
+        });
+    });
 });
 
 function cardCreator (article) {
