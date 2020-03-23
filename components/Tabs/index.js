@@ -23,6 +23,6 @@ function tabCreator (info){
     tabs.classList.add('tab')
     tabs.textContent = info
 
-    return tabs;
+    return tabs
 }
 
