@@ -19,9 +19,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 });
 
 function tabCreator (info){
-    const tabs = document.createElement('div');
-    tabs.classList.add('tab');
-    tabs.textContent = info;
+    const tabs = document.createElement('div')
+    tabs.classList.add('tab')
+    tabs.textContent = info
 
     return tabs;
 }
