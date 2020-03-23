@@ -9,7 +9,7 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {
+function headerCreator() {
     const heads = document.createElement('div')
     const dates = document.createElement('span')
     const times = document.createElement('h1')
@@ -30,4 +30,4 @@ function Header() {
 }
 
 const container = document.querySelector('.header-container')
-container.appendChild(Header())
+container.appendChild(headerCreator())
