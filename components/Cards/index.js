@@ -66,8 +66,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         let anItem = item;
 
         anItem.forEach((lowItem) => {
-            let exitCard = createCard(lowItem);
-            cardContainer.appendChild(exitCard);
+            let newCard = createCard(lowItem);
+            cardContainer.appendChild(newCard);
         })
     })
 })
