@@ -31,3 +31,4 @@ function Header() {
     return header
 }
 
+const headContainer = document.querySelector(".header-container")
