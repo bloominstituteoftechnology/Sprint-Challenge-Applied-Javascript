@@ -38,17 +38,13 @@ let createCard = (cardData) => {
     authorName.textContent = cardData.authorName;
 
 
-    card.appendChild(headline);
-    card.appendChild(author);
+    card.append(headline, author);
 
-    author.appendChild(imgContainer);
+    author.appendChild(imgContainer, authorName);
 
     imgContainer.appendChild(authorImage);
 
-    author.appendChild(authorName);
-
     return card;
-
 }
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
@@ -63,10 +59,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     let articles = Object.values(res.data.articles);
 // console.log(articles)
     articles.forEach((item) => {
-        let anItem = item;
+        let newItem = item;
 
-        anItem.forEach((lowItem) => {
-            let newCard = createCard(lowItem);
+        newItem.forEach((lowestLevelItem) => {
+            let newCard = createCard(lowestLevelItem);
             cardContainer.appendChild(newCard);
         })
     })
