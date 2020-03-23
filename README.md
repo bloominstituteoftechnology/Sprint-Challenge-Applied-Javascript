@@ -29,14 +29,34 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+///////////////////////////
+
+DOM stands for Document Object Model and it runs in the browser, it will render the html.
+///////////////////////////
 
 2. What is an event?
 
+///////////////////////////
+Clicking on buttons, scrolling, hover are some events.
+///////////////////////////
+
 3. What is an event listener?
+
+///////////////////////////
+listens to how you interact with the current page you are on, if you click a button it triggers an event.
+///////////////////////////
 
 4. Why would we convert a NodeList into an Array?
 
+///////////////////////////
+to simplify our code.
+///////////////////////////
+
 5. What is a component?
+
+///////////////////////////
+you use components to build various elements that will change the styling of the current page
+///////////////////////////
 
 ### Git Set up
 
