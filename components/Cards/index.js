@@ -51,22 +51,23 @@ let createCard = (cardData) => {
 
 }
 
-let info = axios.get('https://lambda-times-backend.herokuapp.com/articles');
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(res =>{
+    console.log(res.data.articles)
+})
 
-// console.log(info)
+let cardContainer = document.querySelector('.cards-container');
 
-let cardNet = document.querySelector('.cards-container');
-
-
-info.then((response) => {
-    let articles = Object.values(response.data.articles);
-
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((res) => {
+    let articles = Object.values(res.data.articles);
+// console.log(articles)
     articles.forEach((item) => {
         let anItem = item;
 
         anItem.forEach((lowItem) => {
             let exitCard = createCard(lowItem);
-            cardNet.appendChild(exitCard);
+            cardContainer.appendChild(exitCard);
         })
     })
 })
