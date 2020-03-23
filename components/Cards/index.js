@@ -17,3 +17,73 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const cardConnector = document.querySelector(".cards-container");
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.javascript.forEach(article => {
+      cardConnector.appendChild(cardCreator(article));
+    });
+  });
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.bootstrap.forEach(article => {
+      cardConnector.appendChild(cardCreator(article));
+    });
+  });
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.technology.forEach(article => {
+      cardConnector.appendChild(cardCreator(article));
+    });
+  });
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.jquery.forEach(article => {
+      cardConnector.appendChild(cardCreator(article));
+    });
+  });
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    response.data.articles.node.forEach(article => {
+      cardConnector.appendChild(cardCreator(article));
+    });
+  });
+
+const cardCreator = article => {
+  //      create elements
+  const card = document.createElement("div");
+  const headline = document.createElement("div");
+  const author = document.createElement("div");
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  const span = document.createElement("span");
+
+  //      create structure
+  card.appendChild(headline);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  author.appendChild(span);
+  imgContainer.appendChild(img);
+
+  //      add styles
+  card.classList.add("card");
+  headline.classList.add("headline");
+  author.classList.add("author");
+  imgContainer.classList.add("img-container");
+
+  //      add textContent
+  headline.textContent = article.headline;
+  img.src = article.authorPhoto;
+  span.textContent = article.authorName;
+
+  return card;
+};
