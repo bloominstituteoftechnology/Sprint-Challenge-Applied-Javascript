@@ -22,12 +22,26 @@ const enterPoint = document.querySelector(".cards-container")
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
-    console.log('response', response.data.articles)
-    allArticles.appendChild(useArticles(response.data.article))
+    console.log('response', response)
 
-    Array.from(response.data.articles).forEach(response => {
-        const newArticle = useArticles(response.data.articles)
-        enterPoint.appendChild(newArticle(response.data.articles))
+    response.data.articles.javascript.forEach(obj => {
+        enterPoint.appendChild(useArticles(obj))
+    })
+
+    response.data.articles.bootstrap.forEach(obj => {
+        enterPoint.appendChild(useArticles(obj))
+    })
+
+    response.data.articles.technology.forEach(obj => {
+        enterPoint.appendChild(useArticles(obj))
+    })
+
+    response.data.articles.jquery.forEach(obj => {
+        enterPoint.appendChild(useArticles(obj))
+    })
+
+    response.data.articles.node.forEach(obj => {
+        enterPoint.appendChild(useArticles(obj))
     })
 
 })
@@ -46,12 +60,16 @@ const useArticles = (obj) => {
     artAuthor.classList.add("author")
     imgCont.classList.add("img-container")
 
-    artHead.textContent = obj
-    imgAuthor.src = obj
-    nameAuthor.textContent = obj
+    artCard.appendChild(artHead)
+    artCard.appendChild(artAuthor)
+    artAuthor.appendChild(imgCont)
+    artAuthor.appendChild(nameAuthor)
+    imgCont.appendChild(imgAuthor)
+
+    artHead.textContent = obj.headline
+    imgAuthor.src = obj.authorPhoto
+    nameAuthor.textContent = obj.authorName
 
     return artCard
 
 }
-
-const allArticles = document.querySelector(".cards-container")
