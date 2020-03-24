@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Direct Object Model.  Allows programs to change document structure, style, and content.
+
 2. What is an event?
+
+An event is an action that occurs in a document as a result of user action or change of state.
 
 3. What is an event listener?
 
+An event listener is a targeted object that listens for an event in the DOM and executes specified code.
+
 4. Why would we convert a NodeList into an Array?
 
+A NodeList is an Array like object that is limited in scope.  Converting it to an Array allows for use with array methods.
+
 5. What is a component?
+
+A component is a reusable snippet of code that allows programmers to implement that code multiple times, while keeping the code DRY.
 
 ### Git Set up
 
