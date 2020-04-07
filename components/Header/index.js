@@ -8,55 +8,27 @@
 //    <span class="temp">98°</span>
 //  </div >
 // And add it to the DOM in the .header-container component
-let myObj2 = axios.get("https://lambda-times-backend.herokuapp.com/articles")
-  .then(response => {
-    console.log(response);
-    
-    response.data.articles.javascript.forEach(item => {
-        console.log(item);
-        cards.appendChild(articleCreator(item));
-    })
-    response.data.articles.bootstrap.forEach(item => {
-        cards.appendChild(articleCreator(item));
-    })
-    response.data.articles.technology.forEach(item => {
-        cards.appendChild(articleCreator(item));
-    })
-    response.data.articles.jquery.forEach(item => {
-        cards.appendChild(articleCreator(item));
-    })
-    response.data.articles.node.forEach(item => {
-        cards.appendChild(articleCreator(item));
-    })
-  }) 
-  .catch(err => {
-    console.log(err);
-  })
-
-function articleCreator(dataObj) {
-  let card = document.createElement("div");
-  let headline = document.createElement("div");
-  let author = document.createElement("div");
-  let imgDiv = document.createElement("div");
-  let img = document.createElement("img");
-  let span = document.createElement("span");
-
-  card.classList.add("card");
-  headline.classList.add("headline");
-  author.classList.add("author");
-  imgDiv.classList.add("img-container");
-
-  headline.textContent = dataObj.headline;
-  img.src = dataObj.authorPhoto;
-  span.textContent = `By ${dataObj.authorName}`;
-
-  card.appendChild(headline);
-  card.appendChild(author);
-  author.appendChild(imgDiv);
-  author.appendChild(span);
-  imgDiv.appendChild(img);
-
-  return card;
-}
-
-let cards = document.querySelector(".cards-container");
+function Header() {
+    let header = document.createElement("div");
+    let span1 = document.createElement("span");
+    let h1 = document.createElement("h1");
+    h1.textContent = 'Lambda Times'
+    let span2 = document.createElement("span");
+  
+    header.classList.add("header");
+    span1.classList.add("date");
+    span2.classList.add("temp");
+  
+    span1.textContent = "SMARCH 28, 2019";
+    //Unicode UTF-8 chart: https://www.utf8-chartable.de/
+    span2.textContent = "98\u00B0";
+  
+    header.appendChild(span1);
+    header.appendChild(h1);
+    header.appendChild(span2);
+  
+    return header;
+  }
+  
+  let main = document.querySelector(".header-container");
+  main.appendChild(Header());
