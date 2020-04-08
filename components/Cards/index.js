@@ -24,7 +24,20 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     console.log('here is cards ',res);
     res.data.articles.javascript.map(item=>{
         cardsContainer.appendChild(CreateCard(item));
-    })
+    });
+    res.data.articles.bootstrap.map(item=>{
+        cardsContainer.appendChild(CreateCard(item));
+    });
+    res.data.articles.technology.map(item=>{
+        cardsContainer.appendChild(CreateCard(item));
+    });
+    res.data.articles.jquery.map(item=>{
+        cardsContainer.appendChild(CreateCard(item));
+    });
+    res.data.articles.node.map(item=>{
+        cardsContainer.appendChild(CreateCard(item));
+    });
+
 });
 
 
