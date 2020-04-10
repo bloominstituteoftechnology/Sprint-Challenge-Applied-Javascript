@@ -36,9 +36,17 @@ function createDogArticle(data) {
     const imgContainer = document.createElement('div');
     const img = document.createElement('img');
     const authorName = document.createElement('span');
-    card.classList.add('.card');
-    headline.classList.add('.headline');
-    author.classList.add('.author');
-
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+    img.src = data.authorPhoto;
+    headline.textContent = data.headline;
+    authorName.textContent = `By ${data.authorName}`;
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgContainer);
+    imgContainer.appendChild(img);
+    author.appendChild(authorName);
     return card;
 }
