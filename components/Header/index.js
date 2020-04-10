@@ -22,8 +22,8 @@ function Header() {
     title.textContent = 'Lambda Times';
     date.textContent = 'APRIL 10, 2020';
     temp.textContent = '68°';
-    container.appendChild(title);
     container.appendChild(date);
+    container.appendChild(title);
     container.appendChild(temp);
     return container;
 }
