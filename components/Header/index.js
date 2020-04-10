@@ -17,4 +17,16 @@ function Header() {
     const date = document.createElement('span');
     const temp = document.createElement('span');
     container.classList.add('header');
+    date.classList.add('date');
+    temp.classList.add('temp');
+    title.textContent = 'Lambda Times';
+    date.textContent = 'APRIL 10, 2020';
+    temp.textContent = '68°';
+    container.appendChild(title);
+    container.appendChild(date);
+    container.appendChild(temp);
+    return container;
 }
+
+const headerParent = document.querySelector('.header-container');
+headerParent.appendChild(Header());
