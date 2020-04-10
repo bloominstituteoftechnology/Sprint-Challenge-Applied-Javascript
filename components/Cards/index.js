@@ -22,13 +22,28 @@
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response)
+        const topics = response.data.articles;
+        topics.javascript.forEach(item => {
+            articleParent.appendChild(createDogArticle(item));
+        });
+        topics.bootstrap.forEach(item => {
+            articleParent.appendChild(createDogArticle(item));
+        });
+        topics.technology.forEach(item => {
+            articleParent.appendChild(createDogArticle(item));
+        });
+        topics.jquery.forEach(item => {
+            articleParent.appendChild(createDogArticle(item));
+        });
+        topics.node.forEach(item => {
+            articleParent.appendChild(createDogArticle(item));
+        })
     })
     .catch(err => {
         console.log(err, 'failed to retrieve data')
     })
 
-
+const articleParent = document.querySelector('.cards-container');
 function createDogArticle(data) {
     const card = document.createElement('div');
     const headline = document.createElement('div');
