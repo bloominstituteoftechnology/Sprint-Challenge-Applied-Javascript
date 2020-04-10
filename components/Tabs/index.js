@@ -23,4 +23,4 @@ function createTabs(topic) {
     tab.classList.add('tab');
     tab.textContent = topic;
     return tab;
-}
+};

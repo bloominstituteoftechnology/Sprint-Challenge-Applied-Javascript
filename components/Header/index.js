@@ -26,7 +26,7 @@ function Header() {
     container.appendChild(title);
     container.appendChild(temp);
     return container;
-}
+};
 
 const headerParent = document.querySelector('.header-container');
 headerParent.appendChild(Header());

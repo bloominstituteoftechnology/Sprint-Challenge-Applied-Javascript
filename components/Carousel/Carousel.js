@@ -19,34 +19,34 @@
 */
 
 function createCarousel(){
+  const carouselParent = document.querySelector('.carousel-container');
+  console.log(carouselParent)
   const container = document.createElement('div');
   const leftButton = document.createElement('div');
   const rightButton = document.createElement('div');
-  const img1 = document.createElement('img');
-  const img2 = document.createElement('img');
-  const img3 = document.createElement('img');
-  const img4 = document.createElement('img');
-  const img5 = document.createElement('img');
-  const imgArr = [
-   {img1},
-   {img2},
-   {img3},
-   {img4},
-   {img5}
-  ];
-  console.log(imgArr);
+  const img = document.createElement('img');
   container.classList.add('carousel');
   leftButton.classList.add('left-button');
   rightButton.classList.add('right-button');
-  img1.src = './././assets/carousel/bones.jpg';
-  img2.src = './././assets/carousel/fido.jpg';
-  img3.src = './././assets/carousel/max.jpg';
-  img4.src = './././assets/carousel/puppers.jpg';
-  img5.src = './././assets/carousel/sir.jpg';
+  const imgArr = [
+    './assets/carousel/mountains.jpeg',
+    './assets/carousel/computer.jpeg',
+    './assets/carousel/trees.jpeg',
+    './assets/carousel/turntable.jpeg'
+  ]
   container.appendChild(leftButton);
-  container.appendChild(imgArr);
+  container.appendChild(img);
   container.appendChild(rightButton);
-  return container
-}
-const carouselParent = document.querySelector('.carousel-container');
-carouselParent.appendChild(createCarousel())
+  console.log(container);
+  carouselParent.appendChild(container);
+  function leftButtonClick(){
+    document.getElementsByTagName('img').styles.display = 'flex';
+  }
+  leftButton.onclick(event) = function(){
+   imgArr.forEach(img =>
+    img.src = Math.Floor(Math.random(imgArr))
+   )
+  } 
+};
+
+createCarousel();
