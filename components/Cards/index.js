@@ -20,7 +20,7 @@
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
 const cardEntry = document.querySelector('.cards-container')
-function cardMaker(){
+function cardMaker(event){
     //create elements
     cardDiv = document.createElement('div')
     headlineDiv = document.createElement('div')
@@ -28,16 +28,24 @@ function cardMaker(){
     authorImgDiv = document.createElement('div')
     authorImg = document.createElement('img')
     authorName = document.createElement('span')
+
+        headlineDiv.textContent = event.headline
+          authorImg.src = event.authorPhoto
+          authorName.textContent = event.authorName
+
     //nest elements
-    cardDiv.appendChild(headlineDiv, authorDiv, authorImgDiv, authorImg, authorName);
-    authorDiv.appendChild(authorImgDiv, authorImg, authorName);
+    cardDiv.append(headlineDiv, authorDiv, authorImgDiv, authorImg, authorName);
+    authorDiv.append(authorImgDiv, authorName);
+    authorImgDiv.append(authorImg);
     //class name
     cardDiv.classList.add('card');
     headlineDiv.classList.add('headline');
     authorDiv.classList.add('author');
     authorImgDiv.classList.add('img-container');
+
     //final append
     cardEntry.appendChild(cardDiv)
+return cardDiv
 }
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(res => {
@@ -47,33 +55,23 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       //iterating 
       cards.javascript.forEach(card => {
           cardMaker(card)
-          headlineDiv.textContent = card.headline
-          authorImg = card.authorPhoto
-        //   authorName.textContent = card.authorName
+    console.log(cardMaker(card))
       })
       cards.bootstrap.forEach(card =>{
           cardMaker(card)
-          headlineDiv.textContent = card.headline
-          authorImg = card.authorPhoto
-        //   authorName.textContent = card.authorName
+
       })
       cards.technology.forEach(card =>{
           cardMaker(card)
-          headlineDiv.textContent = card.headline
-          authorImg = card.authorPhoto
-        //   authorName.textContent = `${authorName}`
+
       })
       cards.jquery.forEach(card =>{
           cardMaker(card)
-          headlineDiv.textContent = card.headline
-          authorImg = card.authorPhoto
-        //   authorName.textContent = `${authorName}`
+
       })
       cards.node.forEach(card =>{
           cardMaker(card)
-          headlineDiv.textContent = card.headline
-          authorImg = card.authorPhoto
-        //   authorName.textContent = `${authorName}`
+
       })
 })
   .catch(err => {
