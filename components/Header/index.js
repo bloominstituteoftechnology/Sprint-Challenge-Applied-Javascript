@@ -11,7 +11,7 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header(object) {
+function Header() {
     let header = document.createElement('header');
     let date = document.createElement('span');
     let title = document.createElement('h1');
@@ -21,9 +21,9 @@ function Header(object) {
     date.classList.add('date');
     temp.classList.add('temp');
 
-    date.textContent = object.date;
-    title.textContent = object.title;
-    temp.textContent = object.temp;
+    date.textContent = 'March 28, 2019';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
 
     header.appendChild(date);
     header.appendChild(title);
@@ -33,7 +33,4 @@ function Header(object) {
 }
 
 let headerContainer = document.querySelector('.header-container');
-headerContainer.appendChild(Header('header'));
-headerContainer.appendChild(Header('date'));
-headerContainer.appendChild(Header('title'));
-headerContainer.appendChild(Header('temp'));
+headerContainer.appendChild(Header());
