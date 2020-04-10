@@ -20,17 +20,19 @@ axios
     TabsData = res.data.topics;
     TabsData.forEach(i => { Tabs.appendChild (TabCreator(i)) });
 })
+
+.catch( (err) => {console.log("There was an error: ", err)})
 //
 
 //// Creating a Tab
 //
 function TabCreator (data) {
 
-    const tab = document.querySelector("div");
+    const tab = document.createElement("div");
 
     tab.classList.add("tab");
     tab.textContent = data;
 
-    return tab
+    return tab;
 
 }
