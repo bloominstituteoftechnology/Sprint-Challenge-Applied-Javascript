@@ -10,15 +10,17 @@
 axios
     .get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        console.log(response);
+        response.data.topics.forEach(item => {
+            tabsParent.appendChild(createTabs(item));
+        });
     })
     .catch(err => {
         console.log(err, 'failed to retrieve data');
     })
-
-    function createTabs(topic) {
-        const tab = document.createElement('div');
-        tab.classList.add('tab');
-        tab.textContent = topic;
-        return tab;
-    }
+const tabsParent = document.querySelector('.topics');
+function createTabs(topic) {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topic;
+    return tab;
+}
