@@ -20,6 +20,11 @@
 
 const carouselContainer = document.querySelector('.carousel-container')
 
+const imgList = document.querySelectorAll('img')
+console.log(imgList)
+
+
+const displayTheCarousel = () => {
 // <div class="carousel-container"> -- Attach the carousel to this element
   // const carouselContainer = document.querySelector('.carousel-container')
 /**********************************************************/ 
@@ -58,30 +63,19 @@ const carouselContainer = document.querySelector('.carousel-container')
 
 // Define event handlers for the buttons
   const moveLeft = () => {
-    // Test to see which image is being displayed
-    let currentSlide = 0
-    let anyVisible = false
-    imgList.forEach((img, ndx) => {
-      const lastSlide = (imgList.length -1)
-
-      // Check to see if the current
-      // slide is being displayed
-      if (img.style.display) {
-        anyVisible = true
-        
-        // If it is being displayed, hide it then
-        // show the previous slide in the rotation
-        img.style.display = 'none'
-
-        // If the current slide ndx == 0 then show the last slide,
-        // otherwise, show the previous slide
-        let nextSlide = (ndx !=0? ndx -1: lastSlide)
-        imgList[nextSlide].style.display = 'block'
-      }
-    })
+    // Get a list of the images in the carousel
+    // imgList.forEach(img => {
+    //   console.log(img.src)
+    // })
+    // mountains
+    imgList[1].style = 'display:block'
     console.log(imgList[1].style.display)
+    // computer
+    // trees
+    // turntable
   }
   const moveRight = () => {
+    // const imgList = carousel.querySelectorAll('img')
     if (imgList[1].style.display) {
       imgList[1].style.display = null
     }
@@ -92,8 +86,7 @@ const carouselContainer = document.querySelector('.carousel-container')
   rightButton.addEventListener('click', moveRight)
 
   carouselContainer.appendChild(carousel)
+}
 
-  const imgList = document.querySelectorAll('img')
-  // imgList[0].style = 'display:block'
-  // console.log(imgList)
-  
+displayTheCarousel()
+
