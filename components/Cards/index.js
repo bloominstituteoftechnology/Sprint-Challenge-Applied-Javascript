@@ -18,3 +18,59 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then( response => {
+        
+        let artObj = response.data.articles;
+
+    
+        let arrayData = Object.entries(artObj);
+
+
+        arrayData.forEach((outArray,i) => {
+            outArray[1].forEach((inObj) => {
+          
+                let cardContainer = document.getElementsByClassName('cards-container');
+                let cardCreate = cardMaker(inObj);
+                cardContainer[0].appendChild(cardCreate);
+
+            });
+        });
+
+        
+    })
+    .catch( err => {
+        console.log('There is an error');
+    });
+
+
+function cardMaker(dataObj){
+
+    let newCard = document.createElement('div');
+    newCard.classList.add('card');
+
+    let headlineOfArt = document.createElement('div');
+    headlineOfArt.classList.add('headline');
+    headlineOfArt.textContent = `${dataObj.headline}`;
+    newCard.appendChild(headlineOfArt);
+   
+
+    let authorOfArt = document.createElement('div');
+    authorOfArt.classList.add('author');
+    newCard.appendChild(authorOfArt);
+
+    let imgCon = document.createElement('div');
+    imgCon.classList.add('img-container');
+    authorOfArt.appendChild(imgCon);
+
+    let imgOfAuthor = document.createElement('img');
+    imgOfAuthor.src = `${dataObj.authorPhoto}`;
+    imgCon.appendChild(imgOfAuthor);
+
+    let nameOfAuthor = document.createElement('span');
+    nameOfAuthor.textContent = `By: ${dataObj.authorName}`;
+    imgCon.appendChild(nameOfAuthor);
+
+    return newCard;
+};    
