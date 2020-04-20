@@ -1,0 +1,14 @@
+What is the DOM?
+
+ represents the page so that programs can change the document structure, style, and content. 
+What is an event?
+
+What is an event listener?
+
+function in a computer program that waits for an event to occur
+
+Why would we convert a NodeList into an Array?
+
+What is a component?
+
+Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags
