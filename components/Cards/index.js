@@ -82,3 +82,4 @@ function cardCreator(element) {
     return card;
 
 }
+cardCreator();
