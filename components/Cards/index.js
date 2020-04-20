@@ -41,11 +41,22 @@ const cardPoint = document.querySelector('.cards-container');
       
     })
 
+    const datasets = ['javascript','bootstrap','technology','jquery','node.js']
+
 
     function cards(object){
 
       const cardDiv = document.createElement('div')
       cardDiv.classList.add('card')
+
+      datasets.forEach((entry) => {
+
+        if(object.headline.toLowerCase().includes(entry)){
+          
+          cardDiv.setAttribute('data-topic', entry)
+        }
+        
+      })
 
       const headlineDiv = document.createElement('div')
       headlineDiv.classList.add('headline')

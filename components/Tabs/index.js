@@ -20,6 +20,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         
         bodyPoint.appendChild(topicTab(array))
 
+
+
       })      
       
     })
@@ -38,7 +40,26 @@ function topicTab(name){
 
   tabDiv.textContent = name;
 
+  tabDiv.addEventListener('click', (event) =>{
+  	const thisHere = document.querySelector(`[data-topic='${name}']`)
+  	
+  	const allOtherCards = document.querySelectorAll('.card');
+
+  	allOtherCards.forEach((ele) => {
+  		ele.style.display = 'none';
+  		ele.style.transition = '1s';
+  	})
+
+  	if(thisHere !== null){
+  		thisHere.style.display = 'block';
+  		thisHere.style.transition = '1s';	
+  	}
+  	
+  })
+
   return tabDiv;
-  
+
 }
+
+
 
