@@ -18,3 +18,67 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+const cardPoint = document.querySelector('.cards-container');
+ 
+ axios.get('https://lambda-times-backend.herokuapp.com/articles')
+
+    .then( (response) => {
+
+      console.log('received info correctly', response)
+
+      response.data.articles.javascript.forEach( (array) => {
+        
+        cardPoint.appendChild(cards(array))
+
+      })
+      
+    })
+
+    .catch( (err) => {
+
+      console.log('error')
+      
+    })
+
+    const datasets = ['javascript','bootstrap','technology','jquery','node.js']
+
+
+    function cards(object){
+
+      const cardDiv = document.createElement('div')
+      cardDiv.classList.add('card')
+
+      datasets.forEach((entry) => {
+
+        if(object.headline.toLowerCase().includes(entry)){
+          
+          cardDiv.setAttribute('data-topic', entry)
+        }
+        
+      })
+
+      const headlineDiv = document.createElement('div')
+      headlineDiv.classList.add('headline')
+      headlineDiv.textContent = object.headline
+
+      const authorDiv = document.createElement('div')
+      authorDiv.classList.add('author')
+
+      const imgDiv = document.createElement('div')
+      imgDiv.classList.add('img-container')
+
+      const image = document.createElement('img')
+      image.src = object.authorPhoto
+
+      const authorSpan = document.createElement('span')
+      authorSpan.textContent = object.authorName
+
+      cardDiv.appendChild(headlineDiv)
+      cardDiv.appendChild(authorDiv)
+      authorDiv.appendChild(imgDiv)
+      imgDiv.appendChild(image)
+      authorDiv.appendChild(authorSpan)
+
+      return cardDiv
+    }
