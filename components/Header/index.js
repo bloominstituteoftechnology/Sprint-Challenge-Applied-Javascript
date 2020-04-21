@@ -25,9 +25,9 @@ function Header() {
 
   //add classes
 
-  divHeader.classList.add(".header");
-  date.classList.add(".date");
-  temperature.classList.add(".temp");
+  divHeader.classList.add("header");
+  date.classList.add("date");
+  temperature.classList.add("temp");
 
   //add text content
 

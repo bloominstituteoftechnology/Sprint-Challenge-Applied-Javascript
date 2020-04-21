@@ -75,16 +75,16 @@ function cards(e) {
 
   //add classes
 
-  card.classList.add(".card");
-  headLine.classList.add(".headline");
-  author.classList.add(".author");
-  imageContainer.classList.add(".img-container");
+  card.classList.add("card");
+  headLine.classList.add("headline");
+  author.classList.add("author");
+  imageContainer.classList.add("img-container");
 
   //add text
 
   headLine.textContent = e.headline;
   image.src = e.authorPhoto;
-  authorName.textContent = "By ${e.authorName}";
+  authorName.textContent = `By ${e.authorName}`;
 
   //append children
 
@@ -96,5 +96,5 @@ function cards(e) {
 
   //return function
 
-  return cards;
+  return card;
 }
