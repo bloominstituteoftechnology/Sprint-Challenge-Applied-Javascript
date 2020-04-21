@@ -27,17 +27,6 @@ function articleCard(headline, imgUrl, author){
     const articleImg = document.createElement('img');
     const articleSpan = document.createElement('span');
 
-    axios.get("https://lambda-times-backend.herokuapp.com/articles")
-    .then( (response) => {
-    response.data.message.forEach( (imgUrl) => {
-    const newArticleCard = articleCard(headline, imgUrl, author);
-    entryPoint.appendChild(newArticleCard);
-        })
-    })
-    .catch( (err) => {
-    console.log("the data was not returned", err)
-    })
-
     article.classList.add('card');
     articleHeadLine.classList.add('headline');
     articleAuthor.classList.add('author');
@@ -50,7 +39,20 @@ function articleCard(headline, imgUrl, author){
     articleAuthor.appendChild(articleSpan);
     articleImgContainer.appendChild(articleImg);
 
-    console.log('axios')
+    console.log(axios)
 }
 
-// const entryPoint = document.querySelector('.cards-container');
+// articleCard();
+const entryPoint = document.querySelector('.cards-container');
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+    .then( (response) => {
+    console.log(response.data)
+    response.data.articls.forEach( (imgUrl) => {
+    const newArticleCard = articleCard(headline, imgUrl, author);
+    entryPoint.appendChild(newArticleCard);
+        })
+    })
+    .catch( (err) => {
+    console.log("the data was not returned", err)
+    })
