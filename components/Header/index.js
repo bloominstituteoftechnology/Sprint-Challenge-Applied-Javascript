@@ -20,7 +20,7 @@ function Header() {
   span.textContent = "SMARCH 28. 2019";
 
   const h1 = document.createElement("h1");
-  h1.textContent.createElement("Lambda Times");
+  h1.textContent = "Lambda Times";
 
   const span2 = document.createElement("span");
   span2.classList.add("temp");
@@ -31,6 +31,9 @@ function Header() {
   div.appendChild(span2);
   return div;
 }
-const headerContainer = document.querySelectorAll(".header-container");
 
-headerContainer.appendChild(Header);
+const myHeader = Header();
+
+let myDiv = document.querySelector(".header-container");
+
+myDiv.appendChild(myHeader);
