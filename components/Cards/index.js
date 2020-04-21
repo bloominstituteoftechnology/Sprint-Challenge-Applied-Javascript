@@ -25,7 +25,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         const articles = Object.keys(response.data.articles)
         console.log(articles);
         articles.forEach(key => {
-            console.log(response.data.articles[key])
+            console.log("tabby",[key])
             response.data.articles[key].forEach(element => {
                 containMe.appendChild(createCard(element))
             })
