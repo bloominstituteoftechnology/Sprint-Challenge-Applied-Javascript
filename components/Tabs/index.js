@@ -7,3 +7,17 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+function topics (someTopic) {
+
+    const tab = document.createElement('div');
+
+    tab.classList.add('tab');
+
+    tab.textContent = someTopic;
+
+    const topics = document.querySelector('topics');
+
+    return tab;
+
+}
