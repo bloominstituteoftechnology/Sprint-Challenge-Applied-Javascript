@@ -21,3 +21,21 @@ function topics (someTopic) {
     return tab;
 
 }
+
+    const entryPoint = document.querySelector('.topics')
+
+    axios.get('https://lambda-times-backend.herokuapp.com/topics')
+        .then((response) => {
+            response.data.topics.forEach(element => {
+                const newTopic = topics(element);
+
+                entryPoint.appendChild(newTopic);
+
+
+            });
+
+        })
+
+        .catch((err) => {
+            console.log("the function isn't working")
+        });
