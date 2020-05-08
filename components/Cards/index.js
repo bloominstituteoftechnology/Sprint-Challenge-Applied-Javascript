@@ -45,14 +45,21 @@ function cardMaker(object){
     return card;
     // returns component
 }
-
+let cardContainer = document.querySelector('.cards-container')
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(function(response){
-        let articles = response.data.articles.javascript;
-        console.log(response);
-        articles.forEach(element => {
-           let card = cardMaker(element);
-            document.body.appendChild(card);
-        });
+        let topics = [response.data.articles.javascript,
+            response.data.articles.bootstrap,
+            response.data.articles.technology,
+            response.data.articles.jquery,
+            response.data.articles.node];
+        topics.forEach(element => {
+            element.forEach(element => {
+            let card = cardMaker(element);
+            cardContainer.appendChild(card)
+            console.log(element);
+            })
+        })
+      
     
     })
