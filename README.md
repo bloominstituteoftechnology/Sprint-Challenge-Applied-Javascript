@@ -30,20 +30,31 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+It is an api that lets us query, change, and delete html elements, and content.
+
 2. What is an event?
+
+whenever a user hits a button, or something happens in the code such as an error.
 
 3. What is an event listener?
 
+A piece of code that "listens" to see if an event happens, and then executes some section of code when it does.
+
 4. Why would we convert a NodeList into an Array?
+
+So that you can use javascripts handy dandy array methods.
 
 5. What is a component?
 
+A compenent is a function that creates fully functional elements made of HMTL, CSS, And javascript. This allows us to put the same or similar element multiple times easily on the same page across the site.
+
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
+* [x] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [x] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
