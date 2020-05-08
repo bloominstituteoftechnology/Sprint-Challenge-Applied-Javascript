@@ -43,7 +43,7 @@ nodelist have limited methods, it is an array-like object so to use all of the p
 
 5. What is a component?
  it is a way of writing logic to make reusable code
- 
+
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
@@ -73,4 +73,4 @@ Your stretch challenge is to write the functionality of a `Carousel` component. 
 
 * [ ] Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over itself.
 
-* [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic.
+* [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic..
