@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    The DOM is a programming interface for HTML.  It represents the page that you are working on so that you can see the changes being made as you are programming.
+
 2. What is an event?
+
+    There are many different types of events that you can add to your webpage.  It's what makes your webpage user friendly and interactive.  Events allow javascript to sense different event handlers in the HTML.
 
 3. What is an event listener?
 
+    An Event Listener represents an object linked with an event.  It waits or "listens" for user interaction then executes the event when it is activated by the user.
+
 4. Why would we convert a NodeList into an Array?
 
+    You can't use any higher order array methods when it's only a NodeList.  When we turn it into an Array, we are then able to use methods like .map(), .forEach(), .filter(), etc.
+
 5. What is a component?
+
+    A component is a reusable piece of data.  When you start making bigger and bigger projects it becomes too much of a hassel to rewrite the same code over and over again, so we create components that we can reuse and it makes our code more DRY.
 
 ### Git Set up
 

@@ -7,6 +7,38 @@
     6. Have fun!
 */
 
+
+function carouselMaker(){
+  const carousel = document.createElement('div'),
+        leftBtn = document.createElement('div'),
+        mountains = document.createElement('img'),
+        computer = document.createElement('img'),
+        trees = document.createElement('img'),
+        turntable = document.createElement('img'),
+        rightBtn = document.createElement('div')
+
+  carousel.append(leftBtn)
+  carousel.append(mountains)
+  carousel.append(computer)
+  carousel.append(trees)
+  carousel.append(turntable)
+  carousel.append(rightBtn)
+  
+  carousel.classList.add('carousel')
+  leftBtn.classList.add('left-button')
+  rightBtn.classList.add('right-button')
+
+  mountains.src = './assets/carousel/mountains.jpeg'
+  computer.src = "./assets/carousel/computer.jpeg"
+  trees.src = "./assets/carousel/trees.jpeg"
+  turntable.src = "./assets/carousel/turntable.jpeg"
+
+  
+
+
+
+
+}
 /* HTML:
   <div class="carousel">
     <div class="left-button"> < </div>
