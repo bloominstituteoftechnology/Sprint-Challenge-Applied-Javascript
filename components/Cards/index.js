@@ -14,15 +14,15 @@ axios
         // console.log(response.data.articles[item]);
         let eachArticle = response.data.articles[item];
         console.log(eachArticle)
-        eachArticle.forEach( (eachArticle) => {
-            let name = eachArticle.authorName
-            let headline = eachArticle.headline
-            let photo = eachArticle.authorPhoto
+        eachArticle.forEach( (item) => {
+            let name = item.authorName
+            let headline = item.headline
+            let photo = item.authorPhoto
             console.log(name)
             console.log(headline)
             console.log(photo)
 
-        articleSection.append(createArticle(name, headline, photo));
+        articleSection.appendChild(createArticle(name, headline, photo));
         })
     })
 
@@ -77,11 +77,3 @@ function createArticle(name,headline, photo){
     //returning article
     return aCard;
 }
-
-
-// articleSection.append(createArticle());
-
-//go through data and append
-// data.articles.forEach(( item => {
-//     articleSection.appendChild(createArticle(data.article.bootstrap, data.javascript, data.jquery, data.node, data.technology))
-// }))
