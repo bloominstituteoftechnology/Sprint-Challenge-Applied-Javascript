@@ -1,0 +1,42 @@
+Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
+
+1. What is the DOM?
+
+The DOM stands for "Document Object Model". The DOM is the data representation of the objects that comprise the structure and content of a document on the web. 
+
+The DOM is an Application Programming Interface ("API") provided by the BROWSER, not Javascript. It acts as a bridge between the browser and code. 
+
+It is an interface that allows a programming language (like JS) to manipulate the content, structure, and style on a webpage. We'll use the DOM to:
+
+- Add content
+- Delete content
+- Change content
+
+
+2. What is an event?
+
+Events are actions or occurrences that happen in the system you are programming, which the stystem tells you about so you can respond to them in some way if desired. 
+
+
+3. What is an event listener?
+
+The eventlistener is a built in function in JavaScript which takes the event to listen for, and a second arguement to be called whenever the described event gets fired. 
+
+
+
+4. Why would we convert a NodeList into an Array?
+
+NodeLists and Arrays are two different things because NodeLists are actually not a JavaScript API, but a browser API.
+
+A NodeList is static, where any changes in the DOM does not affect the content of the collection. 
+
+
+
+5. What is a component?
+
+A component is a small, potentially re-usable set of logic, behaviors and interface elements (UI or API). 
+
+Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps.
+
+
+
