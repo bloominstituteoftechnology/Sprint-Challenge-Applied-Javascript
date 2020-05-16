@@ -26,5 +26,12 @@ function Header() {
     header.appendChild(h1);
     header.appendChild(spanTemp);
 
+    span.textContent = 'SMARCH 28, 2019';
+    h1.textContent = 'Lambda Times';
+    spanTemp.textContent = '98°';
+
+
     return header;
 }
+
+Header();
