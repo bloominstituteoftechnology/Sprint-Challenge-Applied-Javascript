@@ -17,3 +17,53 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+// let imgSources = [
+//   './assets/carousel/mountains.jpeg', './assets/carousel/computer.jpeg', './assets/carousel/trees.jpeg', './assets/carousel/turntable.jpeg'
+
+// ]
+
+function createViewer(img1, img2, img3, img4) {
+  const carousel = document.createElement('div')
+  const leftButton = document.createElement('div')
+  const imgOption1 = document.createElement('img')
+  const imgOption2 = document.createElement('img')
+  const imgOption3 = document.createElement('img')
+  const imgOption4 = document.createElement('img')
+  const rightButton = document.createElement('div')
+
+  carousel.classList.add('carousel')
+  leftButton.classList.add('left-button')
+  rightButton.classList.add('right-button')
+
+  leftButton.textContent = ' < '
+  imgOption1.src = img1
+  imgOption2.src = img2
+  imgOption3.src = img3
+  imgOption4.src = img4
+  rightButton.textContent = ' > '
+
+  carousel.append(leftButton, imgOption1, imgOption2, imgOption3, imgOption4, rightButton)
+
+  return carousel
+}
+
+const carouselComponent = createViewer('./assets/carousel/mountains.jpeg', './assets/carousel/computer.jpeg', './assets/carousel/trees.jpeg', './assets/carousel/turntable.jpeg')
+
+const carouselEntryPoint = document.querySelector('carousel-container')
+cardEntryPoint.appendChild(carouselComponent)
+
+//having 1st image show as default on load
+const imgSelector = document.querySelectorAll('.carousel > img')
+window.addEventListener('load', (event) => {
+  imgSelector[0].style.display = 'block';
+})
+
+//adding functionality to scroll through images to the right
+let imgRight = document.querySelector('.right-button')
+imgRight.addEventListener('click', (event) => {
+  imgSelector[0].style.display = 'none'
+  imgSelector[1].style.display = 'block'
+})
+
+
