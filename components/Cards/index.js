@@ -18,3 +18,59 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+function createCards(headline, imgUrl, author) {
+    const card = document.createElement('div')
+    const headlineContainer = document.createElement('div')
+    const authorContainer = document.createElement('div')
+    const authorImgContainer = document.createElement('div')
+    const authorImg = document.createElement('img')
+    const authorName = document.createElement('span')
+
+    card.classList.add('card')
+    headlineContainer.classList.add('headline')
+    authorContainer.classList.add('author')
+    authorImgContainer.classList.add('img-container')
+
+    headlineContainer.textContent = headline
+    authorImg.src = imgUrl
+    authorName.textContent = 'By ' + author
+
+    card.append(headlineContainer, authorContainer)
+    authorContainer.append(authorImgContainer, authorName)
+    authorImgContainer.append(authorImg)
+
+   
+
+    return card
+}
+
+const cardEntryPoint = document.querySelector('.cards-container')
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+
+.then(response => {
+    response.data.articles.javascript.forEach(items => {
+        cardEntryPoint.appendChild(createCards(items.headline, items.authorPhoto, items.authorName))
+    })
+
+    response.data.articles.bootstrap.forEach(items => {
+        cardEntryPoint.appendChild(createCards(items.headline, items.authorPhoto, items.authorName))
+    })
+
+    response.data.articles.technology.forEach(items => {
+        cardEntryPoint.appendChild(createCards(items.headline, items.authorPhoto, items.authorName))
+    })
+
+    response.data.articles.jquery.forEach(items => {
+        cardEntryPoint.appendChild(createCards(items.headline, items.authorPhoto, items.authorName))
+    })
+
+    response.data.articles.node.forEach(items => {
+        cardEntryPoint.appendChild(createCards(items.headline, items.authorPhoto, items.authorName))
+    })
+    // console.log(response.data.articles)
+})
+
+.catch(error => {
+    console.log('ya done goofed -->', error)
+})
