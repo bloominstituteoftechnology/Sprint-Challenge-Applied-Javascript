@@ -1,22 +1,33 @@
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
+// Use your function to create a card for each of the articles and add the card to the DOM.
+const articleSection = document.querySelector(".cards-container")
 
-axios.
-get("https://lambda-times-backend.herokuapp.com/articles")
+axios
+.get("https://lambda-times-backend.herokuapp.com/articles")
+
 .then(response => {
-    console.log(response)
-    response.data.articles.forEach(item => {
-        let articleKeys = Object.keys(data.articles)
-        articleKeys.forEach((item) => {
-           data.articles[item].forEach(()=>{
-            const parent = document.querySelector(".cards-container")
-           parent.appendChild(article)
-           })
+    let articleKeys = Object.keys(response.data.articles);
+    // console.log(articleKeys);
+    articleKeys.forEach(item => {
+        // console.log(response.data.articles[item]);
+        let eachArticle = response.data.articles[item];
+        console.log(eachArticle)
+        eachArticle.forEach( (eachArticle) => {
+            let name = eachArticle.authorName
+            let headline = eachArticle.headline
+            let photo = eachArticle.authorPhoto
+            console.log(name)
+            console.log(headline)
+            console.log(photo)
+
+        articleSection.append(createArticle(name, headline, photo));
         })
-        console.log(response)
     })
+
 })
+
 .catch( error => {
     console.log(("The data was not returned", error))
 })
@@ -36,7 +47,7 @@ get("https://lambda-times-backend.herokuapp.com/articles")
 //   </div>
 // </div>
 //
-function createArticle(){
+function createArticle(name,headline, photo){
     //create elements
     const aCard = document.createElement("div")
     const aHeader = document.createElement("div")
@@ -58,13 +69,17 @@ function createArticle(){
     anImg.appendChild(aContainer)
     authorName.appendChild(aAuthor)
 
+    //add text content
+    authorName.textContent = name
+    aHeader.textContent = headline
+    anImg.src = photo
+
     //returning article
     return aCard;
 }
 
-// Use your function to create a card for each of the articles and add the card to the DOM.
-const articleSection = document.querySelector(".cards-container")
-articleSection.append(createArticle());
+
+// articleSection.append(createArticle());
 
 //go through data and append
 // data.articles.forEach(( item => {
