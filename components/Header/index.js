@@ -1,14 +1,42 @@
-// STEP 1: Create a Header component.
+// STEP 1: Create a header component.
 // -----------------------
-// Write a function that returns the markup you see below:
+// Using a function create the component you see below:
 //
 //  <div class="header">
 //    <span class="date">SMARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
-//  </div>
-//
-// Use your function to create a header
-// and append it to the DOM inside the div.header-container
+//  </div >
+// And add it to the DOM in the .header-container component
 
-function Header() {}
+function Header() {
+
+    //!ELEMENTS!\\
+    
+    const freshHeader = document.createElement("div");
+    const freshDate = document.createElement("span");
+    const freshTitle = document.createElement("h1");
+    const freshTemp = document.createElement("span");
+    
+    //!CLASS!\\ 
+    freshHeader.classList.add("header");
+    freshDate.classList.add("date");
+    freshTemp.classList.add("temp");
+    
+    //!STRUCTURES!//
+    freshHeader.appendChild(freshDate);
+    freshHeader.appendChild(freshTitle);
+    freshHeader.appendChild(freshTemp);
+    
+    
+    //!CONTENT!\\
+    freshDate.textContent = "SMARCH 28, 2019"; 
+    freshTitle.textContent = "Lambda Times";
+    freshTemp.textContent = "98°";
+    
+    return freshHeader;
+    
+    }
+    
+    const headerContainer = document.querySelector(".header-container");
+    headerContainer.appendChild(Header());
