@@ -19,11 +19,12 @@ function createTab(tabTitle){
 axios
 .get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response => {
-    response.data.forEach(item => {
+    response.data.topics.forEach(item => {
         let tab = createTab(item);
-        const parent = document.querySelector("title")
+        const parent = document.querySelector(".topics")
         parent.appendChild(tab)
     })
+    console.log(response)
 })
 .catch(error => {
     console.log("The data was not returned", error);

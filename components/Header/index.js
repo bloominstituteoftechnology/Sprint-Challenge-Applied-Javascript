@@ -17,7 +17,7 @@ function Header() {
     const mainHeader = document.createElement("div")
     const date = document.createElement("span")
     const headerTitle = document.createElement("h1")
-    const temp = docuement.createElement("span")
+    const temp = document.createElement("span")
 
 //add the classes
     mainHeader.classList.add("header")
@@ -35,7 +35,7 @@ function Header() {
     mainHeader.appendChild(temp)
 
 //returning header
-return oneHeader
+return mainHeader
 }
 
 //and append it to the DOM inside the div.header-container
