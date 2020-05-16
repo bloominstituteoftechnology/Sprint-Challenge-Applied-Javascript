@@ -36,12 +36,12 @@ function createViewer(img1, img2, img3, img4) {
   leftButton.classList.add('left-button')
   rightButton.classList.add('right-button')
 
-  leftButton.textContent = ' < '
+  leftButton.textContent = '<'
   imgOption1.src = img1
   imgOption2.src = img2
   imgOption3.src = img3
   imgOption4.src = img4
-  rightButton.textContent = ' > '
+  rightButton.textContent = '>'
 
   carousel.append(leftButton, imgOption1, imgOption2, imgOption3, imgOption4, rightButton)
 
@@ -61,9 +61,29 @@ window.addEventListener('load', (event) => {
 
 //adding functionality to scroll through images to the right
 let imgRight = document.querySelector('.right-button')
+let imgLeft = document.querySelector('.left-button')
+
 imgRight.addEventListener('click', (event) => {
-  imgSelector[0].style.display = 'none'
-  imgSelector[1].style.display = 'block'
+  if (imgSelector[0].style.display = 'block') {
+    imgSelector[0].style.display = 'none'
+    imgSelector[1].style.display = "block"
+  }
+  if (imgSelector[1].style.display = 'block') {
+    imgSelector[1].style.display = 'none'
+    imgSelector[2].style.display = "block"
+  }
 })
+
+imgLeft.addEventListener('click', (event) => {
+  if (imgSelector[1].style.display = 'block') {
+    imgSelector[0].style.display = 'block'
+    imgSelector[1].style.display = "none"
+  }
+  if (imgSelector[1].style.display = 'block') {
+    imgSelector[1].style.display = 'none'
+    imgSelector[2].style.display = "block"
+  }
+})
+
 
 
