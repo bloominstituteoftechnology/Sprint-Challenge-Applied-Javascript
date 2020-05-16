@@ -8,21 +8,27 @@ axios
 .get("https://lambda-times-backend.herokuapp.com/articles")
 
 .then(response => {
-    let articleKeys = Object.keys(response.data.articles);
-    // console.log(articleKeys);
-    articleKeys.forEach(item => {
-        // console.log(response.data.articles[item]);
-        let eachArticle = response.data.articles[item];
-        console.log(eachArticle)
-        eachArticle.forEach( (item) => {
-            let name = item.authorName
-            let headline = item.headline
-            let photo = item.authorPhoto
-            console.log(name)
-            console.log(headline)
-            console.log(photo)
+    // let articleKeys = Object.keys(response.data.articles);
+    // // console.log(articleKeys);
+    // articleKeys.forEach(item => {
+    //     // console.log(response.data.articles[item]);
+    //     let eachArticle = response.data.articles[item];
+    //     console.log(eachArticle)
+    //     eachArticle.forEach( (item) => {
+    //         let name = item.authorName
+    //         let headline = item.headline
+    //         let photo = item.authorPhoto
+    //         // console.log(name)
+    //         // console.log(headline)
+    //         // console.log(photo)
 
-        articleSection.appendChild(createArticle(name, headline, photo));
+    //     articleSection.appendChild(createArticle(item));
+    //     })
+    // })
+    let articleLanguages = response.data.articles;
+    Object.keys(articleLanguages).forEach(element =>{ 
+        articleLanguages[element].forEach(item => {
+            articleSection.appendChild(createArticle(item))
         })
     })
 
@@ -47,7 +53,7 @@ axios
 //   </div>
 // </div>
 //
-function createArticle(name,headline, photo){
+function createArticle(element){
     //create elements
     const aCard = document.createElement("div")
     const aHeader = document.createElement("div")
@@ -63,16 +69,16 @@ function createArticle(name,headline, photo){
     aContainer.classList.add("img-container")
 
     //append to parent
-    aHeader.appendChild(aCard)
+    aCard.appendChild(aHeader)
     aAuthor.appendChild(aCard)
     aContainer.appendChild(aAuthor)
     anImg.appendChild(aContainer)
     authorName.appendChild(aAuthor)
 
     //add text content
-    authorName.textContent = name
-    aHeader.textContent = headline
-    anImg.src = photo
+    authorName.textContent = element.authorName
+    aHeader.textContent = element.headline
+    anImg.src = element.authorPhoto
 
     //returning article
     return aCard;
