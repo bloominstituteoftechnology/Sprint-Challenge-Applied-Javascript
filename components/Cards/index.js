@@ -21,6 +21,7 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
+        cardMaker(response);
         console.log(response);
     })
     .catch(err => {
@@ -47,9 +48,13 @@ let cardMaker = (object) => {
     newCard.appendChild(author);
     author.appendChild(imageContainer);
     imageContainer.appendChild(image);
+
+
+    headline.textContent = object.data.articles.bootstrap[0][0];
+
+
     author.appendChild(aName);
 
     return newCard;
 }
 
-cardMaker(Object);
