@@ -7,3 +7,21 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+const tabSpot = document.querySelector(".topics");
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then((response) => {
+    console.log(response.data);
+
+    let lambdaData = response.data.topics;
+    lambdaData.forEach((e) => {
+      tabSpot.append(tabMaker(e));
+    });
+  });
+function tabMaker(element) {
+  const newTab = document.createElement("div");
+
+  newTab.classList.add("tab");
+  newTab.textContent = `topic: ${element}`;
+  return newTab;
+}
