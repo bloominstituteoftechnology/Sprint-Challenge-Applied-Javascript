@@ -7,7 +7,14 @@ get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
     console.log(response)
     response.data.articles.forEach(item => {
-        let article = createArticle
+        let articleKeys = Object.keys(data.articles)
+        articleKeys.forEach((item) => {
+           data.articles[item].forEach(()=>{
+            const parent = document.querySelector(".cards-container")
+           parent.appendChild(article)
+           })
+        })
+        console.log(response)
     })
 })
 .catch( error => {
@@ -29,7 +36,7 @@ get("https://lambda-times-backend.herokuapp.com/articles")
 //   </div>
 // </div>
 //
-function Article(){
+function createArticle(){
     //create elements
     const aCard = document.createElement("div")
     const aHeader = document.createElement("div")
@@ -56,3 +63,10 @@ function Article(){
 }
 
 // Use your function to create a card for each of the articles and add the card to the DOM.
+const articleSection = document.querySelector(".cards-container")
+articleSection.append(createArticle());
+
+//go through data and append
+// data.articles.forEach(( item => {
+//     articleSection.appendChild(createArticle(data.article.bootstrap, data.javascript, data.jquery, data.node, data.technology))
+// }))
