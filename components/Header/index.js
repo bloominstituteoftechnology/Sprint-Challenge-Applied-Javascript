@@ -13,7 +13,7 @@
 
 let theEntry = document.querySelector('.header-container')
 
-function Header (data){
+function Header (data){ 
 
 const bigDiv = document.createElement('div')
 const date = document.createElement('span')

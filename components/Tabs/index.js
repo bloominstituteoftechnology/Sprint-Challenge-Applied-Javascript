@@ -11,7 +11,7 @@
 const tabEntry = document.querySelector('.topics')
 
 function tabMaker (data){
-  const tabDiv = document.createElement('div')
+  const tabDiv = document.createElement('div') 
   tabDiv.classList.add('tab')
   tabDiv.textContent = data
   
@@ -20,7 +20,5 @@ function tabMaker (data){
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then (data => {const myTopics = Object.values(data.data.topics)
     myTopics.forEach(data=>tabEntry.append(tabMaker(data)))
-    
-// tabEntry.append(tabMaker(myTopics))
-
 })
+.catch(err => console.log(err))

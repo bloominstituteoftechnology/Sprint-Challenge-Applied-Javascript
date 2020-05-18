@@ -72,7 +72,7 @@ Your finished project must include all of the following requirements:
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
-## Stretch Problems
+## Stretch Problems 
 
 Your stretch challenge is to write the functionality of a `Carousel` component. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. This is going to be a bit different because you are going to need to create some advanced functionality for the carousel. There is no need to request data for this exercise.
 

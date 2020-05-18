@@ -31,7 +31,7 @@ function cardMaker (data){
   const authorName = document.createElement('span')
 
   theCard.append(headline, author)
-  author.append(imgContainer, authorName)
+  author.append(imgContainer, authorName) 
   imgContainer.append(img)
 
   theCard.classList.add('card')
@@ -51,3 +51,4 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   let authorobjs = data.data.articles.javascript
 authorobjs.forEach(data => cardEntry.append(cardMaker(data)))
 })
+.catch(err => console.log(err))
