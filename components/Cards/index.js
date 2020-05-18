@@ -33,7 +33,7 @@ function cardComponent(obj) {
   author.classList.add('author');
   imgContainer.classList.add('img-container');
   headline.textContent = `${obj.headline}`; 
-  img.setAttribute('href', `${obj.authorPhoto}`) 
+  img.setAttribute('src', `${obj.authorPhoto}`) 
   span.textContent = `By ${obj.authorName}`
 
   // Combining elements
@@ -45,13 +45,33 @@ function cardComponent(obj) {
   return card;
 }
 
-const cardContainer = document.querySelector('cards-container');
+const cardContainer = document.querySelector('.cards-container');
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
   // console.log(response.data.articles);
   response.data.articles.bootstrap.forEach(article => {
-    console.log(article.headline);
+    // console.log(article);
+    cardContainer.append(cardComponent(article));
+  })
+
+  response.data.articles.javascript.forEach(article => {
+    // console.log(article);
+    cardContainer.append(cardComponent(article));
+  })
+
+  response.data.articles.technology.forEach(article => {
+    // console.log(article);
+    cardContainer.append(cardComponent(article));
+  })
+
+  response.data.articles.jquery.forEach(article => {
+    // console.log(article);
+    cardContainer.append(cardComponent(article));
+  })
+
+  response.data.articles.node.forEach(article => {
+    // console.log(article);
     cardContainer.append(cardComponent(article));
   })
   // console.log(data);
