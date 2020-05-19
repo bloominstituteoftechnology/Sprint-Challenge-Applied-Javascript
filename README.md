@@ -29,14 +29,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
+DOM stance for Document Object Model. It is an object representation of the html elements of a webpage. It provides an interface to interact and manipulate the page, changing document document structure, content, and styling.
 
 2. What is an event?
+An event is every user interaction with a site. This includes a click, moving the mouse, scrolling the page, pressing a key on the keyboard etc. The browser can detect all of these events.
 
 3. What is an event listener?
+An event listener takes two arguments. The first argument is the event to listen for and the second one is a callback to fire when the event is triggered. 
+
 
 4. Why would we convert a NodeList into an Array?
+We would confer a NodeList into an array to be able to use advance array methods. We would use the .from() method to convert a NodeList into an array.
 
 5. What is a component?
+Components are reusable pieces of code that can be used to build elements sharing functionality and styling. Components are the heart of any dynamic web application and JavaScript framework.
 
 ### Git Set up
 
