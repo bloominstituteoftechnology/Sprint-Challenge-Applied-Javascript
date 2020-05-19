@@ -19,24 +19,23 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-let cardsEntry = document.querySelector('.cards-container');
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then( (response) => {
-   let articleKeys = Object.keys(response.data.articles);
-		articleKeys.forEach((element) => {
-			let crap = response.data.articles[element];
-			crap.forEach((x) => {
-        console.log(x.authorPhoto);
-        // cardsEntry.append(articleCards(x));
-			})
-		})
-})
-.catch( err => err)
 
-
-
-
+axios
+	.get('https://lambda-times-backend.herokuapp.com/articles')
+	.then((response) => {
+		for (let item in response.data.articles) {
+			response.data.articles[item].forEach((article) => {
+				articleCards(article);
+			});
+		}
+	})
+	.catch((error) => {
+		console.log('the data was not returned', error);
+  });
+  
+  
 function articleCards(item){
+  const cardsEntry = document.querySelector('.cards-container');
   const cardDiv = document.createElement('div');
   const headlineDiv = document.createElement('div');
   const authorDiv = document.createElement('div');
@@ -49,16 +48,17 @@ function articleCards(item){
   authorDiv.classList.add('author');
   cardImgContDiv.classList.add('img-container');
 
-  headlineDiv.textContent = `Headline: ${item.articles.headline}`;
-  cardImg.src = `${item.authorPhoto}`;
+  headlineDiv.textContent = item.headline;
+  cardImg.src = item.authorPhoto;
   authorSpan.textContent = `By ${item.authorName}`;
 
+  cardsEntry.append(cardDiv);
   cardDiv.append(headlineDiv);
 	cardDiv.append(authorDiv);
-	cardDiv.append(cardImgContDiv);
+	authorDiv.append(cardImgContDiv);
 	cardImgContDiv.append(cardImg);
   cardImgContDiv.append(authorSpan);
   
-  return articleCards
+  return cardDiv
 
 }
