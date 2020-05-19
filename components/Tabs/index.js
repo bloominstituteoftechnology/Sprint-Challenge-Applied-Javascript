@@ -9,21 +9,21 @@
 //    <div class="tab">topic here</div>
 
 entryPoint = document.querySelector('.topics')
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-.then( (response) => {
-    console.log(response.data)
-    topics.forEach((e) => {
-        entryPoint.append(tabMaker(e))
+axios.get(' https://lambda-times-backend.herokuapp.com/topics')
+.then((response) => {
+    console.log(response.data.topics)
+    let topicdata = response.data.topics;
+    topicdata.forEach(item => {
+       entryPoint.append(tabMaker(item))
     })
 })
-.catch(err =>{
+.catch(err => {
     err
 })
 
 function tabMaker(element){
-    const newTab = document.createElement('div');
-    newTab.classList.add('tabs');
-    newTab.textContent = `${element.topics[0]}`
-    return newTab;
+const newTab = document.createElement('div');
+newTab.classList.add('tab')
+newTab.textContent = "topic here";
+return newTab;
 }
-
