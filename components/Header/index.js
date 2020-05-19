@@ -28,9 +28,9 @@ function Header() {
     spanOne.classList.add('date')
     spanTwo.classList.add('temp')
     //Appending
-    header.append('spanOne')
-    header.append('hOne')
-    header.append('spanTwo')
+    header.append(spanOne)
+    header.append(hOne)
+    header.append(spanTwo)
     //Return
     return header
 }

@@ -23,10 +23,12 @@ entryPoint = document.querySelector('.cards-container')
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response) => {
     console.log('card', response)
-    const articleKeys = Object.keys(data.articles)
-    articleKeys.forEach( (element) => {
-        console.log ('check', data.articles[element]) 
-        entryPoint.append(cardMaker(element))
+    const data = response.data.articles
+    Object.keys(data).forEach((element) => {
+        data[element].forEach((item) => {
+            console.log('checl', item)
+        entryPoint.append(cardMaker[item])    
+        })      
     })
 })
 .catch(err =>{
@@ -51,11 +53,11 @@ function cardMaker(item){
     img.src = item.authorPhoto
     span.textContent = item.authorName
     //Appending
-    card.append('headline')
-    card.append('author')
-    author.append('imgCo')
-    imgCo.append('img')
-    author.append('span')
+    card.append(headline)
+    card.append(author)
+    author.append(imgCo)
+    imgCo.append(img)
+    author.append(span)
     //Returning
     return card
 }
