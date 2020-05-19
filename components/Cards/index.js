@@ -47,8 +47,22 @@ function cardMaker (data){
 }
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then (data => {
-  let authorobjs = data.data.articles.javascript
-authorobjs.forEach(data => cardEntry.append(cardMaker(data)))
+.then (data => { 
+  console.log(data)
+  let javaobjs = data.data.articles.javascript
+  let techobjs = data.data.articles.technology
+  let bootobjs = data.data.articles.bootstrap
+  let queryobjs = data.data.articles.jquery
+  let nodeobjs = data.data.articles.node
+
+  techobjs.forEach(data => cardEntry.append(cardMaker(data)))
+  bootobjs.forEach(data => cardEntry.append(cardMaker(data)))
+  queryobjs.forEach(data => cardEntry.append(cardMaker(data)))
+  nodeobjs.forEach(data => cardEntry.append(cardMaker(data)))
+  javaobjs.forEach(data => cardEntry.append(cardMaker(data)))
 })
-.catch(err => console.log(err))
+
+
+
+
+// .catch(err => console.log(err))
