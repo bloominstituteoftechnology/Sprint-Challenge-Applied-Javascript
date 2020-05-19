@@ -27,7 +27,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     Object.keys(data).forEach((element) => {
         data[element].forEach((item) => {
             console.log('checl', item)
-        entryPoint.append(cardMaker[item])    
+        entryPoint.append(cardMaker(item))    
         })      
     })
 })
