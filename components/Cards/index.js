@@ -21,8 +21,9 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
+        let newCards = response.data.articles;
+
         cardMaker(response);
-        console.log(response);
     })
     .catch(err => {
         console.log('Error', err);
