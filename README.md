@@ -30,13 +30,28 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model. its an object representation of the HTML elements. It is the page that enables us to view the and manipulate the objects locally.
+
+
 2. What is an event?
+
+every user interaction with the website is an event. pressing keys, moving,clicking the mouse, etc.
+
 
 3. What is an event listener?
 
+the tracking process along with the action that is taken afterwards. this could be adding a click event on a button and the click opening a new page, or sliding the screen
+
+
 4. Why would we convert a NodeList into an Array?
 
+so that you could use array methods such as .map, .push, .froEach on them, you cannot use them on nodeLists
+
+
 5. What is a component?
+
+components are essentially functions that allow you to create new elements with a reusable code.
+
 
 ### Git Set up
 
@@ -57,7 +72,7 @@ Your finished project must include all of the following requirements:
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
-## Stretch Problems
+## Stretch Problems 
 
 Your stretch challenge is to write the functionality of a `Carousel` component. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. This is going to be a bit different because you are going to need to create some advanced functionality for the carousel. There is no need to request data for this exercise.
 

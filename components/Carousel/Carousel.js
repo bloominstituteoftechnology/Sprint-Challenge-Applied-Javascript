@@ -17,3 +17,31 @@
     <div class="right-button"> > </div>
   </div>
 */
+let entryway = document.querySelector('.carousel-container')
+const test = document.createElement('p')
+entryway.append(test)  
+test.textContent = "test"
+function carouseller(){
+
+  const bigDiv = document.createElement('div')
+  const left = document.createElement('div')
+  const img1 = document.createElement('img')
+  const img2 = document.createElement('img')
+  const img3 = document.createElement('img')
+  const img4 = document.createElement('img')
+  const right = document.createElement('div')
+  
+  bigDiv.append(left, img1,img2,img3,img4,right)
+
+  left.classList.add('left-button')
+  bigDiv.classList.add('carousel')
+  right.classList.add('right-button')
+
+  img1.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80'
+  img2.src = 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+  img3.src = 'https://images.unsplash.com/photo-1587502537745-84b86da1204f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+  img4.src = 'https://images.unsplash.com/photo-1472715148636-92e348325950?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+
+  return bigDiv
+}
+entryway.append(carouseller())
