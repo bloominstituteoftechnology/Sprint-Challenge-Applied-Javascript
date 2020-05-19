@@ -70,15 +70,15 @@ function createArticle(element){
 
     //append to parent
     aCard.appendChild(aHeader)
-    aAuthor.appendChild(aCard)
-    aContainer.appendChild(aAuthor)
-    anImg.appendChild(aContainer)
-    authorName.appendChild(aAuthor)
+    aCard.appendChild(aAuthor)
+    aAuthor.appendChild(aContainer)
+    aContainer.appendChild(anImg)
+    aAuthor.appendChild(authorName)
 
     //add text content
-    authorName.textContent = element.authorName
-    aHeader.textContent = element.headline
-    anImg.src = element.authorPhoto
+    authorName.textContent = element.authorName;
+    aHeader.textContent = element.headline;
+    anImg.src = element.authorPhoto;
 
     //returning article
     return aCard;
