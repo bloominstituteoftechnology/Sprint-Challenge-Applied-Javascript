@@ -21,7 +21,7 @@
 axios
   .get('https://lambda-times-backend.herokuapp.com/topics')
   .then(function(response){
-    console.log(response.data.topics)
+    // console.log(response.data.topics)
     return response.data.topics.map(crrV =>{
       const newTab = document.createElement("div");
       newTab.setAttribute('class', 'tab');
