@@ -29,14 +29,28 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
+<!-- Document Object Model.
+The DOM is the bridge that enables JS to render interfaces on a browser-->
 
 2. What is an event?
+<!-- 
+  An event is whenever an element on the DOM is interacted with. Interaction can range from clicks, to hovers, to dragging over HTML elements.
+ -->
 
 3. What is an event listener?
+<!-- 
+  An event listener is the mechanism that you can set up to be triggred once something is interacted with on the DOM. Event listners thus trigger certain actions to occer and data to dynmicaly change.
+ -->
 
 4. Why would we convert a NodeList into an Array?
+<!-- 
+  Becuase NodeList are not JavaScrip, thus trying to interact with it using JS wouldn't result in anything. 
+ -->
 
 5. What is a component?
+<!-- 
+  The LEGO's of web development. A component is a modular group of HTML CSS, and JS that create a single inteactable DOM element such as a button or search bar. Components should be built in a certian way to resused throughout an application and written in such a way to be easily understandable to another engineer to implement. 
+ -->
 
 ### Git Set up
 
