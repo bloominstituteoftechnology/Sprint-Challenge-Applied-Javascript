@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model, which is an interface that treats HTML documents as a tree structure, branching off root elements, elements, text, attributes, etc..
+
 2. What is an event?
+
+An event is a specific behavior that triggers something else to happen, like when a user hovers over an image, that image will scale to a specific amount. The hover is the event.
 
 3. What is an event listener?
 
+The event listener listens or waits until the event happens so it can trigger whatever it is supposed to. The image will not scale at all until the mouse is hovering over it.
+
 4. Why would we convert a NodeList into an Array?
 
+So we can preform array methods, like itterations.
+
 5. What is a component?
+
+The component is a re-usable function that usually makes programmically updates using an API to create things like panels on a website for each user that is following you on a social media account, panels with the user's name, username, location, followers count, following count, and maybe their bio.
 
 ### Git Set up
 
