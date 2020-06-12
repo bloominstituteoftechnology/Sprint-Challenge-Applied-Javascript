@@ -17,7 +17,11 @@
     <div class="right-button"> > </div>
   </div>
 */
-carouselFunction();
+const carouselContainer = document.querySelector('.carousel-container');
+const carousel1 = carouselFunction();
+carouselContainer.appendChild(carousel1);
+
+
 
 function carouselFunction(){
   const carousel = document.createElement('div');
@@ -43,7 +47,8 @@ function carouselFunction(){
 
   //events listener
   leftButton.addEventListener('click',event=>{
-    img.classList.add('fade-in');
+
+    mountainImg.classList.add('fade-out');
 
   });
   rightButton.addEventListener('click',event=>{
