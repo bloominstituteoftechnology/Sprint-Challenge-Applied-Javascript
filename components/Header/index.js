@@ -11,4 +11,25 @@
 
 function Header() {
     const header = document.createElement('div');
+    headerText.classList.add('header');
+
+    const date = document.createElement('span');
+    date.textContent = 'Feb 21, 2020';
+    headerText.appendChild(date);
+
+    const title = document.createElement('h1');
+    title.textContent= 'Lambda Times';
+    headerText.appendChild(title);
+
+    const temp = document.createElement('span');
+    temp.classList.add('temp');
+    temp.textContent = '48°' 
+    headerText.appendChild(temp);
+
+return headerText;
 }
+const header1 = Header();
+const headerContainer = document.querySelector('.header-container');
+
+
+headerContainer.appendChild(header1);
