@@ -7,3 +7,18 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+axios
+.get("https://lambda-times-backend.herokuapp.com/topics")
+.then(res => {
+    console.log( res );
+    topics.forEach( tab =>{
+        
+    });
+})
+.catch(err =>{
+    console.log(err);
+});
+
+//iterate over the topics creating a new tab for each topic and append to dom
+// foreach to iterate and appendchild to append to dom ? 
