@@ -18,3 +18,33 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+let area = document.querySelector('.cards-container');
+function cardMaker(){
+
+    //create HTML elements
+    let card = document.createElement('div');
+    let headline = document.createElement('div');
+    let author = document.createElement('div');
+    let imgContain = document.createElement('div');
+    let authorImg = document.createElement('img');
+    let authorName = document.createElement('span');
+
+    //add class information to elements
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContain.classList.add('img-container');
+
+    //place content into elements
+
+
+
+    //append elements properly
+    area.appendChild(card);
+    card.append(headline, author);
+    author.append(imgContain, authorName);
+    imgContain.appendChild(authorImg);
+
+}
+cardMaker();

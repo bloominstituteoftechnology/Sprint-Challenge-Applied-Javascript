@@ -29,19 +29,39 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
+************************************************************************
+The DOM stands for Document Object Model which can be viewed as a logical tree that treats HTML documents as the tree and each element or node is an object representing a part of the document. The DOM is a language independent interface that can be accessed and manipulated through different programming languages.
+************************************************************************
+
 
 2. What is an event?
+************************************************************************
+An event in JavaScript is the action of when a user or browser manipulates the page. 
+************************************************************************
+
 
 3. What is an event listener?
+************************************************************************
+An event listener is the block of code that listens to the actions of the user/browser for certain events and executes the function assigned to that certain event. 
+************************************************************************
+
 
 4. Why would we convert a NodeList into an Array?
+************************************************************************
+We would want to convert a Nodelist into an array because a nodelist may look like an array but it's not. Converting a nodelist into an array lets us run certain methods on the array as well as manipulate the array.
+************************************************************************
+
 
 5. What is a component?
+*************************************************************************
+A component is a bit of reusable code that can be used numerous times. It is used to keep code DRY and allows for your code to be more modular. 
+*************************************************************************
+
 
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
+* [1] Fork the project into your GitHub user account
+* [1] Clone the forked project into a directory on your machine
 * [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 * [ ] You are now ready to build this project with your preferred IDE
 

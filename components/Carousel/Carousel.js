@@ -17,3 +17,25 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselCreater(){
+
+  //create HTML elements
+  let carousel = document.createElement('div');
+  let leftButt = document.createElement('div');
+  let rightButt = document.createElement('div');
+
+  //create for loop for pictures
+
+
+
+  //add classes to elements
+  carousel.classList.add('carousel');
+  leftButt.classList.add('left-button');
+  rightButt.classList.add('right-button');
+
+  //Add content for button elements
+  leftButt.textContent = "<";
+  rightButt.textContent = ">";
+
+};
