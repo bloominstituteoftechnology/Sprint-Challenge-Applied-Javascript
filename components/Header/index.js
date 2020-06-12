@@ -32,4 +32,4 @@ spant.textContent = temp;
 return headerdiv;
 }
 const headerContainer = document.querySelector(".header-container");
-headerContainer.appendChild(Header());
+headerContainer.appendChild(Header("MARCH 28, 2019", "Lambda Times", "98°"));

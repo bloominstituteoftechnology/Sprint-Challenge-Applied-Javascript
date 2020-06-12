@@ -39,5 +39,5 @@ card.classList.add("headline");
 card.classList.add("author");
 card.classList.add("imgcontainer");
 
-
+return card;
 }
