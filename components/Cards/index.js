@@ -19,25 +19,33 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
+axios
+.get("https://lambda-times-backend.herokuapp.com/articles")
+.then(res =>{
 
-function articlecards (articleHeadline, url , name){
-const card = document.createElement("div");
-const headline = document.createElement("div");
-const author = document.createElement("div");
-const imgcontainer = document.createElement("div");
-const imgurl = document.createElement("img-src");
-const spanauthor = document.createElement("span");
+})
+.catch(err =>{
+console.log(err);
+});
 
-card.appendChild(headline);
-card.appendChild(author);
-card.appendChild(imgcontainer);
-card.appendChild(imgurl);
-card.appendChild(spanauthor);
+// function articlecards (articleHeadline, url , name){
+// const card = document.createElement("div");
+// const headline = document.createElement("div");
+// const author = document.createElement("div");
+// const imgcontainer = document.createElement("div");
+// const imgurl = document.createElement("img-src");
+// const spanauthor = document.createElement("span");
 
-card.classList.add("card");
-card.classList.add("headline");
-card.classList.add("author");
-card.classList.add("imgcontainer");
+// card.appendChild(headline);
+// card.appendChild(author);
+// card.appendChild(imgcontainer);
+// card.appendChild(imgurl);
+// card.appendChild(spanauthor);
 
-return card;
-}
+// card.classList.add("card");
+// card.classList.add("headline");
+// card.classList.add("author");
+// card.classList.add("imgcontainer");
+
+// return card;
+// }
