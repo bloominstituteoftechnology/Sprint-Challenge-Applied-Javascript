@@ -95,14 +95,7 @@ leftButton.addEventListener('click', () => {
 
 function slideright(){
   resetImages()
-  
-  
-  sliderImages[current + 1].style.display = 'block'
-
- 
-  
-  
-  
+  sliderImages[current + 1].style.display = 'block'  
   current ++
 }
 
