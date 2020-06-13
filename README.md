@@ -30,13 +30,25 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    The dom represents the webpage( and the html of that webpage) and allows you to change styling on it, without actually premently changing the webpage.
+
+
 2. What is an event?
+
+    An event adds more functionally to a web page, if you to click and allows a responsive from the website when you are typing.
+    An event handler deals with  the event that takes place.
 
 3. What is an event listener?
 
+
+
 4. Why would we convert a NodeList into an Array?
 
+Because arrays have more methods and more functionallity to them than an array.
+
 5. What is a component?
+
+Independt and reusable pieces of code.
 
 ### Git Set up
 
@@ -55,7 +67,7 @@ Your finished project must include all of the following requirements:
 
 * [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+* [x] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 
