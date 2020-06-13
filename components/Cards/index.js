@@ -34,32 +34,32 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
    })
 
-  function createCard(object){
-      let div = document.createElement('div');
-      div.classList.add('card');
+   function createCard(object){
 
-      let div1 = document.createElement('div');
-      div1.classList.add('headline');
-      div1.innerHTML = object.headline;
-      div.appendChild(div1);
-
-      let div2 = document.createElement('div');
-      div2.classList.add('author');
-      div.appendChild(div2);
-
-      let div3 = document.createElement('div');
-      div3.classList.add('img-container');
-      div2.appendChild(div3);
-
-      let img = document.createElement('img');
-      img.src = object.authorPhoto;
-      div2.appendChild(img);
-
-      let span = document.createElement('span');
-      span.innerHTML = 'By' + object.authorName;
-      div2.appendChild(span);
-
-      return div;
-
-
+    let div = document.createElement("div");
+    div.classList.add("card");
+ 
+    let div1 = document.createElement("div");
+    div1.classList.add("headline");
+    div1.innerHTML = object.headline;
+    div.appendChild(div1);
+ 
+    let div2 = document.createElement("div");
+    div2.classList.add("author");
+    div.appendChild(div2);
+ 
+    let div3 = document.createElement("div");
+    div3.classList.add("img-container");
+    div2.appendChild(div3);
+ 
+    let img = document.createElement("img");
+    img.src = object.authorPhoto;
+    div3.appendChild(img);
+ 
+    let span = document.createElement("span");
+    span.innerHTML = "By " + object.authorName;
+    div2.appendChild(span);
+ 
+    return div;
+ 
   }
