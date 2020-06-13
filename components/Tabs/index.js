@@ -11,7 +11,7 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then( response => {
-        console.log('i am here:' , response)
+        console.log('Tabs Data:' , response)
         const dataArray = response.data.topics
         dataArray.forEach(element => {
         const arrayTab = divTab(element)
@@ -27,12 +27,9 @@ const divTopic = document.querySelector('.topics');
 function divTab (topic) {
     const tabClass = document.createElement('div');
 
-
     tabClass.classList.add('tab');
 
     tabClass.textContent = topic;
 
     return tabClass
 }
-
-// divTopic.appendChild(divTab());
