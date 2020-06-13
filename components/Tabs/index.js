@@ -26,7 +26,7 @@ axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
 
         let div = document.createElement("div");
         div.classList.add("tab");
-        div.innerHTML = 'object';
+        div.innerHTML = object;
    
         return div;
    
