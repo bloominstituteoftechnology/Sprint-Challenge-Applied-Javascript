@@ -13,26 +13,26 @@
 
 function Header() {
     // create
-    const header = document.createElement('div');
+    const head = document.createElement('div');
     const date = document.createElement('span');
     const title = document.createElement('h1');
     const temp = document.createElement('span');
 
     // append 
-    header.appendChild(date);
-    header.appendChild(title);
-    header.appendChild(temp);
+    head.appendChild(date);
+    head.appendChild(title);
+    head.appendChild(temp);
 
     // styling 
-    header.classList.add('header');
+    head.classList.add('header');
     date.classList.add('date');
     temp.classList.add('temp');
 
     // values
-    date.textContent='March 28, 2019'
-    temp.textContent='98°'
+    date.textContent='March 28, 2019';
+    temp.textContent='98°';
 
-    return header
+    return head
 }
-const topBar=document.querySelector('.top-bar');
-topBar.appendChild(header);
+const headCont=document.querySelector('.header-container');
+headCont.appendChild(Header());
