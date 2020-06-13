@@ -172,4 +172,7 @@ axios
     articleMaker(res).forEach(element => {
       cardsContainer.append(element);
     });
+  })
+  .catch((err) => {
+    console.log(err);
   });

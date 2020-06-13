@@ -20,4 +20,7 @@ axios
       tab.textContent = topic;
       topicsDiv.append(tab);
     });
+  })
+  .catch((err) => {
+    console.log(err);
   });
