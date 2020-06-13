@@ -19,16 +19,28 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-axios
-.get("https://lambda-times-backend.herokuapp.com/articles")
-.then(res =>{
+//javascript, bootstrap, technology, jquery, node
+//headline, authorphoto, authorname, 
 
-})
-.catch(err =>{
-console.log(err);
-});
+// const cardscontainer = document.querySelector(".cards-container");
 
-// function articlecards (articleHeadline, url , name){
+// axios
+// .get("https://lambda-times-backend.herokuapp.com/articles")
+// .then(res =>{
+// //new variable to hold the objects
+// const articletest = res.data.articles;
+
+// articletest.forEach(item =>{
+// const article = articlecards(item);
+// cardscontainer.appendChild(article);
+// });
+
+// })
+// .catch(err =>{
+// console.log(err);
+// });
+
+// function articlecards (test){
 // const card = document.createElement("div");
 // const headline = document.createElement("div");
 // const author = document.createElement("div");
@@ -47,5 +59,33 @@ console.log(err);
 // card.classList.add("author");
 // card.classList.add("imgcontainer");
 
+// headline.textContent = test;
+// imgurl.textContent = test;
+// spanauthor.textContent = test; 
+
 // return card;
 // }
+
+
+//javascript, bootstrap, technology, jquery, node
+//headline, authorphoto, authorname, 
+const cardscontainer = document.querySelector(".cards-container");
+
+axios
+.get("https://lambda-times-backend.herokuapp.com/articles")
+.then(res =>{
+
+const js = res.data.articles.javascript;
+const bs = res.data.articles.bootstrap; 
+const tech = res.data.articles.technology;
+const jq = res.data.articles.jquery;
+const n = res.data.articles.node;
+
+js.forEach(item =>{
+    
+})
+
+})
+.catch(err =>{
+console.log(err);
+});
