@@ -7,3 +7,12 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+ .then((resp) => {
+     console.log(resp);
+ })
+ .catch((err) => {
+     console.log("Error on the card")
+ })
