@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    Document Object Model, programming for API for HTMl and XMl documents. Allowing for the document to be manipulated and accessed. 
+
 2. What is an event?
+
+    An event is anything you can do on a web page, like a scrolll, click, hover, etc.
 
 3. What is an event listener?
 
+    A bit of code that listens for and event to happen and when it hears that event it responds with the appropriate action/response.
+
 4. Why would we convert a NodeList into an Array?
 
+    To allow easier manipulation of the data.
+
 5. What is a component?
+
+    A smaller big of code or function that you can use over and over in different parts of your code. A smaller piece to a bigger whole. 
 
 ### Git Set up
 
