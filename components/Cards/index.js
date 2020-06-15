@@ -20,7 +20,7 @@
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
 
-
+let cardsContainer = document.querySelector('.cards-container');
 
 axios
 .get('https://lambda-times-backend.herokuapp.com/articles')
@@ -32,7 +32,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
            for (let topic in articles){
             //    console.log(topics);
             for(let article in articles[topic]){
-                document.body.append(cardCreator(articles[topic][article]));
+                cardsContainer.append(cardCreator(articles[topic][article]));
             }
            }
             
