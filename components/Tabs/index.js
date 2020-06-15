@@ -8,7 +8,22 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    .then((response) => {
+        const link = document.querySelector('.topics');
+        response.data.topics.forEach(element => {
+            link.appendChild(createTab(element));
+        })
+    })
+    .catch((error) => {
+        console.log('Error');
+    })
+function createTab(object) {
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(res => {console.log(res)})
-    .catch(err => {console.log(err)})
+    const div = document.createElement('div');
+    div.classList.add('tab');
+    div.textContent = object;
+
+    return div;
+    
+}

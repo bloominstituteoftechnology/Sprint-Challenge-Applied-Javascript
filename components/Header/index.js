@@ -12,24 +12,25 @@
 // and append it to the DOM inside the div.header-container
 
 function header() {
-  const header = document.createElement("div");
-  header.classList.add("header");
+  const head = document.createElement('div');
+  head.classList.add('header');
 
-  const date = document.createElement("span");
-  date.classList.add("date");
+  const date = document.createElement('span');
+  date.classList.add('date');
+  date.textContent = ('March 29, 2019');
 
-  const title = document.createElement("h1");
-  title.textContent("Lambda Times");
+  const title = document.createElement('h1');
+  title.textContent = ('Lambda Times');
 
-  const temp = document.createElement("span");
-  temp.classList.add("temp");
-  temp.textContent("98");
+  const temp = document.createElement('span');
+  temp.classList.add('temp');
+  temp.textContent = ('98');
 
-  header.appendChild(date);
-  header.appendChild(title);
-  header.appendChild(temp);
+  head.appendChild(date);
+  head.appendChild(title);
+  head.appendChild(temp);
 
-  return header;
+  return head;
 }
-const headContainer = document.querySelector(".header-container");
-headContainer.appendChild(header);
+const headContainer = document.querySelector('.header-container');
+headContainer.appendChild(header());
