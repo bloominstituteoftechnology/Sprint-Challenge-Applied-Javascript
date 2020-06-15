@@ -11,9 +11,7 @@
 
 const headerContainer = document.querySelector('.header-container');
 
-const headerContent = Header();
 
-headerContainer.appendChild(headerContent);
 
 function Header() {
     // creating the elements
@@ -41,3 +39,12 @@ function Header() {
 
     return header;
 }
+
+const headerContent = Header();
+
+headerContainer.appendChild(headerContent);
+
+
+
+
+
