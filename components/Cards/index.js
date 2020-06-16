@@ -82,10 +82,52 @@ const jq = res.data.articles.jquery;
 const n = res.data.articles.node;
 
 js.forEach(item =>{
-    
-})
+cardscontainer.appendChild(articlecards(item));
+});
+bs.forEach(item =>{
+cardscontainer.appendChild(articlecards(item));
+});
+tech.forEach(item =>{
+cardscontainer.appendChild(articlecards(item));
+});
+jq.forEach(item =>{
+cardscontainer.appendChild(articlecards(item));
+});
+n.forEach(item =>{
+cardscontainer.appendChild(articlecards(item));
+});
+
+console.log(res);
 
 })
 .catch(err =>{
 console.log(err);
 });
+
+function articlecards (test){
+const card = document.createElement("div");
+const headline = document.createElement("div");
+const author = document.createElement("div");
+const imgcontainer = document.createElement("div");
+const imgurl = document.createElement("img-src");
+//const imgurl = document.createElement("img");
+const spanauthor = document.createElement("span");
+
+card.appendChild(headline);
+card.appendChild(author);
+card.appendChild(imgcontainer);
+card.appendChild(imgurl);
+card.appendChild(spanauthor);
+
+card.classList.add("card");
+card.classList.add("headline");
+card.classList.add("author");
+card.classList.add("imgcontainer");
+
+headline.textContent = test.headline
+imgurl.textContent = test.authorPhoto;
+//imgurl.src = test.authorPhoto;
+spanauthor.textContent = test.authorName; 
+
+return card;
+}
