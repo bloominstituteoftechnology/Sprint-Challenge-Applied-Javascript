@@ -30,11 +30,19 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Document object module: the representation of the content from html, css, and js.
+
 2. What is an event?
+
+Any action taken by a user: mouse click, wheel scroll, etc.
 
 3. What is an event listener?
 
+A way to track events and controll what happens after an event is triggered
+
 4. Why would we convert a NodeList into an Array?
+
+Nodelist do not have the same methods as an array, sometimes you might want to apply an array method to a nodelist.
 
 5. What is a component?
 
