@@ -45,6 +45,7 @@ A way to track events and controll what happens after an event is triggered
 Nodelist do not have the same methods as an array, sometimes you might want to apply an array method to a nodelist.
 
 5. What is a component?
+a reusable, stand alone construct of css, html, and js that can be reused 
 
 ### Git Set up
 
