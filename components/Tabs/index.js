@@ -9,34 +9,43 @@
 //    <div class="tab">topic here</div>
 
 const topicTab = (tabTopic) => {
-    const newTab = document.createElement('div')
+  const newTab = document.createElement("div");
 
-    newTab.textContent = tabTopic
+  newTab.textContent = tabTopic;
 
-    newTab.classList.add('tab')
+  newTab.classList.add("tab");
 
-    return newTab;
-}
+  return newTab;
+};
 
-const entryPoint = document.querySelector('.topics')
+const entryPoint = document.querySelector(".topics");
 
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then((response) => {
+    console.log("API RESPONSE", response);
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(response => {
+    response.data.topics.forEach((tab, index) => {
+      setTimeout(() => {
+        const newTab = topicTab(tab);
+        entryPoint.appendChild(newTab);
+      }, 1000 * index);
+    });
+  })
 
-        console.log('API RESPONSE', response)
+  .catch((err) => {
+    console.log("data not available! ", err);
+    alert(`Data not available at this moment. Try again later ${err}`);
+  })
 
-        response.data.topics.forEach((tab, index) => {
-            setTimeout(() => {
-                const newTab = topicTab(tab)
-                entryPoint.appendChild(newTab)
-            }, 1000 * index)
-        })
-    })
+  .then(() => {});
 
-    .catch(err => {
-        console.log('data not available! ', err)
-    })
+const topics = document.querySelectorAll(".tab");
 
-    .then(() => {
-    })
+topics.forEach((topic) => {
+  topic.addEventListener("click", (event) => {
+    // filtered = event.target.innerHTML;
+    event.target.classList.add("test");
+    console.log(filtered);
+  });
+});
