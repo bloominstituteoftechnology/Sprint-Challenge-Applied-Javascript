@@ -18,39 +18,27 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+const cardsContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(res => {
     console.log(res.data);
-    const cardsContainer = document.querySelector('.cards-container');
-cardsContainer.appendChild(lambdaCards(res.data))
+    lambdaCards(res).forEach((card) => {
+        cardsContainer.append(card);
+    })
     
 })
 .catch(err => {
     console.log(err);
 });
 
-function lambdaCards(obj) {
-    const card = document.createElement('div');
-    const headline = document.createElement('div');
-    const author = document.createElement('div');
-    const image = document.createElement('div');
-    const authorImage = document.createElement('img')
-    const span = document.createElement('span');
-
-    card.appendChild(headline)
-    card.appendChild(author)
-    card.appendChild(image)
-    image.appendChild(authorImage)
-    card.appendChild(span)
-
-    card.classList.add('card')
-    headline.classList.add('headline')
-    author.classList.add('author')
-    image.classList.add('img-container')
-    span.classList.add('span')
-
-    
-
-    return card;
+function lambdaTimes(article) {
+    const articles = article.data.articles;
+    const javaArticle = articles.javascript;
+    const bootstrapArticle = articles.bootstrap;
+    const technologyArticle = articles.technology; 
+    const jqueryArticle = articles.jquery; 
+    const nodeArticle = articles.node;
 }
-//console.log(lambdaCards);
+
+

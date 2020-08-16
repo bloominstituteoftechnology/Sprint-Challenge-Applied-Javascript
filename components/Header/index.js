@@ -18,19 +18,27 @@ function Header() {
     const mainTitle = document.createElement('h1')
     const spanTemp = document.createElement('span');
 
+    header.classList.add('header');
+    spanDate.classList.add('date');
+    mainTitle.classList.add('h1');
+    spanTemp.classList.add('temp');
+
     header.appendChild(spanDate);
     header.appendChild(mainTitle);
     header.appendChild(spanTemp);
+    
 
-    spanDate.textContent = 'March 28, 2019'
-    mainTitle.textContent = 'Lambda Times'
-    spanTemp.textcontent = '98,\u00B0'
+    spanDate.textContent = 'March 28, 2019';
+    mainTitle.textContent = 'Lambda Times';
+    spanTemp.textContent = '98';
+
+    console.log(spanTemp);
 
 
     return header;
 }
 const headerContainer = document.querySelector('.header-container')
-headerContainer.appendChild(Header);
+headerContainer.appendChild(Header());
     
 
 
