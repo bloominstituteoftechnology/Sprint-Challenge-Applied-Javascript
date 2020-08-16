@@ -33,12 +33,22 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 });
 
 function lambdaTimes(article) {
-    const articles = article.data.articles;
-    const javaArticle = articles.javascript;
-    const bootstrapArticle = articles.bootstrap;
-    const technologyArticle = articles.technology; 
-    const jqueryArticle = articles.jquery; 
-    const nodeArticle = articles.node;
+
+    
+    const card = document.createElement('div'); 
+    const headline = document.createElement('div');
+    const author = document.createElement('div'); 
+    const imgContainer = document.createElement('div');
+    const img = document.createElement('img'); 
+    const span = document.createElement('span'); 
+
+    card.classList.add('card'); 
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container'); 
+    span.classList.add('span');
+
+
 }
 
 
