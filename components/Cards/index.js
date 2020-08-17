@@ -21,13 +21,13 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((res) => {
-        console.log ("Res: ", res);
-        res.data.articles.forEach( (url) => {
+        console.log ("Res: ", res)
+        res.data.articles.javascript.forEach((url) => {
         cardsContainer.appendChild(Cards(url));
         });
     })
     .catch( err => {
-        console.log("Error: ", err);
+        console.log("Error: ", err)
     })
 
     function Cards(headline,author,img) {
