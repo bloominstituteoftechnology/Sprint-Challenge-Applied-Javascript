@@ -30,7 +30,7 @@ function Header() {
 
     spanDate.textContent = 'March 28, 2019';
     mainTitle.textContent = 'Lambda Times';
-    spanTemp.textContent = '98';
+    spanTemp.textContent = '98 \u00b0';
 
     console.log(spanTemp);
 
