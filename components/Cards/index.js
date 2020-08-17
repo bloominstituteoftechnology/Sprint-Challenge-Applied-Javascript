@@ -20,13 +20,17 @@
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
 const cardsContainer = document.querySelector('.cards-container');
+
+
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(res => {
-    console.log(res.data);
-    res.data.forEach((card) => {
-        cardsContainer.append(card);
-        console.log(card);
+    //console.log(res.data);
+    lambdaTimes(res.data).forEach((card) => {
+        console.log(card)
     })
+        
+   
     
 })
 .catch(err => {
@@ -35,6 +39,34 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 function lambdaTimes(article) {
 
+    const articles = article.data.articles; 
+    const javaArt = articles.javascript; 
+    const bootArt = articles.bootstrap; 
+    const tectArt = articles.technology; 
+    const jArt = articles.jquery; 
+    const nArt = articles.node;
+
+    const cards = []
+
+    const javascriptCard = javaArt.map((article) => {
+        cards.push(card);
+    });
+
+    const bootstrapCard = bootArt.map((article) => {
+        cards.push(card);
+    });
+
+    const technologyCard = tectArt.map((article) => {
+        cards.push(card)
+    });
+
+    const jqueryCard = jArt.map((article) => {
+        cards.push(card)
+    });
+
+    const nodeCard = nArt.map((article) => {
+        cards.push(card);
+    })
 
     const card = document.createElement('div'); 
     const headline = document.createElement('div');
@@ -49,9 +81,9 @@ function lambdaTimes(article) {
     imgContainer.classList.add('img-container'); 
     span.classList.add('span');
 
-    headline.textContent = article.articles.headline;
-    span.textContent = article.articles.authorName
-    img.src = article.articles.authorPhoto
+    headline.textContent = articles.headline;
+    span.textContent = articles.authorName
+    img.src = articles.authorPhoto
 
     card.appendChild(headline);
     card.appendChild(author);
@@ -59,7 +91,8 @@ function lambdaTimes(article) {
     imgContainer.appendChild(img);
     author.appendChild(span);
 
-    return card; 
+    
+    return card, cards, javascriptCard, bootstrapCard, technologyCard, jqueryCard, nodeCard; 
 
 }
 

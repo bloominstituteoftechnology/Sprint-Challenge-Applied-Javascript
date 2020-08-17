@@ -7,7 +7,7 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
-const topics = document.querySelector('.topics')
+/*const topics = document.querySelector('.topics')
 let response = [];
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(res => {
@@ -28,5 +28,5 @@ function newTab(obj) {
     tab.textContent = obj;
     
     return tab
-};
+};*/
 
