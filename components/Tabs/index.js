@@ -26,6 +26,9 @@ function Tabs(topic) {
     tabsCreate.classList.add('tab');
     tabsCreate.textContent = topic;
 
+    tabsCreate.addEventListener('click', (e) => {
+        
+    })
     
     return tabsCreate;
 };

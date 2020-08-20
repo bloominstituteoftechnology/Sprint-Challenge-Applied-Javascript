@@ -18,38 +18,74 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
-
+let articlesArray = [];
+let cardsContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((res) => {
-        console.log ("Res: ", res)
-        res.data.articles.javascript.forEach((url) => {
-        cardsContainer.appendChild(Cards(url));
+        console.log ("Res: ", res) 
+        articlesArray = res.data.articles;    
+        let javascriptArt = articlesArray.javascript;
+        let bootstraptArt = articlesArray.bootstrap;
+        let technologyArt = articlesArray.technology;
+        let jqueryArt = articlesArray.jquery;
+        let nodeArt = articlesArray.node;
+         
+        javascriptArt.forEach((data) => {
+            cardsContainer.appendChild(Cards(data));
         });
+
+        bootstraptArt.forEach((data) => {
+            cardsContainer.appendChild(Cards(data));
+        });
+
+        technologyArt.forEach((data) => {
+            cardsContainer.appendChild(Cards(data));
+        });
+
+        jqueryArt.forEach((data) => {
+            cardsContainer.appendChild(Cards(data));
+        });
+
+        nodeArt.forEach((data) => {
+            cardsContainer.appendChild(Cards(data));
+        });
+
+       
+        console.log(javascriptArt);
+        // articlesArray.javascript.forEach((url) => {
+        // cardsContainer.appendChild(Cards(url));
+        // });
     })
     .catch( err => {
         console.log("Error: ", err)
     })
+    
 
-    function Cards(headline,author,img) {
+
+    function Cards(article) {
         let cardCreate = document.createElement('div');
         let cardAuthor =  document.createElement('span');
         let cardHeadline = document.createElement('h2');
         let cardAuthorImg = document.createElement('img');
         
+        cardCreate.classList.add('card');
         cardAuthor.classList.add('author');
         cardHeadline.classList.add('headline');
         cardAuthorImg.classList.add('img-container');
     
+        
+        cardAuthor.textContent = article.authorName;
+        cardHeadline.textContent = article.headline;
+        cardAuthorImg.src = article.authorPhoto;
     
-         cardAuthor.textContent = res.data.article.authorName;
-         cardHeadline.textContent =  res.data.article.headline;
-         cardAuthorImg.textContent = res.data.article.authorPhoto;
+        cardCreate.appendChild(cardAuthor);
+        cardCreate.appendChild(cardHeadline);
+        cardCreate.appendChild(cardAuthorImg);
+
+        
+
     
-         cardCreate.appendChild(headerDate);
-         cardCreate.appendChild(headerTitle);
-         cardCreate.appendChild(headerTemp);
-    
-         return cardCreate;
+        return cardCreate;
     };
 
-    let cardsContainer = document.querySelector('.cards-container');
+    
