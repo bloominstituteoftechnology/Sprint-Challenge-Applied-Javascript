@@ -36,5 +36,5 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 })
 
 .catch(error => {
-    log("DOES NOT COMPUTE!");
+    log("DOES NOT COMPUTE!" error);
 });
