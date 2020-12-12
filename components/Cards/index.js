@@ -72,7 +72,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             let card = cardMaker(element);
             cardContainer.appendChild(card);
         })
-    })
+    });
+});
 .catch(error => {
     log("DOES NOT COMPUTE!");
 });
