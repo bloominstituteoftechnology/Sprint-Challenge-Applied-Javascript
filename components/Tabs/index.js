@@ -27,7 +27,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(resolve => {
     
     resolve.data.topics.forEach(element => {     
-       topics.append(tabMaker(topic));
+       topics.append(tabMaker(element));
     });        
     
 })
