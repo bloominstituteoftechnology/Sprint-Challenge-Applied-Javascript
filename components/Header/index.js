@@ -19,13 +19,13 @@ log = console.log;
 function Header() {
   
     const headerContainer = document.querySelector('header-container');
-
+    console.log(headerContainer);
     //create elements
     const  div  = document.createElement('div');
     const span1 = document.createElement('span');
     const hOne  = document.createElement('h1');
     const span2 = document.createElement('span');
-
+    
     //add classes
     div.classList.add('header');
     span1.classList.add('date');
@@ -43,6 +43,6 @@ function Header() {
       div.appendChild('span2');
 
 }
-console.log(headerContainer);
+
 Header();
 
