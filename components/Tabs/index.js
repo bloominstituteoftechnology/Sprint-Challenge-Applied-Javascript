@@ -9,7 +9,7 @@
 //    <div class="tab">topic here</div>
  //grab topics
 const grabTopics = document.querySelector('.topics');
-function tabSetup(data) 
+function tabMaker(data) 
 {
     //create tab, add class list, add text content
     const tabDiv    = document.createElement('div');
