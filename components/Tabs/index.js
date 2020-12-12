@@ -8,7 +8,7 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
  //grab topics
-const grabTopics = document.querySelector('.topics');
+const topicsContainer = document.querySelector('.topics');
 function tabMaker(data) 
 {
     //create tab, add class list, add text content
