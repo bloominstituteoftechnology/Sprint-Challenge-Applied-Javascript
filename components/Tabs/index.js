@@ -8,12 +8,11 @@ log = console.log;
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
-const topicsContainer = document.querySelector('.topics');
+
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then((resolve) =>
   {
     log(resolve);
-    topicsContainer.appendChild(tabMaker(resolve.data));
     log(topicsContainer);
   })
 .catch(error => {
@@ -23,6 +22,8 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 
 function tabMaker(data) 
 {
+    const topicsContainer = document.querySelector('.topics');
+  
     //create tab, add class list, add text content
     const tabDiv    = document.createElement('div');
     const topicsDiv = document.createElement('div');
@@ -34,6 +35,11 @@ function tabMaker(data)
     topicSpan.classList.add("title");
 
     topicSpan.innerText = "TRENDING TOPICS:";
+    
+  //append maker
+  topicsContainer.appendChild(tabDiv);
+  tabDiv.appendChild(topicsDiv);
+  topicsDiv.appendChild(topicSpan);
 
     return tabDiv;
 }
