@@ -17,7 +17,7 @@ log = console.log;
 
 function Header() {
      
-    const headContainer = document.querySelector("header-container");
+    const headContainer = document.querySelector("div.header-container");
     //console.log(headCountainer);
     
     //create elements
@@ -37,7 +37,7 @@ function Header() {
       span2.innerText = "98°";
 
         //append builder
-        headContainer.appendChild('div');
+        div.headContainer.appendChild('div');
         div.appendChild('span1');
         div.appendChild('hOne');
         div.appendChild('span2');
