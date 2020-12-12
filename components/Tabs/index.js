@@ -8,17 +8,27 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-const topics = document.querySelector('.topics');
+function tabSetup(data) 
+{
+    //grab topics
+    const grabTopics = document.querySelector('.topics');
 
-function tabMaker(info){
-  
-    let tab = document.createElement('div');
-    tab.classList.add('tab');
-    tab.textContent = info;
+
+    //create tab, add class list, add text content
+    const tabDiv    = document.createElement('div');
+    const topicsDiv = document.createElement('div');
+    const topicSpan = document.createElement('span');
+    
+    //add classes
+    tabDiv.classList.add("tabs");
+    topicsDiv.classList.add("topics");
+    topicSpan.classList.add("title");
+
+    topicSpan.innerText = "TRENDING TOPICS:";
+   
+
 
     return tab;
-    
-    
 }
 
 
