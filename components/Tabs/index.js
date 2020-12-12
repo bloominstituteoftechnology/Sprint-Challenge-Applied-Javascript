@@ -7,13 +7,10 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
-
+ //grab topics
+const grabTopics = document.querySelector('.topics');
 function tabSetup(data) 
 {
-    //grab topics
-    const grabTopics = document.querySelector('.topics');
-
-
     //create tab, add class list, add text content
     const tabDiv    = document.createElement('div');
     const topicsDiv = document.createElement('div');
@@ -25,8 +22,6 @@ function tabSetup(data)
     topicSpan.classList.add("title");
 
     topicSpan.innerText = "TRENDING TOPICS:";
-   
-
 
     return tab;
 }
