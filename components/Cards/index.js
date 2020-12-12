@@ -58,19 +58,21 @@ function cardMaker(data)
 
 
 
-axios.get("https://lambda-times-backend.herokuapp.com/articles")
-.then((resolve) => {
-    const articles = resolve.data.articles;
-    const entries = Object.entries(articles);
 
-    for(const key of entries) {
-        const data = key[1]
-        data.forEach(item => {
-            cardsContainer.appendChild(createCard(item));
+let cardContainer = document.querySelector('.cards-container');
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((res) => {
+    let articles = Object.values(res.data.articles);
+// console.log(articles)
+    articles.forEach((item) => {
+        let newItem = item;
+
+        newItem.forEach((element) => {
+            let card = cardMaker(element);
+            cardContainer.appendChild(card);
         })
-    }
-})
-
+    })
 .catch(error => {
     log("DOES NOT COMPUTE!");
 });
