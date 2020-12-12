@@ -33,8 +33,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then((resolve) =>
   {
     topicsContainer.appendChild(tabMaker(resolve.data));
-  });
-})
+  })
 .catch(error => {
     log("DOES NOT COMPUTE!");
 });
