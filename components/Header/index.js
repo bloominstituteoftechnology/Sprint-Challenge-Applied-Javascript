@@ -42,9 +42,9 @@ function Header() {
       div.appendChild('hOne');
       div.appendChild('span2');
       console.log(div);
-  
+  console.log(headerContainer);
   return headerContainer;
 }
-console.log(headerContainer);
+
 Header();
 
