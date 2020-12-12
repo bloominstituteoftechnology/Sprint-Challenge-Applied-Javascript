@@ -18,7 +18,7 @@ log = console.log;
 
 function Header() {
   
-    const headerContainer = document.querySelector("header-container");
+    const headContainer = document.querySelector("header-container");
     
     //create elements
     const  div  = document.createElement('div');
@@ -31,19 +31,18 @@ function Header() {
     span1.classList.add('date');
     span2.classList.add('temp');
 
-    //create inner text
-    span1.innerText = "MARCH 28, 2019";
-    hOne.innerText  = "Lambda Times";
-    span2.innerText = "98°";
+      //create inner text
+      span1.innerText = "MARCH 28, 2019";
+      hOne.innerText  = "Lambda Times";
+      span2.innerText = "98°";
 
-    //append builder
-    headerContainer.appendChild('div');
-      div.appendChild('span1');
-      div.appendChild('hOne');
-      div.appendChild('span2');
-      console.log(div);
-  console.log(headerContainer);
-  return headerContainer;
+        //append builder
+        headContainer.appendChild('div');
+        div.appendChild('span1');
+        div.appendChild('hOne');
+        div.appendChild('span2');
+     
+  return headContainer;
 }
 
 Header();
