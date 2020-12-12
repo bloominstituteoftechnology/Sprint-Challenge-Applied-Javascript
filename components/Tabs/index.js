@@ -23,7 +23,7 @@ function tabMaker(data)
 
     topicSpan.innerText = "TRENDING TOPICS:";
 
-    return tab;
+    return tabDiv;
 }
 
 
