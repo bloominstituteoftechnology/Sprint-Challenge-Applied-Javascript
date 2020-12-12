@@ -32,7 +32,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(resolve => {
         const Array = resolve.data.topics;
         Array.forEach(element => {  
-        const newTab = createTab(element)
+        const newTab = tabMaker(element)
         topicsContainer.appendChild(newTab)   
       });        
     })
