@@ -26,7 +26,7 @@ function tabMaker(data)
     return tabDiv;
 }
 
-
+tabMaker();
 
 
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
