@@ -38,9 +38,9 @@ function Header() {
 
     //append builder
     headerContainer.appendChild('div');
-    headerContainer.appendChild('span1');
-    headerContainer.appendChild('hOne');
-    headerContainer.appendChild('span2');
+      div.appendChild('span1');
+      div.appendChild('hOne');
+      div.appendChild('span2');
 
 }
 
