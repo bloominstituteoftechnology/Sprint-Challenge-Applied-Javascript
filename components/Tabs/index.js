@@ -8,41 +8,33 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-function tabSetup(data) 
-{ 
-    //grab topics
-    const grabTopics = document.querySelector('.topics');
+const topics = document.querySelector('.topics');
 
-
-    //create tab, add class list, add text content
-    const tabDiv    = document.createElement('div');
-    const topicsDiv = document.createElement('div');
-    const topicSpan = document.createElement('span');
-    
-    //add classes
-    tabDiv.classList.add("tabs");
-    topicsDiv.classList.add("topics");
-    topicSpan.classList.add("title");
-
-    topicSpan.innerText = "TRENDING TOPICS:";
+function tabMaker(info){
   
+    let tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = info;
 
     return tab;
+    
+    
 }
-
 
 
 //axios get request
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(resolve => {
-
-    resolve.data.topics.array.forEach(element => {     
-        const createTopic = grabTopics(element);
-        grabTopics.appendChild(createTopic);            
+    
+    resolve.data.topics.forEach(element => {     
+       topics.append(tabMaker(topic));
     });        
     
 })
 
 .catch(error => {
-    log("DOES NOT COMPUTE!" error);
+    log("DOES NOT COMPUTE!", error);
 });
+
+
+
