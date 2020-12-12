@@ -15,10 +15,9 @@ log = console.log;
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
  const headContainer = document.querySelector("header-container");
-
+console.log(headCountainer);
 function Header() {
-  
-    console.log(headCountainer);
+    
     //create elements
     const  div  = document.createElement('div');
     const span1 = document.createElement('span');
