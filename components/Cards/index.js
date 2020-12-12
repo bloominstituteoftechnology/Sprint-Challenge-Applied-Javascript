@@ -23,7 +23,9 @@
 
 function cardMaker(data) 
 {
-    //create elements
+    //grab card container 
+    const getCardsContainer = document.querySelector('.cards-container');    
+    
     const cardDiv     = document.createElement('div');
     const headlineDiv = document.createElement('div');
     const authorDiv   = document.createElement('div');
@@ -44,19 +46,19 @@ function cardMaker(data)
 
     //add elements to the page
     //div stacking build
-    cardDiv.appendChild(headlineDiv); 
-    headlineDiv.appendChild(authorDiv);
-            headlineDiv.appendChild(makeSpan); //nested content element
-    authorDiv.appendChild(imgDiv);
-            imgDiv.appendChild(makeImage);     // nested content element
+    getCardsContainer.appendChild(cardDiv);
+        cardDiv.appendChild(headlineDiv); 
+            headlineDiv.appendChild(authorDiv);
+                headlineDiv.appendChild(makeSpan); //nested content element
+                authorDiv.appendChild(imgDiv);
+                    imgDiv.appendChild(makeImage);     // nested content element
 
     
     return cardDiv;
 
 }
 
-//grab card container 
-const getCardsContainer = document.querySelector('.cards-container');
+
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then((resolve) => {
