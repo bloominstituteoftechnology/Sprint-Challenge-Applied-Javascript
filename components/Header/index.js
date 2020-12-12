@@ -19,7 +19,7 @@ log = console.log;
 function Header() {
   
     const headerContainer = document.querySelector("header-container");
-    console.log(headerContainer);
+    
     //create elements
     const  div  = document.createElement('div');
     const span1 = document.createElement('span');
@@ -45,6 +45,6 @@ function Header() {
   
   return headerContainer;
 }
-
+console.log(headerContainer);
 Header();
 
