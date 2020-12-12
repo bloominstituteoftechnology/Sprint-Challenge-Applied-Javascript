@@ -19,13 +19,11 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-
+ //grab card container 
+    const getCardsContainer = document.querySelector('.cards-container');    
 
 function cardMaker(data) 
-{
-    //grab card container 
-    const getCardsContainer = document.querySelector('.cards-container');    
-    
+{    
     const cardDiv     = document.createElement('div');
     const headlineDiv = document.createElement('div');
     const authorDiv   = document.createElement('div');
