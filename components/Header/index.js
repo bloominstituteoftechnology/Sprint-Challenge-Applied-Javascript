@@ -43,6 +43,6 @@ function Header() {
       div.appendChild('span2');
 
 }
-
+console.log(headerContainer);
 Header();
 
