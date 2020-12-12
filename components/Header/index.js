@@ -18,7 +18,7 @@ log = console.log;
 function Header() {
      
     const headContainer = document.querySelector(".header-container");
-    console.log(headCountainer);
+    //console.log(headCountainer);
     
     //create elements
     const  div  = document.createElement('div');
