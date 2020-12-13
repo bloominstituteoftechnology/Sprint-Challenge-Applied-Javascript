@@ -34,4 +34,4 @@ promise.then(({data: {topics: topics}}) => {
   log("error");
 });  
 
-createNewTab(getDate());
+createNewTab(getData());
