@@ -18,7 +18,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
     log(resolveArray);
     resolveArray.forEach(element => {
         const newTab = tabMaker(element)
-        topicsCont.appendChild(newTab)
+        topicsCont.appendChild(resolveArray)
         log(newTab);
     });    
   
