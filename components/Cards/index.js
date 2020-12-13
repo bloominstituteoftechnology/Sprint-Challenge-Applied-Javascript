@@ -42,9 +42,7 @@ function cardMaker(data)
     headlineDiv.textContent = data.headline;
     makeSpan.textContent    = data.authorName;
 
-     cardDiv.addEventListener('click', () => {
-      console.log(headline)
-    });
+   
  
 
     //add elements to the page
