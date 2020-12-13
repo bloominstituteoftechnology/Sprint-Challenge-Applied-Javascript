@@ -40,7 +40,6 @@ function cardMaker(data)
 
     //add text
     headlineDiv.textContent = data.headline;
-    //src.textContent      = data.authorPhoto;
     makeSpan.textContent    = data.authorName;
 
     //add elements to the page
@@ -56,8 +55,6 @@ function cardMaker(data)
     return cardDiv;
 
 }
-
-
 
 
 let cardContainer = document.querySelector('.cards-container');
