@@ -1,7 +1,5 @@
 log = console.log;
 
-
-
 // STEP 1: Create a Header component.
 // -----------------------
 // Write a function that returns the markup you see below:
