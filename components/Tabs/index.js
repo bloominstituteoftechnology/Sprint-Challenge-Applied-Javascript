@@ -12,9 +12,9 @@ function getHerokuData() {
 function createNewTab(topicString) {
   // create element
   const tab = document.createElement("div");
-  tab.classList.add(‘tab’);
+  tab.classList.add("tab");
   tab.textContent = topicString;
-  const topicsContainer = document.querySelector(‘.topics’);
+  const topicsContainer = document.querySelector(".topics");
   topicsContainer.appendChild(tab);
   // console.log(“Appended Topics Container”, topicsContainer);
   return tab;
