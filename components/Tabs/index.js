@@ -3,7 +3,7 @@ log = console.log;
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
 function getHerokuData() {
-  let herokuPromise = axios.get(‘https://lambda-times-api.herokuapp.com/topics’);
+  let herokuPromise = axios.get("https://lambda-times-api.herokuapp.com/topics";
   return herokuPromise;
 }
 // Once the data is resolved use console logs or breakpoints to review the structure.
