@@ -39,11 +39,7 @@ function Header() {
       hOne.textContent  = "Lambda Times";
       span2.textContent = "98°";
 
-        //append builder
-        div.appendChild('span1');
-        div.appendChild('hOne');
-        div.appendChild('span2');
-     
+         
   return div;
 }
 
