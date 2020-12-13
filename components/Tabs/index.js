@@ -14,11 +14,12 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then((resolve) =>
   {
     log(resolve);
-  const resolveArray = resolve.data.topics
-    resolveArray.forEach(element => {
-        const newTab = tabMaker(element)
-        topicsCont.appendChild(newTab)
-        log(newTab);
+  const resolveArray = resolve.data.topics;
+    log(resolveArray);
+//     resolveArray.forEach(element => {
+//         const newTab = tabMaker(element)
+//         topicsCont.appendChild(newTab)
+//         log(newTab);
     });    
   
   })
