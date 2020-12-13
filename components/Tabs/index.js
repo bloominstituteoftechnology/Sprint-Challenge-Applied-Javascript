@@ -16,7 +16,7 @@ function createNewTab(topicString) {
   tab.textContent = topicString;
   const topicsContainer = document.querySelector(".topics");
   topicsContainer.appendChild(tab);
-  log(“Appended Topics Container”, topicsContainer);
+  log(topicsContainer);
   return tab;
 };  
 
