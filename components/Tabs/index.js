@@ -17,10 +17,10 @@ function getData() {
 
 function createNewTab(topicString) {
   // create element
-  let tab = document.createElement(‘div’);
-  tab.classList.add(‘tab’);
+  let tab = document.createElement("div");
+  tab.classList.add("tab");
   tab.textContent = topicString;
-  let topicsContainer = document.querySelector(‘.topics’);
+  let topicsContainer = document.querySelector(".topics");
   topicsContainer.appendChild(tab);
   // console.log(“Appended Topics Container”, topicsContainer);
   return tab;
@@ -31,7 +31,7 @@ promise.then(({data: {topics: topics}}) => {
     createNewTab(element);
   });
 }).catch((topics) => {
-  console.log(“DOES NOT COMPUTE!!“);
+  log(“DOES NOT COMPUTE!!“);
 });  
 
 createNewTab(herokuPromise);
