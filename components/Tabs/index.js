@@ -10,49 +10,49 @@ log = console.log;
 //    <div class="tab">topic here</div>
 const topicsCont = document.querySelector('.topics');
 
-axios.get("https://lambda-times-backend.herokuapp.com/topics")
-  .then((resolve) =>
-  {
-    log(resolve);
-    const resolveArray = resolve.data.topics;
-    log(resolveArray);
-    resolveArray.forEach(element => {
-        const newTab = tabMaker(element)
-        newTab.appendChild(element)
-        log(newTab);
-    });    
-  
-  })
+const request = axios.get('https://lambda-times-api.herokuapp.com/topics')
+.then(response => {
+    console.log('success')
+    console.log(response.data.topics)
+    response.data.topics.forEach(topics =>{
+            let tab = document.createElement('div')
+            console.log(tab)
+            tab.classList.add('tab')
+            tab.textContent = ${topics}
+            let topDiv = document.querySelector('.topics')
+            topDiv.appendChild(tab)
+    })
+})
 .catch(error => {
     log("DOES NOT COMPUTE!");
 });
  //grab topics
 
-function tabMaker(data) 
-{
-    const topicsContainer = document.querySelector('.topics');
+// function tabMaker(data) 
+// {
+//     const topicsContainer = document.querySelector('.topics');
   
-    //create tab, add class list, add text content
-    const tabDiv    = document.createElement('div');
-    const topicsDiv = document.createElement('div');
-    const topicSpan = document.createElement('span');
+//     //create tab, add class list, add text content
+//     const tabDiv    = document.createElement('div');
+//     const topicsDiv = document.createElement('div');
+//     const topicSpan = document.createElement('span');
     
-    //add classes
-    tabDiv.classList.add("tabs");
-    topicsDiv.classList.add("topics");
-    topicSpan.classList.add("title");
+//     //add classes
+//     tabDiv.classList.add("tabs");
+//     topicsDiv.classList.add("topics");
+//     topicSpan.classList.add("title");
 
-    topicSpan.innerText = "TRENDING TOPICS:";
+//     topicSpan.innerText = "TRENDING TOPICS:";
     
-  //append maker
-  topicsContainer.appendChild(tabDiv);
-  tabDiv.appendChild(topicsDiv);
-  topicsDiv.appendChild(topicSpan);
+//   //append maker
+//   topicsContainer.appendChild(tabDiv);
+//   tabDiv.appendChild(topicsDiv);
+//   topicsDiv.appendChild(topicSpan);
 
-    return tabDiv;
-}
+//     return tabDiv;
+// }
 
-tabMaker();
+// tabMaker();
 
 
 
