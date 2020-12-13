@@ -73,7 +73,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             cardContainer.appendChild(card);
         })
     });
-});
+})
 .catch(error => {
     log("DOES NOT COMPUTE!");
 });
