@@ -36,10 +36,11 @@ function cardMaker(data)
     headlineDiv.classList.add('headline');
     authorDiv.classList.add('author');
     imgDiv.classList.add('img-container');
+    makeImage.setAttribute('src', data.authorPhoto);
 
     //add text
     headlineDiv.textContent = data.headline;
-    imgDiv.textContent      = data.authorPhoto;
+    //src.textContent      = data.authorPhoto;
     makeSpan.textContent    = data.authorName;
 
     //add elements to the page
