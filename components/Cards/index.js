@@ -42,15 +42,18 @@ function cardMaker(data)
     headlineDiv.textContent = data.headline;
     makeSpan.textContent    = data.authorName;
 
+     cardDiv.addEventListener('click', () => {
+      console.log(headline)
+    });
+ 
+
     //add elements to the page
     //div stacking build
-    getCardsContainer.appendChild(cardDiv);
-        cardDiv.appendChild(headlineDiv); 
-            headlineDiv.appendChild(authorDiv);
-                headlineDiv.appendChild(makeSpan); //nested content element
-                authorDiv.appendChild(imgDiv);
+            cardDiv.appendChild(headlineDiv); 
+            cardDiv.appendChild(authorDiv);
+                authorDiv.appendChild(imgDiv); 
+                authorDiv.appendChild(makeSpan); //nested content element
                     imgDiv.appendChild(makeImage);     // nested content element
-
     
     return cardDiv;
 
