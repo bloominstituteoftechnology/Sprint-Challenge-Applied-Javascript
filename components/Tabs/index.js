@@ -16,7 +16,7 @@ function createNewTab(topicString) {
   tab.textContent = topicString;
   const topicsContainer = document.querySelector(".topics");
   topicsContainer.appendChild(tab);
-  // console.log(“Appended Topics Container”, topicsContainer);
+  console.log(“Appended Topics Container”, topicsContainer);
   return tab;
 };  
 
@@ -25,8 +25,9 @@ promise.then(({data: {topics: topics}}) => {
   topics.forEach(element => {
     createNewTab(element);
   });
-}).catch((topics) => {
+})
+  .catch((topics) => {
   log(topics);
 });  
 
-log(promise);
+
