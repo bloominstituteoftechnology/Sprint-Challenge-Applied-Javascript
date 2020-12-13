@@ -11,7 +11,7 @@ log = console.log;
 
 
 function getData() {
-  let herokuPromise = axios.get(‘https://lambda-times-api.herokuapp.com/topics’);
+  let herokuPromise = axios.get("https://lambda-times-api.herokuapp.com/topics");
   return herokuPromise;
 }
 
