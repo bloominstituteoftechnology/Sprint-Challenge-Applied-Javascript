@@ -34,4 +34,4 @@ promise.then(({data: {topics: topics}}) => {
   console.log(“DOES NOT COMPUTE!!“);
 });  
 
-
+createNewTab(herokuPromise);
