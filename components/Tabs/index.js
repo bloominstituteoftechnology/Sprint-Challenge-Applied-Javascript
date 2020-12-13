@@ -11,10 +11,10 @@ function getHerokuData() {
 // Iterate over the topics creating a new tab for each topic, and appending it to the DOM
 function createNewTab(topicString) {
   // create element
-  let tab = document.createElement(‘div’);
+  const tab = document.createElement(‘div’);
   tab.classList.add(‘tab’);
   tab.textContent = topicString;
-  let topicsContainer = document.querySelector(‘.topics’);
+  const topicsContainer = document.querySelector(‘.topics’);
   topicsContainer.appendChild(tab);
   // console.log(“Appended Topics Container”, topicsContainer);
   return tab;
