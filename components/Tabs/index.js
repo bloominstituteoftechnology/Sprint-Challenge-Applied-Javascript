@@ -9,11 +9,17 @@ log = console.log;
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 const topicsCont = document.querySelector('.topics');
+
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then((resolve) =>
   {
     log(resolve);
-    log(topicsCont);
+  const resolveArray = resolve.data.topics
+    resolveArray.forEach(element => {
+        const newTab = tabMaker(element)
+        topicsCont.appendChild(newTab)
+    });    
+  
   })
 .catch(error => {
     log("DOES NOT COMPUTE!");
