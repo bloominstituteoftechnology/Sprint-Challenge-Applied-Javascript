@@ -18,24 +18,13 @@ function createNewTab(topicString) {
   topicsContainer.appendChild(tab);
   // console.log(“Appended Topics Container”, topicsContainer);
   return tab;
-};  // this func creates tabs
+};  
+
 let promise = getHerokuData();
-promise.then(({data: {topics: topics}}) => { // object destructuring   {objectProperty: assignedToVar}
-  // console.log(“Topics the array variable: “, topics);
-  topics.forEach(e => {
-    createNewTab(e);
+promise.then(({data: {topics: topics}}) => {
+  topics.forEach(element => {
+    createNewTab(element);
   });
 }).catch((topics) => {
   log(topics);
-});  // end of the promise code
-// promise.then(({data: user}) => { // object destructuring   {objectProperty: assignedToVar}
-//   console.log(“User: “, user);
-//   let cardContainer =  document.querySelector(‘.cards’);
-//   cardContainer.appendChild(cardMaker(user)); // the append must go INSIDE the callback
-// }).catch((user) => {
-//   console.log(“Promise call unsuccessful.“)
-// });
-// test code, it works
-// createNewTab(“testtab”);
-// let topicsContainer = document.querySelector(‘.topics’);
-// console.log(“appended container”, topicsContainer)
+});  
