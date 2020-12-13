@@ -28,3 +28,5 @@ promise.then(({data: {topics: topics}}) => {
 }).catch((topics) => {
   log(topics);
 });  
+
+log(promise);
