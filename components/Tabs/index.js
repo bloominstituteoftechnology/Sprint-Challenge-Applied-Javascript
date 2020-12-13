@@ -14,13 +14,13 @@ const request = axios.get('https://lambda-times-api.herokuapp.com/topics')
     console.log('success')
     console.log(response.data.topics)
     response.data.topics.forEach(topics =>{
-            let tab = document.createElement('div')
-            console.log(tab)
-            tab.classList.add('tab')
-            tab.textContent = ${topics}
-            let topDiv = document.querySelector('.topics')
-            topDiv.appendChild(tab)
-    })
+            let tab = document.createElement('div');
+            console.log(tab);
+            tab.classList.add('tab');
+            tab.textContent = ${topics};
+            let topDiv = document.querySelector('.topics');
+            topDiv.appendChild(tab);
+    });
 })
  .catch((error) => {
   log("error" error);
