@@ -26,7 +26,7 @@ promise.then(({data: {topics: topics}}) => { // object destructuring   {objectPr
     createNewTab(e);
   });
 }).catch((topics) => {
-  console.log(“Promise call unsuccessful.“);
+  log(topics);
 });  // end of the promise code
 // promise.then(({data: user}) => { // object destructuring   {objectProperty: assignedToVar}
 //   console.log(“User: “, user);
