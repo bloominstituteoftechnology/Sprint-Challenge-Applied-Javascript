@@ -9,20 +9,22 @@ log = console.log;
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-const request = axios.get('https://lambda-times-api.herokuapp.com/topics')
-.then(response => {
-    console.log('success')
-    console.log(response.data.topics)
-    response.data.topics.forEach(topics =>{
-            let tab = document.createElement('div');
-            console.log(tab);
-            tab.classList.add('tab');
-            tab.textContent = ${topics};
-            let topDiv = document.querySelector('.topics');
-            topDiv.appendChild(tab);
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
+.then(res => {
+    console.log(res.data.topics)
+    const responseArray = res.data.topics
+    responseArray.forEach(element => {
+        const newTab = createTab(element)
+        topicsContainer.appendChild(newTab)
     });
 })
- .catch((error) => {
-  log("error" error);
-});  
+const topicsContainer = document.querySelector('.topics');
+function createTab(topic){
+    const tab = document.createElement("div")
+    tab.textContent = topic
+    tab.classList.add("tab")
+
+
+return tab
+} 
 
