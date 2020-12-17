@@ -18,3 +18,61 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+ //grab card container 
+    const getCardsContainer = document.querySelector('.cards-container');    
+
+function cardMaker(data) 
+{    
+    const cardDiv     = document.createElement('div');
+    const headlineDiv = document.createElement('div');
+    const authorDiv   = document.createElement('div');
+    const imgDiv      = document.createElement('div');
+    const makeImage   = document.createElement('img');
+    const makeSpan    = document.createElement('span');
+
+    //add classes
+    cardDiv.classList.add('card');
+    headlineDiv.classList.add('headline');
+    authorDiv.classList.add('author');
+    imgDiv.classList.add('img-container');
+    makeImage.setAttribute('src', data.authorPhoto);
+
+    //add text
+    headlineDiv.textContent = data.headline;
+    makeSpan.textContent    = data.authorName;
+
+   
+ 
+
+    //add elements to the page
+    //div stacking build
+            cardDiv.appendChild(headlineDiv); 
+            cardDiv.appendChild(authorDiv);
+                authorDiv.appendChild(imgDiv); 
+                authorDiv.appendChild(makeSpan); //nested content element
+                    imgDiv.appendChild(makeImage);     // nested content element
+    
+    return cardDiv;
+
+}
+
+
+let cardContainer = document.querySelector('.cards-container');
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((res) => {
+    let articles = Object.values(res.data.articles);
+// console.log(articles)
+    articles.forEach((item) => {
+        let newItem = item;
+
+        newItem.forEach((element) => {
+            let card = cardMaker(element);
+            cardContainer.appendChild(card);
+        })
+    });
+})
+.catch(error => {
+    log("DOES NOT COMPUTE!");
+});
