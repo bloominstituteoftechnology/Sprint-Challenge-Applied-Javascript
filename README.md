@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The Document Object Model
+
 2. What is an event?
+
+An event is something that the user does to manipulate the page
 
 3. What is an event listener?
 
+An event listener is how we check to see if the user has tried to engage an event
+
 4. Why would we convert a NodeList into an Array?
 
+Because nodeLists allow us to use forEach, but if we want to use .map or anything else, we would need to use an array
+
 5. What is a component?
+
+It is something that allows us to continue using certain parts of our code continuously (which allows us to create DRY code). 
+
 
 ### Git Set up
 
