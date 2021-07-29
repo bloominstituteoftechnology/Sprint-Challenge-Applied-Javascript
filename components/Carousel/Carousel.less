@@ -27,15 +27,21 @@
   .left-button {
     top: 50%; 
     left: 25px;
+    z-index: 2;
     transform: translate(0, -50%);
   }
   .right-button {
     top: 50%; 
     right: 25px;
+    z-index: 2;
     transform: translate(0, -50%);
   }
   img {
     .width-100();
     display: none;
+  }
+  .show {
+    display: block;
+    z-index: -1;
   }
 }

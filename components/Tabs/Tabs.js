@@ -10,12 +10,11 @@ class TabLink{
         }
         this.all = document.querySelectorAll('.card')
         this.card.forEach(card => new TabCard(card));
-        console.log(this.card)
         this.link.addEventListener('click', () => {this.selectLink()});
     }
     selectLink() {
         document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active-tab'));
-        this.link.classList.add('active-tab');
+        this.link.classList.toggle('active-tab');
         this.all.forEach(card => card.style.display = 'none')
         this.card.forEach(card => card.style.display = 'flex')
     }
